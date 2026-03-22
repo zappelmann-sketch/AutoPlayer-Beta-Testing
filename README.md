@@ -1,6 +1,6 @@
-# AutoPlayer Beta Testing Portal
+# AutoPlayer Closed Testing Portal
 
-Willkommen beim Beta-Test fuer **AutoPlayer** — den innovativsten lokalen MP3-Player fuer Android mit 98+ Features, Android Auto Support und 26 Sprachen.
+Willkommen beim Closed Test fuer **AutoPlayer** — den innovativsten lokalen MP3-Player fuer Android mit 98+ Features, Android Auto Support und 26 Sprachen.
 
 ## Fuer Tester
 
