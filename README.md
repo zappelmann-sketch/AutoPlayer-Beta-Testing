@@ -4,8 +4,8 @@ Willkommen beim Beta-Test fuer **AutoPlayer** — den innovativsten lokalen MP3-
 
 ## Fuer Tester
 
-### 1. APK herunterladen
-Die aktuelle Beta-APK findest du unter [Releases](https://github.com/zappelmann-sketch/AutoPlayer-Beta-Testing/releases).
+### 1. App herunterladen
+Die App ist ueber den Google Play Store erhaeltlich (Link folgt nach dem Launch).
 
 ### 2. Testplan oeffnen
 Oeffne den interaktiven Testplan:

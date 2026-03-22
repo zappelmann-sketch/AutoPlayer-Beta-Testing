@@ -175,8 +175,39 @@ h1{color:var(--accent);margin-bottom:4px;font-size:1.7em}
 </style>
 </head>
 <body>
+<div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px">
+<div>
 <h1>AutoPlayer Testplan</h1>
 <p class="sub">Version 4.0.0 | Granularer Testplan | <span id="lastSaved"></span></p>
+</div>
+<select id="langSelect" onchange="switchLang(this.value)" style="padding:8px 12px;border-radius:8px;border:1px solid #444;background:var(--card);color:var(--text);font-size:0.85em;cursor:pointer">
+<option value="de">🇩🇪 Deutsch</option>
+<option value="en">🇬🇧 English</option>
+<option value="es">🇪🇸 Espanol</option>
+<option value="fr">🇫🇷 Francais</option>
+<option value="it">🇮🇹 Italiano</option>
+<option value="pt">🇧🇷 Portugues</option>
+<option value="tr">🇹🇷 Turkce</option>
+<option value="ru">🇷🇺 Russkij</option>
+<option value="uk">🇺🇦 Ukrainska</option>
+<option value="pl">🇵🇱 Polski</option>
+<option value="cs">🇨🇿 Cestina</option>
+<option value="ja">🇯🇵 Nihongo</option>
+<option value="ko">🇰🇷 Hangugeo</option>
+<option value="zh">🇨🇳 Zhongwen</option>
+<option value="hi">🇮🇳 Hindi</option>
+<option value="ar">🇸🇦 Arabiyya</option>
+<option value="th">🇹🇭 Thai</option>
+<option value="vi">🇻🇳 Tieng Viet</option>
+<option value="id">🇮🇩 Indonesia</option>
+<option value="ms">🇲🇾 Melayu</option>
+<option value="nl">🇳🇱 Nederlands</option>
+<option value="da">🇩🇰 Dansk</option>
+<option value="fi">🇫🇮 Suomi</option>
+<option value="nb">🇳🇴 Norsk</option>
+<option value="sv">🇸🇪 Svenska</option>
+</select>
+</div>
 
 <!-- ANLEITUNG -->
 <div class="guide-card" id="guideCard">
@@ -1689,6 +1720,49 @@ doImport = function() {
     } catch(e) { alert('JSON Fehler: ' + e.message); }
 };
 
+// === LANGUAGE / i18n ===
+const i18n = {
+de:{title:"AutoPlayer Testplan",guide:"Anleitung fuer Tester",testerInfo:"Tester-Informationen",testerName:"Tester-Name (optional)",appVersion:"App-Version",appLang:"App-Sprache",testStart:"Testdatum Start",testEnd:"Testdatum Ende",devices:"Geraete-Verwaltung",addDevice:"+ Geraet",smartphone:"Smartphone",tablet:"Tablet",brand:"Hersteller",model:"Modell",androidVer:"Android-Version",remove:"Entfernen",active:"Aktiv",passed:"Bestanden",bugs:"Bugs",wishes:"Wuensche",open:"Offen",total:"Gesamt",search:"Feature suchen...",expandAll:"Alle aufklappen",collapseAll:"Alle zuklappen",copyResult:"Ergebnis kopieren",exportBugs:"Bugs exportieren",exportWishes:"Wuensche exportieren",saveJson:"JSON speichern",importJson:"JSON importieren",reset:"Reset",rating:"App-Bewertung",ratingDesc:"Wie bewertest du die App insgesamt? Klicke auf einen Stern.",feedback:"Allgemeines Feedback",feedbackPlaceholder:"Hier allgemeines Feedback eintragen...",sendMail:"Per E-Mail an Entwickler senden",sendMailDesc:"Sende dein komplettes Testergebnis per E-Mail. Die JSON-Datei wird automatisch heruntergeladen.",featureWishes:"Feature-Wuensche fuer zukuenftige Versionen",addWish:"+ Feature-Wunsch",wishDesc:"Hier kannst du neue Feature-Ideen eintragen.",bugLabel:"BUG",wishLabel:"WUNSCH",screenshot:"Screenshot",bugComment:"Bug-Beschreibung...",wishComment:"Aenderungs-/Erweiterungswunsch...",screenshotPlaceholder:"Screenshot-Dateinamen..."},
+en:{title:"AutoPlayer Test Plan",guide:"Instructions for Testers",testerInfo:"Tester Information",testerName:"Tester Name (optional)",appVersion:"App Version",appLang:"App Language",testStart:"Test Start Date",testEnd:"Test End Date",devices:"Device Management",addDevice:"+ Device",smartphone:"Smartphone",tablet:"Tablet",brand:"Brand",model:"Model",androidVer:"Android Version",remove:"Remove",active:"Active",passed:"Passed",bugs:"Bugs",wishes:"Wishes",open:"Open",total:"Total",search:"Search features...",expandAll:"Expand all",collapseAll:"Collapse all",copyResult:"Copy result",exportBugs:"Export bugs",exportWishes:"Export wishes",saveJson:"Save JSON",importJson:"Import JSON",reset:"Reset",rating:"App Rating",ratingDesc:"How do you rate the app overall? Click a star.",feedback:"General Feedback",feedbackPlaceholder:"Enter general feedback here...",sendMail:"Send to developer via email",sendMailDesc:"Send your complete test result via email. The JSON file will be downloaded automatically.",featureWishes:"Feature wishes for future versions",addWish:"+ Feature wish",wishDesc:"Add new feature ideas here.",bugLabel:"BUG",wishLabel:"WISH",screenshot:"Screenshot",bugComment:"Bug description...",wishComment:"Change/enhancement wish...",screenshotPlaceholder:"Screenshot filenames..."}
+};
+// Generate other languages with fallback to EN
+['es','fr','it','pt','tr','ru','uk','pl','cs','ja','ko','zh','hi','ar','th','vi','id','ms','nl','da','fi','nb','sv'].forEach(l=>{if(!i18n[l])i18n[l]=i18n.en;});
+
+let currentLang = 'de';
+
+function detectLang() {
+    const params = new URLSearchParams(window.location.search);
+    const urlLang = params.get('lang');
+    if (urlLang && i18n[urlLang]) return urlLang;
+    if (urlLang) return 'en'; // Fallback for unknown languages
+    const browserLang = navigator.language.substring(0, 2);
+    if (i18n[browserLang]) return browserLang;
+    return 'en';
+}
+
+function switchLang(lang) {
+    currentLang = lang;
+    localStorage.setItem('tp_lang', lang);
+    const t = i18n[lang] || i18n.en;
+    // Update static UI elements
+    const el = (id) => document.getElementById(id);
+    if (el('mainTitle')) el('mainTitle').textContent = t.title;
+    if (el('searchBox')) el('searchBox').placeholder = t.search;
+    // Update URL without reload
+    const url = new URL(window.location);
+    url.searchParams.set('lang', lang);
+    window.history.replaceState({}, '', url);
+    // Set select
+    document.getElementById('langSelect').value = lang;
+}
+
+function initLang() {
+    const saved = localStorage.getItem('tp_lang');
+    currentLang = saved || detectLang();
+    document.getElementById('langSelect').value = currentLang;
+    switchLang(currentLang);
+}
+
 // === STAR RATING ===
 const ratingLabels = ['', 'Mangelhaft — viele Probleme', 'Ausreichend — funktioniert teilweise', 'Befriedigend — grundsaetzlich OK', 'Gut — laeuft rund mit kleinen Macken', 'Ausgezeichnet — Top App!'];
 function setRating(v) {
@@ -1786,6 +1860,7 @@ loadMeta();
 renderDevices();
 renderFeatureWishes();
 renderStars();
+initLang();
 document.getElementById('searchBox').addEventListener('input', render);
 render();
 </script>
