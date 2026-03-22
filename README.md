@@ -48,7 +48,7 @@ Am Ende des Testplans:
 
 ## Kontakt
 
-- E-Mail: zappelmann@googlemail.com
+- E-Mail: zappelmann+autoplayer@googlemail.com
 - Issues: [GitHub Issues](https://github.com/zappelmann-sketch/AutoPlayer-Beta-Testing/issues)
 
 ---
