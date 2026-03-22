@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AutoPlayer — Privacy Policy</title>
+<script src="https://cdn.jsdelivr.net/npm/@twemoji/api@latest/dist/twemoji.min.js" crossorigin="anonymous"></script>
+<style>
+:root {
+  --bg: #ffffff;
+  --card: #f8f9fa;
+  --text: #333333;
+  --heading: #1a1a2e;
+  --accent: #e94560;
+  --link: #2563eb;
+  --border: #e5e7eb;
+  --muted: #6b7280;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+  font-size: 16px;
+}
+a { color: var(--link); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* Header */
+header {
+  background: var(--heading);
+  color: #fff;
+  padding: 16px 24px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+.header-inner {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+.brand {
+  font-size: 1.25em;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+}
+.brand .emoji { width: 24px; height: 24px; }
+
+/* Language dropdown */
+.lang-drop { position: relative; display: inline-block; flex-shrink: 0; }
+.lang-btn {
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.3);
+  background: rgba(255,255,255,0.1);
+  color: #fff;
+  font-size: 0.85em;
+  cursor: pointer;
+  min-width: 150px;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.lang-btn:hover { border-color: var(--accent); }
+.lang-btn::after { content: "\25BE"; margin-left: auto; }
+.lang-list {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  max-height: 300px;
+  overflow-y: auto;
+  z-index: 200;
+  min-width: 180px;
+  margin-top: 4px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+}
+.lang-list.open { display: block; }
+.lang-opt {
+  padding: 8px 12px;
+  cursor: pointer;
+  font-size: 0.85em;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+  color: var(--text);
+}
+.lang-opt:hover { background: #f3f4f6; }
+.lang-opt.active { background: #fde8ec; color: var(--accent); font-weight: 600; }
+.lang-opt img.emoji { width: 20px; height: 20px; }
+
+/* Main content */
+main {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px 24px 60px;
+}
+h1 {
+  font-size: 1.75em;
+  color: var(--heading);
+  margin-bottom: 8px;
+  line-height: 1.3;
+}
+.meta {
+  color: var(--muted);
+  font-size: 0.9em;
+  margin-bottom: 32px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--border);
+}
+
+/* Table of contents */
+.toc {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 20px 24px;
+  margin-bottom: 40px;
+}
+.toc-title {
+  font-size: 1em;
+  font-weight: 600;
+  color: var(--heading);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  user-select: none;
+}
+.toc-title::after { content: "\25B4"; font-size: 0.8em; color: var(--muted); }
+.toc.collapsed .toc-title::after { content: "\25BE"; }
+.toc ol {
+  margin-top: 12px;
+  padding-left: 20px;
+  columns: 2;
+  column-gap: 24px;
+}
+.toc.collapsed ol { display: none; }
+.toc li {
+  margin-bottom: 4px;
+  font-size: 0.9em;
+  break-inside: avoid;
+}
+.toc a { color: var(--text); }
+.toc a:hover { color: var(--accent); }
+
+/* Sections */
+section { margin-bottom: 36px; }
+section h2 {
+  font-size: 1.2em;
+  color: var(--accent);
+  margin-bottom: 12px;
+  padding-bottom: 6px;
+  border-bottom: 2px solid #fde8ec;
+}
+section p { margin-bottom: 12px; }
+section ul {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 12px;
+}
+section ul li {
+  padding: 4px 0 4px 20px;
+  position: relative;
+}
+section ul li::before {
+  content: "\2022";
+  color: var(--accent);
+  font-weight: bold;
+  position: absolute;
+  left: 4px;
+}
+section .sub-heading {
+  font-weight: 600;
+  color: var(--heading);
+  margin: 16px 0 8px;
+}
+
+/* Footer */
+footer {
+  background: var(--card);
+  border-top: 1px solid var(--border);
+  padding: 24px;
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.85em;
+}
+footer a { color: var(--accent); }
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin-top: 12px;
+}
+
+/* Legal content visibility */
+.legal-content { display: none; }
+.legal-content.active { display: block; }
+
+/* Responsive */
+@media (max-width: 600px) {
+  main { padding: 24px 16px 40px; }
+  h1 { font-size: 1.4em; }
+  .toc ol { columns: 1; }
+  .header-inner { flex-wrap: wrap; }
+  .lang-btn { min-width: 130px; font-size: 0.8em; }
+}
+
+/* Print */
+@media print {
+  header, .lang-drop, footer { display: none; }
+  main { padding: 0; max-width: 100%; }
+  body { font-size: 12pt; line-height: 1.5; }
+  section h2 { color: #000; border-bottom-color: #ccc; }
+  .toc { border-color: #ccc; background: #f5f5f5; }
+  a { color: #000; text-decoration: underline; }
+  a[href]::after { content: " (" attr(href) ")"; font-size: 0.85em; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="brand"><span>&#127925;</span> AutoPlayer</div>
+    <div class="lang-drop" id="langDrop">
+      <div class="lang-btn" id="langBtn" onclick="document.getElementById('langList').classList.toggle('open')">
+        <span id="langCurrent">&#127465;&#127466; Deutsch</span>
+      </div>
+      <div class="lang-list" id="langList"></div>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- ===== GERMAN CONTENT ===== -->
+<div class="legal-content" data-lang="de" id="content-de">
+  <h1>Datenschutzerklaerung &ndash; AutoPlayer</h1>
+  <p class="meta">Letzte Aktualisierung: 11.03.2026 &middot; Version 4.0</p>
+
+  <nav class="toc" id="toc-de"></nav>
+
+  <section id="de-1">
+    <h2>1. Ueberblick</h2>
+    <p>AutoPlayer ist eine lokale MP3-Player-Anwendung fuer Android mit Android Auto Unterstuetzung. Der Schutz Ihrer Privatsphaere hat fuer uns hoechste Prioritaet. Diese Datenschutzerklaerung erlaeutert umfassend, welche Daten die App verarbeitet, welche Berechtigungen sie benoetigt und wie Ihre Daten geschuetzt werden.</p>
+    <p><strong>Grundprinzip:</strong> AutoPlayer verarbeitet Ihre Daten lokal auf Ihrem Geraet. Es werden keine personenbezogenen Daten an Server, Dritte oder das Internet uebertragen. Die einzige Netzwerkverbindung ist eine optionale Wetterabfrage (siehe Abschnitt 5).</p>
+  </section>
+
+  <section id="de-2">
+    <h2>2. Datenerhebung</h2>
+    <p>AutoPlayer erhebt, speichert und uebertraegt keine personenbezogenen Daten an Dritte.</p>
+    <p>Die App:</p>
+    <ul>
+      <li>Sammelt keine persoenlichen Informationen</li>
+      <li>Verwendet keine Analyse- oder Tracking-Tools. Crash-Reports koennen optional per E-Mail nach ausdruecklicher Bestaetigung gesendet werden</li>
+      <li>Sendet keine personenbezogenen Daten an Server, Cloud-Dienste oder Dritte</li>
+      <li>Verwendet keine Werbe-Frameworks oder Werbe-IDs</li>
+      <li>Erstellt keine Nutzerprofile</li>
+      <li>Fuehrt kein Fingerprinting durch</li>
+    </ul>
+  </section>
+
+  <section id="de-3">
+    <h2>3. Lokale Datenverarbeitung</h2>
+    <p>Die App verarbeitet folgende Daten ausschliesslich lokal auf Ihrem Geraet. Keine dieser Daten verlassen Ihr Geraet (ausser der in Abschnitt 5 beschriebenen Wetterabfrage).</p>
+    <ul>
+      <li><strong>Musikdateien und Metadaten:</strong> Ihre lokalen Audio-Dateien inkl. Titel, Kuenstler, Album, Jahr, Dauer, Bitrate, Format, Dateigroesse und Album-Cover &ndash; fuer Wiedergabe und Bibliotheksanzeige</li>
+      <li><strong>Wiedergabe-Verlauf:</strong> Welche Songs wann und wie oft abgespielt wurden &ndash; fuer smarte Playlists, Nostalgie-Maschine und Auto-Playlists</li>
+      <li><strong>Favoriten und Playlists:</strong> Ihre personalisierte Musikorganisation</li>
+      <li><strong>Queue Presets:</strong> Benannte Schnappschuesse Ihrer Wiedergabe-Warteschlange, lokal gespeichert</li>
+      <li><strong>Versteckte Songs:</strong> Songs und Ordner, die Sie aus der Bibliothek ausgeblendet haben</li>
+      <li><strong>App-Einstellungen:</strong> Theme, Sprache, Equalizer, Crossfade, Wiedergabegeschwindigkeit, Shake-to-Shuffle, geschwindigkeitsbasierte Lautstaerke und alle weiteren Praeferenzen</li>
+      <li><strong>Geo-Music Regeln:</strong> Von Ihnen erstellte standortbasierte Playlist-Regeln inkl. GPS-Koordinaten, Radius und WiFi-SSID-Namen &ndash; werden ausschliesslich lokal gespeichert</li>
+      <li><strong>Backup-Daten:</strong> Exportierte JSON-Datei mit Favoriten, Playlists und Einstellungen &ndash; nur wenn Sie explizit exportieren</li>
+      <li><strong>Audio-Analyse-Daten:</strong> BPM, Tonart, Energie-Level jedes analysierten Songs fuer Smart DJ, Mood Morph, Drive Mode DJ, Auto-Playlists, Beat-Match Crossfade, Weather DJ und Heartbeat Sync DJ (lokal in Room-DB)</li>
+      <li><strong>Sound Souvenir Daten:</strong> Verknuepfung von Song mit GPS-Koordinaten und Ortsname fuer standortbasierte Musik-Erinnerungen (lokal, opt-in, jederzeit loeschbar)</li>
+      <li><strong>Cabin Calibrator Profil:</strong> Frequenzantwort-Messungen und EQ-Korrekturwerte fuer Ihre Fahrzeugkabine (nur lokal, jederzeit loeschbar)</li>
+      <li><strong>Music Wrapped Statistiken:</strong> Aggregierte Hoerdaten (Wiedergabezaehler, Hoerdauer, Skip-Zaehler, Stundenverteilung, Streaks) &ndash; werden bei Bedarf aus dem lokalen Wiedergabe-Verlauf berechnet, niemals uebertragen</li>
+      <li><strong>Automatische Backup-Daten:</strong> JSON-Export von Favoriten, Playlists, Einstellungen, Wiedergabe-Verlauf und Audio-Analyse &ndash; wird nur im vom Nutzer gewaehlten lokalen Ordner gespeichert, niemals hochgeladen</li>
+      <li><strong>Lokale Fehler-Protokolle:</strong> Technische Crash-Logs werden bei App-Abstuerzen lokal gespeichert (max. 5 Dateien, KEINE Uebertragung an Server oder Dritte)</li>
+      <li><strong>Crash Reports (Optional):</strong> Bei einem App-Absturz kannst du optional einen technischen Fehlerbericht per E-Mail senden. Der Bericht enthaelt nur: Fehlerbeschreibung (Stack-Trace), Geraetetyp, Android-Version, App-Version und deinen optionalen Kommentar. KEINE persoenlichen Daten, Musikdateien, Hoerverlauf oder andere Nutzerdaten werden uebermittelt. Berichte werden NUR nach deiner ausdruecklichen Bestaetigung gesendet. Du kannst diese Funktion unter Einstellungen &gt; Crash Reports deaktivieren.</li>
+      <li><strong>Health Connect Herzfrequenz-Daten:</strong> Wenn du den Smartwatch-Modus im Herzschlag-Sync DJ aktivierst, liest die App deine aktuelle Herzfrequenz aus Health Connect (Android-Gesundheitsplattform). Diese Daten werden nur in Echtzeit zur Auswahl tempopassender Musik verwendet. Keine Herzfrequenz-Daten werden gespeichert, protokolliert oder uebertragen. Du kannst jederzeit zum manuellen Modus zurueckwechseln.</li>
+    </ul>
+  </section>
+
+  <section id="de-4">
+    <h2>4. Berechtigungen</h2>
+    <p>AutoPlayer benoetigt folgende Berechtigungen, jede wird nur fuer den angegebenen Zweck verwendet:</p>
+    <ul>
+      <li><strong>Medienzugriff (Audio):</strong> Lesen Ihrer lokalen Musikdateien und Metadaten</li>
+      <li><strong>Internet:</strong> Nur fuer Weather DJ &ndash; ruft aktuelle Wetterbedingungen von der Open-Meteo API ab (siehe Abschnitt 5). Es werden keine personenbezogenen Daten gesendet.</li>
+      <li><strong>Mikrofon (RECORD_AUDIO):</strong> Audio-Visualizer (Echtzeit-Visualisierung der abgespielten Musik) und Car Cabin Calibrator (akustische Vermessung Ihrer Fahrzeugkabine). Es werden KEINE Aufnahmen erstellt, gespeichert oder uebertragen.</li>
+      <li><strong>Standort (GPS):</strong> Geo-Music (Playlist nach Standort), Drive Mode DJ (Geschwindigkeitserkennung), Sound Souvenir (Musik-Erinnerungen), Weather DJ (Wetter fuer Ihren Standort), geschwindigkeitsbasierte Lautstaerke (Fahrgeschwindigkeit) &ndash; nur lokal</li>
+      <li><strong>WiFi-Status:</strong> Geo-Music &ndash; Erkennung des aktuellen WiFi-Netzwerknamens fuer SSID-basierte Playlist-Regeln</li>
+      <li><strong>Aktivitaetserkennung:</strong> Smart DJ und Geo-Music &ndash; Erkennung der Bewegungsart (Gehen, Laufen, Fahren) fuer automatische Musikauswahl. Es werden KEINE Aktivitaets-Profile erstellt oder gespeichert.</li>
+      <li><strong>Bluetooth:</strong> Automatische Wiedergabe-Fortsetzung bei Bluetooth-Verbindung, Passenger Mode (Geraet-zu-Geraet-Verbindung via Nearby Connections). Keine Geraeteinformationen werden dauerhaft gespeichert.</li>
+      <li><strong>Systemeinstellungen:</strong> Song als System-Klingelton setzen (nur die von Ihnen explizit gewaehlte Einstellung)</li>
+      <li><strong>Vordergrunddienst:</strong> Hintergrund-Musikwiedergabe</li>
+      <li><strong>Benachrichtigungen:</strong> Wiedergabe-Steuerung in der Benachrichtigungsleiste</li>
+      <li><strong>Health Connect (READ_HEART_RATE):</strong> Herzschlag-Sync DJ Smartwatch-Modus &ndash; liest deine aktuelle Herzfrequenz aus Health Connect, um automatisch tempopassende Musik auszuwaehlen. Nur auf Wunsch, keine Daten gespeichert oder uebertragen.</li>
+    </ul>
+  </section>
+
+  <section id="de-5">
+    <h2>5. Netzwerkkommunikation</h2>
+    <p>AutoPlayer fuehrt genau eine Art von Netzwerkanfrage durch:</p>
+    <ul>
+      <li><strong>Weather DJ:</strong> Bei Aktivierung sendet die App Ihre ungefaehren GPS-Koordinaten (Breiten- und Laengengrad) an die Open-Meteo API (api.open-meteo.com), um aktuelle Wetterbedingungen abzurufen. Dies ist notwendig, um wetterpassende Musik auszuwaehlen.</li>
+    </ul>
+    <p class="sub-heading">Wichtig:</p>
+    <ul>
+      <li>Open-Meteo ist eine kostenlose, quelloffene Wetter-API</li>
+      <li>Es werden nur GPS-Koordinaten gesendet &ndash; keine Geraete-ID, keine Nutzer-ID, keine personenbezogenen Daten</li>
+      <li>Die Anfrage erfolgt nur, wenn Sie Weather DJ aktiv nutzen</li>
+      <li>Es werden keine Daten ueber das aktuelle Wetterergebnis hinaus zwischengespeichert</li>
+      <li>Sie koennen AutoPlayer vollstaendig ohne diese Funktion nutzen</li>
+      <li>Datenschutzerklaerung von Open-Meteo: <a href="https://open-meteo.com/en/terms" target="_blank" rel="noopener">https://open-meteo.com/en/terms</a></li>
+    </ul>
+    <p>Alle anderen Funktionen arbeiten vollstaendig offline ohne jegliche Netzwerkverbindung.</p>
+  </section>
+
+  <section id="de-6">
+    <h2>6. Sensorzugriff</h2>
+    <p>Folgende Geraetesensoren werden ohne zusaetzliche Android-Berechtigungen genutzt:</p>
+    <ul>
+      <li><strong>Umgebungslichtsensor:</strong> Automatischer Wechsel zwischen Hell- und Dunkelmodus basierend auf Umgebungshelligkeit (nur bei &quot;Auto&quot;-Design)</li>
+      <li><strong>Beschleunigungssensor:</strong> Sleep Fade Intelligence (Schlaferkennung durch Bewegungslosigkeit) und Shake to Shuffle (Erkennung von Schuettelbewegungen). Daten werden nur in Echtzeit verarbeitet &ndash; keine Bewegungsdaten werden gespeichert oder uebertragen.</li>
+      <li><strong>Schrittzaehler:</strong> Geo-Music (Erkennung von Gehbewegung). Zaehler wird nur in Echtzeit verwendet &ndash; kein Schrittverlauf wird gespeichert.</li>
+    </ul>
+  </section>
+
+  <section id="de-7">
+    <h2>7. Audioverarbeitung</h2>
+    <p>Mehrere Funktionen verarbeiten Audio in Echtzeit, ohne Aufnahmen zu erstellen:</p>
+    <ul>
+      <li><strong>Vocal Isolator:</strong> Mittenkanalextraktion auf Stereo-Audio in Echtzeit. Kein modifiziertes Audio wird gespeichert.</li>
+      <li><strong>Binaural Beat Layer:</strong> Prozedural erzeugte Audiotoene, die neben der Musik abgespielt werden. Keine Daten werden gespeichert.</li>
+      <li><strong>Audio Atmosphere Mixer:</strong> Prozedural erzeugte Umgebungsgeraeusche (Regen, Ozean etc.), die unter die Musik gemischt werden. Keine Daten werden gespeichert.</li>
+      <li><strong>Beat-Match Crossfade:</strong> Temporaere Geschwindigkeitsanpassung fuer BPM-synchrone Uebergaenge. Keine Daten werden gespeichert.</li>
+      <li><strong>Live Concert Simulator:</strong> Echtzeit-Reverb- und Bass-Effekte ueber Android Audio-APIs. Keine Daten werden gespeichert.</li>
+      <li><strong>Equalizer und Effekte:</strong> Alle Audio-Modifikationen werden in Echtzeit angewendet und erstellen keine Kopien Ihrer Musikdateien.</li>
+    </ul>
+  </section>
+
+  <section id="de-8">
+    <h2>8. Dateiveraenderungen</h2>
+    <p>Folgende Funktionen koennen auf Ihren ausdruecklichen Wunsch Dateien auf dem Geraet veraendern:</p>
+    <ul>
+      <li><strong>Tag-Editor:</strong> ID3-Tags bearbeiten (Titel, Kuenstler, Album, Jahr, Track-Nummer)</li>
+      <li><strong>Tag-Retter:</strong> Fehlende Tags im Batch-Verfahren aus Dateinamen wiederherstellen</li>
+      <li><strong>Track-Cutter:</strong> Audio-Dateien zuschneiden (Original bleibt erhalten, zugeschnittene Version als neue Datei gespeichert)</li>
+      <li><strong>Song loeschen:</strong> Audio-Datei dauerhaft loeschen (erfordert explizite Bestaetigung)</li>
+    </ul>
+  </section>
+
+  <section id="de-9">
+    <h2>9. Datenspeicherung und Sicherheit</h2>
+    <p>Alle Daten werden ausschliesslich lokal auf Ihrem Geraet gespeichert, geschuetzt durch die Android-Sandbox. Die einzige Netzwerkkommunikation ist die optionale Weather DJ Anfrage (Abschnitt 5). Keine Cloud-Synchronisation, keine Benutzerkonten, keine serverseitige Speicherung.</p>
+  </section>
+
+  <section id="de-10">
+    <h2>10. Datenloeschung</h2>
+    <p>Durch Deinstallation der App werden alle App-bezogenen Daten vollstaendig entfernt: Einstellungen, Playlists, Favoriten, Wiedergabe-Verlauf, Queue Presets, Geo-Music Regeln, versteckte Songs, Equalizer-Einstellungen, Audio-Analyse-Daten, Sound Souvenir Erinnerungen, Cabin Calibrator Profile und lokale Fehler-Protokolle. Ihre Musikdateien bleiben unberuehrt.</p>
+    <p>Innerhalb der App koennen Sie jederzeit einzelne Playlists, Favoriten, Geo-Regeln, den Wiedergabe-Verlauf, Queue Presets, Sound Souvenir Erinnerungen, Cabin-Profile loeschen und Einstellungen zuruecksetzen.</p>
+  </section>
+
+  <section id="de-11">
+    <h2>11. Drittanbieter-Dienste und Bibliotheken</h2>
+    <ul>
+      <li><strong>Open-Meteo API</strong> (api.open-meteo.com): Wetterdaten fuer die Weather DJ Funktion. Kostenlos, quelloffen. Erhaelt nur GPS-Koordinaten wenn Weather DJ aktiv ist. Siehe: <a href="https://open-meteo.com/en/terms" target="_blank" rel="noopener">https://open-meteo.com/en/terms</a></li>
+      <li><strong>Google Nearby Connections:</strong> Peer-to-Peer-Kommunikation fuer den Passenger Mode. Keine Daten werden ueber Google-Server geleitet.</li>
+      <li><strong>AndroidX, Media3 ExoPlayer, Coil, Room, DataStore, AppCompat:</strong> Keine dieser Bibliotheken erhebt, uebertraegt oder teilt Nutzerdaten.</li>
+    </ul>
+  </section>
+
+  <section id="de-12">
+    <h2>12. Kinder (COPPA/DSGVO-K)</h2>
+    <p>Die App ist familienfreundlich ohne altersbeschraenkte Inhalte, ohne In-App-Kaeufe, ohne Werbung und ohne soziale Interaktion. Es werden keine personenbezogenen Daten erhoben oder profiliert. Es bestehen keine besonderen Risiken fuer Minderjaehrige.</p>
+  </section>
+
+  <section id="de-13">
+    <h2>13. Anwendbares Recht</h2>
+    <p><strong>DSGVO (EU):</strong> Es werden keine personenbezogenen Daten an Dritte erhoben oder uebertragen. Ihre Rechte nach Art. 15&ndash;22 DSGVO (Auskunft, Berichtigung, Loeschung, Einschraenkung, Datenportabilitaet, Widerspruch) koennen Sie jederzeit ausueben. Die einzige externe Datenuebertragung (Weather DJ) umfasst keine personenbezogenen Daten.</p>
+    <p><strong>BDSG (Deutschland):</strong> Die App erfuellt die Anforderungen des Bundesdatenschutzgesetzes.</p>
+    <p><strong>DSG (Oesterreich/Schweiz):</strong> Die App erfuellt die Anforderungen des jeweiligen Datenschutzgesetzes.</p>
+  </section>
+
+  <section id="de-14">
+    <h2>14. Aenderungen</h2>
+    <p>Aenderungen an dieser Datenschutzerklaerung werden in der App veroeffentlicht und bei wesentlichen Aenderungen kommuniziert.</p>
+  </section>
+
+  <section id="de-15">
+    <h2>15. Kontakt</h2>
+    <p>Bei Fragen zur Datenschutzerklaerung:<br>
+    <a href="mailto:zappelmann+autoplayer@googlemail.com">zappelmann+autoplayer@googlemail.com</a></p>
+  </section>
+</div>
+
+<!-- ===== ENGLISH CONTENT ===== -->
+<div class="legal-content" data-lang="en" id="content-en">
+  <h1>Privacy Policy &ndash; AutoPlayer</h1>
+  <p class="meta">Last updated: 2026-03-11 &middot; Version 4.0</p>
+
+  <nav class="toc" id="toc-en"></nav>
+
+  <section id="en-1">
+    <h2>1. Overview</h2>
+    <p>AutoPlayer is a local MP3 player application for Android with Android Auto support. Protecting your privacy is our highest priority. This privacy policy comprehensively explains what data the App processes, what permissions it requires, and how your data is protected.</p>
+    <p><strong>Core principle:</strong> AutoPlayer processes your data locally on your device. No personal data is transmitted to servers, third parties, or the internet. The only network connection is an optional weather data request (see Section 5).</p>
+  </section>
+
+  <section id="en-2">
+    <h2>2. Data Collection</h2>
+    <p>AutoPlayer does not collect, store, or transmit any personal data to third parties.</p>
+    <p>The App:</p>
+    <ul>
+      <li>Does not collect personal information</li>
+      <li>Does not use analytics or tracking tools. Crash reports can optionally be sent via email after explicit user confirmation</li>
+      <li>Does not send personal data to servers, cloud services, or third parties</li>
+      <li>Does not use advertising frameworks or advertising IDs</li>
+      <li>Does not create user profiles</li>
+      <li>Does not perform fingerprinting</li>
+    </ul>
+  </section>
+
+  <section id="en-3">
+    <h2>3. Local Data Processing</h2>
+    <p>The App processes the following data exclusively locally on your device. None of this data leaves your device (except the weather request described in Section 5).</p>
+    <ul>
+      <li><strong>Music files and metadata:</strong> Your local audio files, including title, artist, album, year, duration, bitrate, format, file size, and album cover &ndash; for playback and library display</li>
+      <li><strong>Play history:</strong> Which songs were played, when, and how often &ndash; for smart playlists, Nostalgie Machine, and Auto-Playlists</li>
+      <li><strong>Favorites and playlists:</strong> Your personalized music organization</li>
+      <li><strong>Queue Presets:</strong> Named snapshots of your play queue, stored locally</li>
+      <li><strong>Hidden songs:</strong> Songs and folders you chose to hide from the library</li>
+      <li><strong>App settings:</strong> Theme, language, equalizer, crossfade, playback speed, shake-to-shuffle, speed-based volume, and all other preferences</li>
+      <li><strong>Geo-Music rules:</strong> Location-based playlist rules you created, including GPS coordinates, radius, and WiFi SSID names &ndash; stored only locally</li>
+      <li><strong>Backup data:</strong> Exported JSON file with favorites, playlists, and settings &ndash; only when you explicitly choose to export</li>
+      <li><strong>Audio Analysis Data:</strong> BPM, key, energy level of each analyzed song for Smart DJ, Mood Morph, Drive Mode DJ, Auto-Playlists, Beat-Match Crossfade, Weather DJ, and Heartbeat Sync DJ (local Room DB)</li>
+      <li><strong>Sound Souvenir Data:</strong> Association of songs with GPS coordinates and place names for location-based music memories (local, opt-in, deletable anytime)</li>
+      <li><strong>Cabin Calibrator Profile:</strong> Frequency response measurements and EQ correction values for your car cabin (local only, deletable anytime)</li>
+      <li><strong>Music Wrapped statistics:</strong> Aggregated listening data (play counts, listen duration, skip counts, hourly distribution, streaks) &ndash; computed on-demand from local play history, never transmitted</li>
+      <li><strong>Automatic Backup data:</strong> JSON export of favorites, playlists, settings, play history, and audio analysis &ndash; saved only to user-chosen local folder, never uploaded</li>
+      <li><strong>Local Error Logs:</strong> Technical crash logs are stored locally on app crashes (max. 5 files, NOT transmitted to servers or third parties)</li>
+      <li><strong>Crash Reports (Optional):</strong> When the app crashes, you can optionally send a technical error report via email. The report contains only: error description (stack trace), device type, Android version, app version, and your optional comment. NO personal data, music files, listening history, or other user data is included. Reports are sent ONLY after your explicit confirmation. You can disable this feature in Settings &gt; Crash Reports.</li>
+      <li><strong>Health Connect Heart Rate Data:</strong> When you opt in to the Smartwatch mode in Heartbeat Sync DJ, the App reads your latest heart rate from Health Connect (Android health platform). This data is used in real-time only to select tempo-matching music. No heart rate data is stored, logged, or transmitted. You can switch back to manual mode at any time.</li>
+    </ul>
+  </section>
+
+  <section id="en-4">
+    <h2>4. Permissions</h2>
+    <p>AutoPlayer requires the following permissions, each used only for its stated purpose:</p>
+    <ul>
+      <li><strong>Media access (Audio):</strong> Reading your local music files and metadata</li>
+      <li><strong>Internet:</strong> Weather DJ feature only &ndash; fetches current weather conditions from Open-Meteo API (see Section 5). No personal data is sent.</li>
+      <li><strong>Microphone (RECORD_AUDIO):</strong> Audio Visualizer (real-time visualization of playing music) and Car Cabin Calibrator (acoustic measurement of your car cabin). No recordings are created, stored, or transmitted.</li>
+      <li><strong>Location (GPS):</strong> Geo-Music (playlist by location), Drive Mode DJ (speed detection), Sound Souvenir (music memories), Weather DJ (weather for your location), Speed-based Volume (driving speed) &ndash; local only</li>
+      <li><strong>WiFi state:</strong> Geo-Music feature &ndash; detecting current WiFi network name for SSID-based playlist rules</li>
+      <li><strong>Activity recognition:</strong> Smart DJ and Geo-Music &ndash; detecting movement type (walking, running, driving) for automatic music selection. No activity profiles are created or stored.</li>
+      <li><strong>Bluetooth:</strong> Auto-resume playback on Bluetooth connection, Passenger Mode (device-to-device connection via Nearby Connections). No device information is stored permanently.</li>
+      <li><strong>System settings:</strong> Set a song as system ringtone (only the setting you explicitly choose)</li>
+      <li><strong>Foreground service:</strong> Background music playback</li>
+      <li><strong>Notifications:</strong> Playback controls in notification bar</li>
+      <li><strong>Health Connect (READ_HEART_RATE):</strong> Heartbeat Sync DJ Smartwatch mode &ndash; reads your current heart rate from Health Connect to automatically select tempo-matching music. Opt-in only, no data stored or transmitted.</li>
+    </ul>
+  </section>
+
+  <section id="en-5">
+    <h2>5. Network Communication</h2>
+    <p>AutoPlayer makes exactly one type of network request:</p>
+    <ul>
+      <li><strong>Weather DJ:</strong> When activated, the App sends your approximate GPS coordinates (latitude and longitude) to the Open-Meteo API (api.open-meteo.com) to retrieve current weather conditions. This is necessary to select weather-appropriate music.</li>
+    </ul>
+    <p class="sub-heading">Important:</p>
+    <ul>
+      <li>Open-Meteo is a free, open-source weather API</li>
+      <li>Only GPS coordinates are sent &ndash; no device ID, no user ID, no personal data</li>
+      <li>The request is only made when you actively use Weather DJ</li>
+      <li>No data is cached or stored beyond the current weather result</li>
+      <li>You can use AutoPlayer fully without this feature</li>
+      <li>Open-Meteo privacy policy: <a href="https://open-meteo.com/en/terms" target="_blank" rel="noopener">https://open-meteo.com/en/terms</a></li>
+    </ul>
+    <p>All other features work completely offline without any network connection.</p>
+  </section>
+
+  <section id="en-6">
+    <h2>6. Sensor Access</h2>
+    <p>The following device sensors are accessed without requiring additional Android permissions:</p>
+    <ul>
+      <li><strong>Ambient light sensor:</strong> Automatic dark/light mode switching based on ambient brightness (only when &quot;Auto&quot; design is selected)</li>
+      <li><strong>Accelerometer:</strong> Sleep Fade Intelligence (detecting sleep via movement cessation) and Shake to Shuffle (detecting shake gestures). Data is processed in real-time only &ndash; no movement data is stored or transmitted.</li>
+      <li><strong>Step counter:</strong> Geo-Music feature (detecting walking activity). Count is used in real-time only &ndash; no step history is stored.</li>
+    </ul>
+  </section>
+
+  <section id="en-7">
+    <h2>7. Audio Processing</h2>
+    <p>Several features process audio in real-time without creating any recordings:</p>
+    <ul>
+      <li><strong>Vocal Isolator:</strong> Center-channel extraction algorithm applied to stereo audio in real-time. No modified audio is saved.</li>
+      <li><strong>Binaural Beat Layer:</strong> Procedurally generated audio tones played alongside music. No data is stored.</li>
+      <li><strong>Audio Atmosphere Mixer:</strong> Procedurally generated ambient sounds (rain, ocean, etc.) mixed under music. No data is stored.</li>
+      <li><strong>Beat-Match Crossfade:</strong> Temporary playback speed adjustment for BPM-aligned transitions. No data is stored.</li>
+      <li><strong>Live Concert Simulator:</strong> Real-time reverb and bass effects applied via Android audio APIs. No data is stored.</li>
+      <li><strong>Equalizer and effects:</strong> All audio modifications are applied in real-time and do not create copies of your music files.</li>
+    </ul>
+  </section>
+
+  <section id="en-8">
+    <h2>8. File Modifications</h2>
+    <p>The following functions can modify files on your device at your explicit request:</p>
+    <ul>
+      <li><strong>Tag Editor:</strong> Edit ID3 tags (title, artist, album, year, track number)</li>
+      <li><strong>Tag Rescue:</strong> Batch-fix missing tags by extracting information from filenames</li>
+      <li><strong>Track Cutter:</strong> Trim audio files (original is preserved, trimmed version saved as new file)</li>
+      <li><strong>Delete Song:</strong> Permanently delete an audio file (requires explicit confirmation)</li>
+    </ul>
+  </section>
+
+  <section id="en-9">
+    <h2>9. Data Storage and Security</h2>
+    <p>All data is stored exclusively locally on your device, protected by the Android sandbox. The only network communication is the optional Weather DJ request (Section 5). No cloud sync, no user accounts, no server-side storage.</p>
+  </section>
+
+  <section id="en-10">
+    <h2>10. Data Deletion</h2>
+    <p>Uninstalling the App completely removes all app-related data: settings, playlists, favorites, play history, queue presets, Geo-Music rules, hidden songs, equalizer settings, audio analysis data, Sound Souvenir memories, cabin calibrator profiles, and local error logs. Your music files remain unaffected.</p>
+    <p>Within the App, you can selectively delete playlists, favorites, geo-rules, play history, queue presets, Sound Souvenir memories, cabin profiles, and reset settings at any time.</p>
+  </section>
+
+  <section id="en-11">
+    <h2>11. Third-Party Services and Libraries</h2>
+    <ul>
+      <li><strong>Open-Meteo API</strong> (api.open-meteo.com): Weather data for Weather DJ feature. Free, open-source. Only receives GPS coordinates when Weather DJ is active. See: <a href="https://open-meteo.com/en/terms" target="_blank" rel="noopener">https://open-meteo.com/en/terms</a></li>
+      <li><strong>Google Nearby Connections:</strong> Peer-to-peer communication for Passenger Mode. No data is routed through Google servers.</li>
+      <li><strong>AndroidX, Media3 ExoPlayer, Coil, Room, DataStore, AppCompat:</strong> None of these libraries collect, transmit, or share user data.</li>
+    </ul>
+  </section>
+
+  <section id="en-12">
+    <h2>12. Children (COPPA/GDPR-K)</h2>
+    <p>The App is family-friendly with no age-restricted content, no in-app purchases, no advertising, and no social interaction. No personal data is collected or profiled. There are no special risks for minors.</p>
+  </section>
+
+  <section id="en-13">
+    <h2>13. International Regulations</h2>
+    <p><strong>GDPR (EU):</strong> No personal data is collected or transmitted to third parties. Your rights under Art. 15&ndash;22 GDPR (access, rectification, erasure, restriction, portability, objection) can be exercised by contacting us. The only external data transfer (Weather DJ) involves no personal data.</p>
+    <p><strong>CCPA (California):</strong> No personal information is sold or shared.</p>
+    <p><strong>LGPD (Brazil):</strong> No personal data is processed or transferred internationally.</p>
+  </section>
+
+  <section id="en-14">
+    <h2>14. Changes</h2>
+    <p>Changes to this privacy policy will be published in the App and communicated for significant changes.</p>
+  </section>
+
+  <section id="en-15">
+    <h2>15. Contact</h2>
+    <p>For questions about this privacy policy:<br>
+    <a href="mailto:zappelmann+autoplayer@googlemail.com">zappelmann+autoplayer@googlemail.com</a></p>
+  </section>
+</div>
+
+</main>
+
+<footer>
+  <div>
+    <a href="mailto:zappelmann+autoplayer@googlemail.com">zappelmann+autoplayer@googlemail.com</a>
+  </div>
+  <div class="footer-links">
+    <span id="footer-privacy-link"><strong id="footer-privacy-text">Datenschutzerklaerung</strong></span>
+    <span>&middot;</span>
+    <a href="terms.html" id="footer-terms-link" id="footer-terms-text">Nutzungsbedingungen</a>
+  </div>
+</footer>
+
+<script>
+// === Language config ===
+const langOptions = [
+  {code:'de', flag:'\u{1F1E9}\u{1F1EA}', name:'Deutsch'},
+  {code:'en', flag:'\u{1F1EC}\u{1F1E7}', name:'English'}
+];
+
+const uiLabels = {
+  de: { tocTitle: 'Inhaltsverzeichnis', footerPrivacy: 'Datenschutzerklaerung', footerTerms: 'Nutzungsbedingungen', pageTitle: 'AutoPlayer \u2014 Datenschutzerklaerung' },
+  en: { tocTitle: 'Table of Contents', footerPrivacy: 'Privacy Policy', footerTerms: 'Terms of Service', pageTitle: 'AutoPlayer \u2014 Privacy Policy' }
+};
+
+let currentLang = 'de';
+
+// === ToC generation ===
+function buildToc(lang) {
+  const content = document.getElementById('content-' + lang);
+  const toc = document.getElementById('toc-' + lang);
+  if (!content || !toc) return;
+  const headings = content.querySelectorAll('section h2');
+  const label = (uiLabels[lang] || uiLabels.en).tocTitle;
+  let html = '<h3 class="toc-title" onclick="this.parentElement.classList.toggle(\'collapsed\')">' + label + '</h3><ol>';
+  headings.forEach(function(h) {
+    const id = h.parentElement.id;
+    html += '<li><a href="#' + id + '">' + h.textContent + '</a></li>';
+  });
+  html += '</ol>';
+  toc.innerHTML = html;
+}
+
+// === Language dropdown ===
+function buildLangDropdown() {
+  var list = document.getElementById('langList');
+  var html = '';
+  langOptions.forEach(function(l) {
+    html += '<div class="lang-opt' + (l.code === currentLang ? ' active' : '') + '" onclick="selectLang(\'' + l.code + '\')">' + l.flag + ' ' + l.name + '</div>';
+  });
+  list.innerHTML = html;
+  if (typeof twemoji !== 'undefined') twemoji.parse(list, {folder:'svg', ext:'.svg'});
+}
+
+function selectLang(code) {
+  document.getElementById('langList').classList.remove('open');
+  switchLang(code);
+}
+
+document.addEventListener('click', function(e) {
+  if (!document.getElementById('langDrop').contains(e.target)) {
+    document.getElementById('langList').classList.remove('open');
+  }
+});
+
+function switchLang(lang) {
+  currentLang = lang;
+  localStorage.setItem('lp_lang', lang);
+
+  // Show/hide content
+  document.querySelectorAll('.legal-content').forEach(function(el) {
+    el.classList.toggle('active', el.dataset.lang === lang);
+  });
+
+  // Update dropdown button
+  var opt = langOptions.find(function(l) { return l.code === lang; }) || langOptions[0];
+  var btn = document.getElementById('langCurrent');
+  btn.textContent = opt.flag + ' ' + opt.name;
+  if (typeof twemoji !== 'undefined') twemoji.parse(btn.parentElement, {folder:'svg', ext:'.svg'});
+
+  // Update URL
+  var url = new URL(window.location);
+  url.searchParams.set('lang', lang);
+  window.history.replaceState({}, '', url);
+
+  // Update page title
+  var labels = uiLabels[lang] || uiLabels.en;
+  document.title = labels.pageTitle;
+
+  // Update footer
+  document.getElementById('footer-privacy-text').textContent = labels.footerPrivacy;
+  document.getElementById('footer-terms-link').textContent = labels.footerTerms;
+  document.getElementById('footer-terms-link').href = 'terms.html?lang=' + lang;
+
+  // Update HTML lang
+  document.documentElement.lang = lang;
+
+  buildLangDropdown();
+}
+
+function detectLang() {
+  var params = new URLSearchParams(window.location.search);
+  var urlLang = params.get('lang');
+  if (urlLang && langOptions.find(function(l) { return l.code === urlLang; })) return urlLang;
+  if (urlLang) return 'en';
+  var saved = localStorage.getItem('lp_lang');
+  if (saved && langOptions.find(function(l) { return l.code === saved; })) return saved;
+  var browserLang = navigator.language.substring(0, 2);
+  if (langOptions.find(function(l) { return l.code === browserLang; })) return browserLang;
+  return 'en';
+}
+
+// === Smooth scroll ===
+document.addEventListener('click', function(e) {
+  if (e.target.tagName === 'A' && e.target.getAttribute('href') && e.target.getAttribute('href').charAt(0) === '#') {
+    e.preventDefault();
+    var target = document.getElementById(e.target.getAttribute('href').substring(1));
+    if (target) {
+      var headerHeight = document.querySelector('header').offsetHeight;
+      var top = target.getBoundingClientRect().top + window.pageYOffset - headerHeight - 16;
+      window.scrollTo({top: top, behavior: 'smooth'});
+    }
+  }
+});
+
+// === Init ===
+function init() {
+  // Build ToC for all languages
+  langOptions.forEach(function(l) { buildToc(l.code); });
+
+  // Detect and set language
+  currentLang = detectLang();
+  switchLang(currentLang);
+
+  // Collapse ToC on mobile
+  if (window.innerWidth <= 600) {
+    document.querySelectorAll('.toc').forEach(function(t) { t.classList.add('collapsed'); });
+  }
+
+  // Parse twemoji
+  if (typeof twemoji !== 'undefined') twemoji.parse(document.body, {folder:'svg', ext:'.svg'});
+}
+
+document.addEventListener('DOMContentLoaded', init);
+</script>
+
+</body>
+</html>

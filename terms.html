@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AutoPlayer — Nutzungsbedingungen</title>
+<script src="https://cdn.jsdelivr.net/npm/@twemoji/api@latest/dist/twemoji.min.js" crossorigin="anonymous"></script>
+<style>
+:root {
+  --bg: #ffffff;
+  --card: #f8f9fa;
+  --text: #333333;
+  --heading: #1a1a2e;
+  --accent: #e94560;
+  --link: #2563eb;
+  --border: #e5e7eb;
+  --muted: #6b7280;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+  font-size: 16px;
+}
+a { color: var(--link); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* Header */
+header {
+  background: var(--heading);
+  color: #fff;
+  padding: 16px 24px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+.header-inner {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+.brand {
+  font-size: 1.25em;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+}
+.brand .emoji { width: 24px; height: 24px; }
+
+/* Language dropdown */
+.lang-drop { position: relative; display: inline-block; flex-shrink: 0; }
+.lang-btn {
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.3);
+  background: rgba(255,255,255,0.1);
+  color: #fff;
+  font-size: 0.85em;
+  cursor: pointer;
+  min-width: 150px;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.lang-btn:hover { border-color: var(--accent); }
+.lang-btn::after { content: "\25BE"; margin-left: auto; }
+.lang-list {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  max-height: 300px;
+  overflow-y: auto;
+  z-index: 200;
+  min-width: 180px;
+  margin-top: 4px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+}
+.lang-list.open { display: block; }
+.lang-opt {
+  padding: 8px 12px;
+  cursor: pointer;
+  font-size: 0.85em;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+  color: var(--text);
+}
+.lang-opt:hover { background: #f3f4f6; }
+.lang-opt.active { background: #fde8ec; color: var(--accent); font-weight: 600; }
+.lang-opt img.emoji { width: 20px; height: 20px; }
+
+/* Main content */
+main {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px 24px 60px;
+}
+h1 {
+  font-size: 1.75em;
+  color: var(--heading);
+  margin-bottom: 8px;
+  line-height: 1.3;
+}
+.meta {
+  color: var(--muted);
+  font-size: 0.9em;
+  margin-bottom: 32px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--border);
+}
+
+/* Table of contents */
+.toc {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 20px 24px;
+  margin-bottom: 40px;
+}
+.toc-title {
+  font-size: 1em;
+  font-weight: 600;
+  color: var(--heading);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  user-select: none;
+}
+.toc-title::after { content: "\25B4"; font-size: 0.8em; color: var(--muted); }
+.toc.collapsed .toc-title::after { content: "\25BE"; }
+.toc ol {
+  margin-top: 12px;
+  padding-left: 20px;
+  columns: 2;
+  column-gap: 24px;
+}
+.toc.collapsed ol { display: none; }
+.toc li {
+  margin-bottom: 4px;
+  font-size: 0.9em;
+  break-inside: avoid;
+}
+.toc a { color: var(--text); }
+.toc a:hover { color: var(--accent); }
+
+/* Sections */
+section { margin-bottom: 36px; }
+section h2 {
+  font-size: 1.2em;
+  color: var(--accent);
+  margin-bottom: 12px;
+  padding-bottom: 6px;
+  border-bottom: 2px solid #fde8ec;
+}
+section p { margin-bottom: 12px; }
+section ul {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 12px;
+}
+section ul li {
+  padding: 4px 0 4px 20px;
+  position: relative;
+}
+section ul li::before {
+  content: "\2022";
+  color: var(--accent);
+  font-weight: bold;
+  position: absolute;
+  left: 4px;
+}
+section .sub-heading {
+  font-weight: 600;
+  color: var(--heading);
+  margin: 16px 0 8px;
+}
+
+/* Footer */
+footer {
+  background: var(--card);
+  border-top: 1px solid var(--border);
+  padding: 24px;
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.85em;
+}
+footer a { color: var(--accent); }
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin-top: 12px;
+}
+
+/* Legal content visibility */
+.legal-content { display: none; }
+.legal-content.active { display: block; }
+
+/* Responsive */
+@media (max-width: 600px) {
+  main { padding: 24px 16px 40px; }
+  h1 { font-size: 1.4em; }
+  .toc ol { columns: 1; }
+  .header-inner { flex-wrap: wrap; }
+  .lang-btn { min-width: 130px; font-size: 0.8em; }
+}
+
+/* Print */
+@media print {
+  header, .lang-drop, footer { display: none; }
+  main { padding: 0; max-width: 100%; }
+  body { font-size: 12pt; line-height: 1.5; }
+  section h2 { color: #000; border-bottom-color: #ccc; }
+  .toc { border-color: #ccc; background: #f5f5f5; }
+  a { color: #000; text-decoration: underline; }
+  a[href]::after { content: " (" attr(href) ")"; font-size: 0.85em; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="brand"><span>&#127925;</span> AutoPlayer</div>
+    <div class="lang-drop" id="langDrop">
+      <div class="lang-btn" id="langBtn" onclick="document.getElementById('langList').classList.toggle('open')">
+        <span id="langCurrent">&#127465;&#127466; Deutsch</span>
+      </div>
+      <div class="lang-list" id="langList"></div>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- ===== GERMAN CONTENT ===== -->
+<div class="legal-content" data-lang="de" id="content-de">
+  <h1>Nutzungsbedingungen &ndash; AutoPlayer</h1>
+  <p class="meta">Letzte Aktualisierung: 11.03.2026 &middot; Version 1.1</p>
+
+  <nav class="toc" id="toc-de"></nav>
+
+  <section id="de-1">
+    <h2>1. Geltungsbereich</h2>
+    <p>Diese Nutzungsbedingungen regeln die Nutzung der mobilen Anwendung &quot;AutoPlayer&quot; (nachfolgend &quot;App&quot;) zwischen dem Anbieter und dem Nutzer. Mit der Installation und Nutzung der App erklaert sich der Nutzer mit diesen Nutzungsbedingungen einverstanden.</p>
+    <p>Der Anbieter behaelt sich das Recht vor, diese Nutzungsbedingungen jederzeit zu aendern. Aenderungen werden in der App veroeffentlicht. Die fortgesetzte Nutzung der App nach Veroeffentlichung geaenderter Nutzungsbedingungen gilt als Zustimmung zu den Aenderungen.</p>
+  </section>
+
+  <section id="de-2">
+    <h2>2. Vertragsgegenstand</h2>
+    <p>AutoPlayer ist eine kostenlose, werbefreie MP3-Player-Anwendung fuer Android mit Android Auto Unterstuetzung. Die App ermoeglicht die Wiedergabe lokal auf dem Geraet gespeicherter Audio-Dateien sowie deren Organisation in Playlists, Favoriten und weiteren Funktionen.</p>
+    <p>Die App arbeitet vollstaendig offline. Es werden keine Daten an Server oder Dritte uebertragen.</p>
+  </section>
+
+  <section id="de-3">
+    <h2>3. Nutzungsrecht und Lizenz</h2>
+    <p>Der Anbieter gewaehrt dem Nutzer ein unentgeltliches, nicht-exklusives, nicht uebertragbares, widerrufliches Recht zur Nutzung der App auf Android-Geraeten fuer private, nicht-kommerzielle Zwecke.</p>
+    <p>Der Nutzer darf die App:</p>
+    <ul>
+      <li>auf eigenen Android-Geraeten installieren und nutzen</li>
+      <li>fuer persoenliche, nicht-kommerzielle Zwecke verwenden</li>
+    </ul>
+    <p>Der Nutzer darf die App NICHT:</p>
+    <ul>
+      <li>dekompilieren, disassemblieren oder reverse-engineeren (soweit nicht nach &sect; 69e UrhG oder Art. 6 der EU-Richtlinie 2009/24/EG ausdruecklich gestattet)</li>
+      <li>veraendern, anpassen oder abgeleitete Werke erstellen</li>
+      <li>vervielfaeltigen, verbreiten, verleihen oder oeffentlich zugaenglich machen</li>
+      <li>fuer kommerzielle Zwecke nutzen</li>
+      <li>Sicherheitsmechanismen umgehen oder entfernen</li>
+      <li>als eigenes Produkt ausgeben oder unter eigenem Namen vertreiben</li>
+    </ul>
+  </section>
+
+  <section id="de-4">
+    <h2>4. Geistiges Eigentum und Urheberrecht</h2>
+    <p>Alle Rechte an der App, einschliesslich Quellcode, Design, Grafiken, Icons, Texte und sonstiger Inhalte, stehen dem Anbieter zu und sind nach dem deutschen Urheberrechtsgesetz (UrhG), dem europaeischen Recht und internationalen Urheberrechtsabkommen geschuetzt.</p>
+    <p>Die in der App verwendeten Drittanbieter-Bibliotheken (AndroidX, Media3, Coil, Room, DataStore, Google Nearby Connections) unterliegen ihren jeweiligen Open-Source-Lizenzen.</p>
+    <p>Der Name &quot;AutoPlayer&quot;, das App-Symbol und zugehoerige Markenzeichen sind Eigentum des Anbieters.</p>
+  </section>
+
+  <section id="de-5">
+    <h2>5. Pflichten des Nutzers</h2>
+    <p>Der Nutzer verpflichtet sich:</p>
+    <ul>
+      <li>die App nur in Uebereinstimmung mit diesen Nutzungsbedingungen und geltendem Recht zu nutzen</li>
+      <li>die App nicht fuer rechtswidrige Zwecke zu verwenden</li>
+      <li>keine Urheberrechte oder sonstigen Rechte Dritter zu verletzen</li>
+      <li>nur Audio-Dateien abzuspielen, an denen er die entsprechenden Nutzungsrechte besitzt</li>
+      <li>die Sicherheit des eigenen Geraets nicht durch unsachgemaesse Nutzung der App zu gefaehrden</li>
+    </ul>
+    <p>Der Nutzer traegt die alleinige Verantwortung fuer die Inhalte (Musikdateien), die er mit der App abspielt. Der Anbieter uebernimmt keine Haftung fuer urheberrechtlich geschuetzte Inhalte des Nutzers.</p>
+  </section>
+
+  <section id="de-6">
+    <h2>6. Verfuegbarkeit und Aenderungen</h2>
+    <p>Der Anbieter bemuetht sich, die App fehlerfrei und stabil zur Verfuegung zu stellen, uebernimmt jedoch keine Garantie fuer:</p>
+    <ul>
+      <li>die ununterbrochene oder fehlerfreie Verfuegbarkeit der App</li>
+      <li>die Kompatibilitaet mit allen Android-Geraeten oder Android-Versionen</li>
+      <li>die Funktionsfaehigkeit aller Features auf allen Geraeten</li>
+    </ul>
+    <p>Der Anbieter kann die App jederzeit aendern, aktualisieren oder einstellen. Wesentliche Aenderungen werden dem Nutzer in der App mitgeteilt.</p>
+  </section>
+
+  <section id="de-7">
+    <h2>7. Haftungsbeschraenkung</h2>
+    <p>Die App wird &quot;wie besehen&quot; und &quot;wie verfuegbar&quot; ohne jegliche ausdrueckliche oder stillschweigende Gewaehrleistung bereitgestellt.</p>
+    <p>Im Rahmen des gesetzlich Zulaessigen gilt:</p>
+    <ul>
+      <li>Der Anbieter haftet nur fuer Schaeden, die auf vorsaetzlichem oder grob fahrlaessigem Verhalten beruhen (&sect;&sect; 276, 280 BGB).</li>
+      <li>Bei leichter Fahrlaessigkeit haftet der Anbieter nur bei Verletzung wesentlicher Vertragspflichten (Kardinalpflichten), begrenzt auf den vorhersehbaren, vertragstypischen Schaden.</li>
+      <li>Die Haftung fuer Schaeden an Leben, Koerper und Gesundheit bleibt unberuehrt (&sect; 309 Nr. 7a BGB).</li>
+      <li>Die Haftung nach dem Produkthaftungsgesetz (ProdHaftG) bleibt unberuehrt.</li>
+    </ul>
+    <p>Der Anbieter haftet insbesondere NICHT fuer:</p>
+    <ul>
+      <li>Datenverlust auf dem Geraet des Nutzers</li>
+      <li>Schaeden durch unsachgemaesse Nutzung der App</li>
+      <li>Schaeden durch die Nutzung der App waehrend des Fahrens</li>
+      <li>Inkompatibilitaeten mit Geraeten oder Betriebssystemversionen</li>
+    </ul>
+  </section>
+
+  <section id="de-8">
+    <h2>8. Gewaehrleistung</h2>
+    <p>Da die App unentgeltlich bereitgestellt wird, gelten die Gewaehrleistungsregeln fuer Schenkungen gemaess &sect;&sect; 516 ff. BGB. Der Anbieter haftet nur fuer arglistig verschwiegene Maengel (&sect; 524 BGB).</p>
+    <p>Der Nutzer kann Fehler oder Probleme jederzeit unter <a href="mailto:zappelmann+autoplayer@googlemail.com">zappelmann+autoplayer@googlemail.com</a> melden. Der Anbieter bemuetht sich, gemeldete Fehler zeitnah zu beheben, ist hierzu jedoch nicht verpflichtet.</p>
+  </section>
+
+  <section id="de-9">
+    <h2>9. Datenschutz</h2>
+    <p>Die Verarbeitung personenbezogener Daten richtet sich nach der Datenschutzerklaerung der App, die ueber das Menue &quot;Ueber die App&quot; abrufbar ist.</p>
+    <p><strong>Zusammenfassung:</strong> AutoPlayer erhebt, speichert und uebertraegt keine personenbezogenen Daten an Dritte oder Server. Alle Daten werden ausschliesslich lokal auf dem Geraet des Nutzers verarbeitet.</p>
+  </section>
+
+  <section id="de-10">
+    <h2>10. Nutzung im Strassenverkehr</h2>
+    <p>Der Nutzer ist eigenverantwortlich fuer die sichere Bedienung der App waehrend der Teilnahme am Strassenverkehr. Die Nutzung der App darf nicht gegen geltende Verkehrsvorschriften verstossen, insbesondere:</p>
+    <ul>
+      <li>&sect; 23 Abs. 1a StVO (Nutzung elektronischer Geraete im Strassenverkehr)</li>
+      <li>Die App sollte im Fahrzeug ausschliesslich ueber Android Auto, Sprachsteuerung oder Beifahrer bedient werden</li>
+      <li>Der Fahrer darf waehrend der Fahrt nicht durch die Bedienung der App abgelenkt werden</li>
+    </ul>
+    <p>Der Anbieter uebernimmt keine Haftung fuer Unfaelle oder Verstoesse, die durch die Nutzung der App waehrend der Fahrt entstehen.</p>
+  </section>
+
+  <section id="de-11">
+    <h2>11. Beendigung</h2>
+    <p>Der Nutzer kann die Nutzung jederzeit durch Deinstallation der App beenden. Mit der Deinstallation werden alle App-bezogenen Daten vollstaendig geloescht. Die Musikdateien des Nutzers bleiben unberuehrt.</p>
+    <p>Der Anbieter kann das Nutzungsrecht widerrufen, wenn der Nutzer gegen diese Nutzungsbedingungen verstoesst.</p>
+  </section>
+
+  <section id="de-12">
+    <h2>12. Aenderungen der Nutzungsbedingungen</h2>
+    <p>Der Anbieter behaelt sich vor, diese Nutzungsbedingungen jederzeit zu aendern. Aenderungen werden in der App veroeffentlicht. Bei wesentlichen Aenderungen wird der Nutzer beim naechsten Start der App informiert.</p>
+    <p>Die fortgesetzte Nutzung der App nach Veroeffentlichung geaenderter Nutzungsbedingungen gilt als Zustimmung zu den Aenderungen.</p>
+  </section>
+
+  <section id="de-13">
+    <h2>13. Anwendbares Recht und Gerichtsstand</h2>
+    <p>Es gilt das Recht der Bundesrepublik Deutschland unter Ausschluss des UN-Kaufrechts (CISG).</p>
+    <p>Fuer Verbraucher im Sinne des &sect; 13 BGB gelten die zwingenden Verbraucherschutzbestimmungen des Staates, in dem der Verbraucher seinen gewoehnlichen Aufenthalt hat, sofern diese guenstiger sind (Art. 6 Abs. 2 Rom-I-VO).</p>
+    <p>Die Europaeische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit: <a href="https://ec.europa.eu/consumers/odr/" target="_blank" rel="noopener">https://ec.europa.eu/consumers/odr/</a>. Der Anbieter ist weder bereit noch verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p>
+  </section>
+
+  <section id="de-14">
+    <h2>14. Salvatorische Klausel</h2>
+    <p>Sollten einzelne Bestimmungen dieser Nutzungsbedingungen unwirksam oder undurchfuehrbar sein oder werden, so wird die Wirksamkeit der uebrigen Bestimmungen davon nicht beruehrt.</p>
+  </section>
+
+  <section id="de-15">
+    <h2>15. Kontakt</h2>
+    <p>Bei Fragen zu diesen Nutzungsbedingungen:<br>
+    <a href="mailto:zappelmann+autoplayer@googlemail.com">zappelmann+autoplayer@googlemail.com</a></p>
+  </section>
+</div>
+
+<!-- ===== ENGLISH CONTENT ===== -->
+<div class="legal-content" data-lang="en" id="content-en">
+  <h1>Terms of Service &ndash; AutoPlayer</h1>
+  <p class="meta">Last updated: 2026-03-11 &middot; Version 1.1</p>
+
+  <nav class="toc" id="toc-en"></nav>
+
+  <section id="en-1">
+    <h2>1. Scope</h2>
+    <p>These Terms of Service govern the use of the mobile application &quot;AutoPlayer&quot; (hereinafter &quot;App&quot;) between the provider and the user. By installing and using the App, the user agrees to these Terms of Service.</p>
+    <p>The provider reserves the right to change these Terms of Service at any time. Changes will be published in the App. Continued use of the App after publication of changed Terms of Service constitutes acceptance of the changes.</p>
+  </section>
+
+  <section id="en-2">
+    <h2>2. Subject Matter</h2>
+    <p>AutoPlayer is a free, ad-free MP3 player application for Android with Android Auto support. The App enables playback of audio files stored locally on the device as well as their organization in playlists, favorites, and other features.</p>
+    <p>The App operates entirely offline. No data is transmitted to servers or third parties.</p>
+  </section>
+
+  <section id="en-3">
+    <h2>3. Right of Use and License</h2>
+    <p>The provider grants the user a free, non-exclusive, non-transferable, revocable right to use the App on Android devices for private, non-commercial purposes.</p>
+    <p>The user may:</p>
+    <ul>
+      <li>Install and use the App on their own Android devices</li>
+      <li>Use it for personal, non-commercial purposes</li>
+    </ul>
+    <p>The user may NOT:</p>
+    <ul>
+      <li>Decompile, disassemble, or reverse-engineer the App (except as expressly permitted under applicable law)</li>
+      <li>Modify, adapt, or create derivative works</li>
+      <li>Reproduce, distribute, lend, or make publicly available</li>
+      <li>Use for commercial purposes</li>
+      <li>Circumvent or remove security mechanisms</li>
+      <li>Represent as own product or distribute under own name</li>
+    </ul>
+  </section>
+
+  <section id="en-4">
+    <h2>4. Intellectual Property and Copyright</h2>
+    <p>All rights to the App, including source code, design, graphics, icons, texts, and other content, belong to the provider and are protected under applicable copyright laws and international copyright agreements.</p>
+    <p>Third-party libraries used in the App (AndroidX, Media3, Coil, Room, DataStore, Google Nearby Connections) are subject to their respective open-source licenses.</p>
+    <p>The name &quot;AutoPlayer&quot;, the app icon, and associated trademarks are property of the provider.</p>
+  </section>
+
+  <section id="en-5">
+    <h2>5. User Obligations</h2>
+    <p>The user agrees to:</p>
+    <ul>
+      <li>Use the App only in accordance with these Terms and applicable law</li>
+      <li>Not use the App for unlawful purposes</li>
+      <li>Not infringe copyrights or other third-party rights</li>
+      <li>Only play audio files for which they hold the appropriate usage rights</li>
+      <li>Not endanger device security through improper use of the App</li>
+    </ul>
+    <p>The user bears sole responsibility for the content (music files) played with the App. The provider assumes no liability for copyrighted content of the user.</p>
+  </section>
+
+  <section id="en-6">
+    <h2>6. Availability and Changes</h2>
+    <p>The provider endeavors to provide the App free of errors and stable, but does not guarantee:</p>
+    <ul>
+      <li>Uninterrupted or error-free availability of the App</li>
+      <li>Compatibility with all Android devices or Android versions</li>
+      <li>Functionality of all features on all devices</li>
+    </ul>
+    <p>The provider may change, update, or discontinue the App at any time. Significant changes will be communicated to the user in the App.</p>
+  </section>
+
+  <section id="en-7">
+    <h2>7. Limitation of Liability</h2>
+    <p>The App is provided &quot;as is&quot; and &quot;as available&quot; without any express or implied warranty.</p>
+    <p>To the extent permitted by law:</p>
+    <ul>
+      <li>The provider is only liable for damages caused by intentional or grossly negligent conduct.</li>
+      <li>For slight negligence, the provider is only liable for breach of essential contractual obligations, limited to foreseeable, contract-typical damages.</li>
+      <li>Liability for damages to life, body, and health remains unaffected.</li>
+      <li>Liability under product liability law remains unaffected.</li>
+    </ul>
+    <p>The provider is specifically NOT liable for:</p>
+    <ul>
+      <li>Data loss on the user's device</li>
+      <li>Damages from improper use of the App</li>
+      <li>Damages from using the App while driving</li>
+      <li>Incompatibilities with devices or operating system versions</li>
+    </ul>
+  </section>
+
+  <section id="en-8">
+    <h2>8. Warranty</h2>
+    <p>Since the App is provided free of charge, warranty rules for gifts apply under applicable law. The provider is only liable for fraudulently concealed defects.</p>
+    <p>The user can report errors or problems at any time to <a href="mailto:zappelmann+autoplayer@googlemail.com">zappelmann+autoplayer@googlemail.com</a>. The provider endeavors to fix reported errors promptly but is not obligated to do so.</p>
+  </section>
+
+  <section id="en-9">
+    <h2>9. Privacy</h2>
+    <p>The processing of personal data is governed by the App's Privacy Policy, accessible via the menu &quot;About &rarr; Privacy Policy&quot;.</p>
+    <p><strong>Summary:</strong> AutoPlayer does not collect, store, or transmit any personal data to third parties or servers. All data is processed exclusively locally on the user's device.</p>
+  </section>
+
+  <section id="en-10">
+    <h2>10. Use in Road Traffic</h2>
+    <p>The user is solely responsible for safe operation of the App while participating in road traffic. Use of the App must not violate applicable traffic regulations.</p>
+    <ul>
+      <li>The App should be operated in vehicles exclusively via Android Auto, voice control, or by a passenger</li>
+      <li>The driver must not be distracted by operating the App while driving</li>
+    </ul>
+    <p>The provider assumes no liability for accidents or violations resulting from use of the App while driving.</p>
+  </section>
+
+  <section id="en-11">
+    <h2>11. Termination</h2>
+    <p>The user can terminate use at any time by uninstalling the App. Upon uninstallation, all app-related data is completely deleted. The user's music files remain unaffected.</p>
+    <p>The provider may revoke the right of use if the user violates these Terms of Service.</p>
+  </section>
+
+  <section id="en-12">
+    <h2>12. Changes to Terms of Service</h2>
+    <p>The provider reserves the right to change these Terms of Service at any time. Changes will be published in the App. For significant changes, the user will be informed upon next app launch.</p>
+    <p>Continued use of the App after publication of changed Terms constitutes acceptance of the changes.</p>
+  </section>
+
+  <section id="en-13">
+    <h2>13. Applicable Law and Jurisdiction</h2>
+    <p>The laws of the Federal Republic of Germany apply, excluding the UN Convention on Contracts for the International Sale of Goods (CISG).</p>
+    <p>For consumers, mandatory consumer protection provisions of the state of habitual residence apply if more favorable (Art. 6(2) Rome I Regulation).</p>
+    <p>The European Commission provides an Online Dispute Resolution platform: <a href="https://ec.europa.eu/consumers/odr/" target="_blank" rel="noopener">https://ec.europa.eu/consumers/odr/</a>. The provider is neither willing nor obligated to participate in dispute resolution proceedings before a consumer arbitration board.</p>
+  </section>
+
+  <section id="en-14">
+    <h2>14. Severability Clause</h2>
+    <p>If any provision of these Terms of Service is or becomes invalid or unenforceable, the validity of the remaining provisions shall not be affected.</p>
+  </section>
+
+  <section id="en-15">
+    <h2>15. Contact</h2>
+    <p>For questions about these Terms of Service:<br>
+    <a href="mailto:zappelmann+autoplayer@googlemail.com">zappelmann+autoplayer@googlemail.com</a></p>
+  </section>
+</div>
+
+</main>
+
+<footer>
+  <div>
+    <a href="mailto:zappelmann+autoplayer@googlemail.com">zappelmann+autoplayer@googlemail.com</a>
+  </div>
+  <div class="footer-links">
+    <a href="privacy.html" id="footer-privacy-link" id="footer-privacy-text">Datenschutzerklaerung</a>
+    <span>&middot;</span>
+    <span id="footer-terms-link"><strong id="footer-terms-text">Nutzungsbedingungen</strong></span>
+  </div>
+</footer>
+
+<script>
+// === Language config ===
+var langOptions = [
+  {code:'de', flag:'\u{1F1E9}\u{1F1EA}', name:'Deutsch'},
+  {code:'en', flag:'\u{1F1EC}\u{1F1E7}', name:'English'}
+];
+
+var uiLabels = {
+  de: { tocTitle: 'Inhaltsverzeichnis', footerPrivacy: 'Datenschutzerklaerung', footerTerms: 'Nutzungsbedingungen', pageTitle: 'AutoPlayer \u2014 Nutzungsbedingungen' },
+  en: { tocTitle: 'Table of Contents', footerPrivacy: 'Privacy Policy', footerTerms: 'Terms of Service', pageTitle: 'AutoPlayer \u2014 Terms of Service' }
+};
+
+var currentLang = 'de';
+
+// === ToC generation ===
+function buildToc(lang) {
+  var content = document.getElementById('content-' + lang);
+  var toc = document.getElementById('toc-' + lang);
+  if (!content || !toc) return;
+  var headings = content.querySelectorAll('section h2');
+  var label = (uiLabels[lang] || uiLabels.en).tocTitle;
+  var html = '<h3 class="toc-title" onclick="this.parentElement.classList.toggle(\'collapsed\')">' + label + '</h3><ol>';
+  headings.forEach(function(h) {
+    var id = h.parentElement.id;
+    html += '<li><a href="#' + id + '">' + h.textContent + '</a></li>';
+  });
+  html += '</ol>';
+  toc.innerHTML = html;
+}
+
+// === Language dropdown ===
+function buildLangDropdown() {
+  var list = document.getElementById('langList');
+  var html = '';
+  langOptions.forEach(function(l) {
+    html += '<div class="lang-opt' + (l.code === currentLang ? ' active' : '') + '" onclick="selectLang(\'' + l.code + '\')">' + l.flag + ' ' + l.name + '</div>';
+  });
+  list.innerHTML = html;
+  if (typeof twemoji !== 'undefined') twemoji.parse(list, {folder:'svg', ext:'.svg'});
+}
+
+function selectLang(code) {
+  document.getElementById('langList').classList.remove('open');
+  switchLang(code);
+}
+
+document.addEventListener('click', function(e) {
+  if (!document.getElementById('langDrop').contains(e.target)) {
+    document.getElementById('langList').classList.remove('open');
+  }
+});
+
+function switchLang(lang) {
+  currentLang = lang;
+  localStorage.setItem('lp_lang', lang);
+
+  // Show/hide content
+  document.querySelectorAll('.legal-content').forEach(function(el) {
+    el.classList.toggle('active', el.dataset.lang === lang);
+  });
+
+  // Update dropdown button
+  var opt = langOptions.find(function(l) { return l.code === lang; }) || langOptions[0];
+  var btn = document.getElementById('langCurrent');
+  btn.textContent = opt.flag + ' ' + opt.name;
+  if (typeof twemoji !== 'undefined') twemoji.parse(btn.parentElement, {folder:'svg', ext:'.svg'});
+
+  // Update URL
+  var url = new URL(window.location);
+  url.searchParams.set('lang', lang);
+  window.history.replaceState({}, '', url);
+
+  // Update page title
+  var labels = uiLabels[lang] || uiLabels.en;
+  document.title = labels.pageTitle;
+
+  // Update footer
+  document.getElementById('footer-privacy-text').textContent = labels.footerPrivacy;
+  document.getElementById('footer-privacy-link').href = 'privacy.html?lang=' + lang;
+  document.getElementById('footer-terms-text').textContent = labels.footerTerms;
+
+  // Update HTML lang
+  document.documentElement.lang = lang;
+
+  buildLangDropdown();
+}
+
+function detectLang() {
+  var params = new URLSearchParams(window.location.search);
+  var urlLang = params.get('lang');
+  if (urlLang && langOptions.find(function(l) { return l.code === urlLang; })) return urlLang;
+  if (urlLang) return 'en';
+  var saved = localStorage.getItem('lp_lang');
+  if (saved && langOptions.find(function(l) { return l.code === saved; })) return saved;
+  var browserLang = navigator.language.substring(0, 2);
+  if (langOptions.find(function(l) { return l.code === browserLang; })) return browserLang;
+  return 'en';
+}
+
+// === Smooth scroll ===
+document.addEventListener('click', function(e) {
+  if (e.target.tagName === 'A' && e.target.getAttribute('href') && e.target.getAttribute('href').charAt(0) === '#') {
+    e.preventDefault();
+    var target = document.getElementById(e.target.getAttribute('href').substring(1));
+    if (target) {
+      var headerHeight = document.querySelector('header').offsetHeight;
+      var top = target.getBoundingClientRect().top + window.pageYOffset - headerHeight - 16;
+      window.scrollTo({top: top, behavior: 'smooth'});
+    }
+  }
+});
+
+// === Init ===
+function init() {
+  langOptions.forEach(function(l) { buildToc(l.code); });
+  currentLang = detectLang();
+  switchLang(currentLang);
+  if (window.innerWidth <= 600) {
+    document.querySelectorAll('.toc').forEach(function(t) { t.classList.add('collapsed'); });
+  }
+  if (typeof twemoji !== 'undefined') twemoji.parse(document.body, {folder:'svg', ext:'.svg'});
+}
+
+document.addEventListener('DOMContentLoaded', init);
+</script>
+
+</body>
+</html>
