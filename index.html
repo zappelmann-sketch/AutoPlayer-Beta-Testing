@@ -7,7 +7,10 @@
 <style>
 :root{--bg:#1a1a2e;--card:#16213e;--accent:#e94560;--green:#4ecca3;--text:#eee;--muted:#888;--yellow:#ffc107;--red:#ff4444;--orange:#ff8800;--cyan:#00bcd4}
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);padding:16px;max-width:1000px;margin:0 auto}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);padding:12px;max-width:1000px;margin:0 auto;overflow-x:hidden}
+input,textarea,select{max-width:100%!important;box-sizing:border-box!important}
+.dev-item,.fw-item,.feedback-card,.cat,.stats,.guide-card,.tester-card,.device-card,.bug-summary,.feat-summary{overflow:hidden;word-wrap:break-word}
+@media(max-width:600px){body{padding:8px}.stats .s .n{font-size:1.3em}.stats .s{min-width:45px}.cat-h h2{font-size:0.9em}.ti-name{font-size:0.82em}.ti-detail{font-size:0.74em}.btn{padding:5px 10px;font-size:0.75em}}
 h1{color:var(--accent);margin-bottom:4px;font-size:1.7em}
 .sub{color:var(--muted);margin-bottom:16px;font-size:0.9em}
 .stats{background:var(--card);border-radius:12px;padding:14px 18px;margin-bottom:16px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;position:sticky;top:0;z-index:100;border:1px solid #333}
@@ -125,8 +128,9 @@ h1{color:var(--accent);margin-bottom:4px;font-size:1.7em}
 .dev-item-header label input[type=radio]{accent-color:var(--green)}
 .dev-item-header .dev-delete{background:none;border:none;color:var(--red);cursor:pointer;font-size:1em;padding:2px 6px;border-radius:4px}
 .dev-item-header .dev-delete:hover{background:rgba(255,68,68,0.15)}
-.dev-fields{display:grid;grid-template-columns:auto 1fr 1fr 1fr;gap:8px;align-items:center}
-@media(max-width:600px){.dev-fields{grid-template-columns:1fr 1fr}}
+.dev-fields{display:grid;grid-template-columns:auto 1fr 1fr 1fr;gap:8px;align-items:center;overflow:hidden}
+.dev-fields input{width:100%;min-width:0}
+@media(max-width:600px){.dev-fields{grid-template-columns:1fr 1fr}.dev-item{padding:8px}}
 .dev-fields label{font-size:0.72em;color:var(--muted)}
 .dev-fields input{padding:5px 8px;border-radius:5px;border:1px solid #444;background:#161b22;color:var(--text);font-size:0.82em;font-family:inherit}
 .dev-fields input:focus{outline:none;border-color:var(--accent)}
@@ -165,7 +169,8 @@ h1{color:var(--accent);margin-bottom:4px;font-size:1.7em}
 .fw-item input:focus{outline:none;border-color:var(--orange)}
 .fw-item textarea{width:100%;min-height:60px;padding:8px;border-radius:6px;border:1px solid #444;background:#0d1117;color:var(--text);font-size:0.82em;font-family:inherit;resize:vertical}
 .fw-item textarea:focus{outline:none;border-color:var(--orange)}
-.fw-item select{padding:6px;border-radius:6px;border:1px solid #444;background:#0d1117;color:var(--text);font-size:0.82em;margin-bottom:6px}
+.fw-item select{padding:6px;border-radius:6px;border:1px solid #444;background:#0d1117;color:var(--text);font-size:0.82em;margin-bottom:6px;max-width:100%}
+@media(max-width:600px){.fw-item{padding:8px}.fw-item input,.fw-item textarea,.fw-item select{font-size:0.78em}.fw-head{flex-wrap:wrap}}
 .star{font-size:2.5em;cursor:pointer;color:#555;transition:color 0.15s,transform 0.15s;-webkit-user-select:none;user-select:none}
 .star:hover{transform:scale(1.15)}
 .star.active{color:var(--yellow)}
@@ -180,7 +185,7 @@ h1{color:var(--accent);margin-bottom:4px;font-size:1.7em}
 <h1>AutoPlayer Testplan</h1>
 <p class="sub">Version 4.0.0 | Granularer Testplan | <span id="lastSaved"></span></p>
 </div>
-<select id="langSelect" onchange="switchLang(this.value)" style="padding:8px 12px;border-radius:8px;border:1px solid #444;background:var(--card);color:var(--text);font-size:0.85em;cursor:pointer">
+<select id="langSelect" onchange="switchLang(this.value)" style="padding:8px 12px;border-radius:8px;border:1px solid #444;background:var(--card);color:var(--text);font-size:0.85em;cursor:pointer;max-width:180px;flex-shrink:0">
 <option value="de">🇩🇪 Deutsch</option>
 <option value="en">🇬🇧 English</option>
 <option value="es">🇪🇸 Espanol</option>
