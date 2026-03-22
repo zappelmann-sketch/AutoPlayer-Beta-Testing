@@ -4,7 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AutoPlayer Testplan v4.0.0</title>
+<script src="https://cdn.jsdelivr.net/npm/@twemoji/api@latest/dist/twemoji.min.js" crossorigin="anonymous"></script>
 <style>
+img.emoji{height:1em;width:1em;margin:0 .05em 0 .1em;vertical-align:-0.1em}
+select img.emoji{height:14px;width:14px}
 :root{--bg:#1a1a2e;--card:#16213e;--accent:#e94560;--green:#4ecca3;--text:#eee;--muted:#888;--yellow:#ffc107;--red:#ff4444;--orange:#ff8800;--cyan:#00bcd4}
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);padding:12px;max-width:1000px;margin:0 auto;overflow-x:hidden}
@@ -169,11 +172,20 @@ h1{color:var(--accent);margin-bottom:4px;font-size:1.7em}
 .fw-item input:focus{outline:none;border-color:var(--orange)}
 .fw-item textarea{width:100%;min-height:60px;padding:8px;border-radius:6px;border:1px solid #444;background:#0d1117;color:var(--text);font-size:0.82em;font-family:inherit;resize:vertical}
 .fw-item textarea:focus{outline:none;border-color:var(--orange)}
-.fw-item select{padding:6px;border-radius:6px;border:1px solid #444;background:#0d1117;color:var(--text);font-size:0.82em;margin-bottom:6px;max-width:100%}
+.fw-item select{padding:8px;border-radius:6px;border:1px solid #444;background:#0d1117;color:var(--text);font-size:0.82em;width:100%;max-width:100%}
 @media(max-width:600px){.fw-item{padding:8px}.fw-item input,.fw-item textarea,.fw-item select{font-size:0.78em}.fw-head{flex-wrap:wrap}}
 .star{font-size:2.5em;cursor:pointer;color:#555;transition:color 0.15s,transform 0.15s;-webkit-user-select:none;user-select:none}
 .star:hover{transform:scale(1.15)}
 .star.active{color:var(--yellow)}
+.lang-drop{position:relative;display:inline-block;flex-shrink:0}
+.lang-btn{padding:8px 12px;border-radius:8px;border:1px solid #444;background:var(--card);color:var(--text);font-size:0.85em;cursor:pointer;min-width:160px;text-align:left;display:flex;align-items:center;gap:6px}
+.lang-btn:hover{border-color:var(--accent)}
+.lang-btn::after{content:"▾";margin-left:auto}
+.lang-list{display:none;position:absolute;top:100%;right:0;background:var(--card);border:1px solid #444;border-radius:8px;max-height:300px;overflow-y:auto;z-index:200;min-width:180px;margin-top:4px;box-shadow:0 8px 24px rgba(0,0,0,0.4)}
+.lang-list.open{display:block}
+.lang-opt{padding:8px 12px;cursor:pointer;font-size:0.85em;display:flex;align-items:center;gap:8px;white-space:nowrap}
+.lang-opt:hover{background:rgba(255,255,255,0.08)}
+.lang-opt.active{background:rgba(78,204,163,0.15);color:var(--green)}
 
 /* Device indicator badge */
 .dev-badge{background:var(--green);color:#000;font-size:0.68em;padding:2px 8px;border-radius:10px;font-weight:600;margin-left:8px}
@@ -185,33 +197,12 @@ h1{color:var(--accent);margin-bottom:4px;font-size:1.7em}
 <h1>AutoPlayer Testplan</h1>
 <p class="sub">Version 4.0.0 | Granularer Testplan | <span id="lastSaved"></span></p>
 </div>
-<select id="langSelect" onchange="switchLang(this.value)" style="padding:8px 12px;border-radius:8px;border:1px solid #444;background:var(--card);color:var(--text);font-size:0.85em;cursor:pointer;max-width:180px;flex-shrink:0">
-<option value="de">🇩🇪 Deutsch</option>
-<option value="en">🇬🇧 English</option>
-<option value="es">🇪🇸 Espanol</option>
-<option value="fr">🇫🇷 Francais</option>
-<option value="it">🇮🇹 Italiano</option>
-<option value="pt">🇧🇷 Portugues</option>
-<option value="tr">🇹🇷 Turkce</option>
-<option value="ru">🇷🇺 Russkij</option>
-<option value="uk">🇺🇦 Ukrainska</option>
-<option value="pl">🇵🇱 Polski</option>
-<option value="cs">🇨🇿 Cestina</option>
-<option value="ja">🇯🇵 Nihongo</option>
-<option value="ko">🇰🇷 Hangugeo</option>
-<option value="zh">🇨🇳 Zhongwen</option>
-<option value="hi">🇮🇳 Hindi</option>
-<option value="ar">🇸🇦 Arabiyya</option>
-<option value="th">🇹🇭 Thai</option>
-<option value="vi">🇻🇳 Tieng Viet</option>
-<option value="id">🇮🇩 Indonesia</option>
-<option value="ms">🇲🇾 Melayu</option>
-<option value="nl">🇳🇱 Nederlands</option>
-<option value="da">🇩🇰 Dansk</option>
-<option value="fi">🇫🇮 Suomi</option>
-<option value="nb">🇳🇴 Norsk</option>
-<option value="sv">🇸🇪 Svenska</option>
-</select>
+<div class="lang-drop" id="langDrop">
+<div class="lang-btn" id="langBtn" onclick="document.getElementById('langList').classList.toggle('open')">
+<span id="langCurrent">🇩🇪 Deutsch</span>
+</div>
+<div class="lang-list" id="langList"></div>
+</div>
 </div>
 
 <!-- ANLEITUNG -->
@@ -1648,7 +1639,7 @@ function renderFeatureWishes() {
         html += '<div class="fw-head"><span class="fw-num">Feature-Wunsch #' + (i+1) + '</span>';
         html += '<button class="fw-del" onclick="removeFeatureWish('+i+')" title="Loeschen">X</button></div>';
         html += '<input type="text" placeholder="Titel / Kurzbeschreibung des Features" value="'+esc(w.title||'')+'" onblur="updateFeatureWish('+i+',\'title\',this.value)">';
-        html += '<div style="display:flex;gap:8px;margin-bottom:6px">';
+        html += '<div style="display:flex;flex-direction:column;gap:6px;margin-bottom:6px">';
         html += '<select onchange="updateFeatureWish('+i+',\'priority\',this.value)">';
         html += '<option value="hoch"'+(w.priority==='hoch'?' selected':'')+'>Prioritaet: Hoch</option>';
         html += '<option value="mittel"'+(w.priority==='mittel'?' selected':'')+'>Prioritaet: Mittel</option>';
@@ -1734,38 +1725,84 @@ en:{title:"AutoPlayer Test Plan",guide:"Instructions for Testers",testerInfo:"Te
 ['es','fr','it','pt','tr','ru','uk','pl','cs','ja','ko','zh','hi','ar','th','vi','id','ms','nl','da','fi','nb','sv'].forEach(l=>{if(!i18n[l])i18n[l]=i18n.en;});
 
 let currentLang = 'de';
+const langOptions = [
+    {code:'de',flag:'\u{1F1E9}\u{1F1EA}',name:'Deutsch'},
+    {code:'en',flag:'\u{1F1EC}\u{1F1E7}',name:'English'},
+    {code:'es',flag:'\u{1F1EA}\u{1F1F8}',name:'Espa\u00f1ol'},
+    {code:'fr',flag:'\u{1F1EB}\u{1F1F7}',name:'Fran\u00e7ais'},
+    {code:'it',flag:'\u{1F1EE}\u{1F1F9}',name:'Italiano'},
+    {code:'pt',flag:'\u{1F1E7}\u{1F1F7}',name:'Portugu\u00eas'},
+    {code:'tr',flag:'\u{1F1F9}\u{1F1F7}',name:'T\u00fcrk\u00e7e'},
+    {code:'ru',flag:'\u{1F1F7}\u{1F1FA}',name:'\u0420\u0443\u0441\u0441\u043a\u0438\u0439'},
+    {code:'uk',flag:'\u{1F1FA}\u{1F1E6}',name:'\u0423\u043a\u0440\u0430\u0457\u043d\u0441\u044c\u043a\u0430'},
+    {code:'pl',flag:'\u{1F1F5}\u{1F1F1}',name:'Polski'},
+    {code:'cs',flag:'\u{1F1E8}\u{1F1FF}',name:'\u010ce\u0161tina'},
+    {code:'ja',flag:'\u{1F1EF}\u{1F1F5}',name:'\u65e5\u672c\u8a9e'},
+    {code:'ko',flag:'\u{1F1F0}\u{1F1F7}',name:'\ud55c\uad6d\uc5b4'},
+    {code:'zh',flag:'\u{1F1E8}\u{1F1F3}',name:'\u4e2d\u6587'},
+    {code:'hi',flag:'\u{1F1EE}\u{1F1F3}',name:'\u0939\u093f\u0928\u094d\u0926\u0940'},
+    {code:'ar',flag:'\u{1F1F8}\u{1F1E6}',name:'\u0627\u0644\u0639\u0631\u0628\u064a\u0629'},
+    {code:'th',flag:'\u{1F1F9}\u{1F1ED}',name:'\u0e44\u0e17\u0e22'},
+    {code:'vi',flag:'\u{1F1FB}\u{1F1F3}',name:'Ti\u1ebfng Vi\u1ec7t'},
+    {code:'id',flag:'\u{1F1EE}\u{1F1E9}',name:'Indonesia'},
+    {code:'ms',flag:'\u{1F1F2}\u{1F1FE}',name:'Melayu'},
+    {code:'nl',flag:'\u{1F1F3}\u{1F1F1}',name:'Nederlands'},
+    {code:'da',flag:'\u{1F1E9}\u{1F1F0}',name:'Dansk'},
+    {code:'fi',flag:'\u{1F1EB}\u{1F1EE}',name:'Suomi'},
+    {code:'nb',flag:'\u{1F1F3}\u{1F1F4}',name:'Norsk'},
+    {code:'sv',flag:'\u{1F1F8}\u{1F1EA}',name:'Svenska'}
+];
+
+function buildLangDropdown() {
+    const list = document.getElementById('langList');
+    let html = '';
+    langOptions.forEach(l => {
+        html += '<div class="lang-opt'+(l.code===currentLang?' active':'')+'" onclick="selectLang(\''+l.code+'\')">'+l.flag+' '+l.name+'</div>';
+    });
+    list.innerHTML = html;
+    if (typeof twemoji !== 'undefined') twemoji.parse(list, {folder:'svg',ext:'.svg'});
+}
+
+function selectLang(code) {
+    document.getElementById('langList').classList.remove('open');
+    switchLang(code);
+}
+
+// Close dropdown when clicking outside
+document.addEventListener('click', function(e) {
+    if (!document.getElementById('langDrop').contains(e.target)) {
+        document.getElementById('langList').classList.remove('open');
+    }
+});
 
 function detectLang() {
     const params = new URLSearchParams(window.location.search);
     const urlLang = params.get('lang');
-    if (urlLang && i18n[urlLang]) return urlLang;
-    if (urlLang) return 'en'; // Fallback for unknown languages
+    if (urlLang && langOptions.find(l=>l.code===urlLang)) return urlLang;
+    if (urlLang) return 'en';
     const browserLang = navigator.language.substring(0, 2);
-    if (i18n[browserLang]) return browserLang;
+    if (langOptions.find(l=>l.code===browserLang)) return browserLang;
     return 'en';
 }
 
 function switchLang(lang) {
     currentLang = lang;
     localStorage.setItem('tp_lang', lang);
-    const t = i18n[lang] || i18n.en;
-    // Update static UI elements
-    const el = (id) => document.getElementById(id);
-    if (el('mainTitle')) el('mainTitle').textContent = t.title;
-    if (el('searchBox')) el('searchBox').placeholder = t.search;
-    // Update URL without reload
+    const opt = langOptions.find(l=>l.code===lang) || langOptions[1];
+    const btn = document.getElementById('langCurrent');
+    btn.textContent = opt.flag + ' ' + opt.name;
+    if (typeof twemoji !== 'undefined') twemoji.parse(btn.parentElement, {folder:'svg',ext:'.svg'});
     const url = new URL(window.location);
     url.searchParams.set('lang', lang);
     window.history.replaceState({}, '', url);
-    // Set select
-    document.getElementById('langSelect').value = lang;
+    buildLangDropdown();
 }
 
 function initLang() {
     const saved = localStorage.getItem('tp_lang');
     currentLang = saved || detectLang();
-    document.getElementById('langSelect').value = currentLang;
     switchLang(currentLang);
+    buildLangDropdown();
 }
 
 // === STAR RATING ===
@@ -1868,6 +1905,8 @@ renderStars();
 initLang();
 document.getElementById('searchBox').addEventListener('input', render);
 render();
+// Parse all emojis to SVG (fixes Windows flag emoji display)
+if (typeof twemoji !== 'undefined') twemoji.parse(document.body, {folder:'svg',ext:'.svg'});
 </script>
 </body>
 </html>
