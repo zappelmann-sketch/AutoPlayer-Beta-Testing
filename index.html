@@ -1,0 +1,1793 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AutoPlayer Testplan v4.0.0</title>
+<style>
+:root{--bg:#1a1a2e;--card:#16213e;--accent:#e94560;--green:#4ecca3;--text:#eee;--muted:#888;--yellow:#ffc107;--red:#ff4444;--orange:#ff8800;--cyan:#00bcd4}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);padding:16px;max-width:1000px;margin:0 auto}
+h1{color:var(--accent);margin-bottom:4px;font-size:1.7em}
+.sub{color:var(--muted);margin-bottom:16px;font-size:0.9em}
+.stats{background:var(--card);border-radius:12px;padding:14px 18px;margin-bottom:16px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;position:sticky;top:0;z-index:100;border:1px solid #333}
+.stats .s{text-align:center;min-width:60px}
+.stats .s .n{font-size:1.6em;font-weight:bold}
+.stats .s .l{font-size:0.7em;color:var(--muted)}
+.s-ok .n{color:var(--green)}.s-bug .n{color:var(--red)}.s-open .n{color:var(--yellow)}.s-all .n{color:var(--text)}
+.pbar{width:100%;height:6px;background:#333;border-radius:3px;margin-top:8px;overflow:hidden;flex-basis:100%}
+.pfill{height:100%;background:linear-gradient(90deg,var(--green),#0f6);border-radius:3px;transition:width 0.3s}
+.cat{background:var(--card);border-radius:10px;margin-bottom:12px;border:1px solid #333;overflow:hidden}
+.cat-h{padding:12px 16px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;-webkit-user-select:none;user-select:none}
+.cat-h:hover{background:rgba(255,255,255,0.04)}
+.cat-h h2{font-size:1em;display:flex;align-items:center;gap:6px}
+.cat-h .cs{font-size:0.8em;color:var(--muted)}.cat-h .cs .d{color:var(--green)}.cat-h .cs .b{color:var(--red)}
+.cat-b{padding:0 16px 12px;display:none}
+.cat.open .cat-b{display:block}
+.cat-h .arr{transition:transform 0.2s;font-size:0.7em}
+.cat.open .arr{transform:rotate(90deg)}
+.feat{margin-bottom:16px;padding-bottom:14px;border-bottom:1px solid rgba(255,255,255,0.08)}
+.feat:last-child{border-bottom:none}
+.feat-t{font-weight:600;color:var(--accent);margin-bottom:6px;font-size:0.95em}
+.feat.ok .feat-t::before{content:"OK "}
+.feat.has-bugs .feat-t::after{content:" BUG";font-size:0.8em}
+.ti{display:flex;align-items:flex-start;gap:8px;padding:5px 0;border-radius:4px}
+.ti:hover{background:rgba(255,255,255,0.02)}
+.ti input[type=checkbox]{margin-top:4px;width:18px;height:18px;flex-shrink:0;cursor:pointer}
+.ti .cb-ok{accent-color:var(--green)}
+.ti .cb-bug{accent-color:var(--red)}
+.ti-body{flex:1}
+.ti-row{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.ti-name{font-size:0.88em;font-weight:500;line-height:1.3;flex:1}
+.ti-detail{font-size:0.78em;color:var(--muted);line-height:1.35;margin-top:2px}
+.ti.done .ti-name{color:var(--muted);text-decoration:line-through}
+.ti.done .ti-detail{display:none}
+.ti.bugged .ti-name{color:var(--red)}
+.ti.bugged .cb-bug{accent-color:var(--red)}
+.bug-label{font-size:0.7em;color:var(--red);cursor:pointer;white-space:nowrap}
+.comment-box{width:100%;margin-top:4px;padding:6px 8px;border-radius:6px;border:1px solid #444;background:#0d1117;color:var(--text);font-size:0.78em;resize:vertical;min-height:28px;font-family:inherit;display:none}
+.ti.bugged .comment-box{display:block}
+.comment-box:focus{outline:none;border-color:var(--accent)}
+.comment-box.has-text{border-color:var(--red)}
+.feat-label{font-size:0.7em;color:var(--orange);cursor:pointer;white-space:nowrap}
+.cb-feat{accent-color:var(--orange)}
+.comment-feat{width:100%;margin-top:4px;padding:6px 8px;border-radius:6px;border:1px solid #444;background:#0d1117;color:var(--text);font-size:0.78em;resize:vertical;min-height:28px;font-family:inherit;display:none}
+.ti.has-feat .comment-feat{display:block}
+.comment-feat:focus{outline:none;border-color:var(--orange)}
+.comment-feat.has-text{border-color:var(--orange)}
+.s-feat .n{color:var(--orange)}
+.feat-summary{background:#2a2a1a;border:1px solid var(--orange);border-radius:10px;padding:14px 18px;margin-bottom:14px;display:none}
+.feat-summary.visible{display:block}
+.feat-summary h3{color:var(--orange);margin-bottom:8px;font-size:0.95em}
+.feat-item{font-size:0.82em;padding:3px 0;border-bottom:1px solid rgba(255,136,0,0.15)}
+.feat-item:last-child{border:none}
+.feat-item .bf{color:var(--accent);font-weight:500}
+.feat-item .bt{color:var(--text)}
+.feat-item .bc{color:var(--yellow);font-style:italic;margin-left:8px}
+.btn-o{background:var(--orange);color:#000}
+.btn-i{background:#555;color:#fff}
+.io-modal{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.7);z-index:200;justify-content:center;align-items:center}
+.io-modal.show{display:flex}
+.io-box{background:var(--card);border-radius:12px;padding:20px;max-width:500px;width:90%;border:1px solid #555}
+.io-box h3{color:var(--accent);margin-bottom:12px}
+.io-box textarea{width:100%;height:200px;background:#0d1117;color:var(--text);border:1px solid #444;border-radius:8px;padding:10px;font-size:0.8em;font-family:monospace;resize:vertical}
+.io-box .io-btns{display:flex;gap:8px;margin-top:12px}
+.io-box .io-btns .btn{flex:1}
+.ctrls{display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap}
+.btn{padding:7px 14px;border-radius:7px;border:none;cursor:pointer;font-size:0.8em;font-weight:600}
+.btn-r{background:var(--accent);color:#fff}.btn-e{background:#333;color:#fff}.btn-x{background:var(--green);color:#000}.btn-b{background:var(--red);color:#fff}
+.search{width:100%;padding:9px 13px;border-radius:8px;border:1px solid #333;background:var(--card);color:var(--text);font-size:0.88em;margin-bottom:12px}
+.search:focus{outline:none;border-color:var(--accent)}
+.ts{color:var(--muted);font-size:0.75em;margin-top:16px;text-align:center}
+.bug-summary{background:#2a1a1a;border:1px solid var(--red);border-radius:10px;padding:14px 18px;margin-bottom:14px;display:none}
+.bug-summary.visible{display:block}
+.bug-summary h3{color:var(--red);margin-bottom:8px;font-size:0.95em}
+.bug-item{font-size:0.82em;padding:3px 0;border-bottom:1px solid rgba(255,0,0,0.15)}
+.bug-item:last-child{border:none}
+.bug-item .bf{color:var(--accent);font-weight:500}
+.bug-item .bt{color:var(--text)}
+.bug-item .bc{color:var(--yellow);font-style:italic;margin-left:8px}
+
+/* === ALPHA TESTER FEATURES === */
+
+/* Anleitung (collapsible) */
+.guide-card{background:var(--card);border:1px solid #333;border-radius:10px;margin-bottom:14px;overflow:hidden}
+.guide-header{padding:12px 16px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;-webkit-user-select:none;user-select:none}
+.guide-header:hover{background:rgba(255,255,255,0.04)}
+.guide-header h2{font-size:0.95em;color:var(--cyan);display:flex;align-items:center;gap:6px}
+.guide-header .arr{transition:transform 0.2s;font-size:0.7em}
+.guide-card.open .guide-header .arr{transform:rotate(90deg)}
+.guide-body{padding:0 16px 14px;display:none;font-size:0.84em;line-height:1.6;color:var(--muted)}
+.guide-card.open .guide-body{display:block}
+.guide-body h3{color:var(--text);font-size:0.92em;margin:12px 0 4px}
+.guide-body h3:first-child{margin-top:4px}
+.guide-body ul{margin-left:18px;margin-bottom:6px}
+.guide-body li{margin-bottom:3px}
+.guide-body code{background:#0d1117;padding:2px 5px;border-radius:3px;font-size:0.9em;color:var(--green)}
+
+/* Tester Info Card */
+.info-card{background:var(--card);border:1px solid #333;border-radius:10px;padding:16px;margin-bottom:14px}
+.info-card h2{font-size:0.95em;color:var(--cyan);margin-bottom:12px}
+.info-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media(max-width:600px){.info-grid{grid-template-columns:1fr}}
+.info-field label{display:block;font-size:0.75em;color:var(--muted);margin-bottom:3px}
+.info-field input,.info-field select{width:100%;padding:7px 10px;border-radius:6px;border:1px solid #444;background:#0d1117;color:var(--text);font-size:0.84em;font-family:inherit}
+.info-field input:focus,.info-field select:focus{outline:none;border-color:var(--accent)}
+
+/* Device Management Card */
+.dev-card{background:var(--card);border:1px solid #333;border-radius:10px;padding:16px;margin-bottom:14px}
+.dev-card h2{font-size:0.95em;color:var(--cyan);margin-bottom:12px;display:flex;justify-content:space-between;align-items:center}
+.dev-list{display:flex;flex-direction:column;gap:10px}
+.dev-item{background:#0d1117;border:1px solid #444;border-radius:8px;padding:12px;position:relative}
+.dev-item.active{border-color:var(--green);box-shadow:0 0 8px rgba(78,204,163,0.2)}
+.dev-item-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
+.dev-item-header label{display:flex;align-items:center;gap:6px;cursor:pointer;font-size:0.85em;font-weight:600}
+.dev-item-header label input[type=radio]{accent-color:var(--green)}
+.dev-item-header .dev-delete{background:none;border:none;color:var(--red);cursor:pointer;font-size:1em;padding:2px 6px;border-radius:4px}
+.dev-item-header .dev-delete:hover{background:rgba(255,68,68,0.15)}
+.dev-fields{display:grid;grid-template-columns:auto 1fr 1fr 1fr;gap:8px;align-items:center}
+@media(max-width:600px){.dev-fields{grid-template-columns:1fr 1fr}}
+.dev-fields label{font-size:0.72em;color:var(--muted)}
+.dev-fields input{padding:5px 8px;border-radius:5px;border:1px solid #444;background:#161b22;color:var(--text);font-size:0.82em;font-family:inherit}
+.dev-fields input:focus{outline:none;border-color:var(--accent)}
+.dev-type-group{display:flex;gap:10px;font-size:0.8em}
+.dev-type-group label{display:flex;align-items:center;gap:4px;cursor:pointer;color:var(--text)}
+.dev-type-group input[type=radio]{accent-color:var(--accent)}
+.btn-add-dev{background:var(--cyan);color:#000;padding:6px 12px;border-radius:6px;border:none;cursor:pointer;font-size:0.78em;font-weight:600}
+.btn-add-dev:hover{opacity:0.85}
+
+/* Bug severity + reproducibility */
+.bug-extra{display:none;margin-top:4px;gap:8px}
+.ti.bugged .bug-extra{display:flex;flex-wrap:wrap}
+.bug-extra select{padding:4px 8px;border-radius:5px;border:1px solid #444;background:#0d1117;color:var(--text);font-size:0.76em;font-family:inherit}
+.bug-extra select:focus{outline:none;border-color:var(--accent)}
+.bug-extra label{font-size:0.72em;color:var(--muted);display:flex;flex-direction:column;gap:2px}
+
+/* Screenshot field */
+.ss-toggle{font-size:0.68em;color:var(--cyan);cursor:pointer;white-space:nowrap;text-decoration:underline}
+.ss-toggle:hover{color:#fff}
+.ss-field{width:100%;margin-top:4px;padding:5px 8px;border-radius:6px;border:1px solid #444;background:#0d1117;color:var(--text);font-size:0.76em;font-family:inherit;display:none}
+.ss-field.visible{display:block}
+.ss-field:focus{outline:none;border-color:var(--cyan)}
+.ss-field.has-text{border-color:var(--cyan)}
+
+/* Feedback section */
+.feedback-card{background:var(--card);border:1px solid #333;border-radius:10px;padding:16px;margin-top:16px;margin-bottom:8px}
+.feedback-card h2{font-size:0.95em;color:var(--cyan);margin-bottom:10px}
+.feedback-card textarea{width:100%;min-height:80px;padding:10px;border-radius:8px;border:1px solid #444;background:#0d1117;color:var(--text);font-size:0.84em;font-family:inherit;resize:vertical}
+.feedback-card textarea:focus{outline:none;border-color:var(--accent)}
+.fw-item{background:#1a1a10;border:1px solid rgba(255,136,0,0.3);border-radius:8px;padding:12px;margin-bottom:10px;position:relative}
+.fw-item .fw-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
+.fw-item .fw-num{color:var(--orange);font-weight:600;font-size:0.9em}
+.fw-item .fw-del{background:none;border:none;color:var(--red);cursor:pointer;font-size:1.1em;padding:2px 6px}
+.fw-item .fw-del:hover{background:rgba(255,0,0,0.15);border-radius:4px}
+.fw-item input{width:100%;padding:8px;border-radius:6px;border:1px solid #444;background:#0d1117;color:var(--text);font-size:0.85em;margin-bottom:6px;font-family:inherit}
+.fw-item input:focus{outline:none;border-color:var(--orange)}
+.fw-item textarea{width:100%;min-height:60px;padding:8px;border-radius:6px;border:1px solid #444;background:#0d1117;color:var(--text);font-size:0.82em;font-family:inherit;resize:vertical}
+.fw-item textarea:focus{outline:none;border-color:var(--orange)}
+.fw-item select{padding:6px;border-radius:6px;border:1px solid #444;background:#0d1117;color:var(--text);font-size:0.82em;margin-bottom:6px}
+.star{font-size:2.5em;cursor:pointer;color:#555;transition:color 0.15s,transform 0.15s;-webkit-user-select:none;user-select:none}
+.star:hover{transform:scale(1.15)}
+.star.active{color:var(--yellow)}
+
+/* Device indicator badge */
+.dev-badge{background:var(--green);color:#000;font-size:0.68em;padding:2px 8px;border-radius:10px;font-weight:600;margin-left:8px}
+</style>
+</head>
+<body>
+<h1>AutoPlayer Testplan</h1>
+<p class="sub">Version 4.0.0 | Granularer Testplan | <span id="lastSaved"></span></p>
+
+<!-- ANLEITUNG -->
+<div class="guide-card" id="guideCard">
+<div class="guide-header" onclick="document.getElementById('guideCard').classList.toggle('open')">
+<h2><span class="arr">&#9654;</span> Anleitung fuer Tester</h2>
+</div>
+<div class="guide-body">
+<h3>Wie funktioniert der Testplan?</h3>
+<ul>
+<li>Jeder Testpunkt hat zwei Checkboxen und einen Wunsch-Button:</li>
+<li><strong style="color:var(--green)">Gruene Checkbox (OK)</strong> = Test bestanden, alles funktioniert wie beschrieben</li>
+<li><strong style="color:var(--red)">Rote Checkbox (BUG)</strong> = Fehler gefunden, bitte Beschreibung + Schweregrad eintragen</li>
+<li><strong style="color:var(--orange)">WUNSCH-Button</strong> = Aenderungs- oder Erweiterungswunsch, kein Bug</li>
+<li>Wenn weder OK noch BUG markiert ist, gilt der Test als "Offen"</li>
+</ul>
+
+<h3>Screenshot-Zuordnung</h3>
+<ul>
+<li>Klicke auf den <strong style="color:var(--cyan)">"Screenshot"</strong>-Link unter einem Testpunkt</li>
+<li>Trage die Dateinamen deiner Screenshots ein (komma-getrennt)</li>
+<li>Empfohlene Namenskonvention: <code>Screenshot_[TestNr]_[Beschreibung].png</code></li>
+<li>Beispiel: <code>Screenshot_001_app_start.png, Screenshot_002_crash.png</code></li>
+</ul>
+
+<h3>JSON Export / Import</h3>
+<ul>
+<li><strong>"JSON speichern"</strong> exportiert alle Testergebnisse, Geraete und Meta-Daten als JSON-Datei</li>
+<li><strong>"JSON importieren"</strong> laedt eine JSON-Datei und stellt alle Daten wieder her</li>
+<li>Der Export enthaelt ALLES: Testergebnisse, Geraete, Bug-Kommentare, Feature-Wuensche, Feedback</li>
+</ul>
+<h3>Feature-Wuensche</h3>
+<ul>
+<li>Am Ende der Seite gibt es einen Bereich fuer <strong>Feature-Wuensche</strong></li>
+<li>Klicke <strong>"+ Feature-Wunsch"</strong> um einen neuen Wunsch einzutragen</li>
+<li>Pro Wunsch: Titel, Prioritaet (Hoch/Mittel/Niedrig), Kategorie und eine ausfuehrliche Beschreibung</li>
+<li>Du kannst beliebig viele Wuensche eintragen — jeder bekommt sein eigenes Feld</li>
+<li>Feature-Wuensche werden im JSON-Export mitgespeichert und beim Import wiederhergestellt</li>
+</ul>
+<h3>App-Bewertung &amp; Absenden</h3>
+<ul>
+<li>Am Ende der Seite kannst du die App mit <strong>1-5 Sternen</strong> bewerten + einen Kommentar schreiben</li>
+<li>Klicke auf <strong>"Per E-Mail an Entwickler senden"</strong> — die JSON-Datei wird heruntergeladen und dein Mail-Programm oeffnet sich</li>
+<li><strong>Wichtig:</strong> Haenge die heruntergeladene JSON-Datei an die Mail an bevor du sie absendest!</li>
+<li>Damit koennen Testergebnisse zwischen Geraeten/Browsern uebertragen werden</li>
+<li>Tipp: Regelmaessig exportieren als Sicherung!</li>
+</ul>
+
+<h3>Bug-Beschreibungen richtig schreiben</h3>
+<ul>
+<li><strong>Was erwartet:</strong> Was haette laut Testbeschreibung passieren sollen?</li>
+<li><strong>Was passiert:</strong> Was ist stattdessen passiert?</li>
+<li><strong>Schritte zum Reproduzieren:</strong> Genaue Schritte um den Bug auszuloesen</li>
+<li>Schweregrad und Reproduzierbarkeit ueber die Dropdowns angeben</li>
+<li>Wenn moeglich: Screenshot zuordnen!</li>
+</ul>
+
+<h3>Geraete-Verwaltung</h3>
+<ul>
+<li>Du kannst mehrere Geraete anlegen und zwischen ihnen wechseln</li>
+<li>Alle Testergebnisse werden <strong>pro Geraet</strong> separat gespeichert</li>
+<li>Das aktive Geraet wird durch den Radio-Button markiert</li>
+<li>Beim Wechsel des aktiven Geraets aktualisieren sich alle Checkboxen</li>
+</ul>
+</div>
+</div>
+
+<!-- TESTER INFO -->
+<div class="info-card">
+<h2>Tester-Informationen</h2>
+<div class="info-grid">
+<div class="info-field">
+<label>Tester-Name (optional)</label>
+<input type="text" id="metaTester" placeholder="z.B. Max Mustermann" onblur="saveMeta()">
+</div>
+<div class="info-field">
+<label>App-Version</label>
+<input type="text" id="metaVersion" value="3.8.2" onblur="saveMeta()">
+</div>
+<div class="info-field">
+<label>App-Sprache</label>
+<select id="metaLang" onchange="saveMeta()">
+<option value="de">Deutsch</option>
+<option value="en">English</option>
+<option value="fr">Francais</option>
+<option value="es">Espanol</option>
+<option value="it">Italiano</option>
+<option value="pt">Portugues</option>
+<option value="ro">Romana</option>
+<option value="nl">Nederlands</option>
+<option value="pl">Polski</option>
+<option value="cs">Cestina</option>
+<option value="uk">Ukrainska</option>
+<option value="hr">Hrvatski</option>
+<option value="sv">Svenska</option>
+<option value="da">Dansk</option>
+<option value="nb">Norsk Bokmal</option>
+<option value="fi">Suomi</option>
+<option value="tr">Turkce</option>
+<option value="el">Ellinika</option>
+<option value="hi">Hindi</option>
+<option value="ar">Al-Arabiyyah</option>
+<option value="th">Thai</option>
+<option value="vi">Tieng Viet</option>
+<option value="ja">Nihongo</option>
+<option value="ko">Hangugeo</option>
+<option value="zh-Hans">Zhongwen (Jiantizi)</option>
+<option value="zh-Hant">Zhongwen (Fantizi)</option>
+</select>
+</div>
+<div class="info-field">
+<label>Testdatum Start</label>
+<input type="datetime-local" id="metaStart" onblur="saveMeta()">
+</div>
+<div class="info-field">
+<label>Testdatum Ende</label>
+<input type="datetime-local" id="metaEnd" onblur="saveMeta()">
+</div>
+</div>
+</div>
+
+<!-- GERAETE VERWALTUNG -->
+<div class="dev-card">
+<h2>Geraete-Verwaltung <span id="devBadge" class="dev-badge"></span> <button class="btn-add-dev" onclick="addDevice()">+ Geraet</button></h2>
+<div class="dev-list" id="devList"></div>
+</div>
+
+<!-- STATS BAR -->
+<div class="stats">
+<div class="s s-ok"><div class="n" id="cOk">0</div><div class="l">Bestanden</div></div>
+<div class="s s-bug"><div class="n" id="cBug">0</div><div class="l">Bugs</div></div>
+<div class="s s-feat"><div class="n" id="cFeat">0</div><div class="l">Wuensche</div></div>
+<div class="s s-open"><div class="n" id="cOpen">0</div><div class="l">Offen</div></div>
+<div class="s s-all"><div class="n" id="cAll">0</div><div class="l">Gesamt</div></div>
+<div class="pbar"><div class="pfill" id="pFill"></div></div>
+</div>
+
+<div class="bug-summary" id="bugSummary">
+<h3>Gefundene Bugs</h3>
+<div id="bugList"></div>
+</div>
+
+<div class="feat-summary" id="featSummary">
+<h3>Aenderungs-/Erweiterungswuensche</h3>
+<div id="featList"></div>
+</div>
+
+<input type="text" class="search" id="searchBox" placeholder="Feature suchen...">
+<div class="ctrls">
+<button class="btn btn-e" onclick="toggleAll(true)">Alle aufklappen</button>
+<button class="btn btn-e" onclick="toggleAll(false)">Alle zuklappen</button>
+<button class="btn btn-x" onclick="exportResults()">Ergebnis kopieren</button>
+<button class="btn btn-b" onclick="exportBugs()">Bugs exportieren</button>
+<button class="btn btn-o" onclick="exportFeats()">Wuensche exportieren</button>
+<button class="btn btn-x" onclick="saveToJson()">JSON speichern</button>
+<button class="btn btn-i" onclick="showImport()">JSON importieren</button>
+<button class="btn btn-r" onclick="resetAll()">Reset</button>
+</div>
+
+<div class="io-modal" id="ioModal">
+<div class="io-box">
+<h3 id="ioTitle">JSON Import</h3>
+<textarea id="ioText" placeholder="JSON hier einfuegen..."></textarea>
+<div class="io-btns">
+<button class="btn btn-x" onclick="doImport()">Importieren</button>
+<button class="btn btn-e" onclick="closeModal()">Abbrechen</button>
+</div>
+</div>
+</div>
+
+<div id="cats"></div>
+
+<!-- STERNEBEWERTUNG -->
+<div class="feedback-card" id="ratingCard" style="border-color:var(--yellow)">
+<h2 style="color:var(--yellow)">App-Bewertung</h2>
+<p style="color:var(--muted);font-size:0.82em;margin-bottom:12px">Wie bewertest du die App insgesamt? Klicke auf einen Stern.</p>
+<div id="starRating" style="display:flex;gap:4px;margin-bottom:12px">
+<span class="star" onclick="setRating(1)" data-v="1">&#9734;</span>
+<span class="star" onclick="setRating(2)" data-v="2">&#9734;</span>
+<span class="star" onclick="setRating(3)" data-v="3">&#9734;</span>
+<span class="star" onclick="setRating(4)" data-v="4">&#9734;</span>
+<span class="star" onclick="setRating(5)" data-v="5">&#9734;</span>
+</div>
+<div id="ratingLabel" style="color:var(--muted);font-size:0.82em;margin-bottom:8px"></div>
+<textarea id="ratingComment" placeholder="Optional: Begruende deine Bewertung kurz..." onblur="saveRatingComment()" style="width:100%;min-height:50px;padding:8px;border-radius:6px;border:1px solid #444;background:#0d1117;color:var(--text);font-size:0.82em;font-family:inherit;resize:vertical"></textarea>
+</div>
+
+<!-- FEEDBACK -->
+<div class="feedback-card">
+<h2>Allgemeines Feedback</h2>
+<textarea id="metaFeedback" placeholder="Hier allgemeines Feedback, Anmerkungen oder Verbesserungsvorschlaege eintragen..." onblur="saveMeta()"></textarea>
+</div>
+
+<!-- ERGEBNIS SENDEN -->
+<div class="feedback-card" style="border-color:var(--green)">
+<h2 style="color:var(--green)">Testergebnis absenden</h2>
+<p style="color:var(--muted);font-size:0.82em;margin-bottom:12px">Sende dein komplettes Testergebnis (JSON) per E-Mail an den Entwickler. Die JSON-Datei mit allen Daten wird automatisch als Anhang-Link generiert.</p>
+<button class="btn btn-x" onclick="sendResultByMail()" style="font-size:0.9em;padding:10px 20px">Per E-Mail an Entwickler senden</button>
+</div>
+
+<!-- FEATURE-WUENSCHE -->
+<div class="feedback-card" id="featureWishesCard" style="border-color:var(--orange)">
+<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px">
+<h2 style="color:var(--orange)">Feature-Wuensche fuer zukuenftige Versionen</h2>
+<button class="btn btn-o" onclick="addFeatureWish()" style="font-size:0.85em">+ Feature-Wunsch</button>
+</div>
+<p style="color:var(--muted);font-size:0.8em;margin-bottom:12px">Hier kannst du neue Feature-Ideen oder Erweiterungswuensche eintragen, die nach dem Launch umgesetzt werden koennten. Jeder Wunsch bekommt ein eigenes Feld — nutze den "+ Feature-Wunsch" Button fuer weitere Eintraege.</p>
+<div id="featureWishesList"></div>
+</div>
+
+<p class="ts" id="tsLine"></p>
+
+<script>
+const D=[
+{cat:"1. App-Start & Grundlagen",ff:[
+{n:"F-001: App-Start & Erster Eindruck",tt:[
+{t:"App startet innerhalb 3 Sekunden",d:"Tippe auf das AutoPlayer-Icon auf dem Homescreen. Die App muss innerhalb von 3 Sekunden vollstaendig geladen sein und den Library-Screen (Song-Liste) anzeigen."},
+{t:"Speicher-Berechtigung wird angefragt",d:"Beim allerersten Start: Ein Permission-Dialog muss erscheinen der nach Zugriff auf Medien/Audio fragt. Bestaetigen. Danach muessen die lokalen Songs in der Liste erscheinen."},
+{t:"Drawer-Menue oeffnet sich",d:"Tippe oben links auf das Hamburger-Icon (drei Striche). Das Seitenmenue muss sich von links heraus animiert oeffnen."},
+{t:"Drawer zeigt alle Kategorien",d:"Im geoeffneten Drawer: Scrolle durch die gesamte Liste. Es muessen ca. 40+ Eintraege sichtbar sein, gruppiert in Kategorien (Tools, Smart Features, Player Views, Settings & Info)."},
+{t:"Drawer schliesst bei Zurueck-Geste",d:"Drawer oeffnen, dann Zurueck-Geste (Swipe vom linken Rand oder Back-Button). Der Drawer muss sich schliessen und die Library wieder vollstaendig sichtbar sein."}
+]},
+{n:"F-002: Hintergrundwiedergabe",tt:[
+{t:"Song starten aus Library",d:"Tippe auf einen beliebigen Song in der Library-Liste. Der Player-Screen muss sich oeffnen mit Album-Cover, Titel und Kuenstler. Musik muss sofort starten."},
+{t:"Notification-Controls sichtbar",d:"Waehrend Musik spielt: Ziehe die Android-Statusbar herunter. Eine Musik-Notification muss erscheinen mit Cover, Titel, Kuenstler, Play/Pause, Previous und Next Buttons."},
+{t:"Notification Play/Pause funktioniert",d:"In der Notification: Tippe auf Pause -> Musik stoppt. Tippe auf Play -> Musik startet wieder. Kein Delay > 500ms."},
+{t:"Notification Skip funktioniert",d:"In der Notification: Tippe auf Next -> naechster Song startet. Tippe auf Previous -> vorheriger Song (oder Song von vorne bei >3s)."},
+{t:"Musik spielt nach Home-Button weiter",d:"Waehrend Musik spielt: Druecke den Home-Button. Die Musik MUSS weiterspielen. Falls sie stoppt = KRITISCHER BUG."},
+{t:"Musik spielt nach Recents-Wischen weiter",d:"Waehrend Musik spielt: Wische die App aus den Recents. Die Musik MUSS weiterspielen (Foreground Service)."},
+{t:"Lockscreen-Controls funktionieren",d:"Sperre den Bildschirm waehrend Musik spielt. Auf dem Lockscreen muessen Wiedergabe-Controls erscheinen. Play/Pause und Skip muessen funktionieren."}
+]}
+]},
+{cat:"2. Musikbibliothek & Navigation",ff:[
+{n:"F-010: Songs-Tab",tt:[
+{t:"Alle Songs werden aufgelistet",d:"Library -> Tab 'Alle Songs'. Alle lokalen MP3/FLAC/AAC/OGG Dateien muessen aufgelistet sein mit Titel, Kuenstler und Dauer."},
+{t:"Songs sind sortierbar",d:"Im Songs-Tab: Sortier-Icon antippen. Verschiedene Sortierungen testen (A-Z, Z-A, Zuletzt hinzugefuegt, Dauer). Die Liste muss sich korrekt umsortieren."},
+{t:"Alphabet-Schnellnavigation",d:"Am rechten Rand der Song-Liste: Ein Alphabet-Streifen muss sichtbar sein. Tippe/Ziehe auf einen Buchstaben -> Die Liste springt sofort zu Songs mit diesem Anfangsbuchstaben."}
+]},
+{n:"F-012: Alben-Tab",tt:[
+{t:"Alben als Grid mit Covern",d:"Library -> Tab 'Alben'. Alben muessen als Grid mit Album-Cover-Bildern angezeigt werden. Fehlende Cover zeigen einen Platzhalter."},
+{t:"Album oeffnen zeigt Songs",d:"Tippe auf ein Album -> Alle Songs dieses Albums werden angezeigt mit Track-Nummer, Titel und Dauer."}
+]},
+{n:"F-013: Kuenstler-Tab",tt:[
+{t:"Kuenstler alphabetisch aufgelistet",d:"Library -> Tab 'Kuenstler'. Alphabetische Liste aller Kuenstler. Anzahl Songs/Alben pro Kuenstler sichtbar."},
+{t:"Kuenstler oeffnen zeigt Details",d:"Tippe auf einen Kuenstler -> Alle Songs und Alben dieses Kuenstlers werden angezeigt."}
+]},
+{n:"F-014: Ordner-Tab",tt:[
+{t:"Ordnerstruktur wird angezeigt",d:"Library -> Tab 'Ordner'. Die Dateisystem-Ordnerstruktur mit Musikdateien muss angezeigt werden. Ordner antippen -> Unterordner/Songs sichtbar."}
+]},
+{n:"F-015: Suchfunktion",tt:[
+{t:"Echtzeit-Filterung bei Texteingabe",d:"Tippe auf die Lupe oben rechts. Gib z.B. 'Love' ein -> Ergebnisse filtern sich in Echtzeit. Titel, Kuenstler und Alben die 'Love' enthalten muessen erscheinen."},
+{t:"Leere Suche zeigt Hinweis",d:"Suche nach einem Fantasiewort das nicht existiert (z.B. 'xyzqwert'). Ein 'Keine Ergebnisse' Hinweis muss erscheinen."}
+]},
+{n:"F-016: Favoriten",tt:[
+{t:"Herz-Icon markiert Song",d:"Im Player oder in der Song-Liste: Tippe auf das Herz-Icon neben einem Song. Es muss rot/ausgefuellt werden (markiert)."},
+{t:"Favoriten-Tab zeigt markierte Songs",d:"Library -> Favoriten-Tab. Alle als Favorit markierten Songs muessen hier aufgelistet sein."},
+{t:"Herz erneut tippen entfernt Favorit",d:"Tippe erneut auf das ausgefuellte Herz -> Es wird grau/leer. Der Song verschwindet aus dem Favoriten-Tab."},
+{t:"Play/Shuffle im Favoriten-Tab",d:"Im Favoriten-Tab: Play-Button -> Alle Favoriten werden in Reihenfolge abgespielt. Shuffle-Button -> Zufaellige Reihenfolge."}
+]},
+{n:"F-020: Mehrfachauswahl",tt:[
+{t:"Long-Press aktiviert Multi-Select",d:"In der Song-Liste: Long-Press auf einen Song -> Checkbox erscheint, Song ist ausgewaehlt. Weitere Songs antippen -> Mehrfachauswahl."},
+{t:"Aktionsleiste bei Auswahl",d:"Bei aktiver Mehrfachauswahl: Eine Aktionsleiste muss erscheinen mit Optionen wie 'Zur Queue', 'Zu Playlist', 'Favoriten'."}
+]},
+{n:"F-033: Tab-Reihenfolge",tt:[
+{t:"Tabs sind konfigurierbar",d:"Einstellungen -> Tab-Reihenfolge. Die Bibliothek-Tabs (Songs, Alben, Kuenstler, Ordner, etc.) muessen per Drag & Drop umsortierbar sein. Nach Aenderung: Library zeigt neue Reihenfolge."}
+]},
+{n:"F-021: Ordner-Blacklisting",tt:[
+{t:"Ordner ausblenden funktioniert",d:"Library -> Ordner-Tab -> Ordner mit Visibility-Toggle. Toggle ausschalten -> Songs aus diesem Ordner verschwinden aus der Library. Toggle ein -> Songs erscheinen wieder."}
+]},
+{n:"F-036: Song-Details",tt:[
+{t:"Bitrate/Format/Groesse sichtbar",d:"In der Song-Liste: Unter dem Song-Titel muessen Bitrate (z.B. 320kbps), Format (MP3/FLAC) und Dateigroesse angezeigt werden."}
+]},
+{n:"F-022: Album Artist Support",tt:[
+{t:"Album Artist korrekt gruppiert",d:"Kuenstler-Tab pruefen: Compilations/Sampler muessen unter ihrem Album Artist gruppiert sein (nicht unter jedem einzelnen Track-Kuenstler separat)."}
+]},
+{n:"Pull-to-Refresh",tt:[
+{t:"Bibliothek neu scannen",d:"In der Song-Liste: Ziehe die Liste nach unten (Pull-Geste). Ein Lade-Indikator muss erscheinen. Nach Abschluss: Neue Songs die aufs Handy kopiert wurden muessen erscheinen."}
+]},
+{n:"F-043: MediaStore Rescan + Verschachtelte Ordner",tt:[
+{t:"Automatischer Rescan beim App-Start",d:"Kopiere per ADB oder Dateimanager neue MP3-Dateien in einen verschachtelten Ordner auf dem Handy (z.B. Music/mp3/Interpret/Album/Track.mp3). Starte die App. Nach wenigen Sekunden muessen die neuen Songs automatisch in der Bibliothek erscheinen — OHNE manuellen Scan."},
+{t:"Settings: Bibliothek aktualisieren Button",d:"Einstellungen oeffnen (Drawer → Settings). Suche den Button 'Bibliothek aktualisieren'. Tippe darauf. Ein Rescan muss starten. Danach muessen alle Songs (inkl. neu hinzugefuegter) in der Library sichtbar sein."},
+{t:"Verschachtelte Ordnerstruktur erkannt",d:"Pruefe ob Songs in verschachtelten Ordnern korrekt angezeigt werden: z.B. Music/mp3/Kuenstler/Album/Song.mp3. Der Song muss mit korrektem Titel, Kuenstler und Album in der Library erscheinen — nicht nur Songs im Root-Music-Ordner."},
+{t:"Flache Ordnerstruktur funktioniert weiterhin",d:"Regression-Test: Songs die direkt in Music/ liegen (ohne Unterordner) muessen weiterhin korrekt angezeigt werden. Keine Songs duerfen durch den Rescan verloren gehen."},
+{t:"Alle Audio-Formate werden erkannt",d:"Pruefe ob verschiedene Formate erkannt werden: MP3, FLAC, M4A, OGG, OPUS, WAV, AAC. Mindestens MP3 und FLAC testen."}
+]}
+]},
+{cat:"3. Player-Oberflaeche & Steuerung",ff:[
+{n:"F-011: Player-Controls",tt:[
+{t:"Play/Pause Button funktioniert",d:"Im Player: Tippe auf den grossen Play/Pause Button in der Mitte -> Musik pausiert. Erneut tippen -> Musik startet."},
+{t:"Next Song funktioniert",d:"Im Player: Tippe auf den Next-Button (rechts) -> Naechster Song in der Queue startet sofort."},
+{t:"Previous Song funktioniert (< 3s)",d:"Im Player: Innerhalb der ersten 3 Sekunden eines Songs auf Previous tippen -> Vorheriger Song startet."},
+{t:"Previous Song Neustart (> 3s)",d:"Im Player: Nach mehr als 3 Sekunden auf Previous tippen -> Aktueller Song startet von vorne."},
+{t:"Progress-Bar Seek per Tap",d:"Im Player: Tippe auf die Mitte der Progress-Bar -> Song springt zur Mitte. Aktuelle Zeit und Gesamtzeit muessen korrekt angezeigt werden."},
+{t:"Progress-Bar Seek per Drag",d:"Im Player: Ziehe den Thumb der Progress-Bar nach rechts -> Song springt vorwaerts. Nach links -> Song springt zurueck."},
+{t:"Shuffle Toggle",d:"Shuffle-Icon antippen -> Wird farbig (aktiv). Songs kommen in zufaelliger Reihenfolge. Erneut tippen -> Shuffle aus."},
+{t:"Repeat-Modi durchschalten",d:"Repeat-Icon antippen: 3 Modi durchtogglen: Aus -> Alle wiederholen -> Einen Song wiederholen -> Aus. Icon muss sich je Modus aendern."},
+{t:"Album-Cover wird angezeigt",d:"Im Player: Das Album-Cover des aktuellen Songs muss gross und klar angezeigt werden. Songs ohne Cover zeigen einen Platzhalter."}
+]},
+{n:"F-064: Wischgesten im Player",tt:[
+{t:"Horizontal wischen: Next/Previous",d:"Im Player: Wische horizontal auf dem Album-Cover nach links -> Naechster Song. Nach rechts -> Vorheriger Song."}
+]},
+{n:"F-012: Queue Management",tt:[
+{t:"Queue oeffnen",d:"Im Player: Tippe auf das Listen-Icon -> Queue-Screen oeffnet sich. Alle Songs der aktuellen Warteschlange muessen in Reihenfolge sichtbar sein."},
+{t:"Queue Reorder per Drag",d:"In der Queue: Long-Press auf einen Song -> Nach oben/unten ziehen. Song muss an neuer Position eingeordnet werden."},
+{t:"Queue Song entfernen per Swipe",d:"In der Queue: Wische einen Song nach links -> Song wird aus der Queue entfernt."}
+]},
+{n:"F-013: Playlists",tt:[
+{t:"Playlist erstellen",d:"Drawer -> Playlists -> '+' Button -> Namen eingeben -> Erstellen. Leere Playlist muss in der Liste erscheinen."},
+{t:"Song zu Playlist hinzufuegen",d:"In der Library: Long-Press auf Song -> 'Zu Playlist hinzufuegen' -> Playlist waehlen. Song muss in der Playlist erscheinen."},
+{t:"Playlist abspielen",d:"Playlist oeffnen -> Play-Button -> Songs der Playlist werden abgespielt."},
+{t:"Playlist loeschen",d:"Long-Press auf Playlist -> 'Loeschen'. Bestaetigen. Playlist verschwindet aus der Liste."}
+]},
+{n:"F-054: Geschwindigkeit & Pitch",tt:[
+{t:"Speed-Slider aendert Geschwindigkeit",d:"Im Player: Speed-Icon in Toolbar -> Slider erscheint. Speed auf 1.5x schieben -> Musik spielt hoerbar schneller. Auf 0.5x -> deutlich langsamer."},
+{t:"Pitch-Slider aendert Tonhoehe",d:"Im Player: Pitch-Slider -> Tonhoehe nach oben -> Stimme klingt hoeher. Nach unten -> tiefer. Reset auf 0 -> Normal."}
+]},
+{n:"F-039: Crossfade",tt:[
+{t:"Crossfade hoerbar bei Song-Wechsel",d:"Einstellungen -> 'Crossfade' Toggle AN + Dauer auf 3s. Spiele eine Playlist. Beim Song-Wechsel: Alter Song fadet aus, neuer Song fadet ein, kein stiller Moment."},
+{t:"Crossfade AUS ergibt harten Schnitt",d:"Einstellungen -> 'Crossfade' Toggle AUS. Song-Wechsel testen -> Harter Schnitt ohne Uebergang."}
+]}
+]},
+{cat:"4. Player-Skins (Alternative Ansichten)",ff:[
+{n:"F-070: DJ Turntable",tt:[
+{t:"Screen ueber Drawer oeffnen",d:"Drawer -> 'DJ Turntable' antippen. Der Turntable-Screen muss sich oeffnen mit dunklem Hintergrund."},
+{t:"Vinyl-Platte dreht sich bei Wiedergabe",d:"Musik starten. Die schwarze Vinyl-Platte mit konzentrischen Rillen muss sich drehen. Bei Pause: steht still."},
+{t:"Album-Cover in der Plattenmitte",d:"Das Cover des aktuellen Songs muss als kreisfoermiges Label in der Mitte der Vinyl-Platte sichtbar sein."},
+{t:"Tonarm-Overlay sichtbar",d:"Ein photorealistischer Tonarm (PNG-Overlay) muss rechts neben der Platte positioniert sein."},
+{t:"LED-Ring pulsiert",d:"Um die Platte herum muss ein farbiger LED-Ring pulsieren. Die Pulsierung soll im BPM-Takt des Songs erfolgen."},
+{t:"Scratching per Touch-Drag",d:"Finger auf die Platte legen und ziehen -> Scratch-Sound muss hoerbar sein und die Wiedergabeposition aendert sich."},
+{t:"Playback-Controls in Toolbar",d:"In der Toolbar oben: Play/Pause, Next, Previous Buttons muessen funktionieren."}
+]},
+{n:"F-073: Sci-Fi Hologramm",tt:[
+{t:"Screen ueber Drawer oeffnen",d:"Drawer -> 'Sci-Fi Hologramm' antippen. Dunkler Hintergrund mit Hex-Grid muss erscheinen."},
+{t:"Hologramm-Projektion mit chromatischer Aberration",d:"Album-Cover muss als schwebendes Hologramm angezeigt werden mit Pink/Cyan/Gruen-Versetzung (chromatischer Aberrations-Effekt)."},
+{t:"Partikel fliegen aufwaerts",d:"Leuchtende Partikel muessen von unten nach oben fliegen. Mehr Partikel bei energiereicheren Songs."},
+{t:"Scanlines scrollen",d:"Horizontale Scanlines muessen langsam ueber das Hologramm scrollen (wie ein alter CRT-Monitor)."},
+{t:"Glitch-Effekt bei Song-Wechsel",d:"Beim Wechsel zum naechsten Song: Ein kurzer Glitch-Effekt (Teleport/Versatz) muss sichtbar sein."},
+{t:"Tap Center = Play/Pause",d:"Tippe in die Mitte des Hologramms -> Play/Pause Toggle."},
+{t:"Tap Links = Previous, Rechts = Next",d:"Tippe auf die linke Haelfte -> Vorheriger Song. Rechte Haelfte -> Naechster Song."}
+]},
+{n:"F-074: Cassette / Walkman",tt:[
+{t:"Screen ueber Drawer oeffnen",d:"Drawer -> 'Cassette Player' antippen. Realistisches Walkman-Gehaeuse muss erscheinen."},
+{t:"Spulen drehen sich bei Wiedergabe",d:"Bei Play: Beide Zahnrad-Spulen drehen sich. Linke Spule (Vorrat) dreht schneller, rechte (Aufnahme) langsamer - wie bei echter Kassette."},
+{t:"Band ist im Kassettenfenster sichtbar",d:"Durch das transparente Kassettenfenster muss das braune Magnetband sichtbar sein. Die Bandwicklung aendert sich proportional zur Song-Position."},
+{t:"Bandzaehler zaehlt hoch",d:"Ein 3-stelliger mechanischer Zaehler (0-125) muss mit dem Songfortschritt hochzaehlen. Rolling-Digit Animation sichtbar."},
+{t:"5 Transport-Buttons rasten visuell ein",d:"Tippe auf Play -> Das Walkman-Bild wechselt zu 'Play eingedrueckt'. Bei Pause -> Play+Pause eingedrueckt. Rewind/FF/Stop -> Kurzer 150ms Flash."},
+{t:"Volume-Wheel per vertikalem Drag",d:"Ziehe vertikal ueber den Volume-Wheel-Bereich -> System-Lautstaerke aendert sich."},
+{t:"Haptisches Feedback bei Tastendruck",d:"Bei jedem Transport-Button-Druck muss ein kurzes Vibrationsfeedback spuerbar sein."},
+{t:"Album-Art auf Kassetten-Label",d:"Auf dem Kassetten-Etikett muss das Album-Cover dezent als Hintergrund sichtbar sein, darueber Titel und Kuenstler."}
+]},
+{n:"F-075: Reel-to-Reel Bandmaschine",tt:[
+{t:"Screen ueber Drawer oeffnen",d:"Drawer -> 'Bandmaschine' antippen. Schwarzes Metallgehaeuse im TASCAM-Stil muss erscheinen."},
+{t:"NAB-Spulen drehen sich",d:"Bei Play: Zwei grosse NAB-Spulen drehen sich. Bandwicklung nimmt links ab, rechts zu (proportional zur Song-Position)."},
+{t:"Band laeuft ueber Umlenkrollen",d:"Braunes Band muss sichtbar ueber 3 animierte Umlenkrollen und den Tonkopf laufen (Bezier-Kurven)."},
+{t:"VU-Meter Nadeln bewegen sich",d:"Zwei analoge VU-Meter (L/R Kanal) muessen sichtbar sein. Nadeln bewegen sich zur Musik mit physikbasierter Traegheit."},
+{t:"7-Segment LED-Counter zaehlt",d:"Ein LED-Counter mit hexagonalen Segmenten muss die verstrichene Zeit anzeigen. Glow-Effekt bei aktiven Segmenten."},
+{t:"Album-Cover kreisfoermig auf linker Spule",d:"Das Album-Cover muss kreisfoermig geclippt auf dem oberen Fluegel der linken Spule sichtbar sein und sich mitdrehen."},
+{t:"Song-Info als gebogener Text",d:"Songtitel und Interpret muessen als gebogener Text auf den unteren Fluegeln der linken Spule erscheinen."},
+{t:"Transport-Buttons funktionieren",d:"5 Tasten (Rew/FF/Play/Pause/Stop): Play rastet ein. Play+Pause Kombination moeglich. Rewind/FF/Stop mit Flash-Effekt."}
+]},
+{n:"F-076: Jukebox",tt:[
+{t:"Screen ueber Drawer oeffnen",d:"Drawer -> 'Jukebox' antippen. Klassisches Jukebox-Gehaeuse im Wurlitzer-Stil muss erscheinen."},
+{t:"Bubble-Tubes mit aufsteigenden Blasen",d:"Links und rechts: Zwei Leuchtroehren mit aufsteigenden farbigen Blasen. HSV-Farbrotation (Farben wechseln langsam). Glow-Effekt um jede Blase."},
+{t:"Schallplatte dreht sich mit Cover",d:"In der Mitte: Vinyl-Platte dreht sich mit Album-Art als Label und Glasscheiben-Reflexions-Overlay."},
+{t:"Amber-Display zeigt Song-Info",d:"Amber-hinterbeleuchtetes Display: Songtitel (Marquee-Scroll bei langem Text), Kuenstler und Timer in warmen Gold-Farben."},
+{t:"Bass-Glow pulsiert am Gitter",d:"Lautsprecher-Gitter unten: Oranges Glow-Overlay pulsiert mit dem Bass."},
+{t:"Chrome-Arch-Glow oben",d:"Ueber dem Plattenwechsler: Animierter Neon-Bogen mit pulsierender Farbe, synchron mit den Leuchtroehren."},
+{t:"Tap auf Platte = Play/Pause",d:"Tippe auf die Schallplatte -> Play/Pause Toggle."},
+{t:"Tap Roehren = Previous/Next",d:"Tippe auf die linke Leuchtroehre -> Previous Song. Rechte Roehre -> Next Song."},
+{t:"Display-Drag = Seek",d:"Horizontales Ziehen auf dem Amber-Display -> Song-Position aendert sich (Seek)."}
+]},
+{n:"F-030+032: Audio Visualizer",tt:[
+{t:"Bar-Visualizer mit 32 Balken",d:"Drawer -> Audio Visualizer. Mikrofon-Permission gewaehren. 32 Frequenzbalken mit Regenbogen-Gradient muessen sich zur Musik bewegen."},
+{t:"Circular Visualizer (3 Ringe)",d:"Toggle auf Circular: 3 konzentrische Ringe (Cyan, Rot, Gruen) muessen zur Musik pulsieren und sich verzerren."},
+{t:"Fullscreen-Modus",d:"Fullscreen-Button -> Immersive Mode (System-Bars ausgeblendet). Screen bleibt an. Tap zum Ein-/Ausblenden der Controls."}
+]},
+{n:"F-068: Genome Visualizer",tt:[
+{t:"Genome-Darstellung oeffnen",d:"Drawer -> Genome Visualizer. Visuelle DNA-Darstellung des aktuellen Songs mit konzentrischen Ringen, DNA-Helix und Energy-Core."},
+{t:"Visualisierung reagiert auf Song-Daten",d:"BPM beeinflusst Animations-Geschwindigkeit. Energy beeinflusst Intensitaet. Dur-Tonart = warme Farben, Moll = kalte Farben."}
+]}
+]},
+{cat:"5. Audio & Klangeffekte",ff:[
+{n:"F-031: Hardware-Equalizer (5 Band)",tt:[
+{t:"EQ-Screen oeffnen",d:"Drawer -> Equalizer. 5 vertikale Slider (Bass bis Hoehen) muessen sichtbar sein."},
+{t:"Bass-Slider veraendert Klang hoerbar",d:"Bass-Slider nach oben schieben -> Mehr Bass hoerbar (KOPFHOERER verwenden!). Nach unten -> Weniger Bass."},
+{t:"Presets aendern Slider-Positionen",d:"Preset-Dropdown: Rock, Pop, Jazz, etc. waehlen -> Slider springen automatisch auf die Preset-Positionen. Klang aendert sich."},
+{t:"Bass Boost Effekt",d:"Bass Boost Slider -> Nach oben -> Deutlich mehr Bass. Zurueck auf 0 -> Normal."},
+{t:"3D Surround / Virtualizer",d:"Virtualizer Slider -> Nach oben -> Raeumlicherer Klang (besonders mit Kopfhoerern)."},
+{t:"Master On/Off Switch",d:"EQ Master-Switch AUS -> Alle Effekte deaktiviert, Klang neutral. AN -> Effekte wieder aktiv."}
+]},
+{n:"F-071: Software-Equalizer (10 Band)",tt:[
+{t:"10-Band EQ umschalten",d:"Im EQ-Screen: Toggle auf '10-Band Software EQ'. 10 Slider (31Hz bis 16kHz) muessen erscheinen."},
+{t:"Jedes Band einzeln hoerbar",d:"Jeden der 10 Slider einzeln auf Maximum (+12dB) schieben und die Klangaenderung bei der jeweiligen Frequenz ueberpruefen."}
+]},
+{n:"F-067: Live Concert Simulator",tt:[
+{t:"Concert Mode Screen oeffnen",d:"Drawer -> Concert Mode. Toggle muss sichtbar sein."},
+{t:"Toggle AN = Raumklang hoerbar",d:"Concert Mode AN + KOPFHOERER. Musik muss sich deutlich raeumlicher anhoeren (Hall, Reflexionen)."},
+{t:"Venue-Presets haben unterschiedlichen Klang",d:"5 Venue-Presets durchprobieren (Arena, Club, Open Air, Church, Cafe). Jedes muss einen deutlich anderen Klangcharakter haben."},
+{t:"Reverb-Intensitaet per Slider",d:"Reverb-Slider auf Maximum -> Sehr starker Hall. Auf Minimum -> Dezenter Effekt."},
+{t:"Toggle AUS = Effekt verschwindet",d:"Concert Mode AUS -> Klang ist sofort wieder trocken/normal, kein Nachhall."}
+]},
+{n:"F-056: Vocal Isolator",tt:[
+{t:"Screen oeffnen",d:"Drawer -> Vocal Isolator. Slider und Mode-Selector muessen sichtbar sein."},
+{t:"Instrumental-Modus: Gesang verschwindet",d:"Slider Richtung 'Instrumental' -> Gesang verschwindet, Instrumente bleiben. (Qualitaet variiert je nach Song.)"},
+{t:"Vocals-Only: Nur Gesang hoerbar",d:"Slider Richtung 'Vocals' -> Nur Gesang hoerbar, Instrumente verschwinden."},
+{t:"Staerke-Regler funktioniert",d:"Staerke-Regler von 0-100% bewegen -> Effekt wird graduell staerker."}
+]},
+{n:"F-072: Binaural Beats",tt:[
+{t:"Screen oeffnen",d:"Drawer -> Binaural Beats. Toggle und Modus-Auswahl muessen sichtbar sein."},
+{t:"Toggle AN mit Kopfhoerern",d:"Toggle AN + KOPFHOERER PFLICHT. Ein subtiler pulsierender Ton muss die Musik ueberlagern."},
+{t:"4 Modi hoerbar unterschiedlich",d:"Focus, Relax, Sleep, Meditation durchschalten. Jeder Modus muss eine andere Frequenz/Pulsierung erzeugen."},
+{t:"Ohne Kopfhoerer kein Effekt",d:"Kopfhoerer entfernen -> Binaural-Effekt ist NICHT hoerbar (funktioniert nur stereophon). Warnung im UI sichtbar."}
+]},
+{n:"F-070: Atmosphere Mixer",tt:[
+{t:"Screen oeffnen",d:"Drawer -> Atmosphere Mixer. Toggle und Atmosphaeren-Auswahl muessen sichtbar sein."},
+{t:"Regen-Atmosphaere hoerbar",d:"'Regen' aktivieren -> Regengeraeusche muessen ueber die Musik gelegt werden."},
+{t:"Lautstaerke-Mixer pro Atmosphaere",d:"Lautstaerke-Slider fuer die gewaehlte Atmosphaere -> Lauter/leiser stellen. Muss unabhaengig von Musiklautstaerke sein."},
+{t:"Toggle AUS entfernt Atmosphaere",d:"Toggle AUS -> Alle atmosphaerischen Sounds stoppen sofort."}
+]},
+{n:"F-065: Beat-Match Crossfade",tt:[
+{t:"Toggle AN in Einstellungen",d:"Einstellungen -> Beat Match Toggle AN. Smart DJ Analyse muss vorher gelaufen sein!"},
+{t:"BPM-basierter Uebergang hoerbar",d:"Spiele Songs mit aehnlichem BPM -> Uebergang muss nahtloser sein als bei normalem Crossfade. Speed passt sich graduell an."}
+]},
+{n:"F-092: Queue Crossfade",tt:[
+{t:"Queue Crossfade Toggle + Einstellungen",d:"Einstellungen -> Queue Crossfade Toggle AN + Dauer 3s + Kurve 'Equal Power'. Erstelle 2 Queue-Slots mit verschiedenen Songs."},
+{t:"Sanfter Uebergang beim Queue-Wechsel",d:"Zwischen Queue-Slots wechseln -> Alter Song fadet aus, neuer Song fadet ein (sanfter Audio-Uebergang)."},
+{t:"4 Crossfade-Kurven testen",d:"Alle 4 Kurven nacheinander testen: Linear, Logarithmisch, S-Kurve, Equal Power. Jede muss einen hoerbar anderen Uebergangsverlauf haben."},
+{t:"Toggle AUS = Harter Schnitt",d:"Queue Crossfade AUS -> Beim Queue-Wechsel harter Schnitt ohne Uebergang."}
+]},
+{n:"F-008: ReplayGain Normalisierung",tt:[
+{t:"Lautstaerke-Normalisierung",d:"Einstellungen -> ReplayGain Toggle AN. Songs mit unterschiedlicher Original-Lautstaerke sollten jetzt aehnlich laut klingen."}
+]},
+{n:"F-007: Audio Fokus Ducking",tt:[
+{t:"Ducking bei Benachrichtigungen",d:"Einstellungen -> Audio Fokus Ducking AN. Waehrend Musik spielt: Empfange eine Benachrichtigung mit Sound -> Musik wird leiser (nicht pausiert), dann wieder normal."}
+]}
+]},
+{cat:"6. Intelligente Features",ff:[
+{n:"F-072: Smart DJ Analyse",tt:[
+{t:"Analyse starten",d:"Drawer -> Smart DJ. 'Analyse starten' tippen. Fortschrittsbalken muss erscheinen."},
+{t:"Analyse laeuft im Hintergrund",d:"Waehrend der Analyse die App normal nutzen (Player, Library). Analyse muss im Hintergrund weiterlaufen."},
+{t:"Ergebnis: BPM/Key/Energy pro Song",d:"Nach Abschluss: Jeden Song pruefen -> BPM (z.B. 120), Key (z.B. C Major), Energy (0.0-1.0) muessen verfuegbar sein."}
+]},
+{n:"F-080: NLP Smart Playlists",tt:[
+{t:"Freitext-Eingabe funktioniert",d:"Drawer -> Smart Playlists. Im Textfeld eingeben: 'Schnelle Rock Songs ueber 140 BPM' -> Suchen. Ergebnis-Liste mit passenden Songs muss erscheinen."},
+{t:"Quick-Chips liefern Sofortergebnis",d:"Quick-Chips antippen: 'Workout', 'Party', 'Chill' -> Sofortergebnis mit passenden Songs."},
+{t:"Playlist speichern",d:"Ergebnis-Liste -> 'Speichern' -> Name eingeben. Playlist muss persistent gespeichert werden."},
+{t:"Gespeicherte Smart Playlists laden",d:"Gespeicherte Smart Playlists -> Toggle-Ansicht. Tippe auf eine -> Laden + Abspielen funktioniert."}
+]},
+{n:"F-088: Mood Browse",tt:[
+{t:"Mood-Analyse starten",d:"Drawer -> Mood Browse. 'Analyse starten' -> Mood-KI analysiert Songs (Heuristik-Fallback wenn ONNX fehlt). Fortschritt sichtbar."},
+{t:"Mood-Grid mit Kategorien",d:"Nach Analyse: Grid mit Mood-Kategorien (Happy, Sad, Relaxed, Energetic, etc.) + Song-Count pro Kategorie."},
+{t:"Kategorie oeffnet Song-Liste",d:"Kategorie antippen -> Song-Liste mit passenden Songs und Mood-Chips."},
+{t:"Voice: 'Spiel froehliche Musik'",d:"Mikrofon-Button -> 'Spiel froehliche Musik' -> Songs mit Mood 'Happy' werden abgespielt."}
+]},
+{n:"F-089: Smart Reorder",tt:[
+{t:"Reorder-Sheet oeffnen in Queue",d:"Queue mit 5+ Songs oeffnen (Smart DJ Analyse muss gelaufen sein!). Sparkle-Icon oben rechts -> Smart Reorder Sheet oeffnet sich."},
+{t:"Profil waehlen und Vorschau sehen",d:"Profil waehlen: 'Party Build-Up' oder 'DJ Mix'. 'Vorschau' -> BPM-Range und Key-Clashes werden angezeigt."},
+{t:"Sortierung durchfuehren",d:"'Jetzt Sortieren' -> Queue wird umsortiert. Erster Song (aktuell spielend) bleibt an Position 1."},
+{t:"Custom-Profil erstellen",d:"Custom-Profil mit eigenen Gewichtungen (BPM/Key/Energy) erstellen -> Speichern -> Verwenden."}
+]},
+{n:"F-090: Song Paths",tt:[
+{t:"Screen oeffnen",d:"Drawer -> Song Paths. Mindestens 20 analysierte Songs noetig!"},
+{t:"Start- und Ziel-Song waehlen",d:"Start-Song waehlen + Ziel-Song waehlen. Beide muessen per Suche findbar sein."},
+{t:"Pfadlaenge einstellen und finden",d:"Slider: Pfadlaenge (z.B. 8 Songs). 'Pfad finden' -> Liste von Bruecken-Songs mit BPM/Key/Energy-Badges."},
+{t:"Canvas-Visualisierung sichtbar",d:"Unterhalb der Song-Liste: Canvas mit Knoten und Linien zeigt den musikalischen Pfad visuell."},
+{t:"Pfad abspielen funktioniert",d:"'Pfad abspielen' -> Songs werden in der gefundenen Reihenfolge abgespielt."},
+{t:"Pfad als Playlist speichern",d:"'Speichern' -> Pfad wird als Playlist gespeichert und taucht in der Playlist-Liste auf."}
+]},
+{n:"F-052: Mood Morph",tt:[
+{t:"Start- und Ziel-Stimmung waehlen",d:"Drawer -> Mood Morph. Aktuelle Stimmung waehlen (z.B. 'Relaxed') + Ziel-Stimmung (z.B. 'Energetic')."},
+{t:"Dauer einstellen",d:"Dauer-Slider (15-120 Min) einstellen -> Timeline-Vorschau mit BPM/Energy-Kurven muss sich anpassen."},
+{t:"Playlist wird generiert",d:"'Generieren' -> Playlist mit Songs die fliessend von Start- zu Ziel-Stimmung ueberleiten. BPM/Energy steigen graduell."},
+{t:"Playlist abspielen",d:"'Abspielen' -> Songs starten in der generierten Reihenfolge."}
+]},
+{n:"F-062: Auto Playlists",tt:[
+{t:"Tageszeit-basierte Playlists anzeigen",d:"Drawer -> Auto Playlists. 5 Tageszeit-Profile (Morning, Midday, Afternoon, Evening, Night) als FilterChips sichtbar."},
+{t:"Passende Songs werden geladen",d:"Aktuelles Tageszeit-Profil ist vorausgewaehlt. Song-Liste mit passenden BPM/Energy-Werten muss erscheinen."},
+{t:"Abspielen funktioniert",d:"Play-FAB antippen -> Songs der Auto-Playlist werden abgespielt."}
+]}
+]},
+{cat:"7. Auto & Fahren",ff:[
+{n:"F-003: Android Auto",tt:[
+{t:"App erscheint in Android Auto",d:"Handy mit Android Auto verbinden (Kabel oder Wireless). AutoPlayer muss in der Auto App-Liste erscheinen."},
+{t:"Browse-Tree: Songs, Alben, Kuenstler",d:"In Android Auto: AutoPlayer oeffnen. Browse-Tree mit Songs, Alben, Kuenstler, Playlists, Favoriten muss navigierbar sein."},
+{t:"Song abspielen auf Auto-Lautsprecher",d:"Song in Android Auto antippen -> Spielt auf dem Auto-Lautsprecher. Album-Art auf dem Auto-Display sichtbar."},
+{t:"Playback-Controls in Android Auto",d:"Play/Pause, Next, Previous Buttons auf dem Auto-Display muessen funktionieren."}
+]},
+{n:"F-053: Drive Mode DJ",tt:[
+{t:"Screen oeffnen",d:"Drawer -> Drive Mode DJ. GPS-Permission gewaehren wenn gefragt."},
+{t:"Musik passt sich an Geschwindigkeit an",d:"Feature aktivieren und losfahren: Bei langsamer Fahrt (Stadt) -> Ruhigere Musik. Bei schneller Fahrt (Autobahn) -> Energischere Musik."},
+{t:"3 Modi sichtbar (Stadt/Autobahn/Stau)",d:"Die aktuelle Fahrsituation muss erkannt und angezeigt werden: Stadt (80-120 BPM), Autobahn (110-160 BPM), Stau (60-100 BPM)."}
+]},
+{n:"F-066: Weather DJ",tt:[
+{t:"Screen oeffnen",d:"Drawer -> Weather DJ. Toggle AN. Internet + GPS noetig!"},
+{t:"Aktuelles Wetter wird angezeigt",d:"Wetter-Info muss erscheinen (Temperatur, Wetterzustand). Falls kein Internet: Fehlermeldung."},
+{t:"Passende Playlist wird generiert",d:"Wetter-basierte Playlist erscheint (Regen = melancholisch, Sonne = froehlich). Abspielen testen."}
+]},
+{n:"F-073: Cabin Calibrator",tt:[
+{t:"Kalibrierung starten",d:"Drawer -> Cabin Calibrator. Toggle AN. Mikrofon-Permission gewaehren. 'Kalibrierung starten' in ruhiger Umgebung."},
+{t:"Frequenzgang-Chart erscheint",d:"Nach Kalibrierung: Frequenzgang-Chart (Rot = gemessen, Gruen = Korrektur) und Score (0-100) muessen erscheinen."},
+{t:"EQ-Korrektur anwenden",d:"'EQ anwenden' -> Die vorgeschlagenen Korrekturen werden auf den Equalizer uebertragen."}
+]},
+{n:"F-069: Heartbeat Sync DJ",tt:[
+{t:"Manueller Modus: Slider BPM",d:"Drawer -> Heartbeat Sync DJ. Toggle AN. SegmentedButton: 'Manuell'. Slider: BPM einstellen (60-200). Zone aendert sich (Rest/Light/Moderate/Intense/Maximum)."},
+{t:"Zone-Buttons direkt anklickbar",d:"Zone-Buttons (Rest, Light, etc.) direkt antippen -> Slider springt auf entsprechenden BPM-Wert. Passende Songs werden geladen."},
+{t:"Smartwatch-Modus",d:"SegmentedButton: 'Smartwatch' waehlen. Falls Health Connect + Smartwatch: Live-BPM wird angezeigt. Falls nicht: Fehlermeldung + automatisch zurueck auf 'Manuell'."},
+{t:"Songs passen zur Zone",d:"Songs in der Liste muessen BPM/Energy-Werte haben die zur gewaehlten Zone passen."}
+]},
+{n:"F-061: Speed-based Volume",tt:[
+{t:"Toggle AN in Einstellungen",d:"Einstellungen -> 'Speed-based Volume' Toggle AN. GPS-Permission noetig."},
+{t:"Lautstaerke steigt bei hoeherer Geschwindigkeit",d:"Im Auto: Je schneller du faehrst, desto lauter wird die Musik automatisch (0-30 km/h: 0%, >130: +20%). GPS muss aktiv sein."}
+]}
+]},
+{cat:"8. Wiedergabe-Steuerung (Erweitert)",ff:[
+{n:"F-079: Multi-Queue System",tt:[
+{t:"Queue-Slots sichtbar als Tabs",d:"Queue oeffnen -> Tab-Leiste oben mit Queue-Slots. Mindestens Slot 1 muss vorhanden sein."},
+{t:"Neuen Queue-Slot erstellen",d:"'+' Button -> Neuen Slot erstellen. Name eingeben -> Leerer Slot erscheint als neuer Tab."},
+{t:"Songs zu neuem Slot hinzufuegen",d:"Songs in den neuen Slot hinzufuegen (ueber Library/Drag). Songs muessen in der Queue-Liste erscheinen."},
+{t:"Zwischen Slots wechseln",d:"Zwischen Tabs wechseln -> Queue + aktueller Song wechseln. Wiedergabe geht im neuen Slot weiter."},
+{t:"Slot umbenennen",d:"Menue eines Slots -> 'Umbenennen' -> Neuer Name. Name muss sich im Tab aendern."},
+{t:"Slot loeschen",d:"Menue eines Slots -> 'Loeschen' -> Bestaetigen. Slot und Songs verschwinden."},
+{t:"Undo-Button funktioniert",d:"Nach einer Aktion (z.B. Song entfernen) -> Undo-Button -> Aktion wird rueckgaengig gemacht."}
+]},
+{n:"F-079b: Detour-Modus",tt:[
+{t:"Detour starten",d:"Song in Queue Long-Press -> 'Detour' (Umweg). Dieser Song wird sofort gespielt."},
+{t:"Automatische Rueckkehr",d:"Nach dem Detour-Song: Queue kehrt automatisch zur vorherigen Position zurueck und setzt dort fort."}
+]},
+{n:"F-085: A-B Repeat / Loop",tt:[
+{t:"A-Marker setzen",d:"Im Player: A-B Icon in Toolbar finden. Song abspielen -> 'A' tippen -> Button wird AMBER. Marker ist gesetzt."},
+{t:"B-Marker setzen",d:"Song weiterlaufen lassen -> 'B' tippen -> Button wird CYAN. Abschnitt ist definiert."},
+{t:"Loop laeuft automatisch",d:"Der Abschnitt zwischen A und B wird jetzt automatisch geloopt. Loop-Icon pulsiert GRUEN."},
+{t:"Speed-Slider im Loop",d:"Zahnrad-Icon -> Bottom Sheet: Speed-Slider (0.25x-2.0x) -> Geschwindigkeit des Loops aendert sich."},
+{t:"Loop-Count einstellen",d:"Loop-Count waehlen: 3, 5, 10, 20 oder Unendlich. Nach der eingestellten Anzahl stoppt der Loop automatisch."},
+{t:"Pause zwischen Loops",d:"Pause zwischen Loops auf 2s stellen -> Nach jedem Loop 2 Sekunden Stille bevor der naechste startet."},
+{t:"Practice Mode (Speed steigt)",d:"Practice Mode AN -> Jeder Loop wird etwas schneller (z.B. 50% -> 55% -> 60%...)."},
+{t:"Feinabstimmung der Marker",d:"Feinabstimmung +/- 100ms fuer A und B Marker -> Marker verschiebt sich minimal."},
+{t:"Loop als Lesezeichen speichern",d:"Lesezeichen-Icon -> Name eingeben -> Speichern."},
+{t:"Lesezeichen laden und abspielen",d:"Drawer -> 'Loop-Lesezeichen' -> Alle gespeicherten Loops sehen. Tippe auf einen -> Loop wird geladen + abgespielt."},
+{t:"Clear-Button entfernt alle Marker",d:"Clear-Button -> A und B Marker werden entfernt. Normaler Playback."}
+]},
+{n:"F-086: Waveform-Anzeige",tt:[
+{t:"Waveform statt Slider aktivieren",d:"Einstellungen -> 'Wellenform-Anzeige' Toggle AN. Im Player: Waveform erscheint statt normalem Slider."},
+{t:"Tap auf Waveform = Seek",d:"Tippe auf eine Stelle in der Waveform -> Song springt zu dieser Position."},
+{t:"Drag auf Waveform = Scrubbing",d:"Ziehe horizontal ueber die Waveform -> Echtzeit-Scrubbing."},
+{t:"Long-Press = Lesezeichen setzen",d:"Long-Press auf die Waveform -> Dialog zum Lesezeichen erstellen. Name und Farbe waehlbar."},
+{t:"A-B Marker auf Waveform sichtbar",d:"Bei aktivem A-B Loop: Rote A-Linie und blaue B-Linie sichtbar + halbtransparente Region dazwischen."}
+]},
+{n:"F-087: Song Position Resume",tt:[
+{t:"Position wird automatisch gespeichert",d:"Einstellungen -> 'Wiedergabeposition merken' AN. Song >1 Min hoeren -> App KOMPLETT schliessen (Recents wischen)."},
+{t:"Song startet bei gespeicherter Position",d:"App neu oeffnen -> Gleichen Song starten -> Startet bei gespeicherter Position (minus 3s Ruecksprung). NICHT von vorne!"},
+{t:"Kurze Songs: Keine Position gespeichert",d:"Song nur 10s hoeren -> Position wird NICHT gespeichert (unter Threshold von 30s)."},
+{t:"Song bis Ende: Position geloescht",d:"Song bis zum Ende hoeren -> Position wird automatisch geloescht (nichts mehr zum Fortsetzen)."},
+{t:"Resume-Indikator in Song-Liste",d:"In der Library: Songs mit gespeicherter Position muessen einen Mini-Fortschrittsbalken als Indikator zeigen."}
+]},
+{n:"Sleep Timer + Fade",tt:[
+{t:"Sleep Timer setzen",d:"Drawer -> Sleep Timer. 15/30/45/60 Min oder 'Ende des Songs' waehlen -> Timer laeuft (Countdown sichtbar)."},
+{t:"Musik stoppt nach Timer",d:"Timer laeuft ab -> Musik stoppt automatisch."},
+{t:"Sleep Fade funktioniert",d:"Drawer -> Sleep Fade. Slider auf 30 Min stellen. Musik wird ueber die eingestellte Zeit langsam leiser bis Stille."}
+]},
+{n:"F-059: Queue Presets",tt:[
+{t:"Queue als Preset speichern",d:"In der Queue: 'Speichern' -> Name eingeben -> Preset wird gespeichert."},
+{t:"Preset laden",d:"Drawer -> Queue Presets. Gespeichertes Preset antippen -> Queue wird mit den Preset-Songs geladen."},
+{t:"Preset umbenennen und loeschen",d:"Preset Long-Press -> Umbenennen/Loeschen. Funktionen muessen korrekt arbeiten."}
+]}
+]},
+{cat:"9. Kontext & Automatisierung",ff:[
+{n:"F-091: Context Auto-Switch",tt:[
+{t:"Vorlagen erstellen",d:"Drawer -> Context Auto-Switch. 'Vorlagen erstellen' -> 4 Standard-Regeln (Morgen-Energie, Feierabend-Chill, Weekend-Vibes, Nachtruhe) erscheinen."},
+{t:"Regel aktivieren per Toggle",d:"Eine Regel aktivieren (Toggle AN). Wenn die Bedingungen zutreffen, soll die Aktion ausgeloest werden."},
+{t:"Neue Regel erstellen",d:"'+' Button -> Name -> Bedingungen (Uhrzeit, Wochentag, BT-Geraet, etc.) -> Aktion (Queue/Playlist) -> Speichern."},
+{t:"Kontext-Monitor zeigt Signale",d:"Info-Icon -> Kontext-Monitor. Aktuelle Signale (Uhrzeit, BT, Speed, etc.) muessen in Echtzeit angezeigt werden."},
+{t:"'Regeln testen' funktioniert",d:"'Regeln testen' -> Zeigt an welche Regel aktuell greifen wuerde (Simulation ohne tatsaechlichen Wechsel)."}
+]},
+{n:"F-060: Shake to Shuffle",tt:[
+{t:"Toggle AN in Einstellungen",d:"Einstellungen -> 'Shake to Shuffle' AN. Musik muss spielen."},
+{t:"Schuetteln mischt Queue",d:"Handy 2-3 Mal kraeftig schuetteln -> Toast 'Queue gemischt' erscheint. Song-Reihenfolge hat sich geaendert."}
+]},
+{n:"F-055: Sound Souvenir",tt:[
+{t:"Screen oeffnen + aktivieren",d:"Drawer -> Sound Souvenir. Toggle AN. GPS-Permission gewaehren."},
+{t:"Erinnerungen werden automatisch gespeichert",d:"Musik hoeren an verschiedenen Orten -> Erinnerungen werden automatisch gespeichert (Song + Ort + Zeit)."},
+{t:"Orte-Tab zeigt gespeicherte Erinnerungen",d:"Tab 'Orte' -> Gespeicherte Erinnerungen auf Liste sichtbar mit Song-Name, Ort und Datum."}
+]},
+{n:"F-048: Geo Music",tt:[
+{t:"Standort-basierte Regel erstellen",d:"Drawer -> Geo Music. GPS-Permission noetig. Neue Regel: Ort waehlen + Radius + Playlist/Queue verknuepfen -> Speichern."},
+{t:"Musik startet automatisch am Ort",d:"Wenn du an den verknuepften Ort kommst -> Die verknuepfte Musik soll automatisch starten."}
+]}
+]},
+{cat:"10. Social & Party",ff:[
+{n:"F-093: Local Party Mode (Host)",tt:[
+{t:"Party starten",d:"Drawer -> Party Mode. Optional: Name + PIN eingeben. 'Party starten' -> QR-Code und URL (z.B. http://192.168.1.5:8080) erscheinen. VORAUSSETZUNG: Handy muss in einem WiFi sein!"},
+{t:"QR-Code wird angezeigt",d:"Ein scanbarer QR-Code muss sichtbar sein. URL darunter als Text."},
+{t:"Host-Dashboard: Queue-Tab",d:"Tab 'Queue' auf Host: Angeforderte Songs sichtbar. Move-to-Top und Remove Buttons funktionieren."},
+{t:"Host-Dashboard: Gaeste-Tab",d:"Tab 'Gaeste': Verbundene Gaeste mit Nicknames. Blockieren/Entsperren funktioniert."},
+{t:"Host-Dashboard: Statistik-Tab",d:"Tab 'Statistik': Gaeste-Anzahl und gespielte Songs werden gezaehlt."},
+{t:"Party beenden",d:"'Party beenden' -> Server stoppt. Gaeste erhalten Disconnect."}
+]},
+{n:"F-093b: Local Party Mode (Gast)",tt:[
+{t:"QR scannen oder URL eingeben",d:"Zweites Geraet im SELBEN WiFi: QR scannen ODER URL im Browser eingeben -> Gast-Interface oeffnet sich."},
+{t:"Nickname eingeben + Join",d:"Nickname eingeben -> 'Join'. Verbindung zum Host wird hergestellt."},
+{t:"Songs anfordern",d:"Songs suchen + anfordern -> Song erscheint in der Party-Queue auf dem Host."},
+{t:"Voting funktioniert",d:"Auf einen Song in der Queue voten (Daumen hoch). Hoeher gevotete Songs muessen nach oben rutschen."}
+]},
+{n:"F-051: Passenger Mode",tt:[
+{t:"Beifahrer verbinden",d:"Drawer -> Passenger Mode. Auf Fahrer-Handy: 'Host' waehlen. Auf Beifahrer-Handy: 'Passenger' waehlen. 4-stelligen PIN eingeben."},
+{t:"Beifahrer steuert Musik",d:"Beifahrer kann auf seinem Handy: Songs aus Host-Bibliothek waehlen, zur Queue hinzufuegen, Play/Pause/Skip steuern."}
+]}
+]},
+{cat:"11. Statistiken & Gamification",ff:[
+{n:"F-077: Music Wrapped Dashboard",tt:[
+{t:"Dashboard oeffnen",d:"Drawer -> Music Wrapped. Dashboard-Screen mit Tab-Selector muss erscheinen."},
+{t:"Tab-Selector: Woche/Monat/Jahr/Gesamt",d:"Tabs durchschalten: Woche, Monat, Jahr, Gesamt. Charts und Statistiken muessen sich pro Zeitraum aendern."},
+{t:"Top Songs/Kuenstler/Genres sichtbar",d:"Charts zeigen: Top Songs, Top Kuenstler, Top Genres, Gesamte Hoerzeit. Mindestens nach einigen gehoerten Songs."},
+{t:"Hoerzeit korrekt berechnet",d:"Gesamte Hoerzeit muss plausibel sein (ungefaehr die tatsaechlich gehoerte Zeit)."}
+]},
+{n:"F-077b: Music Wrapped Slides",tt:[
+{t:"Wrapped Slides starten",d:"'Wrapped Slides' Button -> 15 animierte Vollbild-Slides erscheinen. Horizontal blaettern."},
+{t:"Slides haben Animationen",d:"Jede Slide muss eine individuelle Animation haben (CountUp, Reveal, FlyIn, Flip, Pulse, Glow). Kein statisches Bild."},
+{t:"Share-Button teilt Slide als PNG",d:"Share-Button auf einer Slide -> Teilen-Dialog oeffnet sich. Slide wird als PNG-Bild geteilt (1080x1920)."}
+]},
+{n:"F-081: Achievements & Gamification",tt:[
+{t:"Achievement-Screen oeffnen",d:"Drawer -> Achievements. Screen mit Level, XP-Balken und Achievements muss erscheinen."},
+{t:"Level + XP-Balken korrekt",d:"Oben: Level-Anzeige (z.B. 'Level 5 - Enthusiast') + XP-Fortschrittsbalken. XP muessen mit gehoerten Songs steigen."},
+{t:"Streak-Flammen in TopAppBar",d:"In der TopAppBar: Streak-Flammen-Icon mit aktueller Streak-Tagesanzahl."},
+{t:"4 Stats-Cards sichtbar",d:"4 Mini-Cards: Streak (Tage), Badges (freigeschaltete), Hoerzeit (Stunden), Songs (Anzahl)."},
+{t:"GitHub-Heatmap (52x7 Grid)",d:"Canvas-basierte Heatmap: 52 Wochen x 7 Tage Grid. Dunklere Zellen = mehr gehoert an diesem Tag."},
+{t:"Achievement-Tabs: Alle/Freigeschaltet/Gesperrt",d:"3 Tabs durchschalten. Jedes Achievement zeigt: Icon, Name, Progress-Bar, Bronze/Silber/Gold Stufe."},
+{t:"Achievement-Fortschritt korrekt",d:"Ein bekanntes Achievement pruefen (z.B. 'songs_played'): Progress-Bar muss der tatsaechlichen Anzahl gespielter Songs entsprechen."}
+]}
+]},
+{cat:"12. Tools",ff:[
+{n:"F-045: Tag-Editor",tt:[
+{t:"Tag-Editor oeffnen",d:"Long-Press auf Song -> 'Tags bearbeiten'. Felder: Titel, Kuenstler, Album, Jahr, Track-Nr muessen angezeigt werden."},
+{t:"Tags aendern und speichern",d:"Titel aendern -> Speichern -> Song erscheint mit neuem Titel in der Library. Kuenstler/Album/Jahr analog testen."}
+]},
+{n:"F-047: Track-Cutter",tt:[
+{t:"Song laden und Bereich waehlen",d:"Drawer -> Track Cutter. Song waehlen -> Waveform oder Range-Slider erscheint. Start und Ende Marker setzen."},
+{t:"Schneiden erstellt neue Datei",d:"'Schneiden' antippen -> Neue gekuerzte Datei wird erstellt und in der Library angezeigt."}
+]},
+{n:"F-048: Klingelton setzen",tt:[
+{t:"Song als Klingelton setzen",d:"Long-Press auf Song -> 'Als Klingelton setzen'. WRITE_SETTINGS Permission bestaetigen. System-Klingelton wird auf diesen Song gesetzt."}
+]},
+{n:"F-042: Tag Rescue",tt:[
+{t:"Fehlende Tags identifizieren",d:"Drawer -> Tag Rescue. Songs mit fehlenden oder falschen Tags werden identifiziert und aufgelistet."},
+{t:"Tags reparieren",d:"Song auswaehlen -> Automatische oder manuelle Korrektur. Korrigierte Tags werden gespeichert."}
+]},
+{n:"F-028: Song-Details Popup",tt:[
+{t:"Details-Anzeige oeffnen",d:"Im Player oder via Kontextmenue: Song-Details oeffnen. Bitrate, Format, Groesse, Pfad, Dauer und Tags muessen angezeigt werden."}
+]}
+]},
+{cat:"13. Sprachsteuerung & TTS",ff:[
+{n:"F-069: Voice Commands (Globales Mikrofon)",tt:[
+{t:"Mikrofon-Button auf jedem Screen sichtbar",d:"Auf JEDEM Screen: Rechts unten muss ein schwebender Mikrofon-Button (FAB) sichtbar sein. In Library, Player, Settings, Drawer-Screens, ueberall."},
+{t:"Voice: 'Play' startet Musik",d:"Mikrofon antippen -> 'Play' sagen -> Musik startet."},
+{t:"Voice: 'Pause' stoppt Musik",d:"Mikrofon -> 'Pause' -> Musik pausiert."},
+{t:"Voice: 'Naechster Song' / 'Next'",d:"Mikrofon -> 'Naechster Song' -> Skip zum naechsten Song."},
+{t:"Voice: 'Lautstaerke 50 Prozent'",d:"Mikrofon -> 'Lautstaerke 50 Prozent' -> System-Lautstaerke wird auf 50% gesetzt."},
+{t:"Voice: 'Shuffle' mischt Queue",d:"Mikrofon -> 'Shuffle' -> Queue wird gemischt."},
+{t:"Voice: Song-Suche per Name",d:"Mikrofon -> 'Spiel [Songtitel]' -> Song wird per Fuzzy-Matching gesucht und abgespielt."},
+{t:"Voice: 'Oeffne Equalizer'",d:"Mikrofon -> 'Oeffne Equalizer' -> EQ-Screen wird geoeffnet."},
+{t:"Voice: 'Zeige Favoriten'",d:"Mikrofon -> 'Zeige Favoriten' -> Favoriten-Tab wird geoeffnet."},
+{t:"Voice: 'Was spielt gerade?'",d:"Mikrofon -> 'Was spielt gerade?' -> TTS antwortet mit Song-Titel und Kuenstler."}
+]},
+{n:"F-082: Voice Commands Uebersicht",tt:[
+{t:"Referenz-Screen oeffnen",d:"Drawer -> 'Sprachbefehle'. Alle Commands nach 12 Kategorien aufgelistet."},
+{t:"Filter-Tabs: Alle/Auto/Handy",d:"Tabs: Alle (45 Befehle), Android Auto (30), Nur Handy (15). Umschalten filtert die Liste korrekt."},
+{t:"Commands in aktueller Sprache",d:"Laenderflagge zeigt aktuelle Sprache. Commands muessen in der eingestellten Systemsprache angezeigt werden (nicht nur DE/EN)."}
+]},
+{n:"F-083: TTS Vorlesen",tt:[
+{t:"Benutzerhandbuch vorlesen",d:"Drawer -> About -> Benutzerhandbuch -> Feature aufklappen -> TTS-Button (Lautsprecher-Icon) -> Text wird in aktueller Sprache vorgelesen."},
+{t:"Changelog vorlesen",d:"Drawer -> About -> Changelog -> Version aufklappen -> TTS-Button -> Version wird vorgelesen."},
+{t:"Datenschutz vorlesen",d:"Drawer -> About -> Datenschutz -> TTS-Button -> Datenschutztext wird vorgelesen."},
+{t:"Stop-Button bricht Vorlesen ab",d:"Waehrend TTS laeuft: Stop-Button antippen -> Vorlesen stoppt sofort."},
+{t:"Voice: 'Lies Datenschutz vor'",d:"Mikrofon -> 'Lies Datenschutz vor' -> Datenschutz-Text wird per TTS vorgelesen. NICHT einen Song mit dem Wort 'Datenschutz' abspielen!"}
+]}
+]},
+{cat:"14. Einstellungen & Personalisierung",ff:[
+{n:"F-097: Theme Builder",tt:[
+{t:"Theme Gallery oeffnen",d:"Drawer -> Theme Builder. Gallery mit Preset-Themes und Material You Toggle muss erscheinen."},
+{t:"Material You Toggle",d:"Material You AN -> App-Farben passen sich dem Wallpaper an. AUS -> Standard-Farben."},
+{t:"Neues Custom Theme erstellen",d:"'+' FAB -> Name eingeben -> Editor oeffnet sich."},
+{t:"6 Farb-Picker funktionieren",d:"Im Editor: 6 Farb-Picker (Primary, Secondary, Background, Surface, Text, Accent). Jede Farbwahl muss in der Live-Vorschau sofort sichtbar sein."},
+{t:"Font-Auswahl (8 Optionen)",d:"Font-Selector: 8 verschiedene Fonts durchprobieren. Jeder muss in der Vorschau sichtbar sein."},
+{t:"Corner Radius Slider",d:"Corner Radius Slider bewegen -> Eckenrundung aller UI-Elemente aendert sich in der Vorschau."},
+{t:"Theme speichern und anwenden",d:"Speichern -> Theme erscheint in Gallery. Antippen -> App wechselt sofort alle Farben auf das Custom Theme."},
+{t:"Theme exportieren/importieren als JSON",d:"Long-Press auf Custom Theme -> 'Exportieren' -> JSON wird erstellt. 'Importieren' -> JSON auswaehlen -> Theme wird geladen."}
+]},
+{n:"F-044: Sprachwahl (26 Sprachen)",tt:[
+{t:"Sprach-Einstellung oeffnen",d:"Einstellungen -> Sprache (ganz unten). 26 Sprachen mit Flaggen-Emojis muessen sichtbar sein."},
+{t:"Sprachen in eigener Schrift beschriftet",d:"Jede Sprache muss in ihrer EIGENEN Sprache beschriftet sein (z.B. Japanisch, nicht 'Japanisch')."},
+{t:"Sprache wechseln: Alle Texte aendern sich",d:"Sprache auf Japanisch wechseln -> ALLE Texte muessen auf Japanisch wechseln (Drawer, Settings, Player, etc.)."},
+{t:"Zurueck auf Deutsch: Alles korrekt",d:"Zurueck auf Deutsch wechseln -> Alles muss wieder deutsch sein, nichts darf englisch bleiben."}
+]},
+{n:"F-084: Berechtigungs-Management",tt:[
+{t:"Berechtigungs-Screen oeffnen",d:"Einstellungen -> Berechtigungen. Toggles fuer verschiedene Berechtigungen muessen sichtbar sein."},
+{t:"Mikrofon-Toggle",d:"Mikrofon-Toggle -> Oeffnet Android-Berechtigungs-Dialog oder System-Einstellungen. Status (Erteilt/Nicht erteilt) korrekt."},
+{t:"Standort-Toggle",d:"Standort-Toggle -> Oeffnet Berechtigungs-Dialog. Status korrekt."},
+{t:"Bluetooth-Toggle",d:"Bluetooth-Toggle -> Oeffnet Berechtigungs-Dialog. Status korrekt."},
+{t:"Gruener-Punkt-Erklaerung sichtbar",d:"Info-Card erklaert den gruenen Punkt (Android 12+ Datenschutz-Indikator). Muss sichtbar und verstaendlich sein."}
+]},
+{n:"F-094: Gehoerschutz",tt:[
+{t:"Dashboard oeffnen",d:"Drawer -> Gehoerschutz. Animierter dB-Kreis muss erscheinen."},
+{t:"dB-Kreis zeigt aktuelle Lautstaerke",d:"dB-Kreis zeigt geschaetzte Dezibel an: Gruen = sicher (<70 dB), Gelb = Vorsicht (70-85 dB), Rot = laut (>85 dB)."},
+{t:"WHO-Budget-Balken sichtbar",d:"WHO-Budget-Fortschrittsbalken: Zeigt kumulative Tagesdosis an. Muss sich beim Musikhoeren fuellen."},
+{t:"Wochen-Chart mit 7 Tagen",d:"Wochen-Statistik: 7 Balken fuer die letzten 7 Tage. Hoehe = Hoerzeit an dem Tag."},
+{t:"Mini-Indikator im Player",d:"Einstellungen -> 'dB im Player anzeigen' AN -> Im Player: Kleiner dB-Indikator sichtbar. Tap darauf -> Oeffnet Dashboard."},
+{t:"Gehoerschutz-Toggle in Einstellungen",d:"Einstellungen -> 'Gehoerschutz aktivieren' Toggle. AN/AUS schalten."}
+]},
+{n:"F-095: Haptic Feedback / Bass Vibration",tt:[
+{t:"Screen oeffnen",d:"Drawer -> Bass Vibration. Geraete-Tier oben (Premium/Standard/Basic) muss angezeigt werden."},
+{t:"4 Test-Buttons vibrieren unterschiedlich",d:"4 Test-Buttons antippen: Leichter Puls, Bass-Drop, BPM 120, Wobble. Jeder muss ein anderes Vibrationsmuster erzeugen."},
+{t:"Intensitaets-Modus waehlen",d:"Modus auf 'Mittel' stellen -> Vibration bei Musikwiedergabe muss spuerbar sein."},
+{t:"BPM-Sync Toggle",d:"BPM-Sync AN -> Vibration synchron zum Beat. AUS -> Vibration nur bei Bass."},
+{t:"Player: Vibrations-Icon Toggle",d:"Im Player: Vibrations-Icon antippen -> Schnell-Toggle AN/AUS. Statusfarbe aendert sich."},
+{t:"Einstellungen-Toggle vorhanden",d:"Einstellungen -> Haptic Feedback Toggle muss vorhanden sein und AN/AUS schalten."}
+]},
+{n:"F-096: Gestensteuerung",tt:[
+{t:"Screen oeffnen",d:"Drawer -> Gestensteuerung. Master-Toggle und Gesten-Liste muessen sichtbar sein."},
+{t:"Master-Toggle AN aktiviert Gesten",d:"Master-Toggle AN -> Alle aktivierten Gesten werden ueberwacht."},
+{t:"Flip to Mute funktioniert",d:"Handy umdrehen (Display nach unten) -> Musik wird stumm geschaltet. Zurueckdrehen -> Ton kommt zurueck."},
+{t:"Double Tap Back = Play/Pause",d:"2x auf die Rueckseite des Handys klopfen -> Play/Pause Toggle. (Erfordert Accelerometer.)"},
+{t:"Shake = Shuffle",d:"Handy schuetteln -> Queue wird gemischt (wie Shake to Shuffle)."},
+{t:"Test-Area zeigt Live-Sensordaten",d:"Test-Area oeffnen -> Live Accelerometer/Gyroscope/Proximity Rohdaten muessen sich in Echtzeit aendern."},
+{t:"Gesture Guide (9 Seiten)",d:"Gesture Guide oeffnen -> 9 Seiten mit Erklaerungen und Tipps zu jeder Geste. Horizontal blaettern."},
+{t:"Player: TouchApp-Icon Toggle",d:"Im Player: TouchApp-Icon antippen -> Gesten AN/AUS schnell umschalten."},
+{t:"Einstellungen-Toggle vorhanden",d:"Einstellungen -> Gestensteuerung Toggle muss vorhanden sein."}
+]},
+{n:"F-098: Audio Offload / Batteriemodus",tt:[
+{t:"Screen oeffnen",d:"Drawer -> Audio Engine / Battery Mode. Modus-Selektor muss sichtbar sein."},
+{t:"Batteriesparmodus aktivieren",d:"Modus 'Batteriesparmodus' waehlen -> Warnung ('EQ + Effekte werden deaktiviert') -> Bestaetigen. Effekte sind deaktiviert."},
+{t:"ECO-Icon im Player sichtbar",d:"Im Batteriemodus: Player zeigt gruenes ECO-Icon."},
+{t:"Qualitaetsmodus zurueck",d:"Modus 'Qualitaet' waehlen -> Alle Effekte (EQ, Concert, etc.) sind wieder verfuegbar."},
+{t:"Feature-Kompatibilitaets-Matrix sichtbar",d:"Im Screen: Matrix zeigt welche Features in welchem Modus funktionieren (Qualitaet vs. Batterie)."},
+{t:"Einstellungen-Toggle vorhanden",d:"Einstellungen -> Audio Offload Toggle muss vorhanden sein."}
+]},
+{n:"F-035: Dark/Light Mode",tt:[
+{t:"Auto-Modus basierend auf Umgebungslicht",d:"Einstellungen -> Darstellung -> 'Auto'. Bei hellem Licht: Light Mode. Bei Dunkelheit: Dark Mode. Wechsel automatisch."},
+{t:"Manuell: Dark/Light umschalten",d:"Manuell 'Dunkel' waehlen -> Dunkles Theme. 'Hell' waehlen -> Helles Theme. Sofortiger Wechsel."}
+]},
+{n:"F-041: Text-/Icon-Groesse",tt:[
+{t:"Groesse skalieren (80%-140%)",d:"Einstellungen -> Text-/Icon-Groesse Slider. Auf 140% -> Alles wird groesser. Auf 80% -> Alles wird kleiner. Aenderung sofort sichtbar."}
+]},
+{n:"F-040: Farb-Themes (12 Presets)",tt:[
+{t:"Farb-Theme wechseln",d:"Einstellungen -> Farb-Theme. 12 Farb-Themes mit Live-Preview. Theme antippen -> App-Farben wechseln sofort."}
+]}
+]},
+{cat:"15. Backup & Dokumente",ff:[
+{n:"F-065: Manuelles Backup",tt:[
+{t:"Backup erstellen",d:"Einstellungen -> Backup -> 'Backup erstellen' -> Speicherort waehlen -> JSON wird exportiert. Erfolgs-Meldung."},
+{t:"Backup importieren",d:"Einstellungen -> Backup -> 'Backup importieren' -> JSON waehlen -> Alle Daten werden wiederhergestellt (Favoriten, Playlists, Settings, etc.)."}
+]},
+{n:"F-078: Automatisches Backup",tt:[
+{t:"Auto-Backup Toggle AN",d:"Einstellungen -> Auto-Backup Toggle AN -> Ordner waehlen. Toggle muss als aktiv angezeigt werden."},
+{t:"Automatisches Backup bei App-Close",d:"App schliessen -> Backup wird automatisch im gewaehlten Ordner erstellt. Backup-Datei mit Zeitstempel pruefen."},
+{t:"Backup-Rotation (max 5)",d:"Mehrmals App schliessen -> Maximal 5 Backup-Dateien werden aufbewahrt. Aelteste wird automatisch geloescht."},
+{t:"'Neuestes wiederherstellen' funktioniert",d:"'Neuestes wiederherstellen' -> Das zuletzt erstellte Backup wird importiert."}
+]},
+{n:"Changelog",tt:[
+{t:"Changelog oeffnen",d:"Drawer -> About -> Changelog. Dropdown-Cards pro Version (neueste oben) muessen erscheinen."},
+{t:"Version aufklappen zeigt Aenderungen",d:"Version antippen (aufklappen) -> Aenderungen dieser Version sichtbar."},
+{t:"TTS-Button pro Version",d:"TTS-Button bei einer Version -> Nur DIESE Version wird vorgelesen (nicht alle)."},
+{t:"Changelog in aktueller Sprache",d:"Bei deutscher Einstellung: Deutsche Changelog-Texte, nicht Englisch."}
+]},
+{n:"Benutzerhandbuch",tt:[
+{t:"Handbuch oeffnen",d:"Drawer -> About -> Benutzerhandbuch. Suchfeld oben + Kategorien (Grundlagen, Player, Audio, etc.) muessen erscheinen."},
+{t:"Suchfeld filtert Features",d:"Suchbegriff eingeben -> Nur passende Features werden angezeigt."},
+{t:"Feature aufklappen zeigt 7 Abschnitte",d:"Feature aufklappen -> 7 Abschnitte: Was ist das, Wofuer, Schritte, Settings, Voice, Works With, Tipps."},
+{t:"TTS-Button liest Feature vor",d:"TTS-Button bei einem Feature -> Feature wird in aktueller Sprache vorgelesen."}
+]},
+{n:"Datenschutz + Nutzungsbedingungen",tt:[
+{t:"Datenschutz oeffnen",d:"Drawer -> About -> Datenschutz. Vollstaendiger Datenschutztext muss angezeigt werden."},
+{t:"Nutzungsbedingungen oeffnen",d:"Drawer -> About -> Nutzungsbedingungen. Vollstaendiger Text muss angezeigt werden."},
+{t:"Texte in allen 26 Sprachen korrekt",d:"Sprache auf z.B. Japanisch wechseln -> Datenschutz und Nutzungsbedingungen muessen auf Japanisch erscheinen (nicht Deutsch/Englisch)."}
+]},
+{n:"F-050: About-Screen",tt:[
+{t:"About oeffnen",d:"Drawer -> About. App-Version, Entwickler-Info, Links (Bewerten, Teilen, Feedback) muessen sichtbar sein."}
+]}
+]},
+{cat:"16. Kopfhoerer & Bluetooth",ff:[
+{n:"F-037: Kopfhoerer-Pause",tt:[
+{t:"Musik pausiert bei Kopfhoerer-Trennung",d:"Musik ueber Kopfhoerer hoeren -> Kopfhoerer abziehen (Kabel) oder BT trennen -> Musik pausiert SOFORT. Sicherheitsfeature!"}
+]},
+{n:"F-057: Bluetooth Auto-Resume",tt:[
+{t:"Auto-Resume bei BT-Verbindung",d:"Einstellungen -> 'Bluetooth Auto-Resume' AN. Musik pausieren. BT-Kopfhoerer aus- und einschalten -> Musik startet automatisch wenn BT verbunden."}
+]},
+{n:"F-062: Homescreen Widget",tt:[
+{t:"Widget hinzufuegen",d:"Long-Press auf Homescreen -> Widgets -> AutoPlayer Widget. Widget muss Album Art, Titel/Artist und Play/Pause/Vor/Zurueck Buttons zeigen."},
+{t:"Widget-Buttons funktionieren",d:"Play/Pause im Widget -> Musik startet/stoppt. Next/Previous -> Song wechselt. Cover aktualisiert sich."}
+]},
+{n:"F-063: App-Shortcuts",tt:[
+{t:"Shortcuts erscheinen bei Long-Press",d:"Long-Press auf App-Icon -> 3 Shortcuts: Letzte Wiedergabe, Shuffle Alle, Favoriten. Antippen -> Entsprechende Aktion wird ausgefuehrt."}
+]}
+]},
+{cat:"17. Cross-Feature Tests",ff:[
+{n:"Voice + Feature Kombination",tt:[
+{t:"Voice: 'Smart Reorder'",d:"Mikrofon -> 'Smart Reorder' -> Smart Reorder Sheet oeffnet sich in der Queue."},
+{t:"Voice: 'Queue Crossfade an'",d:"Mikrofon -> 'Queue Crossfade an' -> Queue Crossfade wird aktiviert. Toast/Bestaetigung."},
+{t:"Voice: 'Wie laut hoere ich?'",d:"Mikrofon -> 'Wie laut hoere ich?' -> TTS antwortet mit aktueller dB-Schaetzung."},
+{t:"Voice: 'Starte Party Modus'",d:"Mikrofon -> 'Starte Party Modus' -> Party-Mode Screen oeffnet sich."},
+{t:"Voice: 'Vibration an'",d:"Mikrofon -> 'Vibration an' -> Haptic Feedback wird aktiviert. Bestaetigung."},
+{t:"Voice: 'Gesten aktivieren'",d:"Mikrofon -> 'Gesten aktivieren' -> Gestensteuerung wird aktiviert. Bestaetigung."},
+{t:"Voice: 'Batteriemodus an'",d:"Mikrofon -> 'Batteriemodus an' -> Audio Offload wird aktiviert. ECO-Icon im Player."},
+{t:"Voice: 'Fortsetzen'",d:"Mikrofon -> 'Fortsetzen' oder 'Resume' -> Song wird an gespeicherter Position fortgesetzt."},
+{t:"Voice: 'Zeige Waveform'",d:"Mikrofon -> 'Zeige Waveform' -> Waveform-Anzeige wird im Player aktiviert."}
+]},
+{n:"Backup: Alle Datentypen einzeln pruefen",tt:[
+{t:"Backup: Favoriten gesichert",d:"Backup erstellen. App-Daten loeschen. Backup importieren -> Favoriten muessen vollstaendig wiederhergestellt sein."},
+{t:"Backup: Playlists gesichert",d:"Nach Restore: Alle manuell erstellten Playlists mit ihren Songs muessen vorhanden sein."},
+{t:"Backup: Queue Presets gesichert",d:"Nach Restore: Gespeicherte Queue Presets muessen vorhanden sein."},
+{t:"Backup: Achievements/XP gesichert",d:"Nach Restore: Level, XP, Achievements und Streak muessen korrekt wiederhergestellt sein."},
+{t:"Backup: Smart Playlists gesichert",d:"Nach Restore: Gespeicherte NLP Smart Playlists muessen vorhanden sein."},
+{t:"Backup: Loop-Lesezeichen gesichert",d:"Nach Restore: Gespeicherte A-B Loop Lesezeichen muessen vorhanden sein."},
+{t:"Backup: Song-Positionen gesichert",d:"Nach Restore: Gespeicherte Resume-Positionen muessen vorhanden sein."},
+{t:"Backup: Context-Rules gesichert",d:"Nach Restore: Context Auto-Switch Regeln muessen vorhanden sein."},
+{t:"Backup: Custom Themes gesichert",d:"Nach Restore: Erstellte Custom Themes muessen vorhanden sein."},
+{t:"Backup: Alle Settings gesichert",d:"Nach Restore: Alle Einstellungen (Crossfade, Shake, EQ, etc.) muessen auf den gesicherten Werten stehen."}
+]},
+{n:"Sprachumschaltung: 4 Sprachen testen",tt:[
+{t:"Deutsch: Alle UI-Texte deutsch",d:"Sprache auf Deutsch. Pruefe: Drawer (alle Eintraege), Settings (alle Labels), Player (Buttons/Info), Handbuch (alle Texte). ALLES muss deutsch sein."},
+{t:"English: Alle UI-Texte englisch",d:"Sprache auf English. Pruefe dieselben Bereiche. ALLES muss englisch sein, keine deutschen Reste."},
+{t:"Japanisch: Japanische Zeichen ueberall",d:"Sprache auf Japanisch. Drawer, Settings, Player, Handbuch, Changelog -> Ueberall japanische Schriftzeichen. Keine englischen/deutschen Reste."},
+{t:"Arabisch: RTL-Layout + arabische Schrift",d:"Sprache auf Arabisch. Layout muss gespiegelt sein (RTL = rechts nach links). Arabische Schrift ueberall."},
+{t:"Zurueck auf Deutsch: Alles korrekt",d:"Zurueck auf Deutsch wechseln. ALLE Texte muessen wieder deutsch sein. Kein englischer oder anderer Text verbleibend."}
+]},
+{n:"Smarte Playlists: Ausdruecke testen",tt:[
+{t:"NLP: Genre-Erkennung",d:"Smart Playlist: 'Rock Songs' eingeben -> Nur Rock-Songs in der Ergebnisliste."},
+{t:"NLP: BPM-Filter",d:"Smart Playlist: 'Schnelle Songs ueber 140 BPM' -> Nur Songs mit >140 BPM."},
+{t:"NLP: Stimmungs-Filter",d:"Smart Playlist: 'Chill Musik fuer den Abend' -> Langsame, ruhige Songs."},
+{t:"NLP: Hoerverhalten",d:"Smart Playlist: 'Meine Top Songs' -> Meistgehoerte Songs."},
+{t:"NLP: Kombination",d:"Smart Playlist: 'Energische Rock-Songs die ich noch nie gehoert habe' -> Kombination aus Genre + Energie + nie gehoert."}
+]},
+{n:"Android Auto: Browse Tree komplett",tt:[
+{t:"Auto: Favoriten-Kategorie",d:"In Android Auto: 'Favoriten' antippen -> Alle Favoriten-Songs muessen angezeigt werden."},
+{t:"Auto: Playlists-Kategorie",d:"In Android Auto: 'Playlists' -> Alle manuellen Playlists sichtbar. Playlist antippen -> Songs abspielen."},
+{t:"Auto: Zuletzt gehoert",d:"In Android Auto: 'Zuletzt gehoert' -> Die letzten gespielten Songs in chronologischer Reihenfolge."},
+{t:"Auto: Queues-Kategorie",d:"In Android Auto: 'Queues' -> Alle Queue-Slots sichtbar. Antippen -> Queue wird geladen."},
+{t:"Auto: Voice Search",d:"In Android Auto: Sprach-Suche verwenden -> Song/Kuenstler/Album wird gefunden und abgespielt."}
+]}
+]}
+];
+
+/* =========================================
+   DEVICE MANAGEMENT
+   ========================================= */
+
+let devices = [];
+let activeDevIdx = 0;
+let openCats = {};
+
+function loadDevices() {
+    const raw = localStorage.getItem('tp_meta_devices');
+    if (raw) {
+        try { devices = JSON.parse(raw); } catch(e) { devices = []; }
+    }
+    if (!devices.length) {
+        devices = [{ id: genDevId(), type: 'smartphone', maker: '', model: '', android: '' }];
+    }
+    const adi = localStorage.getItem('tp_meta_activedev');
+    activeDevIdx = adi !== null ? parseInt(adi, 10) : 0;
+    if (activeDevIdx >= devices.length) activeDevIdx = 0;
+}
+
+function genDevId() {
+    return 'dev_' + Date.now() + '_' + Math.random().toString(36).substr(2, 5);
+}
+
+function saveDevices() {
+    localStorage.setItem('tp_meta_devices', JSON.stringify(devices));
+    localStorage.setItem('tp_meta_activedev', String(activeDevIdx));
+}
+
+function addDevice() {
+    devices.push({ id: genDevId(), type: 'smartphone', maker: '', model: '', android: '' });
+    activeDevIdx = devices.length - 1;
+    saveDevices();
+    renderDevices();
+    render();
+}
+
+function removeDevice(idx) {
+    if (devices.length <= 1) { alert('Mindestens ein Geraet muss vorhanden sein!'); return; }
+    if (!confirm('Geraet "' + devLabel(idx) + '" entfernen? Testergebnisse dieses Geraets bleiben im localStorage erhalten.')) return;
+    devices.splice(idx, 1);
+    if (activeDevIdx >= devices.length) activeDevIdx = devices.length - 1;
+    saveDevices();
+    renderDevices();
+    render();
+}
+
+function setActiveDevice(idx) {
+    activeDevIdx = idx;
+    saveDevices();
+    renderDevices();
+    render();
+}
+
+function updateDevice(idx, field, val) {
+    devices[idx][field] = val;
+    saveDevices();
+    updateDevBadge();
+}
+
+function devLabel(idx) {
+    const d = devices[idx];
+    if (d.maker || d.model) return (d.maker + ' ' + d.model).trim();
+    return 'Geraet ' + (idx + 1);
+}
+
+function updateDevBadge() {
+    const badge = document.getElementById('devBadge');
+    badge.textContent = 'Aktiv: ' + devLabel(activeDevIdx);
+}
+
+function renderDevices() {
+    const list = document.getElementById('devList');
+    let html = '';
+    devices.forEach((d, i) => {
+        const isActive = i === activeDevIdx;
+        html += '<div class="dev-item' + (isActive ? ' active' : '') + '">';
+        html += '<div class="dev-item-header">';
+        html += '<label><input type="radio" name="activedev" ' + (isActive ? 'checked' : '') + ' onchange="setActiveDevice(' + i + ')"> ' + devLabel(i) + (isActive ? ' (aktiv)' : '') + '</label>';
+        html += '<button class="dev-delete" onclick="removeDevice(' + i + ')" title="Geraet entfernen">&#10005;</button>';
+        html += '</div>';
+        html += '<div class="dev-fields">';
+        html += '<div class="dev-type-group"><label><input type="radio" name="devtype' + i + '" value="smartphone" ' + (d.type === 'smartphone' ? 'checked' : '') + ' onchange="updateDevice(' + i + ',\'type\',\'smartphone\')"> Smartphone</label>';
+        html += '<label><input type="radio" name="devtype' + i + '" value="tablet" ' + (d.type === 'tablet' ? 'checked' : '') + ' onchange="updateDevice(' + i + ',\'type\',\'tablet\')"> Tablet</label></div>';
+        html += '<input placeholder="Hersteller" value="' + esc(d.maker) + '" onblur="updateDevice(' + i + ',\'maker\',this.value)">';
+        html += '<input placeholder="Modell" value="' + esc(d.model) + '" onblur="updateDevice(' + i + ',\'model\',this.value)">';
+        html += '<input placeholder="Android" value="' + esc(d.android) + '" onblur="updateDevice(' + i + ',\'android\',this.value)" style="max-width:80px">';
+        html += '</div></div>';
+    });
+    list.innerHTML = html;
+    updateDevBadge();
+}
+
+/* =========================================
+   MIGRATION: old keys -> device-scoped keys
+   ========================================= */
+
+function migrateOldKeys() {
+    const defaultDevId = devices[0].id;
+    const keysToMigrate = [];
+    for (let i = 0; i < localStorage.length; i++) {
+        const k = localStorage.key(i);
+        if (k && k.startsWith('tp_') && !k.startsWith('tp_dev_') && !k.startsWith('tp_meta_') && k !== 'tp_saved') {
+            keysToMigrate.push(k);
+        }
+    }
+    if (keysToMigrate.length > 0) {
+        keysToMigrate.forEach(k => {
+            const suffix = k.substring(3); // remove 'tp_'
+            const newKey = 'tp_dev_' + defaultDevId + '_' + suffix;
+            if (!localStorage.getItem(newKey)) {
+                localStorage.setItem(newKey, localStorage.getItem(k));
+            }
+            localStorage.removeItem(k);
+        });
+    }
+}
+
+/* =========================================
+   KEY FUNCTIONS (device-scoped)
+   ========================================= */
+
+function esc(s) { return (s || '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;'); }
+function getP(el) { const t = el.closest('.ti'); return { ci: +t.dataset.ci, fn: t.dataset.fn, ti: +t.dataset.ti }; }
+
+function key(ci, fn, ti) {
+    return 'tp_dev_' + devices[activeDevIdx].id + '_' + ci + '_' + fn + '_' + ti;
+}
+
+function getS(ci, fn, ti) { return localStorage.getItem(key(ci, fn, ti) + '_s') || ''; }
+function getCmt(ci, fn, ti) { return localStorage.getItem(key(ci, fn, ti) + '_c') || ''; }
+function getSev(ci, fn, ti) { return localStorage.getItem(key(ci, fn, ti) + '_sev') || ''; }
+function getRep(ci, fn, ti) { return localStorage.getItem(key(ci, fn, ti) + '_rep') || ''; }
+function getFeat(ci, fn, ti) { return localStorage.getItem(key(ci, fn, ti) + '_f') === '1'; }
+function getFeatCmt(ci, fn, ti) { return localStorage.getItem(key(ci, fn, ti) + '_fc') || ''; }
+function getSs(ci, fn, ti) { return localStorage.getItem(key(ci, fn, ti) + '_ss') || ''; }
+function save() { localStorage.setItem('tp_saved', new Date().toLocaleString('de-DE')); }
+
+/* =========================================
+   META DATA
+   ========================================= */
+
+function saveMeta() {
+    localStorage.setItem('tp_meta_tester', document.getElementById('metaTester').value);
+    localStorage.setItem('tp_meta_version', document.getElementById('metaVersion').value);
+    localStorage.setItem('tp_meta_lang', document.getElementById('metaLang').value);
+    localStorage.setItem('tp_meta_start', document.getElementById('metaStart').value);
+    localStorage.setItem('tp_meta_end', document.getElementById('metaEnd').value);
+    localStorage.setItem('tp_meta_feedback', document.getElementById('metaFeedback').value);
+    save();
+}
+
+function loadMeta() {
+    const t = localStorage.getItem('tp_meta_tester'); if (t) document.getElementById('metaTester').value = t;
+    const v = localStorage.getItem('tp_meta_version'); if (v) document.getElementById('metaVersion').value = v;
+    const l = localStorage.getItem('tp_meta_lang'); if (l) document.getElementById('metaLang').value = l;
+    const s = localStorage.getItem('tp_meta_start'); if (s) document.getElementById('metaStart').value = s;
+    const e = localStorage.getItem('tp_meta_end'); if (e) document.getElementById('metaEnd').value = e;
+    const f = localStorage.getItem('tp_meta_feedback'); if (f) document.getElementById('metaFeedback').value = f;
+}
+
+/* =========================================
+   RENDER
+   ========================================= */
+
+function render() {
+const c = document.getElementById('cats'); c.innerHTML = '';
+const s = document.getElementById('searchBox').value.toLowerCase();
+D.forEach((cat, ci) => {
+    const ff = cat.ff.filter(f => !s || f.n.toLowerCase().includes(s) || f.tt.some(t => t.t.toLowerCase().includes(s) || t.d.toLowerCase().includes(s)));
+    if (!ff.length) return;
+    let ct = 0, cd = 0, cb = 0, cf = 0;
+    ff.forEach(f => { ct += f.tt.length; f.tt.forEach((_, ti) => { const st = getS(ci, f.n, ti); if (st === 'ok') cd++; if (st === 'bug') cb++; if (getFeat(ci, f.n, ti)) cf++; }); });
+    const d = document.createElement('div');
+    d.className = 'cat' + (openCats[ci] ? ' open' : '');
+    d.innerHTML = '<div class="cat-h" onclick="tCat(' + ci + ')"><h2><span class="arr">&#9654;</span> ' + cat.cat + '</h2><span class="cs"><span class="d">' + cd + '</span>' + (cb ? ' <span class="b">BUG ' + cb + '</span>' : '') + (cf ? ' <span style="color:var(--orange)">W ' + cf + '</span>' : '') + '/' + ct + '</span></div><div class="cat-b"></div>';
+    const b = d.querySelector('.cat-b');
+    ff.forEach(f => {
+        let allOk = f.tt.every((_, ti) => getS(ci, f.n, ti) === 'ok');
+        let hasBugs = f.tt.some((_, ti) => getS(ci, f.n, ti) === 'bug');
+        let h = '<div class="feat' + (allOk ? ' ok' : '') + (hasBugs ? ' has-bugs' : '') + '"><div class="feat-t">' + f.n + '</div>';
+        f.tt.forEach((t, ti) => {
+            const st = getS(ci, f.n, ti);
+            const cmt = getCmt(ci, f.n, ti);
+            const sev = getSev(ci, f.n, ti);
+            const rep = getRep(ci, f.n, ti);
+            const hasFeat = getFeat(ci, f.n, ti);
+            const featCmt = getFeatCmt(ci, f.n, ti);
+            const ss = getSs(ci, f.n, ti);
+            h += '<div class="ti' + (st === 'ok' ? ' done' : '') + (st === 'bug' ? ' bugged' : '') + (hasFeat ? ' has-feat' : '') + '" data-ci="' + ci + '" data-fn="' + esc(f.n) + '" data-ti="' + ti + '">';
+            h += '<input type="checkbox" class="cb-ok" ' + (st === 'ok' ? 'checked' : '') + ' onchange="setOk(this)" title="Bestanden">';
+            h += '<div class="ti-body"><div class="ti-row"><div class="ti-name">' + t.t + '</div>';
+            h += '<label class="bug-label"><input type="checkbox" class="cb-bug" ' + (st === 'bug' ? 'checked' : '') + ' onchange="setBug(this)" title="Bug"> BUG</label>';
+            h += '<label class="feat-label"><input type="checkbox" class="cb-feat" ' + (hasFeat ? 'checked' : '') + ' onchange="setFeat(this)" title="Aenderung/Erweiterung"> WUNSCH</label>';
+            h += '<span class="ss-toggle" onclick="toggleSs(this)">Screenshot</span>';
+            h += '</div>';
+            h += '<div class="ti-detail">' + t.d + '</div>';
+            h += '<textarea class="comment-box' + (cmt ? ' has-text' : '') + '" placeholder="Bug-Beschreibung: Was erwartet? Was passiert? Schritte?" onblur="saveCmt(this)">' + esc(cmt) + '</textarea>';
+            // Bug severity + reproducibility
+            h += '<div class="bug-extra">';
+            h += '<label>Schweregrad<select onchange="saveSev(this)"><option value="">--</option><option value="critical"' + (sev === 'critical' ? ' selected' : '') + '>Kritisch</option><option value="high"' + (sev === 'high' ? ' selected' : '') + '>Hoch</option><option value="medium"' + (sev === 'medium' ? ' selected' : '') + '>Mittel</option><option value="low"' + (sev === 'low' ? ' selected' : '') + '>Niedrig</option></select></label>';
+            h += '<label>Reproduzierbar<select onchange="saveRep(this)"><option value="">--</option><option value="always"' + (rep === 'always' ? ' selected' : '') + '>Immer</option><option value="sometimes"' + (rep === 'sometimes' ? ' selected' : '') + '>Manchmal</option><option value="once"' + (rep === 'once' ? ' selected' : '') + '>Einmalig</option></select></label>';
+            h += '</div>';
+            h += '<textarea class="comment-feat' + (featCmt ? ' has-text' : '') + '" placeholder="Aenderungs-/Erweiterungswunsch..." onblur="saveFeatCmt(this)">' + esc(featCmt) + '</textarea>';
+            // Screenshot field
+            h += '<input type="text" class="ss-field' + (ss ? ' visible has-text' : '') + '" placeholder="Screenshot-Dateinamen (komma-getrennt)" value="' + esc(ss) + '" onblur="saveSs(this)">';
+            h += '</div></div>';
+        });
+        h += '</div>';
+        b.innerHTML += h;
+    });
+    c.appendChild(d);
+});
+updStats();
+updBugList();
+updFeatList();
+}
+
+/* =========================================
+   STATE FUNCTIONS
+   ========================================= */
+
+function setOk(el) {
+    const p = getP(el);
+    const k = key(p.ci, p.fn, p.ti);
+    if (el.checked) {
+        localStorage.setItem(k + '_s', 'ok');
+        const bugCb = el.closest('.ti').querySelector('.cb-bug');
+        if (bugCb) bugCb.checked = false;
+    } else {
+        localStorage.removeItem(k + '_s');
+    }
+    save();
+    const ti = el.closest('.ti');
+    ti.className = 'ti' + (el.checked ? ' done' : '') + (ti.classList.contains('has-feat') ? ' has-feat' : '');
+    updStats(); updBugList(); updFeat(el); updCatStats(el);
+}
+
+function setBug(el) {
+    const p = getP(el);
+    const k = key(p.ci, p.fn, p.ti);
+    if (el.checked) {
+        localStorage.setItem(k + '_s', 'bug');
+        const okCb = el.closest('.ti').querySelector('.cb-ok');
+        if (okCb) okCb.checked = false;
+    } else {
+        localStorage.removeItem(k + '_s');
+    }
+    save();
+    const ti = el.closest('.ti');
+    ti.className = 'ti' + (el.checked ? ' bugged' : '') + (ti.classList.contains('has-feat') ? ' has-feat' : '');
+    updStats(); updBugList(); updFeat(el); updCatStats(el);
+}
+
+function saveCmt(el) {
+    const p = getP(el);
+    localStorage.setItem(key(p.ci, p.fn, p.ti) + '_c', el.value);
+    el.className = 'comment-box' + (el.value ? ' has-text' : '');
+    save(); updBugList();
+}
+
+function saveSev(el) {
+    const p = getP(el.closest('.ti'));
+    localStorage.setItem(key(p.ci, p.fn, p.ti) + '_sev', el.value);
+    save(); updBugList();
+}
+
+function saveRep(el) {
+    const p = getP(el.closest('.ti'));
+    localStorage.setItem(key(p.ci, p.fn, p.ti) + '_rep', el.value);
+    save(); updBugList();
+}
+
+function setFeat(el) {
+    const p = getP(el);
+    const k = key(p.ci, p.fn, p.ti);
+    if (el.checked) { localStorage.setItem(k + '_f', '1'); } else { localStorage.removeItem(k + '_f'); }
+    save();
+    const ti = el.closest('.ti');
+    ti.classList.toggle('has-feat', el.checked);
+    updStats(); updFeatList(); updCatStats(el);
+}
+
+function saveFeatCmt(el) {
+    const p = getP(el);
+    localStorage.setItem(key(p.ci, p.fn, p.ti) + '_fc', el.value);
+    el.className = 'comment-feat' + (el.value ? ' has-text' : '');
+    save(); updFeatList();
+}
+
+function saveSs(el) {
+    const p = getP(el.closest('.ti'));
+    localStorage.setItem(key(p.ci, p.fn, p.ti) + '_ss', el.value);
+    el.classList.toggle('has-text', !!el.value);
+    save();
+}
+
+function toggleSs(el) {
+    const ssField = el.closest('.ti-body').querySelector('.ss-field');
+    ssField.classList.toggle('visible');
+    if (ssField.classList.contains('visible')) ssField.focus();
+}
+
+/* =========================================
+   STATS & SUMMARIES
+   ========================================= */
+
+function updFeatList() {
+    const fl = document.getElementById('featList');
+    const fs = document.getElementById('featSummary');
+    let html = '', count = 0;
+    D.forEach((cat, ci) => { cat.ff.forEach(f => { f.tt.forEach((t, ti) => {
+        if (getFeat(ci, f.n, ti)) {
+            count++;
+            const c = getFeatCmt(ci, f.n, ti);
+            html += '<div class="feat-item"><span class="bf">' + f.n + '</span> → <span class="bt">' + t.t + '</span>' + (c ? '<span class="bc">' + esc(c) + '</span>' : '') + '</div>';
+        }
+    }); }); });
+    fl.innerHTML = html;
+    fs.classList.toggle('visible', count > 0);
+}
+
+function updFeat(el) {
+    const feat = el.closest('.feat');
+    const cbs = feat.querySelectorAll('.cb-ok');
+    const bugs = feat.querySelectorAll('.cb-bug');
+    const allOk = Array.from(cbs).every(c => c.checked);
+    const hasBugs = Array.from(bugs).some(c => c.checked);
+    feat.classList.toggle('ok', allOk);
+    feat.classList.toggle('has-bugs', hasBugs);
+}
+
+function updCatStats(el) {
+    const cat = el.closest('.cat');
+    let t = 0, d = 0, b = 0;
+    cat.querySelectorAll('.cb-ok').forEach(c => { t++; if (c.checked) d++; });
+    cat.querySelectorAll('.cb-bug').forEach(c => { if (c.checked) b++; });
+    const cs = cat.querySelector('.cs');
+    cs.innerHTML = '<span class="d">' + d + '</span>' + (b ? ' <span class="b">BUG ' + b + '</span>' : '') + '/' + t;
+}
+
+function updStats() {
+    let t = 0, ok = 0, bug = 0, feat = 0;
+    D.forEach((cat, ci) => { cat.ff.forEach(f => { f.tt.forEach((_, ti) => { t++; const s = getS(ci, f.n, ti); if (s === 'ok') ok++; if (s === 'bug') bug++; if (getFeat(ci, f.n, ti)) feat++; }); }); });
+    document.getElementById('cOk').textContent = ok;
+    document.getElementById('cBug').textContent = bug;
+    document.getElementById('cFeat').textContent = feat;
+    document.getElementById('cOpen').textContent = t - ok - bug;
+    document.getElementById('cAll').textContent = t;
+    document.getElementById('pFill').style.width = (t > 0 ? (ok / t * 100) : 0) + '%';
+    const sv = localStorage.getItem('tp_saved');
+    document.getElementById('lastSaved').textContent = sv ? 'Gespeichert: ' + sv : '';
+    document.getElementById('tsLine').textContent = sv ? 'Zuletzt gespeichert: ' + sv : '';
+}
+
+function updBugList() {
+    const bl = document.getElementById('bugList');
+    const bs = document.getElementById('bugSummary');
+    let html = '', count = 0;
+    D.forEach((cat, ci) => { cat.ff.forEach(f => { f.tt.forEach((t, ti) => {
+        if (getS(ci, f.n, ti) === 'bug') {
+            count++;
+            const c = getCmt(ci, f.n, ti);
+            const sev = getSev(ci, f.n, ti);
+            const rep = getRep(ci, f.n, ti);
+            const ss = getSs(ci, f.n, ti);
+            const sevLabels = { critical: 'Kritisch', high: 'Hoch', medium: 'Mittel', low: 'Niedrig' };
+            const repLabels = { always: 'Immer', sometimes: 'Manchmal', once: 'Einmalig' };
+            let extra = '';
+            if (sev) extra += ' [' + (sevLabels[sev] || sev) + ']';
+            if (rep) extra += ' (' + (repLabels[rep] || rep) + ')';
+            html += '<div class="bug-item"><span class="bf">' + f.n + '</span> &rarr; <span class="bt">' + t.t + '</span>' + (extra ? '<span style="color:var(--cyan);margin-left:6px;font-size:0.85em">' + extra + '</span>' : '') + (c ? '<span class="bc">' + esc(c) + '</span>' : '') + (ss ? '<span style="color:var(--cyan);margin-left:6px;font-size:0.8em">Screens: ' + esc(ss) + '</span>' : '') + '</div>';
+        }
+    }); }); });
+    bl.innerHTML = html;
+    bs.classList.toggle('visible', count > 0);
+}
+
+/* =========================================
+   NAVIGATION
+   ========================================= */
+
+function tCat(ci) { openCats[ci] = !openCats[ci]; render(); }
+function toggleAll(o) { D.forEach((_, ci) => { openCats[ci] = o; }); render(); }
+
+function resetAll() {
+    if (!confirm('ALLE Testergebnisse, Kommentare, Geraete und Meta-Daten zuruecksetzen?')) return;
+    Object.keys(localStorage).forEach(k => { if (k.startsWith('tp_')) localStorage.removeItem(k); });
+    devices = [{ id: genDevId(), type: 'smartphone', maker: '', model: '', android: '' }];
+    activeDevIdx = 0;
+    saveDevices();
+    document.getElementById('metaTester').value = '';
+    document.getElementById('metaVersion').value = '3.8.2';
+    document.getElementById('metaLang').value = 'de';
+    document.getElementById('metaStart').value = '';
+    document.getElementById('metaEnd').value = '';
+    document.getElementById('metaFeedback').value = '';
+    renderDevices();
+    render();
+}
+
+/* =========================================
+   EXPORT FUNCTIONS
+   ========================================= */
+
+function exportResults() {
+    const dev = devices[activeDevIdx];
+    const devInfo = devLabel(activeDevIdx) + (dev.android ? ' (Android ' + dev.android + ')' : '');
+    let t = 'AutoPlayer Testplan v4.0.0 — ' + new Date().toLocaleString('de-DE') + '\n';
+    t += 'Tester: ' + (localStorage.getItem('tp_meta_tester') || 'k.A.') + '\n';
+    t += 'Geraet: ' + devInfo + '\n';
+    t += 'App-Version: ' + (localStorage.getItem('tp_meta_version') || 'k.A.') + '\n\n';
+    let total = 0, ok = 0, bug = 0;
+    D.forEach((cat, ci) => {
+        t += '=== ' + cat.cat + ' ===\n';
+        cat.ff.forEach(f => {
+            t += '\n' + f.n + '\n';
+            f.tt.forEach((tt, ti) => {
+                total++; const s = getS(ci, f.n, ti); const c = getCmt(ci, f.n, ti);
+                if (s === 'ok') { ok++; t += '  [OK] ' + tt.t + '\n'; }
+                else if (s === 'bug') { bug++; t += '  [BUG] ' + tt.t + (c ? ' -- ' + c : '') + '\n'; }
+                else t += '  [ ] ' + tt.t + '\n';
+            });
+        }); t += '\n';
+    });
+    t += '\n=== ERGEBNIS: ' + ok + ' bestanden, ' + bug + ' Bugs, ' + (total - ok - bug) + ' offen (' + Math.round(ok / total * 100) + '%) ===\n';
+    navigator.clipboard.writeText(t).then(() => alert('Kopiert!'));
+}
+
+function exportBugs() {
+    const dev = devices[activeDevIdx];
+    const devInfo = devLabel(activeDevIdx) + (dev.android ? ' (Android ' + dev.android + ')' : '');
+    const sevLabels = { critical: 'Kritisch', high: 'Hoch', medium: 'Mittel', low: 'Niedrig' };
+    const repLabels = { always: 'Immer', sometimes: 'Manchmal', once: 'Einmalig' };
+    let t = 'AutoPlayer Bug-Report — ' + new Date().toLocaleString('de-DE') + '\n';
+    t += 'Tester: ' + (localStorage.getItem('tp_meta_tester') || 'k.A.') + '\n';
+    t += 'Geraet: ' + devInfo + '\n';
+    t += 'App-Version: ' + (localStorage.getItem('tp_meta_version') || 'k.A.') + '\n\n';
+    let count = 0;
+    D.forEach((cat, ci) => { cat.ff.forEach(f => { f.tt.forEach((tt, ti) => {
+        if (getS(ci, f.n, ti) === 'bug') {
+            count++;
+            const c = getCmt(ci, f.n, ti);
+            const sev = getSev(ci, f.n, ti);
+            const rep = getRep(ci, f.n, ti);
+            const ss = getSs(ci, f.n, ti);
+            t += '[BUG] ' + f.n + ' -> ' + tt.t + '\n';
+            if (sev) t += '  Schweregrad: ' + (sevLabels[sev] || sev) + '\n';
+            if (rep) t += '  Reproduzierbar: ' + (repLabels[rep] || rep) + '\n';
+            if (c) t += '  Beschreibung: ' + c + '\n';
+            if (ss) t += '  Screenshots: ' + ss + '\n';
+            t += '  Testanleitung: ' + tt.d + '\n';
+            t += '  Geraet: ' + devInfo + '\n\n';
+        }
+    }); }); });
+    if (!count) { alert('Keine Bugs gefunden!'); return; }
+    t += 'Gesamt: ' + count + ' Bugs\n';
+    navigator.clipboard.writeText(t).then(() => alert(count + ' Bugs kopiert!'));
+}
+
+function exportFeats() {
+    let t = 'AutoPlayer Feature-Wuensche — ' + new Date().toLocaleString('de-DE') + '\n\n';
+    let count = 0;
+    D.forEach((cat, ci) => { cat.ff.forEach(f => { f.tt.forEach((tt, ti) => {
+        if (getFeat(ci, f.n, ti)) {
+            count++; const c = getFeatCmt(ci, f.n, ti);
+            t += '[WUNSCH] ' + f.n + ' → ' + tt.t + '\n';
+            if (c) t += '  Beschreibung: ' + c + '\n';
+            t += '  Kontext: ' + tt.d + '\n\n';
+        }
+    }); }); });
+    if (!count) { alert('Keine Wuensche eingetragen!'); return; }
+    t += 'Gesamt: ' + count + ' Wuensche\n';
+    navigator.clipboard.writeText(t).then(() => alert(count + ' Wuensche kopiert!'));
+}
+
+/* =========================================
+   JSON EXPORT / IMPORT
+   ========================================= */
+
+function saveToJson() {
+    const data = {
+        version: localStorage.getItem('tp_meta_version') || '3.8.2',
+        date: new Date().toISOString(),
+        meta: {
+            tester: localStorage.getItem('tp_meta_tester') || '',
+            appVersion: localStorage.getItem('tp_meta_version') || '3.8.2',
+            lang: localStorage.getItem('tp_meta_lang') || 'de',
+            start: localStorage.getItem('tp_meta_start') || '',
+            end: localStorage.getItem('tp_meta_end') || '',
+            feedback: localStorage.getItem('tp_meta_feedback') || '',
+            devices: devices,
+            activeDevIdx: activeDevIdx
+        },
+        tests: {}
+    };
+    Object.keys(localStorage).forEach(k => {
+        if (k.startsWith('tp_dev_')) data.tests[k] = localStorage.getItem(k);
+    });
+    const json = JSON.stringify(data, null, 2);
+    const blob = new Blob([json], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url; a.download = 'testplan_' + new Date().toISOString().slice(0, 10) + '.json';
+    a.click(); URL.revokeObjectURL(url);
+}
+
+function showImport() {
+    document.getElementById('ioModal').classList.add('show');
+    document.getElementById('ioText').value = '';
+    document.getElementById('ioText').focus();
+}
+
+function closeModal() { document.getElementById('ioModal').classList.remove('show'); }
+
+function doImport() {
+    try {
+        const json = JSON.parse(document.getElementById('ioText').value);
+        let count = 0;
+
+        // Import meta data
+        if (json.meta) {
+            if (json.meta.tester) localStorage.setItem('tp_meta_tester', json.meta.tester);
+            if (json.meta.appVersion) localStorage.setItem('tp_meta_version', json.meta.appVersion);
+            if (json.meta.lang) localStorage.setItem('tp_meta_lang', json.meta.lang);
+            if (json.meta.start) localStorage.setItem('tp_meta_start', json.meta.start);
+            if (json.meta.end) localStorage.setItem('tp_meta_end', json.meta.end);
+            if (json.meta.feedback) localStorage.setItem('tp_meta_feedback', json.meta.feedback);
+            if (json.meta.devices && json.meta.devices.length) {
+                devices = json.meta.devices;
+                activeDevIdx = json.meta.activeDevIdx || 0;
+                if (activeDevIdx >= devices.length) activeDevIdx = 0;
+                saveDevices();
+            }
+        }
+
+        // Import tests (support both old and new format)
+        if (json.tests) {
+            Object.entries(json.tests).forEach(([k, v]) => {
+                localStorage.setItem(k, v);
+                count++;
+            });
+        }
+
+        closeModal();
+        loadMeta();
+        renderDevices();
+        render();
+        alert(count + ' Eintraege importiert! Stand vom: ' + (json.date || 'unbekannt'));
+    } catch (e) { alert('JSON Fehler: ' + e.message); }
+}
+
+/* =========================================
+   INIT
+   ========================================= */
+
+loadDevices();
+// === FEATURE WISHES ===
+function getFeatureWishes() {
+    try { return JSON.parse(localStorage.getItem('tp_meta_wishes') || '[]'); } catch(e) { return []; }
+}
+function saveFeatureWishes(wishes) {
+    localStorage.setItem('tp_meta_wishes', JSON.stringify(wishes));
+    save();
+}
+function addFeatureWish() {
+    const wishes = getFeatureWishes();
+    wishes.push({ title: '', description: '', priority: 'mittel', category: '' });
+    saveFeatureWishes(wishes);
+    renderFeatureWishes();
+}
+function removeFeatureWish(idx) {
+    if (!confirm('Feature-Wunsch #' + (idx+1) + ' wirklich loeschen?')) return;
+    const wishes = getFeatureWishes();
+    wishes.splice(idx, 1);
+    saveFeatureWishes(wishes);
+    renderFeatureWishes();
+}
+function updateFeatureWish(idx, field, value) {
+    const wishes = getFeatureWishes();
+    if (wishes[idx]) { wishes[idx][field] = value; saveFeatureWishes(wishes); }
+}
+function renderFeatureWishes() {
+    const list = document.getElementById('featureWishesList');
+    const wishes = getFeatureWishes();
+    if (!wishes.length) {
+        list.innerHTML = '<p style="color:var(--muted);font-size:0.82em;font-style:italic">Noch keine Feature-Wuensche. Klicke oben auf "+ Feature-Wunsch" um einen neuen Eintrag zu erstellen.</p>';
+        return;
+    }
+    let html = '';
+    wishes.forEach((w, i) => {
+        html += '<div class="fw-item">';
+        html += '<div class="fw-head"><span class="fw-num">Feature-Wunsch #' + (i+1) + '</span>';
+        html += '<button class="fw-del" onclick="removeFeatureWish('+i+')" title="Loeschen">X</button></div>';
+        html += '<input type="text" placeholder="Titel / Kurzbeschreibung des Features" value="'+esc(w.title||'')+'" onblur="updateFeatureWish('+i+',\'title\',this.value)">';
+        html += '<div style="display:flex;gap:8px;margin-bottom:6px">';
+        html += '<select onchange="updateFeatureWish('+i+',\'priority\',this.value)">';
+        html += '<option value="hoch"'+(w.priority==='hoch'?' selected':'')+'>Prioritaet: Hoch</option>';
+        html += '<option value="mittel"'+(w.priority==='mittel'?' selected':'')+'>Prioritaet: Mittel</option>';
+        html += '<option value="niedrig"'+(w.priority==='niedrig'?' selected':'')+'>Prioritaet: Niedrig</option>';
+        html += '</select>';
+        html += '<select onchange="updateFeatureWish('+i+',\'category\',this.value)">';
+        html += '<option value=""'+((!w.category)?' selected':'')+'>Kategorie waehlen...</option>';
+        html += '<option value="ui"'+((w.category==='ui')?' selected':'')+'>UI/UX</option>';
+        html += '<option value="audio"'+((w.category==='audio')?' selected':'')+'>Audio/Sound</option>';
+        html += '<option value="player"'+((w.category==='player')?' selected':'')+'>Player-Ansichten</option>';
+        html += '<option value="smart"'+((w.category==='smart')?' selected':'')+'>Intelligente Features</option>';
+        html += '<option value="auto"'+((w.category==='auto')?' selected':'')+'>Android Auto</option>';
+        html += '<option value="social"'+((w.category==='social')?' selected':'')+'>Social/Party</option>';
+        html += '<option value="tools"'+((w.category==='tools')?' selected':'')+'>Tools</option>';
+        html += '<option value="settings"'+((w.category==='settings')?' selected':'')+'>Einstellungen</option>';
+        html += '<option value="other"'+((w.category==='other')?' selected':'')+'>Sonstiges</option>';
+        html += '</select></div>';
+        html += '<textarea placeholder="Beschreibe den Feature-Wunsch so detailliert wie moeglich: Was soll das Feature machen? Warum waere es nuetzlich? Wie stellst du dir die Bedienung vor?" onblur="updateFeatureWish('+i+',\'description\',this.value)">'+esc(w.description||'')+'</textarea>';
+        html += '</div>';
+    });
+    list.innerHTML = html;
+}
+
+// Extend JSON export to include wishes
+const origSaveToJson = saveToJson;
+saveToJson = function() {
+    const data = { version: document.getElementById('metaVersion').value, date: new Date().toISOString(), meta: {}, tests: {} };
+    data.meta.tester = localStorage.getItem('tp_meta_tester') || '';
+    data.meta.version = localStorage.getItem('tp_meta_version') || '';
+    data.meta.lang = localStorage.getItem('tp_meta_lang') || '';
+    data.meta.start = localStorage.getItem('tp_meta_start') || '';
+    data.meta.end = localStorage.getItem('tp_meta_end') || '';
+    data.meta.devices = JSON.parse(localStorage.getItem('tp_meta_devices') || '[]');
+    data.meta.activeDevice = localStorage.getItem('tp_meta_activedev') || '0';
+    data.meta.feedback = localStorage.getItem('tp_meta_feedback') || '';
+    data.meta.rating = localStorage.getItem('tp_meta_rating') || '';
+    data.meta.ratingComment = localStorage.getItem('tp_meta_rating_comment') || '';
+    data.meta.wishes = getFeatureWishes();
+    Object.keys(localStorage).forEach(k => {
+        if (k.startsWith('tp_dev_')) data.tests[k] = localStorage.getItem(k);
+    });
+    const json = JSON.stringify(data, null, 2);
+    const blob = new Blob([json], {type: 'application/json'});
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url; a.download = 'testplan_' + (data.meta.tester||'anonym').replace(/\s/g,'_') + '_' + new Date().toISOString().slice(0,10) + '.json';
+    a.click(); URL.revokeObjectURL(url);
+};
+
+// Extend import to handle wishes
+const origDoImport = doImport;
+doImport = function() {
+    try {
+        const json = JSON.parse(document.getElementById('ioText').value);
+        if (!json.tests && !json.meta) { alert('Ungueltiges Format!'); return; }
+        let count = 0;
+        if (json.tests) Object.entries(json.tests).forEach(([k,v]) => { localStorage.setItem(k, v); count++; });
+        if (json.meta) {
+            if (json.meta.tester) localStorage.setItem('tp_meta_tester', json.meta.tester);
+            if (json.meta.version) localStorage.setItem('tp_meta_version', json.meta.version);
+            if (json.meta.lang) localStorage.setItem('tp_meta_lang', json.meta.lang);
+            if (json.meta.start) localStorage.setItem('tp_meta_start', json.meta.start);
+            if (json.meta.end) localStorage.setItem('tp_meta_end', json.meta.end);
+            if (json.meta.devices) localStorage.setItem('tp_meta_devices', JSON.stringify(json.meta.devices));
+            if (json.meta.activeDevice) localStorage.setItem('tp_meta_activedev', json.meta.activeDevice);
+            if (json.meta.feedback) localStorage.setItem('tp_meta_feedback', json.meta.feedback);
+            if (json.meta.rating) localStorage.setItem('tp_meta_rating', json.meta.rating);
+            if (json.meta.ratingComment) localStorage.setItem('tp_meta_rating_comment', json.meta.ratingComment);
+            if (json.meta.wishes) localStorage.setItem('tp_meta_wishes', JSON.stringify(json.meta.wishes));
+        }
+        closeModal();
+        loadMeta(); renderDevices(); renderFeatureWishes(); renderStars(); render();
+        alert(count + ' Eintraege importiert! Stand vom: ' + (json.date || 'unbekannt'));
+    } catch(e) { alert('JSON Fehler: ' + e.message); }
+};
+
+// === STAR RATING ===
+const ratingLabels = ['', 'Mangelhaft — viele Probleme', 'Ausreichend — funktioniert teilweise', 'Befriedigend — grundsaetzlich OK', 'Gut — laeuft rund mit kleinen Macken', 'Ausgezeichnet — Top App!'];
+function setRating(v) {
+    localStorage.setItem('tp_meta_rating', v);
+    renderStars();
+    save();
+}
+function saveRatingComment() {
+    localStorage.setItem('tp_meta_rating_comment', document.getElementById('ratingComment').value);
+    save();
+}
+function renderStars() {
+    const v = parseInt(localStorage.getItem('tp_meta_rating') || '0');
+    document.querySelectorAll('.star').forEach(s => {
+        const sv = parseInt(s.dataset.v);
+        s.innerHTML = sv <= v ? '&#9733;' : '&#9734;';
+        s.classList.toggle('active', sv <= v);
+    });
+    document.getElementById('ratingLabel').textContent = v > 0 ? v + '/5 — ' + ratingLabels[v] : 'Noch keine Bewertung';
+    const rc = localStorage.getItem('tp_meta_rating_comment');
+    if (rc) document.getElementById('ratingComment').value = rc;
+}
+
+// === SEND BY MAIL ===
+function sendResultByMail() {
+    const tester = localStorage.getItem('tp_meta_tester') || 'Anonym';
+    const version = localStorage.getItem('tp_meta_version') || '3.8.2';
+    const rating = localStorage.getItem('tp_meta_rating') || '?';
+    const devs = JSON.parse(localStorage.getItem('tp_meta_devices') || '[]');
+    const activeIdx = parseInt(localStorage.getItem('tp_meta_activedev') || '0');
+    const dev = devs[activeIdx] || {};
+    const deviceStr = (dev.brand || '?') + ' ' + (dev.model || '?') + ' (Android ' + (dev.android || '?') + ')';
+
+    // Count stats
+    let total=0, ok=0, bugs=0, feats=0;
+    D.forEach((cat,ci) => { cat.ff.forEach(f => { f.tt.forEach((_,ti) => {
+        total++;
+        const s = getS(ci,f.n,ti);
+        if (s==='ok') ok++;
+        if (s==='bug') bugs++;
+        if (getFeat(ci,f.n,ti)) feats++;
+    }); }); });
+
+    // Build JSON for body (truncated for mailto limit)
+    const data = { version: version, date: new Date().toISOString(), meta: {}, tests: {} };
+    data.meta.tester = tester;
+    data.meta.version = version;
+    data.meta.rating = rating;
+    data.meta.ratingComment = localStorage.getItem('tp_meta_rating_comment') || '';
+    data.meta.devices = devs;
+    data.meta.feedback = localStorage.getItem('tp_meta_feedback') || '';
+    data.meta.wishes = getFeatureWishes();
+    Object.keys(localStorage).forEach(k => { if (k.startsWith('tp_dev_')) data.tests[k] = localStorage.getItem(k); });
+
+    // Save JSON to file first
+    const json = JSON.stringify(data, null, 2);
+    const blob = new Blob([json], {type: 'application/json'});
+    const filename = 'testplan_' + tester.replace(/\s/g,'_') + '_' + new Date().toISOString().slice(0,10) + '.json';
+
+    // Download JSON
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url; a.download = filename; a.click(); URL.revokeObjectURL(url);
+
+    // Build mail
+    const subject = encodeURIComponent('AutoPlayer Testbericht — ' + tester + ' — v' + version + ' — ' + rating + '/5 Sterne');
+    const body = encodeURIComponent(
+        'AutoPlayer Testbericht\n' +
+        '========================\n\n' +
+        'Tester: ' + tester + '\n' +
+        'App-Version: ' + version + '\n' +
+        'Geraet: ' + deviceStr + '\n' +
+        'Bewertung: ' + rating + '/5 Sterne\n' +
+        'Datum: ' + new Date().toLocaleString('de-DE') + '\n\n' +
+        'Ergebnis: ' + ok + ' bestanden, ' + bugs + ' Bugs, ' + feats + ' Wuensche, ' + (total-ok-bugs) + ' offen\n' +
+        'Fortschritt: ' + Math.round(ok/total*100) + '%\n\n' +
+        '---\n\n' +
+        'WICHTIG: Bitte haenge die soeben heruntergeladene JSON-Datei (' + filename + ') an diese Mail an!\n\n' +
+        'Die JSON-Datei enthaelt alle detaillierten Testergebnisse, Bug-Beschreibungen, Screenshots-Zuordnungen, Feature-Wuensche und das vollstaendige Feedback.\n\n' +
+        '---\n\n' +
+        'Allgemeines Feedback:\n' + (localStorage.getItem('tp_meta_feedback') || '(kein Feedback eingetragen)') + '\n\n' +
+        'Bewertungs-Kommentar:\n' + (localStorage.getItem('tp_meta_rating_comment') || '(kein Kommentar)') + '\n'
+    );
+
+    // Open mail client
+    setTimeout(() => {
+        window.location.href = 'mailto:zappelmann@googlemail.com?subject=' + subject + '&body=' + body;
+    }, 500);
+
+    alert('1. Die JSON-Datei "' + filename + '" wurde heruntergeladen.\n2. Dein E-Mail-Programm oeffnet sich gleich.\n3. Bitte haenge die JSON-Datei an die Mail an und sende sie ab!\n\nVielen Dank fuer deinen Testbericht!');
+}
+
+migrateOldKeys();
+loadMeta();
+renderDevices();
+renderFeatureWishes();
+renderStars();
+document.getElementById('searchBox').addEventListener('input', render);
+render();
+</script>
+</body>
+</html>
