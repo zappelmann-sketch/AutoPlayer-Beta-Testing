@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AutoPlayer Testplan v4.0.0</title>
+<title>AutoPlayer Testplan v4.1.0</title>
 <script src="https://cdn.jsdelivr.net/npm/@twemoji/api@latest/dist/twemoji.min.js" crossorigin="anonymous"></script>
 <style>
 img.emoji{height:1em;width:1em;margin:0 .05em 0 .1em;vertical-align:-0.1em}
@@ -195,7 +195,7 @@ h1{color:var(--accent);margin-bottom:4px;font-size:1.7em}
 <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px">
 <div>
 <h1>AutoPlayer Testplan</h1>
-<p class="sub">Version 4.0.0 | Granularer Testplan | <span id="lastSaved"></span></p>
+<p class="sub">Version 4.1.0 | Granularer Testplan | <span id="lastSaved"></span></p>
 </div>
 <div class="lang-drop" id="langDrop">
 <div class="lang-btn" id="langBtn" onclick="document.getElementById('langList').classList.toggle('open')">
@@ -280,7 +280,7 @@ h1{color:var(--accent);margin-bottom:4px;font-size:1.7em}
 </div>
 <div class="info-field">
 <label>App-Version</label>
-<input type="text" id="metaVersion" value="3.8.2" onblur="saveMeta()">
+<input type="text" id="metaVersion" value="3.10.0" onblur="saveMeta()">
 </div>
 <div class="info-field">
 <label>App-Sprache</label>
@@ -580,6 +580,20 @@ const D=[
 {t:"Tap Roehren = Previous/Next",d:"Tippe auf die linke Leuchtroehre -> Previous Song. Rechte Roehre -> Next Song."},
 {t:"Display-Drag = Seek",d:"Horizontales Ziehen auf dem Amber-Display -> Song-Position aendert sich (Seek)."}
 ]},
+{n:"F-100: Vintage Hi-Fi Turntable",tt:[
+{t:"Screen ueber Drawer oeffnen",d:"Drawer -> 'Vintage Turntable' antippen. 1970er Walnuss-Holz-Plattenspieler muss erscheinen mit Plattenteller, Tonarm und Bedienelementen."},
+{t:"Vinyl-Platte dreht sich bei Wiedergabe",d:"Musik starten. Vinyl-Schallplatte dreht sich auf dem Plattenteller. Album-Cover als kreisfoermiges Label in der Mitte mit Interpret, Titel und BPM."},
+{t:"Tonarm-Animation bei Song-Start",d:"Song starten -> Tonarm bewegt sich von Parkposition zur Platte (Rotation von aussen). Bei Song-Ende: Tonarm kehrt zur Parkposition zurueck."},
+{t:"Tonarm wandert mit Song-Fortschritt",d:"Waehrend der Wiedergabe: Tonarm wandert langsam von aussen (Plattenrand) nach innen (Plattenmitte), proportional zur Song-Laenge."},
+{t:"3-Layer Tonarm-System sichtbar",d:"Drei separate Ebenen muessen sichtbar sein: Basis (statisch), S-foermiger Tonarm (rotiert), Buegel/Klemme (statisch darueber)."},
+{t:"33/45 RPM Geschwindigkeits-Hebel",d:"Hebel-Bereich links unten antippen -> Umschalten zwischen 33 RPM (1.0x Speed) und 45 RPM (1.364x Speed). Body-Bild wechselt entsprechend."},
+{t:"Start/Stop Knopf funktioniert",d:"Knopf-Bereich in der Mitte unten antippen -> Play/Pause Toggle. Body-Bild wechselt zu 'Knopf gedrueckt' Zustand."},
+{t:"6 Body-Zustandsbilder korrekt",d:"Alle Kombinationen testen: Default, Hebel 33, Hebel 45, Knopf gedrueckt, Knopf+33, Knopf+45. Jedes muss ein anderes Hintergrundbild zeigen."},
+{t:"Scratching per Touch-Drag auf Vinyl",d:"Finger auf die Vinyl-Platte legen und ziehen -> Scratch-Sound hoerbar, Wiedergabeposition aendert sich."},
+{t:"Cueing-Hebel hebt/senkt Tonarm",d:"Cueing-Hebel-Bereich rechts antippen -> Tonarm hebt sich (Pause) oder senkt sich (Play). Visuelle Aenderung sichtbar."},
+{t:"Lautstaerke per rechtem Rand",d:"Am rechten Bildschirmrand vertikal ziehen -> System-Lautstaerke aendert sich."},
+{t:"Haptisches Feedback bei Bedienung",d:"Bei Knopf-/Hebel-Druck muss ein kurzes Vibrationsfeedback spuerbar sein."}
+]},
 {n:"F-030+032: Audio Visualizer",tt:[
 {t:"Bar-Visualizer mit 32 Balken",d:"Drawer -> Audio Visualizer. Mikrofon-Permission gewaehren. 32 Frequenzbalken mit Regenbogen-Gradient muessen sich zur Musik bewegen."},
 {t:"Circular Visualizer (3 Ringe)",d:"Toggle auf Circular: 3 konzentrische Ringe (Cyan, Rot, Gruen) muessen zur Musik pulsieren und sich verzerren."},
@@ -694,7 +708,13 @@ const D=[
 {t:"App erscheint in Android Auto",d:"Handy mit Android Auto verbinden (Kabel oder Wireless). AutoPlayer muss in der Auto App-Liste erscheinen."},
 {t:"Browse-Tree: Songs, Alben, Kuenstler",d:"In Android Auto: AutoPlayer oeffnen. Browse-Tree mit Songs, Alben, Kuenstler, Playlists, Favoriten muss navigierbar sein."},
 {t:"Song abspielen auf Auto-Lautsprecher",d:"Song in Android Auto antippen -> Spielt auf dem Auto-Lautsprecher. Album-Art auf dem Auto-Display sichtbar."},
-{t:"Playback-Controls in Android Auto",d:"Play/Pause, Next, Previous Buttons auf dem Auto-Display muessen funktionieren."}
+{t:"Playback-Controls in Android Auto",d:"Play/Pause, Next, Previous Buttons auf dem Auto-Display muessen funktionieren."},
+{t:"Browse-Kategorien haben eigene Icons",d:"In Android Auto: Jede Browse-Kategorie (Favoriten, Alben, Kuenstler, Playlists, Queues, Smart Playlists, etc.) muss ein eigenes Icon haben (Herz, Vinyl, Person, etc.). Keine generischen Icons."},
+{t:"Individuelles Album Art pro Song",d:"In Android Auto: Songs aus verschiedenen Alben abspielen. Jeder Song muss sein EIGENES eingebettetes Cover anzeigen, nicht das gleiche Album-Cover fuer alle Songs eines Albums."},
+{t:"Continue Listening Kategorie",d:"In Android Auto: 'Weiterspielen' Kategorie muss erscheinen mit Songs an der zuletzt gehoerten Position."},
+{t:"Mood Browse Kategorie",d:"In Android Auto: 'Stimmung' Kategorie muss erscheinen mit Stimmungs-Auswahl (Froehlich, Energisch, Ruhig, etc.)."},
+{t:"Smart Playlists Kategorie",d:"In Android Auto: 'Smart Playlists' Kategorie muss erscheinen (Meistgehoert, Kuerzlich hinzugefuegt, Nie gehoert)."},
+{t:"Crash-Protection bei Wiedergabefehler",d:"Song mit fehlerhafter Datei abspielen -> App darf NICHT crashen. Stattdessen: Automatisch zum naechsten Song springen."}
 ]},
 {n:"F-053: Drive Mode DJ",tt:[
 {t:"Screen oeffnen",d:"Drawer -> Drive Mode DJ. GPS-Permission gewaehren wenn gefragt."},
@@ -943,6 +963,12 @@ const D=[
 {t:"Feature-Kompatibilitaets-Matrix sichtbar",d:"Im Screen: Matrix zeigt welche Features in welchem Modus funktionieren (Qualitaet vs. Batterie)."},
 {t:"Einstellungen-Toggle vorhanden",d:"Einstellungen -> Audio Offload Toggle muss vorhanden sein."}
 ]},
+{n:"F-099: Crash Reports (ACRA)",tt:[
+{t:"Crash-Report Toggle in Einstellungen",d:"Einstellungen -> 'Crash Reports' Toggle muss vorhanden sein. Standard: AN. Toggle auf AUS -> Keine Reports mehr bei Absturz."},
+{t:"Crash-Dialog erscheint bei Absturz",d:"App zum Absturz bringen (oder simulieren). Ein benutzerfreundlicher Dialog muss erscheinen mit optionalem Kommentarfeld und 'Senden'/'Nicht senden' Buttons."},
+{t:"Crash-Dialog in aktueller Sprache",d:"Sprache wechseln (z.B. Japanisch) -> Crash-Dialog Texte muessen in der gewaehlten Sprache erscheinen."},
+{t:"Keine persoenlichen Daten im Report",d:"Report enthaelt nur: Stack-Trace, Geraetemodell, Android-Version, App-Version, User-Kommentar. KEINE Musikdateien, Hoerverlauf oder persoenliche Daten."}
+]},
 {n:"F-035: Dark/Light Mode",tt:[
 {t:"Auto-Modus basierend auf Umgebungslicht",d:"Einstellungen -> Darstellung -> 'Auto'. Bei hellem Licht: Light Mode. Bei Dunkelheit: Dark Mode. Wechsel automatisch."},
 {t:"Manuell: Dark/Light umschalten",d:"Manuell 'Dunkel' waehlen -> Dunkles Theme. 'Hell' waehlen -> Helles Theme. Sofortiger Wechsel."}
@@ -1044,7 +1070,14 @@ const D=[
 {t:"Auto: Playlists-Kategorie",d:"In Android Auto: 'Playlists' -> Alle manuellen Playlists sichtbar. Playlist antippen -> Songs abspielen."},
 {t:"Auto: Zuletzt gehoert",d:"In Android Auto: 'Zuletzt gehoert' -> Die letzten gespielten Songs in chronologischer Reihenfolge."},
 {t:"Auto: Queues-Kategorie",d:"In Android Auto: 'Queues' -> Alle Queue-Slots sichtbar. Antippen -> Queue wird geladen."},
-{t:"Auto: Voice Search",d:"In Android Auto: Sprach-Suche verwenden -> Song/Kuenstler/Album wird gefunden und abgespielt."}
+{t:"Auto: Voice Search",d:"In Android Auto: Sprach-Suche verwenden -> Song/Kuenstler/Album wird gefunden und abgespielt."},
+{t:"Auto: Smart Playlists",d:"In Android Auto: 'Smart Playlists' -> Meistgehoert, Kuerzlich hinzugefuegt, Nie gehoert muessen als Unterkategorien erscheinen."},
+{t:"Auto: Mood Browse",d:"In Android Auto: 'Stimmung' -> Stimmungs-Auswahl muss erscheinen. Stimmung antippen -> Passende Songs abspielen."},
+{t:"Auto: Continue Listening",d:"In Android Auto: 'Weiterspielen' -> Songs mit gespeicherter Position muessen erscheinen. Antippen -> Song ab gespeicherter Position."}
+]},
+{n:"Voice: Vintage Turntable",tt:[
+{t:"Voice: 'Oeffne Vintage Turntable'",d:"Mikrofon -> 'Oeffne Vintage Turntable' oder 'Vintage Plattenspieler' -> Vintage Turntable Screen oeffnet sich."},
+{t:"Voice: 'Oeffne Plattenspieler'",d:"Mikrofon -> 'Oeffne Plattenspieler' -> Vintage Turntable Screen oeffnet sich (Alias-Erkennung)."}
 ]}
 ]}
 ];
