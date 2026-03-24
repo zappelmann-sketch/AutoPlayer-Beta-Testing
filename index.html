@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AutoPlayer Testplan v4.1.0</title>
+<title>AutoPlayer Testplan v4.2.0</title>
 <script src="https://cdn.jsdelivr.net/npm/@twemoji/api@latest/dist/twemoji.min.js" crossorigin="anonymous"></script>
 <style>
 img.emoji{height:1em;width:1em;margin:0 .05em 0 .1em;vertical-align:-0.1em}
@@ -195,7 +195,7 @@ h1{color:var(--accent);margin-bottom:4px;font-size:1.7em}
 <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px">
 <div>
 <h1>AutoPlayer Testplan</h1>
-<p class="sub">Version 4.1.0 | Granularer Testplan | <span id="lastSaved"></span></p>
+<p class="sub">Version 4.2.0 | Granularer Testplan | <span id="lastSaved"></span></p>
 </div>
 <div class="lang-drop" id="langDrop">
 <div class="lang-btn" id="langBtn" onclick="document.getElementById('langList').classList.toggle('open')">
@@ -280,7 +280,7 @@ h1{color:var(--accent);margin-bottom:4px;font-size:1.7em}
 </div>
 <div class="info-field">
 <label>App-Version</label>
-<input type="text" id="metaVersion" value="3.10.0" onblur="saveMeta()">
+<input type="text" id="metaVersion" value="3.10.1" onblur="saveMeta()">
 </div>
 <div class="info-field">
 <label>App-Sprache</label>
@@ -831,9 +831,19 @@ const D=[
 {t:"Songs anfordern",d:"Songs suchen + anfordern -> Song erscheint in der Party-Queue auf dem Host."},
 {t:"Voting funktioniert",d:"Auf einen Song in der Queue voten (Daumen hoch). Hoeher gevotete Songs muessen nach oben rutschen."}
 ]},
-{n:"F-051: Passenger Mode",tt:[
-{t:"Beifahrer verbinden",d:"Drawer -> Passenger Mode. Auf Fahrer-Handy: 'Host' waehlen. Auf Beifahrer-Handy: 'Passenger' waehlen. 4-stelligen PIN eingeben."},
-{t:"Beifahrer steuert Musik",d:"Beifahrer kann auf seinem Handy: Songs aus Host-Bibliothek waehlen, zur Queue hinzufuegen, Play/Pause/Skip steuern."}
+{n:"F-051: Passenger Mode (v3.10.1)",tt:[
+{t:"Host + Passenger verbinden",d:"Fahrer-Handy: Drawer -> Passenger Mode -> 'Host'. 4-stellige PIN erscheint. Beifahrer-Handy: Drawer -> Passenger Mode -> 'Passenger'. Host-Geraet in Liste antippen -> Verbindung hergestellt."},
+{t:"Songs-Tab: Host-Bibliothek browsen",d:"Nach Verbindung: Songs-Tab ist aktiv. Alle Songs vom Host werden angezeigt (Titel + Interpret). Suchfeld oben filtert live beim Tippen."},
+{t:"Song vom Beifahrer starten",d:"Beifahrer tippt Song in Songs-Tab -> Song wird auf dem Fahrer-Handy abgespielt. Bei Android Auto: Song laeuft ueber Autolautsprecher."},
+{t:"Queue-Tab: Warteschlange sehen",d:"Queue-Tab antippen -> Aktuelle Wiedergabeliste sichtbar. Aktueller Song hervorgehoben. Song antippen springt zu diesem Song."},
+{t:"Zur Queue hinzufuegen",d:"Im Songs-Tab: Plus-Icon neben einem Song -> Song wird zur Warteschlange hinzugefuegt (Play Next)."},
+{t:"Features-Tab: Drive Mode DJ starten",d:"Features-Tab -> Drive Mode DJ -> 'Start' -> Auf dem Fahrer-Handy wird GPS-basierte Musikanpassung aktiviert. Status zeigt 'Aktiv'."},
+{t:"Features-Tab: Weather DJ starten",d:"Features-Tab -> Weather DJ -> 'Starten' -> Fahrer-Handy generiert wetterbasierte Playlist (Internet + GPS noetig auf Fahrer-Handy)."},
+{t:"Features-Tab: Mood waehlen",d:"Features-Tab -> Stimmung waehlen (z.B. 'Energisch') -> Fahrer-Handy spielt passende Songs ab."},
+{t:"Playback-Controls funktionieren",d:"Kompakte Now-Playing-Leiste oben: Play/Pause, Skip Next/Previous, Shuffle-Toggle, Seekbar, Favoriten-Herz muessen funktionieren."},
+{t:"Persistente Verbindung: Host navigiert weg",d:"Host verlaesst Beifahrer-Modus-Screen (z.B. oeffnet Library). Beifahrer waehlt Song -> MUSS weiterhin auf Host abspielen. Verbindung darf NICHT getrennt werden."},
+{t:"Persistente Verbindung: App minimieren",d:"Host minimiert App (Home-Button). Beifahrer steuert Musik -> MUSS weiterhin funktionieren."},
+{t:"Trennen nur bei explizitem Button",d:"'Trennen'-Button antippen -> Verbindung wird beendet. Zurueck-Button (Pfeil oben links) verlasst NUR den Screen, trennt NICHT die Verbindung."}
 ]}
 ]},
 {cat:"11. Statistiken & Gamification",ff:[
