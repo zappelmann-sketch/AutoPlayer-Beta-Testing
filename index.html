@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AutoPlayer Testplan v4.2.0</title>
+<title>AutoPlayer Testplan v4.3.0</title>
 <script src="https://cdn.jsdelivr.net/npm/@twemoji/api@latest/dist/twemoji.min.js" crossorigin="anonymous"></script>
 <style>
 img.emoji{height:1em;width:1em;margin:0 .05em 0 .1em;vertical-align:-0.1em}
@@ -195,7 +195,7 @@ h1{color:var(--accent);margin-bottom:4px;font-size:1.7em}
 <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px">
 <div>
 <h1>AutoPlayer Testplan</h1>
-<p class="sub">Version 4.2.0 | Granularer Testplan | <span id="lastSaved"></span></p>
+<p class="sub">Version 4.3.0 | Granularer Testplan | <span id="lastSaved"></span></p>
 </div>
 <div class="lang-drop" id="langDrop">
 <div class="lang-btn" id="langBtn" onclick="document.getElementById('langList').classList.toggle('open')">
@@ -280,7 +280,7 @@ h1{color:var(--accent);margin-bottom:4px;font-size:1.7em}
 </div>
 <div class="info-field">
 <label>App-Version</label>
-<input type="text" id="metaVersion" value="3.10.1" onblur="saveMeta()">
+<input type="text" id="metaVersion" value="3.10.2" onblur="saveMeta()">
 </div>
 <div class="info-field">
 <label>App-Sprache</label>
@@ -923,7 +923,14 @@ const D=[
 {t:"Font-Auswahl (8 Optionen)",d:"Font-Selector: 8 verschiedene Fonts durchprobieren. Jeder muss in der Vorschau sichtbar sein."},
 {t:"Corner Radius Slider",d:"Corner Radius Slider bewegen -> Eckenrundung aller UI-Elemente aendert sich in der Vorschau."},
 {t:"Theme speichern und anwenden",d:"Speichern -> Theme erscheint in Gallery. Antippen -> App wechselt sofort alle Farben auf das Custom Theme."},
-{t:"Theme exportieren/importieren als JSON",d:"Long-Press auf Custom Theme -> 'Exportieren' -> JSON wird erstellt. 'Importieren' -> JSON auswaehlen -> Theme wird geladen."}
+{t:"Theme exportieren/importieren als JSON",d:"Long-Press auf Custom Theme -> 'Exportieren' -> JSON wird erstellt. WhatsApp/Telegram waehlen -> Datei wird als Anhang gesendet. 'Importieren' -> JSON auswaehlen -> Theme wird geladen."},
+{t:"Aus Bild extrahieren",d:"Im Editor: 'Aus Bild extrahieren' -> Photo-Picker oeffnet sich. Beliebiges Bild waehlen (Kamera, Screenshot, WhatsApp etc.) -> 6 Farben werden automatisch extrahiert."},
+{t:"Aus Wallpaper extrahieren",d:"Im Editor: 'Aus Wallpaper extrahieren' -> Farben des aktuellen Hintergrundbildes werden in die 6 Farbfelder geladen. Kein Fehler auf Android 12+."},
+{t:"Player-Hintergrund: Album Art",d:"Im Editor: Player-Hintergrund auf 'Album-Art Blur' setzen. Theme speichern + anwenden. Player oeffnen -> Hintergrund zeigt dynamischen Farbverlauf aus dem aktuellen Album-Cover. Song wechseln -> Farben aendern sich mit 800ms Transition."},
+{t:"Player-Hintergrund: AMOLED Black",d:"Player-Hintergrund auf 'AMOLED Black' setzen. Theme anwenden. Player oeffnen -> Hintergrund ist reines Schwarz (#000000)."},
+{t:"Player-Hintergrund: Tageszeit-adaptiv",d:"Player-Hintergrund auf 'Tageszeit-adaptiv' setzen. Player oeffnen -> Hintergrundfarben passen sich der Tageszeit an (warm morgens, kuehl tagsueber, bernstein abends, schwarz nachts)."},
+{t:"Player-Hintergrund: Einfarbig",d:"Player-Hintergrund auf 'Einfarbig' setzen -> Player-Hintergrund ist die Theme-Hintergrundfarbe."},
+{t:"Player-Hintergrund: Farbverlauf",d:"Player-Hintergrund auf 'Farbverlauf' setzen -> Player zeigt Gradient aus den Theme-Gradient-Farben."}
 ]},
 {n:"F-044: Sprachwahl (26 Sprachen)",tt:[
 {t:"Sprach-Einstellung oeffnen",d:"Einstellungen -> Sprache (ganz unten). 26 Sprachen mit Flaggen-Emojis muessen sichtbar sein."},
