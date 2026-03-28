@@ -831,12 +831,14 @@ const D=[
 {t:"Songs anfordern",d:"Songs suchen + anfordern -> Song erscheint in der Party-Queue auf dem Host."},
 {t:"Voting funktioniert",d:"Auf einen Song in der Queue voten (Daumen hoch). Hoeher gevotete Songs muessen nach oben rutschen."}
 ]},
-{n:"F-051: Passenger Mode (v3.10.1)",tt:[
+{n:"F-051: Passenger Mode (v3.10.3)",tt:[
 {t:"Host + Passenger verbinden",d:"Fahrer-Handy: Drawer -> Passenger Mode -> 'Host'. 4-stellige PIN erscheint. Beifahrer-Handy: Drawer -> Passenger Mode -> 'Passenger'. Host-Geraet in Liste antippen -> Verbindung hergestellt."},
 {t:"Songs-Tab: Host-Bibliothek browsen",d:"Nach Verbindung: Songs-Tab ist aktiv. Alle Songs vom Host werden angezeigt (Titel + Interpret). Suchfeld oben filtert live beim Tippen."},
 {t:"Song vom Beifahrer starten",d:"Beifahrer tippt Song in Songs-Tab -> Song wird auf dem Fahrer-Handy abgespielt. Bei Android Auto: Song laeuft ueber Autolautsprecher."},
-{t:"Queue-Tab: Warteschlange sehen",d:"Queue-Tab antippen -> Aktuelle Wiedergabeliste sichtbar. Aktueller Song hervorgehoben. Song antippen springt zu diesem Song."},
-{t:"Zur Queue hinzufuegen",d:"Im Songs-Tab: Plus-Icon neben einem Song -> Song wird zur Warteschlange hinzugefuegt (Play Next)."},
+{t:"Queue-Tab: Warteschlange sehen",d:"Queue-Tab antippen -> Aktuelle Warteschlange wird automatisch vom Host geladen und angezeigt. Aktueller Song ist hervorgehoben. Song antippen springt zu diesem Song."},
+{t:"Zur Queue hinzufuegen (FIFO + Haptic)",d:"Im Songs-Tab: Plus-Icon neben einem Song antippen -> (1) Geraet vibriert kurz als Bestaetigung (haptisches Feedback). (2) Song wird am ENDE der Warteschlange hinzugefuegt (FIFO — nicht als naechster!). (3) Queue wird automatisch aktualisiert."},
+{t:"Queue-Reihenfolge pruefen (FIFO)",d:"3 Songs nacheinander zur Queue hinzufuegen (A, B, C). Queue-Tab oeffnen -> Reihenfolge muss A, B, C sein (in der Reihenfolge des Hinzufuegens). NICHT C, B, A."},
+{t:"Queue-Tab Auto-Refresh nach Add",d:"Songs-Tab: Song zur Queue hinzufuegen. Sofort auf Queue-Tab wechseln -> Der gerade hinzugefuegte Song muss bereits sichtbar sein (Auto-Refresh nach 400ms)."},
 {t:"Features-Tab: Drive Mode DJ starten",d:"Features-Tab -> Drive Mode DJ -> 'Start' -> Auf dem Fahrer-Handy wird GPS-basierte Musikanpassung aktiviert. Status zeigt 'Aktiv'."},
 {t:"Features-Tab: Weather DJ starten",d:"Features-Tab -> Weather DJ -> 'Starten' -> Fahrer-Handy generiert wetterbasierte Playlist (Internet + GPS noetig auf Fahrer-Handy)."},
 {t:"Features-Tab: Mood waehlen",d:"Features-Tab -> Stimmung waehlen (z.B. 'Energisch') -> Fahrer-Handy spielt passende Songs ab."},
