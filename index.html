@@ -714,7 +714,9 @@ const D=[
 {t:"Continue Listening Kategorie",d:"In Android Auto: 'Weiterspielen' Kategorie muss erscheinen mit Songs an der zuletzt gehoerten Position."},
 {t:"Mood Browse Kategorie",d:"In Android Auto: 'Stimmung' Kategorie muss erscheinen mit Stimmungs-Auswahl (Froehlich, Energisch, Ruhig, etc.)."},
 {t:"Smart Playlists Kategorie",d:"In Android Auto: 'Smart Playlists' Kategorie muss erscheinen (Meistgehoert, Kuerzlich hinzugefuegt, Nie gehoert)."},
-{t:"Crash-Protection bei Wiedergabefehler",d:"Song mit fehlerhafter Datei abspielen -> App darf NICHT crashen. Stattdessen: Automatisch zum naechsten Song springen."}
+{t:"Crash-Protection bei Wiedergabefehler",d:"Song mit fehlerhafter Datei abspielen -> App darf NICHT crashen. Stattdessen: Automatisch zum naechsten Song springen."},
+{t:"Genre Browse Kategorie",d:"In Android Auto: 'Genres' Kategorie muss erscheinen (wenn Genre-Daten vorhanden). Genre antippen -> Song-Liste -> Abspielen."},
+{t:"Genre-Drilldown Queue korrekt",d:"In Android Auto: Genre waehlen -> Song antippen -> Alle Genre-Songs als Queue. Beifahrer-Bedienung moeglich."}
 ]},
 {n:"F-053: Drive Mode DJ",tt:[
 {t:"Screen oeffnen",d:"Drawer -> Drive Mode DJ. GPS-Permission gewaehren wenn gefragt."},
@@ -871,9 +873,29 @@ const D=[
 ]}
 ]},
 {cat:"12. Tools",ff:[
-{n:"F-045: Tag-Editor",tt:[
-{t:"Tag-Editor oeffnen",d:"Long-Press auf Song -> 'Tags bearbeiten'. Felder: Titel, Kuenstler, Album, Jahr, Track-Nr muessen angezeigt werden."},
-{t:"Tags aendern und speichern",d:"Titel aendern -> Speichern -> Song erscheint mit neuem Titel in der Library. Kuenstler/Album/Jahr analog testen."}
+{n:"F-045: Tag-Editor (inkl. Genre)",tt:[
+{t:"Tag-Editor oeffnen",d:"Long-Press auf Song -> 'Tags bearbeiten'. Felder: Titel, Kuenstler, Album, Genre, Jahr, Track-Nr muessen angezeigt werden."},
+{t:"Genre-Feld mit Auto-Suggest",d:"Im Genre-Feld tippen -> Dropdown mit bestehenden Genres der Library erscheint (max. 5 Vorschlaege). Vorschlag antippen uebernimmt den Wert."},
+{t:"Genre speichern und sofort sichtbar",d:"Genre eintragen (z.B. 'Reggae') -> Speichern. In Genre Browse muss der Song sofort unter 'Reggae' erscheinen."},
+{t:"Tags aendern mit Schreibberechtigung",d:"Titel aendern -> Speichern. Falls System-Dialog erscheint: Berechtigung erteilen. Song muss mit neuem Titel in der Library erscheinen."}
+]},
+{n:"F-106: Genre Browse",tt:[
+{t:"Genre-Uebersicht oeffnen",d:"Drawer -> Genre Browse. Genre-Kacheln mit Name + Song-Anzahl muessen erscheinen, sortiert nach Anzahl absteigend."},
+{t:"Genre-Drilldown Song-Liste",d:"Genre-Kachel antippen (z.B. 'Rock') -> Song-Liste mit Titel, Kuenstler, Dauer. Back-Button fuehrt zurueck zum Genre-Grid."},
+{t:"Song antippen startet Wiedergabe",d:"Song in Genre-Liste antippen -> Player startet diesen Song, alle Genre-Songs als Queue."},
+{t:"Alle abspielen / Shuffle / Queue",d:"'Alle abspielen' startet Queue. 'Zufaellig' spielt shuffled. Queue-Icon fuegt zur bestehenden Queue hinzu."},
+{t:"Case-Insensitive Gruppierung",d:"Songs mit 'Rock', 'rock', 'ROCK' muessen alle unter einer Genre-Kachel erscheinen."}
+]},
+{n:"F-106: Genres Library-Tab",tt:[
+{t:"Genres-Tab in Library sichtbar",d:"Library -> ScrollableTabRow scrollen: 'Genres' Tab muss sichtbar sein."},
+{t:"Genre-Grid scrollbar",d:"Genres-Tab antippen -> Alle Genre-Kacheln sichtbar und vertikal scrollbar."},
+{t:"Genre-Kachel oeffnet Drilldown",d:"Genre-Kachel antippen -> Genre-Browse mit Song-Liste. Back -> zurueck zur Library."},
+{t:"Tab-Reihenfolge konfigurierbar",d:"Einstellungen -> Tab-Reihenfolge: 'Genres' muss verschiebbar sein."}
+]},
+{n:"F-106: Batch-Genre-Editor",tt:[
+{t:"Multi-Select + Genre-Button",d:"Library -> Long-Press -> Multi-Select. Mehrere Songs auswaehlen. Genre-Tag-Icon in Action-Bar sichtbar."},
+{t:"Batch-Genre-Dialog",d:"Genre-Icon antippen -> Dialog 'Genre fuer N Songs setzen'. Textfeld + Quick-Chips mit haeufigen Genres."},
+{t:"Batch-Genre speichern",d:"Genre eingeben/Quick-Chip waehlen -> Speichern. Toast-Bestaetigung. Genre-Browse zeigt aktualisierte Daten."}
 ]},
 {n:"F-047: Track-Cutter",tt:[
 {t:"Song laden und Bereich waehlen",d:"Drawer -> Track Cutter. Song waehlen -> Waveform oder Range-Slider erscheint. Start und Ende Marker setzen."},
@@ -901,7 +923,10 @@ const D=[
 {t:"Voice: Song-Suche per Name",d:"Mikrofon -> 'Spiel [Songtitel]' -> Song wird per Fuzzy-Matching gesucht und abgespielt."},
 {t:"Voice: 'Oeffne Equalizer'",d:"Mikrofon -> 'Oeffne Equalizer' -> EQ-Screen wird geoeffnet."},
 {t:"Voice: 'Zeige Favoriten'",d:"Mikrofon -> 'Zeige Favoriten' -> Favoriten-Tab wird geoeffnet."},
-{t:"Voice: 'Was spielt gerade?'",d:"Mikrofon -> 'Was spielt gerade?' -> TTS antwortet mit Song-Titel und Kuenstler."}
+{t:"Voice: 'Was spielt gerade?'",d:"Mikrofon -> 'Was spielt gerade?' -> TTS antwortet mit Song-Titel und Kuenstler."},
+{t:"Voice: Genre abspielen",d:"Mikrofon -> 'Spiele Reggae' -> Alle Reggae-Songs starten (Shuffle). TTS-Feedback mit Anzahl."},
+{t:"Voice: Genre mit Prefix",d:"Mikrofon -> 'Genre Rock' -> Alle Rock-Songs starten. Funktioniert auch auf Android Auto."},
+{t:"Voice: Unbekanntes Genre Fallback",d:"Mikrofon -> 'Spiele Blablabla' (kein Genre) -> Fallback auf normale Song-Suche."}
 ]},
 {n:"F-082: Voice Commands Uebersicht",tt:[
 {t:"Referenz-Screen oeffnen",d:"Drawer -> 'Sprachbefehle'. Alle Commands nach 12 Kategorien aufgelistet."},
