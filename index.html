@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AutoPlayer Testplan v4.3.0</title>
+<title>AutoPlayer Testplan v4.4.0</title>
 <script src="https://cdn.jsdelivr.net/npm/@twemoji/api@latest/dist/twemoji.min.js" crossorigin="anonymous"></script>
 <style>
 img.emoji{height:1em;width:1em;margin:0 .05em 0 .1em;vertical-align:-0.1em}
@@ -195,7 +195,7 @@ h1{color:var(--accent);margin-bottom:4px;font-size:1.7em}
 <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px">
 <div>
 <h1>AutoPlayer Testplan</h1>
-<p class="sub">Version 4.3.0 | Granularer Testplan | <span id="lastSaved"></span></p>
+<p class="sub">Version 4.4.0 | Granularer Testplan | <span id="lastSaved"></span></p>
 </div>
 <div class="lang-drop" id="langDrop">
 <div class="lang-btn" id="langBtn" onclick="document.getElementById('langList').classList.toggle('open')">
@@ -445,7 +445,8 @@ const D=[
 {n:"F-010: Songs-Tab",tt:[
 {t:"Alle Songs werden aufgelistet",d:"Library -> Tab 'Alle Songs'. Alle lokalen MP3/FLAC/AAC/OGG Dateien muessen aufgelistet sein mit Titel, Kuenstler und Dauer."},
 {t:"Songs sind sortierbar",d:"Im Songs-Tab: Sortier-Icon antippen. Verschiedene Sortierungen testen (A-Z, Z-A, Zuletzt hinzugefuegt, Dauer). Die Liste muss sich korrekt umsortieren."},
-{t:"Alphabet-Schnellnavigation",d:"Am rechten Rand der Song-Liste: Ein Alphabet-Streifen muss sichtbar sein. Tippe/Ziehe auf einen Buchstaben -> Die Liste springt sofort zu Songs mit diesem Anfangsbuchstaben."}
+{t:"Alphabet-Schnellnavigation",d:"Am rechten Rand der Song-Liste: Ein Alphabet-Streifen muss sichtbar sein. Tippe/Ziehe auf einen Buchstaben -> Die Liste springt sofort zu Songs mit diesem Anfangsbuchstaben."},
+{t:"Song-Tap bleibt in Library",d:"Song in der Library antippen -> Song startet, aber Library-Screen bleibt offen (kein Auto-Navigate zum Player). Mini-Player zeigt Song."}
 ]},
 {n:"F-012: Alben-Tab",tt:[
 {t:"Alben als Grid mit Covern",d:"Library -> Tab 'Alben'. Alben muessen als Grid mit Album-Cover-Bildern angezeigt werden. Fehlende Cover zeigen einen Platzhalter."},
@@ -575,7 +576,6 @@ const D=[
 {t:"Schallplatte dreht sich mit Cover",d:"In der Mitte: Vinyl-Platte dreht sich mit Album-Art als Label und Glasscheiben-Reflexions-Overlay."},
 {t:"Amber-Display zeigt Song-Info",d:"Amber-hinterbeleuchtetes Display: Songtitel (Marquee-Scroll bei langem Text), Kuenstler und Timer in warmen Gold-Farben."},
 {t:"Bass-Glow pulsiert am Gitter",d:"Lautsprecher-Gitter unten: Oranges Glow-Overlay pulsiert mit dem Bass."},
-{t:"Chrome-Arch-Glow oben",d:"Ueber dem Plattenwechsler: Animierter Neon-Bogen mit pulsierender Farbe, synchron mit den Leuchtroehren."},
 {t:"Tap auf Platte = Play/Pause",d:"Tippe auf die Schallplatte -> Play/Pause Toggle."},
 {t:"Tap Roehren = Previous/Next",d:"Tippe auf die linke Leuchtroehre -> Previous Song. Rechte Roehre -> Next Song."},
 {t:"Display-Drag = Seek",d:"Horizontales Ziehen auf dem Amber-Display -> Song-Position aendert sich (Seek)."}
@@ -600,8 +600,10 @@ const D=[
 {t:"Fullscreen-Modus",d:"Fullscreen-Button -> Immersive Mode (System-Bars ausgeblendet). Screen bleibt an. Tap zum Ein-/Ausblenden der Controls."}
 ]},
 {n:"F-068: Genome Visualizer",tt:[
-{t:"Genome-Darstellung oeffnen",d:"Drawer -> Genome Visualizer. Visuelle DNA-Darstellung des aktuellen Songs mit konzentrischen Ringen, DNA-Helix und Energy-Core."},
-{t:"Visualisierung reagiert auf Song-Daten",d:"BPM beeinflusst Animations-Geschwindigkeit. Energy beeinflusst Intensitaet. Dur-Tonart = warme Farben, Moll = kalte Farben."}
+{t:"Toggle steuert Sichtbarkeit",d:"Drawer -> Music DNA. Toggle AUS -> Placeholder-Text. Toggle AN + Song spielen -> DNA-Helix Animation sichtbar."},
+{t:"Animation stoppt bei Pause",d:"Song pausieren -> Animation friert ein. Song fortsetzen -> Animation laeuft weiter."},
+{t:"Einzigartiges Song-Muster",d:"Verschiedene Songs wechseln -> Farben, Helix-Form, Partikel-Anordnung muessen sich sichtbar unterscheiden."},
+{t:"Swipe Song-Wechsel",d:"Auf Titel/Artist swipen -> Naechster/Vorheriger Song. DNA-Muster aendert sich."}
 ]}
 ]},
 {cat:"5. Audio & Klangeffekte",ff:[
@@ -657,6 +659,19 @@ const D=[
 ]},
 {n:"F-007: Audio Fokus Ducking",tt:[
 {t:"Ducking bei Benachrichtigungen",d:"Einstellungen -> Audio Fokus Ducking AN. Waehrend Musik spielt: Empfange eine Benachrichtigung mit Sound -> Musik wird leiser (nicht pausiert), dann wieder normal."}
+]},
+{n:"BPM-Anzeige (Global)",tt:[
+{t:"BPM in Queue",d:"Queue oeffnen -> Analysierte Songs zeigen BPM-Wert neben Artist."},
+{t:"BPM in Playlists",d:"Playlist oeffnen -> Songs mit BPM-Badge sichtbar."},
+{t:"BPM in Mood Browse",d:"Mood-Kategorie waehlen -> Songs zeigen BPM."},
+{t:"BPM in Nostalgie",d:"On This Day und Time Travel -> BPM sichtbar."},
+{t:"BPM in Drive Mode DJ",d:"Drive Mode starten -> Empfohlene Songs zeigen BPM."},
+{t:"BPM in Auto-Playlists",d:"Auto-Playlist generieren -> Songs zeigen BPM."},
+{t:"BPM in Wetter-DJ",d:"Wetter-DJ aktivieren -> Wetter-Songs zeigen BPM."},
+{t:"BPM in Genre Browse",d:"Genre waehlen -> Gefilterte Songs zeigen BPM."},
+{t:"BPM in Party Browser",d:"Party-Modus Browser -> Queue und Browse-Songs zeigen BPM."},
+{t:"BPM in Sound Souvenir",d:"Erinnerungen -> Songs zeigen BPM."},
+{t:"BPM nur bei analysierten Songs",d:"Nicht-analysierte Songs zeigen KEINEN BPM-Wert (nur wenn > 0)."}
 ]}
 ]},
 {cat:"6. Intelligente Features",ff:[
@@ -726,7 +741,8 @@ const D=[
 {n:"F-066: Weather DJ",tt:[
 {t:"Screen oeffnen",d:"Drawer -> Weather DJ. Toggle AN. Internet + GPS noetig!"},
 {t:"Aktuelles Wetter wird angezeigt",d:"Wetter-Info muss erscheinen (Temperatur, Wetterzustand). Falls kein Internet: Fehlermeldung."},
-{t:"Passende Playlist wird generiert",d:"Wetter-basierte Playlist erscheint (Regen = melancholisch, Sonne = froehlich). Abspielen testen."}
+{t:"Passende Playlist wird generiert",d:"Wetter-basierte Playlist erscheint (Regen = melancholisch, Sonne = froehlich). Abspielen testen."},
+{t:"Standort-Anzeige (Stadtname)",d:"Wetter-DJ aktivieren -> Unter Temperatur wird der aktuelle Stadtname angezeigt (nicht 'Standort wird ermittelt...')."}
 ]},
 {n:"F-073: Cabin Calibrator",tt:[
 {t:"Kalibrierung starten",d:"Drawer -> Cabin Calibrator. Toggle AN. Mikrofon-Permission gewaehren. 'Kalibrierung starten' in ruhiger Umgebung."},
@@ -826,7 +842,20 @@ const D=[
 {t:"Host-Dashboard: Queue-Tab",d:"Tab 'Queue' auf Host: Angeforderte Songs sichtbar. Move-to-Top und Remove Buttons funktionieren."},
 {t:"Host-Dashboard: Gaeste-Tab",d:"Tab 'Gaeste': Verbundene Gaeste mit Nicknames. Blockieren/Entsperren funktioniert."},
 {t:"Host-Dashboard: Statistik-Tab",d:"Tab 'Statistik': Gaeste-Anzahl und gespielte Songs werden gezaehlt."},
-{t:"Party beenden",d:"'Party beenden' -> Server stoppt. Gaeste erhalten Disconnect."}
+{t:"Party beenden",d:"'Party beenden' -> Server stoppt. Gaeste erhalten Disconnect."},
+{t:"WLAN-Modus Auswahl",d:"Party Settings -> 2 Optionen: 'Aktuelles WLAN' oder 'WLAN-Hotspot'. Radio-Buttons waehlen."},
+{t:"WLAN Passwort + QR",d:"Aktuelles WLAN -> Passwort eingeben -> Passwort-Sichtbarkeits-Toggle (Auge). QR-Code mit WLAN-Login erscheint."},
+{t:"Hotspot-Modus Setup",d:"WLAN-Hotspot waehlen -> SSID + Passwort eingeben -> Button oeffnet Android Hotspot-Settings."},
+{t:"Zwei QR-Codes",d:"Party mit WLAN-Credentials starten -> 2 QR-Codes: Links WLAN-Login, Rechts Party-URL. Beide scanbar."},
+{t:"Party-Name auf Webseite",d:"Party-Name eingeben -> Browser Login-Seite und Header zeigen den Party-Namen (nicht 'AutoPlayer Party')."},
+{t:"Browser Genre-Browse",d:"Browser -> Durchsuchen -> Genres Tab -> Genre-Chips klickbar -> Songs mit Genre gefiltert."},
+{t:"Browser Alphabet-Navigation",d:"Browser -> Durchsuchen -> Songs -> Buchstaben-Leiste A-Z. Vorhandene Buchstaben hervorgehoben, klickbar."},
+{t:"Browser Now Playing Timeline",d:"Song laeuft -> Browser zeigt Titel + Artist + Fortschrittsbalken oben. Aktualisiert sich jede Sekunde."},
+{t:"Queue Play/Pause Toggle",d:"Queue-Song antippen -> Play-Icon wird Pause-Icon. Nochmal -> Pause wird Play. Song bleibt in Queue."},
+{t:"Queue Auto-Play Naechster",d:"Song endet -> Wird aus Queue entfernt -> Naechster Song startet automatisch."},
+{t:"Queue Song Entfernen stoppt",d:"X-Button auf spielendem Song -> Musik stoppt + Song entfernt -> Naechster startet."},
+{t:"Party persistent bei Navigation",d:"Party starten -> Screen verlassen (Drawer, Back) -> Zurueckkehren -> Party laeuft noch, QR + Gaeste erhalten."},
+{t:"Hotspot IP korrekt",d:"Hotspot-Modus -> Party starten -> Angezeigte IP ist die Hotspot-IP (nicht Heim-WLAN IP)."}
 ]},
 {n:"F-093b: Local Party Mode (Gast)",tt:[
 {t:"QR scannen oder URL eingeben",d:"Zweites Geraet im SELBEN WiFi: QR scannen ODER URL im Browser eingeben -> Gast-Interface oeffnet sich."},
@@ -834,7 +863,7 @@ const D=[
 {t:"Songs anfordern",d:"Songs suchen + anfordern -> Song erscheint in der Party-Queue auf dem Host."},
 {t:"Voting funktioniert",d:"Auf einen Song in der Queue voten (Daumen hoch). Hoeher gevotete Songs muessen nach oben rutschen."}
 ]},
-{n:"F-051: Passenger Mode (v3.10.3)",tt:[
+{n:"F-051: Passenger Mode (v3.10.1)",tt:[
 {t:"Host + Passenger verbinden",d:"Fahrer-Handy: Drawer -> Passenger Mode -> 'Host'. 4-stellige PIN erscheint. Beifahrer-Handy: Drawer -> Passenger Mode -> 'Passenger'. Host-Geraet in Liste antippen -> Verbindung hergestellt."},
 {t:"Songs-Tab: Host-Bibliothek browsen",d:"Nach Verbindung: Songs-Tab ist aktiv. Alle Songs vom Host werden angezeigt (Titel + Interpret). Suchfeld oben filtert live beim Tippen."},
 {t:"Song vom Beifahrer starten",d:"Beifahrer tippt Song in Songs-Tab -> Song wird auf dem Fahrer-Handy abgespielt. Bei Android Auto: Song laeuft ueber Autolautsprecher."},
@@ -873,6 +902,25 @@ const D=[
 {t:"Achievement-Fortschritt korrekt",d:"Ein bekanntes Achievement pruefen (z.B. 'songs_played'): Progress-Bar muss der tatsaechlichen Anzahl gespielter Songs entsprechen."}
 ]}
 ]},
+{cat:"11b. Tamagotchi & Maskottchen",ff:[
+{n:"F-111: Tamagotchi-Maskottchen",tt:[
+{t:"Pet aktivieren",d:"Drawer -> Haustier-Einstellungen -> Toggle AN. Pet erscheint auf dem Screen."},
+{t:"Pet-Typ waehlen",d:"5 Tiere verfuegbar: Oktopus, Katze, Hase, Fuchs, Eichhoernchen. Antippen wechselt."},
+{t:"Pet umbenennen",d:"Umbenennen-Button -> Name eingeben -> Speichern. Neuer Name wird angezeigt."},
+{t:"Pet-Groesse",d:"Klein/Mittel/Gross waehlen -> Pet-Groesse aendert sich sichtbar."},
+{t:"Transparenz-Slider",d:"Slider 30%-100% -> Pet wird transparenter/undurchsichtiger."},
+{t:"Musik fuettert Pet",d:"Song abspielen -> Pet-Energie steigt. Ohne Musik -> Energie sinkt langsam."},
+{t:"Level + XP System",d:"Nach genuegend Musik-Hoerzeit -> Pet steigt im Level auf. XP-Fortschritt sichtbar."},
+{t:"Beat-Reaktion",d:"Toggle AN -> Pet bewegt sich im Rhythmus der Musik (Tentakel, Ohren, Schwanz)."},
+{t:"Sprech-Blasen",d:"Toggle AN -> Pet zeigt zufaellige Text-Blasen (Stimmung, BPM-Kommentare)."},
+{t:"TTS Vorlesen",d:"TTS Toggle AN -> Sprech-Blasen werden laut vorgelesen."},
+{t:"Doppel-Tap Trick",d:"Pet doppelt antippen -> 360-Grad Drehung + Soundeffekt."},
+{t:"Multi-Pet Modus",d:"Multi-Pet Toggle AN -> Alle 5 Tiere gleichzeitig auf dem Screen."},
+{t:"Akzentfarbe",d:"Farbe waehlen -> Pet-Akzente aendern sich (7 Neon-Farben)."},
+{t:"Nachtmodus",d:"Zwischen 22-6 Uhr -> Pet schlaeft (visuell erkennbar)."},
+{t:"Streak-System",d:"Taeglich Musik hoeren -> Streak-Zaehler steigt. Unterbrochen -> Reset."}
+]}
+]},
 {cat:"12. Tools",ff:[
 {n:"F-045: Tag-Editor (inkl. Genre)",tt:[
 {t:"Tag-Editor oeffnen",d:"Long-Press auf Song -> 'Tags bearbeiten'. Felder: Titel, Kuenstler, Album, Genre, Jahr, Track-Nr muessen angezeigt werden."},
@@ -907,7 +955,8 @@ const D=[
 ]},
 {n:"F-042: Tag Rescue",tt:[
 {t:"Fehlende Tags identifizieren",d:"Drawer -> Tag Rescue. Songs mit fehlenden oder falschen Tags werden identifiziert und aufgelistet."},
-{t:"Tags reparieren",d:"Song auswaehlen -> Automatische oder manuelle Korrektur. Korrigierte Tags werden gespeichert."}
+{t:"Tags reparieren (Permission)",d:"Drawer -> Tag-Retter. Song mit kaputten Tags -> Haken antippen -> Android System-Dialog 'Darf AutoPlayer aendern?' -> Zulassen -> Tag wird geschrieben. Screen verlassen + zurueck -> Song nicht mehr aufgelistet."},
+{t:"Batch Fix (Alle korrigieren)",d:"'Alle aus Dateinamen korrigieren' Button -> EIN Permission-Dialog fuer alle Songs -> Zulassen -> Alle Tags geschrieben."}
 ]},
 {n:"F-028: Song-Details Popup",tt:[
 {t:"Details-Anzeige oeffnen",d:"Im Player oder via Kontextmenue: Song-Details oeffnen. Bitrate, Format, Groesse, Pfad, Dauer und Tags muessen angezeigt werden."}
@@ -927,7 +976,8 @@ const D=[
 {t:"Voice: 'Was spielt gerade?'",d:"Mikrofon -> 'Was spielt gerade?' -> TTS antwortet mit Song-Titel und Kuenstler."},
 {t:"Voice: Genre abspielen",d:"Mikrofon -> 'Spiele Reggae' -> Alle Reggae-Songs starten (Shuffle). TTS-Feedback mit Anzahl."},
 {t:"Voice: Genre mit Prefix",d:"Mikrofon -> 'Genre Rock' -> Alle Rock-Songs starten. Funktioniert auch auf Android Auto."},
-{t:"Voice: Unbekanntes Genre Fallback",d:"Mikrofon -> 'Spiele Blablabla' (kein Genre) -> Fallback auf normale Song-Suche."}
+{t:"Voice: Unbekanntes Genre Fallback",d:"Mikrofon -> 'Spiele Blablabla' (kein Genre) -> Fallback auf normale Song-Suche."},
+{t:"Voice Popup sofort bereit",d:"Mikrofon antippen -> Popup oeffnet mit Mic-Icon + 'Ich hoere zu...'. Kein alter Text, kein doppeltes Tippen noetig."}
 ]},
 {n:"F-082: Voice Commands Uebersicht",tt:[
 {t:"Referenz-Screen oeffnen",d:"Drawer -> 'Sprachbefehle'. Alle Commands nach 12 Kategorien aufgelistet."},
@@ -987,7 +1037,12 @@ const D=[
 {t:"Intensitaets-Modus waehlen",d:"Modus auf 'Mittel' stellen -> Vibration bei Musikwiedergabe muss spuerbar sein."},
 {t:"BPM-Sync Toggle",d:"BPM-Sync AN -> Vibration synchron zum Beat. AUS -> Vibration nur bei Bass."},
 {t:"Player: Vibrations-Icon Toggle",d:"Im Player: Vibrations-Icon antippen -> Schnell-Toggle AN/AUS. Statusfarbe aendert sich."},
-{t:"Einstellungen-Toggle vorhanden",d:"Einstellungen -> Haptic Feedback Toggle muss vorhanden sein und AN/AUS schalten."}
+{t:"Einstellungen-Toggle vorhanden",d:"Einstellungen -> Haptic Feedback Toggle muss vorhanden sein und AN/AUS schalten."},
+{t:"Haptic bei Buttons",d:"Beliebigen Button antippen -> Kurze Vibration spuerbar (CLOCK_TICK)."},
+{t:"Haptic bei Toggles",d:"Toggle umschalten -> Vibration spuerbar."},
+{t:"Haptic bei Drawer-Items",d:"Drawer oeffnen -> Menuepunkt antippen -> Vibration spuerbar."},
+{t:"Haptic bei Drag-Gesten",d:"Queue-Song per Drag verschieben -> Vibration bei Drag-Start (LONG_PRESS)."},
+{t:"Kein Haptic bei Slidern",d:"Slider ziehen -> KEINE Vibration (beabsichtigt, wuerde sonst dauerhaft vibrieren)."}
 ]},
 {n:"F-096: Gestensteuerung",tt:[
 {t:"Screen oeffnen",d:"Drawer -> Gestensteuerung. Master-Toggle und Gesten-Liste muessen sichtbar sein."},
@@ -1016,7 +1071,8 @@ const D=[
 ]},
 {n:"F-035: Dark/Light Mode",tt:[
 {t:"Auto-Modus basierend auf Umgebungslicht",d:"Einstellungen -> Darstellung -> 'Auto'. Bei hellem Licht: Light Mode. Bei Dunkelheit: Dark Mode. Wechsel automatisch."},
-{t:"Manuell: Dark/Light umschalten",d:"Manuell 'Dunkel' waehlen -> Dunkles Theme. 'Hell' waehlen -> Helles Theme. Sofortiger Wechsel."}
+{t:"Manuell: Dark/Light umschalten",d:"Manuell 'Dunkel' waehlen -> Dunkles Theme. 'Hell' waehlen -> Helles Theme. Sofortiger Wechsel."},
+{t:"Dark Theme Standard",d:"App frisch installieren (oder Daten loeschen) -> Design ist automatisch 'Dunkel' (nicht Systemstandard)."}
 ]},
 {n:"F-041: Text-/Icon-Groesse",tt:[
 {t:"Groesse skalieren (80%-140%)",d:"Einstellungen -> Text-/Icon-Groesse Slider. Auf 140% -> Alles wird groesser. Auf 80% -> Alles wird kleiner. Aenderung sofort sichtbar."}
@@ -1055,6 +1111,13 @@ const D=[
 ]},
 {n:"F-050: About-Screen",tt:[
 {t:"About oeffnen",d:"Drawer -> About. App-Version, Entwickler-Info, Links (Bewerten, Teilen, Feedback) muessen sichtbar sein."}
+]},
+{n:"F-112: Geraete-Transfer",tt:[
+{t:"Transfer-Zugang",d:"Einstellungen -> Geraete-Transfer (ueber Gefahrenzone). Screen zeigt 'Senden' und 'Empfangen' Optionen."},
+{t:"Senden starten",d:"'Senden' waehlen -> PIN wird angezeigt -> Warte auf Verbindung."},
+{t:"Empfangen + Verbinden",d:"Zweites Geraet: 'Empfangen' -> Findet Quell-Geraet -> Antippen -> Verbindung hergestellt."},
+{t:"Transfer durchfuehren",d:"Verbunden -> 'Transfer starten' -> Fortschrittsbalken + Geschwindigkeit + verbleibende Zeit."},
+{t:"Transfer abgeschlossen",d:"Transfer fertig -> Zusammenfassung (Dauer, Groesse, Erfolg). App neu starten -> Alle Daten vorhanden."}
 ]}
 ]},
 {cat:"16. Kopfhoerer & Bluetooth",ff:[
