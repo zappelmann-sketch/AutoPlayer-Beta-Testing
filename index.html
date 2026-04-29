@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AutoPlayer Testplan v5.2.0</title>
+<title>AutoPlayer Testplan v5.3.0</title>
 <script src="https://cdn.jsdelivr.net/npm/@twemoji/api@latest/dist/twemoji.min.js" crossorigin="anonymous"></script>
 <style>
 img.emoji{height:1em;width:1em;margin:0 .05em 0 .1em;vertical-align:-0.1em}
@@ -195,7 +195,7 @@ h1{color:var(--accent);margin-bottom:4px;font-size:1.7em}
 <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px">
 <div>
 <h1>AutoPlayer Testplan</h1>
-<p class="sub">Version 5.2.0 | <span id="subTestPlan">Granularer Testplan</span> | <span id="lastSaved"></span></p>
+<p class="sub">Version 5.3.0 | <span id="subTestPlan">Granularer Testplan</span> | <span id="lastSaved"></span></p>
 </div>
 <div class="lang-drop" id="langDrop">
 <div class="lang-btn" id="langBtn" onclick="document.getElementById('langList').classList.toggle('open')">
@@ -272,7 +272,7 @@ h1{color:var(--accent);margin-bottom:4px;font-size:1.7em}
 
 <!-- TESTER INFO -->
 <div class="info-card">
-<h2>Tester-Informationen</h2>
+<h2 id="testerInfoTitle">Tester-Informationen</h2>
 <div class="info-grid">
 <div class="info-field">
 <label>Tester-Name (optional)</label>
@@ -327,7 +327,7 @@ h1{color:var(--accent);margin-bottom:4px;font-size:1.7em}
 <!-- GERAETE VERWALTUNG -->
 <div class="dev-card">
 <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;margin-bottom:8px">
-<h2 style="margin:0">Geraete-Verwaltung</h2>
+<h2 id="devicesTitle" style="margin:0">Geraete-Verwaltung</h2>
 <div style="display:flex;gap:10px;align-items:center">
 <span id="devBadge" class="dev-badge"></span>
 <button class="btn-add-dev" onclick="addDevice()">+ Geraet</button>
@@ -338,21 +338,21 @@ h1{color:var(--accent);margin-bottom:4px;font-size:1.7em}
 
 <!-- STATS BAR -->
 <div class="stats">
-<div class="s s-ok"><div class="n" id="cOk">0</div><div class="l">Bestanden</div></div>
-<div class="s s-bug"><div class="n" id="cBug">0</div><div class="l">Bugs</div></div>
-<div class="s s-feat"><div class="n" id="cFeat">0</div><div class="l">Wuensche</div></div>
-<div class="s s-open"><div class="n" id="cOpen">0</div><div class="l">Offen</div></div>
-<div class="s s-all"><div class="n" id="cAll">0</div><div class="l">Gesamt</div></div>
+<div class="s s-ok"><div class="n" id="cOk">0</div><div class="l" id="lbl_passed">Bestanden</div></div>
+<div class="s s-bug"><div class="n" id="cBug">0</div><div class="l" id="lbl_bugs">Bugs</div></div>
+<div class="s s-feat"><div class="n" id="cFeat">0</div><div class="l" id="lbl_wishes">Wuensche</div></div>
+<div class="s s-open"><div class="n" id="cOpen">0</div><div class="l" id="lbl_open">Offen</div></div>
+<div class="s s-all"><div class="n" id="cAll">0</div><div class="l" id="lbl_total">Gesamt</div></div>
 <div class="pbar"><div class="pfill" id="pFill"></div></div>
 </div>
 
 <div class="bug-summary" id="bugSummary">
-<h3>Gefundene Bugs</h3>
+<h3 id="bugSummaryTitle">Gefundene Bugs</h3>
 <div id="bugList"></div>
 </div>
 
 <div class="feat-summary" id="featSummary">
-<h3>Aenderungs-/Erweiterungswuensche</h3>
+<h3 id="featSummaryTitle">Aenderungs-/Erweiterungswuensche</h3>
 <div id="featList"></div>
 </div>
 
@@ -383,8 +383,8 @@ h1{color:var(--accent);margin-bottom:4px;font-size:1.7em}
 
 <!-- STERNEBEWERTUNG -->
 <div class="feedback-card" id="ratingCard" style="border-color:var(--yellow)">
-<h2 style="color:var(--yellow)">App-Bewertung</h2>
-<p style="color:var(--muted);font-size:0.82em;margin-bottom:12px">Wie bewertest du die App insgesamt? Klicke auf einen Stern.</p>
+<h2 id="ratingTitle" style="color:var(--yellow)">App-Bewertung</h2>
+<p id="ratingDescP" style="color:var(--muted);font-size:0.82em;margin-bottom:12px">Wie bewertest du die App insgesamt? Klicke auf einen Stern.</p>
 <div id="starRating" style="display:flex;gap:4px;margin-bottom:12px">
 <span class="star" onclick="setRating(1)" data-v="1">&#9734;</span>
 <span class="star" onclick="setRating(2)" data-v="2">&#9734;</span>
@@ -398,24 +398,24 @@ h1{color:var(--accent);margin-bottom:4px;font-size:1.7em}
 
 <!-- FEEDBACK -->
 <div class="feedback-card">
-<h2>Allgemeines Feedback</h2>
+<h2 id="feedbackTitle">Allgemeines Feedback</h2>
 <textarea id="metaFeedback" placeholder="Hier allgemeines Feedback, Anmerkungen oder Verbesserungsvorschlaege eintragen..." onblur="saveMeta()"></textarea>
 </div>
 
 <!-- ERGEBNIS SENDEN -->
 <div class="feedback-card" style="border-color:var(--green)">
-<h2 style="color:var(--green)">Testergebnis absenden</h2>
-<p style="color:var(--muted);font-size:0.82em;margin-bottom:12px">Sende dein komplettes Testergebnis (JSON) per E-Mail an den Entwickler. Die JSON-Datei mit allen Daten wird automatisch als Anhang-Link generiert.</p>
+<h2 id="sendMailTitle" style="color:var(--green)">Testergebnis absenden</h2>
+<p id="sendMailDescP" style="color:var(--muted);font-size:0.82em;margin-bottom:12px">Sende dein komplettes Testergebnis (JSON) per E-Mail an den Entwickler. Die JSON-Datei mit allen Daten wird automatisch als Anhang-Link generiert.</p>
 <button class="btn btn-x" onclick="sendResultByMail()" style="font-size:0.9em;padding:10px 20px">Per E-Mail an Entwickler senden</button>
 </div>
 
 <!-- FEATURE-WUENSCHE -->
 <div class="feedback-card" id="featureWishesCard" style="border-color:var(--orange)">
 <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px">
-<h2 style="color:var(--orange)">Feature-Wuensche fuer zukuenftige Versionen</h2>
+<h2 id="featureWishesTitle" style="color:var(--orange)">Feature-Wuensche fuer zukuenftige Versionen</h2>
 <button class="btn btn-o" onclick="addFeatureWish()" style="font-size:0.85em">+ Feature-Wunsch</button>
 </div>
-<p style="color:var(--muted);font-size:0.8em;margin-bottom:12px">Hier kannst du neue Feature-Ideen oder Erweiterungswuensche eintragen, die nach dem Launch umgesetzt werden koennten. Jeder Wunsch bekommt ein eigenes Feld — nutze den "+ Feature-Wunsch" Button fuer weitere Eintraege.</p>
+<p id="wishDescText" style="color:var(--muted);font-size:0.8em;margin-bottom:12px">Hier kannst du neue Feature-Ideen oder Erweiterungswuensche eintragen, die nach dem Launch umgesetzt werden koennten. Jeder Wunsch bekommt ein eigenes Feld — nutze den "+ Feature-Wunsch" Button fuer weitere Eintraege.</p>
 <div id="featureWishesList"></div>
 </div>
 
@@ -2697,22 +2697,23 @@ D.forEach((cat, ci) => {
             const featCmt = getFeatCmt(ci, f.n, ti);
             const ss = getSs(ci, f.n, ti);
             h += '<div class="ti' + (st === 'ok' ? ' done' : '') + (st === 'bug' ? ' bugged' : '') + (hasFeat ? ' has-feat' : '') + '" data-ci="' + ci + '" data-fn="' + esc(f.n) + '" data-ti="' + ti + '">';
-            h += '<input type="checkbox" class="cb-ok" ' + (st === 'ok' ? 'checked' : '') + ' onchange="setOk(this)" title="Bestanden">';
+            const ui = i18n[currentLang] || i18n.en;
+            h += '<input type="checkbox" class="cb-ok" ' + (st === 'ok' ? 'checked' : '') + ' onchange="setOk(this)" title="' + ui.okTitle + '">';
             h += '<div class="ti-body"><div class="ti-row"><div class="ti-name">' + dt.t + '</div>';
-            h += '<label class="bug-label"><input type="checkbox" class="cb-bug" ' + (st === 'bug' ? 'checked' : '') + ' onchange="setBug(this)" title="Bug"> BUG</label>';
-            h += '<label class="feat-label"><input type="checkbox" class="cb-feat" ' + (hasFeat ? 'checked' : '') + ' onchange="setFeat(this)" title="Aenderung/Erweiterung"> WUNSCH</label>';
-            h += '<span class="ss-toggle" onclick="toggleSs(this)">Screenshot</span>';
+            h += '<label class="bug-label"><input type="checkbox" class="cb-bug" ' + (st === 'bug' ? 'checked' : '') + ' onchange="setBug(this)" title="Bug"> ' + ui.bugLabel + '</label>';
+            h += '<label class="feat-label"><input type="checkbox" class="cb-feat" ' + (hasFeat ? 'checked' : '') + ' onchange="setFeat(this)" title="' + ui.wishCheckTitle + '"> ' + ui.wishLabel + '</label>';
+            h += '<span class="ss-toggle" onclick="toggleSs(this)">' + ui.screenshot + '</span>';
             h += '</div>';
             h += '<div class="ti-detail">' + dt.d + '</div>';
-            h += '<textarea class="comment-box' + (cmt ? ' has-text' : '') + '" placeholder="Bug-Beschreibung: Was erwartet? Was passiert? Schritte?" onblur="saveCmt(this)">' + esc(cmt) + '</textarea>';
+            h += '<textarea class="comment-box' + (cmt ? ' has-text' : '') + '" placeholder="' + ui.bugComment + '" onblur="saveCmt(this)">' + esc(cmt) + '</textarea>';
             // Bug severity + reproducibility
             h += '<div class="bug-extra">';
-            h += '<label>Schweregrad<select onchange="saveSev(this)"><option value="">--</option><option value="critical"' + (sev === 'critical' ? ' selected' : '') + '>Kritisch</option><option value="high"' + (sev === 'high' ? ' selected' : '') + '>Hoch</option><option value="medium"' + (sev === 'medium' ? ' selected' : '') + '>Mittel</option><option value="low"' + (sev === 'low' ? ' selected' : '') + '>Niedrig</option></select></label>';
-            h += '<label>Reproduzierbar<select onchange="saveRep(this)"><option value="">--</option><option value="always"' + (rep === 'always' ? ' selected' : '') + '>Immer</option><option value="sometimes"' + (rep === 'sometimes' ? ' selected' : '') + '>Manchmal</option><option value="once"' + (rep === 'once' ? ' selected' : '') + '>Einmalig</option></select></label>';
+            h += '<label>' + ui.severity + '<select onchange="saveSev(this)"><option value="">--</option><option value="critical"' + (sev === 'critical' ? ' selected' : '') + '>' + ui.sevCritical + '</option><option value="high"' + (sev === 'high' ? ' selected' : '') + '>' + ui.sevHigh + '</option><option value="medium"' + (sev === 'medium' ? ' selected' : '') + '>' + ui.sevMedium + '</option><option value="low"' + (sev === 'low' ? ' selected' : '') + '>' + ui.sevLow + '</option></select></label>';
+            h += '<label>' + ui.reproducible + '<select onchange="saveRep(this)"><option value="">--</option><option value="always"' + (rep === 'always' ? ' selected' : '') + '>' + ui.repAlways + '</option><option value="sometimes"' + (rep === 'sometimes' ? ' selected' : '') + '>' + ui.repSometimes + '</option><option value="once"' + (rep === 'once' ? ' selected' : '') + '>' + ui.repOnce + '</option></select></label>';
             h += '</div>';
-            h += '<textarea class="comment-feat' + (featCmt ? ' has-text' : '') + '" placeholder="Aenderungs-/Erweiterungswunsch..." onblur="saveFeatCmt(this)">' + esc(featCmt) + '</textarea>';
+            h += '<textarea class="comment-feat' + (featCmt ? ' has-text' : '') + '" placeholder="' + ui.wishComment + '" onblur="saveFeatCmt(this)">' + esc(featCmt) + '</textarea>';
             // Screenshot field
-            h += '<input type="text" class="ss-field' + (ss ? ' visible has-text' : '') + '" placeholder="Screenshot-Dateinamen (komma-getrennt)" value="' + esc(ss) + '" onblur="saveSs(this)">';
+            h += '<input type="text" class="ss-field' + (ss ? ' visible has-text' : '') + '" placeholder="' + ui.screenshotPlaceholder + '" value="' + esc(ss) + '" onblur="saveSs(this)">';
             h += '</div></div>';
         });
         h += '</div>';
@@ -2873,12 +2874,13 @@ function updBugList() {
             const sev = getSev(ci, f.n, ti);
             const rep = getRep(ci, f.n, ti);
             const ss = getSs(ci, f.n, ti);
-            const sevLabels = { critical: 'Kritisch', high: 'Hoch', medium: 'Mittel', low: 'Niedrig' };
-            const repLabels = { always: 'Immer', sometimes: 'Manchmal', once: 'Einmalig' };
+            const ui = i18n[currentLang] || i18n.en;
+            const sevLabels = { critical: ui.sevCritical, high: ui.sevHigh, medium: ui.sevMedium, low: ui.sevLow };
+            const repLabels = { always: ui.repAlways, sometimes: ui.repSometimes, once: ui.repOnce };
             let extra = '';
             if (sev) extra += ' [' + (sevLabels[sev] || sev) + ']';
             if (rep) extra += ' (' + (repLabels[rep] || rep) + ')';
-            html += '<div class="bug-item"><span class="bf">' + f.n + '</span> &rarr; <span class="bt">' + t.t + '</span>' + (extra ? '<span style="color:var(--cyan);margin-left:6px;font-size:0.85em">' + extra + '</span>' : '') + (c ? '<span class="bc">' + esc(c) + '</span>' : '') + (ss ? '<span style="color:var(--cyan);margin-left:6px;font-size:0.8em">Screens: ' + esc(ss) + '</span>' : '') + '</div>';
+            html += '<div class="bug-item"><span class="bf">' + f.n + '</span> &rarr; <span class="bt">' + t.t + '</span>' + (extra ? '<span style="color:var(--cyan);margin-left:6px;font-size:0.85em">' + extra + '</span>' : '') + (c ? '<span class="bc">' + esc(c) + '</span>' : '') + (ss ? '<span style="color:var(--cyan);margin-left:6px;font-size:0.8em">' + ui.screensLabel + esc(ss) + '</span>' : '') + '</div>';
         }
     }); }); });
     bl.innerHTML = html;
@@ -2915,7 +2917,7 @@ function resetAll() {
 function exportResults() {
     const dev = devices[activeDevIdx];
     const devInfo = devLabel(activeDevIdx) + (dev.android ? ' (Android ' + dev.android + ')' : '');
-    let t = 'AutoPlayer Testplan v5.2.0 — ' + new Date().toLocaleString('de-DE') + '\n';
+    let t = 'AutoPlayer Testplan v5.3.0 — ' + new Date().toLocaleString('de-DE') + '\n';
     t += 'Tester: ' + (localStorage.getItem('tp_meta_tester') || 'k.A.') + '\n';
     t += 'Geraet: ' + devInfo + '\n';
     t += 'App-Version: ' + (localStorage.getItem('tp_meta_version') || 'k.A.') + '\n\n';
@@ -3181,11 +3183,80 @@ doImport = function() {
 
 // === LANGUAGE / i18n ===
 const i18n = {
-de:{title:"AutoPlayer Testplan",guide:"Anleitung fuer Tester",testerInfo:"Tester-Informationen",testerName:"Tester-Name (optional)",appVersion:"App-Version",appLang:"App-Sprache",testStart:"Testdatum Start",testEnd:"Testdatum Ende",devices:"Geraete-Verwaltung",addDevice:"+ Geraet",smartphone:"Smartphone",tablet:"Tablet",brand:"Hersteller",model:"Modell",androidVer:"Android-Version",remove:"Entfernen",active:"Aktiv",passed:"Bestanden",bugs:"Bugs",wishes:"Wuensche",open:"Offen",total:"Gesamt",search:"Feature suchen...",expandAll:"Alle aufklappen",collapseAll:"Alle zuklappen",copyResult:"Ergebnis kopieren",exportBugs:"Bugs exportieren",exportWishes:"Wuensche exportieren",saveJson:"JSON speichern",importJson:"JSON importieren",reset:"Reset",rating:"App-Bewertung",ratingDesc:"Wie bewertest du die App insgesamt? Klicke auf einen Stern.",feedback:"Allgemeines Feedback",feedbackPlaceholder:"Hier allgemeines Feedback eintragen...",sendMail:"Per E-Mail an Entwickler senden",sendMailDesc:"Sende dein komplettes Testergebnis per E-Mail. Die JSON-Datei wird automatisch heruntergeladen.",featureWishes:"Feature-Wuensche fuer zukuenftige Versionen",addWish:"+ Feature-Wunsch",wishDesc:"Hier kannst du neue Feature-Ideen eintragen.",bugLabel:"BUG",wishLabel:"WUNSCH",screenshot:"Screenshot",bugComment:"Bug-Beschreibung...",wishComment:"Aenderungs-/Erweiterungswunsch...",screenshotPlaceholder:"Screenshot-Dateinamen..."},
-en:{title:"AutoPlayer Test Plan",guide:"Instructions for Testers",testerInfo:"Tester Information",testerName:"Tester Name (optional)",appVersion:"App Version",appLang:"App Language",testStart:"Test Start Date",testEnd:"Test End Date",devices:"Device Management",addDevice:"+ Device",smartphone:"Smartphone",tablet:"Tablet",brand:"Brand",model:"Model",androidVer:"Android Version",remove:"Remove",active:"Active",passed:"Passed",bugs:"Bugs",wishes:"Wishes",open:"Open",total:"Total",search:"Search features...",expandAll:"Expand all",collapseAll:"Collapse all",copyResult:"Copy result",exportBugs:"Export bugs",exportWishes:"Export wishes",saveJson:"Save JSON",importJson:"Import JSON",reset:"Reset",rating:"App Rating",ratingDesc:"How do you rate the app overall? Click a star.",feedback:"General Feedback",feedbackPlaceholder:"Enter general feedback here...",sendMail:"Send to developer via email",sendMailDesc:"Send your complete test result via email. The JSON file will be downloaded automatically.",featureWishes:"Feature wishes for future versions",addWish:"+ Feature wish",wishDesc:"Add new feature ideas here.",bugLabel:"BUG",wishLabel:"WISH",screenshot:"Screenshot",bugComment:"Bug description...",wishComment:"Change/enhancement wish...",screenshotPlaceholder:"Screenshot filenames..."}
+de:{title:"AutoPlayer Testplan",guide:"Anleitung fuer Tester",testerInfo:"Tester-Informationen",testerName:"Tester-Name (optional)",appVersion:"App-Version",appLang:"App-Sprache",testStart:"Testdatum Start",testEnd:"Testdatum Ende",devices:"Geraete-Verwaltung",addDevice:"+ Geraet",smartphone:"Smartphone",tablet:"Tablet",brand:"Hersteller",model:"Modell",androidVer:"Android-Version",remove:"Entfernen",active:"Aktiv",passed:"Bestanden",bugs:"Bugs",wishes:"Wuensche",open:"Offen",total:"Gesamt",search:"Feature suchen...",expandAll:"Alle aufklappen",collapseAll:"Alle zuklappen",copyResult:"Ergebnis kopieren",exportBugs:"Bugs exportieren",exportWishes:"Wuensche exportieren",saveJson:"JSON speichern",importJson:"JSON importieren",reset:"Reset",rating:"App-Bewertung",ratingDesc:"Wie bewertest du die App insgesamt? Klicke auf einen Stern.",feedback:"Allgemeines Feedback",feedbackPlaceholder:"Hier allgemeines Feedback eintragen...",sendMail:"Per E-Mail an Entwickler senden",sendMailTitle:"Testergebnis absenden",sendMailDesc:"Sende dein komplettes Testergebnis (JSON) per E-Mail an den Entwickler. Die JSON-Datei mit allen Daten wird automatisch als Anhang-Link generiert.",featureWishes:"Feature-Wuensche fuer zukuenftige Versionen",addWish:"+ Feature-Wunsch",wishDesc:"Hier kannst du neue Feature-Ideen oder Erweiterungswuensche eintragen, die nach dem Launch umgesetzt werden koennten. Jeder Wunsch bekommt ein eigenes Feld \u2014 nutze den \"+ Feature-Wunsch\" Button fuer weitere Eintraege.",bugLabel:"BUG",wishLabel:"WUNSCH",screenshot:"Screenshot",bugComment:"Bug-Beschreibung: Was erwartet? Was passiert? Schritte?",wishComment:"Aenderungs-/Erweiterungswunsch...",screenshotPlaceholder:"Screenshot-Dateinamen (komma-getrennt)",okTitle:"Bestanden",wishCheckTitle:"Aenderung/Erweiterung",bugSummaryTitle:"Gefundene Bugs",featSummaryTitle:"Aenderungs-/Erweiterungswuensche",severity:"Schweregrad",sevCritical:"Kritisch",sevHigh:"Hoch",sevMedium:"Mittel",sevLow:"Niedrig",reproducible:"Reproduzierbar",repAlways:"Immer",repSometimes:"Manchmal",repOnce:"Einmalig",importPlaceholder:"JSON hier einfuegen...",importBtn:"Importieren",cancelBtn:"Abbrechen",ratingCommentPlaceholder:"Optional: Begruende deine Bewertung kurz...",noRating:"Noch keine Bewertung",ratingLabels:["","Mangelhaft \u2014 viele Probleme","Ausreichend \u2014 funktioniert teilweise","Befriedigend \u2014 grundsaetzlich OK","Gut \u2014 laeuft rund mit kleinen Macken","Ausgezeichnet \u2014 Top App!"],screensLabel:"Screens: ",guideBodyHtml:"<h3>Wie funktioniert der Testplan?</h3><ul><li>Jeder Testpunkt hat zwei Checkboxen und einen Wunsch-Button:</li><li><strong style=\"color:var(--green)\">Gruene Checkbox (OK)</strong> = Test bestanden, alles funktioniert wie beschrieben</li><li><strong style=\"color:var(--red)\">Rote Checkbox (BUG)</strong> = Fehler gefunden, bitte Beschreibung + Schweregrad eintragen</li><li><strong style=\"color:var(--orange)\">WUNSCH-Button</strong> = Aenderungs- oder Erweiterungswunsch, kein Bug</li><li>Wenn weder OK noch BUG markiert ist, gilt der Test als \"Offen\"</li></ul><h3>Screenshot-Zuordnung</h3><ul><li>Klicke auf den <strong style=\"color:var(--cyan)\">\"Screenshot\"</strong>-Link unter einem Testpunkt</li><li>Trage die Dateinamen deiner Screenshots ein (komma-getrennt)</li><li>Empfohlene Namenskonvention: <code>Screenshot_[TestNr]_[Beschreibung].png</code></li><li>Beispiel: <code>Screenshot_001_app_start.png, Screenshot_002_crash.png</code></li></ul><h3>JSON Export / Import</h3><ul><li><strong>\"JSON speichern\"</strong> exportiert alle Testergebnisse, Geraete und Meta-Daten als JSON-Datei</li><li><strong>\"JSON importieren\"</strong> laedt eine JSON-Datei und stellt alle Daten wieder her</li><li>Der Export enthaelt ALLES: Testergebnisse, Geraete, Bug-Kommentare, Feature-Wuensche, Feedback</li></ul><h3>Feature-Wuensche</h3><ul><li>Am Ende der Seite gibt es einen Bereich fuer <strong>Feature-Wuensche</strong></li><li>Klicke <strong>\"+ Feature-Wunsch\"</strong> um einen neuen Wunsch einzutragen</li><li>Pro Wunsch: Titel, Prioritaet (Hoch/Mittel/Niedrig), Kategorie und eine ausfuehrliche Beschreibung</li><li>Du kannst beliebig viele Wuensche eintragen \u2014 jeder bekommt sein eigenes Feld</li><li>Feature-Wuensche werden im JSON-Export mitgespeichert und beim Import wiederhergestellt</li></ul><h3>App-Bewertung &amp; Absenden</h3><ul><li>Am Ende der Seite kannst du die App mit <strong>1-5 Sternen</strong> bewerten + einen Kommentar schreiben</li><li>Klicke auf <strong>\"Per E-Mail an Entwickler senden\"</strong> \u2014 die JSON-Datei wird heruntergeladen und dein Mail-Programm oeffnet sich</li><li><strong>Wichtig:</strong> Haenge die heruntergeladene JSON-Datei an die Mail an bevor du sie absendest!</li><li>Damit koennen Testergebnisse zwischen Geraeten/Browsern uebertragen werden</li><li>Tipp: Regelmaessig exportieren als Sicherung!</li></ul><h3>Bug-Beschreibungen richtig schreiben</h3><ul><li><strong>Was erwartet:</strong> Was haette laut Testbeschreibung passieren sollen?</li><li><strong>Was passiert:</strong> Was ist stattdessen passiert?</li><li><strong>Schritte zum Reproduzieren:</strong> Genaue Schritte um den Bug auszuloesen</li><li>Schweregrad und Reproduzierbarkeit ueber die Dropdowns angeben</li><li>Wenn moeglich: Screenshot zuordnen!</li></ul><h3>Geraete-Verwaltung</h3><ul><li>Du kannst mehrere Geraete anlegen und zwischen ihnen wechseln</li><li>Alle Testergebnisse werden <strong>pro Geraet</strong> separat gespeichert</li><li>Das aktive Geraet wird durch den Radio-Button markiert</li><li>Beim Wechsel des aktiven Geraets aktualisieren sich alle Checkboxen</li></ul>"},
+en:{title:"AutoPlayer Test Plan",guide:"Instructions for Testers",testerInfo:"Tester Information",testerName:"Tester Name (optional)",appVersion:"App Version",appLang:"App Language",testStart:"Test Start Date",testEnd:"Test End Date",devices:"Device Management",addDevice:"+ Device",smartphone:"Smartphone",tablet:"Tablet",brand:"Brand",model:"Model",androidVer:"Android Version",remove:"Remove",active:"Active",passed:"Passed",bugs:"Bugs",wishes:"Wishes",open:"Open",total:"Total",search:"Search features...",expandAll:"Expand all",collapseAll:"Collapse all",copyResult:"Copy result",exportBugs:"Export bugs",exportWishes:"Export wishes",saveJson:"Save JSON",importJson:"Import JSON",reset:"Reset",rating:"App Rating",ratingDesc:"How do you rate the app overall? Click a star.",feedback:"General Feedback",feedbackPlaceholder:"Enter general feedback here...",sendMail:"Send to developer via email",sendMailTitle:"Submit Test Result",sendMailDesc:"Send your complete test result (JSON) to the developer via email. The JSON file with all data will be automatically generated as an attachment link.",featureWishes:"Feature wishes for future versions",addWish:"+ Feature wish",wishDesc:"Add new feature ideas or enhancement requests that could be implemented after launch. Each wish gets its own field \u2014 use the \"+ Feature wish\" button for additional entries.",bugLabel:"BUG",wishLabel:"WISH",screenshot:"Screenshot",bugComment:"Bug description: What expected? What happened? Steps?",wishComment:"Change/enhancement wish...",screenshotPlaceholder:"Screenshot filenames (comma-separated)",okTitle:"Passed",wishCheckTitle:"Change/Enhancement",bugSummaryTitle:"Bugs Found",featSummaryTitle:"Change/Enhancement Wishes",severity:"Severity",sevCritical:"Critical",sevHigh:"High",sevMedium:"Medium",sevLow:"Low",reproducible:"Reproducible",repAlways:"Always",repSometimes:"Sometimes",repOnce:"Once",importPlaceholder:"Paste JSON here...",importBtn:"Import",cancelBtn:"Cancel",ratingCommentPlaceholder:"Optional: Briefly explain your rating...",noRating:"No rating yet",ratingLabels:["","Poor \u2014 many issues","Fair \u2014 partially works","OK \u2014 basically fine","Good \u2014 runs well with minor issues","Excellent \u2014 top app!"],screensLabel:"Screens: ",guideBodyHtml:"<h3>How does the test plan work?</h3><ul><li>Each test point has two checkboxes and a wish button:</li><li><strong style=\"color:var(--green)\">Green checkbox (OK)</strong> = Test passed, everything works as described</li><li><strong style=\"color:var(--red)\">Red checkbox (BUG)</strong> = Error found, please add description + severity</li><li><strong style=\"color:var(--orange)\">WISH button</strong> = Change or enhancement request, not a bug</li><li>If neither OK nor BUG is marked, the test is considered \"Open\"</li></ul><h3>Screenshot assignment</h3><ul><li>Click the <strong style=\"color:var(--cyan)\">\"Screenshot\"</strong> link below a test point</li><li>Enter the filenames of your screenshots (comma-separated)</li><li>Recommended naming: <code>Screenshot_[TestNo]_[Description].png</code></li><li>Example: <code>Screenshot_001_app_start.png, Screenshot_002_crash.png</code></li></ul><h3>JSON Export / Import</h3><ul><li><strong>\"Save JSON\"</strong> exports all test results, devices and metadata as a JSON file</li><li><strong>\"Import JSON\"</strong> loads a JSON file and restores all data</li><li>The export contains EVERYTHING: test results, devices, bug comments, feature wishes, feedback</li></ul><h3>Feature Wishes</h3><ul><li>At the bottom of the page there is a section for <strong>Feature Wishes</strong></li><li>Click <strong>\"+ Feature wish\"</strong> to add a new wish</li><li>Per wish: title, priority (High/Medium/Low), category and a detailed description</li><li>You can add as many wishes as you like \u2014 each gets its own field</li><li>Feature wishes are saved in the JSON export and restored on import</li></ul><h3>App Rating &amp; Submitting</h3><ul><li>At the bottom of the page you can rate the app with <strong>1-5 stars</strong> and write a comment</li><li>Click <strong>\"Send to developer via email\"</strong> \u2014 the JSON file will be downloaded and your email client will open</li><li><strong>Important:</strong> Attach the downloaded JSON file to the email before sending!</li><li>This allows test results to be transferred between devices/browsers</li><li>Tip: Export regularly as a backup!</li></ul><h3>Writing bug descriptions</h3><ul><li><strong>Expected:</strong> What should have happened according to the test description?</li><li><strong>Actual:</strong> What happened instead?</li><li><strong>Steps to reproduce:</strong> Exact steps to trigger the bug</li><li>Specify severity and reproducibility via the dropdowns</li><li>If possible: attach a screenshot!</li></ul><h3>Device Management</h3><ul><li>You can add multiple devices and switch between them</li><li>All test results are stored <strong>per device</strong> separately</li><li>The active device is marked by the radio button</li><li>When switching the active device, all checkboxes update automatically</li></ul>"}
 };
 // Generate other languages with fallback to EN
 ['es','fr','it','pt','tr','ru','uk','pl','cs','ja','ko','zh','hi','ar','th','vi','id','ms','nl','da','fi','nb','sv'].forEach(l=>{if(!i18n[l])i18n[l]=i18n.en;});
+
+function _t(id, text) { const el = document.getElementById(id); if (el && text !== undefined) el.textContent = text; }
+function _btn(onclick, text) { const el = document.querySelector('[onclick="' + onclick + '"]'); if (el && text !== undefined) el.textContent = text; }
+
+function applyUiStrings(lang) {
+    const ui = i18n[lang] || i18n.en;
+    // Guide section
+    const gh = document.querySelector('#guideCard .guide-header h2');
+    if (gh) gh.innerHTML = '<span class="arr">&#9654;</span> ' + ui.guide;
+    const gb = document.querySelector('#guideCard .guide-body');
+    if (gb && ui.guideBodyHtml) gb.innerHTML = ui.guideBodyHtml;
+    // Tester info
+    _t('testerInfoTitle', ui.testerInfo);
+    const lbls = document.querySelectorAll('.info-card .info-field label');
+    const lblKeys = ['testerName','appVersion','appLang','testStart','testEnd'];
+    lbls.forEach((el,i) => { if (lblKeys[i] && ui[lblKeys[i]]) el.textContent = ui[lblKeys[i]]; });
+    const mt = document.getElementById('metaTester');
+    if (mt) mt.placeholder = lang === 'de' ? 'z.B. Max Mustermann' : 'e.g. John Doe';
+    // Devices
+    _t('devicesTitle', ui.devices);
+    const addDevBtn = document.querySelector('.btn-add-dev');
+    if (addDevBtn) addDevBtn.textContent = ui.addDevice;
+    // Stats bar
+    _t('lbl_passed', ui.passed);
+    _t('lbl_bugs', ui.bugs);
+    _t('lbl_wishes', ui.wishes);
+    _t('lbl_open', ui.open);
+    _t('lbl_total', ui.total);
+    // Search
+    const sb = document.getElementById('searchBox');
+    if (sb) sb.placeholder = ui.search;
+    // Summaries
+    _t('bugSummaryTitle', ui.bugSummaryTitle);
+    _t('featSummaryTitle', ui.featSummaryTitle);
+    // Control buttons
+    _btn('toggleAll(true)', ui.expandAll);
+    _btn('toggleAll(false)', ui.collapseAll);
+    _btn('exportResults()', ui.copyResult);
+    _btn('exportBugs()', ui.exportBugs);
+    _btn('exportFeats()', ui.exportWishes);
+    _btn('saveToJson()', ui.saveJson);
+    _btn('showImport()', ui.importJson);
+    _btn('resetAll()', ui.reset);
+    // Import modal
+    _t('ioTitle', ui.importJson);
+    const ioText = document.getElementById('ioText');
+    if (ioText) ioText.placeholder = ui.importPlaceholder;
+    _btn('doImport()', ui.importBtn);
+    _btn('closeModal()', ui.cancelBtn);
+    // Rating
+    _t('ratingTitle', ui.rating);
+    _t('ratingDescP', ui.ratingDesc);
+    const rc = document.getElementById('ratingComment');
+    if (rc) rc.placeholder = ui.ratingCommentPlaceholder;
+    // Feedback
+    _t('feedbackTitle', ui.feedback);
+    const mf = document.getElementById('metaFeedback');
+    if (mf) mf.placeholder = ui.feedbackPlaceholder;
+    // Send mail
+    _t('sendMailTitle', ui.sendMailTitle);
+    _t('sendMailDescP', ui.sendMailDesc);
+    _btn('sendResultByMail()', ui.sendMail);
+    // Feature wishes
+    _t('featureWishesTitle', ui.featureWishes);
+    _t('wishDescText', ui.wishDesc);
+    _btn('addFeatureWish()', ui.addWish);
+    // Re-render stars with current lang labels
+    renderStars();
+}
 
 let currentLang = 'de';
 const langOptions = [
@@ -3261,6 +3332,7 @@ function switchLang(lang) {
     buildLangDropdown();
     const sp = document.getElementById('subTestPlan');
     if (sp) sp.textContent = lang === 'en' ? 'Granular Test Plan' : 'Granularer Testplan';
+    if (typeof applyUiStrings === 'function') applyUiStrings(lang);
     if (typeof render === 'function') render();
 }
 
@@ -3272,7 +3344,7 @@ function initLang() {
 }
 
 // === STAR RATING ===
-const ratingLabels = ['', 'Mangelhaft — viele Probleme', 'Ausreichend — funktioniert teilweise', 'Befriedigend — grundsaetzlich OK', 'Gut — laeuft rund mit kleinen Macken', 'Ausgezeichnet — Top App!'];
+const ratingLabels = null; // replaced by i18n[currentLang].ratingLabels
 function setRating(v) {
     localStorage.setItem('tp_meta_rating', v);
     renderStars();
@@ -3289,7 +3361,9 @@ function renderStars() {
         s.innerHTML = sv <= v ? '&#9733;' : '&#9734;';
         s.classList.toggle('active', sv <= v);
     });
-    document.getElementById('ratingLabel').textContent = v > 0 ? v + '/5 — ' + ratingLabels[v] : 'Noch keine Bewertung';
+    const rl = (i18n[currentLang] || i18n.en).ratingLabels;
+    const ui2 = i18n[currentLang] || i18n.en;
+    document.getElementById('ratingLabel').textContent = v > 0 ? v + '/5 \u2014 ' + rl[v] : ui2.noRating;
     const rc = localStorage.getItem('tp_meta_rating_comment');
     if (rc) document.getElementById('ratingComment').value = rc;
 }
