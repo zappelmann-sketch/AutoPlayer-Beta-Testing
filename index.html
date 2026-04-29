@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AutoPlayer Testplan v4.4.0</title>
+<title>AutoPlayer Testplan v5.0.0</title>
 <script src="https://cdn.jsdelivr.net/npm/@twemoji/api@latest/dist/twemoji.min.js" crossorigin="anonymous"></script>
 <style>
 img.emoji{height:1em;width:1em;margin:0 .05em 0 .1em;vertical-align:-0.1em}
@@ -195,7 +195,7 @@ h1{color:var(--accent);margin-bottom:4px;font-size:1.7em}
 <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px">
 <div>
 <h1>AutoPlayer Testplan</h1>
-<p class="sub">Version 4.4.0 | Granularer Testplan | <span id="lastSaved"></span></p>
+<p class="sub">Version 4.4.1 | Granularer Testplan | <span id="lastSaved"></span></p>
 </div>
 <div class="lang-drop" id="langDrop">
 <div class="lang-btn" id="langBtn" onclick="document.getElementById('langList').classList.toggle('open')">
@@ -439,6 +439,20 @@ const D=[
 {t:"Musik spielt nach Home-Button weiter",d:"Waehrend Musik spielt: Druecke den Home-Button. Die Musik MUSS weiterspielen. Falls sie stoppt = KRITISCHER BUG."},
 {t:"Musik spielt nach Recents-Wischen weiter",d:"Waehrend Musik spielt: Wische die App aus den Recents. Die Musik MUSS weiterspielen (Foreground Service)."},
 {t:"Lockscreen-Controls funktionieren",d:"Sperre den Bildschirm waehrend Musik spielt. Auf dem Lockscreen muessen Wiedergabe-Controls erscheinen. Play/Pause und Skip muessen funktionieren."}
+]},
+{n:"F-132: Portrait-Lock fuer die gesamte App",tt:[
+{t:"App startet im Portrait-Modus",d:"App-Icon antippen -> App startet auf jeden Fall im Portrait-Modus (auch wenn Tablet im Landscape liegt)."},
+{t:"Phone drehen -> App bleibt Portrait",d:"Mit Auto-Rotate AN das Phone seitlich drehen -> Andere Apps drehen sich, AutoPlayer bleibt im Portrait."},
+{t:"Auto-Rotate AN ignoriert AutoPlayer",d:"System-Einstellungen -> Auto-Rotate AN -> Phone drehen waehrend AutoPlayer offen ist -> App ignoriert die Rotation, kein Layout-Wechsel."},
+{t:"LoopMixerImportActivity ebenfalls Portrait",d:"Eine .arpset-Datei aus einem File-Manager im Landscape-Modus oeffnen -> Import-Dialog erscheint trotzdem im Portrait."}
+]},
+{n:"F-133: Standard-Musik-App-Registrierung (Lenkrad-Sprechtaste)",tt:[
+{t:"AutoPlayer in Standard-Apps -> Musik",d:"Android-Einstellungen -> Apps -> Dreipunktmenue -> Andere Einstellungen -> Standard-Apps -> Musik. AutoPlayer MUSS in der Liste auswaehlbar sein."},
+{t:"AutoPlayer als Default Music App setzbar",d:"In der Musik-Liste 'AutoPlayer' antippen -> blauer Haken erscheint. AutoPlayer ist jetzt Default-Music-App."},
+{t:"Settings-Button oeffnet richtige Liste",d:"AutoPlayer Einstellungen -> Card 'Als Standard-Musik-App festlegen' -> Button 'Standard-Apps-Einstellungen oeffnen' -> Es oeffnet sich die richtige MIUI 'Andere Einstellungen'-Seite (NICHT Sprachassistent-Liste)."},
+{t:"Audio-Datei oeffnen mit AutoPlayer",d:"Files-App: MP3 antippen -> Auswahl-Dialog zeigt AutoPlayer als Option. Auswaehlen -> AutoPlayer empfaengt die Datei."},
+{t:"Lenkrad-Sprechtaste im Auto",d:"Android Auto verbinden -> Lenkrad-Sprechtaste druecken -> 'Spiele [Songtitel]' -> AutoPlayer spielt den Song ab (kein 'keine Verbindung'-Fehler)."},
+{t:"'Hey Google, spiele Musik' im Auto",d:"In Android Auto: 'Hey Google, spiele Musik' -> AutoPlayer wird aktiviert und beginnt Wiedergabe (Default-Music-App-Routing korrekt)."}
 ]}
 ]},
 {cat:"2. Musikbibliothek & Navigation",ff:[
@@ -919,6 +933,17 @@ const D=[
 {t:"Akzentfarbe",d:"Farbe waehlen -> Pet-Akzente aendern sich (7 Neon-Farben)."},
 {t:"Nachtmodus",d:"Zwischen 22-6 Uhr -> Pet schlaeft (visuell erkennbar)."},
 {t:"Streak-System",d:"Taeglich Musik hoeren -> Streak-Zaehler steigt. Unterbrochen -> Reset."}
+]},
+{n:"F-111: Tamagotchi Level 1000",tt:[
+{t:"Neue Phasen erreichbar",d:"Pet durchlaeuft 10 Phasen: Baby (1-10), Kind (11-30), Teen (31-60), Erwachsen (61-100), Star (101-200), Meister (201-350), Legende (351-500), Mythisch (501-700), Goettlich (701-900), Ewig (901-1000)."},
+{t:"XP-Verdopplung pro Phase",d:"XP pro Song verdoppelt sich mit jeder Phase: 10->20->40->80->160->320->640->1280->2560->5120. Korrekt in Pet-Profil sichtbar."},
+{t:"Trick-Animationen pro Phase freigeschaltet",d:"Jede neue Phase schaltet einen weiteren Trick frei (10 Tricks pro Pet). Trick wird erst ab der entsprechenden Phase angezeigt."},
+{t:"Kumulativer Trick-Pool",d:"Alle bereits freigeschalteten Tricks bleiben aktiv. Doppel-Tap -> Zufaelliger Trick aus dem GESAMTEN freigeschalteten Pool (nicht nur der neueste)."},
+{t:"Phasen-Label in PetSettings",d:"Haustier-Einstellungen -> Phasen-Label zeigt aktuelle Phase + passende Farbe (z.B. 'Meister' in Gold) korrekt fuer das aktuelle Level."}
+]},
+{n:"F-111: Tamagotchi Grammatik",tt:[
+{t:"Katze Jagd-Texte: korrekte Artikel",d:"Katze (Melo) Sprech-Blasen bei Jagd: 'Die Maus' (nicht 'Das Maus'), 'Der Vogel' (nicht 'Das Vogel'). Korrekte deutsche Artikel."},
+{t:"Fuchs Jagd-Texte: korrekte Artikel",d:"Fuchs (Foxy) Sprech-Blasen bei Jagd: 'Der Vogel' (nicht 'Die Vogel'). Korrekte Possessivpronomen. Fuchs nutzt FoxSpeechEngine (nicht CatSpeechEngine)."}
 ]}
 ]},
 {cat:"12. Tools",ff:[
@@ -1092,6 +1117,16 @@ const D=[
 {t:"Backup-Rotation (max 5)",d:"Mehrmals App schliessen -> Maximal 5 Backup-Dateien werden aufbewahrt. Aelteste wird automatisch geloescht."},
 {t:"'Neuestes wiederherstellen' funktioniert",d:"'Neuestes wiederherstellen' -> Das zuletzt erstellte Backup wird importiert."}
 ]},
+{n:"Backup v18: Vollstaendige Datensicherung",tt:[
+{t:"Manuelles Backup erstellen + wiederherstellen",d:"Backup erstellen -> App-Daten loeschen -> Backup importieren -> Alle Daten vorhanden (Settings, DB, Themes, Pets)."},
+{t:"Keine Duplikate bei wiederholtem Restore",d:"Backup 2x hintereinander importieren -> Playlists, Themes, Presets werden per Name dedupliziert. Keine doppelten Eintraege."},
+{t:"Achievements behalten hoeheren Wert",d:"Lokales Achievement auf 50% -> Backup mit 80% importieren -> 80% bleibt. Umgekehrt: lokales 80% + Backup 50% -> 80% bleibt (MAX-Wert)."},
+{t:"Pet-Daten behalten hoeheres Level",d:"Lokales Pet Level 15 -> Backup mit Level 20 importieren -> Level 20 bleibt. MAX fuer Level/XP/Streaks."},
+{t:"Auto-Backup funktioniert",d:"Auto-Backup Toggle AN -> App beenden -> Backup wird automatisch erstellt mit neuen v18 Daten."},
+{t:"Visualizer Themes im Backup",d:"Custom Visualizer Theme erstellen -> Backup -> Restore -> Theme ist vorhanden und anwendbar."},
+{t:"PetTypeStats im Backup",d:"PetTypeStats (Statistiken pro Tier-Typ) muessen im Backup enthalten sein und nach Restore korrekt wiederhergestellt."},
+{t:"Genre Overrides im Backup",d:"Genre Overrides (manuelle Genre-Zuweisungen) muessen im Backup enthalten sein und nach Restore vorhanden."}
+]},
 {n:"Changelog",tt:[
 {t:"Changelog oeffnen",d:"Drawer -> About -> Changelog. Dropdown-Cards pro Version (neueste oben) muessen erscheinen."},
 {t:"Version aufklappen zeigt Aenderungen",d:"Version antippen (aufklappen) -> Aenderungen dieser Version sichtbar."},
@@ -1112,12 +1147,23 @@ const D=[
 {n:"F-050: About-Screen",tt:[
 {t:"About oeffnen",d:"Drawer -> About. App-Version, Entwickler-Info, Links (Bewerten, Teilen, Feedback) muessen sichtbar sein."}
 ]},
-{n:"F-112: Geraete-Transfer",tt:[
+{n:"F-112: Geraete-Transfer (Rewrite)",tt:[
 {t:"Transfer-Zugang",d:"Einstellungen -> Geraete-Transfer (ueber Gefahrenzone). Screen zeigt 'Senden' und 'Empfangen' Optionen."},
 {t:"Senden starten",d:"'Senden' waehlen -> PIN wird angezeigt -> Warte auf Verbindung."},
 {t:"Empfangen + Verbinden",d:"Zweites Geraet: 'Empfangen' -> Findet Quell-Geraet -> Antippen -> Verbindung hergestellt."},
-{t:"Transfer durchfuehren",d:"Verbunden -> 'Transfer starten' -> Fortschrittsbalken + Geschwindigkeit + verbleibende Zeit."},
-{t:"Transfer abgeschlossen",d:"Transfer fertig -> Zusammenfassung (Dauer, Groesse, Erfolg). App neu starten -> Alle Daten vorhanden."}
+{t:"Settings + Datenbank uebertragen",d:"Verbinden -> Settings und Room-Datenbank werden via BYTES-Payload (Nearby Connections) uebertragen."},
+{t:"Audio-Dateien uebertragen (TCP 2-Phasen)",d:"Audio-Transfer via Raw TCP Socket: Phase 1 TCP -> App-Cache (volle Geschwindigkeit), Phase 2 Cache -> MediaStore. Echte Dateinamen erhalten."},
+{t:"Transfer bei 50% abbrechen + erneut",d:"Transfer bei ca. 50% abbrechen -> Erneuten Transfer starten. Auto-Cleanup: Stale MediaStore-Eintraege + Temp-Dateien werden automatisch geloescht. Kein Muell."},
+{t:"Display-Timeout waehrend Transfer",d:"Waehrend Transfer: FLAG_KEEP_SCREEN_ON aktiv auf beiden Geraeten -> Display bleibt an. WakeLock haelt CPU aktiv."},
+{t:"Screen verlassen waehrend Transfer",d:"Waehrend Transfer: Back-Button druecken oder Screen verlassen -> Bestaetigungsdialog erscheint ('Transfer wirklich abbrechen?')."},
+{t:"Nach Transfer: Songs in Bibliothek",d:"Transfer abgeschlossen -> App neu starten -> Alle uebertragenen Songs in der Bibliothek sichtbar."},
+{t:"Nach Transfer: BPM korrekt (ID-Remapping)",d:"Nach Transfer: BPM-Daten sind den Songs korrekt zugeordnet (14 Tabellen automatisch auf neue lokale Song-IDs remapped)."},
+{t:"Nach Transfer: Playlists gefuellt",d:"Nach Transfer: Alle Playlists enthalten ihre Songs (nicht leer). Song-IDs korrekt remapped."},
+{t:"Nach Transfer: Favorites korrekt",d:"Nach Transfer: Favoriten-Markierungen sind auf den richtigen Songs."},
+{t:"Nach Transfer: Achievements + Pet-Daten",d:"Nach Transfer: Achievements mit Fortschritt und Pet-Daten (Level, XP, Streaks) korrekt uebernommen."},
+{t:"Nach Transfer: Theme Builder Templates",d:"Nach Transfer: Erstellte Theme Builder Templates sind vorhanden und anwendbar."},
+{t:"Nach Transfer: Visualizer Themes",d:"Nach Transfer: Visualizer Themes (Custom Themes) sind vorhanden und anwendbar."},
+{t:"Transfer-Abschluss Notification",d:"Transfer fertig -> Notification mit Sound + Vibration erscheint, auch im Lockscreen sichtbar."}
 ]}
 ]},
 {cat:"16. Kopfhoerer & Bluetooth",ff:[
@@ -1135,7 +1181,138 @@ const D=[
 {t:"Shortcuts erscheinen bei Long-Press",d:"Long-Press auf App-Icon -> 3 Shortcuts: Letzte Wiedergabe, Shuffle Alle, Favoriten. Antippen -> Entsprechende Aktion wird ausgefuehrt."}
 ]}
 ]},
-{cat:"17. Cross-Feature Tests",ff:[
+{cat:"17. Loop Mixer & Synth Studio",ff:[
+{n:"F-117: Genome Visualizer Overlay (Loop Mixer)",tt:[
+{t:"Visualizer im Loop Mixer aktivieren",d:"Loop Mixer oeffnen -> Toolbar/Toggle 'Genome Visualizer' AN. Bunter Visualizer wird ueber Timeline eingeblendet."},
+{t:"Visualizer reagiert auf Audio",d:"Mix abspielen -> Genome-Visualizer animiert sich synchron zur Musik (BPM + Frequenzen sichtbar)."},
+{t:"Song-Seed bleibt persistent",d:"Visualizer schliessen + neu oeffnen -> derselbe Song zeigt dieselbe Visualisierung (Seed-basiert reproduzierbar)."},
+{t:"24 Farbpaletten via Swipe",d:"Im Visualizer horizontal swipen -> Farbpalette wechselt. Insgesamt 24 Paletten durchblaetterbar."},
+{t:"Visualizer-Toggle deaktiviert sauber",d:"Toggle AUS -> Visualizer verschwindet. Mixer-Timeline wieder voll sichtbar, kein Overlay."}
+]},
+{n:"F-118: AI Beat-Match Dialog",tt:[
+{t:"Beat-Match Dialog oeffnen",d:"Loop Mixer -> Audio-Segment selektieren -> Beat-Match Icon. Dialog mit BPM-Erkennung erscheint."},
+{t:"BPM-Vorschlag korrekt",d:"Bei einem Standard-Pop-Loop muss BPM zwischen 60 und 180 vorgeschlagen werden (typischerweise +/- 5 BPM Toleranz)."},
+{t:"Quantize-Optionen sichtbar",d:"Im Dialog: 1/1, 1/2, 1/4, 1/8, 1/16 + FREE als Auswahl sichtbar."},
+{t:"Anwenden snapped Loop auf Beats",d:"Dialog 'Anwenden' -> Loop-Segment-Grenzen rasten auf naechstgelegene Beats ein. Sichtbar in der Timeline."},
+{t:"Pending-Mechanismus fuer Loop/Cut",d:"Wenn man Loop UND Cut beat-matched -> Aenderungen werden als 'Pending' markiert und gemeinsam beim Apply-Klick angewandt (kein doppeltes Snapping)."}
+]},
+{n:"F-119: Export-Presets im Loop Mixer",tt:[
+{t:"Export-Dialog oeffnen",d:"Loop Mixer -> Share/Export -> Export-Dialog. Mehrere Plattform-Presets sichtbar."},
+{t:"14 Plattform-Presets",d:"YouTube, TikTok, Instagram Reel, Spotify, Apple Music, SoundCloud, WhatsApp, Discord, Telegram, Mail, Podcast, etc. -> 14 Presets sichtbar."},
+{t:"Podcast-Chip nicht abgeschnitten",d:"Im horizontalen Scroll-Bereich der Presets bis zum 'Podcast'-Chip swipen -> Chip ist vollstaendig sichtbar (LazyRow-Fix)."},
+{t:"Preset auswaehlen aendert LUFS",d:"YouTube-Preset (-14 LUFS) vs TikTok-Preset (-13 LUFS) -> LUFS-Wert in der Vorschau aendert sich entsprechend."},
+{t:"Format wechselt mit Preset",d:"Spotify -> M4A AAC. Mail -> kleinere MP3. WhatsApp -> Opus/M4A. Format-Anzeige aktualisiert sich."},
+{t:"Export erzeugt korrektes File",d:"Preset waehlen -> Exportieren. Datei landet im Sharing-Ziel und ist abspielbar."}
+]},
+{n:"F-120: Pad-Mode (4x4 Performance-Grid)",tt:[
+{t:"Pad-Mode Tab erreichbar",d:"Loop Mixer oeffnen -> Tabs zeigen 'Timeline' + 'Pads' + 'Synth'. Auf 'Pads' tippen -> 4x4 Pad-Grid erscheint."},
+{t:"Sample aus Library auf Pad legen",d:"Pad long-press -> 'Aus Library' -> Song waehlen -> Pad wird belegt. Pad-Label zeigt Song-Namen."},
+{t:"Sample aus Timeline-Segment legen",d:"Pad long-press -> 'Aus Timeline-Segment' -> Segment waehlen -> Pad belegt mit Segment."},
+{t:"3 Pad-Modi (One-Shot/Loop/Toggle)",d:"Pad-Einstellung -> Mode-Auswahl. One-Shot = Tipp spielt einmal. Loop = solange gehalten. Toggle = an/aus pro Tipp."},
+{t:"Quantize 1/1, 1/4, 1/8, FREE",d:"Quantize-Toggle wechseln. Pad triggert dann auf naechsten Quantize-Punkt (oder FREE = sofort)."},
+{t:"Recording -> Timeline-Segment",d:"Record-Button -> Pads spielen -> Stop. Aufnahme erscheint als neues Timeline-Segment im Mixer."},
+{t:"BPM-Metronom hoerbar",d:"Metronom-Toggle AN -> Click-Track im aktuellen BPM hoerbar (nur in Pad-Mode)."},
+{t:"Haptisches Feedback bei Pad-Druck",d:"Pad antippen -> spuerbare Vibration. Auch bei Quantize-Trigger."},
+{t:"Neon-Visual-Feedback",d:"Pad antippen -> Pad pulsiert in Neon-Farbe (passend zur Theme-Palette)."},
+{t:"1:1 Pad-Track-Mapping",d:"16 Pads -> 16 Tracks im Mixer. Pad #5 -> Track 5. Funktioniert ohne Konflikte."}
+]},
+{n:"F-121: Synth Studio (Subtractive + Drum)",tt:[
+{t:"Synth Studio Tab erreichbar",d:"Loop Mixer -> 'Synth' Tab -> Synth Studio oeffnet sich."},
+{t:"Subtractive Engine spielt Bass",d:"Engine 'Subtractive' -> Bass-Preset waehlen -> Tasten antippen -> Bass-Sound hoerbar."},
+{t:"Drum-Engine spielt Kick/Snare/HiHat",d:"Engine 'Drum' -> Kit waehlen -> Pads triggern -> Drum-Sounds hoerbar."},
+{t:"300+ Factory-Presets durchblaettern",d:"Preset-Browser oeffnen -> Mind. 300 Presets ueber alle Kategorien (Bass/Lead/Pad/Bell/Organ/Pluck/FX/Strings/Brass/Wind/Ethnic/E-Piano/Clavinet/Guitar/Vocal/Retro/Ambient/Soundscape/Drums) durchblaetterbar."},
+{t:"Live-Recording funktioniert",d:"Record-Button -> Tasten/Pads spielen -> Stop -> Aufnahme als Recording verfuegbar."},
+{t:"Recording-Manager zeigt Aufnahmen",d:"Recordings-Liste oeffnen -> Aufnahmen sichtbar mit Datum/Dauer. Tap = abspielen, Long-Press = Loeschen."},
+{t:"MIDI USB-Input",d:"USB-MIDI-Keyboard via OTG anschliessen -> Synth Studio empfaengt Tasten (sichtbar an virtuellen Tasten)."},
+{t:"MIDI BLE-Input",d:"BLE-MIDI-Keyboard koppeln -> Synth Studio empfaengt drahtlos Tasten."},
+{t:"Backup v20 enthaelt Synth-Daten",d:"Backup erstellen -> Restore -> Recordings + Custom-Presets weiterhin vorhanden."}
+]},
+{n:"F-122: FM-Synthese (DX7-Style 4-Op)",tt:[
+{t:"FM-Engine waehlbar",d:"Engine-Wechsel -> 'FM' aktiv. UI zeigt 4 Operatoren (OP1-OP4)."},
+{t:"8 Algorithmen waehlbar",d:"Algorithmus-Auswahl -> 8 Topologien (Stack/Parallel/Mixed) durchblaetterbar."},
+{t:"200 Presets in 12 Kategorien",d:"FM-Preset-Browser -> 200 Presets, sortiert in 12 Kategorien (Bass/Lead/Bell/E-Piano/Brass/Pad/Pluck/Soundscape/...)."},
+{t:"DC-Blocker (kein Pump)",d:"FM-Bass-Preset spielen -> kein 'Pumpen'/Wummern in den Speakern (DC-Blocker aktiv)."},
+{t:"Voice-Retrigger sauber",d:"Schnell wiederholt dieselbe Taste antippen -> jede Note klingt frisch (kein Anhaengen)."},
+{t:"Age-Stealing bei vielen Stimmen",d:"Akkord mit 8+ Tasten -> aelteste Stimme wird ueberschrieben, nicht abgeschnitten (kein Klick/Knack)."}
+]},
+{n:"F-123: Wavetable-Synthese",tt:[
+{t:"Wavetable-Engine waehlbar",d:"Engine -> 'Wavetable' -> 2 Oszillatoren mit Tables sichtbar."},
+{t:"8 Standard-Tables",d:"Table-Wechsel -> 8 Tables durchblaetterbar (Saw/Square/Triangle/Vocal/Bell/Noise/...)."},
+{t:"Position-Mod LFO",d:"Position-Modulation aktivieren -> LFO bewegt durch das Wavetable. Klangveraenderung hoerbar."},
+{t:"200 Presets in 5 Kategorien",d:"Wavetable-Preset-Browser -> 200 Presets in 5 Kategorien (Filmmusik/Vintage/Chiptune/Ethnic/Cinematic)."}
+]},
+{n:"F-124: Arpeggiator + Step-Sequencer",tt:[
+{t:"Arp Section sichtbar",d:"Synth Studio -> Arp-Toggle AN. Arp-Section wird sichtbar."},
+{t:"6 Patterns waehlbar",d:"Pattern-Auswahl -> Up, Down, UpDown, Random, Order, Chord. Beim Akkord halten -> Pattern hoerbar."},
+{t:"16-Step-Grid sichtbar",d:"16 Step-Buttons sichtbar. Tap auf Step -> Step aktiviert (visuell markiert)."},
+{t:"BPM-Sync laeuft mit Mixer-BPM",d:"Mixer-BPM auf 100 -> Arp laeuft synchron. BPM-Wechsel auf 130 -> Arp wird schneller."},
+{t:"Swing-Slider hoerbar",d:"Swing 0% -> gerader Beat. Swing 50% -> Shuffle-Feeling hoerbar."},
+{t:"Hold-Mode",d:"Hold AN -> Akkord weitertippen ohne Tasten zu halten. Hold AUS -> Arp stoppt mit Tastenloslassen."},
+{t:"Velocity/Gate/Ratchet (Phase 2)",d:"Pro Step Velocity (Lautstaerke), Gate (Notenlaenge) und Ratchet (Mehrfachtrigger) einstellbar."},
+{t:"Custom Pattern-Editor (Phase 2)",d:"Eigenes Pattern bauen -> als User-Preset speichern."},
+{t:"Apply/Copy/Paste (Phase 3)",d:"Step-Sequencer Pattern kopieren -> in anderen Track einfuegen. Apply-Button uebernimmt Aenderungen."},
+{t:"5 Arp-Presets vorhanden",d:"Arp-Preset-Slot -> 5 Factory-Presets durchblaetterbar."},
+{t:"120 Pure-Arp-Presets",d:"Pure-Arp-Preset-Browser -> 120 Presets ohne Synth (nur Arp-Pattern)."}
+]},
+{n:"F-125: Markers / Regions im Loop Mixer",tt:[
+{t:"Marker setzen",d:"Loop Mixer -> Timeline an Position tippen -> 'Marker setzen' -> Marker (vertikale Linie) erscheint."},
+{t:"Marker bearbeiten",d:"Long-Press auf Marker -> Edit-Sheet -> Name + Position + Farbe aenderbar."},
+{t:"Marker-Liste",d:"Marker-Liste oeffnen -> Alle Marker sichtbar mit Position + Name."},
+{t:"Marker loeschen",d:"In der Liste oder via Edit-Sheet -> Marker entfernen -> verschwindet aus Timeline."},
+{t:"ID3v2 Chapter Embed (Podcast-Export)",d:"Marker als Chapter setzen -> Export als MP3 -> Datei in Podcast-App oeffnen -> Kapitel erscheinen mit Marker-Namen."},
+{t:"Auphonic JSON Sidecar",d:"Export mit Marker-Sidecar -> .json-Datei wird mit-exportiert (kompatibel zu Auphonic Workflow)."}
+]},
+{n:"F-126: Mixer Templates (12 Genres)",tt:[
+{t:"Template-Picker oeffnen",d:"Loop Mixer Toolbar -> Template-Icon -> Picker mit 12 Genres erscheint (Podcast/HipHop/Trap/House/Techno/DnB/Synthwave/LoFi/Pop/Cinematic/Ambient/Empty)."},
+{t:"Template laden veraendert Tracks",d:"Template 'House' waehlen -> Tracks sind vorbelegt mit Kick/Bass/Synth/Hat/FX entsprechend Genre."},
+{t:"Empty-Template setzt zurueck",d:"Empty laden -> alle Tracks leer, Mixer auf Default-State."},
+{t:"Auch Pads/Synth werden gesetzt",d:"Beim Laden eines Templates werden Pads und Synth-Praeset entsprechend Genre gesetzt."}
+]},
+{n:"F-127: Demo Showcase Mix",tt:[
+{t:"Demo Mix laden",d:"Template-Picker -> 'Demo Showcase' -> 32-Bar Demo wird geladen."},
+{t:"32-Bar 100 BPM",d:"Mixer-Header zeigt 100 BPM, 32 Bars. Wiedergabe dauert ca. 76.8 s."},
+{t:"9 prozedurale Audio-Loops",d:"6 Tracks mit 12 Placements. Drums/Bass/Lead/Pad/FX-Samples liegen prozedural generiert im Cache (~3 MB)."},
+{t:"Wiedergabe ohne Crash (WAV-Decoder)",d:"Play druecken -> Mix laeuft sauber von vorne bis hinten ohne Stoerung (WAV-Direct-Path im Decoder)."},
+{t:"Volume + Pan Automation hoerbar",d:"Linker/rechter Kanal aendert sich waehrend Wiedergabe. Lautstaerke-Variationen ueber Zeit."},
+{t:"Reverb/Echo/Filter/Pitch-Shift hoerbar",d:"Effekt-Variationen ueber Tracks: Reverb auf Pad, Echo auf Lead, Filter-Sweep, Pitch-Shift auf FX."},
+{t:"8 Marker auf Section-Uebergaengen",d:"Marker-Liste -> 8 Marker (Intro/Verse/Chorus/Drop/...). Tap -> Timeline springt zur Position."},
+{t:"16 Pads vorbelegt",d:"Pads-Tab -> 16 Pads belegt mit Demo-Sounds + Pitch-Variationen. Performance-Test moeglich."}
+]},
+{n:"F-128: Reggae Showcase Mix",tt:[
+{t:"Reggae Mix laden",d:"Template-Picker -> 'Reggae Showcase' -> 32-Bar 75 BPM Mix wird geladen."},
+{t:"One-Drop-Drums (kein Kick auf 1)",d:"Mix abspielen -> Schlag 1 ohne Kick, Snare+Kick auf 3 (klassischer One-Drop)."},
+{t:"Skank-Gitarre Off-Beat 2+4",d:"Akkord-Anschlaege auf 2 und 4 hoerbar (off-beat Reggae-Skank)."},
+{t:"Stereo-Pan Skank L/R",d:"Skank-Track abwechselnd links/rechts (Pan-Automation)."},
+{t:"Walking-Bass + Bubble-Organ",d:"Bass-Linie laeuft melodisch durch (nicht statisch). Bubble-Organ (Hammond-artig) im Hintergrund hoerbar."},
+{t:"Tape-Echo auf Vocal-Lead",d:"Lead-Spur hat charakteristisches Tape-Echo (mit Pitch-Drift, Hi-Loss)."},
+{t:"Dub-Bridge (3 Stereo-Echo-Snare-Stabs)",d:"In der Bridge: 3 Snare-Stabs mit Pan L/R/L und Pitch-Variation hoerbar."}
+]},
+{n:"F-129: Synth Studio Lokalisierung 26 Sprachen",tt:[
+{t:"Synth Studio in Deutsch",d:"Sprache -> Deutsch. Synth Studio oeffnen -> Alle UI-Texte deutsch (Engine, Praeset, Aufnahme, Algorithmus, etc.)."},
+{t:"Synth Studio in English",d:"Sprache -> English. Synth Studio -> Alle UI-Texte englisch."},
+{t:"Synth Studio in 1+ weiterer Sprache",d:"Eine weitere Sprache (z.B. Japanisch, Spanisch oder Franzoesisch) -> Synth Studio Texte korrekt uebersetzt."},
+{t:"Audio-Fachbegriffe bleiben international",d:"ADSR, OP, FB, BPM, LFO bleiben unveraendert (sind international)."}
+]},
+{n:"F-130: Sound Quality Upgrade (DSP-Overhaul)",tt:[
+{t:"Karplus-Strong Pluck-Strings",d:"Akustik-Gitarre/Pluck-Preset spielen -> realistischer String-Anschlag mit natuerlichem Decay (kein synthetisches Beep)."},
+{t:"Wave-Folding Rich-Saw",d:"Rich-Lead-Preset -> harmonisch dichter, warmer Saw-Klang (Buchla-style Wave-Folder hoerbar)."},
+{t:"Schroeder-Reverb sauber",d:"Reverb auf Pad-Track -> dichter, gleichmaessiger Hall ohne Metallklang."},
+{t:"Plate-Reverb hoerbar",d:"Plate-Reverb-Preset -> klassischer Plate-Sound (heller, lebendiger als Schroeder)."},
+{t:"Spring-Reverb auf Reggae-Skank",d:"Reggae-Showcase laden -> Skank hat charakteristischen Spring-Sound (federig, twangy)."},
+{t:"Hammond B3 (9 Drawbars + Leslie)",d:"Hammond-Preset -> typischer Drawbar-Sound mit Leslie-Rotation (Pitch-Modulation hoerbar)."},
+{t:"Demo + Reggae klingen realistischer",d:"Demo + Reggae nach v6.0.0 vs v5.x.y vergleichen -> deutlich weniger 'synthetisch', natuerlicher."}
+]},
+{n:"F-131: Promo Song Showcase ('Dein Sound Deine Regeln')",tt:[
+{t:"Promo Showcase laden",d:"Template-Picker -> 'Promo Song' -> Showcase wird geladen."},
+{t:"117.5 BPM, F-Minor",d:"Mixer zeigt BPM=117.5 und Tonart F-Minor. Werte stimmen mit librosa-Analyse der Suno-MP3 ueberein."},
+{t:"9 Voices in F-Minor",d:"Pad/Drums/Bass/Hammond/Lead-Hook/Piano/Sub/Riser/Crash auf 6 Tracks verteilt, alle in F-Minor."},
+{t:"19 Placements, 9 Marker",d:"Songform: Intro/Build/Verse 1/Chorus 1/Drop/Verse 2/Chorus 2/Bridge/Outro -> 9 Marker auf den Section-Transitions."},
+{t:"Lead-Hook in F-Minor-Pentatonik",d:"Wiedergabe -> Lead-Hook-Melodie hoerbar (Vocals weggelassen, User kann Vocals selbst aufnehmen)."},
+{t:"Songform 3:23 Min",d:"Wiedergabe von Anfang bis Ende dauert 3 Min 23 Sek (ca. 203 s)."},
+{t:"16 Pads belegt",d:"Pads-Tab -> 16 Pads belegt mit Promo-Sounds + Pitch-Variationen."}
+]}
+]},
+{cat:"18. Cross-Feature Tests",ff:[
 {n:"Voice + Feature Kombination",tt:[
 {t:"Voice: 'Smart Reorder'",d:"Mikrofon -> 'Smart Reorder' -> Smart Reorder Sheet oeffnet sich in der Queue."},
 {t:"Voice: 'Queue Crossfade an'",d:"Mikrofon -> 'Queue Crossfade an' -> Queue Crossfade wird aktiviert. Toast/Bestaetigung."},
@@ -1599,7 +1776,7 @@ function resetAll() {
 function exportResults() {
     const dev = devices[activeDevIdx];
     const devInfo = devLabel(activeDevIdx) + (dev.android ? ' (Android ' + dev.android + ')' : '');
-    let t = 'AutoPlayer Testplan v4.0.0 — ' + new Date().toLocaleString('de-DE') + '\n';
+    let t = 'AutoPlayer Testplan v5.0.0 — ' + new Date().toLocaleString('de-DE') + '\n';
     t += 'Tester: ' + (localStorage.getItem('tp_meta_tester') || 'k.A.') + '\n';
     t += 'Geraet: ' + devInfo + '\n';
     t += 'App-Version: ' + (localStorage.getItem('tp_meta_version') || 'k.A.') + '\n\n';
