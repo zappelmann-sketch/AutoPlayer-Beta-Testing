@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AutoPlayer Testplan v5.0.0</title>
+<title>AutoPlayer Testplan v5.1.0</title>
 <script src="https://cdn.jsdelivr.net/npm/@twemoji/api@latest/dist/twemoji.min.js" crossorigin="anonymous"></script>
 <style>
 img.emoji{height:1em;width:1em;margin:0 .05em 0 .1em;vertical-align:-0.1em}
@@ -833,7 +833,14 @@ const D=[
 {t:"Regel aktivieren per Toggle",d:"Eine Regel aktivieren (Toggle AN). Wenn die Bedingungen zutreffen, soll die Aktion ausgeloest werden."},
 {t:"Neue Regel erstellen",d:"'+' Button -> Name -> Bedingungen (Uhrzeit, Wochentag, BT-Geraet, etc.) -> Aktion (Queue/Playlist) -> Speichern."},
 {t:"Kontext-Monitor zeigt Signale",d:"Info-Icon -> Kontext-Monitor. Aktuelle Signale (Uhrzeit, BT, Speed, etc.) muessen in Echtzeit angezeigt werden."},
-{t:"'Regeln testen' funktioniert",d:"'Regeln testen' -> Zeigt an welche Regel aktuell greifen wuerde (Simulation ohne tatsaechlichen Wechsel)."}
+{t:"'Regeln testen' funktioniert",d:"'Regeln testen' -> Zeigt an welche Regel aktuell greifen wuerde (Simulation ohne tatsaechlichen Wechsel)."},
+{t:"GPS-Speed-Bedingung",d:"Regel mit Bedingung 'Geschwindigkeit > X km/h' anlegen. Mit dem Auto auf > X km/h fahren -> Regel greift. Im Stand wieder unter X -> Regel deaktiviert."},
+{t:"Activity-Bedingung (Gehen/Fahren)",d:"Regel mit Bedingung 'Aktivitaet = Gehen' bzw. 'Aktivitaet = Fahren'. Beim Gehen/Fahren wechselt der Kontext entsprechend (Activity Recognition)."},
+{t:"Akku-Bedingung",d:"Regel 'Akku < 20%' -> bei niedrigem Akku Regel greift (z.B. Sparmodus-Playlist)."},
+{t:"Wetter-Bedingung",d:"Regel 'Wetter = Regen' -> wenn aktuelles Wetter Regen ist, Regel greift (Open-Meteo)."},
+{t:"Kontext-Monitor LIVE-Update",d:"Monitor offen lassen -> Werte aktualisieren sich in Echtzeit (Speed sichtbar wechseln, BT verbinden, etc.)."},
+{t:"Song-Wiederholung verhindert",d:"Regel triggert -> spielt Song A. Bedingung erneut zutreffend (z.B. wieder schnell fahren) -> NICHT erneut Song A starten (kein 'Loop'-Bug)."},
+{t:"Auto-Switch im Auto reagiert auf Speed-Aenderung",d:"Bei aktiver Auto-Verbindung: Speed > 80 km/h -> Auto-Drive-DJ-Regel greift. Speed < 30 km/h -> Stadt/Stau-Regel."}
 ]},
 {n:"F-060: Shake to Shuffle",tt:[
 {t:"Toggle AN in Einstellungen",d:"Einstellungen -> 'Shake to Shuffle' AN. Musik muss spielen."},
@@ -944,6 +951,18 @@ const D=[
 {n:"F-111: Tamagotchi Grammatik",tt:[
 {t:"Katze Jagd-Texte: korrekte Artikel",d:"Katze (Melo) Sprech-Blasen bei Jagd: 'Die Maus' (nicht 'Das Maus'), 'Der Vogel' (nicht 'Das Vogel'). Korrekte deutsche Artikel."},
 {t:"Fuchs Jagd-Texte: korrekte Artikel",d:"Fuchs (Foxy) Sprech-Blasen bei Jagd: 'Der Vogel' (nicht 'Die Vogel'). Korrekte Possessivpronomen. Fuchs nutzt FoxSpeechEngine (nicht CatSpeechEngine)."}
+]},
+{n:"F-113: Tamagotchi v4.1.0 — Octo-Jagd + Awareness + Text-Vielfalt",tt:[
+{t:"Octo-Jagd: Fisch-Spawn",d:"Oktopus-Pet aktiv -> Fisch erscheint zufaellig im Spawn-Intervall (60-120 s) auf dem Screen, Groesse 90x45 Pixel (Fisch-Redesign)."},
+{t:"Octo-Jagd: User-Tentakel-Interaktion",d:"Wischen vom Oktopus zum Fisch -> Tentakel verfolgt den Fisch (User-gesteuert). Tentakel beruehrt Fisch -> Fisch wird gefangen."},
+{t:"Octo-Jagd: Kein Zweit-Spawn",d:"Solange ein Fisch noch im Spiel ist, soll KEIN zweiter Fisch gleichzeitig auftauchen (Zweit-Spawn-Bug behoben)."},
+{t:"Ambient Awareness: AppOpenedAfterAbsence",d:"App nach mehreren Stunden wieder oeffnen -> Pet kommentiert die Abwesenheit ('Wo warst du so lange?')."},
+{t:"Ambient Awareness: Tageszeit-Reaktion",d:"Pet kommentiert die aktuelle Tageszeit unterschiedlich (Morgens/Mittags/Abends/Nachts -> 4 unterschiedliche Text-Pools)."},
+{t:"Ambient Awareness: Wetter-Reaktion",d:"Pet kommentiert das Wetter (Regen/Sonne/Schnee) wenn der Wetter-DJ aktiv ist."},
+{t:"Text-Vielfalt: Mehrere Saetze pro Trigger",d:"Gleicher Trigger 5 Mal hintereinander -> Mind. 3 unterschiedliche Saetze (kein Repeat-Hammer)."},
+{t:"Text-System DE+EN komplett",d:"Sprache DE -> alle Pet-Saetze deutsch. Sprache EN -> alle englisch. Kein Sprach-Mix."},
+{t:"Text-System: Alle 26 Sprachen",d:"5 Pets x 26 Sprachen = 130 vollstaendige Pools. Jeweils Stichprobe pro Pet pruefen (z.B. JA/RU/AR/TR)."},
+{t:"PetAwarenessEngine: Smart-Cast OK",d:"Awareness-Trigger feuern ohne Crash. Insbesondere AppOpenedAfterAbsence.hoursAway wird sauber als Float gecastet."}
 ]}
 ]},
 {cat:"12. Tools",ff:[
@@ -1142,10 +1161,23 @@ const D=[
 {n:"Datenschutz + Nutzungsbedingungen",tt:[
 {t:"Datenschutz oeffnen",d:"Drawer -> About -> Datenschutz. Vollstaendiger Datenschutztext muss angezeigt werden."},
 {t:"Nutzungsbedingungen oeffnen",d:"Drawer -> About -> Nutzungsbedingungen. Vollstaendiger Text muss angezeigt werden."},
-{t:"Texte in allen 26 Sprachen korrekt",d:"Sprache auf z.B. Japanisch wechseln -> Datenschutz und Nutzungsbedingungen muessen auf Japanisch erscheinen (nicht Deutsch/Englisch)."}
+{t:"Texte in allen 26 Sprachen korrekt",d:"Sprache auf z.B. Japanisch wechseln -> Datenschutz und Nutzungsbedingungen muessen auf Japanisch erscheinen (nicht Deutsch/Englisch)."},
+{t:"Datenschutz Version + Datum aktuell",d:"Datenschutz oeffnen -> Header zeigt Version 5.0 und Datum 2026-04-29 (oder hoeher)."},
+{t:"Datenschutz Abschnitt Health Connect (4.13)",d:"Datenschutz scrollen bis Abschnitt 4.13 'Health Connect / Herzfrequenz' -> erklaert opt-in Echtzeit-Zugriff fuer Heartbeat Sync DJ."},
+{t:"Datenschutz Abschnitt Bibliothekstabelle",d:"Bibliothekstabelle enthaelt mind. ACRA, Ktor, Health Connect, JAudioTagger, ExoPlayer, Coil, ZXing."},
+{t:"Datenschutz Permission 5.11 (Health Connect)",d:"Permissions-Liste enthaelt 'health.READ_HEART_RATE' mit Begruendung 'Heartbeat Sync DJ'."},
+{t:"DE-Tippfehler-Frei",d:"Datenschutz auf Deutsch durchscrollen -> keine offensichtlichen Tippfehler/Buchstabendreher (Stichprobe)."}
 ]},
 {n:"F-050: About-Screen",tt:[
-{t:"About oeffnen",d:"Drawer -> About. App-Version, Entwickler-Info, Links (Bewerten, Teilen, Feedback) muessen sichtbar sein."}
+{t:"About oeffnen",d:"Drawer -> About. App-Version, Entwickler-Info, Links (Bewerten, Teilen, Feedback) muessen sichtbar sein."},
+{t:"Aktuelle Version sichtbar",d:"About-Screen zeigt versionName 6.1.6 (oder hoeher) + versionCode 91+. Stimmt mit Play Store Listing ueberein."}
+]},
+{n:"Play Store Compliance + Release-Build",tt:[
+{t:"App-Groesse Release < 100 MB",d:"Release-APK groesser als minify+shrink: app-release.apk Groesse pruefen -> < 100 MB. Ohne ONNX deutlich kleiner als v6.1.4."},
+{t:"Release-Build erfolgreich (ProGuard)",d:"./gradlew assembleRelease -> BUILD SUCCESSFUL. Keine Fehler bei ProGuard/R8."},
+{t:"Keine ONNX-Crashes",d:"Heartbeat Sync DJ + alle Audio-Features starten ohne UnsatisfiedLinkError. ONNX wurde komplett entfernt (Mood Analysis bleibt aus)."},
+{t:"16KB Page-Size kompatibel",d:"App startet auf Geraeten mit 16KB-Page-Size (Pixel 8+, Android 15+) ohne Crash."},
+{t:"AAB-Bundle baubar",d:"./gradlew bundleRelease -> .aab Datei wird erzeugt (Play Store Upload-Format)."}
 ]},
 {n:"F-112: Geraete-Transfer (Rewrite)",tt:[
 {t:"Transfer-Zugang",d:"Einstellungen -> Geraete-Transfer (ueber Gefahrenzone). Screen zeigt 'Senden' und 'Empfangen' Optionen."},
@@ -1182,6 +1214,67 @@ const D=[
 ]}
 ]},
 {cat:"17. Loop Mixer & Synth Studio",ff:[
+{n:"Loop Mixer: Grundgeruest (Tier 1 + 2)",tt:[
+{t:"Loop Mixer oeffnen",d:"Drawer -> Loop Mixer. Mixer-Screen mit Tabs (Timeline, Pads, Synth) und Toolbar oeffnet sich."},
+{t:"Audio-Segment hinzufuegen",d:"Plus-Icon -> Song aus Library waehlen -> Segment landet auf einem Track. Waveform sichtbar."},
+{t:"Bis zu 8 Tracks gleichzeitig",d:"Mehrere Audio-Segmente auf 8 verschiedenen Tracks platzieren -> Mixer rendert alle 8 sauber gleichzeitig."},
+{t:"Crossfade zwischen Segmenten",d:"Zwei Segmente auf demselben Track ueberlappen -> Crossfade-Bereich wird automatisch sichtbar (X-Form)."},
+{t:"Sample-genaue Trim-Funktion",d:"Segment-Edges ziehen -> Start/Ende auf Sample-Ebene aenderbar (nicht nur grob)."},
+{t:"Split / Cut",d:"Segment-Position waehlen -> Split-Icon -> Segment wird in zwei geteilt."},
+{t:"Kopieren + Duplizieren",d:"Segment Long-Press -> 'Duplizieren' -> Identische Kopie auf gleichem Track. Auch zwischen Tracks moeglich."},
+{t:"Beat-Detection + Snap",d:"Toggle 'Beat-Snap' AN -> Segmente rasten beim Verschieben auf Beats ein."},
+{t:"Pro-DAW Workflow funktioniert",d:"Dragging, Multi-Select, Toolbar-Aktionen, Tab-Wechsel ohne Crash. Wirkt wie professionelles DAW."}
+]},
+{n:"Loop Mixer: Session-Persistenz + Undo/Redo + Waveform",tt:[
+{t:"Mixer-Session ueberlebt App-Restart",d:"Mixer mit Segmenten + Pads bauen -> App schliessen (Recents wischen) -> App neu oeffnen -> Mixer-Inhalt wiederhergestellt."},
+{t:"Undo entfernt letzte Aktion",d:"Segment hinzufuegen -> Undo-Icon -> Segment verschwindet. Funktioniert auch fuer Verschieben/Trim/Effekt."},
+{t:"Redo stellt rueckgaengig gemachte Aktion wieder her",d:"Nach Undo: Redo-Icon -> Aktion ist wieder aktiv."},
+{t:"Mehrstufiges Undo/Redo",d:"5+ Aktionen ausfuehren -> mehrfach Undo bis zur ersten Aktion -> Redo kommt schrittweise zurueck."},
+{t:"Waveform pro Segment sichtbar",d:"Audio-Segment auf Track -> Waveform-Linie ist innerhalb des Segments sichtbar (visuelle Position)."},
+{t:"Waveform skaliert mit Zoom",d:"Timeline-Zoom rein/raus -> Waveform-Detail aendert sich entsprechend (mehr Details bei mehr Zoom)."}
+]},
+{n:"Loop Mixer: Toolbar-Layout + OOM-Schutz",tt:[
+{t:"Toolbar 3 Zeilen sichtbar",d:"Loop Mixer Toolbar -> 3 Zeilen mit Aktionen (Play/Stop/Undo, Add/Split/Cut, Cover/Template/Share)."},
+{t:"Cover-Import-Button erreichbar (kein Overflow)",d:"Cover-Import-Icon ist sichtbar und tappbar (Row 2/3 nach Reorganisation)."},
+{t:"Template + Share in 2. Toolbar-Zeile",d:"Share-Icon ganz rechts in 2. Zeile, Template-Icon direkt links davon. NICHT in 3. Zeile."},
+{t:"Lange Library-Songs (>30s) ohne OOM",d:"Library-Song mit 5+ Min als Sample auswaehlen -> kein OOM-Crash (Sample-Decode auf max 30 s begrenzt)."},
+{t:"Lange Mix-Tonspur (3-7+ Min) ohne OOM",d:"Audio-Segment mit 5-7 Min Laenge auf Track legen -> Export-Engine decodiert primitiv (ShortArray + MediaExtractor-Seek), kein OOM."},
+{t:"Tab-Bar (Timeline/Pads/Synth) sichtbar",d:"Tab-Bar wird angezeigt (fillMaxSize -> weight(1f) Fix). Nicht von Toolbar verdeckt."}
+]},
+{n:"F-109: Sharing-Suite (Phase D — 6 Format-Familien)",tt:[
+{t:"Arpset Export/Import (.arpset)",d:"Arpeggiator-Preset Long-Press -> 'Teilen' -> WhatsApp/Mail/Drive. Empfaenger tippt .arpset -> AutoPlayer Import-Dialog -> Importieren -> Toast."},
+{t:"Synthset Export/Import (.synthset)",d:"Synth-Preset teilen -> .synthset wird erzeugt -> Empfaenger importiert -> Preset im Browser sichtbar."},
+{t:"Loopseg Export/Import (.loopseg)",d:"Audio-Segment im Mixer Long-Press -> Teilen -> .loopseg. Empfaenger importiert -> Segment in Library/Mixer."},
+{t:"Padconfig Export/Import (.padconfig)",d:"Pad-Mode Konfiguration (16 Pads) teilen -> .padconfig. Empfaenger importiert -> Pads identisch belegt."},
+{t:"Mxproj Export/Import (.mxproj)",d:"Komplettes Mixer-Projekt (Tracks + Marker + Pads) teilen -> .mxproj. Empfaenger importiert -> Identische Mixer-Session."},
+{t:"Mxbundle Export/Import (.mxbundle)",d:"Mixer-Projekt + alle Audio-Files in einem Bundle teilen -> .mxbundle. Empfaenger importiert komplett auch ohne die Original-Sample-Files."},
+{t:"QR-Code-Sharing fuer Presets",d:"Preset 'Teilen via QR' -> QR-Code wird angezeigt. 2. Geraet scannt -> Preset-Daten werden importiert (kleine Presets)."},
+{t:"Audio-Optimierung: 14 Plattform-Presets",d:"Mixer-Export -> Plattform-Preset-Auswahl mit 14 Optionen + Loudness-Normalisierung (LUFS) + FLAC-Option."},
+{t:"Schema-Validierung wirkt",d:"Manipulierte .arpset-Datei (z.B. ungueltiger BPM) importieren -> Fehlermeldung mit Error-Code (kein Crash, kein Trojaner)."},
+{t:"Checksum-Warnung",d:"Datei mit falscher SHA-256-Checksum oeffnen -> Warnungs-Dialog vor Import."},
+{t:"Konflikt-Aufloesung",d:"Preset mit gleichem Namen wie bestehendes importieren -> Konflikt-Dialog: Ersetzen / Umbenennen / Abbrechen."},
+{t:"Sharing-Cache-Cleanup nach 24 h",d:"Sharing-Datei vor 24 h erzeugt -> beim naechsten App-Start automatisch geloescht (cacheDir/sharing/)."}
+]},
+{n:"F-114: Automation Lanes (Volume + Pan + Canvas-Editing)",tt:[
+{t:"Volume-Automation aktivieren",d:"Segment Long-Press -> 'Automation' -> Volume-Toggle AN. Volume-Lane wird unter dem Segment angezeigt."},
+{t:"Volume-Keyframes setzen",d:"In der Volume-Lane tippen -> Keyframe wird gesetzt. Mehrere Keyframes -> Volume-Verlauf hoerbar (z.B. Fade-In)."},
+{t:"Pan-Automation aktivieren",d:"Pan-Toggle AN. Pan-Lane wird angezeigt. Keyframes setzen -> Stereo-Position wechselt (links<->rechts)."},
+{t:"InterpolationType waehlbar (Phase 2)",d:"Keyframe Long-Press -> Interpolation-Auswahl (Linear, Step, Smooth/Curve). Verlauf hoerbar unterschiedlich."},
+{t:"Canvas-Editing direkt auf Lane (Phase 2)",d:"Lane antippen + ziehen -> Keyframe verschieben. Keyframe Long-Press -> Loeschen-Option."},
+{t:"Beat-Snap fuer Keyframes",d:"Beat-Snap AN -> Keyframes rasten auf BPM-Beats ein."},
+{t:"Automation bleibt nach Save erhalten",d:"Mixer-Session speichern + neu laden -> Volume + Pan Keyframes weiterhin vorhanden."}
+]},
+{n:"F-115: Live Effect Preview",tt:[
+{t:"Effect-Slider waehrend Wiedergabe",d:"Mixer abspielen -> Effekt-Slider (Reverb/Echo/Filter) ziehen -> Effekt-Aenderung SOFORT hoerbar (kein Apply-Button)."},
+{t:"Slider-Wert reaktiv ohne Stutter",d:"Slider schnell hin- und herziehen -> Audio bleibt fluessig, kein Knacken/Stuttern."},
+{t:"Preview wird beim Loslassen final angewandt",d:"Slider loslassen -> aktueller Wert wird als finaler Effekt-Wert uebernommen."}
+]},
+{n:"F-116: Panning-Slider (Stereo pro Segment)",tt:[
+{t:"Pan-Slider pro Segment",d:"Segment Long-Press -> 'Pan' -> Slider von L (-100) bis R (+100). 0 = mittig."},
+{t:"Pan -100 = nur links",d:"Slider ganz links -> Audio nur im linken Kanal hoerbar."},
+{t:"Pan +100 = nur rechts",d:"Slider ganz rechts -> Audio nur im rechten Kanal hoerbar."},
+{t:"Pan + Pan-Automation gleichzeitig",d:"Statisches Pan plus dynamische Pan-Automation -> Automation wird relativ zum Static-Pan angewandt."}
+]},
 {n:"F-117: Genome Visualizer Overlay (Loop Mixer)",tt:[
 {t:"Visualizer im Loop Mixer aktivieren",d:"Loop Mixer oeffnen -> Toolbar/Toggle 'Genome Visualizer' AN. Bunter Visualizer wird ueber Timeline eingeblendet."},
 {t:"Visualizer reagiert auf Audio",d:"Mix abspielen -> Genome-Visualizer animiert sich synchron zur Musik (BPM + Frequenzen sichtbar)."},
@@ -1776,7 +1869,7 @@ function resetAll() {
 function exportResults() {
     const dev = devices[activeDevIdx];
     const devInfo = devLabel(activeDevIdx) + (dev.android ? ' (Android ' + dev.android + ')' : '');
-    let t = 'AutoPlayer Testplan v5.0.0 — ' + new Date().toLocaleString('de-DE') + '\n';
+    let t = 'AutoPlayer Testplan v5.1.0 — ' + new Date().toLocaleString('de-DE') + '\n';
     t += 'Tester: ' + (localStorage.getItem('tp_meta_tester') || 'k.A.') + '\n';
     t += 'Geraet: ' + devInfo + '\n';
     t += 'App-Version: ' + (localStorage.getItem('tp_meta_version') || 'k.A.') + '\n\n';
