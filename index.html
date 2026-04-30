@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AutoPlayer Testplan v5.1.0</title>
+<title>AutoPlayer Testplan v5.4.0</title>
 <script src="https://cdn.jsdelivr.net/npm/@twemoji/api@latest/dist/twemoji.min.js" crossorigin="anonymous"></script>
 <style>
 img.emoji{height:1em;width:1em;margin:0 .05em 0 .1em;vertical-align:-0.1em}
@@ -195,7 +195,7 @@ h1{color:var(--accent);margin-bottom:4px;font-size:1.7em}
 <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px">
 <div>
 <h1>AutoPlayer Testplan</h1>
-<p class="sub">Version 5.1.0 | Granularer Testplan | <span id="lastSaved"></span></p>
+<p class="sub">Version 5.4.0 | <span id="subTestPlan">Granularer Testplan</span> | <span id="lastSaved"></span></p>
 </div>
 <div class="lang-drop" id="langDrop">
 <div class="lang-btn" id="langBtn" onclick="document.getElementById('langList').classList.toggle('open')">
@@ -272,7 +272,7 @@ h1{color:var(--accent);margin-bottom:4px;font-size:1.7em}
 
 <!-- TESTER INFO -->
 <div class="info-card">
-<h2>Tester-Informationen</h2>
+<h2 id="testerInfoTitle">Tester-Informationen</h2>
 <div class="info-grid">
 <div class="info-field">
 <label>Tester-Name (optional)</label>
@@ -327,7 +327,7 @@ h1{color:var(--accent);margin-bottom:4px;font-size:1.7em}
 <!-- GERAETE VERWALTUNG -->
 <div class="dev-card">
 <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;margin-bottom:8px">
-<h2 style="margin:0">Geraete-Verwaltung</h2>
+<h2 id="devicesTitle" style="margin:0">Geraete-Verwaltung</h2>
 <div style="display:flex;gap:10px;align-items:center">
 <span id="devBadge" class="dev-badge"></span>
 <button class="btn-add-dev" onclick="addDevice()">+ Geraet</button>
@@ -338,21 +338,21 @@ h1{color:var(--accent);margin-bottom:4px;font-size:1.7em}
 
 <!-- STATS BAR -->
 <div class="stats">
-<div class="s s-ok"><div class="n" id="cOk">0</div><div class="l">Bestanden</div></div>
-<div class="s s-bug"><div class="n" id="cBug">0</div><div class="l">Bugs</div></div>
-<div class="s s-feat"><div class="n" id="cFeat">0</div><div class="l">Wuensche</div></div>
-<div class="s s-open"><div class="n" id="cOpen">0</div><div class="l">Offen</div></div>
-<div class="s s-all"><div class="n" id="cAll">0</div><div class="l">Gesamt</div></div>
+<div class="s s-ok"><div class="n" id="cOk">0</div><div class="l" id="lbl_passed">Bestanden</div></div>
+<div class="s s-bug"><div class="n" id="cBug">0</div><div class="l" id="lbl_bugs">Bugs</div></div>
+<div class="s s-feat"><div class="n" id="cFeat">0</div><div class="l" id="lbl_wishes">Wuensche</div></div>
+<div class="s s-open"><div class="n" id="cOpen">0</div><div class="l" id="lbl_open">Offen</div></div>
+<div class="s s-all"><div class="n" id="cAll">0</div><div class="l" id="lbl_total">Gesamt</div></div>
 <div class="pbar"><div class="pfill" id="pFill"></div></div>
 </div>
 
 <div class="bug-summary" id="bugSummary">
-<h3>Gefundene Bugs</h3>
+<h3 id="bugSummaryTitle">Gefundene Bugs</h3>
 <div id="bugList"></div>
 </div>
 
 <div class="feat-summary" id="featSummary">
-<h3>Aenderungs-/Erweiterungswuensche</h3>
+<h3 id="featSummaryTitle">Aenderungs-/Erweiterungswuensche</h3>
 <div id="featList"></div>
 </div>
 
@@ -383,8 +383,8 @@ h1{color:var(--accent);margin-bottom:4px;font-size:1.7em}
 
 <!-- STERNEBEWERTUNG -->
 <div class="feedback-card" id="ratingCard" style="border-color:var(--yellow)">
-<h2 style="color:var(--yellow)">App-Bewertung</h2>
-<p style="color:var(--muted);font-size:0.82em;margin-bottom:12px">Wie bewertest du die App insgesamt? Klicke auf einen Stern.</p>
+<h2 id="ratingTitle" style="color:var(--yellow)">App-Bewertung</h2>
+<p id="ratingDescP" style="color:var(--muted);font-size:0.82em;margin-bottom:12px">Wie bewertest du die App insgesamt? Klicke auf einen Stern.</p>
 <div id="starRating" style="display:flex;gap:4px;margin-bottom:12px">
 <span class="star" onclick="setRating(1)" data-v="1">&#9734;</span>
 <span class="star" onclick="setRating(2)" data-v="2">&#9734;</span>
@@ -398,24 +398,24 @@ h1{color:var(--accent);margin-bottom:4px;font-size:1.7em}
 
 <!-- FEEDBACK -->
 <div class="feedback-card">
-<h2>Allgemeines Feedback</h2>
+<h2 id="feedbackTitle">Allgemeines Feedback</h2>
 <textarea id="metaFeedback" placeholder="Hier allgemeines Feedback, Anmerkungen oder Verbesserungsvorschlaege eintragen..." onblur="saveMeta()"></textarea>
 </div>
 
 <!-- ERGEBNIS SENDEN -->
 <div class="feedback-card" style="border-color:var(--green)">
-<h2 style="color:var(--green)">Testergebnis absenden</h2>
-<p style="color:var(--muted);font-size:0.82em;margin-bottom:12px">Sende dein komplettes Testergebnis (JSON) per E-Mail an den Entwickler. Die JSON-Datei mit allen Daten wird automatisch als Anhang-Link generiert.</p>
+<h2 id="sendMailTitle" style="color:var(--green)">Testergebnis absenden</h2>
+<p id="sendMailDescP" style="color:var(--muted);font-size:0.82em;margin-bottom:12px">Sende dein komplettes Testergebnis (JSON) per E-Mail an den Entwickler. Die JSON-Datei mit allen Daten wird automatisch als Anhang-Link generiert.</p>
 <button class="btn btn-x" onclick="sendResultByMail()" style="font-size:0.9em;padding:10px 20px">Per E-Mail an Entwickler senden</button>
 </div>
 
 <!-- FEATURE-WUENSCHE -->
 <div class="feedback-card" id="featureWishesCard" style="border-color:var(--orange)">
 <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px">
-<h2 style="color:var(--orange)">Feature-Wuensche fuer zukuenftige Versionen</h2>
+<h2 id="featureWishesTitle" style="color:var(--orange)">Feature-Wuensche fuer zukuenftige Versionen</h2>
 <button class="btn btn-o" onclick="addFeatureWish()" style="font-size:0.85em">+ Feature-Wunsch</button>
 </div>
-<p style="color:var(--muted);font-size:0.8em;margin-bottom:12px">Hier kannst du neue Feature-Ideen oder Erweiterungswuensche eintragen, die nach dem Launch umgesetzt werden koennten. Jeder Wunsch bekommt ein eigenes Feld — nutze den "+ Feature-Wunsch" Button fuer weitere Eintraege.</p>
+<p id="wishDescText" style="color:var(--muted);font-size:0.8em;margin-bottom:12px">Hier kannst du neue Feature-Ideen oder Erweiterungswuensche eintragen, die nach dem Launch umgesetzt werden koennten. Jeder Wunsch bekommt ein eigenes Feld — nutze den "+ Feature-Wunsch" Button fuer weitere Eintraege.</p>
 <div id="featureWishesList"></div>
 </div>
 
@@ -1460,6 +1460,1047 @@ const D=[
 ]}
 ];
 
+const D_EN=[
+{cat:"1. App Start & Basics",ff:[
+{n:"F-001: App Start & First Impression",tt:[
+{t:"App starts within 3 seconds",d:"Tap the AutoPlayer icon on the home screen. The app must be fully loaded within 3 seconds and display the Library screen (song list)."},
+{t:"Storage permission is requested",d:"On the very first launch: A permission dialog must appear asking for access to media/audio. Confirm. After that, the local songs must appear in the list."},
+{t:"Drawer menu opens",d:"Tap the hamburger icon (three lines) in the top left. The side menu must animate open from the left."},
+{t:"Drawer shows all categories",d:"With the drawer open: Scroll through the entire list. There must be approximately 40+ entries visible, grouped into categories (Tools, Smart Features, Player Views, Settings & Info)."},
+{t:"Drawer closes on back gesture",d:"Open the drawer, then perform the back gesture (swipe from the left edge or press the back button). The drawer must close and the library must be fully visible again."}
+]},
+{n:"F-002: Background Playback",tt:[
+{t:"Start a song from the library",d:"Tap any song in the library list. The player screen must open with album art, title, and artist. Music must start immediately."},
+{t:"Notification controls visible",d:"While music is playing: Pull down the Android status bar. A music notification must appear with cover art, title, artist, Play/Pause, Previous, and Next buttons."},
+{t:"Notification Play/Pause works",d:"In the notification: Tap Pause -> music stops. Tap Play -> music starts again. No delay > 500ms."},
+{t:"Notification Skip works",d:"In the notification: Tap Next -> next song starts. Tap Previous -> previous song (or restart current song if >3s in)."},
+{t:"Music continues after Home button",d:"While music is playing: Press the Home button. The music MUST continue playing. If it stops = CRITICAL BUG."},
+{t:"Music continues after swiping from Recents",d:"While music is playing: Swipe the app away from Recents. The music MUST continue playing (Foreground Service)."},
+{t:"Lockscreen controls work",d:"Lock the screen while music is playing. Playback controls must appear on the lock screen. Play/Pause and Skip must work."}
+]},
+{n:"F-132: Portrait Lock for the Entire App",tt:[
+{t:"App starts in portrait mode",d:"Tap the app icon -> the app always starts in portrait mode (even if a tablet is in landscape orientation)."},
+{t:"Rotating phone -> App stays portrait",d:"With Auto-Rotate ON, rotate the phone sideways -> other apps rotate, AutoPlayer stays in portrait."},
+{t:"Auto-Rotate ON is ignored by AutoPlayer",d:"System Settings -> Auto-Rotate ON -> Rotate phone while AutoPlayer is open -> App ignores the rotation, no layout change."},
+{t:"LoopMixerImportActivity also portrait",d:"Open a .arpset file from a file manager in landscape mode -> the import dialog still appears in portrait."}
+]},
+{n:"F-133: Default Music App Registration (Steering Wheel Voice Button)",tt:[
+{t:"AutoPlayer in Default Apps -> Music",d:"Android Settings -> Apps -> three-dot menu -> Other Settings -> Default Apps -> Music. AutoPlayer MUST be selectable in the list."},
+{t:"AutoPlayer can be set as default music app",d:"Tap 'AutoPlayer' in the music list -> a blue checkmark appears. AutoPlayer is now the default music app."},
+{t:"Settings button opens the correct list",d:"AutoPlayer Settings -> card 'Set as Default Music App' -> button 'Open Default App Settings' -> the correct MIUI 'Other Settings' page opens (NOT the voice assistant list)."},
+{t:"Open audio file with AutoPlayer",d:"Files app: Tap an MP3 -> the selection dialog shows AutoPlayer as an option. Select it -> AutoPlayer receives the file."},
+{t:"Steering wheel voice button in the car",d:"Connect Android Auto -> press the steering wheel voice button -> say 'Play [song title]' -> AutoPlayer plays the song (no 'no connection' error)."},
+{t:"'Hey Google, play music' in the car",d:"In Android Auto: Say 'Hey Google, play music' -> AutoPlayer is activated and starts playback (default music app routing correct)."}
+]}
+]},
+{cat:"2. Music Library & Navigation",ff:[
+{n:"F-010: Songs Tab",tt:[
+{t:"All songs are listed",d:"Library -> 'All Songs' tab. All local MP3/FLAC/AAC/OGG files must be listed with title, artist, and duration."},
+{t:"Songs can be sorted",d:"In the Songs tab: Tap the sort icon. Test various sort options (A-Z, Z-A, Recently Added, Duration). The list must reorder correctly."},
+{t:"Alphabet quick-navigation",d:"On the right edge of the song list: An alphabet strip must be visible. Tap/drag a letter -> the list jumps immediately to songs starting with that letter."},
+{t:"Song tap stays in library",d:"Tap a song in the library -> the song starts, but the library screen stays open (no auto-navigate to the player). The mini player shows the song."}
+]},
+{n:"F-012: Albums Tab",tt:[
+{t:"Albums as grid with cover art",d:"Library -> 'Albums' tab. Albums must be displayed as a grid with album cover images. Missing covers show a placeholder."},
+{t:"Opening an album shows songs",d:"Tap an album -> all songs of that album are displayed with track number, title, and duration."}
+]},
+{n:"F-013: Artists Tab",tt:[
+{t:"Artists listed alphabetically",d:"Library -> 'Artists' tab. Alphabetical list of all artists. Number of songs/albums per artist visible."},
+{t:"Opening an artist shows details",d:"Tap an artist -> all songs and albums by that artist are displayed."}
+]},
+{n:"F-014: Folders Tab",tt:[
+{t:"Folder structure is displayed",d:"Library -> 'Folders' tab. The filesystem folder structure containing music files must be displayed. Tap a folder -> subfolders/songs become visible."}
+]},
+{n:"F-015: Search Function",tt:[
+{t:"Real-time filtering on text input",d:"Tap the magnifying glass icon in the top right. Type e.g. 'Love' -> results filter in real time. Titles, artists, and albums containing 'Love' must appear."},
+{t:"Empty search shows hint",d:"Search for a nonsense word that doesn't exist (e.g. 'xyzqwert'). A 'No results' hint must appear."}
+]},
+{n:"F-016: Favorites",tt:[
+{t:"Heart icon marks a song",d:"In the player or song list: Tap the heart icon next to a song. It must turn red/filled (marked)."},
+{t:"Favorites tab shows marked songs",d:"Library -> Favorites tab. All songs marked as favorites must be listed here."},
+{t:"Tapping heart again removes favorite",d:"Tap the filled heart again -> it turns grey/empty. The song disappears from the Favorites tab."},
+{t:"Play/Shuffle in Favorites tab",d:"In the Favorites tab: Play button -> all favorites are played in order. Shuffle button -> random order."}
+]},
+{n:"F-020: Multi-Select",tt:[
+{t:"Long-press activates multi-select",d:"In the song list: Long-press a song -> a checkbox appears, the song is selected. Tap additional songs -> multi-selection."},
+{t:"Action bar on selection",d:"With multi-select active: An action bar must appear with options such as 'Add to Queue', 'Add to Playlist', 'Favorites'."}
+]},
+{n:"F-033: Tab Order",tt:[
+{t:"Tabs are configurable",d:"Settings -> Tab Order. The library tabs (Songs, Albums, Artists, Folders, etc.) must be reorderable via drag & drop. After changing: Library shows the new order."}
+]},
+{n:"F-021: Folder Blacklisting",tt:[
+{t:"Hiding a folder works",d:"Library -> Folders tab -> folder with visibility toggle. Turn the toggle off -> songs from this folder disappear from the library. Toggle on -> songs appear again."}
+]},
+{n:"F-036: Song Details",tt:[
+{t:"Bitrate/Format/Size visible",d:"In the song list: Below the song title, bitrate (e.g. 320kbps), format (MP3/FLAC), and file size must be displayed."}
+]},
+{n:"F-022: Album Artist Support",tt:[
+{t:"Album artist correctly grouped",d:"Check the Artists tab: Compilations/samplers must be grouped under their album artist (not listed separately under each individual track artist)."}
+]},
+{n:"Pull-to-Refresh",tt:[
+{t:"Rescan library",d:"In the song list: Pull the list downward (pull gesture). A loading indicator must appear. After completion: New songs that were copied to the phone must appear."}
+]},
+{n:"F-043: MediaStore Rescan + Nested Folders",tt:[
+{t:"Automatic rescan on app start",d:"Copy new MP3 files via ADB or file manager into a nested folder on the phone (e.g. Music/mp3/Artist/Album/Track.mp3). Start the app. Within a few seconds, the new songs must automatically appear in the library — WITHOUT a manual scan."},
+{t:"Settings: Update Library button",d:"Open Settings (Drawer -> Settings). Find the 'Update Library' button. Tap it. A rescan must start. Afterwards, all songs (including newly added ones) must be visible in the library."},
+{t:"Nested folder structure recognized",d:"Check whether songs in nested folders are displayed correctly: e.g. Music/mp3/Artist/Album/Song.mp3. The song must appear in the library with the correct title, artist, and album — not just songs in the root Music folder."},
+{t:"Flat folder structure still works",d:"Regression test: Songs located directly in Music/ (without subfolders) must still be displayed correctly. No songs must be lost through the rescan."},
+{t:"All audio formats are recognized",d:"Check whether various formats are recognized: MP3, FLAC, M4A, OGG, OPUS, WAV, AAC. Test at least MP3 and FLAC."}
+]}
+]},
+{cat:"3. Player Interface & Controls",ff:[
+{n:"F-011: Player Controls",tt:[
+{t:"Play/Pause button works",d:"In the player: Tap the large Play/Pause button in the center -> music pauses. Tap again -> music starts."},
+{t:"Next Song works",d:"In the player: Tap the Next button (right) -> the next song in the queue starts immediately."},
+{t:"Previous Song works (< 3s)",d:"In the player: Within the first 3 seconds of a song, tap Previous -> the previous song starts."},
+{t:"Previous Song restarts (> 3s)",d:"In the player: After more than 3 seconds, tap Previous -> the current song restarts from the beginning."},
+{t:"Progress bar seek by tap",d:"In the player: Tap the center of the progress bar -> the song jumps to the middle. Current time and total time must be displayed correctly."},
+{t:"Progress bar seek by drag",d:"In the player: Drag the progress bar thumb to the right -> song jumps forward. To the left -> song jumps back."},
+{t:"Shuffle toggle",d:"Tap the shuffle icon -> it turns colored (active). Songs play in random order. Tap again -> shuffle off."},
+{t:"Cycle through repeat modes",d:"Tap the repeat icon: Cycle through 3 modes: Off -> Repeat All -> Repeat One -> Off. The icon must change for each mode."},
+{t:"Album art is displayed",d:"In the player: The album art of the current song must be displayed large and clearly. Songs without cover art show a placeholder."}
+]},
+{n:"F-064: Swipe Gestures in Player",tt:[
+{t:"Horizontal swipe: Next/Previous",d:"In the player: Swipe horizontally on the album art to the left -> next song. To the right -> previous song."}
+]},
+{n:"F-012: Queue Management",tt:[
+{t:"Open queue",d:"In the player: Tap the list icon -> the Queue screen opens. All songs in the current queue must be visible in order."},
+{t:"Queue reorder by drag",d:"In the queue: Long-press a song -> drag it up or down. The song must be placed at the new position."},
+{t:"Remove queue song by swipe",d:"In the queue: Swipe a song to the left -> the song is removed from the queue."}
+]},
+{n:"F-013: Playlists",tt:[
+{t:"Create a playlist",d:"Drawer -> Playlists -> '+' button -> enter a name -> Create. The empty playlist must appear in the list."},
+{t:"Add song to playlist",d:"In the library: Long-press a song -> 'Add to Playlist' -> select a playlist. The song must appear in the playlist."},
+{t:"Play a playlist",d:"Open a playlist -> Play button -> the playlist songs are played."},
+{t:"Delete a playlist",d:"Long-press a playlist -> 'Delete'. Confirm. The playlist disappears from the list."}
+]},
+{n:"F-054: Speed & Pitch",tt:[
+{t:"Speed slider changes playback speed",d:"In the player: Speed icon in toolbar -> a slider appears. Move speed to 1.5x -> music plays noticeably faster. To 0.5x -> noticeably slower."},
+{t:"Pitch slider changes pitch",d:"In the player: Pitch slider -> move pitch up -> voice sounds higher. Move down -> lower. Reset to 0 -> normal."}
+]},
+{n:"F-039: Crossfade",tt:[
+{t:"Crossfade audible on song change",d:"Settings -> 'Crossfade' toggle ON + duration set to 3s. Play a playlist. On song change: old song fades out, new song fades in, no silent gap."},
+{t:"Crossfade OFF gives hard cut",d:"Settings -> 'Crossfade' toggle OFF. Test song change -> hard cut without transition."}
+]}
+]},
+{cat:"4. Player Skins (Alternative Views)",ff:[
+{n:"F-070: DJ Turntable",tt:[
+{t:"Open screen via drawer",d:"Drawer -> tap 'DJ Turntable'. The turntable screen must open with a dark background."},
+{t:"Vinyl record spins during playback",d:"Start music. The black vinyl record with concentric grooves must spin. When paused: it stands still."},
+{t:"Album art in the center of the record",d:"The cover of the current song must be visible as a circular label in the center of the vinyl record."},
+{t:"Tonearm overlay visible",d:"A photorealistic tonearm (PNG overlay) must be positioned to the right of the record."},
+{t:"LED ring pulses",d:"A colored LED ring must pulse around the record. The pulsing should follow the BPM beat of the song."},
+{t:"Scratching via touch drag",d:"Place a finger on the record and drag -> a scratch sound must be audible and the playback position changes."},
+{t:"Playback controls in toolbar",d:"In the top toolbar: Play/Pause, Next, Previous buttons must work."}
+]},
+{n:"F-073: Sci-Fi Hologram",tt:[
+{t:"Open screen via drawer",d:"Drawer -> tap 'Sci-Fi Hologram'. A dark background with a hex grid must appear."},
+{t:"Hologram projection with chromatic aberration",d:"The album art must be displayed as a floating hologram with pink/cyan/green offset (chromatic aberration effect)."},
+{t:"Particles fly upward",d:"Glowing particles must fly from bottom to top. More particles for high-energy songs."},
+{t:"Scanlines scroll",d:"Horizontal scanlines must slowly scroll over the hologram (like an old CRT monitor)."},
+{t:"Glitch effect on song change",d:"When switching to the next song: A brief glitch effect (teleport/offset) must be visible."},
+{t:"Tap center = Play/Pause",d:"Tap the center of the hologram -> Play/Pause toggle."},
+{t:"Tap left = Previous, right = Next",d:"Tap the left half -> previous song. Right half -> next song."}
+]},
+{n:"F-074: Cassette / Walkman",tt:[
+{t:"Open screen via drawer",d:"Drawer -> tap 'Cassette Player'. A realistic Walkman housing must appear."},
+{t:"Reels spin during playback",d:"On Play: Both gear reels spin. Left reel (supply) spins faster, right (take-up) slower — like a real cassette."},
+{t:"Tape visible in cassette window",d:"The brown magnetic tape must be visible through the transparent cassette window. The tape winding changes proportionally to the song position."},
+{t:"Tape counter counts up",d:"A 3-digit mechanical counter (0-125) must count up with the song progress. Rolling digit animation visible."},
+{t:"5 transport buttons visually press in",d:"Tap Play -> the Walkman image switches to 'Play pressed'. On Pause -> Play+Pause pressed. Rewind/FF/Stop -> brief 150ms flash."},
+{t:"Volume wheel via vertical drag",d:"Drag vertically over the volume wheel area -> system volume changes."},
+{t:"Haptic feedback on button press",d:"Each transport button press must produce a brief vibration feedback."},
+{t:"Album art on cassette label",d:"The album art must be subtly visible as a background on the cassette label, with title and artist overlaid."}
+]},
+{n:"F-075: Reel-to-Reel Tape Machine",tt:[
+{t:"Open screen via drawer",d:"Drawer -> tap 'Tape Machine'. A black metal housing in TASCAM style must appear."},
+{t:"NAB reels spin",d:"On Play: Two large NAB reels spin. Tape winding decreases on the left, increases on the right (proportional to song position)."},
+{t:"Tape runs over guide rollers",d:"Brown tape must visibly run over 3 animated guide rollers and the playhead (Bezier curves)."},
+{t:"VU meter needles move",d:"Two analog VU meters (L/R channel) must be visible. Needles move to the music with physics-based inertia."},
+{t:"7-segment LED counter counts",d:"An LED counter with hexagonal segments must display the elapsed time. Glow effect on active segments."},
+{t:"Album art circular on left reel",d:"The album art must be circular-clipped on the upper flange of the left reel, visible and rotating with it."},
+{t:"Song info as curved text",d:"Song title and artist must appear as curved text on the lower flanges of the left reel."},
+{t:"Transport buttons work",d:"5 buttons (Rew/FF/Play/Pause/Stop): Play locks in. Play+Pause combination possible. Rewind/FF/Stop with flash effect."}
+]},
+{n:"F-076: Jukebox",tt:[
+{t:"Open screen via drawer",d:"Drawer -> tap 'Jukebox'. A classic jukebox housing in Wurlitzer style must appear."},
+{t:"Bubble tubes with rising bubbles",d:"Left and right: Two illuminated tubes with rising colored bubbles. HSV color rotation (colors change slowly). Glow effect around each bubble."},
+{t:"Record spins with cover art",d:"In the center: A vinyl record spins with album art as a label and a glass reflection overlay."},
+{t:"Amber display shows song info",d:"Amber backlit display: Song title (marquee scroll for long text), artist, and timer in warm gold colors."},
+{t:"Bass glow pulses on grille",d:"Speaker grille at the bottom: An orange glow overlay pulses with the bass."},
+{t:"Tap on record = Play/Pause",d:"Tap the vinyl record -> Play/Pause toggle."},
+{t:"Tap tubes = Previous/Next",d:"Tap the left illuminated tube -> previous song. Right tube -> next song."},
+{t:"Display drag = Seek",d:"Horizontal drag on the amber display -> song position changes (seek)."}
+]},
+{n:"F-100: Vintage Hi-Fi Turntable",tt:[
+{t:"Open screen via drawer",d:"Drawer -> tap 'Vintage Turntable'. A 1970s walnut wood turntable must appear with platter, tonearm, and controls."},
+{t:"Vinyl record spins during playback",d:"Start music. Vinyl record spins on the platter. Album art as a circular label in the center with artist, title, and BPM."},
+{t:"Tonearm animation on song start",d:"Start a song -> tonearm moves from its parked position to the record (rotation from outside). When the song ends: tonearm returns to the parked position."},
+{t:"Tonearm tracks song progress",d:"During playback: The tonearm slowly moves from the outside (record edge) to the inside (record center), proportional to song length."},
+{t:"3-layer tonearm system visible",d:"Three separate layers must be visible: base (static), S-shaped tonearm (rotates), bracket/clip (static above it)."},
+{t:"33/45 RPM speed lever",d:"Tap the lever area in the lower left -> toggle between 33 RPM (1.0x speed) and 45 RPM (1.364x speed). Body image changes accordingly."},
+{t:"Start/Stop button works",d:"Tap the button area in the lower center -> Play/Pause toggle. Body image switches to 'button pressed' state."},
+{t:"6 body state images correct",d:"Test all combinations: Default, lever 33, lever 45, button pressed, button+33, button+45. Each must show a different background image."},
+{t:"Scratching via touch drag on vinyl",d:"Place a finger on the vinyl record and drag -> scratch sound audible, playback position changes."},
+{t:"Cueing lever lifts/lowers tonearm",d:"Tap the cueing lever area on the right -> tonearm lifts (Pause) or lowers (Play). Visual change visible."},
+{t:"Volume via right edge",d:"Drag vertically on the right edge of the screen -> system volume changes."},
+{t:"Haptic feedback on interaction",d:"A brief vibration feedback must be felt when pressing buttons or levers."}
+]},
+{n:"F-030+032: Audio Visualizer",tt:[
+{t:"Bar visualizer with 32 bars",d:"Drawer -> Audio Visualizer. Grant microphone permission. 32 frequency bars with a rainbow gradient must move to the music."},
+{t:"Circular visualizer (3 rings)",d:"Toggle to Circular: 3 concentric rings (cyan, red, green) must pulse and distort to the music."},
+{t:"Fullscreen mode",d:"Fullscreen button -> Immersive Mode (system bars hidden). Screen stays on. Tap to show/hide controls."}
+]},
+{n:"F-068: Genome Visualizer",tt:[
+{t:"Toggle controls visibility",d:"Drawer -> Music DNA. Toggle OFF -> placeholder text. Toggle ON + play a song -> DNA helix animation visible."},
+{t:"Animation stops on pause",d:"Pause the song -> animation freezes. Resume the song -> animation continues."},
+{t:"Unique song pattern",d:"Switch between different songs -> colors, helix shape, and particle arrangement must visibly differ."},
+{t:"Swipe song change",d:"Swipe on title/artist -> next/previous song. DNA pattern changes."}
+]}
+]},
+{cat:"5. Audio & Sound Effects",ff:[
+{n:"F-031: Hardware Equalizer (5 Band)",tt:[
+{t:"Open EQ screen",d:"Drawer -> Equalizer. 5 vertical sliders (bass to treble) must be visible."},
+{t:"Bass slider audibly changes sound",d:"Move the bass slider up -> more bass audible (USE HEADPHONES!). Move down -> less bass."},
+{t:"Presets change slider positions",d:"Preset dropdown: Select Rock, Pop, Jazz, etc. -> sliders automatically jump to the preset positions. Sound changes."},
+{t:"Bass Boost effect",d:"Bass Boost slider -> move up -> noticeably more bass. Back to 0 -> normal."},
+{t:"3D Surround / Virtualizer",d:"Virtualizer slider -> move up -> more spatial sound (especially with headphones)."},
+{t:"Master On/Off switch",d:"EQ master switch OFF -> all effects deactivated, sound neutral. ON -> effects active again."}
+]},
+{n:"F-071: Software Equalizer (10 Band)",tt:[
+{t:"Switch to 10-band EQ",d:"In the EQ screen: Toggle to '10-Band Software EQ'. 10 sliders (31Hz to 16kHz) must appear."},
+{t:"Each band audibly distinct",d:"Move each of the 10 sliders individually to maximum (+12dB) and verify the sound change at the respective frequency."}
+]},
+{n:"F-067: Live Concert Simulator",tt:[
+{t:"Open Concert Mode screen",d:"Drawer -> Concert Mode. Toggle must be visible."},
+{t:"Toggle ON = spatial sound audible",d:"Concert Mode ON + HEADPHONES. Music must sound noticeably more spatial (reverb, reflections)."},
+{t:"Venue presets have different sound",d:"Try all 5 venue presets (Arena, Club, Open Air, Church, Cafe). Each must have a noticeably different sonic character."},
+{t:"Reverb intensity via slider",d:"Reverb slider to maximum -> very strong reverb. To minimum -> subtle effect."},
+{t:"Toggle OFF = effect disappears",d:"Concert Mode OFF -> sound is immediately dry/normal again, no reverb tail."}
+]},
+{n:"F-056: Vocal Isolator",tt:[
+{t:"Open screen",d:"Drawer -> Vocal Isolator. Slider and mode selector must be visible."},
+{t:"Instrumental mode: vocals disappear",d:"Move slider toward 'Instrumental' -> vocals disappear, instruments remain. (Quality varies by song.)"},
+{t:"Vocals Only: only vocals audible",d:"Move slider toward 'Vocals' -> only vocals audible, instruments disappear."},
+{t:"Intensity control works",d:"Move intensity control from 0-100% -> effect becomes gradually stronger."}
+]},
+{n:"F-072: Binaural Beats",tt:[
+{t:"Open screen",d:"Drawer -> Binaural Beats. Toggle and mode selection must be visible."},
+{t:"Toggle ON with headphones",d:"Toggle ON + HEADPHONES REQUIRED. A subtle pulsing tone must overlay the music."},
+{t:"4 modes audibly different",d:"Cycle through Focus, Relax, Sleep, Meditation. Each mode must produce a different frequency/pulsation."},
+{t:"No effect without headphones",d:"Remove headphones -> binaural effect is NOT audible (only works in stereo). Warning visible in UI."}
+]},
+{n:"F-070: Atmosphere Mixer",tt:[
+{t:"Open screen",d:"Drawer -> Atmosphere Mixer. Toggle and atmosphere selection must be visible."},
+{t:"Rain atmosphere audible",d:"Activate 'Rain' -> rain sounds must be layered over the music."},
+{t:"Volume mixer per atmosphere",d:"Volume slider for the selected atmosphere -> turn up/down. Must be independent of music volume."},
+{t:"Toggle OFF removes atmosphere",d:"Toggle OFF -> all atmospheric sounds stop immediately."}
+]},
+{n:"F-065: Beat-Match Crossfade",tt:[
+{t:"Toggle ON in settings",d:"Settings -> Beat Match toggle ON. Smart DJ analysis must have run beforehand!"},
+{t:"BPM-based transition audible",d:"Play songs with similar BPM -> transition must be smoother than with normal crossfade. Speed adjusts gradually."}
+]},
+{n:"F-092: Queue Crossfade",tt:[
+{t:"Queue Crossfade toggle + settings",d:"Settings -> Queue Crossfade toggle ON + duration 3s + curve 'Equal Power'. Create 2 queue slots with different songs."},
+{t:"Smooth transition on queue change",d:"Switch between queue slots -> old song fades out, new song fades in (smooth audio transition)."},
+{t:"Test 4 crossfade curves",d:"Test all 4 curves one after another: Linear, Logarithmic, S-Curve, Equal Power. Each must produce a noticeably different transition shape."},
+{t:"Toggle OFF = hard cut",d:"Queue Crossfade OFF -> hard cut without transition when switching queue slots."}
+]},
+{n:"F-008: ReplayGain Normalization",tt:[
+{t:"Volume normalization",d:"Settings -> ReplayGain toggle ON. Songs with different original volumes should now sound at similar loudness levels."}
+]},
+{n:"F-007: Audio Focus Ducking",tt:[
+{t:"Ducking on notifications",d:"Settings -> Audio Focus Ducking ON. While music is playing: Receive a notification with sound -> music gets quieter (not paused), then returns to normal."}
+]},
+{n:"BPM Display (Global)",tt:[
+{t:"BPM in Queue",d:"Open Queue -> analyzed songs show BPM value next to artist."},
+{t:"BPM in Playlists",d:"Open a playlist -> songs with BPM badge visible."},
+{t:"BPM in Mood Browse",d:"Select a mood category -> songs show BPM."},
+{t:"BPM in Nostalgia",d:"On This Day and Time Travel -> BPM visible."},
+{t:"BPM in Drive Mode DJ",d:"Start Drive Mode -> recommended songs show BPM."},
+{t:"BPM in Auto Playlists",d:"Generate an auto playlist -> songs show BPM."},
+{t:"BPM in Weather DJ",d:"Activate Weather DJ -> weather songs show BPM."},
+{t:"BPM in Genre Browse",d:"Select a genre -> filtered songs show BPM."},
+{t:"BPM in Party Browser",d:"Party Mode browser -> queue and browse songs show BPM."},
+{t:"BPM in Sound Souvenir",d:"Memories -> songs show BPM."},
+{t:"BPM only for analyzed songs",d:"Unanalyzed songs show NO BPM value (only when > 0)."}
+]}
+]},
+{cat:"6. Smart Features",ff:[
+{n:"F-072: Smart DJ Analysis",tt:[
+{t:"Start analysis",d:"Drawer -> Smart DJ. Tap 'Start Analysis'. A progress bar must appear."},
+{t:"Analysis runs in background",d:"During analysis, use the app normally (player, library). Analysis must continue running in the background."},
+{t:"Result: BPM/Key/Energy per song",d:"After completion: Check each song -> BPM (e.g. 120), Key (e.g. C Major), Energy (0.0-1.0) must be available."}
+]},
+{n:"F-080: NLP Smart Playlists",tt:[
+{t:"Free-text input works",d:"Drawer -> Smart Playlists. In the text field type: 'Fast Rock Songs over 140 BPM' -> Search. A result list with matching songs must appear."},
+{t:"Quick chips deliver instant results",d:"Tap quick chips: 'Workout', 'Party', 'Chill' -> instant results with matching songs."},
+{t:"Save playlist",d:"Result list -> 'Save' -> enter a name. The playlist must be saved persistently."},
+{t:"Load saved smart playlists",d:"Saved Smart Playlists -> toggle view. Tap one -> loading + playing works."}
+]},
+{n:"F-088: Mood Browse",tt:[
+{t:"Start mood analysis",d:"Drawer -> Mood Browse. 'Start Analysis' -> mood AI analyzes songs (heuristic fallback if ONNX is missing). Progress visible."},
+{t:"Mood grid with categories",d:"After analysis: Grid with mood categories (Happy, Sad, Relaxed, Energetic, etc.) + song count per category."},
+{t:"Category opens song list",d:"Tap a category -> song list with matching songs and mood chips."},
+{t:"Voice: 'Play happy music'",d:"Tap microphone button -> say 'Play happy music' -> songs with mood 'Happy' are played."}
+]},
+{n:"F-089: Smart Reorder",tt:[
+{t:"Open Reorder sheet in queue",d:"Open queue with 5+ songs (Smart DJ analysis must have run!). Sparkle icon top right -> Smart Reorder sheet opens."},
+{t:"Select profile and see preview",d:"Select a profile: 'Party Build-Up' or 'DJ Mix'. 'Preview' -> BPM range and key clashes are displayed."},
+{t:"Execute sorting",d:"'Sort Now' -> queue is reordered. First song (currently playing) stays at position 1."},
+{t:"Create custom profile",d:"Create a custom profile with custom weightings (BPM/Key/Energy) -> Save -> Use."}
+]},
+{n:"F-090: Song Paths",tt:[
+{t:"Open screen",d:"Drawer -> Song Paths. At least 20 analyzed songs required!"},
+{t:"Select start and target song",d:"Select a start song + target song. Both must be findable via search."},
+{t:"Set path length and find",d:"Slider: path length (e.g. 8 songs). 'Find Path' -> list of bridge songs with BPM/Key/Energy badges."},
+{t:"Canvas visualization visible",d:"Below the song list: Canvas with nodes and lines shows the musical path visually."},
+{t:"Play path works",d:"'Play Path' -> songs are played in the found order."},
+{t:"Save path as playlist",d:"'Save' -> path is saved as a playlist and appears in the playlist list."}
+]},
+{n:"F-052: Mood Morph",tt:[
+{t:"Select start and target mood",d:"Drawer -> Mood Morph. Select current mood (e.g. 'Relaxed') + target mood (e.g. 'Energetic')."},
+{t:"Set duration",d:"Duration slider (15-120 min) -> timeline preview with BPM/Energy curves must update accordingly."},
+{t:"Playlist is generated",d:"'Generate' -> playlist with songs that transition smoothly from start to target mood. BPM/Energy rise gradually."},
+{t:"Play playlist",d:"'Play' -> songs start in the generated order."}
+]},
+{n:"F-062: Auto Playlists",tt:[
+{t:"Show time-of-day playlists",d:"Drawer -> Auto Playlists. 5 time-of-day profiles (Morning, Midday, Afternoon, Evening, Night) visible as filter chips."},
+{t:"Matching songs are loaded",d:"The current time-of-day profile is pre-selected. A song list with matching BPM/Energy values must appear."},
+{t:"Play works",d:"Tap the Play FAB -> Auto Playlist songs are played."}
+]}
+]},
+{cat:"7. Auto & Driving",ff:[
+{n:"F-003: Android Auto",tt:[
+{t:"App appears in Android Auto",d:"Connect phone to Android Auto (cable or wireless). AutoPlayer must appear in the Auto app list."},
+{t:"Browse tree: Songs, Albums, Artists",d:"In Android Auto: Open AutoPlayer. Browse tree with Songs, Albums, Artists, Playlists, Favorites must be navigable."},
+{t:"Play song on car speakers",d:"Tap a song in Android Auto -> plays on the car speakers. Album art visible on the car display."},
+{t:"Playback controls in Android Auto",d:"Play/Pause, Next, Previous buttons on the car display must work."},
+{t:"Browse categories have unique icons",d:"In Android Auto: Each browse category (Favorites, Albums, Artists, Playlists, Queues, Smart Playlists, etc.) must have its own icon (heart, vinyl, person, etc.). No generic icons."},
+{t:"Individual album art per song",d:"In Android Auto: Play songs from different albums. Each song must show its OWN embedded cover art, not the same album cover for all songs in an album."},
+{t:"Continue Listening category",d:"In Android Auto: A 'Continue Listening' category must appear with songs at their last-heard position."},
+{t:"Mood Browse category",d:"In Android Auto: A 'Mood' category must appear with mood selection (Happy, Energetic, Calm, etc.)."},
+{t:"Smart Playlists category",d:"In Android Auto: A 'Smart Playlists' category must appear (Most Played, Recently Added, Never Played)."},
+{t:"Crash protection on playback error",d:"Play a song with a corrupted file -> the app must NOT crash. Instead: automatically skip to the next song."},
+{t:"Genre Browse category",d:"In Android Auto: A 'Genres' category must appear (when genre data is available). Tap genre -> song list -> play."},
+{t:"Genre drilldown queue correct",d:"In Android Auto: Select a genre -> tap a song -> all genre songs as queue. Passenger control possible."}
+]},
+{n:"F-053: Drive Mode DJ",tt:[
+{t:"Open screen",d:"Drawer -> Drive Mode DJ. Grant GPS permission when prompted."},
+{t:"Music adapts to speed",d:"Activate the feature and start driving: At slow speed (city) -> calmer music. At high speed (highway) -> more energetic music."},
+{t:"3 modes visible (City/Highway/Traffic)",d:"The current driving situation must be recognized and displayed: City (80-120 BPM), Highway (110-160 BPM), Traffic (60-100 BPM)."}
+]},
+{n:"F-066: Weather DJ",tt:[
+{t:"Open screen",d:"Drawer -> Weather DJ. Toggle ON. Internet + GPS required!"},
+{t:"Current weather is displayed",d:"Weather info must appear (temperature, weather condition). If no internet: error message."},
+{t:"Matching playlist is generated",d:"A weather-based playlist appears (rain = melancholic, sunshine = cheerful). Test playback."},
+{t:"Location display (city name)",d:"Activate Weather DJ -> below the temperature, the current city name is displayed (not 'Determining location...')."}
+]},
+{n:"F-073: Cabin Calibrator",tt:[
+{t:"Start calibration",d:"Drawer -> Cabin Calibrator. Toggle ON. Grant microphone permission. Tap 'Start Calibration' in a quiet environment."},
+{t:"Frequency response chart appears",d:"After calibration: Frequency response chart (red = measured, green = correction) and score (0-100) must appear."},
+{t:"Apply EQ correction",d:"'Apply EQ' -> the suggested corrections are transferred to the equalizer."}
+]},
+{n:"F-069: Heartbeat Sync DJ",tt:[
+{t:"Manual mode: Slider BPM",d:"Drawer -> Heartbeat Sync DJ. Toggle ON. Segmented button: 'Manual'. Slider: set BPM (60-200). Zone changes (Rest/Light/Moderate/Intense/Maximum)."},
+{t:"Zone buttons directly tappable",d:"Tap zone buttons (Rest, Light, etc.) directly -> slider jumps to the corresponding BPM value. Matching songs are loaded."},
+{t:"Smartwatch mode",d:"Select 'Smartwatch' in the segmented button. If Health Connect + smartwatch available: live BPM is displayed. If not: error message + automatically reverts to 'Manual'."},
+{t:"Songs match the zone",d:"Songs in the list must have BPM/Energy values that match the selected zone."}
+]},
+{n:"F-061: Speed-based Volume",tt:[
+{t:"Toggle ON in settings",d:"Settings -> 'Speed-based Volume' toggle ON. GPS permission required."},
+{t:"Volume increases at higher speed",d:"In the car: The faster you drive, the louder the music becomes automatically (0-30 km/h: 0%, >130: +20%). GPS must be active."}
+]}
+]},
+{cat:"8. Playback Controls (Advanced)",ff:[
+{n:"F-079: Multi-Queue System",tt:[
+{t:"Queue slots visible as tabs",d:"Open queue -> tab bar at the top with queue slots. At least slot 1 must be present."},
+{t:"Create a new queue slot",d:"'+' button -> create a new slot. Enter a name -> empty slot appears as a new tab."},
+{t:"Add songs to new slot",d:"Add songs to the new slot (via Library/Drag). Songs must appear in the queue list."},
+{t:"Switch between slots",d:"Switch between tabs -> queue + current song switch. Playback continues in the new slot."},
+{t:"Rename a slot",d:"Slot menu -> 'Rename' -> new name. Name must change in the tab."},
+{t:"Delete a slot",d:"Slot menu -> 'Delete' -> confirm. Slot and songs disappear."},
+{t:"Undo button works",d:"After an action (e.g. song removed) -> Undo button -> action is reversed."}
+]},
+{n:"F-079b: Detour Mode",tt:[
+{t:"Start a detour",d:"Long-press a song in the queue -> 'Detour'. This song is played immediately."},
+{t:"Automatic return",d:"After the detour song: Queue automatically returns to the previous position and continues from there."}
+]},
+{n:"F-085: A-B Repeat / Loop",tt:[
+{t:"Set A marker",d:"In the player: Find the A-B icon in the toolbar. Play a song -> tap 'A' -> button turns AMBER. Marker is set."},
+{t:"Set B marker",d:"Let the song continue -> tap 'B' -> button turns CYAN. Section is defined."},
+{t:"Loop runs automatically",d:"The section between A and B now loops automatically. Loop icon pulses GREEN."},
+{t:"Speed slider in loop",d:"Gear icon -> bottom sheet: speed slider (0.25x-2.0x) -> loop playback speed changes."},
+{t:"Set loop count",d:"Select loop count: 3, 5, 10, 20, or Infinite. After the set number of repetitions, the loop stops automatically."},
+{t:"Pause between loops",d:"Set pause between loops to 2s -> after each loop, 2 seconds of silence before the next starts."},
+{t:"Practice Mode (speed increases)",d:"Practice Mode ON -> each loop gets slightly faster (e.g. 50% -> 55% -> 60%...)."},
+{t:"Fine-tune markers",d:"Fine-tune +/- 100ms for A and B markers -> marker shifts minimally."},
+{t:"Save loop as bookmark",d:"Bookmark icon -> enter a name -> Save."},
+{t:"Load and play bookmark",d:"Drawer -> 'Loop Bookmarks' -> see all saved loops. Tap one -> loop is loaded + played."},
+{t:"Clear button removes all markers",d:"Clear button -> A and B markers are removed. Normal playback resumes."}
+]},
+{n:"F-086: Waveform Display",tt:[
+{t:"Activate waveform instead of slider",d:"Settings -> 'Waveform Display' toggle ON. In the player: Waveform appears instead of the normal slider."},
+{t:"Tap on waveform = Seek",d:"Tap a position on the waveform -> song jumps to that position."},
+{t:"Drag on waveform = Scrubbing",d:"Drag horizontally over the waveform -> real-time scrubbing."},
+{t:"Long-press = set bookmark",d:"Long-press on the waveform -> dialog to create a bookmark. Name and color selectable."},
+{t:"A-B markers visible on waveform",d:"With A-B loop active: Red A line and blue B line visible + semi-transparent region between them."}
+]},
+{n:"F-087: Song Position Resume",tt:[
+{t:"Position is automatically saved",d:"Settings -> 'Remember Playback Position' ON. Listen to a song for >1 min -> COMPLETELY close the app (swipe from Recents)."},
+{t:"Song starts at saved position",d:"Reopen the app -> start the same song -> starts at the saved position (minus 3s rewind). NOT from the beginning!"},
+{t:"Short songs: No position saved",d:"Listen to a song for only 10s -> position is NOT saved (below the 30s threshold)."},
+{t:"Song to end: Position cleared",d:"Listen to a song until the end -> position is automatically cleared (nothing left to resume)."},
+{t:"Resume indicator in song list",d:"In the library: Songs with a saved position must show a mini progress bar as an indicator."}
+]},
+{n:"Sleep Timer + Fade",tt:[
+{t:"Set Sleep Timer (Drawer)",d:"Drawer -> Sleep Timer. Select 15/30/45/60 min or 'End of Song' -> timer runs (countdown visible)."},
+{t:"Set Sleep Timer (Toolbar)",d:"Player Control Screen -> Toolbar -> tap Sleep Timer icon. Select 15/30/45/60 min or 'End of Song' -> timer runs (countdown visible)."},
+{t:"Music stops after timer",d:"Timer expires -> music stops automatically."},
+{t:"Sleep Fade works",d:"Drawer -> Sleep Fade. Set slider to 30 min. Music gradually gets quieter over the set time until silence."}
+]},
+{n:"F-059: Queue Presets",tt:[
+{t:"Save queue as preset",d:"In the queue: 'Save' -> enter a name -> preset is saved."},
+{t:"Load preset",d:"Drawer -> Queue Presets. Tap a saved preset -> queue is loaded with the preset songs."},
+{t:"Rename and delete preset",d:"Long-press a preset -> Rename/Delete. Functions must work correctly."}
+]}
+]},
+{cat:"9. Context & Automation",ff:[
+{n:"F-091: Context Auto-Switch",tt:[
+{t:"Create templates",d:"Drawer -> Context Auto-Switch. 'Create Templates' -> 4 default rules appear (Morning Energy, After-Work Chill, Weekend Vibes, Quiet Night)."},
+{t:"Activate rule via toggle",d:"Activate a rule (toggle ON). When the conditions are met, the action should be triggered."},
+{t:"Create a new rule",d:"'+' button -> name -> conditions (time of day, day of week, BT device, etc.) -> action (Queue/Playlist) -> Save."},
+{t:"Context monitor shows signals",d:"Info icon -> Context Monitor. Current signals (time, BT, speed, etc.) must be displayed in real time."},
+{t:"'Test Rules' works",d:"'Test Rules' -> shows which rule would currently apply (simulation without actual switching)."},
+{t:"GPS Speed condition",d:"Create a rule with condition 'Speed > X km/h'. Drive at > X km/h -> rule triggers. Come to a stop below X again -> rule deactivates."},
+{t:"Activity condition (Walking/Driving)",d:"Rule with condition 'Activity = Walking' or 'Activity = Driving'. Context switches accordingly when walking/driving (Activity Recognition)."},
+{t:"Battery condition",d:"Rule 'Battery < 20%' -> rule triggers at low battery (e.g. low-power playlist)."},
+{t:"Weather condition",d:"Rule 'Weather = Rain' -> rule triggers when current weather is rain (Open-Meteo)."},
+{t:"Context Monitor live update",d:"Keep monitor open -> values update in real time (speed visibly changing, BT connecting, etc.)."},
+{t:"Song repetition prevented",d:"Rule triggers -> plays song A. Condition met again (e.g. fast driving again) -> does NOT restart song A (no 'loop' bug)."},
+{t:"Auto-Switch in car reacts to speed changes",d:"With active car connection: Speed > 80 km/h -> Auto-Drive-DJ rule triggers. Speed < 30 km/h -> city/traffic rule."}
+]},
+{n:"F-060: Shake to Shuffle",tt:[
+{t:"Toggle ON in settings",d:"Settings -> 'Shake to Shuffle' ON. Music must be playing."},
+{t:"Shaking shuffles queue",d:"Shake the phone 2-3 times vigorously -> toast 'Queue shuffled' appears. Song order has changed."}
+]},
+{n:"F-055: Sound Souvenir",tt:[
+{t:"Open screen + activate",d:"Drawer -> Sound Souvenir. Toggle ON. Grant GPS permission."},
+{t:"Memories are saved automatically",d:"Listen to music at different locations -> memories are saved automatically (song + location + time)."},
+{t:"Locations tab shows saved memories",d:"Tab 'Locations' -> saved memories visible in a list with song name, location, and date."}
+]},
+{n:"F-048: Geo Music",tt:[
+{t:"Create a location-based rule",d:"Drawer -> Geo Music. GPS permission required. New rule: select location + radius + link playlist/queue -> Save."},
+{t:"Music starts automatically at location",d:"When you arrive at the linked location -> the linked music should start automatically."}
+]}
+]},
+{cat:"10. Social & Party",ff:[
+{n:"F-093: Local Party Mode (Host)",tt:[
+{t:"Start a party",d:"Drawer -> Party Mode. Optionally enter name + PIN. 'Start Party' -> QR code and URL (e.g. http://192.168.1.5:8080) appear. PREREQUISITE: Phone must be connected to a WiFi network!"},
+{t:"QR code is displayed",d:"A scannable QR code must be visible. URL shown as text below it."},
+{t:"Host dashboard: Queue tab",d:"'Queue' tab on host: Requested songs visible. Move-to-Top and Remove buttons work."},
+{t:"Host dashboard: Guests tab",d:"'Guests' tab: Connected guests with nicknames. Block/Unblock works."},
+{t:"Host dashboard: Statistics tab",d:"'Statistics' tab: Guest count and songs played are tracked."},
+{t:"End party",d:"'End Party' -> server stops. Guests receive disconnect."},
+{t:"WiFi mode selection",d:"Party Settings -> 2 options: 'Current WiFi' or 'WiFi Hotspot'. Radio buttons to select."},
+{t:"WiFi password + QR",d:"Current WiFi -> enter password -> password visibility toggle (eye icon). QR code with WiFi login appears."},
+{t:"Hotspot mode setup",d:"Select WiFi Hotspot -> enter SSID + password -> button opens Android Hotspot settings."},
+{t:"Two QR codes",d:"Start party with WiFi credentials -> 2 QR codes: Left WiFi login, right party URL. Both scannable."},
+{t:"Party name on website",d:"Enter party name -> browser login page and header show the party name (not 'AutoPlayer Party')."},
+{t:"Browser genre browse",d:"Browser -> Browse -> Genres tab -> genre chips clickable -> songs filtered by genre."},
+{t:"Browser alphabet navigation",d:"Browser -> Browse -> Songs -> A-Z letter bar. Available letters highlighted and clickable."},
+{t:"Browser Now Playing timeline",d:"Song playing -> browser shows title + artist + progress bar at the top. Updates every second."},
+{t:"Queue Play/Pause toggle",d:"Tap a queued song -> Play icon becomes Pause icon. Tap again -> Pause becomes Play. Song stays in queue."},
+{t:"Queue auto-play next",d:"Song ends -> removed from queue -> next song starts automatically."},
+{t:"Queue song remove stops playback",d:"X button on playing song -> music stops + song removed -> next song starts."},
+{t:"Party persists during navigation",d:"Start party -> leave screen (Drawer, Back) -> return -> party still running, QR + guests retained."},
+{t:"Hotspot IP correct",d:"Hotspot mode -> start party -> displayed IP is the hotspot IP (not home WiFi IP)."}
+]},
+{n:"F-093b: Local Party Mode (Guest)",tt:[
+{t:"Scan QR or enter URL",d:"Second device on the SAME WiFi: Scan QR OR enter URL in browser -> guest interface opens."},
+{t:"Enter nickname + Join",d:"Enter nickname -> 'Join'. Connection to the host is established."},
+{t:"Request songs",d:"Search + request songs -> song appears in the party queue on the host."},
+{t:"Voting works",d:"Vote on a song in the queue (thumbs up). Higher-voted songs must move up."}
+]},
+{n:"F-051: Passenger Mode (v3.10.1)",tt:[
+{t:"Connect host + passenger",d:"Driver's phone: Drawer -> Passenger Mode -> 'Host'. A 4-digit PIN appears. Passenger's phone: Drawer -> Passenger Mode -> 'Passenger'. Tap the host device in the list -> connection established."},
+{t:"Songs tab: Browse host library",d:"After connecting: Songs tab is active. All songs from the host are displayed (title + artist). Search field at the top filters live while typing."},
+{t:"Start a song from passenger",d:"Passenger taps a song in the Songs tab -> song plays on the driver's phone. With Android Auto: song plays through car speakers."},
+{t:"Queue tab: View the queue",d:"Tap the Queue tab -> current queue is automatically loaded from the host and displayed. Current song is highlighted. Tapping a song jumps to that song."},
+{t:"Add to queue (FIFO + Haptic)",d:"In the Songs tab: Tap the plus icon next to a song -> (1) device briefly vibrates as confirmation (haptic feedback). (2) Song is added to the END of the queue (FIFO — not as next!). (3) Queue is automatically updated."},
+{t:"Check queue order (FIFO)",d:"Add 3 songs to the queue one after another (A, B, C). Open Queue tab -> order must be A, B, C (in the order added). NOT C, B, A."},
+{t:"Queue tab auto-refresh after add",d:"In Songs tab: Add a song to the queue. Immediately switch to Queue tab -> the just-added song must already be visible (auto-refresh after 400ms)."},
+{t:"Features tab: Start Drive Mode DJ",d:"Features tab -> Drive Mode DJ -> 'Start' -> GPS-based music adaptation is activated on the driver's phone. Status shows 'Active'."},
+{t:"Features tab: Start Weather DJ",d:"Features tab -> Weather DJ -> 'Start' -> driver's phone generates a weather-based playlist (internet + GPS required on driver's phone)."},
+{t:"Features tab: Select mood",d:"Features tab -> select mood (e.g. 'Energetic') -> driver's phone plays matching songs."},
+{t:"Playback controls work",d:"Compact Now Playing bar at the top: Play/Pause, Skip Next/Previous, Shuffle toggle, seek bar, and favorites heart must all work."},
+{t:"Persistent connection: Host navigates away",d:"Host leaves the Passenger Mode screen (e.g. opens Library). Passenger selects a song -> MUST still play on the host. Connection must NOT be dropped."},
+{t:"Persistent connection: App minimized",d:"Host minimizes the app (Home button). Passenger controls music -> MUST still work."},
+{t:"Disconnect only via explicit button",d:"Tap the 'Disconnect' button -> connection is terminated. The back button (arrow top left) only LEAVES the screen, does NOT disconnect."}
+]}
+]},
+{cat:"11. Statistics & Gamification",ff:[
+{n:"F-077: Music Wrapped Dashboard",tt:[
+{t:"Open Dashboard",d:"Drawer -> Music Wrapped. The Dashboard screen with a tab selector must appear."},
+{t:"Tab Selector: Week/Month/Year/All Time",d:"Switch through tabs: Week, Month, Year, All Time. Charts and statistics must change per time period."},
+{t:"Top Songs/Artists/Genres visible",d:"Charts show: Top Songs, Top Artists, Top Genres, Total Listening Time. At minimum after a few songs have been played."},
+{t:"Listening time calculated correctly",d:"Total listening time must be plausible (approximately matching the actual time listened)."}
+]},
+{n:"F-077b: Music Wrapped Slides",tt:[
+{t:"Start Wrapped Slides",d:"'Wrapped Slides' button -> 15 animated full-screen slides appear. Swipe horizontally to browse."},
+{t:"Slides have animations",d:"Each slide must have an individual animation (CountUp, Reveal, FlyIn, Flip, Pulse, Glow). No static image."},
+{t:"Share button shares slide as PNG",d:"Share button on a slide -> share dialog opens. Slide is shared as a PNG image (1080x1920)."}
+]},
+{n:"F-081: Achievements & Gamification",tt:[
+{t:"Open Achievement screen",d:"Drawer -> Achievements. Screen with level, XP bar, and achievements must appear."},
+{t:"Level + XP bar correct",d:"At the top: level display (e.g. 'Level 5 - Enthusiast') + XP progress bar. XP must increase as songs are played."},
+{t:"Streak flames in TopAppBar",d:"In the TopAppBar: streak flame icon with the current streak day count."},
+{t:"4 stats cards visible",d:"4 mini cards: Streak (days), Badges (unlocked), Listening Time (hours), Songs (count)."},
+{t:"GitHub Heatmap (52x7 grid)",d:"Canvas-based heatmap: 52 weeks x 7 days grid. Darker cells = more listening on that day."},
+{t:"Achievement tabs: All/Unlocked/Locked",d:"Switch through 3 tabs. Each achievement shows: icon, name, progress bar, Bronze/Silver/Gold tier."},
+{t:"Achievement progress correct",d:"Check a known achievement (e.g. 'songs_played'): progress bar must match the actual number of songs played."}
+]}
+]},
+{cat:"11b. Tamagotchi & Mascot",ff:[
+{n:"F-111: Tamagotchi Mascot",tt:[
+{t:"Activate pet",d:"Drawer -> Pet Settings -> toggle ON. Pet must appear on screen."},
+{t:"Choose pet type",d:"5 animals available: Octopus, Cat, Rabbit, Fox, Squirrel. Tap to switch."},
+{t:"Rename pet",d:"Rename button -> enter name -> save. New name is displayed."},
+{t:"Pet size",d:"Choose Small/Medium/Large -> pet size changes visibly."},
+{t:"Transparency slider",d:"Slider 30%-100% -> pet becomes more transparent or opaque."},
+{t:"Music feeds pet",d:"Play a song -> pet energy increases. Without music -> energy decreases slowly."},
+{t:"Level + XP system",d:"After sufficient listening time -> pet levels up. XP progress is visible."},
+{t:"Beat reaction",d:"Toggle ON -> pet moves to the rhythm of the music (tentacles, ears, tail)."},
+{t:"Speech bubbles",d:"Toggle ON -> pet displays random text bubbles (mood, BPM comments)."},
+{t:"TTS read-aloud",d:"TTS toggle ON -> speech bubbles are read aloud."},
+{t:"Double-tap trick",d:"Double-tap the pet -> 360-degree spin + sound effect."},
+{t:"Multi-pet mode",d:"Multi-pet toggle ON -> all 5 animals appear on screen simultaneously."},
+{t:"Accent color",d:"Choose a color -> pet accents change (7 neon colors)."},
+{t:"Night mode",d:"Between 10 PM and 6 AM -> pet sleeps (visually recognizable)."},
+{t:"Streak system",d:"Listen to music daily -> streak counter increases. Interrupted -> resets."}
+]},
+{n:"F-111: Tamagotchi Level 1000",tt:[
+{t:"New phases reachable",d:"Pet progresses through 10 phases: Baby (1-10), Child (11-30), Teen (31-60), Adult (61-100), Star (101-200), Master (201-350), Legend (351-500), Mythic (501-700), Divine (701-900), Eternal (901-1000)."},
+{t:"XP doubled per phase",d:"XP per song doubles with each phase: 10->20->40->80->160->320->640->1280->2560->5120. Correctly visible in pet profile."},
+{t:"Trick animations unlocked per phase",d:"Each new phase unlocks an additional trick (10 tricks per pet). A trick is only displayed from its corresponding phase onward."},
+{t:"Cumulative trick pool",d:"All previously unlocked tricks remain active. Double-tap -> random trick from the ENTIRE unlocked pool (not just the newest)."},
+{t:"Phase label in PetSettings",d:"Pet Settings -> phase label shows current phase + matching color (e.g. 'Master' in gold), correct for the current level."}
+]},
+{n:"F-111: Tamagotchi Grammar",tt:[
+{t:"Cat hunt texts: correct articles",d:"Cat (Melo) speech bubbles during hunting: 'Die Maus' (not 'Das Maus'), 'Der Vogel' (not 'Das Vogel'). Correct German articles."},
+{t:"Fox hunt texts: correct articles",d:"Fox (Foxy) speech bubbles during hunting: 'Der Vogel' (not 'Die Vogel'). Correct possessive pronouns. Fox uses FoxSpeechEngine (not CatSpeechEngine)."}
+]},
+{n:"F-113: Tamagotchi v4.1.0 — Octo Hunt + Awareness + Text Variety",tt:[
+{t:"Octo Hunt: fish spawn",d:"Octopus pet active -> fish appears randomly within the spawn interval (60-120 s) on screen, size 90x45 pixels (fish redesign)."},
+{t:"Octo Hunt: user tentacle interaction",d:"Swipe from octopus toward fish -> tentacle follows the fish (user-controlled). Tentacle touches fish -> fish is caught."},
+{t:"Octo Hunt: no second spawn",d:"While a fish is still in play, NO second fish should appear simultaneously (double-spawn bug fixed)."},
+{t:"Ambient Awareness: AppOpenedAfterAbsence",d:"Reopen app after several hours -> pet comments on the absence ('Where have you been for so long?')."},
+{t:"Ambient Awareness: time-of-day reaction",d:"Pet comments on the current time differently (morning/midday/evening/night -> 4 different text pools)."},
+{t:"Ambient Awareness: weather reaction",d:"Pet comments on the weather (rain/sun/snow) when Weather DJ is active."},
+{t:"Text variety: multiple sentences per trigger",d:"Same trigger 5 times in a row -> at least 3 different sentences (no repeat hammer)."},
+{t:"Text system DE+EN complete",d:"Language set to DE -> all pet sentences in German. Language EN -> all in English. No language mixing."},
+{t:"Text system: all 26 languages",d:"5 pets x 26 languages = 130 complete pools. Spot-check per pet (e.g. JA/RU/AR/TR)."},
+{t:"PetAwarenessEngine: smart cast OK",d:"Awareness triggers fire without crashing. In particular, AppOpenedAfterAbsence.hoursAway is cleanly cast as Float."}
+]}
+]},
+{cat:"12. Tools",ff:[
+{n:"F-045: Tag Editor (incl. Genre)",tt:[
+{t:"Open Tag Editor",d:"Long-press on song -> 'Edit Tags'. Fields must be displayed: Title, Artist, Album, Genre, Year, Track No."},
+{t:"Genre field with auto-suggest",d:"Type in the genre field -> dropdown with existing genres from the Library appears (max. 5 suggestions). Tapping a suggestion fills in the value."},
+{t:"Save genre and see it immediately",d:"Enter genre (e.g. 'Reggae') -> save. The song must appear immediately under 'Reggae' in Genre Browse."},
+{t:"Change tags with write permission",d:"Change title -> save. If a system dialog appears: grant permission. Song must appear with the new title in the Library."}
+]},
+{n:"F-106: Genre Browse",tt:[
+{t:"Open genre overview",d:"Drawer -> Genre Browse. Genre tiles with name + song count must appear, sorted by count descending."},
+{t:"Genre drilldown song list",d:"Tap a genre tile (e.g. 'Rock') -> song list with title, artist, duration. Back button returns to the genre grid."},
+{t:"Tap song to start playback",d:"Tap a song in the genre list -> Player starts that song with all genre songs as the Queue."},
+{t:"Play all / Shuffle / Queue",d:"'Play All' starts Queue. 'Shuffle' plays shuffled. Queue icon adds to the existing Queue."},
+{t:"Case-insensitive grouping",d:"Songs with 'Rock', 'rock', 'ROCK' must all appear under one genre tile."}
+]},
+{n:"F-106: Genres Library Tab",tt:[
+{t:"Genres tab visible in Library",d:"Library -> scroll the ScrollableTabRow: the 'Genres' tab must be visible."},
+{t:"Genre grid scrollable",d:"Tap Genres tab -> all genre tiles visible and vertically scrollable."},
+{t:"Genre tile opens drilldown",d:"Tap genre tile -> Genre Browse with song list. Back -> return to Library."},
+{t:"Tab order configurable",d:"Settings -> Tab Order: 'Genres' must be movable."}
+]},
+{n:"F-106: Batch Genre Editor",tt:[
+{t:"Multi-select + genre button",d:"Library -> long-press -> multi-select. Select multiple songs. Genre tag icon visible in action bar."},
+{t:"Batch genre dialog",d:"Tap genre icon -> dialog 'Set genre for N songs'. Text field + quick chips with common genres."},
+{t:"Save batch genre",d:"Enter/select genre via quick chip -> save. Toast confirmation. Genre Browse shows updated data."}
+]},
+{n:"F-047: Track Cutter",tt:[
+{t:"Load song and select range",d:"Drawer -> Track Cutter. Choose song -> waveform or range slider appears. Set start and end markers."},
+{t:"Cut creates new file",d:"Tap 'Cut' -> new trimmed file is created and displayed in the Library."}
+]},
+{n:"F-048: Set Ringtone",tt:[
+{t:"Set song as ringtone",d:"Long-press on song -> 'Set as Ringtone'. Confirm WRITE_SETTINGS permission. System ringtone is set to this song."}
+]},
+{n:"F-042: Tag Rescue",tt:[
+{t:"Identify missing tags",d:"Drawer -> Tag Rescue. Songs with missing or incorrect tags are identified and listed."},
+{t:"Repair tags (permission)",d:"Drawer -> Tag Rescue. Song with broken tags -> tap checkmark -> Android system dialog 'Allow AutoPlayer to modify?' -> Allow -> tag is written. Leave screen + return -> song no longer listed."},
+{t:"Batch fix (fix all)",d:"'Fix all from filename' button -> ONE permission dialog for all songs -> Allow -> all tags written."}
+]},
+{n:"F-028: Song Details Popup",tt:[
+{t:"Open details view",d:"In the Player or via context menu: open song details. Bitrate, format, size, path, duration, and tags must be displayed."}
+]}
+]},
+{cat:"13. Voice Control & TTS",ff:[
+{n:"F-069: Voice Commands (Global Microphone)",tt:[
+{t:"Microphone button visible on every screen",d:"On EVERY screen: a floating microphone button (FAB) must be visible at the bottom right. In Library, Player, Settings, Drawer screens, everywhere."},
+{t:"Voice: 'Play' starts music",d:"Tap microphone -> say 'Play' -> music starts."},
+{t:"Voice: 'Pause' stops music",d:"Microphone -> 'Pause' -> music pauses."},
+{t:"Voice: 'Next Song' / 'Next'",d:"Microphone -> 'Next Song' -> skip to the next song."},
+{t:"Voice: 'Volume 50 percent'",d:"Microphone -> 'Volume 50 percent' -> system volume is set to 50%."},
+{t:"Voice: 'Shuffle' mixes Queue",d:"Microphone -> 'Shuffle' -> Queue is shuffled."},
+{t:"Voice: song search by name",d:"Microphone -> 'Play [song title]' -> song is found via fuzzy matching and played."},
+{t:"Voice: 'Open Equalizer'",d:"Microphone -> 'Open Equalizer' -> EQ screen opens."},
+{t:"Voice: 'Show Favorites'",d:"Microphone -> 'Show Favorites' -> Favorites tab opens."},
+{t:"Voice: 'What's playing?'",d:"Microphone -> 'What's playing?' -> TTS responds with song title and artist."},
+{t:"Voice: play genre",d:"Microphone -> 'Play Reggae' -> all Reggae songs start (shuffled). TTS feedback with count."},
+{t:"Voice: genre with prefix",d:"Microphone -> 'Genre Rock' -> all Rock songs start. Also works in Android Auto."},
+{t:"Voice: unknown genre fallback",d:"Microphone -> 'Play Blablabla' (no genre) -> fallback to normal song search."},
+{t:"Voice popup ready immediately",d:"Tap microphone -> popup opens with mic icon + 'Listening...'. No stale text, no need to tap twice."}
+]},
+{n:"F-082: Voice Commands Reference",tt:[
+{t:"Open reference screen",d:"Drawer -> 'Voice Commands'. All commands listed in 12 categories."},
+{t:"Filter tabs: All/Auto/Phone",d:"Tabs: All (45 commands), Android Auto (30), Phone only (15). Switching filters the list correctly."},
+{t:"Commands in current language",d:"Country flag shows current language. Commands must be displayed in the configured system language (not only DE/EN)."}
+]},
+{n:"F-083: TTS Read-Aloud",tt:[
+{t:"Read user manual aloud",d:"Drawer -> About -> User Manual -> expand feature -> TTS button (speaker icon) -> text is read aloud in the current language."},
+{t:"Read changelog aloud",d:"Drawer -> About -> Changelog -> expand version -> TTS button -> version is read aloud."},
+{t:"Read privacy policy aloud",d:"Drawer -> About -> Privacy Policy -> TTS button -> privacy policy text is read aloud."},
+{t:"Stop button halts read-aloud",d:"While TTS is running: tap stop button -> read-aloud stops immediately."},
+{t:"Voice: 'Read Privacy Policy'",d:"Microphone -> 'Read Privacy Policy' -> privacy policy text is read via TTS. Do NOT play a song with the word 'privacy' in its title!"}
+]}
+]},
+{cat:"14. Settings & Personalization",ff:[
+{n:"F-097: Theme Builder",tt:[
+{t:"Open Theme Gallery",d:"Drawer -> Theme Builder. Gallery with preset themes and a Material You toggle must appear."},
+{t:"Material You toggle",d:"Material You ON -> app colors adapt to the wallpaper. OFF -> default colors."},
+{t:"Create new custom theme",d:"'+' FAB -> enter name -> editor opens."},
+{t:"6 color pickers work",d:"In the editor: 6 color pickers (Primary, Secondary, Background, Surface, Text, Accent). Each color choice must be immediately visible in the live preview."},
+{t:"Font selection (8 options)",d:"Font selector: try all 8 different fonts. Each must be visible in the preview."},
+{t:"Corner radius slider",d:"Move corner radius slider -> rounding of all UI elements changes in the preview."},
+{t:"Save and apply theme",d:"Save -> theme appears in Gallery. Tap -> app instantly switches all colors to the custom theme."},
+{t:"Export/import theme as JSON",d:"Long-press on custom theme -> 'Export' -> JSON is created. Choose WhatsApp/Telegram -> file is sent as an attachment. 'Import' -> select JSON -> theme is loaded."},
+{t:"Extract from image",d:"In the editor: 'Extract from Image' -> photo picker opens. Choose any image (camera, screenshot, WhatsApp etc.) -> 6 colors are extracted automatically."},
+{t:"Extract from wallpaper",d:"In the editor: 'Extract from Wallpaper' -> colors of the current wallpaper are loaded into the 6 color fields. No error on Android 12+."},
+{t:"Player background: Album Art",d:"In the editor: set Player background to 'Album Art Blur'. Save + apply theme. Open Player -> background shows a dynamic color gradient from the current album cover. Change song -> colors change with an 800 ms transition."},
+{t:"Player background: AMOLED Black",d:"Set Player background to 'AMOLED Black'. Apply theme. Open Player -> background is pure black (#000000)."},
+{t:"Player background: Time-adaptive",d:"Set Player background to 'Time-adaptive'. Open Player -> background colors adapt to the time of day (warm in the morning, cool during the day, amber in the evening, black at night)."},
+{t:"Player background: Solid color",d:"Set Player background to 'Solid Color' -> Player background is the theme background color."},
+{t:"Player background: Gradient",d:"Set Player background to 'Gradient' -> Player shows a gradient from the theme gradient colors."}
+]},
+{n:"F-044: Language Selection (26 languages)",tt:[
+{t:"Open language setting",d:"Settings -> Language (at the bottom). 26 languages with flag emojis must be visible."},
+{t:"Languages labeled in their own script",d:"Each language must be labeled in ITS OWN language (e.g. Japanese characters, not 'Japanese')."},
+{t:"Switch language: all texts change",d:"Switch to Japanese -> ALL texts must switch to Japanese (Drawer, Settings, Player, etc.)."},
+{t:"Switch back to German: everything correct",d:"Switch back to German -> everything must be in German again, nothing remaining in English."}
+]},
+{n:"F-084: Permission Management",tt:[
+{t:"Open permissions screen",d:"Settings -> Permissions. Toggles for various permissions must be visible."},
+{t:"Microphone toggle",d:"Microphone toggle -> opens Android permission dialog or system settings. Status (Granted/Not granted) correct."},
+{t:"Location toggle",d:"Location toggle -> opens permission dialog. Status correct."},
+{t:"Bluetooth toggle",d:"Bluetooth toggle -> opens permission dialog. Status correct."},
+{t:"Green dot explanation visible",d:"Info card explains the green dot (Android 12+ privacy indicator). Must be visible and understandable."}
+]},
+{n:"F-094: Hearing Protection",tt:[
+{t:"Open dashboard",d:"Drawer -> Hearing Protection. Animated dB circle must appear."},
+{t:"dB circle shows current volume",d:"dB circle shows estimated decibels: Green = safe (<70 dB), Yellow = caution (70-85 dB), Red = loud (>85 dB)."},
+{t:"WHO budget bar visible",d:"WHO budget progress bar: shows cumulative daily dose. Must fill up while listening to music."},
+{t:"Weekly chart with 7 days",d:"Weekly stats: 7 bars for the last 7 days. Height = listening time on that day."},
+{t:"Mini indicator in Player",d:"Settings -> 'Show dB in Player' ON -> In the Player: small dB indicator visible. Tap it -> opens dashboard."},
+{t:"Hearing protection toggle in Settings",d:"Settings -> 'Enable Hearing Protection' toggle. Switch ON/OFF."}
+]},
+{n:"F-095: Haptic Feedback / Bass Vibration",tt:[
+{t:"Open screen",d:"Drawer -> Bass Vibration. Device tier at the top (Premium/Standard/Basic) must be displayed."},
+{t:"4 test buttons vibrate differently",d:"Tap 4 test buttons: Light Pulse, Bass Drop, BPM 120, Wobble. Each must produce a different vibration pattern."},
+{t:"Choose intensity mode",d:"Set mode to 'Medium' -> vibration during music playback must be perceptible."},
+{t:"BPM sync toggle",d:"BPM Sync ON -> vibration synchronized to the beat. OFF -> vibration only on bass."},
+{t:"Player: vibration icon toggle",d:"In the Player: tap vibration icon -> quick toggle ON/OFF. Status color changes."},
+{t:"Settings toggle present",d:"Settings -> Haptic Feedback toggle must be present and switch ON/OFF."},
+{t:"Haptic on buttons",d:"Tap any button -> brief vibration perceptible (CLOCK_TICK)."},
+{t:"Haptic on toggles",d:"Switch a toggle -> vibration perceptible."},
+{t:"Haptic on Drawer items",d:"Open Drawer -> tap a menu item -> vibration perceptible."},
+{t:"Haptic on drag gestures",d:"Drag a Queue song to reorder -> vibration on drag start (LONG_PRESS)."},
+{t:"No haptic on sliders",d:"Drag a slider -> NO vibration (intentional; would otherwise vibrate continuously)."}
+]},
+{n:"F-096: Gesture Control",tt:[
+{t:"Open screen",d:"Drawer -> Gesture Control. Master toggle and gesture list must be visible."},
+{t:"Master toggle ON activates gestures",d:"Master toggle ON -> all enabled gestures are monitored."},
+{t:"Flip to Mute works",d:"Turn phone face down -> music is muted. Turn back -> sound returns."},
+{t:"Double tap back = Play/Pause",d:"Tap twice on the back of the phone -> Play/Pause toggle. (Requires accelerometer.)"},
+{t:"Shake = Shuffle",d:"Shake the phone -> Queue is shuffled (like Shake to Shuffle)."},
+{t:"Test area shows live sensor data",d:"Open test area -> live accelerometer/gyroscope/proximity raw data must change in real time."},
+{t:"Gesture Guide (9 pages)",d:"Open Gesture Guide -> 9 pages with explanations and tips for each gesture. Swipe horizontally."},
+{t:"Player: TouchApp icon toggle",d:"In the Player: tap TouchApp icon -> quickly toggle gestures ON/OFF."},
+{t:"Settings toggle present",d:"Settings -> Gesture Control toggle must be present."}
+]},
+{n:"F-098: Audio Offload / Battery Mode",tt:[
+{t:"Open screen",d:"Drawer -> Audio Engine / Battery Mode. Mode selector must be visible."},
+{t:"Activate battery saver mode",d:"Select 'Battery Saver' mode -> warning ('EQ + effects will be disabled') -> confirm. Effects are disabled."},
+{t:"ECO icon visible in Player",d:"In battery mode: Player shows green ECO icon."},
+{t:"Return to quality mode",d:"Select 'Quality' mode -> all effects (EQ, Concert, etc.) are available again."},
+{t:"Feature compatibility matrix visible",d:"In the screen: matrix shows which features work in which mode (Quality vs. Battery)."},
+{t:"Settings toggle present",d:"Settings -> Audio Offload toggle must be present."}
+]},
+{n:"F-099: Crash Reports (ACRA)",tt:[
+{t:"Crash report toggle in Settings",d:"Settings -> 'Crash Reports' toggle must be present. Default: ON. Toggle OFF -> no reports on crash."},
+{t:"Crash dialog appears on crash",d:"Force the app to crash (or simulate). A user-friendly dialog must appear with an optional comment field and 'Send'/'Don't Send' buttons."},
+{t:"Crash dialog in current language",d:"Switch language (e.g. Japanese) -> crash dialog texts must appear in the selected language."},
+{t:"No personal data in report",d:"Report contains only: stack trace, device model, Android version, app version, user comment. NO music files, listening history, or personal data."}
+]},
+{n:"F-035: Dark/Light Mode",tt:[
+{t:"Auto mode based on ambient light",d:"Settings -> Appearance -> 'Auto'. In bright light: Light Mode. In darkness: Dark Mode. Switches automatically."},
+{t:"Manual: switch Dark/Light",d:"Manually select 'Dark' -> dark theme. Select 'Light' -> light theme. Instant switch."},
+{t:"Dark theme as default",d:"Fresh install (or clear data) -> theme is automatically 'Dark' (not the system default)."}
+]},
+{n:"F-041: Text/Icon Size",tt:[
+{t:"Scale size (80%-140%)",d:"Settings -> Text/Icon Size slider. At 140% -> everything becomes larger. At 80% -> everything becomes smaller. Change visible immediately."}
+]},
+{n:"F-040: Color Themes (12 presets)",tt:[
+{t:"Switch color theme",d:"Settings -> Color Theme. 12 color themes with live preview. Tap theme -> app colors switch instantly."}
+]}
+]},
+{cat:"15. Backup & Documents",ff:[
+{n:"F-065: Manual Backup",tt:[
+{t:"Create backup",d:"Settings -> Backup -> 'Create Backup' -> choose storage location -> JSON is exported. Success message."},
+{t:"Import backup",d:"Settings -> Backup -> 'Import Backup' -> choose JSON -> all data is restored (favorites, playlists, settings, etc.)."}
+]},
+{n:"F-078: Automatic Backup",tt:[
+{t:"Auto-backup toggle ON",d:"Settings -> Auto-Backup toggle ON -> choose folder. Toggle must be displayed as active."},
+{t:"Automatic backup on app close",d:"Close the app -> backup is created automatically in the chosen folder. Check backup file with timestamp."},
+{t:"Backup rotation (max 5)",d:"Close the app multiple times -> at most 5 backup files are kept. Oldest is deleted automatically."},
+{t:"'Restore latest' works",d:"'Restore Latest' -> the most recently created backup is imported."}
+]},
+{n:"Backup v18: Complete Data Backup",tt:[
+{t:"Create manual backup + restore",d:"Create backup -> clear app data -> import backup -> all data present (settings, DB, themes, pets)."},
+{t:"No duplicates on repeated restore",d:"Import backup twice in a row -> playlists, themes, presets are deduplicated by name. No duplicate entries."},
+{t:"Achievements retain higher value",d:"Local achievement at 50% -> import backup with 80% -> 80% remains. Reverse: local 80% + backup 50% -> 80% remains (MAX value)."},
+{t:"Pet data retains higher level",d:"Local pet level 15 -> import backup with level 20 -> level 20 remains. MAX for level/XP/streaks."},
+{t:"Auto-backup works",d:"Auto-Backup toggle ON -> close app -> backup is created automatically with new v18 data."},
+{t:"Visualizer themes in backup",d:"Create custom Visualizer theme -> backup -> restore -> theme is present and applicable."},
+{t:"PetTypeStats in backup",d:"PetTypeStats (statistics per pet type) must be included in the backup and correctly restored after restore."},
+{t:"Genre overrides in backup",d:"Genre overrides (manual genre assignments) must be included in the backup and present after restore."}
+]},
+{n:"Changelog",tt:[
+{t:"Open Changelog",d:"Drawer -> About -> Changelog. Dropdown cards per version (newest first) must appear."},
+{t:"Expand version to see changes",d:"Tap a version (expand) -> changes for that version are visible."},
+{t:"TTS button per version",d:"TTS button on a version -> only THAT version is read aloud (not all)."},
+{t:"Changelog in current language",d:"With German selected: German changelog texts, not English."}
+]},
+{n:"User Manual",tt:[
+{t:"Open manual",d:"Drawer -> About -> User Manual. Search field at the top + categories (Basics, Player, Audio, etc.) must appear."},
+{t:"Search field filters features",d:"Enter a search term -> only matching features are displayed."},
+{t:"Expand feature to see 7 sections",d:"Expand a feature -> 7 sections: What is it, Why use it, Steps, Settings, Voice, Works With, Tips."},
+{t:"TTS button reads feature aloud",d:"TTS button on a feature -> feature is read aloud in the current language."}
+]},
+{n:"Privacy Policy + Terms of Use",tt:[
+{t:"Open Privacy Policy",d:"Drawer -> About -> Privacy Policy. Full privacy policy text must be displayed."},
+{t:"Open Terms of Use",d:"Drawer -> About -> Terms of Use. Full text must be displayed."},
+{t:"Texts correct in all 26 languages",d:"Switch language to e.g. Japanese -> Privacy Policy and Terms of Use must appear in Japanese (not German/English)."},
+{t:"Privacy Policy version + date current",d:"Open Privacy Policy -> header shows version 5.0 and date 2026-04-29 (or later)."},
+{t:"Privacy Policy section Health Connect (4.13)",d:"Scroll to section 4.13 'Health Connect / Heart Rate' -> explains opt-in real-time access for Heartbeat Sync DJ."},
+{t:"Privacy Policy library table",d:"Library table contains at least: ACRA, Ktor, Health Connect, JAudioTagger, ExoPlayer, Coil, ZXing."},
+{t:"Privacy Policy permission 5.11 (Health Connect)",d:"Permissions list contains 'health.READ_HEART_RATE' with justification 'Heartbeat Sync DJ'."},
+{t:"German version typo-free",d:"Scroll through Privacy Policy in German -> no obvious typos/transpositions (spot check)."}
+]},
+{n:"F-050: About Screen",tt:[
+{t:"Open About",d:"Drawer -> About. App version, developer info, links (Rate, Share, Feedback) must be visible."},
+{t:"Current version visible",d:"About screen shows versionName 6.1.6 (or higher) + versionCode 91+. Matches the Play Store listing."}
+]},
+{n:"Play Store Compliance + Release Build",tt:[
+{t:"App size release < 100 MB",d:"Release APK after minify+shrink: check app-release.apk size -> < 100 MB. Without ONNX significantly smaller than v6.1.4."},
+{t:"Release build successful (ProGuard)",d:"./gradlew assembleRelease -> BUILD SUCCESSFUL. No errors from ProGuard/R8."},
+{t:"No ONNX crashes",d:"Heartbeat Sync DJ + all audio features start without UnsatisfiedLinkError. ONNX was completely removed (Mood Analysis remains off)."},
+{t:"16 KB page size compatible",d:"App starts on devices with 16 KB page size (Pixel 8+, Android 15+) without crashing."},
+{t:"AAB bundle buildable",d:"./gradlew bundleRelease -> .aab file is generated (Play Store upload format)."}
+]},
+{n:"F-112: Device Transfer (Rewrite)",tt:[
+{t:"Access Transfer",d:"Settings -> Device Transfer (under Danger Zone). Screen shows 'Send' and 'Receive' options."},
+{t:"Start sending",d:"Select 'Send' -> PIN is displayed -> waiting for connection."},
+{t:"Receive + connect",d:"Second device: 'Receive' -> finds source device -> tap -> connection established."},
+{t:"Transfer settings + database",d:"Connect -> settings and Room database are transferred via BYTES payload (Nearby Connections)."},
+{t:"Transfer audio files (TCP 2-phase)",d:"Audio transfer via raw TCP socket: Phase 1 TCP -> app cache (full speed), Phase 2 cache -> MediaStore. Real filenames preserved."},
+{t:"Cancel transfer at 50% + retry",d:"Cancel transfer at ~50% -> start transfer again. Auto-cleanup: stale MediaStore entries + temp files are deleted automatically. No leftover junk."},
+{t:"Display timeout during transfer",d:"During transfer: FLAG_KEEP_SCREEN_ON active on both devices -> display stays on. WakeLock keeps CPU active."},
+{t:"Leave screen during transfer",d:"During transfer: press Back or leave screen -> confirmation dialog appears ('Really cancel transfer?')."},
+{t:"After transfer: songs in Library",d:"Transfer complete -> restart app -> all transferred songs visible in the Library."},
+{t:"After transfer: BPM correct (ID remapping)",d:"After transfer: BPM data is correctly assigned to songs (14 tables automatically remapped to new local song IDs)."},
+{t:"After transfer: playlists populated",d:"After transfer: all playlists contain their songs (not empty). Song IDs correctly remapped."},
+{t:"After transfer: favorites correct",d:"After transfer: favorite markings are on the correct songs."},
+{t:"After transfer: achievements + pet data",d:"After transfer: achievements with progress and pet data (level, XP, streaks) correctly carried over."},
+{t:"After transfer: Theme Builder templates",d:"After transfer: created Theme Builder templates are present and applicable."},
+{t:"After transfer: Visualizer themes",d:"After transfer: Visualizer themes (custom themes) are present and applicable."},
+{t:"Transfer completion notification",d:"Transfer done -> notification with sound + vibration appears, also visible on the lock screen."}
+]}
+]},
+{cat:"16. Headphones & Bluetooth",ff:[
+{n:"F-037: Headphone Pause",tt:[
+{t:"Music pauses on headphone disconnect",d:"Listen to music via headphones -> unplug headphones (cable) or disconnect BT -> music pauses IMMEDIATELY. Safety feature!"}
+]},
+{n:"F-057: Bluetooth Auto-Resume",tt:[
+{t:"Auto-resume on BT connection",d:"Settings -> 'Bluetooth Auto-Resume' ON. Pause music. Turn BT headphones off then on -> music starts automatically when BT connects."}
+]},
+{n:"F-062: Home Screen Widget",tt:[
+{t:"Add widget",d:"Long-press on home screen -> Widgets -> AutoPlayer Widget. Widget must show album art, title/artist, and Play/Pause/Next/Previous buttons."},
+{t:"Widget buttons work",d:"Play/Pause in widget -> music starts/stops. Next/Previous -> song changes. Cover updates."}
+]},
+{n:"F-063: App Shortcuts",tt:[
+{t:"Shortcuts appear on long-press",d:"Long-press app icon -> 3 shortcuts: Last Played, Shuffle All, Favorites. Tap -> corresponding action is executed."}
+]}
+]},
+{cat:"17. Loop Mixer & Synth Studio",ff:[
+{n:"Loop Mixer: Core Framework (Tier 1 + 2)",tt:[
+{t:"Open Loop Mixer",d:"Drawer -> Loop Mixer. Mixer screen with tabs (Timeline, Pads, Synth) and toolbar opens."},
+{t:"Add audio segment",d:"Plus icon -> choose song from Library -> segment lands on a track. Waveform visible."},
+{t:"Up to 8 tracks simultaneously",d:"Place multiple audio segments on 8 different tracks -> mixer renders all 8 cleanly at the same time."},
+{t:"Crossfade between segments",d:"Two segments overlap on the same track -> crossfade area automatically visible (X shape)."},
+{t:"Sample-accurate trim",d:"Drag segment edges -> start/end adjustable at sample level (not just coarse)."},
+{t:"Split / Cut",d:"Choose a segment position -> tap Split icon -> segment splits into two."},
+{t:"Copy + Duplicate",d:"Long-press segment -> 'Duplicate' -> identical copy on same track. Also possible between tracks."},
+{t:"Beat detection + snap",d:"Toggle 'Beat Snap' ON -> segments snap to beats when dragged."},
+{t:"Pro DAW workflow works",d:"Dragging, multi-select, toolbar actions, tab switching without crashing. Feels like a professional DAW."}
+]},
+{n:"Loop Mixer: Session Persistence + Undo/Redo + Waveform",tt:[
+{t:"Mixer session survives app restart",d:"Build mixer with segments + pads -> close app (swipe from recents) -> reopen app -> mixer content restored."},
+{t:"Undo removes last action",d:"Add segment -> tap Undo icon -> segment disappears. Also works for move/trim/effect."},
+{t:"Redo restores undone action",d:"After Undo: tap Redo icon -> action is active again."},
+{t:"Multi-level Undo/Redo",d:"Perform 5+ actions -> Undo multiple times back to the first action -> Redo comes back step by step."},
+{t:"Waveform visible per segment",d:"Audio segment on track -> waveform line is visible within the segment (visual position)."},
+{t:"Waveform scales with zoom",d:"Zoom in/out on timeline -> waveform detail changes accordingly (more detail at higher zoom)."}
+]},
+{n:"Loop Mixer: Toolbar Layout + OOM Protection",tt:[
+{t:"Toolbar 3 rows visible",d:"Loop Mixer toolbar -> 3 rows with actions (Play/Stop/Undo, Add/Split/Cut, Cover/Template/Share)."},
+{t:"Cover import button reachable (no overflow)",d:"Cover import icon is visible and tappable (Row 2/3 after reorganization)."},
+{t:"Template + Share in 2nd toolbar row",d:"Share icon at far right of row 2, Template icon directly to its left. NOT in row 3."},
+{t:"Long Library songs (>30 s) without OOM",d:"Select a Library song of 5+ minutes as a sample -> no OOM crash (sample decode capped at 30 s)."},
+{t:"Long mix track (3-7+ min) without OOM",d:"Place an audio segment 5-7 minutes long on a track -> export engine decodes using primitives (ShortArray + MediaExtractor seek), no OOM."},
+{t:"Tab bar (Timeline/Pads/Synth) visible",d:"Tab bar is displayed (fillMaxSize -> weight(1f) fix). Not obscured by the toolbar."}
+]},
+{n:"F-109: Sharing Suite (Phase D — 6 Format Families)",tt:[
+{t:"Arpset export/import (.arpset)",d:"Long-press arpeggiator preset -> 'Share' -> WhatsApp/Mail/Drive. Recipient taps .arpset -> AutoPlayer import dialog -> import -> toast."},
+{t:"Synthset export/import (.synthset)",d:"Share synth preset -> .synthset is created -> recipient imports -> preset visible in browser."},
+{t:"Loopseg export/import (.loopseg)",d:"Long-press audio segment in mixer -> Share -> .loopseg. Recipient imports -> segment in Library/Mixer."},
+{t:"Padconfig export/import (.padconfig)",d:"Share Pad Mode configuration (16 pads) -> .padconfig. Recipient imports -> pads identically assigned."},
+{t:"Mxproj export/import (.mxproj)",d:"Share complete mixer project (tracks + markers + pads) -> .mxproj. Recipient imports -> identical mixer session."},
+{t:"Mxbundle export/import (.mxbundle)",d:"Share mixer project + all audio files in one bundle -> .mxbundle. Recipient imports completely even without the original sample files."},
+{t:"QR code sharing for presets",d:"Preset 'Share via QR' -> QR code is displayed. Second device scans -> preset data is imported (small presets)."},
+{t:"Audio optimization: 14 platform presets",d:"Mixer export -> platform preset selection with 14 options + loudness normalization (LUFS) + FLAC option."},
+{t:"Schema validation works",d:"Import a manipulated .arpset file (e.g. invalid BPM) -> error message with error code (no crash, no trojan)."},
+{t:"Checksum warning",d:"Open a file with incorrect SHA-256 checksum -> warning dialog before import."},
+{t:"Conflict resolution",d:"Import a preset with the same name as an existing one -> conflict dialog: Replace / Rename / Cancel."},
+{t:"Sharing cache cleanup after 24 h",d:"Sharing file created more than 24 h ago -> automatically deleted on next app start (cacheDir/sharing/)."}
+]},
+{n:"F-114: Automation Lanes (Volume + Pan + Canvas Editing)",tt:[
+{t:"Activate volume automation",d:"Long-press segment -> 'Automation' -> Volume toggle ON. Volume lane is displayed below the segment."},
+{t:"Set volume keyframes",d:"Tap in the volume lane -> keyframe is set. Multiple keyframes -> volume curve audible (e.g. fade-in)."},
+{t:"Activate pan automation",d:"Pan toggle ON. Pan lane is displayed. Set keyframes -> stereo position switches (left<->right)."},
+{t:"Interpolation type selectable (Phase 2)",d:"Long-press keyframe -> interpolation selection (Linear, Step, Smooth/Curve). Curve audibly different."},
+{t:"Canvas editing directly on lane (Phase 2)",d:"Tap + drag on lane -> move keyframe. Long-press keyframe -> delete option."},
+{t:"Beat snap for keyframes",d:"Beat Snap ON -> keyframes snap to BPM beats."},
+{t:"Automation retained after save",d:"Save + reload mixer session -> Volume + Pan keyframes still present."}
+]},
+{n:"F-115: Live Effect Preview",tt:[
+{t:"Effect slider during playback",d:"Play mixer -> drag effect slider (Reverb/Echo/Filter) -> effect change audible IMMEDIATELY (no Apply button)."},
+{t:"Slider value reactive without stutter",d:"Move slider rapidly back and forth -> audio stays smooth, no crackle/stutter."},
+{t:"Preview finalized on release",d:"Release slider -> current value is adopted as the final effect value."}
+]},
+{n:"F-116: Panning Slider (Stereo per Segment)",tt:[
+{t:"Pan slider per segment",d:"Long-press segment -> 'Pan' -> slider from L (-100) to R (+100). 0 = center."},
+{t:"Pan -100 = left only",d:"Slider fully left -> audio audible only in the left channel."},
+{t:"Pan +100 = right only",d:"Slider fully right -> audio audible only in the right channel."},
+{t:"Pan + pan automation simultaneously",d:"Static pan plus dynamic pan automation -> automation is applied relative to the static pan."}
+]},
+{n:"F-117: Genome Visualizer Overlay (Loop Mixer)",tt:[
+{t:"Activate visualizer in Loop Mixer",d:"Open Loop Mixer -> toolbar/toggle 'Genome Visualizer' ON. Colorful visualizer overlays the timeline."},
+{t:"Visualizer reacts to audio",d:"Play mix -> Genome Visualizer animates in sync with the music (BPM + frequencies visible)."},
+{t:"Song seed stays persistent",d:"Close + reopen visualizer -> same song shows the same visualization (seed-based, reproducible)."},
+{t:"24 color palettes via swipe",d:"Swipe horizontally in the visualizer -> palette changes. 24 palettes total, all browsable."},
+{t:"Visualizer toggle deactivates cleanly",d:"Toggle OFF -> visualizer disappears. Mixer timeline fully visible again, no overlay."}
+]},
+{n:"F-118: AI Beat-Match Dialog",tt:[
+{t:"Open Beat-Match dialog",d:"Loop Mixer -> select audio segment -> Beat-Match icon. Dialog with BPM detection appears."},
+{t:"BPM suggestion correct",d:"For a standard pop loop, BPM must be suggested between 60 and 180 (typically +/- 5 BPM tolerance)."},
+{t:"Quantize options visible",d:"In the dialog: 1/1, 1/2, 1/4, 1/8, 1/16 + FREE visible as options."},
+{t:"Apply snaps loop to beats",d:"Dialog 'Apply' -> loop segment boundaries snap to the nearest beats. Visible in the timeline."},
+{t:"Pending mechanism for Loop/Cut",d:"When both Loop AND Cut are beat-matched -> changes are marked as 'Pending' and applied together on Apply click (no double snapping)."}
+]},
+{n:"F-119: Export Presets in Loop Mixer",tt:[
+{t:"Open export dialog",d:"Loop Mixer -> Share/Export -> export dialog. Multiple platform presets visible."},
+{t:"14 platform presets",d:"YouTube, TikTok, Instagram Reel, Spotify, Apple Music, SoundCloud, WhatsApp, Discord, Telegram, Mail, Podcast, etc. -> 14 presets visible."},
+{t:"Podcast chip not clipped",d:"Swipe to the 'Podcast' chip in the horizontal scroll area of presets -> chip is fully visible (LazyRow fix)."},
+{t:"Selecting preset changes LUFS",d:"YouTube preset (-14 LUFS) vs TikTok preset (-13 LUFS) -> LUFS value in the preview changes accordingly."},
+{t:"Format changes with preset",d:"Spotify -> M4A AAC. Mail -> smaller MP3. WhatsApp -> Opus/M4A. Format display updates."},
+{t:"Export produces correct file",d:"Choose preset -> export. File lands in the share target and is playable."}
+]},
+{n:"F-120: Pad Mode (4x4 Performance Grid)",tt:[
+{t:"Pad Mode tab reachable",d:"Open Loop Mixer -> tabs show 'Timeline' + 'Pads' + 'Synth'. Tap 'Pads' -> 4x4 pad grid appears."},
+{t:"Assign Library sample to pad",d:"Long-press pad -> 'From Library' -> choose song -> pad is assigned. Pad label shows song name."},
+{t:"Assign Timeline segment to pad",d:"Long-press pad -> 'From Timeline Segment' -> choose segment -> pad assigned with segment."},
+{t:"3 pad modes (One-Shot/Loop/Toggle)",d:"Pad setting -> mode selection. One-Shot = tap plays once. Loop = plays while held. Toggle = on/off per tap."},
+{t:"Quantize 1/1, 1/4, 1/8, FREE",d:"Switch quantize toggle. Pad triggers on the next quantize point (or FREE = immediately)."},
+{t:"Recording -> Timeline segment",d:"Record button -> play pads -> stop. Recording appears as a new Timeline segment in the mixer."},
+{t:"BPM metronome audible",d:"Metronome toggle ON -> click track at the current BPM audible (in Pad Mode only)."},
+{t:"Haptic feedback on pad press",d:"Tap pad -> perceptible vibration. Also on quantize trigger."},
+{t:"Neon visual feedback",d:"Tap pad -> pad pulses in neon color (matching the theme palette)."},
+{t:"1:1 pad-track mapping",d:"16 pads -> 16 tracks in mixer. Pad #5 -> Track 5. Works without conflicts."}
+]},
+{n:"F-121: Synth Studio (Subtractive + Drum)",tt:[
+{t:"Synth Studio tab reachable",d:"Loop Mixer -> 'Synth' tab -> Synth Studio opens."},
+{t:"Subtractive engine plays bass",d:"Engine 'Subtractive' -> choose bass preset -> tap keys -> bass sound audible."},
+{t:"Drum engine plays kick/snare/hi-hat",d:"Engine 'Drum' -> choose kit -> trigger pads -> drum sounds audible."},
+{t:"Browse 300+ factory presets",d:"Open preset browser -> at least 300 presets across all categories (Bass/Lead/Pad/Bell/Organ/Pluck/FX/Strings/Brass/Wind/Ethnic/E-Piano/Clavinet/Guitar/Vocal/Retro/Ambient/Soundscape/Drums) browsable."},
+{t:"Live recording works",d:"Record button -> play keys/pads -> stop -> recording available."},
+{t:"Recording Manager shows recordings",d:"Open recordings list -> recordings visible with date/duration. Tap = play, Long-press = delete."},
+{t:"MIDI USB input",d:"Connect USB MIDI keyboard via OTG -> Synth Studio receives keystrokes (visible on virtual keys)."},
+{t:"MIDI BLE input",d:"Pair BLE MIDI keyboard -> Synth Studio receives keystrokes wirelessly."},
+{t:"Backup v20 contains synth data",d:"Create backup -> restore -> recordings + custom presets still present."}
+]},
+{n:"F-122: FM Synthesis (DX7-Style 4-Op)",tt:[
+{t:"FM engine selectable",d:"Switch engine -> 'FM' active. UI shows 4 operators (OP1-OP4)."},
+{t:"8 algorithms selectable",d:"Algorithm selection -> 8 topologies (Stack/Parallel/Mixed) browsable."},
+{t:"200 presets in 12 categories",d:"FM preset browser -> 200 presets sorted into 12 categories (Bass/Lead/Bell/E-Piano/Brass/Pad/Pluck/Soundscape/...)."},
+{t:"DC blocker (no pumping)",d:"Play FM bass preset -> no 'pumping'/booming in the speakers (DC blocker active)."},
+{t:"Voice retrigger clean",d:"Tap the same key rapidly in succession -> each note sounds fresh (no hanging notes)."},
+{t:"Age stealing with many voices",d:"Chord with 8+ keys -> oldest voice is overwritten, not cut off (no click/pop)."}
+]},
+{n:"F-123: Wavetable Synthesis",tt:[
+{t:"Wavetable engine selectable",d:"Engine -> 'Wavetable' -> 2 oscillators with tables visible."},
+{t:"8 standard tables",d:"Switch table -> 8 tables browsable (Saw/Square/Triangle/Vocal/Bell/Noise/...)."},
+{t:"Position mod LFO",d:"Activate position modulation -> LFO moves through the wavetable. Timbral change audible."},
+{t:"200 presets in 5 categories",d:"Wavetable preset browser -> 200 presets in 5 categories (Film Music/Vintage/Chiptune/Ethnic/Cinematic)."}
+]},
+{n:"F-124: Arpeggiator + Step Sequencer",tt:[
+{t:"Arp section visible",d:"Synth Studio -> Arp toggle ON. Arp section becomes visible."},
+{t:"6 patterns selectable",d:"Pattern selection -> Up, Down, UpDown, Random, Order, Chord. Hold a chord -> pattern audible."},
+{t:"16-step grid visible",d:"16 step buttons visible. Tap a step -> step activates (visually highlighted)."},
+{t:"BPM sync runs with mixer BPM",d:"Mixer BPM at 100 -> Arp runs in sync. Change BPM to 130 -> Arp speeds up."},
+{t:"Swing slider audible",d:"Swing 0% -> straight beat. Swing 50% -> shuffle feel audible."},
+{t:"Hold mode",d:"Hold ON -> keep playing chord without holding keys. Hold OFF -> Arp stops when keys released."},
+{t:"Velocity/Gate/Ratchet (Phase 2)",d:"Per step: Velocity (volume), Gate (note length), and Ratchet (multiple triggers) adjustable."},
+{t:"Custom Pattern Editor (Phase 2)",d:"Build custom pattern -> save as user preset."},
+{t:"Apply/Copy/Paste (Phase 3)",d:"Copy step sequencer pattern -> paste into another track. Apply button confirms changes."},
+{t:"5 Arp presets available",d:"Arp preset slot -> 5 factory presets browsable."},
+{t:"120 Pure-Arp presets",d:"Pure-Arp preset browser -> 120 presets without synth (Arp pattern only)."}
+]},
+{n:"F-125: Markers / Regions in Loop Mixer",tt:[
+{t:"Set marker",d:"Loop Mixer -> tap timeline at position -> 'Set Marker' -> marker (vertical line) appears."},
+{t:"Edit marker",d:"Long-press marker -> edit sheet -> name, position, and color adjustable."},
+{t:"Marker list",d:"Open marker list -> all markers visible with position + name."},
+{t:"Delete marker",d:"In the list or via edit sheet -> remove marker -> disappears from timeline."},
+{t:"ID3v2 Chapter Embed (Podcast export)",d:"Set markers as chapters -> export as MP3 -> open file in podcast app -> chapters appear with marker names."},
+{t:"Auphonic JSON sidecar",d:"Export with marker sidecar -> .json file is exported alongside (compatible with Auphonic workflow)."}
+]},
+{n:"F-126: Mixer Templates (12 Genres)",tt:[
+{t:"Open Template Picker",d:"Loop Mixer toolbar -> Template icon -> picker with 12 genres appears (Podcast/HipHop/Trap/House/Techno/DnB/Synthwave/LoFi/Pop/Cinematic/Ambient/Empty)."},
+{t:"Loading template changes tracks",d:"Choose 'House' template -> tracks are pre-filled with Kick/Bass/Synth/Hat/FX appropriate for the genre."},
+{t:"Empty template resets",d:"Load Empty -> all tracks clear, mixer in default state."},
+{t:"Pads/Synth are also set",d:"When loading a template, pads and synth preset are set to match the genre."}
+]},
+{n:"F-127: Demo Showcase Mix",tt:[
+{t:"Load Demo Mix",d:"Template Picker -> 'Demo Showcase' -> 32-bar demo is loaded."},
+{t:"32 bars at 100 BPM",d:"Mixer header shows 100 BPM, 32 bars. Playback lasts approximately 76.8 s."},
+{t:"9 procedural audio loops",d:"6 tracks with 12 placements. Drums/Bass/Lead/Pad/FX samples lie procedurally generated in cache (~3 MB)."},
+{t:"Playback without crash (WAV decoder)",d:"Press Play -> mix runs cleanly from start to finish without glitches (WAV direct path in decoder)."},
+{t:"Volume + pan automation audible",d:"Left/right channel changes during playback. Volume variations over time."},
+{t:"Reverb/Echo/Filter/Pitch-Shift audible",d:"Effect variations across tracks: reverb on pad, echo on lead, filter sweep, pitch shift on FX."},
+{t:"8 markers on section transitions",d:"Marker list -> 8 markers (Intro/Verse/Chorus/Drop/...). Tap -> timeline jumps to position."},
+{t:"16 pads pre-assigned",d:"Pads tab -> 16 pads loaded with demo sounds + pitch variations. Performance test possible."}
+]},
+{n:"F-128: Reggae Showcase Mix",tt:[
+{t:"Load Reggae Mix",d:"Template Picker -> 'Reggae Showcase' -> 32-bar 75 BPM mix is loaded."},
+{t:"One-drop drums (no kick on beat 1)",d:"Play mix -> beat 1 has no kick, snare+kick on beat 3 (classic one-drop)."},
+{t:"Skank guitar off-beat 2+4",d:"Chord hits audible on beats 2 and 4 (off-beat reggae skank)."},
+{t:"Stereo pan skank L/R",d:"Skank track alternates left/right (pan automation)."},
+{t:"Walking bass + bubble organ",d:"Bass line walks melodically (not static). Bubble organ (Hammond-style) audible in the background."},
+{t:"Tape echo on vocal lead",d:"Lead track has characteristic tape echo (with pitch drift, high-end loss)."},
+{t:"Dub bridge (3 stereo echo snare stabs)",d:"In the bridge: 3 snare stabs with pan L/R/L and pitch variation audible."}
+]},
+{n:"F-129: Synth Studio Localization 26 Languages",tt:[
+{t:"Synth Studio in German",d:"Language -> German. Open Synth Studio -> all UI texts in German (Engine, Preset, Recording, Algorithm, etc.)."},
+{t:"Synth Studio in English",d:"Language -> English. Synth Studio -> all UI texts in English."},
+{t:"Synth Studio in 1+ additional language",d:"One additional language (e.g. Japanese, Spanish, or French) -> Synth Studio texts correctly translated."},
+{t:"Audio technical terms remain international",d:"ADSR, OP, FB, BPM, LFO remain unchanged (they are international)."}
+]},
+{n:"F-130: Sound Quality Upgrade (DSP Overhaul)",tt:[
+{t:"Karplus-Strong pluck strings",d:"Play acoustic guitar/pluck preset -> realistic string attack with natural decay (no synthetic beep)."},
+{t:"Wave-folding rich saw",d:"Rich Lead preset -> harmonically dense, warm saw sound (Buchla-style wave folder audible)."},
+{t:"Schroeder reverb clean",d:"Reverb on pad track -> dense, even reverb without metallic coloration."},
+{t:"Plate reverb audible",d:"Plate reverb preset -> classic plate sound (brighter, livelier than Schroeder)."},
+{t:"Spring reverb on Reggae skank",d:"Load Reggae Showcase -> skank has characteristic spring sound (springy, twangy)."},
+{t:"Hammond B3 (9 drawbars + Leslie)",d:"Hammond preset -> typical drawbar sound with Leslie rotation (pitch modulation audible)."},
+{t:"Demo + Reggae sound more realistic",d:"Compare Demo + Reggae after v6.0.0 vs v5.x.y -> noticeably less 'synthetic', more natural."}
+]},
+{n:"F-131: Promo Song Showcase ('Your Sound Your Rules')",tt:[
+{t:"Load Promo Showcase",d:"Template Picker -> 'Promo Song' -> showcase is loaded."},
+{t:"117.5 BPM, F minor",d:"Mixer shows BPM=117.5 and key F minor. Values match the librosa analysis of the Suno MP3."},
+{t:"9 voices in F minor",d:"Pad/Drums/Bass/Hammond/Lead-Hook/Piano/Sub/Riser/Crash distributed across 6 tracks, all in F minor."},
+{t:"19 placements, 9 markers",d:"Song form: Intro/Build/Verse 1/Chorus 1/Drop/Verse 2/Chorus 2/Bridge/Outro -> 9 markers on section transitions."},
+{t:"Lead hook in F minor pentatonic",d:"Playback -> lead hook melody audible (vocals omitted; user can record their own vocals)."},
+{t:"Song form 3:23 min",d:"Playback from start to finish lasts 3 min 23 sec (approx. 203 s)."},
+{t:"16 pads assigned",d:"Pads tab -> 16 pads loaded with promo sounds + pitch variations."}
+]}
+]},
+{cat:"18. Cross-Feature Tests",ff:[
+{n:"Voice + Feature Combinations",tt:[
+{t:"Voice: 'Smart Reorder'",d:"Microphone -> 'Smart Reorder' -> Smart Reorder sheet opens in the Queue."},
+{t:"Voice: 'Queue Crossfade on'",d:"Microphone -> 'Queue Crossfade on' -> Queue Crossfade is activated. Toast/confirmation."},
+{t:"Voice: 'How loud am I listening?'",d:"Microphone -> 'How loud am I listening?' -> TTS responds with the current dB estimate."},
+{t:"Voice: 'Start Party Mode'",d:"Microphone -> 'Start Party Mode' -> Party Mode screen opens."},
+{t:"Voice: 'Vibration on'",d:"Microphone -> 'Vibration on' -> Haptic Feedback is activated. Confirmation."},
+{t:"Voice: 'Enable gestures'",d:"Microphone -> 'Enable gestures' -> Gesture Control is activated. Confirmation."},
+{t:"Voice: 'Battery mode on'",d:"Microphone -> 'Battery mode on' -> Audio Offload is activated. ECO icon in Player."},
+{t:"Voice: 'Resume'",d:"Microphone -> 'Resume' -> song resumes from the saved position."},
+{t:"Voice: 'Show Waveform'",d:"Microphone -> 'Show Waveform' -> waveform display is activated in the Player."}
+]},
+{n:"Backup: Check all data types individually",tt:[
+{t:"Backup: favorites saved",d:"Create backup. Clear app data. Import backup -> favorites must be fully restored."},
+{t:"Backup: playlists saved",d:"After restore: all manually created playlists with their songs must be present."},
+{t:"Backup: Queue presets saved",d:"After restore: saved Queue presets must be present."},
+{t:"Backup: achievements/XP saved",d:"After restore: level, XP, achievements, and streak must be correctly restored."},
+{t:"Backup: smart playlists saved",d:"After restore: saved NLP smart playlists must be present."},
+{t:"Backup: loop bookmarks saved",d:"After restore: saved A-B loop bookmarks must be present."},
+{t:"Backup: song positions saved",d:"After restore: saved resume positions must be present."},
+{t:"Backup: context rules saved",d:"After restore: Context Auto-Switch rules must be present."},
+{t:"Backup: custom themes saved",d:"After restore: created custom themes must be present."},
+{t:"Backup: all settings saved",d:"After restore: all settings (crossfade, shake, EQ, etc.) must be at the backed-up values."}
+]},
+{n:"Language switching: test 4 languages",tt:[
+{t:"German: all UI texts in German",d:"Set language to German. Check: Drawer (all entries), Settings (all labels), Player (buttons/info), Manual (all texts). EVERYTHING must be in German."},
+{t:"English: all UI texts in English",d:"Set language to English. Check the same areas. EVERYTHING must be in English, no German remnants."},
+{t:"Japanese: Japanese characters everywhere",d:"Set language to Japanese. Drawer, Settings, Player, Manual, Changelog -> Japanese characters everywhere. No English/German remnants."},
+{t:"Arabic: RTL layout + Arabic script",d:"Set language to Arabic. Layout must be mirrored (RTL = right to left). Arabic script everywhere."},
+{t:"Switch back to German: everything correct",d:"Switch back to German. ALL texts must be in German again. No English or other text remaining."}
+]},
+{n:"Smart Playlists: test expressions",tt:[
+{t:"NLP: genre recognition",d:"Smart Playlist: enter 'Rock Songs' -> only Rock songs in the results."},
+{t:"NLP: BPM filter",d:"Smart Playlist: 'Fast songs over 140 BPM' -> only songs with >140 BPM."},
+{t:"NLP: mood filter",d:"Smart Playlist: 'Chill music for the evening' -> slow, calm songs."},
+{t:"NLP: listening behavior",d:"Smart Playlist: 'My top songs' -> most-played songs."},
+{t:"NLP: combination",d:"Smart Playlist: 'Energetic Rock songs I have never heard' -> combination of genre + energy + never played."}
+]},
+{n:"Android Auto: Browse Tree complete",tt:[
+{t:"Auto: Favorites category",d:"In Android Auto: tap 'Favorites' -> all favorite songs must be displayed."},
+{t:"Auto: Playlists category",d:"In Android Auto: 'Playlists' -> all manual playlists visible. Tap playlist -> songs play."},
+{t:"Auto: Recently Played",d:"In Android Auto: 'Recently Played' -> last played songs in chronological order."},
+{t:"Auto: Queues category",d:"In Android Auto: 'Queues' -> all Queue slots visible. Tap -> Queue is loaded."},
+{t:"Auto: Voice Search",d:"In Android Auto: use voice search -> song/artist/album is found and played."},
+{t:"Auto: Smart Playlists",d:"In Android Auto: 'Smart Playlists' -> Most Played, Recently Added, Never Played must appear as subcategories."},
+{t:"Auto: Mood Browse",d:"In Android Auto: 'Mood' -> mood selection must appear. Tap mood -> matching songs play."},
+{t:"Auto: Continue Listening",d:"In Android Auto: 'Continue Listening' -> songs with saved positions must appear. Tap -> song resumes from saved position."}
+]},
+{n:"Voice: Vintage Turntable",tt:[
+{t:"Voice: 'Open Vintage Turntable'",d:"Microphone -> 'Open Vintage Turntable' or 'Vintage Turntable' -> Vintage Turntable screen opens."},
+{t:"Voice: 'Open Turntable'",d:"Microphone -> 'Open Turntable' -> Vintage Turntable screen opens (alias recognition)."}
+]}
+]}
+];
+
+function getDisplayData(){return currentLang==='en'?D_EN:D;}
+
+
 /* =========================================
    DEVICE MANAGEMENT
    ========================================= */
@@ -1524,12 +2565,12 @@ function updateDevice(idx, field, val) {
 function devLabel(idx) {
     const d = devices[idx];
     if (d.maker || d.model) return (d.maker + ' ' + d.model).trim();
-    return 'Geraet ' + (idx + 1);
+    return (i18n[currentLang] || i18n.en).device + (idx + 1);
 }
 
 function updateDevBadge() {
     const badge = document.getElementById('devBadge');
-    badge.textContent = 'Aktiv: ' + devLabel(activeDevIdx);
+    badge.textContent = (i18n[currentLang] || i18n.en).activePrefix + devLabel(activeDevIdx);
 }
 
 function renderDevices() {
@@ -1539,14 +2580,15 @@ function renderDevices() {
         const isActive = i === activeDevIdx;
         html += '<div class="dev-item' + (isActive ? ' active' : '') + '">';
         html += '<div class="dev-item-header">';
-        html += '<label><input type="radio" name="activedev" ' + (isActive ? 'checked' : '') + ' onchange="setActiveDevice(' + i + ')"> ' + devLabel(i) + (isActive ? ' (aktiv)' : '') + '</label>';
-        html += '<button class="dev-delete" onclick="removeDevice(' + i + ')" title="Geraet entfernen">&#10005;</button>';
+        const uid = i18n[currentLang] || i18n.en;
+        html += '<label><input type="radio" name="activedev" ' + (isActive ? 'checked' : '') + ' onchange="setActiveDevice(' + i + ')"> ' + devLabel(i) + (isActive ? ' ' + uid.activeLabel : '') + '</label>';
+        html += '<button class="dev-delete" onclick="removeDevice(' + i + ')" title="' + uid.removeDevice + '">&#10005;</button>';
         html += '</div>';
         html += '<div class="dev-fields">';
-        html += '<div class="dev-type-group"><label><input type="radio" name="devtype' + i + '" value="smartphone" ' + (d.type === 'smartphone' ? 'checked' : '') + ' onchange="updateDevice(' + i + ',\'type\',\'smartphone\')"> Smartphone</label>';
-        html += '<label><input type="radio" name="devtype' + i + '" value="tablet" ' + (d.type === 'tablet' ? 'checked' : '') + ' onchange="updateDevice(' + i + ',\'type\',\'tablet\')"> Tablet</label></div>';
-        html += '<input placeholder="Hersteller" value="' + esc(d.maker) + '" onblur="updateDevice(' + i + ',\'maker\',this.value)">';
-        html += '<input placeholder="Modell" value="' + esc(d.model) + '" onblur="updateDevice(' + i + ',\'model\',this.value)">';
+        html += '<div class="dev-type-group"><label><input type="radio" name="devtype' + i + '" value="smartphone" ' + (d.type === 'smartphone' ? 'checked' : '') + ' onchange="updateDevice(' + i + ',\'type\',\'smartphone\')"> ' + uid.smartphone + '</label>';
+        html += '<label><input type="radio" name="devtype' + i + '" value="tablet" ' + (d.type === 'tablet' ? 'checked' : '') + ' onchange="updateDevice(' + i + ',\'type\',\'tablet\')"> ' + uid.tablet + '</label></div>';
+        html += '<input placeholder="' + uid.brand + '" value="' + esc(d.maker) + '" onblur="updateDevice(' + i + ',\'maker\',this.value)">';
+        html += '<input placeholder="' + uid.model + '" value="' + esc(d.model) + '" onblur="updateDevice(' + i + ',\'model\',this.value)">';
         html += '<input placeholder="Android" value="' + esc(d.android) + '" onblur="updateDevice(' + i + ',\'android\',this.value)" style="max-width:80px">';
         html += '</div></div>';
     });
@@ -1629,20 +2671,25 @@ function loadMeta() {
 function render() {
 const c = document.getElementById('cats'); c.innerHTML = '';
 const s = document.getElementById('searchBox').value.toLowerCase();
+const DD = getDisplayData();
 D.forEach((cat, ci) => {
-    const ff = cat.ff.filter(f => !s || f.n.toLowerCase().includes(s) || f.tt.some(t => t.t.toLowerCase().includes(s) || t.d.toLowerCase().includes(s)));
+    const dcat = DD[ci];
+    const ff = cat.ff.filter((f, fi) => !s || dcat.ff[fi].n.toLowerCase().includes(s) || dcat.ff[fi].tt.some(t => t.t.toLowerCase().includes(s) || t.d.toLowerCase().includes(s)));
     if (!ff.length) return;
     let ct = 0, cd = 0, cb = 0, cf = 0;
     ff.forEach(f => { ct += f.tt.length; f.tt.forEach((_, ti) => { const st = getS(ci, f.n, ti); if (st === 'ok') cd++; if (st === 'bug') cb++; if (getFeat(ci, f.n, ti)) cf++; }); });
     const d = document.createElement('div');
     d.className = 'cat' + (openCats[ci] ? ' open' : '');
-    d.innerHTML = '<div class="cat-h" onclick="tCat(' + ci + ')"><h2><span class="arr">&#9654;</span> ' + cat.cat + '</h2><span class="cs"><span class="d">' + cd + '</span>' + (cb ? ' <span class="b">BUG ' + cb + '</span>' : '') + (cf ? ' <span style="color:var(--orange)">W ' + cf + '</span>' : '') + '/' + ct + '</span></div><div class="cat-b"></div>';
+    d.innerHTML = '<div class="cat-h" onclick="tCat(' + ci + ')"><h2><span class="arr">&#9654;</span> ' + dcat.cat + '</h2><span class="cs"><span class="d">' + cd + '</span>' + (cb ? ' <span class="b">BUG ' + cb + '</span>' : '') + (cf ? ' <span style="color:var(--orange)">W ' + cf + '</span>' : '') + '/' + ct + '</span></div><div class="cat-b"></div>';
     const b = d.querySelector('.cat-b');
     ff.forEach(f => {
+        const fi = cat.ff.indexOf(f);
+        const df = dcat.ff[fi];
         let allOk = f.tt.every((_, ti) => getS(ci, f.n, ti) === 'ok');
         let hasBugs = f.tt.some((_, ti) => getS(ci, f.n, ti) === 'bug');
-        let h = '<div class="feat' + (allOk ? ' ok' : '') + (hasBugs ? ' has-bugs' : '') + '"><div class="feat-t">' + f.n + '</div>';
+        let h = '<div class="feat' + (allOk ? ' ok' : '') + (hasBugs ? ' has-bugs' : '') + '"><div class="feat-t">' + df.n + '</div>';
         f.tt.forEach((t, ti) => {
+            const dt = df.tt[ti];
             const st = getS(ci, f.n, ti);
             const cmt = getCmt(ci, f.n, ti);
             const sev = getSev(ci, f.n, ti);
@@ -1651,22 +2698,23 @@ D.forEach((cat, ci) => {
             const featCmt = getFeatCmt(ci, f.n, ti);
             const ss = getSs(ci, f.n, ti);
             h += '<div class="ti' + (st === 'ok' ? ' done' : '') + (st === 'bug' ? ' bugged' : '') + (hasFeat ? ' has-feat' : '') + '" data-ci="' + ci + '" data-fn="' + esc(f.n) + '" data-ti="' + ti + '">';
-            h += '<input type="checkbox" class="cb-ok" ' + (st === 'ok' ? 'checked' : '') + ' onchange="setOk(this)" title="Bestanden">';
-            h += '<div class="ti-body"><div class="ti-row"><div class="ti-name">' + t.t + '</div>';
-            h += '<label class="bug-label"><input type="checkbox" class="cb-bug" ' + (st === 'bug' ? 'checked' : '') + ' onchange="setBug(this)" title="Bug"> BUG</label>';
-            h += '<label class="feat-label"><input type="checkbox" class="cb-feat" ' + (hasFeat ? 'checked' : '') + ' onchange="setFeat(this)" title="Aenderung/Erweiterung"> WUNSCH</label>';
-            h += '<span class="ss-toggle" onclick="toggleSs(this)">Screenshot</span>';
+            const ui = i18n[currentLang] || i18n.en;
+            h += '<input type="checkbox" class="cb-ok" ' + (st === 'ok' ? 'checked' : '') + ' onchange="setOk(this)" title="' + ui.okTitle + '">';
+            h += '<div class="ti-body"><div class="ti-row"><div class="ti-name">' + dt.t + '</div>';
+            h += '<label class="bug-label"><input type="checkbox" class="cb-bug" ' + (st === 'bug' ? 'checked' : '') + ' onchange="setBug(this)" title="Bug"> ' + ui.bugLabel + '</label>';
+            h += '<label class="feat-label"><input type="checkbox" class="cb-feat" ' + (hasFeat ? 'checked' : '') + ' onchange="setFeat(this)" title="' + ui.wishCheckTitle + '"> ' + ui.wishLabel + '</label>';
+            h += '<span class="ss-toggle" onclick="toggleSs(this)">' + ui.screenshot + '</span>';
             h += '</div>';
-            h += '<div class="ti-detail">' + t.d + '</div>';
-            h += '<textarea class="comment-box' + (cmt ? ' has-text' : '') + '" placeholder="Bug-Beschreibung: Was erwartet? Was passiert? Schritte?" onblur="saveCmt(this)">' + esc(cmt) + '</textarea>';
+            h += '<div class="ti-detail">' + dt.d + '</div>';
+            h += '<textarea class="comment-box' + (cmt ? ' has-text' : '') + '" placeholder="' + ui.bugComment + '" onblur="saveCmt(this)">' + esc(cmt) + '</textarea>';
             // Bug severity + reproducibility
             h += '<div class="bug-extra">';
-            h += '<label>Schweregrad<select onchange="saveSev(this)"><option value="">--</option><option value="critical"' + (sev === 'critical' ? ' selected' : '') + '>Kritisch</option><option value="high"' + (sev === 'high' ? ' selected' : '') + '>Hoch</option><option value="medium"' + (sev === 'medium' ? ' selected' : '') + '>Mittel</option><option value="low"' + (sev === 'low' ? ' selected' : '') + '>Niedrig</option></select></label>';
-            h += '<label>Reproduzierbar<select onchange="saveRep(this)"><option value="">--</option><option value="always"' + (rep === 'always' ? ' selected' : '') + '>Immer</option><option value="sometimes"' + (rep === 'sometimes' ? ' selected' : '') + '>Manchmal</option><option value="once"' + (rep === 'once' ? ' selected' : '') + '>Einmalig</option></select></label>';
+            h += '<label>' + ui.severity + '<select onchange="saveSev(this)"><option value="">--</option><option value="critical"' + (sev === 'critical' ? ' selected' : '') + '>' + ui.sevCritical + '</option><option value="high"' + (sev === 'high' ? ' selected' : '') + '>' + ui.sevHigh + '</option><option value="medium"' + (sev === 'medium' ? ' selected' : '') + '>' + ui.sevMedium + '</option><option value="low"' + (sev === 'low' ? ' selected' : '') + '>' + ui.sevLow + '</option></select></label>';
+            h += '<label>' + ui.reproducible + '<select onchange="saveRep(this)"><option value="">--</option><option value="always"' + (rep === 'always' ? ' selected' : '') + '>' + ui.repAlways + '</option><option value="sometimes"' + (rep === 'sometimes' ? ' selected' : '') + '>' + ui.repSometimes + '</option><option value="once"' + (rep === 'once' ? ' selected' : '') + '>' + ui.repOnce + '</option></select></label>';
             h += '</div>';
-            h += '<textarea class="comment-feat' + (featCmt ? ' has-text' : '') + '" placeholder="Aenderungs-/Erweiterungswunsch..." onblur="saveFeatCmt(this)">' + esc(featCmt) + '</textarea>';
+            h += '<textarea class="comment-feat' + (featCmt ? ' has-text' : '') + '" placeholder="' + ui.wishComment + '" onblur="saveFeatCmt(this)">' + esc(featCmt) + '</textarea>';
             // Screenshot field
-            h += '<input type="text" class="ss-field' + (ss ? ' visible has-text' : '') + '" placeholder="Screenshot-Dateinamen (komma-getrennt)" value="' + esc(ss) + '" onblur="saveSs(this)">';
+            h += '<input type="text" class="ss-field' + (ss ? ' visible has-text' : '') + '" placeholder="' + ui.screenshotPlaceholder + '" value="' + esc(ss) + '" onblur="saveSs(this)">';
             h += '</div></div>';
         });
         h += '</div>';
@@ -1812,8 +2860,9 @@ function updStats() {
     document.getElementById('cAll').textContent = t;
     document.getElementById('pFill').style.width = (t > 0 ? (ok / t * 100) : 0) + '%';
     const sv = localStorage.getItem('tp_saved');
-    document.getElementById('lastSaved').textContent = sv ? 'Gespeichert: ' + sv : '';
-    document.getElementById('tsLine').textContent = sv ? 'Zuletzt gespeichert: ' + sv : '';
+    const ui0 = i18n[currentLang] || i18n.en;
+    document.getElementById('lastSaved').textContent = sv ? ui0.savedAt + sv : '';
+    document.getElementById('tsLine').textContent = sv ? ui0.lastSavedAt + sv : '';
 }
 
 function updBugList() {
@@ -1827,12 +2876,13 @@ function updBugList() {
             const sev = getSev(ci, f.n, ti);
             const rep = getRep(ci, f.n, ti);
             const ss = getSs(ci, f.n, ti);
-            const sevLabels = { critical: 'Kritisch', high: 'Hoch', medium: 'Mittel', low: 'Niedrig' };
-            const repLabels = { always: 'Immer', sometimes: 'Manchmal', once: 'Einmalig' };
+            const ui = i18n[currentLang] || i18n.en;
+            const sevLabels = { critical: ui.sevCritical, high: ui.sevHigh, medium: ui.sevMedium, low: ui.sevLow };
+            const repLabels = { always: ui.repAlways, sometimes: ui.repSometimes, once: ui.repOnce };
             let extra = '';
             if (sev) extra += ' [' + (sevLabels[sev] || sev) + ']';
             if (rep) extra += ' (' + (repLabels[rep] || rep) + ')';
-            html += '<div class="bug-item"><span class="bf">' + f.n + '</span> &rarr; <span class="bt">' + t.t + '</span>' + (extra ? '<span style="color:var(--cyan);margin-left:6px;font-size:0.85em">' + extra + '</span>' : '') + (c ? '<span class="bc">' + esc(c) + '</span>' : '') + (ss ? '<span style="color:var(--cyan);margin-left:6px;font-size:0.8em">Screens: ' + esc(ss) + '</span>' : '') + '</div>';
+            html += '<div class="bug-item"><span class="bf">' + f.n + '</span> &rarr; <span class="bt">' + t.t + '</span>' + (extra ? '<span style="color:var(--cyan);margin-left:6px;font-size:0.85em">' + extra + '</span>' : '') + (c ? '<span class="bc">' + esc(c) + '</span>' : '') + (ss ? '<span style="color:var(--cyan);margin-left:6px;font-size:0.8em">' + ui.screensLabel + esc(ss) + '</span>' : '') + '</div>';
         }
     }); }); });
     bl.innerHTML = html;
@@ -1869,7 +2919,7 @@ function resetAll() {
 function exportResults() {
     const dev = devices[activeDevIdx];
     const devInfo = devLabel(activeDevIdx) + (dev.android ? ' (Android ' + dev.android + ')' : '');
-    let t = 'AutoPlayer Testplan v5.1.0 — ' + new Date().toLocaleString('de-DE') + '\n';
+    let t = 'AutoPlayer Testplan v5.4.0 — ' + new Date().toLocaleString('de-DE') + '\n';
     t += 'Tester: ' + (localStorage.getItem('tp_meta_tester') || 'k.A.') + '\n';
     t += 'Geraet: ' + devInfo + '\n';
     t += 'App-Version: ' + (localStorage.getItem('tp_meta_version') || 'k.A.') + '\n\n';
@@ -2033,7 +3083,8 @@ function addFeatureWish() {
     renderFeatureWishes();
 }
 function removeFeatureWish(idx) {
-    if (!confirm('Feature-Wunsch #' + (idx+1) + ' wirklich loeschen?')) return;
+    const uiw = i18n[currentLang] || i18n.en;
+    if (!confirm(uiw.wishNum + (idx+1) + ' ' + uiw.deleteWishConfirm)) return;
     const wishes = getFeatureWishes();
     wishes.splice(idx, 1);
     saveFeatureWishes(wishes);
@@ -2046,35 +3097,36 @@ function updateFeatureWish(idx, field, value) {
 function renderFeatureWishes() {
     const list = document.getElementById('featureWishesList');
     const wishes = getFeatureWishes();
+    const uif = i18n[currentLang] || i18n.en;
     if (!wishes.length) {
-        list.innerHTML = '<p style="color:var(--muted);font-size:0.82em;font-style:italic">Noch keine Feature-Wuensche. Klicke oben auf "+ Feature-Wunsch" um einen neuen Eintrag zu erstellen.</p>';
+        list.innerHTML = '<p style="color:var(--muted);font-size:0.82em;font-style:italic">' + uif.noWishes + '</p>';
         return;
     }
     let html = '';
     wishes.forEach((w, i) => {
         html += '<div class="fw-item">';
-        html += '<div class="fw-head"><span class="fw-num">Feature-Wunsch #' + (i+1) + '</span>';
-        html += '<button class="fw-del" onclick="removeFeatureWish('+i+')" title="Loeschen">X</button></div>';
-        html += '<input type="text" placeholder="Titel / Kurzbeschreibung des Features" value="'+esc(w.title||'')+'" onblur="updateFeatureWish('+i+',\'title\',this.value)">';
+        html += '<div class="fw-head"><span class="fw-num">' + uif.wishNum + (i+1) + '</span>';
+        html += '<button class="fw-del" onclick="removeFeatureWish('+i+')" title="' + uif.wishDelTitle + '">X</button></div>';
+        html += '<input type="text" placeholder="' + uif.wishTitlePlaceholder + '" value="'+esc(w.title||'')+'" onblur="updateFeatureWish('+i+',\'title\',this.value)">';
         html += '<div style="display:flex;flex-direction:column;gap:6px;margin-bottom:6px">';
         html += '<select onchange="updateFeatureWish('+i+',\'priority\',this.value)">';
-        html += '<option value="hoch"'+(w.priority==='hoch'?' selected':'')+'>Prioritaet: Hoch</option>';
-        html += '<option value="mittel"'+(w.priority==='mittel'?' selected':'')+'>Prioritaet: Mittel</option>';
-        html += '<option value="niedrig"'+(w.priority==='niedrig'?' selected':'')+'>Prioritaet: Niedrig</option>';
+        html += '<option value="hoch"'+(w.priority==='hoch'?' selected':'')+'>' + uif.prioHigh + '</option>';
+        html += '<option value="mittel"'+(w.priority==='mittel'?' selected':'')+'>' + uif.prioMedium + '</option>';
+        html += '<option value="niedrig"'+(w.priority==='niedrig'?' selected':'')+'>' + uif.prioLow + '</option>';
         html += '</select>';
         html += '<select onchange="updateFeatureWish('+i+',\'category\',this.value)">';
-        html += '<option value=""'+((!w.category)?' selected':'')+'>Kategorie waehlen...</option>';
+        html += '<option value=""'+((!w.category)?' selected':'')+'>' + uif.catSelect + '</option>';
         html += '<option value="ui"'+((w.category==='ui')?' selected':'')+'>UI/UX</option>';
         html += '<option value="audio"'+((w.category==='audio')?' selected':'')+'>Audio/Sound</option>';
-        html += '<option value="player"'+((w.category==='player')?' selected':'')+'>Player-Ansichten</option>';
-        html += '<option value="smart"'+((w.category==='smart')?' selected':'')+'>Intelligente Features</option>';
+        html += '<option value="player"'+((w.category==='player')?' selected':'')+'>' + uif.catPlayer + '</option>';
+        html += '<option value="smart"'+((w.category==='smart')?' selected':'')+'>' + uif.catSmart + '</option>';
         html += '<option value="auto"'+((w.category==='auto')?' selected':'')+'>Android Auto</option>';
         html += '<option value="social"'+((w.category==='social')?' selected':'')+'>Social/Party</option>';
         html += '<option value="tools"'+((w.category==='tools')?' selected':'')+'>Tools</option>';
-        html += '<option value="settings"'+((w.category==='settings')?' selected':'')+'>Einstellungen</option>';
-        html += '<option value="other"'+((w.category==='other')?' selected':'')+'>Sonstiges</option>';
+        html += '<option value="settings"'+((w.category==='settings')?' selected':'')+'>' + uif.catSettings + '</option>';
+        html += '<option value="other"'+((w.category==='other')?' selected':'')+'>' + uif.catOther + '</option>';
         html += '</select></div>';
-        html += '<textarea placeholder="Beschreibe den Feature-Wunsch so detailliert wie moeglich: Was soll das Feature machen? Warum waere es nuetzlich? Wie stellst du dir die Bedienung vor?" onblur="updateFeatureWish('+i+',\'description\',this.value)">'+esc(w.description||'')+'</textarea>';
+        html += '<textarea placeholder="' + uif.wishDetailPlaceholder + '" onblur="updateFeatureWish('+i+',\'description\',this.value)">'+esc(w.description||'')+'</textarea>';
         html += '</div>';
     });
     list.innerHTML = html;
@@ -2135,11 +3187,80 @@ doImport = function() {
 
 // === LANGUAGE / i18n ===
 const i18n = {
-de:{title:"AutoPlayer Testplan",guide:"Anleitung fuer Tester",testerInfo:"Tester-Informationen",testerName:"Tester-Name (optional)",appVersion:"App-Version",appLang:"App-Sprache",testStart:"Testdatum Start",testEnd:"Testdatum Ende",devices:"Geraete-Verwaltung",addDevice:"+ Geraet",smartphone:"Smartphone",tablet:"Tablet",brand:"Hersteller",model:"Modell",androidVer:"Android-Version",remove:"Entfernen",active:"Aktiv",passed:"Bestanden",bugs:"Bugs",wishes:"Wuensche",open:"Offen",total:"Gesamt",search:"Feature suchen...",expandAll:"Alle aufklappen",collapseAll:"Alle zuklappen",copyResult:"Ergebnis kopieren",exportBugs:"Bugs exportieren",exportWishes:"Wuensche exportieren",saveJson:"JSON speichern",importJson:"JSON importieren",reset:"Reset",rating:"App-Bewertung",ratingDesc:"Wie bewertest du die App insgesamt? Klicke auf einen Stern.",feedback:"Allgemeines Feedback",feedbackPlaceholder:"Hier allgemeines Feedback eintragen...",sendMail:"Per E-Mail an Entwickler senden",sendMailDesc:"Sende dein komplettes Testergebnis per E-Mail. Die JSON-Datei wird automatisch heruntergeladen.",featureWishes:"Feature-Wuensche fuer zukuenftige Versionen",addWish:"+ Feature-Wunsch",wishDesc:"Hier kannst du neue Feature-Ideen eintragen.",bugLabel:"BUG",wishLabel:"WUNSCH",screenshot:"Screenshot",bugComment:"Bug-Beschreibung...",wishComment:"Aenderungs-/Erweiterungswunsch...",screenshotPlaceholder:"Screenshot-Dateinamen..."},
-en:{title:"AutoPlayer Test Plan",guide:"Instructions for Testers",testerInfo:"Tester Information",testerName:"Tester Name (optional)",appVersion:"App Version",appLang:"App Language",testStart:"Test Start Date",testEnd:"Test End Date",devices:"Device Management",addDevice:"+ Device",smartphone:"Smartphone",tablet:"Tablet",brand:"Brand",model:"Model",androidVer:"Android Version",remove:"Remove",active:"Active",passed:"Passed",bugs:"Bugs",wishes:"Wishes",open:"Open",total:"Total",search:"Search features...",expandAll:"Expand all",collapseAll:"Collapse all",copyResult:"Copy result",exportBugs:"Export bugs",exportWishes:"Export wishes",saveJson:"Save JSON",importJson:"Import JSON",reset:"Reset",rating:"App Rating",ratingDesc:"How do you rate the app overall? Click a star.",feedback:"General Feedback",feedbackPlaceholder:"Enter general feedback here...",sendMail:"Send to developer via email",sendMailDesc:"Send your complete test result via email. The JSON file will be downloaded automatically.",featureWishes:"Feature wishes for future versions",addWish:"+ Feature wish",wishDesc:"Add new feature ideas here.",bugLabel:"BUG",wishLabel:"WISH",screenshot:"Screenshot",bugComment:"Bug description...",wishComment:"Change/enhancement wish...",screenshotPlaceholder:"Screenshot filenames..."}
+de:{title:"AutoPlayer Testplan",guide:"Anleitung fuer Tester",testerInfo:"Tester-Informationen",testerName:"Tester-Name (optional)",appVersion:"App-Version",appLang:"App-Sprache",testStart:"Testdatum Start",testEnd:"Testdatum Ende",devices:"Geraete-Verwaltung",addDevice:"+ Geraet",smartphone:"Smartphone",tablet:"Tablet",brand:"Hersteller",model:"Modell",androidVer:"Android-Version",remove:"Entfernen",active:"Aktiv",passed:"Bestanden",bugs:"Bugs",wishes:"Wuensche",open:"Offen",total:"Gesamt",search:"Feature suchen...",expandAll:"Alle aufklappen",collapseAll:"Alle zuklappen",copyResult:"Ergebnis kopieren",exportBugs:"Bugs exportieren",exportWishes:"Wuensche exportieren",saveJson:"JSON speichern",importJson:"JSON importieren",reset:"Reset",rating:"App-Bewertung",ratingDesc:"Wie bewertest du die App insgesamt? Klicke auf einen Stern.",feedback:"Allgemeines Feedback",feedbackPlaceholder:"Hier allgemeines Feedback eintragen...",sendMail:"Per E-Mail an Entwickler senden",sendMailTitle:"Testergebnis absenden",sendMailDesc:"Sende dein komplettes Testergebnis (JSON) per E-Mail an den Entwickler. Die JSON-Datei mit allen Daten wird automatisch als Anhang-Link generiert.",featureWishes:"Feature-Wuensche fuer zukuenftige Versionen",addWish:"+ Feature-Wunsch",wishDesc:"Hier kannst du neue Feature-Ideen oder Erweiterungswuensche eintragen, die nach dem Launch umgesetzt werden koennten. Jeder Wunsch bekommt ein eigenes Feld \u2014 nutze den \"+ Feature-Wunsch\" Button fuer weitere Eintraege.",bugLabel:"BUG",wishLabel:"WUNSCH",screenshot:"Screenshot",bugComment:"Bug-Beschreibung: Was erwartet? Was passiert? Schritte?",wishComment:"Aenderungs-/Erweiterungswunsch...",screenshotPlaceholder:"Screenshot-Dateinamen (komma-getrennt)",okTitle:"Bestanden",wishCheckTitle:"Aenderung/Erweiterung",bugSummaryTitle:"Gefundene Bugs",featSummaryTitle:"Aenderungs-/Erweiterungswuensche",severity:"Schweregrad",sevCritical:"Kritisch",sevHigh:"Hoch",sevMedium:"Mittel",sevLow:"Niedrig",reproducible:"Reproduzierbar",repAlways:"Immer",repSometimes:"Manchmal",repOnce:"Einmalig",importPlaceholder:"JSON hier einfuegen...",importBtn:"Importieren",cancelBtn:"Abbrechen",ratingCommentPlaceholder:"Optional: Begruende deine Bewertung kurz...",noRating:"Noch keine Bewertung",ratingLabels:["","Mangelhaft \u2014 viele Probleme","Ausreichend \u2014 funktioniert teilweise","Befriedigend \u2014 grundsaetzlich OK","Gut \u2014 laeuft rund mit kleinen Macken","Ausgezeichnet \u2014 Top App!"],screensLabel:"Screens: ",savedAt:"Gespeichert: ",lastSavedAt:"Zuletzt gespeichert: ",device:"Geraet ",activeLabel:"(aktiv)",activePrefix:"Aktiv: ",removeDevice:"Geraet entfernen",wishNum:"Feature-Wunsch #",deleteWishConfirm:"wirklich loeschen?",noWishes:"Noch keine Feature-Wuensche. Klicke oben auf \u201e+ Feature-Wunsch\u201c um einen neuen Eintrag zu erstellen.",wishTitlePlaceholder:"Titel / Kurzbeschreibung des Features",wishDelTitle:"Loeschen",prioHigh:"Prioritaet: Hoch",prioMedium:"Prioritaet: Mittel",prioLow:"Prioritaet: Niedrig",catSelect:"Kategorie waehlen...",catPlayer:"Player-Ansichten",catSmart:"Intelligente Features",catSettings:"Einstellungen",catOther:"Sonstiges",wishDetailPlaceholder:"Beschreibe den Feature-Wunsch so detailliert wie moeglich: Was soll das Feature machen? Warum waere es nuetzlich? Wie stellst du dir die Bedienung vor?",guideBodyHtml:"<h3>Wie funktioniert der Testplan?</h3><ul><li>Jeder Testpunkt hat zwei Checkboxen und einen Wunsch-Button:</li><li><strong style=\"color:var(--green)\">Gruene Checkbox (OK)</strong> = Test bestanden, alles funktioniert wie beschrieben</li><li><strong style=\"color:var(--red)\">Rote Checkbox (BUG)</strong> = Fehler gefunden, bitte Beschreibung + Schweregrad eintragen</li><li><strong style=\"color:var(--orange)\">WUNSCH-Button</strong> = Aenderungs- oder Erweiterungswunsch, kein Bug</li><li>Wenn weder OK noch BUG markiert ist, gilt der Test als \"Offen\"</li></ul><h3>Screenshot-Zuordnung</h3><ul><li>Klicke auf den <strong style=\"color:var(--cyan)\">\"Screenshot\"</strong>-Link unter einem Testpunkt</li><li>Trage die Dateinamen deiner Screenshots ein (komma-getrennt)</li><li>Empfohlene Namenskonvention: <code>Screenshot_[TestNr]_[Beschreibung].png</code></li><li>Beispiel: <code>Screenshot_001_app_start.png, Screenshot_002_crash.png</code></li></ul><h3>JSON Export / Import</h3><ul><li><strong>\"JSON speichern\"</strong> exportiert alle Testergebnisse, Geraete und Meta-Daten als JSON-Datei</li><li><strong>\"JSON importieren\"</strong> laedt eine JSON-Datei und stellt alle Daten wieder her</li><li>Der Export enthaelt ALLES: Testergebnisse, Geraete, Bug-Kommentare, Feature-Wuensche, Feedback</li></ul><h3>Feature-Wuensche</h3><ul><li>Am Ende der Seite gibt es einen Bereich fuer <strong>Feature-Wuensche</strong></li><li>Klicke <strong>\"+ Feature-Wunsch\"</strong> um einen neuen Wunsch einzutragen</li><li>Pro Wunsch: Titel, Prioritaet (Hoch/Mittel/Niedrig), Kategorie und eine ausfuehrliche Beschreibung</li><li>Du kannst beliebig viele Wuensche eintragen \u2014 jeder bekommt sein eigenes Feld</li><li>Feature-Wuensche werden im JSON-Export mitgespeichert und beim Import wiederhergestellt</li></ul><h3>App-Bewertung &amp; Absenden</h3><ul><li>Am Ende der Seite kannst du die App mit <strong>1-5 Sternen</strong> bewerten + einen Kommentar schreiben</li><li>Klicke auf <strong>\"Per E-Mail an Entwickler senden\"</strong> \u2014 die JSON-Datei wird heruntergeladen und dein Mail-Programm oeffnet sich</li><li><strong>Wichtig:</strong> Haenge die heruntergeladene JSON-Datei an die Mail an bevor du sie absendest!</li><li>Damit koennen Testergebnisse zwischen Geraeten/Browsern uebertragen werden</li><li>Tipp: Regelmaessig exportieren als Sicherung!</li></ul><h3>Bug-Beschreibungen richtig schreiben</h3><ul><li><strong>Was erwartet:</strong> Was haette laut Testbeschreibung passieren sollen?</li><li><strong>Was passiert:</strong> Was ist stattdessen passiert?</li><li><strong>Schritte zum Reproduzieren:</strong> Genaue Schritte um den Bug auszuloesen</li><li>Schweregrad und Reproduzierbarkeit ueber die Dropdowns angeben</li><li>Wenn moeglich: Screenshot zuordnen!</li></ul><h3>Geraete-Verwaltung</h3><ul><li>Du kannst mehrere Geraete anlegen und zwischen ihnen wechseln</li><li>Alle Testergebnisse werden <strong>pro Geraet</strong> separat gespeichert</li><li>Das aktive Geraet wird durch den Radio-Button markiert</li><li>Beim Wechsel des aktiven Geraets aktualisieren sich alle Checkboxen</li></ul>"},
+en:{title:"AutoPlayer Test Plan",guide:"Instructions for Testers",testerInfo:"Tester Information",testerName:"Tester Name (optional)",appVersion:"App Version",appLang:"App Language",testStart:"Test Start Date",testEnd:"Test End Date",devices:"Device Management",addDevice:"+ Device",smartphone:"Smartphone",tablet:"Tablet",brand:"Brand",model:"Model",androidVer:"Android Version",remove:"Remove",active:"Active",passed:"Passed",bugs:"Bugs",wishes:"Wishes",open:"Open",total:"Total",search:"Search features...",expandAll:"Expand all",collapseAll:"Collapse all",copyResult:"Copy result",exportBugs:"Export bugs",exportWishes:"Export wishes",saveJson:"Save JSON",importJson:"Import JSON",reset:"Reset",rating:"App Rating",ratingDesc:"How do you rate the app overall? Click a star.",feedback:"General Feedback",feedbackPlaceholder:"Enter general feedback here...",sendMail:"Send to developer via email",sendMailTitle:"Submit Test Result",sendMailDesc:"Send your complete test result (JSON) to the developer via email. The JSON file with all data will be automatically generated as an attachment link.",featureWishes:"Feature wishes for future versions",addWish:"+ Feature wish",wishDesc:"Add new feature ideas or enhancement requests that could be implemented after launch. Each wish gets its own field \u2014 use the \"+ Feature wish\" button for additional entries.",bugLabel:"BUG",wishLabel:"WISH",screenshot:"Screenshot",bugComment:"Bug description: What expected? What happened? Steps?",wishComment:"Change/enhancement wish...",screenshotPlaceholder:"Screenshot filenames (comma-separated)",okTitle:"Passed",wishCheckTitle:"Change/Enhancement",bugSummaryTitle:"Bugs Found",featSummaryTitle:"Change/Enhancement Wishes",severity:"Severity",sevCritical:"Critical",sevHigh:"High",sevMedium:"Medium",sevLow:"Low",reproducible:"Reproducible",repAlways:"Always",repSometimes:"Sometimes",repOnce:"Once",importPlaceholder:"Paste JSON here...",importBtn:"Import",cancelBtn:"Cancel",ratingCommentPlaceholder:"Optional: Briefly explain your rating...",noRating:"No rating yet",ratingLabels:["","Poor \u2014 many issues","Fair \u2014 partially works","OK \u2014 basically fine","Good \u2014 runs well with minor issues","Excellent \u2014 top app!"],screensLabel:"Screens: ",savedAt:"Saved: ",lastSavedAt:"Last saved: ",device:"Device ",activeLabel:"(active)",activePrefix:"Active: ",removeDevice:"Remove device",wishNum:"Feature Wish #",deleteWishConfirm:"really delete?",noWishes:"No feature wishes yet. Click \u201c+ Feature wish\u201d above to create a new entry.",wishTitlePlaceholder:"Title / Brief description of the feature",wishDelTitle:"Delete",prioHigh:"Priority: High",prioMedium:"Priority: Medium",prioLow:"Priority: Low",catSelect:"Select category...",catPlayer:"Player views",catSmart:"Smart features",catSettings:"Settings",catOther:"Other",wishDetailPlaceholder:"Describe the feature wish in as much detail as possible: What should the feature do? Why would it be useful? How do you imagine using it?",guideBodyHtml:"<h3>How does the test plan work?</h3><ul><li>Each test point has two checkboxes and a wish button:</li><li><strong style=\"color:var(--green)\">Green checkbox (OK)</strong> = Test passed, everything works as described</li><li><strong style=\"color:var(--red)\">Red checkbox (BUG)</strong> = Error found, please add description + severity</li><li><strong style=\"color:var(--orange)\">WISH button</strong> = Change or enhancement request, not a bug</li><li>If neither OK nor BUG is marked, the test is considered \"Open\"</li></ul><h3>Screenshot assignment</h3><ul><li>Click the <strong style=\"color:var(--cyan)\">\"Screenshot\"</strong> link below a test point</li><li>Enter the filenames of your screenshots (comma-separated)</li><li>Recommended naming: <code>Screenshot_[TestNo]_[Description].png</code></li><li>Example: <code>Screenshot_001_app_start.png, Screenshot_002_crash.png</code></li></ul><h3>JSON Export / Import</h3><ul><li><strong>\"Save JSON\"</strong> exports all test results, devices and metadata as a JSON file</li><li><strong>\"Import JSON\"</strong> loads a JSON file and restores all data</li><li>The export contains EVERYTHING: test results, devices, bug comments, feature wishes, feedback</li></ul><h3>Feature Wishes</h3><ul><li>At the bottom of the page there is a section for <strong>Feature Wishes</strong></li><li>Click <strong>\"+ Feature wish\"</strong> to add a new wish</li><li>Per wish: title, priority (High/Medium/Low), category and a detailed description</li><li>You can add as many wishes as you like \u2014 each gets its own field</li><li>Feature wishes are saved in the JSON export and restored on import</li></ul><h3>App Rating &amp; Submitting</h3><ul><li>At the bottom of the page you can rate the app with <strong>1-5 stars</strong> and write a comment</li><li>Click <strong>\"Send to developer via email\"</strong> \u2014 the JSON file will be downloaded and your email client will open</li><li><strong>Important:</strong> Attach the downloaded JSON file to the email before sending!</li><li>This allows test results to be transferred between devices/browsers</li><li>Tip: Export regularly as a backup!</li></ul><h3>Writing bug descriptions</h3><ul><li><strong>Expected:</strong> What should have happened according to the test description?</li><li><strong>Actual:</strong> What happened instead?</li><li><strong>Steps to reproduce:</strong> Exact steps to trigger the bug</li><li>Specify severity and reproducibility via the dropdowns</li><li>If possible: attach a screenshot!</li></ul><h3>Device Management</h3><ul><li>You can add multiple devices and switch between them</li><li>All test results are stored <strong>per device</strong> separately</li><li>The active device is marked by the radio button</li><li>When switching the active device, all checkboxes update automatically</li></ul>"}
 };
 // Generate other languages with fallback to EN
 ['es','fr','it','pt','tr','ru','uk','pl','cs','ja','ko','zh','hi','ar','th','vi','id','ms','nl','da','fi','nb','sv'].forEach(l=>{if(!i18n[l])i18n[l]=i18n.en;});
+
+function _t(id, text) { const el = document.getElementById(id); if (el && text !== undefined) el.textContent = text; }
+function _btn(onclick, text) { const el = document.querySelector('[onclick="' + onclick + '"]'); if (el && text !== undefined) el.textContent = text; }
+
+function applyUiStrings(lang) {
+    const ui = i18n[lang] || i18n.en;
+    // Guide section
+    const gh = document.querySelector('#guideCard .guide-header h2');
+    if (gh) gh.innerHTML = '<span class="arr">&#9654;</span> ' + ui.guide;
+    const gb = document.querySelector('#guideCard .guide-body');
+    if (gb && ui.guideBodyHtml) gb.innerHTML = ui.guideBodyHtml;
+    // Tester info
+    _t('testerInfoTitle', ui.testerInfo);
+    const lbls = document.querySelectorAll('.info-card .info-field label');
+    const lblKeys = ['testerName','appVersion','appLang','testStart','testEnd'];
+    lbls.forEach((el,i) => { if (lblKeys[i] && ui[lblKeys[i]]) el.textContent = ui[lblKeys[i]]; });
+    const mt = document.getElementById('metaTester');
+    if (mt) mt.placeholder = lang === 'de' ? 'z.B. Max Mustermann' : 'e.g. John Doe';
+    // Devices
+    _t('devicesTitle', ui.devices);
+    const addDevBtn = document.querySelector('.btn-add-dev');
+    if (addDevBtn) addDevBtn.textContent = ui.addDevice;
+    // Stats bar
+    _t('lbl_passed', ui.passed);
+    _t('lbl_bugs', ui.bugs);
+    _t('lbl_wishes', ui.wishes);
+    _t('lbl_open', ui.open);
+    _t('lbl_total', ui.total);
+    // Search
+    const sb = document.getElementById('searchBox');
+    if (sb) sb.placeholder = ui.search;
+    // Summaries
+    _t('bugSummaryTitle', ui.bugSummaryTitle);
+    _t('featSummaryTitle', ui.featSummaryTitle);
+    // Control buttons
+    _btn('toggleAll(true)', ui.expandAll);
+    _btn('toggleAll(false)', ui.collapseAll);
+    _btn('exportResults()', ui.copyResult);
+    _btn('exportBugs()', ui.exportBugs);
+    _btn('exportFeats()', ui.exportWishes);
+    _btn('saveToJson()', ui.saveJson);
+    _btn('showImport()', ui.importJson);
+    _btn('resetAll()', ui.reset);
+    // Import modal
+    _t('ioTitle', ui.importJson);
+    const ioText = document.getElementById('ioText');
+    if (ioText) ioText.placeholder = ui.importPlaceholder;
+    _btn('doImport()', ui.importBtn);
+    _btn('closeModal()', ui.cancelBtn);
+    // Rating
+    _t('ratingTitle', ui.rating);
+    _t('ratingDescP', ui.ratingDesc);
+    const rc = document.getElementById('ratingComment');
+    if (rc) rc.placeholder = ui.ratingCommentPlaceholder;
+    // Feedback
+    _t('feedbackTitle', ui.feedback);
+    const mf = document.getElementById('metaFeedback');
+    if (mf) mf.placeholder = ui.feedbackPlaceholder;
+    // Send mail
+    _t('sendMailTitle', ui.sendMailTitle);
+    _t('sendMailDescP', ui.sendMailDesc);
+    _btn('sendResultByMail()', ui.sendMail);
+    // Feature wishes
+    _t('featureWishesTitle', ui.featureWishes);
+    _t('wishDescText', ui.wishDesc);
+    _btn('addFeatureWish()', ui.addWish);
+    // Re-render stars with current lang labels
+    renderStars();
+}
 
 let currentLang = 'de';
 const langOptions = [
@@ -2213,6 +3334,10 @@ function switchLang(lang) {
     url.searchParams.set('lang', lang);
     window.history.replaceState({}, '', url);
     buildLangDropdown();
+    const sp = document.getElementById('subTestPlan');
+    if (sp) sp.textContent = lang === 'en' ? 'Granular Test Plan' : 'Granularer Testplan';
+    if (typeof applyUiStrings === 'function') applyUiStrings(lang);
+    if (typeof render === 'function') render();
 }
 
 function initLang() {
@@ -2223,7 +3348,7 @@ function initLang() {
 }
 
 // === STAR RATING ===
-const ratingLabels = ['', 'Mangelhaft — viele Probleme', 'Ausreichend — funktioniert teilweise', 'Befriedigend — grundsaetzlich OK', 'Gut — laeuft rund mit kleinen Macken', 'Ausgezeichnet — Top App!'];
+const ratingLabels = null; // replaced by i18n[currentLang].ratingLabels
 function setRating(v) {
     localStorage.setItem('tp_meta_rating', v);
     renderStars();
@@ -2240,7 +3365,9 @@ function renderStars() {
         s.innerHTML = sv <= v ? '&#9733;' : '&#9734;';
         s.classList.toggle('active', sv <= v);
     });
-    document.getElementById('ratingLabel').textContent = v > 0 ? v + '/5 — ' + ratingLabels[v] : 'Noch keine Bewertung';
+    const rl = (i18n[currentLang] || i18n.en).ratingLabels;
+    const ui2 = i18n[currentLang] || i18n.en;
+    document.getElementById('ratingLabel').textContent = v > 0 ? v + '/5 \u2014 ' + rl[v] : ui2.noRating;
     const rc = localStorage.getItem('tp_meta_rating_comment');
     if (rc) document.getElementById('ratingComment').value = rc;
 }
