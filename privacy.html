@@ -250,328 +250,412 @@ footer a { color: var(--accent); }
 
 <!-- ===== GERMAN CONTENT ===== -->
 <div class="legal-content" data-lang="de" id="content-de">
-  <h1>Datenschutzerklaerung &ndash; AutoPlayer</h1>
-  <p class="meta">Letzte Aktualisierung: 11.03.2026 &middot; Version 4.0</p>
+  <h1>Datenschutzerklärung – AutoPlayer</h1>
+  <p class="meta">Letzte Aktualisierung: 08.06.2026 · Version 5.0</p>
 
   <nav class="toc" id="toc-de"></nav>
 
   <section id="de-1">
-    <h2>1. Ueberblick</h2>
-    <p>AutoPlayer ist eine lokale MP3-Player-Anwendung fuer Android mit Android Auto Unterstuetzung. Der Schutz Ihrer Privatsphaere hat fuer uns hoechste Prioritaet. Diese Datenschutzerklaerung erlaeutert umfassend, welche Daten die App verarbeitet, welche Berechtigungen sie benoetigt und wie Ihre Daten geschuetzt werden.</p>
-    <p><strong>Grundprinzip:</strong> AutoPlayer verarbeitet Ihre Daten lokal auf Ihrem Geraet. Es werden keine personenbezogenen Daten an Server, Dritte oder das Internet uebertragen. Die einzige Netzwerkverbindung ist eine optionale Wetterabfrage (siehe Abschnitt 5).</p>
+    <h2>1. Verantwortlicher &amp; Überblick</h2>
+    <p>AutoPlayer ist eine lokale MP3-Player-Anwendung für Android mit Android-Auto-Unterstützung. Der Schutz Ihrer Privatsphäre hat für uns höchste Priorität. Diese Datenschutzerklärung erläutert umfassend, welche Daten die App verarbeitet, welche Berechtigungen sie benötigt, welche externen Dienste in welchen Fällen kontaktiert werden und welche Rechte Ihnen zustehen.</p>
+    <p><strong>Verantwortlicher im Sinne von Art. 4 Nr. 7 DSGVO:</strong></p>
+    <p>Kay Küstermann<br>
+    Hermann-Lenßen-Str. 13<br>
+    47929 Grefrath<br>
+    Nordrhein-Westfalen, Deutschland<br>
+    E-Mail: <a href="mailto:zappelmann+autoplayer@googlemail.com">zappelmann+autoplayer@googlemail.com</a></p>
+    <p><strong>Grundprinzip:</strong> AutoPlayer ist eine „lokal-zuerst“-App. Alle Ihre Inhalte (Musik, Bibliothek, Playlists, Verlauf, Einstellungen) werden ausschließlich auf Ihrem Gerät verarbeitet. Es gibt keine Benutzerkonten, keine Cloud-Synchronisation und keine serverseitige Speicherung. Wenige optionale Funktionen kontaktieren externe Dienste – diese sind in Abschnitt 5 vollständig aufgeführt und jeweils an eine bewusste Aktivierung gebunden.</p>
   </section>
 
   <section id="de-2">
-    <h2>2. Datenerhebung</h2>
-    <p>AutoPlayer erhebt, speichert und uebertraegt keine personenbezogenen Daten an Dritte.</p>
-    <p>Die App:</p>
+    <h2>2. Kein Tracking, keine Profilbildung</h2>
+    <p>AutoPlayer enthält <strong>keinerlei Tracking-, Analyse- oder Werbe-Technologie</strong>. Konkret:</p>
     <ul>
-      <li>Sammelt keine persoenlichen Informationen</li>
-      <li>Verwendet keine Analyse- oder Tracking-Tools. Crash-Reports koennen optional per E-Mail nach ausdruecklicher Bestaetigung gesendet werden</li>
-      <li>Sendet keine personenbezogenen Daten an Server, Cloud-Dienste oder Dritte</li>
-      <li>Verwendet keine Werbe-Frameworks oder Werbe-IDs</li>
-      <li>Erstellt keine Nutzerprofile</li>
-      <li>Fuehrt kein Fingerprinting durch</li>
+      <li>Keine Analyse-SDKs (kein Google Analytics, Firebase Analytics, Crashlytics, Mixpanel o. Ä.)</li>
+      <li>Keine Werbe-Frameworks, keine Werbe-IDs (kein Advertising ID)</li>
+      <li>Kein Nutzer-Profiling, kein Geräte-Fingerprinting</li>
+      <li>Keine Weitergabe oder kein Verkauf personenbezogener Daten an Dritte</li>
+      <li>Keine versteckten Netzwerkverbindungen – alle externen Aufrufe sind in Abschnitt 5 dokumentiert</li>
     </ul>
   </section>
 
   <section id="de-3">
-    <h2>3. Lokale Datenverarbeitung</h2>
-    <p>Die App verarbeitet folgende Daten ausschliesslich lokal auf Ihrem Geraet. Keine dieser Daten verlassen Ihr Geraet (ausser der in Abschnitt 5 beschriebenen Wetterabfrage).</p>
+    <h2>3. Lokal verarbeitete Daten</h2>
+    <p>Folgende Daten werden ausschließlich lokal auf Ihrem Gerät (in der App-eigenen Datenbank bzw. den App-Einstellungen, geschützt durch die Android-Sandbox) gespeichert. Keine dieser Daten verlassen Ihr Gerät (Ausnahmen ausschließlich gemäß Abschnitt 5):</p>
     <ul>
-      <li><strong>Musikdateien und Metadaten:</strong> Ihre lokalen Audio-Dateien inkl. Titel, Kuenstler, Album, Jahr, Dauer, Bitrate, Format, Dateigroesse und Album-Cover &ndash; fuer Wiedergabe und Bibliotheksanzeige</li>
-      <li><strong>Wiedergabe-Verlauf:</strong> Welche Songs wann und wie oft abgespielt wurden &ndash; fuer smarte Playlists, Nostalgie-Maschine und Auto-Playlists</li>
-      <li><strong>Favoriten und Playlists:</strong> Ihre personalisierte Musikorganisation</li>
-      <li><strong>Queue Presets:</strong> Benannte Schnappschuesse Ihrer Wiedergabe-Warteschlange, lokal gespeichert</li>
-      <li><strong>Versteckte Songs:</strong> Songs und Ordner, die Sie aus der Bibliothek ausgeblendet haben</li>
-      <li><strong>App-Einstellungen:</strong> Theme, Sprache, Equalizer, Crossfade, Wiedergabegeschwindigkeit, Shake-to-Shuffle, geschwindigkeitsbasierte Lautstaerke und alle weiteren Praeferenzen</li>
-      <li><strong>Geo-Music Regeln:</strong> Von Ihnen erstellte standortbasierte Playlist-Regeln inkl. GPS-Koordinaten, Radius und WiFi-SSID-Namen &ndash; werden ausschliesslich lokal gespeichert</li>
-      <li><strong>Backup-Daten:</strong> Exportierte JSON-Datei mit Favoriten, Playlists und Einstellungen &ndash; nur wenn Sie explizit exportieren</li>
-      <li><strong>Audio-Analyse-Daten:</strong> BPM, Tonart, Energie-Level jedes analysierten Songs fuer Smart DJ, Mood Morph, Drive Mode DJ, Auto-Playlists, Beat-Match Crossfade, Weather DJ und Heartbeat Sync DJ (lokal in Room-DB)</li>
-      <li><strong>Sound Souvenir Daten:</strong> Verknuepfung von Song mit GPS-Koordinaten und Ortsname fuer standortbasierte Musik-Erinnerungen (lokal, opt-in, jederzeit loeschbar)</li>
-      <li><strong>Cabin Calibrator Profil:</strong> Frequenzantwort-Messungen und EQ-Korrekturwerte fuer Ihre Fahrzeugkabine (nur lokal, jederzeit loeschbar)</li>
-      <li><strong>Music Wrapped Statistiken:</strong> Aggregierte Hoerdaten (Wiedergabezaehler, Hoerdauer, Skip-Zaehler, Stundenverteilung, Streaks) &ndash; werden bei Bedarf aus dem lokalen Wiedergabe-Verlauf berechnet, niemals uebertragen</li>
-      <li><strong>Automatische Backup-Daten:</strong> JSON-Export von Favoriten, Playlists, Einstellungen, Wiedergabe-Verlauf und Audio-Analyse &ndash; wird nur im vom Nutzer gewaehlten lokalen Ordner gespeichert, niemals hochgeladen</li>
-      <li><strong>Lokale Fehler-Protokolle:</strong> Technische Crash-Logs werden bei App-Abstuerzen lokal gespeichert (max. 5 Dateien, KEINE Uebertragung an Server oder Dritte)</li>
-      <li><strong>Crash Reports (Optional):</strong> Bei einem App-Absturz kannst du optional einen technischen Fehlerbericht per E-Mail senden. Der Bericht enthaelt nur: Fehlerbeschreibung (Stack-Trace), Geraetetyp, Android-Version, App-Version und deinen optionalen Kommentar. KEINE persoenlichen Daten, Musikdateien, Hoerverlauf oder andere Nutzerdaten werden uebermittelt. Berichte werden NUR nach deiner ausdruecklichen Bestaetigung gesendet. Du kannst diese Funktion unter Einstellungen &gt; Crash Reports deaktivieren.</li>
-      <li><strong>Health Connect Herzfrequenz-Daten:</strong> Wenn du den Smartwatch-Modus im Herzschlag-Sync DJ aktivierst, liest die App deine aktuelle Herzfrequenz aus Health Connect (Android-Gesundheitsplattform). Diese Daten werden nur in Echtzeit zur Auswahl tempopassender Musik verwendet. Keine Herzfrequenz-Daten werden gespeichert, protokolliert oder uebertragen. Du kannst jederzeit zum manuellen Modus zurueckwechseln.</li>
+      <li><strong>Musikdateien und Metadaten:</strong> Titel, Künstler, Album, Jahr, Dauer, Bitrate, Format, Dateigröße, Album-Cover – für Wiedergabe und Bibliotheksanzeige</li>
+      <li><strong>Wiedergabe-Verlauf:</strong> welche Songs wann/wie oft gespielt wurden – für Smart Playlists, Nostalgie-Maschine, Auto-Playlists, Music Wrapped</li>
+      <li><strong>Favoriten, Playlists, Queue-Presets, versteckte Songs/Ordner</strong></li>
+      <li><strong>App-Einstellungen:</strong> Theme, Sprache, Equalizer, Crossfade, Wiedergabegeschwindigkeit, Shake-to-Shuffle, geschwindigkeitsbasierte Lautstärke und alle weiteren Präferenzen</li>
+      <li><strong>Audio-Analyse:</strong> BPM, Tonart, Energie-Level je analysiertem Song – für Smart DJ, Mood Morph, Drive Mode DJ, Beat-Match, Weather DJ, Heartbeat-Sync</li>
+      <li><strong>Geo-Music- und Kontext-Regeln:</strong> von Ihnen angelegte standort-/kontextbasierte Regeln inkl. GPS-Koordinaten, Radius und WLAN-SSID-Namen</li>
+      <li><strong>Bekannte Orte (Geo-Pins):</strong> von Ihnen gesetzte Orte mit Koordinaten/Radius</li>
+      <li><strong>Sound-Souvenir-Daten:</strong> Verknüpfung von Song mit GPS und Ortsname (opt-in, jederzeit löschbar)</li>
+      <li><strong>Cabin-Calibrator-Profil:</strong> Frequenzmessungen und EQ-Korrekturwerte Ihrer Fahrzeugkabine</li>
+      <li><strong>Music-Wrapped-Statistiken:</strong> aggregierte Hördaten, lokal aus dem Verlauf berechnet</li>
+      <li><strong>Backups:</strong> JSON-Export (Favoriten, Playlists, Einstellungen, Verlauf, Analyse) – nur in den von Ihnen gewählten lokalen Ordner, niemals hochgeladen</li>
+      <li><strong>Lokale Fehlerprotokolle:</strong> technische Crash-Logs (Ring-Puffer, max. 5 Dateien) – verbleiben lokal, keine automatische Übertragung (siehe Abschnitt 6 zur optionalen Crash-Mail)</li>
     </ul>
   </section>
 
   <section id="de-4">
     <h2>4. Berechtigungen</h2>
-    <p>AutoPlayer benoetigt folgende Berechtigungen, jede wird nur fuer den angegebenen Zweck verwendet:</p>
+    <p>AutoPlayer fordert nur die folgenden Berechtigungen an, jede ausschließlich für den genannten Zweck. Gefährliche Berechtigungen werden zur Laufzeit abgefragt und können jederzeit in den Android-Systemeinstellungen widerrufen werden.</p>
     <ul>
-      <li><strong>Medienzugriff (Audio):</strong> Lesen Ihrer lokalen Musikdateien und Metadaten</li>
-      <li><strong>Internet:</strong> Nur fuer Weather DJ &ndash; ruft aktuelle Wetterbedingungen von der Open-Meteo API ab (siehe Abschnitt 5). Es werden keine personenbezogenen Daten gesendet.</li>
-      <li><strong>Mikrofon (RECORD_AUDIO):</strong> Audio-Visualizer (Echtzeit-Visualisierung der abgespielten Musik) und Car Cabin Calibrator (akustische Vermessung Ihrer Fahrzeugkabine). Es werden KEINE Aufnahmen erstellt, gespeichert oder uebertragen.</li>
-      <li><strong>Standort (GPS):</strong> Geo-Music (Playlist nach Standort), Drive Mode DJ (Geschwindigkeitserkennung), Sound Souvenir (Musik-Erinnerungen), Weather DJ (Wetter fuer Ihren Standort), geschwindigkeitsbasierte Lautstaerke (Fahrgeschwindigkeit) &ndash; nur lokal</li>
-      <li><strong>WiFi-Status:</strong> Geo-Music &ndash; Erkennung des aktuellen WiFi-Netzwerknamens fuer SSID-basierte Playlist-Regeln</li>
-      <li><strong>Aktivitaetserkennung:</strong> Smart DJ und Geo-Music &ndash; Erkennung der Bewegungsart (Gehen, Laufen, Fahren) fuer automatische Musikauswahl. Es werden KEINE Aktivitaets-Profile erstellt oder gespeichert.</li>
-      <li><strong>Bluetooth:</strong> Automatische Wiedergabe-Fortsetzung bei Bluetooth-Verbindung, Passenger Mode (Geraet-zu-Geraet-Verbindung via Nearby Connections). Keine Geraeteinformationen werden dauerhaft gespeichert.</li>
-      <li><strong>Systemeinstellungen:</strong> Song als System-Klingelton setzen (nur die von Ihnen explizit gewaehlte Einstellung)</li>
-      <li><strong>Vordergrunddienst:</strong> Hintergrund-Musikwiedergabe</li>
-      <li><strong>Benachrichtigungen:</strong> Wiedergabe-Steuerung in der Benachrichtigungsleiste</li>
-      <li><strong>Health Connect (READ_HEART_RATE):</strong> Herzschlag-Sync DJ Smartwatch-Modus &ndash; liest deine aktuelle Herzfrequenz aus Health Connect, um automatisch tempopassende Musik auszuwaehlen. Nur auf Wunsch, keine Daten gespeichert oder uebertragen.</li>
+      <li><strong>Medienzugriff Audio</strong> (READ_MEDIA_AUDIO bzw. READ_EXTERNAL_STORAGE auf Android ≤ 12): Lesen Ihrer lokalen Musikdateien und Metadaten</li>
+      <li><strong>Mikrofon</strong> (RECORD_AUDIO): Audio-Visualizer, Cabin Calibrator und Sprachbefehle. Es werden KEINE Aufnahmen erstellt, gespeichert oder übertragen (zur Sprachverarbeitung siehe Abschnitt 9).</li>
+      <li><strong>Internet</strong> (INTERNET): nur für die in Abschnitt 5 genannten optionalen Online-Funktionen</li>
+      <li><strong>Standort</strong> (ACCESS_FINE_LOCATION / ACCESS_COARSE_LOCATION): Geo-Music, Drive Mode DJ (Geschwindigkeit), Sound Souvenir, Weather DJ, bekannte Orte, Kontext-Auto-Wechsel, geschwindigkeitsbasierte Lautstärke. Datenminimierung siehe Abschnitt 7.</li>
+      <li><strong>WLAN-/Netzwerkstatus</strong> (ACCESS_WIFI_STATE, ACCESS_NETWORK_STATE, CHANGE_WIFI_STATE): WLAN-SSID für Kontext-/Geo-Regeln, WLAN-IP für den Party-Modus; CHANGE_WIFI_STATE wird intern von Google „Nearby Connections“ benötigt</li>
+      <li><strong>Bluetooth</strong> (BLUETOOTH_CONNECT, BLUETOOTH_SCAN, BLUETOOTH_ADVERTISE, NEARBY_WIFI_DEVICES; auf Altgeräten BLUETOOTH/BLUETOOTH_ADMIN): Auto-Resume bei Bluetooth-Verbindung, BLE-MIDI, Beifahrer-Modus und Geräte-Transfer (Nearby Connections). Es werden keine Geräteinformationen dauerhaft gespeichert.</li>
+      <li><strong>Aktivitätserkennung</strong> (ACTIVITY_RECOGNITION): Schrittzaehler für Geo-Music/Kontext (Erkennung von Gehen/Laufen). Wird nur in Echtzeit verwendet, kein Schrittverlauf gespeichert; der Sensor wird nur bei erteilter Berechtigung registriert.</li>
+      <li><strong>Benachrichtigungen</strong> (POST_NOTIFICATIONS, Android 13+): Wiedergabe-Steuerung in der Benachrichtigungsleiste sowie Transfer-/DJ-Hinweise. Wird beim ersten Abspielen abgefragt.</li>
+      <li><strong>Vordergrunddienst</strong> (FOREGROUND_SERVICE, FOREGROUND_SERVICE_MEDIA_PLAYBACK) und <strong>WAKE_LOCK</strong>: Hintergrund-Musikwiedergabe sowie laufender Party-Server/Transfer</li>
+      <li><strong>Systemeinstellungen</strong> (WRITE_SETTINGS): nur um auf Ihren ausdrücklichen Wunsch einen Song als Klingelton/Benachrichtigungston zu setzen</li>
+      <li><strong>Vibration</strong> (VIBRATE): haptisches Feedback</li>
+      <li><strong>Health Connect</strong> (health.READ_HEART_RATE): nur für den Smartwatch-Modus des Heartbeat-Sync DJ (siehe Abschnitt 10)</li>
+      <li><strong>Geräte-Funktionen</strong> (uses-feature MIDI / USB-Host, optional): USB-/Bluetooth-MIDI-Controller</li>
     </ul>
   </section>
 
   <section id="de-5">
-    <h2>5. Netzwerkkommunikation</h2>
-    <p>AutoPlayer fuehrt genau eine Art von Netzwerkanfrage durch:</p>
+    <h2>5. Externe Datenübertragungen (Netzwerk)</h2>
+    <p>Die folgende Liste ist vollständig. Außerhalb dieser Fälle findet keine Übertragung an externe Dienste statt. Jede dieser Funktionen ist optional und an Ihre Aktivierung gebunden.</p>
     <ul>
-      <li><strong>Weather DJ:</strong> Bei Aktivierung sendet die App Ihre ungefaehren GPS-Koordinaten (Breiten- und Laengengrad) an die Open-Meteo API (api.open-meteo.com), um aktuelle Wetterbedingungen abzurufen. Dies ist notwendig, um wetterpassende Musik auszuwaehlen.</li>
+      <li><strong>Wetterdaten – Open-Meteo</strong> (api.open-meteo.com): Bei Nutzung von Weather DJ oder einer Kontext-Regel mit Wetterbedingung werden Ihre <em>auf ca. 110 m gerundeten</em> GPS-Koordinaten an Open-Meteo gesendet, um Wetter/Vorhersage abzurufen. Übertragen werden ausschließlich diese gerundeten Koordinaten – keine Geräte- oder Nutzerkennung. Der Abruf über den Kontext-Pfad erfolgt nur, wenn tatsächlich eine aktive Regel eine Wetterbedingung nutzt. Datenschutz von Open-Meteo: <a href="https://open-meteo.com/en/terms" target="_blank" rel="noopener">open-meteo.com/en/terms</a></li>
+      <li><strong>Orte in der Nähe – OpenStreetMap Overpass</strong> (overpass-api.de): Nur wenn Sie die OSM-Abfragen in den Datenschutz-Einstellungen ausdrücklich aktivieren (Standard: AUS), werden <em>auf ca. 110 m gerundete</em> Koordinaten gesendet, um Natur-Kategorien in der Umgebung für Kontext-Regeln zu ermitteln.</li>
+      <li><strong>Kartenanzeige – OpenStreetMap-Kacheln</strong> (tile.openstreetmap.org): Nur wenn Sie die Karte im Editor für „bekannte Orte“ öffnen, werden Kartenkacheln geladen. Dabei erhält der Kachel-Server technisch bedingt Ihre IP-Adresse sowie die angefragten Kachel-Koordinaten.</li>
+      <li><strong>Ortsnamen – System-Geocoder</strong> (Android-Dienst, kann je nach Gerät online über Google auflösen): Für Weather DJ und Sound Souvenir wird zu Koordinaten ein lesbarer Ortsname ermittelt. Die Koordinaten werden vorher gerundet (Weather DJ ca. 110 m, Sound Souvenir ca. 11 m).</li>
+      <li><strong>Käufe – Google Play Billing</strong>: Für den Erwerb der Pro-Funktionen wird der Kauf-/Lizenzstatus über die Google-Play-Abrechnung verarbeitet. Die Zahlungsabwicklung erfolgt durch Google; wir erhalten keine Zahlungsdaten. Datenschutz von Google: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a></li>
+      <li><strong>Sprachbefehle – System-Spracherkennung</strong>: siehe Abschnitt 9.</li>
+      <li><strong>Crash-Berichte – optionale E-Mail</strong>: siehe Abschnitt 6.</li>
     </ul>
-    <p class="sub-heading">Wichtig:</p>
-    <ul>
-      <li>Open-Meteo ist eine kostenlose, quelloffene Wetter-API</li>
-      <li>Es werden nur GPS-Koordinaten gesendet &ndash; keine Geraete-ID, keine Nutzer-ID, keine personenbezogenen Daten</li>
-      <li>Die Anfrage erfolgt nur, wenn Sie Weather DJ aktiv nutzen</li>
-      <li>Es werden keine Daten ueber das aktuelle Wetterergebnis hinaus zwischengespeichert</li>
-      <li>Sie koennen AutoPlayer vollstaendig ohne diese Funktion nutzen</li>
-      <li>Datenschutzerklaerung von Open-Meteo: <a href="https://open-meteo.com/en/terms" target="_blank" rel="noopener">https://open-meteo.com/en/terms</a></li>
-    </ul>
-    <p>Alle anderen Funktionen arbeiten vollstaendig offline ohne jegliche Netzwerkverbindung.</p>
+    <p>Alle übrigen Funktionen arbeiten vollständig offline.</p>
   </section>
 
   <section id="de-6">
-    <h2>6. Sensorzugriff</h2>
-    <p>Folgende Geraetesensoren werden ohne zusaetzliche Android-Berechtigungen genutzt:</p>
-    <ul>
-      <li><strong>Umgebungslichtsensor:</strong> Automatischer Wechsel zwischen Hell- und Dunkelmodus basierend auf Umgebungshelligkeit (nur bei &quot;Auto&quot;-Design)</li>
-      <li><strong>Beschleunigungssensor:</strong> Sleep Fade Intelligence (Schlaferkennung durch Bewegungslosigkeit) und Shake to Shuffle (Erkennung von Schuettelbewegungen). Daten werden nur in Echtzeit verarbeitet &ndash; keine Bewegungsdaten werden gespeichert oder uebertragen.</li>
-      <li><strong>Schrittzaehler:</strong> Geo-Music (Erkennung von Gehbewegung). Zaehler wird nur in Echtzeit verwendet &ndash; kein Schrittverlauf wird gespeichert.</li>
-    </ul>
+    <h2>6. Crash-Berichte (optional)</h2>
+    <p>Die Crash-Berichterstattung ist <strong>standardmäßig deaktiviert</strong> (Opt-in) und muss in den Einstellungen aktiv eingeschaltet werden. Selbst wenn sie aktiviert ist, wird nach einem Absturz ein Dialog angezeigt; ein Bericht wird ausschließlich nach Ihrer ausdrücklichen Bestätigung („Senden“) per E-Mail-Anwendung versandt – es findet kein automatischer Upload statt.</p>
+    <p>Ein Bericht enthält nur: Fehlerbeschreibung (Stack-Trace), App- und Android-Version, Gerätemodell/-marke, verfügbarer/gesamter Arbeitsspeicher sowie Ihren optionalen Kommentar. <strong>Nicht enthalten:</strong> Geräte-/Installations-IDs, App-Einstellungen, Musikdateien, Hörverlauf oder sonstige Nutzerdaten. Sie können die Funktion jederzeit unter „Einstellungen › Crash-Berichte“ wieder deaktivieren.</p>
   </section>
 
   <section id="de-7">
-    <h2>7. Audioverarbeitung</h2>
-    <p>Mehrere Funktionen verarbeiten Audio in Echtzeit, ohne Aufnahmen zu erstellen:</p>
+    <h2>7. Standortdaten &amp; Datenminimierung</h2>
+    <p>Standortbasierte Funktionen (Geo-Music, Drive Mode DJ, Sound Souvenir, Weather DJ, bekannte Orte, Kontext-Auto-Wechsel) sind optional und nutzen GPS nur bei Aktivierung. Im Sinne der Datenminimierung (Art. 5 Abs. 1 lit. c DSGVO) gilt:</p>
     <ul>
-      <li><strong>Vocal Isolator:</strong> Mittenkanalextraktion auf Stereo-Audio in Echtzeit. Kein modifiziertes Audio wird gespeichert.</li>
-      <li><strong>Binaural Beat Layer:</strong> Prozedural erzeugte Audiotoene, die neben der Musik abgespielt werden. Keine Daten werden gespeichert.</li>
-      <li><strong>Audio Atmosphere Mixer:</strong> Prozedural erzeugte Umgebungsgeraeusche (Regen, Ozean etc.), die unter die Musik gemischt werden. Keine Daten werden gespeichert.</li>
-      <li><strong>Beat-Match Crossfade:</strong> Temporaere Geschwindigkeitsanpassung fuer BPM-synchrone Uebergaenge. Keine Daten werden gespeichert.</li>
-      <li><strong>Live Concert Simulator:</strong> Echtzeit-Reverb- und Bass-Effekte ueber Android Audio-APIs. Keine Daten werden gespeichert.</li>
-      <li><strong>Equalizer und Effekte:</strong> Alle Audio-Modifikationen werden in Echtzeit angewendet und erstellen keine Kopien Ihrer Musikdateien.</li>
+      <li>Koordinaten für Open-Meteo und Overpass werden vor dem Senden auf ca. 110 m gerundet.</li>
+      <li>Koordinaten für die Ortsnamen-Auflösung werden gerundet (Weather DJ ca. 110 m, Sound Souvenir ca. 11 m).</li>
+      <li>Standortdaten für lokale Funktionen verbleiben auf dem Gerät.</li>
+      <li>Es wird kein Bewegungs- oder Standortprofil gebildet.</li>
     </ul>
   </section>
 
   <section id="de-8">
-    <h2>8. Dateiveraenderungen</h2>
-    <p>Folgende Funktionen koennen auf Ihren ausdruecklichen Wunsch Dateien auf dem Geraet veraendern:</p>
+    <h2>8. Geräte-Sensoren</h2>
+    <p>Folgende Sensoren werden in Echtzeit genutzt; es werden keine Sensor-Verläufe gespeichert oder übertragen:</p>
     <ul>
-      <li><strong>Tag-Editor:</strong> ID3-Tags bearbeiten (Titel, Kuenstler, Album, Jahr, Track-Nummer)</li>
-      <li><strong>Tag-Retter:</strong> Fehlende Tags im Batch-Verfahren aus Dateinamen wiederherstellen</li>
-      <li><strong>Track-Cutter:</strong> Audio-Dateien zuschneiden (Original bleibt erhalten, zugeschnittene Version als neue Datei gespeichert)</li>
-      <li><strong>Song loeschen:</strong> Audio-Datei dauerhaft loeschen (erfordert explizite Bestaetigung)</li>
+      <li><strong>Umgebungslicht:</strong> automatischer Hell-/Dunkelmodus (nur bei „Auto“-Design)</li>
+      <li><strong>Beschleunigung/Lage:</strong> Sleep-Fade (Schlaferkennung), Shake-to-Shuffle, Gestensteuerung</li>
+      <li><strong>Schrittzähler:</strong> Geh-/Lauferkennung für Geo-Music/Kontext (nur bei erteilter Aktivitätserkennung)</li>
     </ul>
   </section>
 
   <section id="de-9">
-    <h2>9. Datenspeicherung und Sicherheit</h2>
-    <p>Alle Daten werden ausschliesslich lokal auf Ihrem Geraet gespeichert, geschuetzt durch die Android-Sandbox. Die einzige Netzwerkkommunikation ist die optionale Weather DJ Anfrage (Abschnitt 5). Keine Cloud-Synchronisation, keine Benutzerkonten, keine serverseitige Speicherung.</p>
+    <h2>9. Audioverarbeitung &amp; Sprachbefehle</h2>
+    <p>Mehrere Funktionen verarbeiten Audio in Echtzeit, <strong>ohne Aufnahmen zu erstellen oder zu speichern</strong>: Vocal Isolator, Binaural-Beats, Audio-Atmosphere-Mixer, Beat-Match-Crossfade, Live-Concert-Simulator, Equalizer/Effekte. Ihre Musikdateien werden dabei nicht kopiert.</p>
+    <p><strong>Sprachbefehle:</strong> Wenn Sie die Sprachsteuerung (Mikrofon-Taste oder Lenkrad) aktiv auslösen, wird die Android-System-Spracherkennung verwendet. Je nach Gerät/Konfiguration kann diese Mikrofon-Audio zur Verarbeitung an den Systemanbieter (z. B. Google) senden. Dies geschieht nur während einer aktiv gestarteten Spracheingabe. AutoPlayer selbst speichert keine Sprachaufnahmen.</p>
   </section>
 
   <section id="de-10">
-    <h2>10. Datenloeschung</h2>
-    <p>Durch Deinstallation der App werden alle App-bezogenen Daten vollstaendig entfernt: Einstellungen, Playlists, Favoriten, Wiedergabe-Verlauf, Queue Presets, Geo-Music Regeln, versteckte Songs, Equalizer-Einstellungen, Audio-Analyse-Daten, Sound Souvenir Erinnerungen, Cabin Calibrator Profile und lokale Fehler-Protokolle. Ihre Musikdateien bleiben unberuehrt.</p>
-    <p>Innerhalb der App koennen Sie jederzeit einzelne Playlists, Favoriten, Geo-Regeln, den Wiedergabe-Verlauf, Queue Presets, Sound Souvenir Erinnerungen, Cabin-Profile loeschen und Einstellungen zuruecksetzen.</p>
+    <h2>10. Health Connect (Herzfrequenz)</h2>
+    <p>Wenn Sie den Smartwatch-Modus im Heartbeat-Sync DJ aktivieren, liest die App Ihre aktuelle Herzfrequenz aus Health Connect (Android-Gesundheitsplattform), um tempopassende Musik auszuwählen. Die Daten werden ausschließlich in Echtzeit gelesen – <strong>nicht gespeichert, nicht protokolliert, nicht übertragen</strong>. Sie können jederzeit zum manuellen Modus zurückwechseln.</p>
   </section>
 
   <section id="de-11">
-    <h2>11. Drittanbieter-Dienste und Bibliotheken</h2>
+    <h2>11. Lokale Geräte-zu-Geräte-Verbindungen</h2>
+    <p>Einige Funktionen verbinden Geräte direkt miteinander, <strong>ohne einen Dritt-Server</strong>:</p>
     <ul>
-      <li><strong>Open-Meteo API</strong> (api.open-meteo.com): Wetterdaten fuer die Weather DJ Funktion. Kostenlos, quelloffen. Erhaelt nur GPS-Koordinaten wenn Weather DJ aktiv ist. Siehe: <a href="https://open-meteo.com/en/terms" target="_blank" rel="noopener">https://open-meteo.com/en/terms</a></li>
-      <li><strong>Google Nearby Connections:</strong> Peer-to-Peer-Kommunikation fuer den Passenger Mode. Keine Daten werden ueber Google-Server geleitet.</li>
-      <li><strong>AndroidX, Media3 ExoPlayer, Coil, Room, DataStore, AppCompat:</strong> Keine dieser Bibliotheken erhebt, uebertraegt oder teilt Nutzerdaten.</li>
+      <li><strong>Party-Modus:</strong> lokaler Server im selben WLAN (Song-Metadaten, Position, Queue); geschützt durch eine PIN mit Brute-Force-Sperre</li>
+      <li><strong>Beifahrer-Modus:</strong> Google Nearby Connections (Bluetooth/WLAN-Direct); Song-Metadaten und Steuerbefehle; manuelle Verbindungsbestätigung</li>
+      <li><strong>Geräte-Transfer:</strong> Nearby Connections + direkte Verbindung zur Übertragung von Musikdateien und Backups; geschützt durch ein Authentifizierungs-Token</li>
     </ul>
   </section>
 
   <section id="de-12">
-    <h2>12. Kinder (COPPA/DSGVO-K)</h2>
-    <p>Die App ist familienfreundlich ohne altersbeschraenkte Inhalte, ohne In-App-Kaeufe, ohne Werbung und ohne soziale Interaktion. Es werden keine personenbezogenen Daten erhoben oder profiliert. Es bestehen keine besonderen Risiken fuer Minderjaehrige.</p>
+    <h2>12. Dateiänderungen</h2>
+    <p>Auf Ihren ausdrücklichen Wunsch können folgende Funktionen Dateien ändern: Tag-Editor und Tag-Retter (ID3-Tags), Track-Cutter (Zuschnitt als neue Datei, Original bleibt erhalten) sowie das endgültige Löschen eines Songs (mit Bestätigung).</p>
   </section>
 
   <section id="de-13">
-    <h2>13. Anwendbares Recht</h2>
-    <p><strong>DSGVO (EU):</strong> Es werden keine personenbezogenen Daten an Dritte erhoben oder uebertragen. Ihre Rechte nach Art. 15&ndash;22 DSGVO (Auskunft, Berichtigung, Loeschung, Einschraenkung, Datenportabilitaet, Widerspruch) koennen Sie jederzeit ausueben. Die einzige externe Datenuebertragung (Weather DJ) umfasst keine personenbezogenen Daten.</p>
-    <p><strong>BDSG (Deutschland):</strong> Die App erfuellt die Anforderungen des Bundesdatenschutzgesetzes.</p>
-    <p><strong>DSG (Oesterreich/Schweiz):</strong> Die App erfuellt die Anforderungen des jeweiligen Datenschutzgesetzes.</p>
+    <h2>13. In-App-Käufe</h2>
+    <p>AutoPlayer bietet optionale kostenpflichtige Pro-Funktionen über Google Play Billing an. Die Zahlungsabwicklung erfolgt ausschließlich durch Google; wir erhalten und speichern keine Zahlungsdaten. Es gibt keine Werbung.</p>
   </section>
 
   <section id="de-14">
-    <h2>14. Aenderungen</h2>
-    <p>Aenderungen an dieser Datenschutzerklaerung werden in der App veroeffentlicht und bei wesentlichen Aenderungen kommuniziert.</p>
+    <h2>14. Datenspeicherung &amp; Sicherheit</h2>
+    <p>Alle App-Daten werden lokal in der Android-Sandbox Ihres Geräts gespeichert. Es gibt keine Cloud-Synchronisation, keine Benutzerkonten und keine serverseitige Speicherung. Die Sicherheit ruht damit primär auf den Schutzmechanismen Ihres Geräts (Sperrbildschirm, Geräteverschlüsselung). Lokale Geräteverbindungen sind durch PIN bzw. Token geschützt.</p>
   </section>
 
   <section id="de-15">
-    <h2>15. Kontakt</h2>
-    <p>Bei Fragen zur Datenschutzerklaerung:<br>
+    <h2>15. Speicherdauer &amp; Datenlöschung</h2>
+    <p>Lokale Daten verbleiben auf dem Gerät, bis Sie sie löschen oder die App deinstallieren. Innerhalb der App können Sie jederzeit einzelne Playlists, Favoriten, Geo-/Kontext-Regeln, den Verlauf, Queue-Presets, Sound-Souvenirs und Cabin-Profile löschen sowie Einstellungen zurücksetzen. Durch die Deinstallation werden alle App-bezogenen Daten entfernt; Ihre Musikdateien bleiben unberührt. Extern übertragene Daten (Abschnitt 5) unterliegen den Aufbewahrungsfristen des jeweiligen Anbieters.</p>
+  </section>
+
+  <section id="de-16">
+    <h2>16. Rechtsgrundlagen (DSGVO)</h2>
+    <ul>
+      <li><strong>Art. 6 Abs. 1 lit. a (Einwilligung):</strong> optionale Online-Funktionen, die Sie aktiv einschalten/auslösen (Weather DJ, OSM-Abfragen, Crash-Berichte, Sprachbefehle).</li>
+      <li><strong>Art. 6 Abs. 1 lit. b (Vertrag):</strong> Abwicklung von In-App-Käufen über Google Play.</li>
+      <li><strong>Art. 6 Abs. 1 lit. f (berechtigtes Interesse):</strong> Bereitstellung der lokalen Kernfunktionen sowie der Wiedergabe-Benachrichtigung; die zugrunde liegende Verarbeitung findet ohne Übertragung an Dritte auf dem Gerät statt.</li>
+    </ul>
+  </section>
+
+  <section id="de-17">
+    <h2>17. Ihre Rechte</h2>
+    <p>Ihnen stehen nach DSGVO die Rechte auf Auskunft (Art. 15), Berichtigung (Art. 16), Löschung (Art. 17), Einschränkung (Art. 18), Datenübertragbarkeit (Art. 20) und Widerspruch (Art. 21) zu. Eine erteilte Einwilligung können Sie jederzeit mit Wirkung für die Zukunft widerrufen (z. B. durch Deaktivieren der jeweiligen Funktion). Da Ihre Daten lokal auf dem Gerät liegen, können Sie diese Rechte weitgehend direkt in der App ausüben (Anzeigen, Ändern, Löschen, Export über die Backup-Funktion). Sie haben zudem das Recht auf Beschwerde bei einer Aufsichtsbehörde (Art. 77 DSGVO).</p>
+  </section>
+
+  <section id="de-18">
+    <h2>18. Drittanbieter-Dienste &amp; Bibliotheken</h2>
+    <ul>
+      <li><strong>Open-Meteo</strong> (Wetter) – erhält nur gerundete Koordinaten, siehe Abschnitt 5</li>
+      <li><strong>OpenStreetMap / Overpass &amp; Kachel-Server</strong> (Orte/Karte) – nur bei Aktivierung bzw. Kartenöffnung</li>
+      <li><strong>Google Play Billing</strong> (Käufe) und <strong>Google Play Services / Nearby Connections</strong> (lokale Geräteverbindungen)</li>
+      <li><strong>Android System-Spracherkennung</strong> und <strong>System-Geocoder</strong> (können über den Systemanbieter online auflösen)</li>
+      <li><strong>Health Connect</strong> (nur lesender Zugriff auf Herzfrequenz)</li>
+      <li><strong>Eingesetzte Open-Source-Bibliotheken</strong> (AndroidX, Media3 ExoPlayer, Coil, Room, DataStore, osmdroid, ACRA): erheben oder übertragen selbst keine Nutzerdaten an uns.</li>
+    </ul>
+  </section>
+
+  <section id="de-19">
+    <h2>19. Kinder &amp; Jugendschutz</h2>
+    <p>AutoPlayer richtet sich nicht gezielt an Kinder, enthält keine altersbeschränkten Inhalte, keine Werbung und keine offene soziale Interaktion. Die App bietet optionale In-App-Käufe (Pro-Funktionen). Es werden keine personenbezogenen Daten zu Profilbildungszwecken erhoben.</p>
+  </section>
+
+  <section id="de-20">
+    <h2>20. Hosting dieser Seite</h2>
+    <p>Diese Datenschutzseite wird über GitHub Pages bereitgestellt. Beim Aufruf kann GitHub technisch bedingt Zugriffsdaten (u. a. Ihre IP-Adresse) verarbeiten. Datenschutz von GitHub: <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener">GitHub Privacy Statement</a>.</p>
+  </section>
+
+  <section id="de-21">
+    <h2>21. Anwendbares Recht</h2>
+    <p><strong>DSGVO (EU)</strong> sowie <strong>BDSG (Deutschland)</strong> bzw. die jeweiligen Datenschutzgesetze in Österreich und der Schweiz. <strong>CCPA (Kalifornien):</strong> Es werden keine personenbezogenen Daten verkauft oder geteilt. <strong>LGPD (Brasilien):</strong> Es findet keine international ausgerichtete Verarbeitung personenbezogener Daten statt.</p>
+  </section>
+
+  <section id="de-22">
+    <h2>22. Änderungen</h2>
+    <p>Änderungen dieser Datenschutzerklärung werden hier und in der App veröffentlicht; bei wesentlichen Änderungen weisen wir gesondert darauf hin.</p>
+  </section>
+
+  <section id="de-23">
+    <h2>23. Kontakt</h2>
+    <p>Bei Fragen zum Datenschutz:<br>
     <a href="mailto:zappelmann+autoplayer@googlemail.com">zappelmann+autoplayer@googlemail.com</a></p>
   </section>
 </div>
 
 <!-- ===== ENGLISH CONTENT ===== -->
 <div class="legal-content" data-lang="en" id="content-en">
-  <h1>Privacy Policy &ndash; AutoPlayer</h1>
-  <p class="meta">Last updated: 2026-03-11 &middot; Version 4.0</p>
+  <h1>Privacy Policy – AutoPlayer</h1>
+  <p class="meta">Last updated: 2026-06-08 · Version 5.0</p>
 
   <nav class="toc" id="toc-en"></nav>
 
   <section id="en-1">
-    <h2>1. Overview</h2>
-    <p>AutoPlayer is a local MP3 player application for Android with Android Auto support. Protecting your privacy is our highest priority. This privacy policy comprehensively explains what data the App processes, what permissions it requires, and how your data is protected.</p>
-    <p><strong>Core principle:</strong> AutoPlayer processes your data locally on your device. No personal data is transmitted to servers, third parties, or the internet. The only network connection is an optional weather data request (see Section 5).</p>
+    <h2>1. Controller &amp; Overview</h2>
+    <p>AutoPlayer is a local MP3 player application for Android with Android Auto support. Protecting your privacy is our highest priority. This policy comprehensively explains which data the app processes, which permissions it needs, which external services are contacted in which cases, and which rights you have.</p>
+    <p><strong>Controller within the meaning of Art. 4(7) GDPR:</strong></p>
+    <p>Kay Küstermann<br>
+    Hermann-Lenßen-Str. 13<br>
+    47929 Grefrath<br>
+    North Rhine-Westphalia, Germany<br>
+    E-mail: <a href="mailto:zappelmann+autoplayer@googlemail.com">zappelmann+autoplayer@googlemail.com</a></p>
+    <p><strong>Core principle:</strong> AutoPlayer is a “local-first” app. All of your content (music, library, playlists, history, settings) is processed exclusively on your device. There are no user accounts, no cloud synchronization and no server-side storage. A few optional features contact external services – these are listed in full in Section 5 and are each tied to a deliberate activation.</p>
   </section>
 
   <section id="en-2">
-    <h2>2. Data Collection</h2>
-    <p>AutoPlayer does not collect, store, or transmit any personal data to third parties.</p>
-    <p>The App:</p>
+    <h2>2. No Tracking, No Profiling</h2>
+    <p>AutoPlayer contains <strong>no tracking, analytics or advertising technology whatsoever</strong>. Specifically:</p>
     <ul>
-      <li>Does not collect personal information</li>
-      <li>Does not use analytics or tracking tools. Crash reports can optionally be sent via email after explicit user confirmation</li>
-      <li>Does not send personal data to servers, cloud services, or third parties</li>
-      <li>Does not use advertising frameworks or advertising IDs</li>
-      <li>Does not create user profiles</li>
-      <li>Does not perform fingerprinting</li>
+      <li>No analytics SDKs (no Google Analytics, Firebase Analytics, Crashlytics, Mixpanel, etc.)</li>
+      <li>No advertising frameworks, no advertising IDs</li>
+      <li>No user profiling, no device fingerprinting</li>
+      <li>No sharing or selling of personal data to third parties</li>
+      <li>No hidden network connections – all external calls are documented in Section 5</li>
     </ul>
   </section>
 
   <section id="en-3">
-    <h2>3. Local Data Processing</h2>
-    <p>The App processes the following data exclusively locally on your device. None of this data leaves your device (except the weather request described in Section 5).</p>
+    <h2>3. Locally Processed Data</h2>
+    <p>The following data is stored exclusively locally on your device (in the app's own database and settings, protected by the Android sandbox). None of this data leaves your device (exceptions only as described in Section 5):</p>
     <ul>
-      <li><strong>Music files and metadata:</strong> Your local audio files, including title, artist, album, year, duration, bitrate, format, file size, and album cover &ndash; for playback and library display</li>
-      <li><strong>Play history:</strong> Which songs were played, when, and how often &ndash; for smart playlists, Nostalgie Machine, and Auto-Playlists</li>
-      <li><strong>Favorites and playlists:</strong> Your personalized music organization</li>
-      <li><strong>Queue Presets:</strong> Named snapshots of your play queue, stored locally</li>
-      <li><strong>Hidden songs:</strong> Songs and folders you chose to hide from the library</li>
-      <li><strong>App settings:</strong> Theme, language, equalizer, crossfade, playback speed, shake-to-shuffle, speed-based volume, and all other preferences</li>
-      <li><strong>Geo-Music rules:</strong> Location-based playlist rules you created, including GPS coordinates, radius, and WiFi SSID names &ndash; stored only locally</li>
-      <li><strong>Backup data:</strong> Exported JSON file with favorites, playlists, and settings &ndash; only when you explicitly choose to export</li>
-      <li><strong>Audio Analysis Data:</strong> BPM, key, energy level of each analyzed song for Smart DJ, Mood Morph, Drive Mode DJ, Auto-Playlists, Beat-Match Crossfade, Weather DJ, and Heartbeat Sync DJ (local Room DB)</li>
-      <li><strong>Sound Souvenir Data:</strong> Association of songs with GPS coordinates and place names for location-based music memories (local, opt-in, deletable anytime)</li>
-      <li><strong>Cabin Calibrator Profile:</strong> Frequency response measurements and EQ correction values for your car cabin (local only, deletable anytime)</li>
-      <li><strong>Music Wrapped statistics:</strong> Aggregated listening data (play counts, listen duration, skip counts, hourly distribution, streaks) &ndash; computed on-demand from local play history, never transmitted</li>
-      <li><strong>Automatic Backup data:</strong> JSON export of favorites, playlists, settings, play history, and audio analysis &ndash; saved only to user-chosen local folder, never uploaded</li>
-      <li><strong>Local Error Logs:</strong> Technical crash logs are stored locally on app crashes (max. 5 files, NOT transmitted to servers or third parties)</li>
-      <li><strong>Crash Reports (Optional):</strong> When the app crashes, you can optionally send a technical error report via email. The report contains only: error description (stack trace), device type, Android version, app version, and your optional comment. NO personal data, music files, listening history, or other user data is included. Reports are sent ONLY after your explicit confirmation. You can disable this feature in Settings &gt; Crash Reports.</li>
-      <li><strong>Health Connect Heart Rate Data:</strong> When you opt in to the Smartwatch mode in Heartbeat Sync DJ, the App reads your latest heart rate from Health Connect (Android health platform). This data is used in real-time only to select tempo-matching music. No heart rate data is stored, logged, or transmitted. You can switch back to manual mode at any time.</li>
+      <li><strong>Music files and metadata:</strong> title, artist, album, year, duration, bitrate, format, file size, album art – for playback and library display</li>
+      <li><strong>Playback history:</strong> which songs were played when/how often – for smart playlists, nostalgia machine, auto playlists, Music Wrapped</li>
+      <li><strong>Favorites, playlists, queue presets, hidden songs/folders</strong></li>
+      <li><strong>App settings:</strong> theme, language, equalizer, crossfade, playback speed, shake-to-shuffle, speed-based volume and all other preferences</li>
+      <li><strong>Audio analysis:</strong> BPM, key, energy level per analyzed song – for Smart DJ, Mood Morph, Drive Mode DJ, Beat-Match, Weather DJ, Heartbeat Sync</li>
+      <li><strong>Geo-Music and context rules:</strong> location-/context-based rules you create, incl. GPS coordinates, radius and Wi-Fi SSID names</li>
+      <li><strong>Known places (geo pins):</strong> places you set with coordinates/radius</li>
+      <li><strong>Sound Souvenir data:</strong> linking a song to GPS and place name (opt-in, deletable any time)</li>
+      <li><strong>Cabin Calibrator profile:</strong> frequency measurements and EQ correction values for your vehicle cabin</li>
+      <li><strong>Music Wrapped statistics:</strong> aggregated listening data computed locally from the history</li>
+      <li><strong>Backups:</strong> JSON export (favorites, playlists, settings, history, analysis) – only to the local folder you choose, never uploaded</li>
+      <li><strong>Local error logs:</strong> technical crash logs (ring buffer, max. 5 files) – remain local, no automatic transmission (see Section 6 for the optional crash e-mail)</li>
     </ul>
   </section>
 
   <section id="en-4">
     <h2>4. Permissions</h2>
-    <p>AutoPlayer requires the following permissions, each used only for its stated purpose:</p>
+    <p>AutoPlayer requests only the following permissions, each solely for the stated purpose. Dangerous permissions are requested at runtime and can be revoked at any time in the Android system settings.</p>
     <ul>
-      <li><strong>Media access (Audio):</strong> Reading your local music files and metadata</li>
-      <li><strong>Internet:</strong> Weather DJ feature only &ndash; fetches current weather conditions from Open-Meteo API (see Section 5). No personal data is sent.</li>
-      <li><strong>Microphone (RECORD_AUDIO):</strong> Audio Visualizer (real-time visualization of playing music) and Car Cabin Calibrator (acoustic measurement of your car cabin). No recordings are created, stored, or transmitted.</li>
-      <li><strong>Location (GPS):</strong> Geo-Music (playlist by location), Drive Mode DJ (speed detection), Sound Souvenir (music memories), Weather DJ (weather for your location), Speed-based Volume (driving speed) &ndash; local only</li>
-      <li><strong>WiFi state:</strong> Geo-Music feature &ndash; detecting current WiFi network name for SSID-based playlist rules</li>
-      <li><strong>Activity recognition:</strong> Smart DJ and Geo-Music &ndash; detecting movement type (walking, running, driving) for automatic music selection. No activity profiles are created or stored.</li>
-      <li><strong>Bluetooth:</strong> Auto-resume playback on Bluetooth connection, Passenger Mode (device-to-device connection via Nearby Connections). No device information is stored permanently.</li>
-      <li><strong>System settings:</strong> Set a song as system ringtone (only the setting you explicitly choose)</li>
-      <li><strong>Foreground service:</strong> Background music playback</li>
-      <li><strong>Notifications:</strong> Playback controls in notification bar</li>
-      <li><strong>Health Connect (READ_HEART_RATE):</strong> Heartbeat Sync DJ Smartwatch mode &ndash; reads your current heart rate from Health Connect to automatically select tempo-matching music. Opt-in only, no data stored or transmitted.</li>
+      <li><strong>Media access audio</strong> (READ_MEDIA_AUDIO, or READ_EXTERNAL_STORAGE on Android ≤ 12): reading your local music files and metadata</li>
+      <li><strong>Microphone</strong> (RECORD_AUDIO): audio visualizer, Cabin Calibrator and voice commands. NO recordings are created, stored or transmitted (for voice processing see Section 9).</li>
+      <li><strong>Internet</strong> (INTERNET): only for the optional online features listed in Section 5</li>
+      <li><strong>Location</strong> (ACCESS_FINE_LOCATION / ACCESS_COARSE_LOCATION): Geo-Music, Drive Mode DJ (speed), Sound Souvenir, Weather DJ, known places, context auto-switch, speed-based volume. Data minimization see Section 7.</li>
+      <li><strong>Wi-Fi/network state</strong> (ACCESS_WIFI_STATE, ACCESS_NETWORK_STATE, CHANGE_WIFI_STATE): Wi-Fi SSID for context/geo rules, Wi-Fi IP for Party mode; CHANGE_WIFI_STATE is required internally by Google “Nearby Connections”</li>
+      <li><strong>Bluetooth</strong> (BLUETOOTH_CONNECT, BLUETOOTH_SCAN, BLUETOOTH_ADVERTISE, NEARBY_WIFI_DEVICES; on legacy devices BLUETOOTH/BLUETOOTH_ADMIN): auto-resume on Bluetooth connection, BLE-MIDI, Passenger mode and device transfer (Nearby Connections). No device information is stored permanently.</li>
+      <li><strong>Activity recognition</strong> (ACTIVITY_RECOGNITION): step counter for Geo-Music/context (detecting walking/running). Used in real time only, no step history stored; the sensor is registered only if the permission is granted.</li>
+      <li><strong>Notifications</strong> (POST_NOTIFICATIONS, Android 13+): playback controls in the notification shade and transfer/DJ notices. Requested on first playback.</li>
+      <li><strong>Foreground service</strong> (FOREGROUND_SERVICE, FOREGROUND_SERVICE_MEDIA_PLAYBACK) and <strong>WAKE_LOCK</strong>: background music playback and a running Party server/transfer</li>
+      <li><strong>System settings</strong> (WRITE_SETTINGS): only to set a song as ringtone/notification sound at your explicit request</li>
+      <li><strong>Vibration</strong> (VIBRATE): haptic feedback</li>
+      <li><strong>Health Connect</strong> (health.READ_HEART_RATE): only for the smartwatch mode of Heartbeat Sync DJ (see Section 10)</li>
+      <li><strong>Device features</strong> (uses-feature MIDI / USB host, optional): USB/Bluetooth MIDI controllers</li>
     </ul>
   </section>
 
   <section id="en-5">
-    <h2>5. Network Communication</h2>
-    <p>AutoPlayer makes exactly one type of network request:</p>
+    <h2>5. External Data Transfers (Network)</h2>
+    <p>The following list is exhaustive. Outside of these cases, no transmission to external services takes place. Each of these features is optional and tied to your activation.</p>
     <ul>
-      <li><strong>Weather DJ:</strong> When activated, the App sends your approximate GPS coordinates (latitude and longitude) to the Open-Meteo API (api.open-meteo.com) to retrieve current weather conditions. This is necessary to select weather-appropriate music.</li>
+      <li><strong>Weather data – Open-Meteo</strong> (api.open-meteo.com): When using Weather DJ or a context rule with a weather condition, your GPS coordinates <em>rounded to approx. 110 m</em> are sent to Open-Meteo to retrieve weather/forecast. Only these rounded coordinates are transmitted – no device or user identifier. Via the context path, the request only occurs if an active rule actually uses a weather condition. Open-Meteo privacy: <a href="https://open-meteo.com/en/terms" target="_blank" rel="noopener">open-meteo.com/en/terms</a></li>
+      <li><strong>Nearby places – OpenStreetMap Overpass</strong> (overpass-api.de): Only if you explicitly enable OSM requests in the privacy settings (default: OFF), coordinates <em>rounded to approx. 110 m</em> are sent to determine nearby nature categories for context rules.</li>
+      <li><strong>Map display – OpenStreetMap tiles</strong> (tile.openstreetmap.org): Only when you open the map in the “known places” editor are map tiles loaded. The tile server then technically receives your IP address and the requested tile coordinates.</li>
+      <li><strong>Place names – system geocoder</strong> (Android service, may resolve online via Google depending on device): For Weather DJ and Sound Souvenir, a readable place name is derived from coordinates. The coordinates are rounded beforehand (Weather DJ approx. 110 m, Sound Souvenir approx. 11 m).</li>
+      <li><strong>Purchases – Google Play Billing</strong>: To purchase the Pro features, the purchase/license status is processed via Google Play Billing. Payment is handled by Google; we receive no payment data. Google privacy: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a></li>
+      <li><strong>Voice commands – system speech recognition</strong>: see Section 9.</li>
+      <li><strong>Crash reports – optional e-mail</strong>: see Section 6.</li>
     </ul>
-    <p class="sub-heading">Important:</p>
-    <ul>
-      <li>Open-Meteo is a free, open-source weather API</li>
-      <li>Only GPS coordinates are sent &ndash; no device ID, no user ID, no personal data</li>
-      <li>The request is only made when you actively use Weather DJ</li>
-      <li>No data is cached or stored beyond the current weather result</li>
-      <li>You can use AutoPlayer fully without this feature</li>
-      <li>Open-Meteo privacy policy: <a href="https://open-meteo.com/en/terms" target="_blank" rel="noopener">https://open-meteo.com/en/terms</a></li>
-    </ul>
-    <p>All other features work completely offline without any network connection.</p>
+    <p>All other features work entirely offline.</p>
   </section>
 
   <section id="en-6">
-    <h2>6. Sensor Access</h2>
-    <p>The following device sensors are accessed without requiring additional Android permissions:</p>
-    <ul>
-      <li><strong>Ambient light sensor:</strong> Automatic dark/light mode switching based on ambient brightness (only when &quot;Auto&quot; design is selected)</li>
-      <li><strong>Accelerometer:</strong> Sleep Fade Intelligence (detecting sleep via movement cessation) and Shake to Shuffle (detecting shake gestures). Data is processed in real-time only &ndash; no movement data is stored or transmitted.</li>
-      <li><strong>Step counter:</strong> Geo-Music feature (detecting walking activity). Count is used in real-time only &ndash; no step history is stored.</li>
-    </ul>
+    <h2>6. Crash Reports (optional)</h2>
+    <p>Crash reporting is <strong>disabled by default</strong> (opt-in) and must be actively enabled in the settings. Even when enabled, a dialog is shown after a crash; a report is only sent by e-mail after your explicit confirmation (“Send”) – there is no automatic upload.</p>
+    <p>A report contains only: error description (stack trace), app and Android version, device model/brand, available/total memory and your optional comment. <strong>Not included:</strong> device/installation IDs, app settings, music files, listening history or any other user data. You can disable the feature at any time under “Settings › Crash Reports”.</p>
   </section>
 
   <section id="en-7">
-    <h2>7. Audio Processing</h2>
-    <p>Several features process audio in real-time without creating any recordings:</p>
+    <h2>7. Location Data &amp; Data Minimization</h2>
+    <p>Location-based features (Geo-Music, Drive Mode DJ, Sound Souvenir, Weather DJ, known places, context auto-switch) are optional and use GPS only when activated. In line with data minimization (Art. 5(1)(c) GDPR):</p>
     <ul>
-      <li><strong>Vocal Isolator:</strong> Center-channel extraction algorithm applied to stereo audio in real-time. No modified audio is saved.</li>
-      <li><strong>Binaural Beat Layer:</strong> Procedurally generated audio tones played alongside music. No data is stored.</li>
-      <li><strong>Audio Atmosphere Mixer:</strong> Procedurally generated ambient sounds (rain, ocean, etc.) mixed under music. No data is stored.</li>
-      <li><strong>Beat-Match Crossfade:</strong> Temporary playback speed adjustment for BPM-aligned transitions. No data is stored.</li>
-      <li><strong>Live Concert Simulator:</strong> Real-time reverb and bass effects applied via Android audio APIs. No data is stored.</li>
-      <li><strong>Equalizer and effects:</strong> All audio modifications are applied in real-time and do not create copies of your music files.</li>
+      <li>Coordinates for Open-Meteo and Overpass are rounded to approx. 110 m before sending.</li>
+      <li>Coordinates for place-name resolution are rounded (Weather DJ approx. 110 m, Sound Souvenir approx. 11 m).</li>
+      <li>Location data for local features remains on the device.</li>
+      <li>No movement or location profile is created.</li>
     </ul>
   </section>
 
   <section id="en-8">
-    <h2>8. File Modifications</h2>
-    <p>The following functions can modify files on your device at your explicit request:</p>
+    <h2>8. Device Sensors</h2>
+    <p>The following sensors are used in real time; no sensor histories are stored or transmitted:</p>
     <ul>
-      <li><strong>Tag Editor:</strong> Edit ID3 tags (title, artist, album, year, track number)</li>
-      <li><strong>Tag Rescue:</strong> Batch-fix missing tags by extracting information from filenames</li>
-      <li><strong>Track Cutter:</strong> Trim audio files (original is preserved, trimmed version saved as new file)</li>
-      <li><strong>Delete Song:</strong> Permanently delete an audio file (requires explicit confirmation)</li>
+      <li><strong>Ambient light:</strong> automatic light/dark mode (only with the “Auto” theme)</li>
+      <li><strong>Acceleration/orientation:</strong> Sleep Fade (sleep detection), shake-to-shuffle, gesture control</li>
+      <li><strong>Step counter:</strong> walk/run detection for Geo-Music/context (only if activity recognition is granted)</li>
     </ul>
   </section>
 
   <section id="en-9">
-    <h2>9. Data Storage and Security</h2>
-    <p>All data is stored exclusively locally on your device, protected by the Android sandbox. The only network communication is the optional Weather DJ request (Section 5). No cloud sync, no user accounts, no server-side storage.</p>
+    <h2>9. Audio Processing &amp; Voice Commands</h2>
+    <p>Several features process audio in real time <strong>without creating or storing recordings</strong>: Vocal Isolator, binaural beats, audio atmosphere mixer, beat-match crossfade, live concert simulator, equalizer/effects. Your music files are not copied in the process.</p>
+    <p><strong>Voice commands:</strong> When you actively trigger voice control (microphone button or steering wheel), the Android system speech recognition is used. Depending on the device/configuration, it may send microphone audio to the system provider (e.g. Google) for processing. This happens only during an actively started voice input. AutoPlayer itself stores no voice recordings.</p>
   </section>
 
   <section id="en-10">
-    <h2>10. Data Deletion</h2>
-    <p>Uninstalling the App completely removes all app-related data: settings, playlists, favorites, play history, queue presets, Geo-Music rules, hidden songs, equalizer settings, audio analysis data, Sound Souvenir memories, cabin calibrator profiles, and local error logs. Your music files remain unaffected.</p>
-    <p>Within the App, you can selectively delete playlists, favorites, geo-rules, play history, queue presets, Sound Souvenir memories, cabin profiles, and reset settings at any time.</p>
+    <h2>10. Health Connect (Heart Rate)</h2>
+    <p>If you enable the smartwatch mode in Heartbeat Sync DJ, the app reads your current heart rate from Health Connect (Android health platform) to select tempo-matching music. The data is read in real time only – <strong>not stored, not logged, not transmitted</strong>. You can switch back to manual mode at any time.</p>
   </section>
 
   <section id="en-11">
-    <h2>11. Third-Party Services and Libraries</h2>
+    <h2>11. Local Device-to-Device Connections</h2>
+    <p>Some features connect devices directly, <strong>without any third-party server</strong>:</p>
     <ul>
-      <li><strong>Open-Meteo API</strong> (api.open-meteo.com): Weather data for Weather DJ feature. Free, open-source. Only receives GPS coordinates when Weather DJ is active. See: <a href="https://open-meteo.com/en/terms" target="_blank" rel="noopener">https://open-meteo.com/en/terms</a></li>
-      <li><strong>Google Nearby Connections:</strong> Peer-to-peer communication for Passenger Mode. No data is routed through Google servers.</li>
-      <li><strong>AndroidX, Media3 ExoPlayer, Coil, Room, DataStore, AppCompat:</strong> None of these libraries collect, transmit, or share user data.</li>
+      <li><strong>Party mode:</strong> a local server on the same Wi-Fi (song metadata, position, queue); protected by a PIN with brute-force lockout</li>
+      <li><strong>Passenger mode:</strong> Google Nearby Connections (Bluetooth/Wi-Fi Direct); song metadata and control commands; manual connection confirmation</li>
+      <li><strong>Device transfer:</strong> Nearby Connections + a direct connection to transfer music files and backups; protected by an authentication token</li>
     </ul>
   </section>
 
   <section id="en-12">
-    <h2>12. Children (COPPA/GDPR-K)</h2>
-    <p>The App is family-friendly with no age-restricted content, no in-app purchases, no advertising, and no social interaction. No personal data is collected or profiled. There are no special risks for minors.</p>
+    <h2>12. File Modifications</h2>
+    <p>At your explicit request, the following features can modify files: tag editor and tag rescue (ID3 tags), track cutter (cut saved as a new file, original kept), and permanently deleting a song (with confirmation).</p>
   </section>
 
   <section id="en-13">
-    <h2>13. International Regulations</h2>
-    <p><strong>GDPR (EU):</strong> No personal data is collected or transmitted to third parties. Your rights under Art. 15&ndash;22 GDPR (access, rectification, erasure, restriction, portability, objection) can be exercised by contacting us. The only external data transfer (Weather DJ) involves no personal data.</p>
-    <p><strong>CCPA (California):</strong> No personal information is sold or shared.</p>
-    <p><strong>LGPD (Brazil):</strong> No personal data is processed or transferred internationally.</p>
+    <h2>13. In-App Purchases</h2>
+    <p>AutoPlayer offers optional paid Pro features via Google Play Billing. Payment is handled exclusively by Google; we neither receive nor store payment data. There is no advertising.</p>
   </section>
 
   <section id="en-14">
-    <h2>14. Changes</h2>
-    <p>Changes to this privacy policy will be published in the App and communicated for significant changes.</p>
+    <h2>14. Data Storage &amp; Security</h2>
+    <p>All app data is stored locally in your device's Android sandbox. There is no cloud synchronization, no user accounts and no server-side storage. Security therefore rests primarily on your device's protections (lock screen, device encryption). Local device connections are protected by PIN or token.</p>
   </section>
 
   <section id="en-15">
-    <h2>15. Contact</h2>
-    <p>For questions about this privacy policy:<br>
+    <h2>15. Retention &amp; Deletion</h2>
+    <p>Local data remains on the device until you delete it or uninstall the app. Within the app you can delete individual playlists, favorites, geo/context rules, the history, queue presets, sound souvenirs and cabin profiles at any time, and reset settings. Uninstalling removes all app-related data; your music files remain untouched. Externally transmitted data (Section 5) is subject to the retention periods of the respective provider.</p>
+  </section>
+
+  <section id="en-16">
+    <h2>16. Legal Bases (GDPR)</h2>
+    <ul>
+      <li><strong>Art. 6(1)(a) (consent):</strong> optional online features that you actively enable/trigger (Weather DJ, OSM requests, crash reports, voice commands).</li>
+      <li><strong>Art. 6(1)(b) (contract):</strong> processing of in-app purchases via Google Play.</li>
+      <li><strong>Art. 6(1)(f) (legitimate interest):</strong> providing the local core features and the playback notification; the underlying processing takes place on the device without transfer to third parties.</li>
+    </ul>
+  </section>
+
+  <section id="en-17">
+    <h2>17. Your Rights</h2>
+    <p>Under the GDPR you have the rights to access (Art. 15), rectification (Art. 16), erasure (Art. 17), restriction (Art. 18), data portability (Art. 20) and objection (Art. 21). You may withdraw any consent at any time with effect for the future (e.g. by disabling the relevant feature). As your data resides locally on the device, you can largely exercise these rights directly in the app (view, edit, delete, export via the backup feature). You also have the right to lodge a complaint with a supervisory authority (Art. 77 GDPR).</p>
+  </section>
+
+  <section id="en-18">
+    <h2>18. Third-Party Services &amp; Libraries</h2>
+    <ul>
+      <li><strong>Open-Meteo</strong> (weather) – receives only rounded coordinates, see Section 5</li>
+      <li><strong>OpenStreetMap / Overpass &amp; tile server</strong> (places/map) – only on activation or map opening</li>
+      <li><strong>Google Play Billing</strong> (purchases) and <strong>Google Play Services / Nearby Connections</strong> (local device connections)</li>
+      <li><strong>Android system speech recognition</strong> and <strong>system geocoder</strong> (may resolve online via the system provider)</li>
+      <li><strong>Health Connect</strong> (read-only access to heart rate)</li>
+      <li><strong>Open-source libraries used</strong> (AndroidX, Media3 ExoPlayer, Coil, Room, DataStore, osmdroid, ACRA): do not themselves collect or transmit user data to us.</li>
+    </ul>
+  </section>
+
+  <section id="en-19">
+    <h2>19. Children</h2>
+    <p>AutoPlayer is not specifically directed at children, contains no age-restricted content, no advertising and no open social interaction. The app offers optional in-app purchases (Pro features). No personal data is collected for profiling purposes.</p>
+  </section>
+
+  <section id="en-20">
+    <h2>20. Hosting of This Page</h2>
+    <p>This privacy page is served via GitHub Pages. When you access it, GitHub may technically process access data (including your IP address). GitHub privacy: <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener">GitHub Privacy Statement</a>.</p>
+  </section>
+
+  <section id="en-21">
+    <h2>21. Applicable Law</h2>
+    <p><strong>GDPR (EU)</strong> and <strong>BDSG (Germany)</strong> or the respective data protection laws in Austria and Switzerland. <strong>CCPA (California):</strong> No personal information is sold or shared. <strong>LGPD (Brazil):</strong> No internationally oriented processing of personal data takes place.</p>
+  </section>
+
+  <section id="en-22">
+    <h2>22. Changes</h2>
+    <p>Changes to this privacy policy will be published here and in the app; for significant changes we will point them out separately.</p>
+  </section>
+
+  <section id="en-23">
+    <h2>23. Contact</h2>
+    <p>For questions about privacy:<br>
     <a href="mailto:zappelmann+autoplayer@googlemail.com">zappelmann+autoplayer@googlemail.com</a></p>
   </section>
 </div>
@@ -583,9 +667,11 @@ footer a { color: var(--accent); }
     <a href="mailto:zappelmann+autoplayer@googlemail.com">zappelmann+autoplayer@googlemail.com</a>
   </div>
   <div class="footer-links">
-    <span id="footer-privacy-link"><strong id="footer-privacy-text">Datenschutzerklaerung</strong></span>
+    <span id="footer-privacy-link"><strong id="footer-privacy-text">Datenschutzerklärung</strong></span>
     <span>&middot;</span>
     <a href="terms.html" id="footer-terms-link" id="footer-terms-text">Nutzungsbedingungen</a>
+    <span>&middot;</span>
+    <a href="impressum.html" id="footer-imprint-link">Impressum</a>
   </div>
 </footer>
 
@@ -597,7 +683,7 @@ const langOptions = [
 ];
 
 const uiLabels = {
-  de: { tocTitle: 'Inhaltsverzeichnis', footerPrivacy: 'Datenschutzerklaerung', footerTerms: 'Nutzungsbedingungen', pageTitle: 'AutoPlayer \u2014 Datenschutzerklaerung' },
+  de: { tocTitle: 'Inhaltsverzeichnis', footerPrivacy: 'Datenschutzerklärung', footerTerms: 'Nutzungsbedingungen', pageTitle: 'AutoPlayer \u2014 Datenschutzerklärung' },
   en: { tocTitle: 'Table of Contents', footerPrivacy: 'Privacy Policy', footerTerms: 'Terms of Service', pageTitle: 'AutoPlayer \u2014 Privacy Policy' }
 };
 
@@ -669,6 +755,7 @@ function switchLang(lang) {
   document.getElementById('footer-privacy-text').textContent = labels.footerPrivacy;
   document.getElementById('footer-terms-link').textContent = labels.footerTerms;
   document.getElementById('footer-terms-link').href = 'terms.html?lang=' + lang;
+  var imp = document.getElementById('footer-imprint-link'); if (imp) { imp.href = 'impressum.html?lang=' + lang; imp.textContent = (lang === 'de') ? 'Impressum' : 'Legal Notice'; }
 
   // Update HTML lang
   document.documentElement.lang = lang;
