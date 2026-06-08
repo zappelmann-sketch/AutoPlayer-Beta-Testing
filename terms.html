@@ -541,6 +541,8 @@ footer a { color: var(--accent); }
     <a href="privacy.html" id="footer-privacy-link" id="footer-privacy-text">Datenschutzerklaerung</a>
     <span>&middot;</span>
     <span id="footer-terms-link"><strong id="footer-terms-text">Nutzungsbedingungen</strong></span>
+    <span>&middot;</span>
+    <a href="impressum.html" id="footer-imprint-link">Impressum</a>
   </div>
 </footer>
 
@@ -552,7 +554,7 @@ var langOptions = [
 ];
 
 var uiLabels = {
-  de: { tocTitle: 'Inhaltsverzeichnis', footerPrivacy: 'Datenschutzerklaerung', footerTerms: 'Nutzungsbedingungen', pageTitle: 'AutoPlayer \u2014 Nutzungsbedingungen' },
+  de: { tocTitle: 'Inhaltsverzeichnis', footerPrivacy: 'Datenschutzerkl\u00e4rung', footerTerms: 'Nutzungsbedingungen', pageTitle: 'AutoPlayer \u2014 Nutzungsbedingungen' },
   en: { tocTitle: 'Table of Contents', footerPrivacy: 'Privacy Policy', footerTerms: 'Terms of Service', pageTitle: 'AutoPlayer \u2014 Terms of Service' }
 };
 
@@ -624,6 +626,7 @@ function switchLang(lang) {
   document.getElementById('footer-privacy-text').textContent = labels.footerPrivacy;
   document.getElementById('footer-privacy-link').href = 'privacy.html?lang=' + lang;
   document.getElementById('footer-terms-text').textContent = labels.footerTerms;
+  var imp = document.getElementById('footer-imprint-link'); if (imp) { imp.href = 'impressum.html?lang=' + lang; imp.textContent = (lang === 'de') ? 'Impressum' : 'Legal Notice'; }
 
   // Update HTML lang
   document.documentElement.lang = lang;
