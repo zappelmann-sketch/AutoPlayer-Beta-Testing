@@ -1,17 +1,125 @@
 {
-  "latest": 168,
-  "entries": [
-    {
-      "versionCode": 168,
-      "versionName": "6.27.0",
-      "critical": false,
-      "en": "What's new in 6.27.0\n\n- NEW: In-app updates. AutoPlayer now checks the Play Store for a new version on startup and lets you install it right away, or check manually under \"About\".\n- Party mode: clearer guest feedback when the request limit is reached, plus an in-party settings panel (max requests / cooldown) and a karaoke toggle fix.\n- Sharing hub: real platform audio export (render & share) with per-platform length limits and a hardened render dialog.\n- Various stability and wiring fixes across the settings screens."
-    },
-    {
-      "versionCode": 167,
-      "versionName": "6.26.0",
-      "critical": false,
-      "en": "What's new in 6.26.0\n\n- Paywall localized into 24 additional languages.\n- Numerous bug fixes and polish across the app."
-    }
-  ]
+ "latest": 62700,
+ "entries": [
+  {
+   "versionCode": 62700,
+   "versionName": "6.27.0",
+   "date": "2026-06-13",
+   "critical": false,
+   "title": "v6.27.0 — In-App Updates",
+   "en": "• NEW: The app now checks Google Play for available updates on launch and shows an update card — tap \"Update Now\" or \"Later\".\n• NEW: Critical major updates install immediately without option to postpone.\n• NEW: \"Check for Updates\" entry added under About — trigger a manual check anytime.\n• NEW: Update card shows the English changelog for the new version, scrollable.\n• IMPROVED: All new UI text available in 26 languages."
+  },
+  {
+   "versionCode": 62600,
+   "versionName": "6.26.0",
+   "date": "2026-05-29",
+   "critical": false,
+   "title": "v6.26.0 — Vumikio Pets Overhaul",
+   "en": "• NEW: Multi-Pet mode now shows glowing trails for all 5 pets simultaneously — each with its own colour streak.\n• NEW: Per-pet accent colour — choose from 7 colours per pet type; affects body glow and trail tint, persists across sessions.\n• IMPROVED: Pet name changes now appear instantly on the status card without reopening the dialog.\n• IMPROVED: Cat, Fox, Bunny and Squirrel now have a visible outer aura matching their accent colour.\n• FIX: Trail now follows the pet's actual body centre for all sizes and pet types — no more diagonal offset."
+  },
+  {
+   "versionCode": 62000,
+   "versionName": "6.20.0",
+   "date": "2026-05-24",
+   "critical": false,
+   "title": "v6.20.0 — Always Dark, Glass UI",
+   "en": "• IMPROVED: App is now permanently dark — the Theme/Light/Dark/System toggle has been removed as it had no effect on the Glass Neon UI.\n• IMPROVED: 13 remaining screens (Passenger Mode, Loop Mixer, Party Mode, Waveform, etc.) fully migrated to the unified Glass Neon design.\n• FIX: User guide updated in all 26 languages to reflect the always-dark behaviour."
+  },
+  {
+   "versionCode": 61901,
+   "versionName": "6.19.1",
+   "date": "2026-05-24",
+   "critical": false,
+   "title": "v6.19.1 — Smart Playlist Crash Fix",
+   "en": "• FIX: Smart Playlists no longer crash on generation — playlists now open correctly with all songs in Android Auto and on the phone."
+  },
+  {
+   "versionCode": 61900,
+   "versionName": "6.19.0",
+   "date": "2026-05-24",
+   "critical": false,
+   "title": "v6.19.0 — Android Auto Compliance",
+   "en": "• IMPROVED: Android Auto browse tree now shows a \"More\" tab — previously hidden categories (Mood, Genre, Smart Playlists, Queues) are now reachable.\n• IMPROVED: Song rows in Android Auto now display song duration.\n• IMPROVED: Search button appears in Android Auto browse tree.\n• IMPROVED: Continue Listening item shows native progress bar in Android Auto.\n• FIX: Voice resume and deep-link lookups via Android Auto now work correctly."
+  },
+  {
+   "versionCode": 61802,
+   "versionName": "6.18.2",
+   "date": "2026-05-24",
+   "critical": false,
+   "title": "v6.18.2 — Critical Data Loss Fix",
+   "en": "• FIX: Critical bug where the app wiped all Loop Mixer pads, markers and geo-playlist rules on first launch after v6.18.0 — now resolved. Restore your data via Settings → Restore from Auto-Backup if affected."
+  },
+  {
+   "versionCode": 61801,
+   "versionName": "6.18.1",
+   "date": "2026-05-24",
+   "critical": false,
+   "title": "v6.18.1 — Backup Duplicate Fix",
+   "en": "• FIX: Auto-backup file no longer grows to 10× its normal size after each restore — duplicate Loop Mixer pads and markers are now correctly deduplicated.\n• FIX: One-time cleanup on first launch removes any already-duplicated entries from the database automatically."
+  },
+  {
+   "versionCode": 61800,
+   "versionName": "6.18.0",
+   "date": "2026-05-23",
+   "critical": false,
+   "title": "v6.18.0 — Database Encryption",
+   "en": "• NEW: Local database is now encrypted at rest (AES-256 via SQLCipher) — your music data, playlists and settings are protected even if your device is accessed without your PIN.\n• IMPROVED: Migration preserves all existing data with automatic backup before encryption; no data loss.\n• IMPROVED: Privacy Policy and Data Safety declaration updated to reflect encryption at rest."
+  },
+  {
+   "versionCode": 61700,
+   "versionName": "6.17.0",
+   "date": "2026-05-14",
+   "critical": false,
+   "title": "v6.17.0 — Faster Voice Commands",
+   "en": "• IMPROVED: Voice commands via Google Assistant, Gemini and the steering wheel speech button now start playback in under 1 second — previously the full UI had to load first.\n• IMPROVED: Android Auto voice compliance fully certified — all 5 audit findings resolved."
+  },
+  {
+   "versionCode": 61600,
+   "versionName": "6.16.0",
+   "date": "2026-05-13",
+   "critical": false,
+   "title": "v6.16.0 — Android Auto Search",
+   "en": "• NEW: Search button now appears in the Android Auto browse tree — find songs directly from the car screen without using voice.\n• IMPROVED: Browse tabs and song rows use the correct visual layout hints in Android Auto."
+  },
+  {
+   "versionCode": 61500,
+   "versionName": "6.15.0",
+   "date": "2026-05-13",
+   "critical": false,
+   "title": "v6.15.0 — Android Auto Security",
+   "en": "• IMPROVED: Only trusted apps (Android Auto, Google Assistant, Gemini, Wear OS, System) can control playback via MediaSession — unknown callers get read-only browse access.\n• IMPROVED: Prepares AutoPlayer for Android Auto quality certification."
+  },
+  {
+   "versionCode": 61400,
+   "versionName": "6.14.0",
+   "date": "2026-05-13",
+   "critical": false,
+   "title": "v6.14.0 — Context Rule Presets",
+   "en": "• NEW: 100 ready-made context rule presets in 10 categories (Morning, Work, Commute, Sport, Weather, Home, Evening and more) — tap to add any preset as a new rule.\n• NEW: 10 complete day-setups (Classic Workday, Road Trip, Active Weekend, Night Shift, etc.) — one tap imports a full set of 6–10 themed rules.\n• IMPROVED: All preset names and descriptions available in 26 languages."
+  },
+  {
+   "versionCode": 61300,
+   "versionName": "6.13.0",
+   "date": "2026-05-13",
+   "critical": false,
+   "title": "v6.13.0 — Geo-Pin Polish",
+   "en": "• IMPROVED: All condition-value pickers in the rule editor now use the same Glass Neon bottom-sheet design — no more plain Material dropdowns.\n• FIX: Disabled geo-pins no longer appear as map markers (they stay visible in the list for re-enabling).\n• FIX: Saving a new geo-pin no longer crashes due to a state-race."
+  },
+  {
+   "versionCode": 61200,
+   "versionName": "6.12.0",
+   "date": "2026-05-13",
+   "critical": false,
+   "title": "v6.12.0 — Context Monitor Live Data",
+   "en": "• FIX: Context Monitor now shows live values for GPS, altitude, sun phase, nearby nature, weather, temperature, ambient light and device orientation — previously these showed \"—\" even when data was available."
+  },
+  {
+   "versionCode": 61100,
+   "versionName": "6.11.0",
+   "date": "2026-05-13",
+   "critical": false,
+   "title": "v6.11.0 — Rule Display Localisation",
+   "en": "• FIX: Condition values in the rule editor and rule cards (e.g. activity type, charging state, sun phase) are now shown in the correct language and script in all 26 locales — no more raw English codes mixed into non-Latin text."
+  }
+ ]
 }
