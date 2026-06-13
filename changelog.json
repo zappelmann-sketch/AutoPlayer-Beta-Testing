@@ -1,0 +1,17 @@
+{
+  "latest": 168,
+  "entries": [
+    {
+      "versionCode": 168,
+      "versionName": "6.27.0",
+      "critical": false,
+      "en": "What's new in 6.27.0\n\n- NEW: In-app updates. AutoPlayer now checks the Play Store for a new version on startup and lets you install it right away, or check manually under \"About\".\n- Party mode: clearer guest feedback when the request limit is reached, plus an in-party settings panel (max requests / cooldown) and a karaoke toggle fix.\n- Sharing hub: real platform audio export (render & share) with per-platform length limits and a hardened render dialog.\n- Various stability and wiring fixes across the settings screens."
+    },
+    {
+      "versionCode": 167,
+      "versionName": "6.26.0",
+      "critical": false,
+      "en": "What's new in 6.26.0\n\n- Paywall localized into 24 additional languages.\n- Numerous bug fixes and polish across the app."
+    }
+  ]
+}
