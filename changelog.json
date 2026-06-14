@@ -7,6 +7,7 @@
    "date": "2026-06-13",
    "critical": false,
    "title": "v6.27.0 — In-App Updates",
+   "de": "• NEU: Die App prüft beim Start Google Play auf verfügbare Updates und zeigt eine Update-Karte an — tippe auf \"Jetzt aktualisieren\" oder \"Später\".\n• NEU: Kritische Haupt-Updates werden sofort installiert, ohne Möglichkeit zum Verschieben.\n• NEU: Eintrag \"Nach Updates suchen\" unter Über die App hinzugefügt — manuellen Check jederzeit auslösen.\n• NEU: Die Update-Karte zeigt den englischen Changelog der neuen Version, scrollbar.\n• VERBESSERT: Alle neuen UI-Texte in 26 Sprachen verfügbar.",
    "en": "• NEW: The app now checks Google Play for available updates on launch and shows an update card — tap \"Update Now\" or \"Later\".\n• NEW: Critical major updates install immediately without option to postpone.\n• NEW: \"Check for Updates\" entry added under About — trigger a manual check anytime.\n• NEW: Update card shows the English changelog for the new version, scrollable.\n• IMPROVED: All new UI text available in 26 languages."
   },
   {
@@ -15,6 +16,7 @@
    "date": "2026-05-29",
    "critical": false,
    "title": "v6.26.0 — Vumikio Pets Overhaul",
+   "de": "• NEU: Multi-Pet-Modus zeigt jetzt leuchtende Trails für alle 5 Vumikio Pets gleichzeitig — jedes mit eigenem Farbschweif.\n• NEU: Individuelle Akzentfarbe pro Pet — wähle aus 7 Farben je Pet-Typ; wirkt auf Körperleuchten und Trail-Farbe, bleibt sitzungsübergreifend gespeichert.\n• VERBESSERT: Namensänderungen am Pet erscheinen sofort auf der Statuskarte, ohne den Dialog neu zu öffnen.\n• VERBESSERT: Cat, Fox, Bunny und Squirrel haben jetzt eine sichtbare äußere Aura passend zur Akzentfarbe.\n• FIX: Trail folgt jetzt für alle Größen und Pet-Typen exakt dem tatsächlichen Körperzentrum des Pets — kein diagonaler Versatz mehr.",
    "en": "• NEW: Multi-Pet mode now shows glowing trails for all 5 pets simultaneously — each with its own colour streak.\n• NEW: Per-pet accent colour — choose from 7 colours per pet type; affects body glow and trail tint, persists across sessions.\n• IMPROVED: Pet name changes now appear instantly on the status card without reopening the dialog.\n• IMPROVED: Cat, Fox, Bunny and Squirrel now have a visible outer aura matching their accent colour.\n• FIX: Trail now follows the pet's actual body centre for all sizes and pet types — no more diagonal offset."
   },
   {
@@ -23,6 +25,7 @@
    "date": "2026-05-24",
    "critical": false,
    "title": "v6.20.0 — Always Dark, Glass UI",
+   "de": "• VERBESSERT: Die App ist jetzt dauerhaft dunkel — der Theme/Hell/Dunkel/System-Schalter wurde entfernt, da er auf der Glass-Neon-Oberfläche keine Wirkung hatte.\n• VERBESSERT: 13 verbleibende Screens (Passenger Mode, Loop Mixer, Party Mode, Waveform usw.) vollständig auf das einheitliche Glass-Neon-Design migriert.\n• FIX: Benutzerhandbuch in allen 26 Sprachen aktualisiert, um das dauerhaft dunkle Verhalten widerzuspiegeln.",
    "en": "• IMPROVED: App is now permanently dark — the Theme/Light/Dark/System toggle has been removed as it had no effect on the Glass Neon UI.\n• IMPROVED: 13 remaining screens (Passenger Mode, Loop Mixer, Party Mode, Waveform, etc.) fully migrated to the unified Glass Neon design.\n• FIX: User guide updated in all 26 languages to reflect the always-dark behaviour."
   },
   {
@@ -31,6 +34,7 @@
    "date": "2026-05-24",
    "critical": false,
    "title": "v6.19.1 — Smart Playlist Crash Fix",
+   "de": "• FIX: Smart Playlists stürzen bei der Erstellung nicht mehr ab — Playlists öffnen sich jetzt korrekt mit allen Songs in Android Auto und auf dem Smartphone.",
    "en": "• FIX: Smart Playlists no longer crash on generation — playlists now open correctly with all songs in Android Auto and on the phone."
   },
   {
@@ -39,6 +43,7 @@
    "date": "2026-05-24",
    "critical": false,
    "title": "v6.19.0 — Android Auto Compliance",
+   "de": "• VERBESSERT: Android Auto-Blätterstruktur zeigt jetzt einen \"Mehr\"-Tab — bisher versteckte Kategorien (Stimmung, Genre, Smart Playlists, Warteschlangen) sind nun erreichbar.\n• VERBESSERT: Song-Zeilen in Android Auto zeigen jetzt die Songlänge an.\n• VERBESSERT: Such-Button erscheint in der Android Auto-Blätterstruktur.\n• VERBESSERT: \"Weiterhören\"-Eintrag zeigt in Android Auto eine native Fortschrittsanzeige.\n• FIX: Sprach-Fortsetzung und Direkt-Verlinkungen über Android Auto funktionieren jetzt korrekt.",
    "en": "• IMPROVED: Android Auto browse tree now shows a \"More\" tab — previously hidden categories (Mood, Genre, Smart Playlists, Queues) are now reachable.\n• IMPROVED: Song rows in Android Auto now display song duration.\n• IMPROVED: Search button appears in Android Auto browse tree.\n• IMPROVED: Continue Listening item shows native progress bar in Android Auto.\n• FIX: Voice resume and deep-link lookups via Android Auto now work correctly."
   },
   {
@@ -47,6 +52,7 @@
    "date": "2026-05-24",
    "critical": false,
    "title": "v6.18.2 — Critical Data Loss Fix",
+   "de": "• FIX: Kritischer Fehler behoben, bei dem die App beim ersten Start nach v6.18.0 alle Loop Mixer-Pads, Marker und Geo-Playlist-Regeln gelöscht hat. Stelle deine Daten über Einstellungen → Aus Auto-Backup wiederherstellen wieder her, falls du betroffen warst.",
    "en": "• FIX: Critical bug where the app wiped all Loop Mixer pads, markers and geo-playlist rules on first launch after v6.18.0 — now resolved. Restore your data via Settings → Restore from Auto-Backup if affected."
   },
   {
@@ -55,6 +61,7 @@
    "date": "2026-05-24",
    "critical": false,
    "title": "v6.18.1 — Backup Duplicate Fix",
+   "de": "• FIX: Die Auto-Backup-Datei wächst nach jeder Wiederherstellung nicht mehr auf das 10-fache ihrer normalen Größe an — doppelte Loop Mixer-Pads und Marker werden jetzt korrekt dedupliziert.\n• FIX: Eine einmalige Bereinigung beim ersten Start entfernt bereits duplizierte Einträge automatisch aus der Datenbank.",
    "en": "• FIX: Auto-backup file no longer grows to 10× its normal size after each restore — duplicate Loop Mixer pads and markers are now correctly deduplicated.\n• FIX: One-time cleanup on first launch removes any already-duplicated entries from the database automatically."
   },
   {
@@ -63,6 +70,7 @@
    "date": "2026-05-23",
    "critical": false,
    "title": "v6.18.0 — Database Encryption",
+   "de": "• NEU: Die lokale Datenbank ist jetzt im Ruhezustand verschlüsselt (AES-256 über SQLCipher) — deine Musikdaten, Playlists und Einstellungen sind geschützt, auch wenn jemand ohne deine PIN auf das Gerät zugreift.\n• VERBESSERT: Die Migration erhält alle vorhandenen Daten mit automatischem Backup vor der Verschlüsselung; kein Datenverlust.\n• VERBESSERT: Datenschutzerklärung und Data-Safety-Deklaration wurden aktualisiert, um die Verschlüsselung im Ruhezustand widerzuspiegeln.",
    "en": "• NEW: Local database is now encrypted at rest (AES-256 via SQLCipher) — your music data, playlists and settings are protected even if your device is accessed without your PIN.\n• IMPROVED: Migration preserves all existing data with automatic backup before encryption; no data loss.\n• IMPROVED: Privacy Policy and Data Safety declaration updated to reflect encryption at rest."
   },
   {
@@ -71,6 +79,7 @@
    "date": "2026-05-14",
    "critical": false,
    "title": "v6.17.0 — Faster Voice Commands",
+   "de": "• VERBESSERT: Sprachbefehle über Google Assistant, Gemini und die Lenkrad-Sprechtaste starten die Wiedergabe jetzt in unter 1 Sekunde — zuvor musste zuerst die vollständige Oberfläche laden.\n• VERBESSERT: Android Auto-Sprach-Compliance vollständig zertifiziert — alle 5 Audit-Befunde behoben.",
    "en": "• IMPROVED: Voice commands via Google Assistant, Gemini and the steering wheel speech button now start playback in under 1 second — previously the full UI had to load first.\n• IMPROVED: Android Auto voice compliance fully certified — all 5 audit findings resolved."
   },
   {
@@ -79,6 +88,7 @@
    "date": "2026-05-13",
    "critical": false,
    "title": "v6.16.0 — Android Auto Search",
+   "de": "• NEU: Such-Button erscheint jetzt in der Android Auto-Blätterstruktur — Songs direkt vom Autobildschirm finden, ohne Sprachsteuerung zu nutzen.\n• VERBESSERT: Browse-Tabs und Song-Zeilen verwenden in Android Auto die korrekten visuellen Layout-Hinweise.",
    "en": "• NEW: Search button now appears in the Android Auto browse tree — find songs directly from the car screen without using voice.\n• IMPROVED: Browse tabs and song rows use the correct visual layout hints in Android Auto."
   },
   {
@@ -87,6 +97,7 @@
    "date": "2026-05-13",
    "critical": false,
    "title": "v6.15.0 — Android Auto Security",
+   "de": "• VERBESSERT: Nur vertrauenswürdige Apps (Android Auto, Google Assistant, Gemini, Wear OS, System) können die Wiedergabe über MediaSession steuern — unbekannte Aufrufer erhalten nur lesenden Browse-Zugriff.\n• VERBESSERT: Bereitet AutoPlayer auf die Android Auto-Qualitätszertifizierung vor.",
    "en": "• IMPROVED: Only trusted apps (Android Auto, Google Assistant, Gemini, Wear OS, System) can control playback via MediaSession — unknown callers get read-only browse access.\n• IMPROVED: Prepares AutoPlayer for Android Auto quality certification."
   },
   {
@@ -95,6 +106,7 @@
    "date": "2026-05-13",
    "critical": false,
    "title": "v6.14.0 — Context Rule Presets",
+   "de": "• NEU: 100 fertige Kontext-Regel-Vorlagen in 10 Kategorien (Morgen, Arbeit, Pendeln, Sport, Wetter, Zuhause, Abend u. v. m.) — tippe, um eine Vorlage als neue Regel hinzuzufügen.\n• NEU: 10 vollständige Tages-Setups (Klassischer Arbeitstag, Road Trip, Aktives Wochenende, Nachtschicht usw.) — ein Tipp importiert ein komplettes Set aus 6–10 thematischen Regeln.\n• VERBESSERT: Alle Vorlagen-Namen und Beschreibungen in 26 Sprachen verfügbar.",
    "en": "• NEW: 100 ready-made context rule presets in 10 categories (Morning, Work, Commute, Sport, Weather, Home, Evening and more) — tap to add any preset as a new rule.\n• NEW: 10 complete day-setups (Classic Workday, Road Trip, Active Weekend, Night Shift, etc.) — one tap imports a full set of 6–10 themed rules.\n• IMPROVED: All preset names and descriptions available in 26 languages."
   },
   {
@@ -103,6 +115,7 @@
    "date": "2026-05-13",
    "critical": false,
    "title": "v6.13.0 — Geo-Pin Polish",
+   "de": "• VERBESSERT: Alle Bedingungswert-Auswahlen im Regeleditor verwenden jetzt dasselbe Glass-Neon-Bottom-Sheet-Design — keine schlichten Material-Dropdowns mehr.\n• FIX: Deaktivierte Geo-Pins erscheinen nicht mehr als Kartenmarkierungen (bleiben in der Liste sichtbar, um sie wieder zu aktivieren).\n• FIX: Das Speichern eines neuen Geo-Pins stürzt nicht mehr wegen einer Status-Race-Condition ab.",
    "en": "• IMPROVED: All condition-value pickers in the rule editor now use the same Glass Neon bottom-sheet design — no more plain Material dropdowns.\n• FIX: Disabled geo-pins no longer appear as map markers (they stay visible in the list for re-enabling).\n• FIX: Saving a new geo-pin no longer crashes due to a state-race."
   },
   {
@@ -111,6 +124,7 @@
    "date": "2026-05-13",
    "critical": false,
    "title": "v6.12.0 — Context Monitor Live Data",
+   "de": "• FIX: Context Monitor zeigt jetzt Live-Werte für GPS, Höhe, Sonnenphase, Nähe zur Natur, Wetter, Temperatur, Umgebungslicht und Geräteausrichtung — zuvor wurde \"—\" angezeigt, obwohl Daten verfügbar waren.",
    "en": "• FIX: Context Monitor now shows live values for GPS, altitude, sun phase, nearby nature, weather, temperature, ambient light and device orientation — previously these showed \"—\" even when data was available."
   },
   {
@@ -119,6 +133,7 @@
    "date": "2026-05-13",
    "critical": false,
    "title": "v6.11.0 — Rule Display Localisation",
+   "de": "• FIX: Bedingungswerte im Regeleditor und in den Regelkarten (z. B. Aktivitätstyp, Ladezustand, Sonnenphase) werden jetzt in allen 26 Sprachen in der richtigen Sprache und Schrift angezeigt — keine englischen Rohcodes mehr in nicht-lateinischen Texten.",
    "en": "• FIX: Condition values in the rule editor and rule cards (e.g. activity type, charging state, sun phase) are now shown in the correct language and script in all 26 locales — no more raw English codes mixed into non-Latin text."
   }
  ]
