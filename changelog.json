@@ -1,6 +1,15 @@
 {
- "latest": 62700,
+ "latest": 62800,
  "entries": [
+  {
+   "versionCode": 62800,
+   "versionName": "6.28.0",
+   "date": "2026-08-21",
+   "critical": false,
+   "title": "v6.28.0 — Playlists per Sprache",
+   "de": "• NEU: Sage \"Spiele Playlist\" und den Namen — die gespeicherte Playlist startet sofort, am Handy wie im Auto.\n• NEU: \"Zeige meine Playlists\" liest deine Playlists nummeriert vor.\n• NEU: Passen mehrere Playlists zum Namen, fragt die App nummeriert nach, statt zu raten — du hast 15 Sekunden zum Antworten.\n• VERBESSERT: Namen werden auch bei ungenauer Aussprache gefunden, etwa \"Erd Licht\" für \"Erdlicht\".\n• FIX: Die Sprachausgabe spricht jetzt in deiner Systemsprache statt immer auf Deutsch.",
+   "en": "• NEW: Say \"play playlist\" and the name — your saved playlist starts right away, on your phone and in the car.\n• NEW: \"Show my playlists\" reads out your playlists with numbers.\n• NEW: If several playlists match the name, the app asks back with numbers instead of guessing — you have 15 seconds to answer.\n• IMPROVED: Names are found even when pronunciation is imprecise, e.g. \"Erd Licht\" for \"Erdlicht\".\n• FIX: Voice feedback now speaks your system language instead of always German."
+  },
   {
    "versionCode": 62700,
    "versionName": "6.27.0",
@@ -126,15 +135,6 @@
    "title": "v6.12.0 — Context Monitor Live Data",
    "de": "• FIX: Context Monitor zeigt jetzt Live-Werte für GPS, Höhe, Sonnenphase, Nähe zur Natur, Wetter, Temperatur, Umgebungslicht und Geräteausrichtung — zuvor wurde \"—\" angezeigt, obwohl Daten verfügbar waren.",
    "en": "• FIX: Context Monitor now shows live values for GPS, altitude, sun phase, nearby nature, weather, temperature, ambient light and device orientation — previously these showed \"—\" even when data was available."
-  },
-  {
-   "versionCode": 61100,
-   "versionName": "6.11.0",
-   "date": "2026-05-13",
-   "critical": false,
-   "title": "v6.11.0 — Rule Display Localisation",
-   "de": "• FIX: Bedingungswerte im Regeleditor und in den Regelkarten (z. B. Aktivitätstyp, Ladezustand, Sonnenphase) werden jetzt in allen 26 Sprachen in der richtigen Sprache und Schrift angezeigt — keine englischen Rohcodes mehr in nicht-lateinischen Texten.",
-   "en": "• FIX: Condition values in the rule editor and rule cards (e.g. activity type, charging state, sun phase) are now shown in the correct language and script in all 26 locales — no more raw English codes mixed into non-Latin text."
   }
  ]
 }
