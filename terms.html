@@ -246,7 +246,7 @@ footer a { color: var(--accent); }
     <div class="brand">AutoPlayer</div>
     <div class="lang-drop" id="langDrop">
       <div class="lang-btn" id="langBtn" onclick="document.getElementById('langList').classList.toggle('open')">
-        <span id="langCurrent">&#127465;&#127466; Deutsch</span>
+        <span id="langCurrent">DE</span>
       </div>
       <div class="lang-list" id="langList"></div>
     </div>
@@ -543,8 +543,8 @@ footer a { color: var(--accent); }
 <script>
 // === Language config ===
 var langOptions = [
-  {code:'de', flag:'\u{1F1E9}\u{1F1EA}', name:'Deutsch'},
-  {code:'en', flag:'\u{1F1EC}\u{1F1E7}', name:'English'}
+  {code:'de', flag:'', name:'DE'},
+  {code:'en', flag:'', name:'EN'}
 ];
 
 var uiLabels = {
@@ -575,7 +575,7 @@ function buildLangDropdown() {
   var list = document.getElementById('langList');
   var html = '';
   langOptions.forEach(function(l) {
-    html += '<div class="lang-opt' + (l.code === currentLang ? ' active' : '') + '" onclick="selectLang(\'' + l.code + '\')">' + l.flag + ' ' + l.name + '</div>';
+    html += '<div class="lang-opt' + (l.code === currentLang ? ' active' : '') + '" onclick="selectLang(\'' + l.code + '\')">' + l.name + '</div>';
   });
   list.innerHTML = html;
 }
@@ -602,7 +602,7 @@ function switchLang(lang) {
   // Update dropdown button
   var opt = langOptions.find(function(l) { return l.code === lang; }) || langOptions[0];
   var btn = document.getElementById('langCurrent');
-  btn.textContent = opt.flag + ' ' + opt.name;
+  btn.textContent = opt.name;
 
   // Update URL
   var url = new URL(window.location);
