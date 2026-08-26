@@ -4,7 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AutoPlayer — Impressum</title>
-<script src="https://cdn.jsdelivr.net/npm/@twemoji/api@latest/dist/twemoji.min.js" crossorigin="anonymous"></script>
+<!--
+  Diese Seite laedt bewusst KEINE Inhalte von Dritten (keine Schriftarten,
+  keine Symbol-Bibliothek, keine Skripte) und speichert nichts im Browser.
+  Die Sprachwahl steht ausschliesslich im URL-Parameter ?lang=.
+  Bitte beim Bearbeiten so belassen - sonst uebertraegt eine Rechtstext-Seite
+  die IP-Adresse ihrer Besucher an einen Dritten.
+-->
 <style>
 :root {
   --bg: #ffffff;
@@ -406,7 +412,6 @@ function buildLangDropdown() {
     html += '<div class="lang-opt' + (l.code === currentLang ? ' active' : '') + '" onclick="selectLang(\'' + l.code + '\')">' + l.flag + ' ' + l.name + '</div>';
   });
   list.innerHTML = html;
-  if (typeof twemoji !== 'undefined') twemoji.parse(list, {folder:'svg', ext:'.svg'});
 }
 
 function selectLang(code) {
@@ -422,7 +427,6 @@ document.addEventListener('click', function(e) {
 
 function switchLang(lang) {
   currentLang = lang;
-  localStorage.setItem('lp_lang', lang);
 
   // Show/hide content
   document.querySelectorAll('.legal-content').forEach(function(el) {
@@ -433,7 +437,6 @@ function switchLang(lang) {
   var opt = langOptions.find(function(l) { return l.code === lang; }) || langOptions[0];
   var btn = document.getElementById('langCurrent');
   btn.textContent = opt.flag + ' ' + opt.name;
-  if (typeof twemoji !== 'undefined') twemoji.parse(btn.parentElement, {folder:'svg', ext:'.svg'});
 
   // Update URL
   var url = new URL(window.location);
@@ -462,8 +465,6 @@ function detectLang() {
   var urlLang = params.get('lang');
   if (urlLang && langOptions.find(function(l) { return l.code === urlLang; })) return urlLang;
   if (urlLang) return 'en';
-  var saved = localStorage.getItem('lp_lang');
-  if (saved && langOptions.find(function(l) { return l.code === saved; })) return saved;
   var browserLang = navigator.language.substring(0, 2);
   if (langOptions.find(function(l) { return l.code === browserLang; })) return browserLang;
   return 'en';
@@ -496,8 +497,6 @@ function init() {
     document.querySelectorAll('.toc').forEach(function(t) { t.classList.add('collapsed'); });
   }
 
-  // Parse twemoji
-  if (typeof twemoji !== 'undefined') twemoji.parse(document.body, {folder:'svg', ext:'.svg'});
 }
 
 document.addEventListener('DOMContentLoaded', init);
