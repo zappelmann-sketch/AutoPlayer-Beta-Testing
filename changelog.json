@@ -1,6 +1,24 @@
 {
- "latest": 62800,
+ "latest": 62802,
  "entries": [
+  {
+   "versionCode": 62802,
+   "versionName": "6.28.2",
+   "date": "2026-08-29",
+   "critical": false,
+   "title": "v6.28.2 — Zufallsmix sichtbar gemacht",
+   "de": "• FIX: Der Kurzbefehl \"Zufallsmix\" mischte im Verborgenen — der Zufallsmodus blieb dabei ausgeschaltet.\n• VERBESSERT: Der Zufallsmix öffnet jetzt den Player und schaltet den Zufall sichtbar ein.\n• VERBESSERT: Wird der Zufall wieder ausgeschaltet, geht es in normaler Reihenfolge weiter.",
+   "en": "• FIX: The \"Shuffle\" shortcut shuffled invisibly — shuffle mode itself stayed off.\n• IMPROVED: Shuffle now opens the player and visibly turns shuffle mode on.\n• IMPROVED: Turning shuffle back off continues in normal order."
+  },
+  {
+   "versionCode": 62801,
+   "versionName": "6.28.1",
+   "date": "2026-08-28",
+   "critical": false,
+   "title": "v6.28.1 — Kurzbefehle am App-Symbol",
+   "de": "• FIX: Die Kurzbefehle am App-Symbol (langes Drücken) führten ihre Aktion nicht aus — die App öffnete sich nur.\n• FIX: Fortsetzen und Zufallsmix starten jetzt zuverlässig, auch bei kaltem Start.\n• VERBESSERT: \"Favoriten öffnen\" zeigt jetzt den Favoriten-Reiter, statt ungefragt abzuspielen.",
+   "en": "• FIX: The home screen shortcuts (long press the app icon) did not run their action — the app merely opened.\n• FIX: Resume and Shuffle now start reliably, even on a cold start.\n• IMPROVED: \"Open favorites\" now shows the favorites tab instead of playing unasked."
+  },
   {
    "versionCode": 62800,
    "versionName": "6.28.0",
@@ -117,24 +135,6 @@
    "title": "v6.14.0 — Context Rule Presets",
    "de": "• NEU: 100 fertige Kontext-Regel-Vorlagen in 10 Kategorien (Morgen, Arbeit, Pendeln, Sport, Wetter, Zuhause, Abend u. v. m.) — tippe, um eine Vorlage als neue Regel hinzuzufügen.\n• NEU: 10 vollständige Tages-Setups (Klassischer Arbeitstag, Road Trip, Aktives Wochenende, Nachtschicht usw.) — ein Tipp importiert ein komplettes Set aus 6–10 thematischen Regeln.\n• VERBESSERT: Alle Vorlagen-Namen und Beschreibungen in 26 Sprachen verfügbar.",
    "en": "• NEW: 100 ready-made context rule presets in 10 categories (Morning, Work, Commute, Sport, Weather, Home, Evening and more) — tap to add any preset as a new rule.\n• NEW: 10 complete day-setups (Classic Workday, Road Trip, Active Weekend, Night Shift, etc.) — one tap imports a full set of 6–10 themed rules.\n• IMPROVED: All preset names and descriptions available in 26 languages."
-  },
-  {
-   "versionCode": 61300,
-   "versionName": "6.13.0",
-   "date": "2026-05-13",
-   "critical": false,
-   "title": "v6.13.0 — Geo-Pin Polish",
-   "de": "• VERBESSERT: Alle Bedingungswert-Auswahlen im Regeleditor verwenden jetzt dasselbe Glass-Neon-Bottom-Sheet-Design — keine schlichten Material-Dropdowns mehr.\n• FIX: Deaktivierte Geo-Pins erscheinen nicht mehr als Kartenmarkierungen (bleiben in der Liste sichtbar, um sie wieder zu aktivieren).\n• FIX: Das Speichern eines neuen Geo-Pins stürzt nicht mehr wegen einer Status-Race-Condition ab.",
-   "en": "• IMPROVED: All condition-value pickers in the rule editor now use the same Glass Neon bottom-sheet design — no more plain Material dropdowns.\n• FIX: Disabled geo-pins no longer appear as map markers (they stay visible in the list for re-enabling).\n• FIX: Saving a new geo-pin no longer crashes due to a state-race."
-  },
-  {
-   "versionCode": 61200,
-   "versionName": "6.12.0",
-   "date": "2026-05-13",
-   "critical": false,
-   "title": "v6.12.0 — Context Monitor Live Data",
-   "de": "• FIX: Context Monitor zeigt jetzt Live-Werte für GPS, Höhe, Sonnenphase, Nähe zur Natur, Wetter, Temperatur, Umgebungslicht und Geräteausrichtung — zuvor wurde \"—\" angezeigt, obwohl Daten verfügbar waren.",
-   "en": "• FIX: Context Monitor now shows live values for GPS, altitude, sun phase, nearby nature, weather, temperature, ambient light and device orientation — previously these showed \"—\" even when data was available."
   }
  ]
 }
