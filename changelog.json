@@ -1,6 +1,15 @@
 {
- "latest": 62802,
+ "latest": 62803,
  "entries": [
+  {
+   "versionCode": 62803,
+   "versionName": "6.28.3",
+   "date": "2026-08-29",
+   "critical": false,
+   "title": "v6.28.3 — Audio-Offload wirkt jetzt wirklich",
+   "de": "• FIX: Audio-Offload war ohne Wirkung — Equalizer und Klangeffekte liefen trotz Sparmodus weiter.\n• VERBESSERT: Der Sparmodus legt jetzt Equalizer, Hall und Stimmen-Trennung still. Erkennbar am hervorgehobenen Blatt-Symbol im Player.\n• VERBESSERT: Deine Einstellungen bleiben dabei erhalten und kommen beim Zurückschalten unverändert wieder.",
+   "en": "• FIX: Audio offload had no effect — equalizer and sound effects kept running in battery saver.\n• IMPROVED: Battery saver now silences equalizer, reverb and vocal isolation. Shown by the highlighted leaf icon in the player.\n• IMPROVED: Your settings stay untouched and return unchanged when you switch back."
+  },
   {
    "versionCode": 62802,
    "versionName": "6.28.2",
@@ -126,15 +135,6 @@
    "title": "v6.15.0 — Android Auto Security",
    "de": "• VERBESSERT: Nur vertrauenswürdige Apps (Android Auto, Google Assistant, Gemini, Wear OS, System) können die Wiedergabe über MediaSession steuern — unbekannte Aufrufer erhalten nur lesenden Browse-Zugriff.\n• VERBESSERT: Bereitet AutoPlayer auf die Android Auto-Qualitätszertifizierung vor.",
    "en": "• IMPROVED: Only trusted apps (Android Auto, Google Assistant, Gemini, Wear OS, System) can control playback via MediaSession — unknown callers get read-only browse access.\n• IMPROVED: Prepares AutoPlayer for Android Auto quality certification."
-  },
-  {
-   "versionCode": 61400,
-   "versionName": "6.14.0",
-   "date": "2026-05-13",
-   "critical": false,
-   "title": "v6.14.0 — Context Rule Presets",
-   "de": "• NEU: 100 fertige Kontext-Regel-Vorlagen in 10 Kategorien (Morgen, Arbeit, Pendeln, Sport, Wetter, Zuhause, Abend u. v. m.) — tippe, um eine Vorlage als neue Regel hinzuzufügen.\n• NEU: 10 vollständige Tages-Setups (Klassischer Arbeitstag, Road Trip, Aktives Wochenende, Nachtschicht usw.) — ein Tipp importiert ein komplettes Set aus 6–10 thematischen Regeln.\n• VERBESSERT: Alle Vorlagen-Namen und Beschreibungen in 26 Sprachen verfügbar.",
-   "en": "• NEW: 100 ready-made context rule presets in 10 categories (Morning, Work, Commute, Sport, Weather, Home, Evening and more) — tap to add any preset as a new rule.\n• NEW: 10 complete day-setups (Classic Workday, Road Trip, Active Weekend, Night Shift, etc.) — one tap imports a full set of 6–10 themed rules.\n• IMPROVED: All preset names and descriptions available in 26 languages."
   }
  ]
 }
