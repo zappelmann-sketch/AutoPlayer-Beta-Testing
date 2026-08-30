@@ -1,6 +1,15 @@
 {
- "latest": 63001,
+ "latest": 63101,
  "entries": [
+  {
+   "versionCode": 63101,
+   "versionName": "6.31.1",
+   "date": "2026-08-30",
+   "critical": false,
+   "title": "v6.31.1 — Sprachbefehle für Playlists und Stimmungen",
+   "de": "• FIX: \"Spiele Playlist [Name]\" funktionierte am Handy nicht — der Befehl wurde von der Titelsuche abgefangen, und der Name kam verstümmelt an.\n• FIX: \"Spiele schnelle Songs\" startete immer denselben Titel; \"schnell\" fehlte in den Stimmungswörtern.\n• NEU: Nach einem Stimmungsbefehl erscheint die Zusammenstellung als Chip in der Bibliothek — antippen zeigt, was gewählt wurde.",
+   "en": "• FIX: \"Play playlist [name]\" did not work on the phone — the command was swallowed by the song search, and the name arrived mangled.\n• FIX: \"Play fast songs\" always started the same track; \"fast\" was missing from the mood keywords.\n• NEW: After a mood command the selection appears as a chip in the library — tap it to see what was picked."
+  },
   {
    "versionCode": 63001,
    "versionName": "6.30.1",
@@ -126,15 +135,6 @@
    "title": "v6.20.0 — Always Dark, Glass UI",
    "de": "• VERBESSERT: Die App ist jetzt dauerhaft dunkel — der Theme/Hell/Dunkel/System-Schalter wurde entfernt, da er auf der Glass-Neon-Oberfläche keine Wirkung hatte.\n• VERBESSERT: 13 verbleibende Screens (Passenger Mode, Loop Mixer, Party Mode, Waveform usw.) vollständig auf das einheitliche Glass-Neon-Design migriert.\n• FIX: Benutzerhandbuch in allen 26 Sprachen aktualisiert, um das dauerhaft dunkle Verhalten widerzuspiegeln.",
    "en": "• IMPROVED: App is now permanently dark — the Theme/Light/Dark/System toggle has been removed as it had no effect on the Glass Neon UI.\n• IMPROVED: 13 remaining screens (Passenger Mode, Loop Mixer, Party Mode, Waveform, etc.) fully migrated to the unified Glass Neon design.\n• FIX: User guide updated in all 26 languages to reflect the always-dark behaviour."
-  },
-  {
-   "versionCode": 61901,
-   "versionName": "6.19.1",
-   "date": "2026-05-24",
-   "critical": false,
-   "title": "v6.19.1 — Smart Playlist Crash Fix",
-   "de": "• FIX: Smart Playlists stürzen bei der Erstellung nicht mehr ab — Playlists öffnen sich jetzt korrekt mit allen Songs in Android Auto und auf dem Smartphone.",
-   "en": "• FIX: Smart Playlists no longer crash on generation — playlists now open correctly with all songs in Android Auto and on the phone."
   }
  ]
 }
