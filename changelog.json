@@ -1,6 +1,15 @@
 {
- "latest": 62900,
+ "latest": 62901,
  "entries": [
+  {
+   "versionCode": 62901,
+   "versionName": "6.29.1",
+   "date": "2026-08-30",
+   "critical": false,
+   "title": "v6.29.1 — Tempo im Kassettendeck und Vintage-Plattenspieler",
+   "de": "• FIX: Kassettenspieler und Vintage-Plattenspieler zeigten kein Tempo. Es steht jetzt unten neben der Zeit, wie bei der Bandmaschine.",
+   "en": "• FIX: The cassette player and vintage turntable showed no tempo. It now sits next to the time, like on the reel-to-reel."
+  },
   {
    "versionCode": 62900,
    "versionName": "6.29.0",
@@ -126,15 +135,6 @@
    "title": "v6.18.1 — Backup Duplicate Fix",
    "de": "• FIX: Die Auto-Backup-Datei wächst nach jeder Wiederherstellung nicht mehr auf das 10-fache ihrer normalen Größe an — doppelte Loop Mixer-Pads und Marker werden jetzt korrekt dedupliziert.\n• FIX: Eine einmalige Bereinigung beim ersten Start entfernt bereits duplizierte Einträge automatisch aus der Datenbank.",
    "en": "• FIX: Auto-backup file no longer grows to 10× its normal size after each restore — duplicate Loop Mixer pads and markers are now correctly deduplicated.\n• FIX: One-time cleanup on first launch removes any already-duplicated entries from the database automatically."
-  },
-  {
-   "versionCode": 61800,
-   "versionName": "6.18.0",
-   "date": "2026-05-23",
-   "critical": false,
-   "title": "v6.18.0 — Database Encryption",
-   "de": "• NEU: Die lokale Datenbank ist jetzt im Ruhezustand verschlüsselt (AES-256 über SQLCipher) — deine Musikdaten, Playlists und Einstellungen sind geschützt, auch wenn jemand ohne deine PIN auf das Gerät zugreift.\n• VERBESSERT: Die Migration erhält alle vorhandenen Daten mit automatischem Backup vor der Verschlüsselung; kein Datenverlust.\n• VERBESSERT: Datenschutzerklärung und Data-Safety-Deklaration wurden aktualisiert, um die Verschlüsselung im Ruhezustand widerzuspiegeln.",
-   "en": "• NEW: Local database is now encrypted at rest (AES-256 via SQLCipher) — your music data, playlists and settings are protected even if your device is accessed without your PIN.\n• IMPROVED: Migration preserves all existing data with automatic backup before encryption; no data loss.\n• IMPROVED: Privacy Policy and Data Safety declaration updated to reflect encryption at rest."
   }
  ]
 }
