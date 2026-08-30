@@ -1,6 +1,24 @@
 {
- "latest": 62805,
+ "latest": 62900,
  "entries": [
+  {
+   "versionCode": 62900,
+   "versionName": "6.29.0",
+   "date": "2026-08-30",
+   "critical": false,
+   "title": "v6.29.0 — Warteschlange in einem Zug leeren",
+   "de": "• NEU: \"Warteschlange leeren\" im Mehr-Menü der Warteschlange. Der laufende Titel bleibt und spielt weiter.\n• NEU: Eine Rückfrage nennt die Zahl der Titel, die entfernt werden.\n• FIX: Im Genre-Browser war \"Zur Queue\" nur ein Symbol ohne Beschriftung und wurde übersehen. Jetzt beschriftet wie die beiden Nachbarn.",
+   "en": "• NEW: \"Clear queue\" in the queue’s more menu. The track that is playing stays and continues.\n• NEW: A confirmation names how many tracks will be removed.\n• FIX: In the genre browser, \"Add to queue\" was an unlabelled icon and went unnoticed. It now carries a label like its two neighbours."
+  },
+  {
+   "versionCode": 62806,
+   "versionName": "6.28.6",
+   "date": "2026-08-30",
+   "critical": false,
+   "title": "v6.28.6 — \"Zur Queue\" im Genre-Browser sichtbar",
+   "de": "• FIX: Im Genre-Browser war \"Zur Queue\" nur ein Symbol ohne Beschriftung und wurde übersehen. Jetzt beschriftet wie die beiden Nachbarn.\n• VERBESSERT: Auf schmalen Geräten rutscht die dritte Schaltfläche in die nächste Zeile, statt abgeschnitten zu werden.",
+   "en": "• FIX: In the genre browser, \"Add to queue\" was an unlabelled icon and went unnoticed. It now carries a label like its two neighbours.\n• IMPROVED: On narrow screens the third button wraps to the next line instead of being cut off."
+  },
   {
    "versionCode": 62805,
    "versionName": "6.28.5",
@@ -117,24 +135,6 @@
    "title": "v6.18.0 — Database Encryption",
    "de": "• NEU: Die lokale Datenbank ist jetzt im Ruhezustand verschlüsselt (AES-256 über SQLCipher) — deine Musikdaten, Playlists und Einstellungen sind geschützt, auch wenn jemand ohne deine PIN auf das Gerät zugreift.\n• VERBESSERT: Die Migration erhält alle vorhandenen Daten mit automatischem Backup vor der Verschlüsselung; kein Datenverlust.\n• VERBESSERT: Datenschutzerklärung und Data-Safety-Deklaration wurden aktualisiert, um die Verschlüsselung im Ruhezustand widerzuspiegeln.",
    "en": "• NEW: Local database is now encrypted at rest (AES-256 via SQLCipher) — your music data, playlists and settings are protected even if your device is accessed without your PIN.\n• IMPROVED: Migration preserves all existing data with automatic backup before encryption; no data loss.\n• IMPROVED: Privacy Policy and Data Safety declaration updated to reflect encryption at rest."
-  },
-  {
-   "versionCode": 61700,
-   "versionName": "6.17.0",
-   "date": "2026-05-14",
-   "critical": false,
-   "title": "v6.17.0 — Faster Voice Commands",
-   "de": "• VERBESSERT: Sprachbefehle über Google Assistant, Gemini und die Lenkrad-Sprechtaste starten die Wiedergabe jetzt in unter 1 Sekunde — zuvor musste zuerst die vollständige Oberfläche laden.\n• VERBESSERT: Android Auto-Sprach-Compliance vollständig zertifiziert — alle 5 Audit-Befunde behoben.",
-   "en": "• IMPROVED: Voice commands via Google Assistant, Gemini and the steering wheel speech button now start playback in under 1 second — previously the full UI had to load first.\n• IMPROVED: Android Auto voice compliance fully certified — all 5 audit findings resolved."
-  },
-  {
-   "versionCode": 61600,
-   "versionName": "6.16.0",
-   "date": "2026-05-13",
-   "critical": false,
-   "title": "v6.16.0 — Android Auto Search",
-   "de": "• NEU: Such-Button erscheint jetzt in der Android Auto-Blätterstruktur — Songs direkt vom Autobildschirm finden, ohne Sprachsteuerung zu nutzen.\n• VERBESSERT: Browse-Tabs und Song-Zeilen verwenden in Android Auto die korrekten visuellen Layout-Hinweise.",
-   "en": "• NEW: Search button now appears in the Android Auto browse tree — find songs directly from the car screen without using voice.\n• IMPROVED: Browse tabs and song rows use the correct visual layout hints in Android Auto."
   }
  ]
 }
