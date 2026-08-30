@@ -1,6 +1,15 @@
 {
- "latest": 62901,
+ "latest": 62903,
  "entries": [
+  {
+   "versionCode": 62903,
+   "versionName": "6.29.3",
+   "date": "2026-08-30",
+   "critical": false,
+   "title": "v6.29.3 — Vibrations-Sprachbefehle",
+   "de": "• FIX: \"Vibration stärker\" und \"Vibration schwächer\" wurden nicht erkannt — stattdessen startete teils ein zufälliger Titel.\n• FIX: \"Vibration aus\" schaltete den Motor ab, ließ die Auswahl im Bildschirm aber auf der alten Stufe stehen.\n• VERBESSERT: \"Vibration an\" schaltet aus dem Aus heraus auf die Stufe \"Leicht\".",
+   "en": "• FIX: \"Vibration stronger\" and \"vibration weaker\" were not recognised — a random track sometimes started instead.\n• FIX: \"Vibration off\" stopped the motor but left the on-screen selection on the previous level.\n• IMPROVED: \"Vibration on\" now switches from off to the \"Light\" level."
+  },
   {
    "versionCode": 62901,
    "versionName": "6.29.1",
@@ -126,15 +135,6 @@
    "title": "v6.18.2 — Critical Data Loss Fix",
    "de": "• FIX: Kritischer Fehler behoben, bei dem die App beim ersten Start nach v6.18.0 alle Loop Mixer-Pads, Marker und Geo-Playlist-Regeln gelöscht hat. Stelle deine Daten über Einstellungen → Aus Auto-Backup wiederherstellen wieder her, falls du betroffen warst.",
    "en": "• FIX: Critical bug where the app wiped all Loop Mixer pads, markers and geo-playlist rules on first launch after v6.18.0 — now resolved. Restore your data via Settings → Restore from Auto-Backup if affected."
-  },
-  {
-   "versionCode": 61801,
-   "versionName": "6.18.1",
-   "date": "2026-05-24",
-   "critical": false,
-   "title": "v6.18.1 — Backup Duplicate Fix",
-   "de": "• FIX: Die Auto-Backup-Datei wächst nach jeder Wiederherstellung nicht mehr auf das 10-fache ihrer normalen Größe an — doppelte Loop Mixer-Pads und Marker werden jetzt korrekt dedupliziert.\n• FIX: Eine einmalige Bereinigung beim ersten Start entfernt bereits duplizierte Einträge automatisch aus der Datenbank.",
-   "en": "• FIX: Auto-backup file no longer grows to 10× its normal size after each restore — duplicate Loop Mixer pads and markers are now correctly deduplicated.\n• FIX: One-time cleanup on first launch removes any already-duplicated entries from the database automatically."
   }
  ]
 }
