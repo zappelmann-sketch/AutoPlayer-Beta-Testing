@@ -1,6 +1,15 @@
 {
- "latest": 62903,
+ "latest": 63000,
  "entries": [
+  {
+   "versionCode": 63000,
+   "versionName": "6.30.0",
+   "date": "2026-08-30",
+   "critical": false,
+   "title": "v6.30.0 — Smart DJ im Hauptmenü",
+   "de": "• NEU: Smart DJ steht jetzt auch im Hauptmenü unter \"Tools & Funktionen\". Das Symbol im Player bleibt.",
+   "en": "• NEW: Smart DJ is now in the main menu under \"Tools & Features\" as well. The player icon stays."
+  },
   {
    "versionCode": 62903,
    "versionName": "6.29.3",
@@ -126,15 +135,6 @@
    "title": "v6.19.0 — Android Auto Compliance",
    "de": "• VERBESSERT: Android Auto-Blätterstruktur zeigt jetzt einen \"Mehr\"-Tab — bisher versteckte Kategorien (Stimmung, Genre, Smart Playlists, Warteschlangen) sind nun erreichbar.\n• VERBESSERT: Song-Zeilen in Android Auto zeigen jetzt die Songlänge an.\n• VERBESSERT: Such-Button erscheint in der Android Auto-Blätterstruktur.\n• VERBESSERT: \"Weiterhören\"-Eintrag zeigt in Android Auto eine native Fortschrittsanzeige.\n• FIX: Sprach-Fortsetzung und Direkt-Verlinkungen über Android Auto funktionieren jetzt korrekt.",
    "en": "• IMPROVED: Android Auto browse tree now shows a \"More\" tab — previously hidden categories (Mood, Genre, Smart Playlists, Queues) are now reachable.\n• IMPROVED: Song rows in Android Auto now display song duration.\n• IMPROVED: Search button appears in Android Auto browse tree.\n• IMPROVED: Continue Listening item shows native progress bar in Android Auto.\n• FIX: Voice resume and deep-link lookups via Android Auto now work correctly."
-  },
-  {
-   "versionCode": 61802,
-   "versionName": "6.18.2",
-   "date": "2026-05-24",
-   "critical": false,
-   "title": "v6.18.2 — Critical Data Loss Fix",
-   "de": "• FIX: Kritischer Fehler behoben, bei dem die App beim ersten Start nach v6.18.0 alle Loop Mixer-Pads, Marker und Geo-Playlist-Regeln gelöscht hat. Stelle deine Daten über Einstellungen → Aus Auto-Backup wiederherstellen wieder her, falls du betroffen warst.",
-   "en": "• FIX: Critical bug where the app wiped all Loop Mixer pads, markers and geo-playlist rules on first launch after v6.18.0 — now resolved. Restore your data via Settings → Restore from Auto-Backup if affected."
   }
  ]
 }
