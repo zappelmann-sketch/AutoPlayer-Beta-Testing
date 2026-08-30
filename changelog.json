@@ -1,6 +1,15 @@
 {
- "latest": 63000,
+ "latest": 63001,
  "entries": [
+  {
+   "versionCode": 63001,
+   "versionName": "6.30.1",
+   "date": "2026-08-30",
+   "critical": false,
+   "title": "v6.30.1 — Menüeintrag \"Bibliothek neu laden\"",
+   "de": "• VERBESSERT: Der Menüpunkt \"Audio-Player\" heißt jetzt \"Bibliothek neu laden\" — das trifft, was er tut: Musikdateien neu einlesen und die Bibliothek öffnen.\n• Das Verhalten bleibt unverändert.",
+   "en": "• IMPROVED: The menu entry \"Audio Player\" is now called \"Reload library\" — which is what it does: re-read the music files and open the library.\n• The behaviour is unchanged."
+  },
   {
    "versionCode": 63000,
    "versionName": "6.30.0",
@@ -126,15 +135,6 @@
    "title": "v6.19.1 — Smart Playlist Crash Fix",
    "de": "• FIX: Smart Playlists stürzen bei der Erstellung nicht mehr ab — Playlists öffnen sich jetzt korrekt mit allen Songs in Android Auto und auf dem Smartphone.",
    "en": "• FIX: Smart Playlists no longer crash on generation — playlists now open correctly with all songs in Android Auto and on the phone."
-  },
-  {
-   "versionCode": 61900,
-   "versionName": "6.19.0",
-   "date": "2026-05-24",
-   "critical": false,
-   "title": "v6.19.0 — Android Auto Compliance",
-   "de": "• VERBESSERT: Android Auto-Blätterstruktur zeigt jetzt einen \"Mehr\"-Tab — bisher versteckte Kategorien (Stimmung, Genre, Smart Playlists, Warteschlangen) sind nun erreichbar.\n• VERBESSERT: Song-Zeilen in Android Auto zeigen jetzt die Songlänge an.\n• VERBESSERT: Such-Button erscheint in der Android Auto-Blätterstruktur.\n• VERBESSERT: \"Weiterhören\"-Eintrag zeigt in Android Auto eine native Fortschrittsanzeige.\n• FIX: Sprach-Fortsetzung und Direkt-Verlinkungen über Android Auto funktionieren jetzt korrekt.",
-   "en": "• IMPROVED: Android Auto browse tree now shows a \"More\" tab — previously hidden categories (Mood, Genre, Smart Playlists, Queues) are now reachable.\n• IMPROVED: Song rows in Android Auto now display song duration.\n• IMPROVED: Search button appears in Android Auto browse tree.\n• IMPROVED: Continue Listening item shows native progress bar in Android Auto.\n• FIX: Voice resume and deep-link lookups via Android Auto now work correctly."
   }
  ]
 }
