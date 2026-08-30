@@ -1,6 +1,15 @@
 {
- "latest": 62803,
+ "latest": 62805,
  "entries": [
+  {
+   "versionCode": 62805,
+   "versionName": "6.28.5",
+   "date": "2026-08-30",
+   "critical": false,
+   "title": "v6.28.5 — Ganze Sammlung im Fahrzeug erreichbar",
+   "de": "• FIX: Im Fahrzeug fehlte \"Alle Titel\" komplett — bei knappem Platz im Hauptmenü fiel der Eintrag heraus und tauchte auch unter \"Mehr\" nicht auf.\n• FIX: Die Songliste kam im Fahrzeug nur zu einem Viertel an; die Sprungleiste endete mitten im Alphabet.\n• NEU: \"Alle Titel\" ist im Fahrzeug jetzt nach Anfangsbuchstaben geordnet — von 123 über A bis Z bis #. Umlaute stehen dort, wo man sie sucht.",
+   "en": "• FIX: \"All songs\" was missing in the car — with few slots in the main menu the entry dropped out and never showed up under \"More\" either.\n• FIX: Only about a quarter of the song list reached the car; the jump bar ended mid-alphabet.\n• NEW: \"All songs\" is now grouped by initial letter in the car — 123, A to Z, and #. Accented titles sort where you would look for them."
+  },
   {
    "versionCode": 62803,
    "versionName": "6.28.3",
@@ -126,15 +135,6 @@
    "title": "v6.16.0 — Android Auto Search",
    "de": "• NEU: Such-Button erscheint jetzt in der Android Auto-Blätterstruktur — Songs direkt vom Autobildschirm finden, ohne Sprachsteuerung zu nutzen.\n• VERBESSERT: Browse-Tabs und Song-Zeilen verwenden in Android Auto die korrekten visuellen Layout-Hinweise.",
    "en": "• NEW: Search button now appears in the Android Auto browse tree — find songs directly from the car screen without using voice.\n• IMPROVED: Browse tabs and song rows use the correct visual layout hints in Android Auto."
-  },
-  {
-   "versionCode": 61500,
-   "versionName": "6.15.0",
-   "date": "2026-05-13",
-   "critical": false,
-   "title": "v6.15.0 — Android Auto Security",
-   "de": "• VERBESSERT: Nur vertrauenswürdige Apps (Android Auto, Google Assistant, Gemini, Wear OS, System) können die Wiedergabe über MediaSession steuern — unbekannte Aufrufer erhalten nur lesenden Browse-Zugriff.\n• VERBESSERT: Bereitet AutoPlayer auf die Android Auto-Qualitätszertifizierung vor.",
-   "en": "• IMPROVED: Only trusted apps (Android Auto, Google Assistant, Gemini, Wear OS, System) can control playback via MediaSession — unknown callers get read-only browse access.\n• IMPROVED: Prepares AutoPlayer for Android Auto quality certification."
   }
  ]
 }
