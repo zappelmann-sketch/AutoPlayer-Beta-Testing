@@ -1,6 +1,15 @@
 {
- "latest": 63101,
+ "latest": 63102,
  "entries": [
+  {
+   "versionCode": 63102,
+   "versionName": "6.31.2",
+   "date": "2026-08-31",
+   "critical": false,
+   "title": "v6.31.2 — Stimmungswandler ohne Sprachbefehl",
+   "de": "• ENTFERNT: Der Sprachbefehl für den Stimmungswandler. Er wurde von der Spracherkennung nie richtig verstanden, und ein Verlauf braucht ohnehin zwei Stimmungen plus Bestätigung — das lässt sich nicht sinnvoll sprechen.",
+   "en": "• REMOVED: The voice command for Mood Morph. Speech recognition never got it right, and a morph needs two moods plus a confirmation — that does not fit into one spoken sentence."
+  },
   {
    "versionCode": 63101,
    "versionName": "6.31.1",
@@ -126,15 +135,6 @@
    "title": "v6.26.0 — Vumikio Pets Overhaul",
    "de": "• NEU: Multi-Pet-Modus zeigt jetzt leuchtende Trails für alle 5 Vumikio Pets gleichzeitig — jedes mit eigenem Farbschweif.\n• NEU: Individuelle Akzentfarbe pro Pet — wähle aus 7 Farben je Pet-Typ; wirkt auf Körperleuchten und Trail-Farbe, bleibt sitzungsübergreifend gespeichert.\n• VERBESSERT: Namensänderungen am Pet erscheinen sofort auf der Statuskarte, ohne den Dialog neu zu öffnen.\n• VERBESSERT: Cat, Fox, Bunny und Squirrel haben jetzt eine sichtbare äußere Aura passend zur Akzentfarbe.\n• FIX: Trail folgt jetzt für alle Größen und Pet-Typen exakt dem tatsächlichen Körperzentrum des Pets — kein diagonaler Versatz mehr.",
    "en": "• NEW: Multi-Pet mode now shows glowing trails for all 5 pets simultaneously — each with its own colour streak.\n• NEW: Per-pet accent colour — choose from 7 colours per pet type; affects body glow and trail tint, persists across sessions.\n• IMPROVED: Pet name changes now appear instantly on the status card without reopening the dialog.\n• IMPROVED: Cat, Fox, Bunny and Squirrel now have a visible outer aura matching their accent colour.\n• FIX: Trail now follows the pet's actual body centre for all sizes and pet types — no more diagonal offset."
-  },
-  {
-   "versionCode": 62000,
-   "versionName": "6.20.0",
-   "date": "2026-05-24",
-   "critical": false,
-   "title": "v6.20.0 — Always Dark, Glass UI",
-   "de": "• VERBESSERT: Die App ist jetzt dauerhaft dunkel — der Theme/Hell/Dunkel/System-Schalter wurde entfernt, da er auf der Glass-Neon-Oberfläche keine Wirkung hatte.\n• VERBESSERT: 13 verbleibende Screens (Passenger Mode, Loop Mixer, Party Mode, Waveform usw.) vollständig auf das einheitliche Glass-Neon-Design migriert.\n• FIX: Benutzerhandbuch in allen 26 Sprachen aktualisiert, um das dauerhaft dunkle Verhalten widerzuspiegeln.",
-   "en": "• IMPROVED: App is now permanently dark — the Theme/Light/Dark/System toggle has been removed as it had no effect on the Glass Neon UI.\n• IMPROVED: 13 remaining screens (Passenger Mode, Loop Mixer, Party Mode, Waveform, etc.) fully migrated to the unified Glass Neon design.\n• FIX: User guide updated in all 26 languages to reflect the always-dark behaviour."
   }
  ]
 }
