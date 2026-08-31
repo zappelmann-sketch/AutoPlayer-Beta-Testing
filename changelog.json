@@ -1,6 +1,24 @@
 {
- "latest": 63102,
+ "latest": 63300,
  "entries": [
+  {
+   "versionCode": 63300,
+   "versionName": "6.33.0",
+   "date": "2026-08-31",
+   "critical": false,
+   "title": "v6.33.0 — Klanganalyse neu aufgebaut",
+   "de": "• NEU: Die Stimmung wird aus neun Klangmerkmalen bestimmt statt aus Tempo, Tonart und Energie allein\n• NEU: Die Rauheit des Klangs zählt jetzt mit — ein Dur-Stück gilt nicht mehr allein deshalb als fröhlich\n• NEU: Jeder Titel wird an drei Stellen untersucht, dadurch wird ein Stimmungswechsel im Stück erkannt\n• NEU: Die Kachel „Instrumental“ wird endlich befüllt\n• NEU: Hinweis, wenn Titel mangels Klanganalyse nicht eingeordnet werden konnten\n• VERBESSERT: Das Tempo stammt aus drei Messungen statt einer\n• WICHTIG: Die Bibliotheksanalyse läuft einmalig neu, um die neuen Merkmale zu ermitteln",
+   "en": "• NEW: Mood is derived from nine sound features instead of tempo, key and energy alone\n• NEW: Harmonic roughness now counts — a major-key track is no longer cheerful by default\n• NEW: Every track is sampled at three points, so a mood change within a song is detected\n• NEW: The “Instrumental” tile is finally filled\n• NEW: Notice when tracks could not be classified for lack of sound analysis\n• IMPROVED: Tempo comes from three measurements instead of one\n• IMPORTANT: The library analysis runs once more to gather the new features"
+  },
+  {
+   "versionCode": 63200,
+   "versionName": "6.32.0",
+   "date": "2026-08-31",
+   "critical": false,
+   "title": "v6.32.0 — Stimmungs-Browse berichtigt",
+   "de": "• FIX: Kacheln zeigten einen anderen Namen als den Wert dahinter\n• FIX: Sprachbefehle für melancholische und tanzbare Musik liefen ins Leere\n• FIX: „Spiele energetische Musik“ fand immer nur einen Titel\n• FIX: Die Kachel „Traurig“ war nie erreichbar\n• NEU: Sprachbefehle legen die Zusammenstellung als Chip in der Bibliothek ab",
+   "en": "• FIX: Tiles showed a different name than the value behind them\n• FIX: Voice commands for melancholic and danceable music did nothing\n• FIX: “Play energetic music” always found only one track\n• FIX: The “Sad” tile could never be reached\n• NEW: Voice commands now leave the selection as a chip in the library"
+  },
   {
    "versionCode": 63102,
    "versionName": "6.31.2",
@@ -117,24 +135,6 @@
    "title": "v6.28.0 — Playlists per Sprache",
    "de": "• NEU: Sage \"Spiele Playlist\" und den Namen — die gespeicherte Playlist startet sofort, am Handy wie im Auto.\n• NEU: \"Zeige meine Playlists\" liest deine Playlists nummeriert vor.\n• NEU: Passen mehrere Playlists zum Namen, fragt die App nummeriert nach, statt zu raten — du hast 15 Sekunden zum Antworten.\n• VERBESSERT: Namen werden auch bei ungenauer Aussprache gefunden, etwa \"Erd Licht\" für \"Erdlicht\".\n• FIX: Die Sprachausgabe spricht jetzt in deiner Systemsprache statt immer auf Deutsch.",
    "en": "• NEW: Say \"play playlist\" and the name — your saved playlist starts right away, on your phone and in the car.\n• NEW: \"Show my playlists\" reads out your playlists with numbers.\n• NEW: If several playlists match the name, the app asks back with numbers instead of guessing — you have 15 seconds to answer.\n• IMPROVED: Names are found even when pronunciation is imprecise, e.g. \"Erd Licht\" for \"Erdlicht\".\n• FIX: Voice feedback now speaks your system language instead of always German."
-  },
-  {
-   "versionCode": 62700,
-   "versionName": "6.27.0",
-   "date": "2026-06-13",
-   "critical": false,
-   "title": "v6.27.0 — In-App Updates",
-   "de": "• NEU: Die App prüft beim Start Google Play auf verfügbare Updates und zeigt eine Update-Karte an — tippe auf \"Jetzt aktualisieren\" oder \"Später\".\n• NEU: Kritische Haupt-Updates werden sofort installiert, ohne Möglichkeit zum Verschieben.\n• NEU: Eintrag \"Nach Updates suchen\" unter Über die App hinzugefügt — manuellen Check jederzeit auslösen.\n• NEU: Die Update-Karte zeigt den englischen Changelog der neuen Version, scrollbar.\n• VERBESSERT: Alle neuen UI-Texte in 26 Sprachen verfügbar.",
-   "en": "• NEW: The app now checks Google Play for available updates on launch and shows an update card — tap \"Update Now\" or \"Later\".\n• NEW: Critical major updates install immediately without option to postpone.\n• NEW: \"Check for Updates\" entry added under About — trigger a manual check anytime.\n• NEW: Update card shows the English changelog for the new version, scrollable.\n• IMPROVED: All new UI text available in 26 languages."
-  },
-  {
-   "versionCode": 62600,
-   "versionName": "6.26.0",
-   "date": "2026-05-29",
-   "critical": false,
-   "title": "v6.26.0 — Vumikio Pets Overhaul",
-   "de": "• NEU: Multi-Pet-Modus zeigt jetzt leuchtende Trails für alle 5 Vumikio Pets gleichzeitig — jedes mit eigenem Farbschweif.\n• NEU: Individuelle Akzentfarbe pro Pet — wähle aus 7 Farben je Pet-Typ; wirkt auf Körperleuchten und Trail-Farbe, bleibt sitzungsübergreifend gespeichert.\n• VERBESSERT: Namensänderungen am Pet erscheinen sofort auf der Statuskarte, ohne den Dialog neu zu öffnen.\n• VERBESSERT: Cat, Fox, Bunny und Squirrel haben jetzt eine sichtbare äußere Aura passend zur Akzentfarbe.\n• FIX: Trail folgt jetzt für alle Größen und Pet-Typen exakt dem tatsächlichen Körperzentrum des Pets — kein diagonaler Versatz mehr.",
-   "en": "• NEW: Multi-Pet mode now shows glowing trails for all 5 pets simultaneously — each with its own colour streak.\n• NEW: Per-pet accent colour — choose from 7 colours per pet type; affects body glow and trail tint, persists across sessions.\n• IMPROVED: Pet name changes now appear instantly on the status card without reopening the dialog.\n• IMPROVED: Cat, Fox, Bunny and Squirrel now have a visible outer aura matching their accent colour.\n• FIX: Trail now follows the pet's actual body centre for all sizes and pet types — no more diagonal offset."
   }
  ]
 }
