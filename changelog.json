@@ -1,6 +1,15 @@
 {
- "latest": 63400,
+ "latest": 63401,
  "entries": [
+  {
+   "versionCode": 63401,
+   "versionName": "6.34.1",
+   "date": "2026-09-01",
+   "critical": false,
+   "title": "v6.34.1 — Sprachantworten bleiben länger stehen",
+   "de": "• FIX: Antworten auf Sprachbefehle verschwanden nach 1,5 Sekunden und waren oft nicht zu Ende lesbar — sie bleiben jetzt 5 Sekunden stehen\n• FIX: Bei einer Rückfrage mit Auswahlliste sind es 6 Sekunden\n• FIX: Wer während einer Antwort erneut sprach, sah die zweite Antwort nur verkürzt",
+   "en": "• FIX: Voice command replies vanished after 1.5 seconds and often could not be read to the end — they now stay for 5 seconds\n• FIX: Follow-up questions with a selection list stay for 6 seconds\n• FIX: Speaking again during a reply cut the second reply short"
+  },
   {
    "versionCode": 63400,
    "versionName": "6.34.0",
@@ -126,15 +135,6 @@
    "title": "v6.28.2 — Zufallsmix sichtbar gemacht",
    "de": "• FIX: Der Kurzbefehl \"Zufallsmix\" mischte im Verborgenen — der Zufallsmodus blieb dabei ausgeschaltet.\n• VERBESSERT: Der Zufallsmix öffnet jetzt den Player und schaltet den Zufall sichtbar ein.\n• VERBESSERT: Wird der Zufall wieder ausgeschaltet, geht es in normaler Reihenfolge weiter.",
    "en": "• FIX: The \"Shuffle\" shortcut shuffled invisibly — shuffle mode itself stayed off.\n• IMPROVED: Shuffle now opens the player and visibly turns shuffle mode on.\n• IMPROVED: Turning shuffle back off continues in normal order."
-  },
-  {
-   "versionCode": 62801,
-   "versionName": "6.28.1",
-   "date": "2026-08-28",
-   "critical": false,
-   "title": "v6.28.1 — Kurzbefehle am App-Symbol",
-   "de": "• FIX: Die Kurzbefehle am App-Symbol (langes Drücken) führten ihre Aktion nicht aus — die App öffnete sich nur.\n• FIX: Fortsetzen und Zufallsmix starten jetzt zuverlässig, auch bei kaltem Start.\n• VERBESSERT: \"Favoriten öffnen\" zeigt jetzt den Favoriten-Reiter, statt ungefragt abzuspielen.",
-   "en": "• FIX: The home screen shortcuts (long press the app icon) did not run their action — the app merely opened.\n• FIX: Resume and Shuffle now start reliably, even on a cold start.\n• IMPROVED: \"Open favorites\" now shows the favorites tab instead of playing unasked."
   }
  ]
 }
