@@ -1,6 +1,15 @@
 {
- "latest": 63406,
+ "latest": 63500,
  "entries": [
+  {
+   "versionCode": 63500,
+   "versionName": "6.35.0",
+   "date": "2026-09-02",
+   "critical": false,
+   "title": "v6.35.0 — Song-Pfade: eigener Name für die Playlist",
+   "de": "• NEU: Beim Speichern eines Pfads lässt sich jetzt ein eigener Playlist-Name vergeben — oder wie bisher automatisch benennen\n• FIX: „Song-Pfad“ und „Pfad finden“ wurden nicht erkannt, weil die Spracherkennung „Pfad“ als „Fahrt“ versteht\n• FIX: „Finde den Weg“ wurde von der Titelsuche abgefangen",
+   "en": "• NEW: When saving a path you can now choose your own playlist name — or keep the automatic one\n• FIX: “Song path” and “find path” were not recognised because speech recognition hears “Pfad” as “Fahrt”\n• FIX: “Find the way” was swallowed by the title search"
+  },
   {
    "versionCode": 63406,
    "versionName": "6.34.6",
@@ -126,15 +135,6 @@
    "title": "v6.28.5 — Ganze Sammlung im Fahrzeug erreichbar",
    "de": "• FIX: Im Fahrzeug fehlte \"Alle Titel\" komplett — bei knappem Platz im Hauptmenü fiel der Eintrag heraus und tauchte auch unter \"Mehr\" nicht auf.\n• FIX: Die Songliste kam im Fahrzeug nur zu einem Viertel an; die Sprungleiste endete mitten im Alphabet.\n• NEU: \"Alle Titel\" ist im Fahrzeug jetzt nach Anfangsbuchstaben geordnet — von 123 über A bis Z bis #. Umlaute stehen dort, wo man sie sucht.",
    "en": "• FIX: \"All songs\" was missing in the car — with few slots in the main menu the entry dropped out and never showed up under \"More\" either.\n• FIX: Only about a quarter of the song list reached the car; the jump bar ended mid-alphabet.\n• NEW: \"All songs\" is now grouped by initial letter in the car — 123, A to Z, and #. Accented titles sort where you would look for them."
-  },
-  {
-   "versionCode": 62803,
-   "versionName": "6.28.3",
-   "date": "2026-08-29",
-   "critical": false,
-   "title": "v6.28.3 — Audio-Offload wirkt jetzt wirklich",
-   "de": "• FIX: Audio-Offload war ohne Wirkung — Equalizer und Klangeffekte liefen trotz Sparmodus weiter.\n• VERBESSERT: Der Sparmodus legt jetzt Equalizer, Hall und Stimmen-Trennung still. Erkennbar am hervorgehobenen Blatt-Symbol im Player.\n• VERBESSERT: Deine Einstellungen bleiben dabei erhalten und kommen beim Zurückschalten unverändert wieder.",
-   "en": "• FIX: Audio offload had no effect — equalizer and sound effects kept running in battery saver.\n• IMPROVED: Battery saver now silences equalizer, reverb and vocal isolation. Shown by the highlighted leaf icon in the player.\n• IMPROVED: Your settings stay untouched and return unchanged when you switch back."
   }
  ]
 }
