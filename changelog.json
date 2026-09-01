@@ -1,6 +1,15 @@
 {
- "latest": 63401,
+ "latest": 63406,
  "entries": [
+  {
+   "versionCode": 63406,
+   "versionName": "6.34.6",
+   "date": "2026-09-01",
+   "critical": false,
+   "title": "v6.34.6 — Smart Reorder per Sprache repariert",
+   "de": "• FIX: Nach dem Sortieren lief immer derselbe Titel an und die Warteschlange schien unverändert — beides behoben\n• FIX: „Sortiere für Party“ und „DJ Mix“ wurden als Titelsuche verstanden statt als Sortierbefehl\n• NEU: Die Meldung nennt jetzt das verwendete Profil\n• VERBESSERT: Party Build-Up beginnt wirklich langsam und leise, Chill Fade schnell und kräftig\n• VERBESSERT: Auch „Party sortieren“ und „entspannt sortieren“ werden erkannt",
+   "en": "• FIX: The same track started every time and the queue appeared unchanged — both fixed\n• FIX: “Sort for party” and “DJ Mix” were treated as a title search instead of a sort command\n• NEW: The message now names the profile that was used\n• IMPROVED: Party Build-Up now truly starts slow and quiet, Chill Fade fast and strong\n• IMPROVED: “Sort party” and “sort relaxed” are recognised as well"
+  },
   {
    "versionCode": 63401,
    "versionName": "6.34.1",
@@ -126,15 +135,6 @@
    "title": "v6.28.3 — Audio-Offload wirkt jetzt wirklich",
    "de": "• FIX: Audio-Offload war ohne Wirkung — Equalizer und Klangeffekte liefen trotz Sparmodus weiter.\n• VERBESSERT: Der Sparmodus legt jetzt Equalizer, Hall und Stimmen-Trennung still. Erkennbar am hervorgehobenen Blatt-Symbol im Player.\n• VERBESSERT: Deine Einstellungen bleiben dabei erhalten und kommen beim Zurückschalten unverändert wieder.",
    "en": "• FIX: Audio offload had no effect — equalizer and sound effects kept running in battery saver.\n• IMPROVED: Battery saver now silences equalizer, reverb and vocal isolation. Shown by the highlighted leaf icon in the player.\n• IMPROVED: Your settings stay untouched and return unchanged when you switch back."
-  },
-  {
-   "versionCode": 62802,
-   "versionName": "6.28.2",
-   "date": "2026-08-29",
-   "critical": false,
-   "title": "v6.28.2 — Zufallsmix sichtbar gemacht",
-   "de": "• FIX: Der Kurzbefehl \"Zufallsmix\" mischte im Verborgenen — der Zufallsmodus blieb dabei ausgeschaltet.\n• VERBESSERT: Der Zufallsmix öffnet jetzt den Player und schaltet den Zufall sichtbar ein.\n• VERBESSERT: Wird der Zufall wieder ausgeschaltet, geht es in normaler Reihenfolge weiter.",
-   "en": "• FIX: The \"Shuffle\" shortcut shuffled invisibly — shuffle mode itself stayed off.\n• IMPROVED: Shuffle now opens the player and visibly turns shuffle mode on.\n• IMPROVED: Turning shuffle back off continues in normal order."
   }
  ]
 }
