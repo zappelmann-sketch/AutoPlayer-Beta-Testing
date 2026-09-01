@@ -1,6 +1,15 @@
 {
- "latest": 63300,
+ "latest": 63400,
  "entries": [
+  {
+   "versionCode": 63400,
+   "versionName": "6.34.0",
+   "date": "2026-09-01",
+   "critical": false,
+   "title": "v6.34.0 — Stimmungserkennung deutlich genauer",
+   "de": "• VERBESSERT: Die Stimmungszuordnung wurde an einer Sammlung von 1868 Titeln vermessen und neu gewichtet — klar falsche Einordnungen gingen von 47 % auf 11 % zurück\n• VERBESSERT: Die Klangfarbe entscheidet jetzt, wie energisch ein Stück wirkt — Lautstärke sagt darüber wenig, weil moderne Produktionen alle ähnlich laut sind\n• FIX: Die Kachel „Aggressiv“ blieb bisher immer leer und füllt sich nun\n• FIX: „Entspannt“ zog zu viele Titel an sich; alle acht Kacheln sind jetzt ausgewogen belegt\n• HINWEIS: Nur die Stimmungsanalyse läuft einmal neu, die lange Klanganalyse bleibt gültig",
+   "en": "• IMPROVED: Mood assignment was measured against a 1868-track library and re-weighted — clearly wrong placements dropped from 47% to 11%\n• IMPROVED: Timbre now decides how energetic a track feels — loudness says little, since modern masters are all similarly loud\n• FIX: The “Aggressive” tile was always empty and now fills up\n• FIX: “Relaxed” attracted too many tracks; all eight tiles are now evenly filled\n• NOTE: Only the mood pass re-runs, the long sound analysis stays valid"
+  },
   {
    "versionCode": 63300,
    "versionName": "6.33.0",
@@ -126,15 +135,6 @@
    "title": "v6.28.1 — Kurzbefehle am App-Symbol",
    "de": "• FIX: Die Kurzbefehle am App-Symbol (langes Drücken) führten ihre Aktion nicht aus — die App öffnete sich nur.\n• FIX: Fortsetzen und Zufallsmix starten jetzt zuverlässig, auch bei kaltem Start.\n• VERBESSERT: \"Favoriten öffnen\" zeigt jetzt den Favoriten-Reiter, statt ungefragt abzuspielen.",
    "en": "• FIX: The home screen shortcuts (long press the app icon) did not run their action — the app merely opened.\n• FIX: Resume and Shuffle now start reliably, even on a cold start.\n• IMPROVED: \"Open favorites\" now shows the favorites tab instead of playing unasked."
-  },
-  {
-   "versionCode": 62800,
-   "versionName": "6.28.0",
-   "date": "2026-08-21",
-   "critical": false,
-   "title": "v6.28.0 — Playlists per Sprache",
-   "de": "• NEU: Sage \"Spiele Playlist\" und den Namen — die gespeicherte Playlist startet sofort, am Handy wie im Auto.\n• NEU: \"Zeige meine Playlists\" liest deine Playlists nummeriert vor.\n• NEU: Passen mehrere Playlists zum Namen, fragt die App nummeriert nach, statt zu raten — du hast 15 Sekunden zum Antworten.\n• VERBESSERT: Namen werden auch bei ungenauer Aussprache gefunden, etwa \"Erd Licht\" für \"Erdlicht\".\n• FIX: Die Sprachausgabe spricht jetzt in deiner Systemsprache statt immer auf Deutsch.",
-   "en": "• NEW: Say \"play playlist\" and the name — your saved playlist starts right away, on your phone and in the car.\n• NEW: \"Show my playlists\" reads out your playlists with numbers.\n• NEW: If several playlists match the name, the app asks back with numbers instead of guessing — you have 15 seconds to answer.\n• IMPROVED: Names are found even when pronunciation is imprecise, e.g. \"Erd Licht\" for \"Erdlicht\".\n• FIX: Voice feedback now speaks your system language instead of always German."
   }
  ]
 }
