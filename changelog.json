@@ -1,6 +1,15 @@
 {
- "latest": 63500,
+ "latest": 63600,
  "entries": [
+  {
+   "versionCode": 63600,
+   "versionName": "6.36.0",
+   "date": "2026-09-02",
+   "critical": false,
+   "title": "v6.36.0 — Stimmungssuche im Fahrzeug",
+   "de": "• NEU: Die Suche in Android Auto versteht Stimmungen — „fröhliche Musik“, „traurige Musik“, „melancholische Musik“\n• VERBESSERT: Eine Sprachsuche ohne Treffer startet jetzt eine Auswahl, statt mit einer Fehlermeldung zu enden\n• VERBESSERT: Das Handbuch-Kapitel „Android Auto“ führt nur noch Sprachbefehle auf, die im Fahrzeug geprüft wurden",
+   "en": "• NEW: Search in Android Auto now understands moods — “happy music”, “sad music”, “melancholic music”\n• IMPROVED: A voice search without matches now starts a selection instead of ending in an error\n• IMPROVED: The “Android Auto” manual chapter now lists only voice commands verified in the car"
+  },
   {
    "versionCode": 63500,
    "versionName": "6.35.0",
@@ -126,15 +135,6 @@
    "title": "v6.28.6 — \"Zur Queue\" im Genre-Browser sichtbar",
    "de": "• FIX: Im Genre-Browser war \"Zur Queue\" nur ein Symbol ohne Beschriftung und wurde übersehen. Jetzt beschriftet wie die beiden Nachbarn.\n• VERBESSERT: Auf schmalen Geräten rutscht die dritte Schaltfläche in die nächste Zeile, statt abgeschnitten zu werden.",
    "en": "• FIX: In the genre browser, \"Add to queue\" was an unlabelled icon and went unnoticed. It now carries a label like its two neighbours.\n• IMPROVED: On narrow screens the third button wraps to the next line instead of being cut off."
-  },
-  {
-   "versionCode": 62805,
-   "versionName": "6.28.5",
-   "date": "2026-08-30",
-   "critical": false,
-   "title": "v6.28.5 — Ganze Sammlung im Fahrzeug erreichbar",
-   "de": "• FIX: Im Fahrzeug fehlte \"Alle Titel\" komplett — bei knappem Platz im Hauptmenü fiel der Eintrag heraus und tauchte auch unter \"Mehr\" nicht auf.\n• FIX: Die Songliste kam im Fahrzeug nur zu einem Viertel an; die Sprungleiste endete mitten im Alphabet.\n• NEU: \"Alle Titel\" ist im Fahrzeug jetzt nach Anfangsbuchstaben geordnet — von 123 über A bis Z bis #. Umlaute stehen dort, wo man sie sucht.",
-   "en": "• FIX: \"All songs\" was missing in the car — with few slots in the main menu the entry dropped out and never showed up under \"More\" either.\n• FIX: Only about a quarter of the song list reached the car; the jump bar ended mid-alphabet.\n• NEW: \"All songs\" is now grouped by initial letter in the car — 123, A to Z, and #. Accented titles sort where you would look for them."
   }
  ]
 }
