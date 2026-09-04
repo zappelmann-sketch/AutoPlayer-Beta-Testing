@@ -1,6 +1,15 @@
 {
- "latest": 63600,
+ "latest": 63700,
  "entries": [
+  {
+   "versionCode": 63700,
+   "versionName": "6.37.0",
+   "date": "2026-09-04",
+   "critical": false,
+   "title": "v6.37.0 — Fahrmodus geschliffen, Lautstärke neu gedacht",
+   "de": "• FIX: Der Fahrmodus schneidet das laufende Lied nicht mehr ab — es spielt zu Ende\n• FIX: Bei jedem Wechsel kam dieselbe Liste, jetzt ist sie jedes Mal anders\n• NEU: Fahrmodus und Weather DJ zusammen — Tempo vom Fahrmodus, Stimmung vom Wetter\n• NEU: Geschwindigkeitsbasierte Lautstärke wirkt jetzt über Bluetooth und Kopfhörer, mit einstellbarem Zieltempo für Rad, Boot oder Jogging\n• FIX: Leiser drehen macht jetzt leiser — vorher hielt die App dagegen",
+   "en": "• FIX: Drive mode no longer cuts off the current song — it plays to the end\n• FIX: Every switch produced the same list, now it differs each time\n• NEW: Drive mode and Weather DJ combined — tempo from driving, mood from weather\n• NEW: Speed-based volume now works over Bluetooth and headphones, with an adjustable target speed for bike, boat or jogging\n• FIX: Turning the volume down now makes it quieter — the app used to push back"
+  },
   {
    "versionCode": 63600,
    "versionName": "6.36.0",
@@ -126,15 +135,6 @@
    "title": "v6.29.0 — Warteschlange in einem Zug leeren",
    "de": "• NEU: \"Warteschlange leeren\" im Mehr-Menü der Warteschlange. Der laufende Titel bleibt und spielt weiter.\n• NEU: Eine Rückfrage nennt die Zahl der Titel, die entfernt werden.\n• FIX: Im Genre-Browser war \"Zur Queue\" nur ein Symbol ohne Beschriftung und wurde übersehen. Jetzt beschriftet wie die beiden Nachbarn.",
    "en": "• NEW: \"Clear queue\" in the queue’s more menu. The track that is playing stays and continues.\n• NEW: A confirmation names how many tracks will be removed.\n• FIX: In the genre browser, \"Add to queue\" was an unlabelled icon and went unnoticed. It now carries a label like its two neighbours."
-  },
-  {
-   "versionCode": 62806,
-   "versionName": "6.28.6",
-   "date": "2026-08-30",
-   "critical": false,
-   "title": "v6.28.6 — \"Zur Queue\" im Genre-Browser sichtbar",
-   "de": "• FIX: Im Genre-Browser war \"Zur Queue\" nur ein Symbol ohne Beschriftung und wurde übersehen. Jetzt beschriftet wie die beiden Nachbarn.\n• VERBESSERT: Auf schmalen Geräten rutscht die dritte Schaltfläche in die nächste Zeile, statt abgeschnitten zu werden.",
-   "en": "• FIX: In the genre browser, \"Add to queue\" was an unlabelled icon and went unnoticed. It now carries a label like its two neighbours.\n• IMPROVED: On narrow screens the third button wraps to the next line instead of being cut off."
   }
  ]
 }
