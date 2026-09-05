@@ -1,6 +1,42 @@
 {
- "latest": 63700,
+ "latest": 63901,
  "entries": [
+  {
+   "versionCode": 63901,
+   "versionName": "6.39.1",
+   "date": "2026-09-05",
+   "critical": false,
+   "title": "v6.39.1 — Fahrmodus startet mit der richtigen Skala",
+   "de": "• FIX: Direkt nach dem Start galten kurz die Autowerte, obwohl „An mein Tempo anpassen“ eingeschaltet war",
+   "en": "• FIX: Right after startup the car values briefly applied even though “Match my pace” was switched on"
+  },
+  {
+   "versionCode": 63900,
+   "versionName": "6.39.0",
+   "date": "2026-09-05",
+   "critical": false,
+   "title": "v6.39.0 — Fahrmodus: Namen, Wetter und Titelliste",
+   "de": "• FIX: Ein Wetterwechsel stellte eine neue Liste zusammen, spielte sie aber nicht ab\n• NEU: Mit „An mein Tempo anpassen“ heissen die Lagen jetzt Ruhig, Normal und Zügig statt Stau, Stadt und Autobahn\n• VERBESSERT: Die Titelliste fährt auf Tippen von unten herein — vollständig und scrollbar, statt einer einzelnen Zeile",
+   "en": "• FIX: A weather change compiled a new list but never played it\n• NEW: With “Match my pace” the modes are now called Calm, Steady and Brisk instead of Traffic, City and Highway\n• IMPROVED: The track list slides up on tap — complete and scrollable, instead of a single line"
+  },
+  {
+   "versionCode": 63800,
+   "versionName": "6.38.0",
+   "date": "2026-09-05",
+   "critical": false,
+   "title": "v6.38.0 — Fahrmodus für Rad, Boot und zu Fuß",
+   "de": "• NEU: Schalter „An mein Tempo anpassen“ im Fahrmodus-DJ — die Umschaltung richtet sich dann nach deinem Zieltempo statt nach Autowerten\n• FIX: Auf Rad, Boot und zu Fuß landete der Fahrmodus dauerhaft im Stau-Profil, weil man nie über 15 km/h kam\n• Im Fahrzeug bleibt alles wie bisher: mit Android Auto gelten weiter die Autoschwellen",
+   "en": "• NEW: “Match my pace” switch in Drive Mode DJ — mode switching then follows your target speed instead of car values\n• FIX: When cycling, boating or walking, drive mode was stuck in the traffic-jam profile because you never exceed 15 km/h\n• In the car nothing changes: with Android Auto the car thresholds still apply"
+  },
+  {
+   "versionCode": 63701,
+   "versionName": "6.37.1",
+   "date": "2026-09-05",
+   "critical": false,
+   "title": "v6.37.1 — Lautstärke fällt nach der Fahrt zurück",
+   "de": "• FIX: Nach dem Anhalten blieb die Musik auf Fahrtlautstärke stehen — jetzt geht sie in rund 30 Sekunden auf deine Grundlautstärke zurück\n• FIX: Ohne GPS-Empfang regelte die Lautstärke gar nicht mehr und blieb laut hängen\n• VERBESSERT: Ein kurzer Halt an der Ampel dreht weiterhin nicht sofort herunter",
+   "en": "• FIX: After stopping, the music stayed at driving volume — it now returns to your base volume in about 30 seconds\n• FIX: Without GPS reception the volume stopped adjusting at all and stayed loud\n• IMPROVED: A brief stop at a traffic light still does not turn it down right away"
+  },
   {
    "versionCode": 63700,
    "versionName": "6.37.0",
@@ -99,42 +135,6 @@
    "title": "v6.30.1 — Menüeintrag \"Bibliothek neu laden\"",
    "de": "• VERBESSERT: Der Menüpunkt \"Audio-Player\" heißt jetzt \"Bibliothek neu laden\" — das trifft, was er tut: Musikdateien neu einlesen und die Bibliothek öffnen.\n• Das Verhalten bleibt unverändert.",
    "en": "• IMPROVED: The menu entry \"Audio Player\" is now called \"Reload library\" — which is what it does: re-read the music files and open the library.\n• The behaviour is unchanged."
-  },
-  {
-   "versionCode": 63000,
-   "versionName": "6.30.0",
-   "date": "2026-08-30",
-   "critical": false,
-   "title": "v6.30.0 — Smart DJ im Hauptmenü",
-   "de": "• NEU: Smart DJ steht jetzt auch im Hauptmenü unter \"Tools & Funktionen\". Das Symbol im Player bleibt.",
-   "en": "• NEW: Smart DJ is now in the main menu under \"Tools & Features\" as well. The player icon stays."
-  },
-  {
-   "versionCode": 62903,
-   "versionName": "6.29.3",
-   "date": "2026-08-30",
-   "critical": false,
-   "title": "v6.29.3 — Vibrations-Sprachbefehle",
-   "de": "• FIX: \"Vibration stärker\" und \"Vibration schwächer\" wurden nicht erkannt — stattdessen startete teils ein zufälliger Titel.\n• FIX: \"Vibration aus\" schaltete den Motor ab, ließ die Auswahl im Bildschirm aber auf der alten Stufe stehen.\n• VERBESSERT: \"Vibration an\" schaltet aus dem Aus heraus auf die Stufe \"Leicht\".",
-   "en": "• FIX: \"Vibration stronger\" and \"vibration weaker\" were not recognised — a random track sometimes started instead.\n• FIX: \"Vibration off\" stopped the motor but left the on-screen selection on the previous level.\n• IMPROVED: \"Vibration on\" now switches from off to the \"Light\" level."
-  },
-  {
-   "versionCode": 62901,
-   "versionName": "6.29.1",
-   "date": "2026-08-30",
-   "critical": false,
-   "title": "v6.29.1 — Tempo im Kassettendeck und Vintage-Plattenspieler",
-   "de": "• FIX: Kassettenspieler und Vintage-Plattenspieler zeigten kein Tempo. Es steht jetzt unten neben der Zeit, wie bei der Bandmaschine.",
-   "en": "• FIX: The cassette player and vintage turntable showed no tempo. It now sits next to the time, like on the reel-to-reel."
-  },
-  {
-   "versionCode": 62900,
-   "versionName": "6.29.0",
-   "date": "2026-08-30",
-   "critical": false,
-   "title": "v6.29.0 — Warteschlange in einem Zug leeren",
-   "de": "• NEU: \"Warteschlange leeren\" im Mehr-Menü der Warteschlange. Der laufende Titel bleibt und spielt weiter.\n• NEU: Eine Rückfrage nennt die Zahl der Titel, die entfernt werden.\n• FIX: Im Genre-Browser war \"Zur Queue\" nur ein Symbol ohne Beschriftung und wurde übersehen. Jetzt beschriftet wie die beiden Nachbarn.",
-   "en": "• NEW: \"Clear queue\" in the queue’s more menu. The track that is playing stays and continues.\n• NEW: A confirmation names how many tracks will be removed.\n• FIX: In the genre browser, \"Add to queue\" was an unlabelled icon and went unnoticed. It now carries a label like its two neighbours."
   }
  ]
 }
