@@ -1,6 +1,42 @@
 {
- "latest": 64004,
+ "latest": 64300,
  "entries": [
+  {
+   "versionCode": 64300,
+   "versionName": "6.43.0",
+   "date": "2026-09-07",
+   "critical": false,
+   "title": "v6.43.0 — Fahrtprotokoll ab dem Start der App",
+   "de": "• FIX: Das Fahrtprotokoll der Beta zeichnet ab dem Start der App auf. Bisher begann es erst, wenn du eine der Fahrfunktionen umgelegt hast — nach einer Neuinstallation blieb es darum leer\n• VERBESSERT: Im Kopf der Protokolldatei steht jetzt, welche App-Version sie geschrieben hat",
+   "en": "• FIX: The beta drive log now records from app start. Previously it only began once you toggled one of the driving features — so it stayed empty after a fresh install\n• IMPROVED: The log file header now states which app version wrote it"
+  },
+  {
+   "versionCode": 64202,
+   "versionName": "6.42.2",
+   "date": "2026-09-06",
+   "critical": false,
+   "title": "v6.42.2 — Nachtrag zum Vorrang, zwei Bedienfehler",
+   "de": "• FIX: Nach dem Ende einer Regel-Playlist blieb die Wiedergabe stehen, statt nahtlos weiterzulaufen\n• FIX: Bei langen Regelnamen waren Bearbeiten und Löschen nicht mehr erreichbar — der Name bricht jetzt um\n• FIX: Das Zeichen zum Entfernen einer Bedingung war unsichtbar (schwarz auf schwarz)\n• FIX: Beim Abspielen von Hand fehlte der Eintrag in der Bibliothek",
+   "en": "• FIX: After a rule playlist ended, playback stopped instead of continuing seamlessly\n• FIX: With long rule names, edit and delete were pushed out of reach — the name now wraps\n• FIX: The icon for removing a condition was invisible (black on black)\n• FIX: Playing by hand did not create the library entry"
+  },
+  {
+   "versionCode": 64200,
+   "versionName": "6.42.0",
+   "date": "2026-09-06",
+   "critical": false,
+   "title": "v6.42.0 — Deine Regeln gehen vor",
+   "de": "• FIX: Der Fahrmodus-DJ ersetzte die Playlist, die eine Kontext-Regel gerade gestartet hatte — oft schon nach einem Lied\n• NEU: Löst eine Regel aus, halten sich Fahrmodus und Wetter-DJ zurück, bis die Liste durch ist — danach geht es ohne Pause weiter\n• Startest du selbst etwas anderes, hat das natürlich Vorrang",
+   "en": "• FIX: Drive Mode DJ replaced the playlist a context rule had just started — often after a single track\n• NEW: When a rule fires, Drive Mode and Weather DJ hold back until the list has finished — then it continues without a gap\n• If you start something yourself, that takes precedence of course"
+  },
+  {
+   "versionCode": 64100,
+   "versionName": "6.41.0",
+   "date": "2026-09-06",
+   "critical": false,
+   "title": "v6.41.0 — Neue Regel-Vorlage: Ankunft an einem Ort",
+   "de": "• NEU: Vorlage „Ankunft an einem Ort“ — Musik startet, sobald du an einem gesetzten Ort ankommst\n• VERBESSERT: Kürzere Sperrfrist bei dieser Vorlage, damit sich das Ankommen mehrfach ausprobieren lässt",
+   "en": "• NEW: “Arriving at a place” template — music starts as soon as you reach a pinned location\n• IMPROVED: Shorter cooldown on this template so arrival can be tried repeatedly"
+  },
   {
    "versionCode": 64004,
    "versionName": "6.40.4",
@@ -99,42 +135,6 @@
    "title": "v6.34.6 — Smart Reorder per Sprache repariert",
    "de": "• FIX: Nach dem Sortieren lief immer derselbe Titel an und die Warteschlange schien unverändert — beides behoben\n• FIX: „Sortiere für Party“ und „DJ Mix“ wurden als Titelsuche verstanden statt als Sortierbefehl\n• NEU: Die Meldung nennt jetzt das verwendete Profil\n• VERBESSERT: Party Build-Up beginnt wirklich langsam und leise, Chill Fade schnell und kräftig\n• VERBESSERT: Auch „Party sortieren“ und „entspannt sortieren“ werden erkannt",
    "en": "• FIX: The same track started every time and the queue appeared unchanged — both fixed\n• FIX: “Sort for party” and “DJ Mix” were treated as a title search instead of a sort command\n• NEW: The message now names the profile that was used\n• IMPROVED: Party Build-Up now truly starts slow and quiet, Chill Fade fast and strong\n• IMPROVED: “Sort party” and “sort relaxed” are recognised as well"
-  },
-  {
-   "versionCode": 63401,
-   "versionName": "6.34.1",
-   "date": "2026-09-01",
-   "critical": false,
-   "title": "v6.34.1 — Sprachantworten bleiben länger stehen",
-   "de": "• FIX: Antworten auf Sprachbefehle verschwanden nach 1,5 Sekunden und waren oft nicht zu Ende lesbar — sie bleiben jetzt 5 Sekunden stehen\n• FIX: Bei einer Rückfrage mit Auswahlliste sind es 6 Sekunden\n• FIX: Wer während einer Antwort erneut sprach, sah die zweite Antwort nur verkürzt",
-   "en": "• FIX: Voice command replies vanished after 1.5 seconds and often could not be read to the end — they now stay for 5 seconds\n• FIX: Follow-up questions with a selection list stay for 6 seconds\n• FIX: Speaking again during a reply cut the second reply short"
-  },
-  {
-   "versionCode": 63400,
-   "versionName": "6.34.0",
-   "date": "2026-09-01",
-   "critical": false,
-   "title": "v6.34.0 — Stimmungserkennung deutlich genauer",
-   "de": "• VERBESSERT: Die Stimmungszuordnung wurde an einer Sammlung von 1868 Titeln vermessen und neu gewichtet — klar falsche Einordnungen gingen von 47 % auf 11 % zurück\n• VERBESSERT: Die Klangfarbe entscheidet jetzt, wie energisch ein Stück wirkt — Lautstärke sagt darüber wenig, weil moderne Produktionen alle ähnlich laut sind\n• FIX: Die Kachel „Aggressiv“ blieb bisher immer leer und füllt sich nun\n• FIX: „Entspannt“ zog zu viele Titel an sich; alle acht Kacheln sind jetzt ausgewogen belegt\n• HINWEIS: Nur die Stimmungsanalyse läuft einmal neu, die lange Klanganalyse bleibt gültig",
-   "en": "• IMPROVED: Mood assignment was measured against a 1868-track library and re-weighted — clearly wrong placements dropped from 47% to 11%\n• IMPROVED: Timbre now decides how energetic a track feels — loudness says little, since modern masters are all similarly loud\n• FIX: The “Aggressive” tile was always empty and now fills up\n• FIX: “Relaxed” attracted too many tracks; all eight tiles are now evenly filled\n• NOTE: Only the mood pass re-runs, the long sound analysis stays valid"
-  },
-  {
-   "versionCode": 63300,
-   "versionName": "6.33.0",
-   "date": "2026-08-31",
-   "critical": false,
-   "title": "v6.33.0 — Klanganalyse neu aufgebaut",
-   "de": "• NEU: Die Stimmung wird aus neun Klangmerkmalen bestimmt statt aus Tempo, Tonart und Energie allein\n• NEU: Die Rauheit des Klangs zählt jetzt mit — ein Dur-Stück gilt nicht mehr allein deshalb als fröhlich\n• NEU: Jeder Titel wird an drei Stellen untersucht, dadurch wird ein Stimmungswechsel im Stück erkannt\n• NEU: Die Kachel „Instrumental“ wird endlich befüllt\n• NEU: Hinweis, wenn Titel mangels Klanganalyse nicht eingeordnet werden konnten\n• VERBESSERT: Das Tempo stammt aus drei Messungen statt einer\n• WICHTIG: Die Bibliotheksanalyse läuft einmalig neu, um die neuen Merkmale zu ermitteln",
-   "en": "• NEW: Mood is derived from nine sound features instead of tempo, key and energy alone\n• NEW: Harmonic roughness now counts — a major-key track is no longer cheerful by default\n• NEW: Every track is sampled at three points, so a mood change within a song is detected\n• NEW: The “Instrumental” tile is finally filled\n• NEW: Notice when tracks could not be classified for lack of sound analysis\n• IMPROVED: Tempo comes from three measurements instead of one\n• IMPORTANT: The library analysis runs once more to gather the new features"
-  },
-  {
-   "versionCode": 63200,
-   "versionName": "6.32.0",
-   "date": "2026-08-31",
-   "critical": false,
-   "title": "v6.32.0 — Stimmungs-Browse berichtigt",
-   "de": "• FIX: Kacheln zeigten einen anderen Namen als den Wert dahinter\n• FIX: Sprachbefehle für melancholische und tanzbare Musik liefen ins Leere\n• FIX: „Spiele energetische Musik“ fand immer nur einen Titel\n• FIX: Die Kachel „Traurig“ war nie erreichbar\n• NEU: Sprachbefehle legen die Zusammenstellung als Chip in der Bibliothek ab",
-   "en": "• FIX: Tiles showed a different name than the value behind them\n• FIX: Voice commands for melancholic and danceable music did nothing\n• FIX: “Play energetic music” always found only one track\n• FIX: The “Sad” tile could never be reached\n• NEW: Voice commands now leave the selection as a chip in the library"
   }
  ]
 }
