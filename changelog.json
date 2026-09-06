@@ -1,6 +1,33 @@
 {
- "latest": 63901,
+ "latest": 64004,
  "entries": [
+  {
+   "versionCode": 64004,
+   "versionName": "6.40.4",
+   "date": "2026-09-06",
+   "critical": false,
+   "title": "v6.40.4 — Kabinen-Kalibrator misst richtig",
+   "de": "• FIX: Der Kalibrator wertete die Stille NACH dem Testton aus — die Ergebnisse waren dadurch zufällig\n• FIX: Kein Kratzen mehr: Frequenzen, die dein Lautsprecher gar nicht wiedergeben kann, werden nicht mehr hochgedreht\n• FIX: Die Verzögerung von Bluetooth-Lautsprechern wird jetzt erkannt und herausgerechnet\n• NEU: Laufende Musik wird für die Messung automatisch angehalten",
+   "en": "• FIX: The calibrator analysed the silence AFTER the test tone — results were random as a consequence\n• FIX: No more crackling: frequencies your speaker cannot reproduce are no longer boosted\n• FIX: The latency of Bluetooth speakers is now detected and compensated\n• NEW: Playback is paused automatically for the measurement"
+  },
+  {
+   "versionCode": 64001,
+   "versionName": "6.40.1",
+   "date": "2026-09-05",
+   "critical": false,
+   "title": "v6.40.1 — Kabinen-Kalibrator misst richtig",
+   "de": "• FIX: Der Kalibrator wertete eine Stelle der Aufnahme aus, an der der Testton schon vorbei war — die Ergebnisse waren dadurch zufällig\n• NEU: Laufende Musik wird für die Messung automatisch angehalten\n• VERBESSERT: Das Handbuch sagt jetzt, wie laut es sein soll und warum es still sein muss",
+   "en": "• FIX: The calibrator analysed a part of the recording where the test tone was already over — results were random as a result\n• NEW: Playback is paused automatically for the measurement\n• IMPROVED: The manual now states how loud it should be and why it needs to be quiet"
+  },
+  {
+   "versionCode": 64000,
+   "versionName": "6.40.0",
+   "date": "2026-09-05",
+   "critical": false,
+   "title": "v6.40.0 — Kabinen-Kalibrator zuverlässiger",
+   "de": "• FIX: Ein belegtes Mikrofon fiel bei der Kalibrierung nicht auf — die Messung lief dann auf leeren Daten weiter\n• FIX: Die Tonaufnahme lief nach dem Ende der Messung weiter\n• VERBESSERT: Das Handbuch-Kapitel beschreibt jetzt, was wirklich gemessen wird und wo das Ergebnis landet",
+   "en": "• FIX: A microphone in use by another app went unnoticed during calibration — the measurement then continued on empty data\n• FIX: Audio recording kept running after the measurement had finished\n• IMPROVED: The manual chapter now describes what is actually measured and where the result ends up"
+  },
   {
    "versionCode": 63901,
    "versionName": "6.39.1",
@@ -108,33 +135,6 @@
    "title": "v6.32.0 — Stimmungs-Browse berichtigt",
    "de": "• FIX: Kacheln zeigten einen anderen Namen als den Wert dahinter\n• FIX: Sprachbefehle für melancholische und tanzbare Musik liefen ins Leere\n• FIX: „Spiele energetische Musik“ fand immer nur einen Titel\n• FIX: Die Kachel „Traurig“ war nie erreichbar\n• NEU: Sprachbefehle legen die Zusammenstellung als Chip in der Bibliothek ab",
    "en": "• FIX: Tiles showed a different name than the value behind them\n• FIX: Voice commands for melancholic and danceable music did nothing\n• FIX: “Play energetic music” always found only one track\n• FIX: The “Sad” tile could never be reached\n• NEW: Voice commands now leave the selection as a chip in the library"
-  },
-  {
-   "versionCode": 63102,
-   "versionName": "6.31.2",
-   "date": "2026-08-31",
-   "critical": false,
-   "title": "v6.31.2 — Stimmungswandler ohne Sprachbefehl",
-   "de": "• ENTFERNT: Der Sprachbefehl für den Stimmungswandler. Er wurde von der Spracherkennung nie richtig verstanden, und ein Verlauf braucht ohnehin zwei Stimmungen plus Bestätigung — das lässt sich nicht sinnvoll sprechen.",
-   "en": "• REMOVED: The voice command for Mood Morph. Speech recognition never got it right, and a morph needs two moods plus a confirmation — that does not fit into one spoken sentence."
-  },
-  {
-   "versionCode": 63101,
-   "versionName": "6.31.1",
-   "date": "2026-08-30",
-   "critical": false,
-   "title": "v6.31.1 — Sprachbefehle für Playlists und Stimmungen",
-   "de": "• FIX: \"Spiele Playlist [Name]\" funktionierte am Handy nicht — der Befehl wurde von der Titelsuche abgefangen, und der Name kam verstümmelt an.\n• FIX: \"Spiele schnelle Songs\" startete immer denselben Titel; \"schnell\" fehlte in den Stimmungswörtern.\n• NEU: Nach einem Stimmungsbefehl erscheint die Zusammenstellung als Chip in der Bibliothek — antippen zeigt, was gewählt wurde.",
-   "en": "• FIX: \"Play playlist [name]\" did not work on the phone — the command was swallowed by the song search, and the name arrived mangled.\n• FIX: \"Play fast songs\" always started the same track; \"fast\" was missing from the mood keywords.\n• NEW: After a mood command the selection appears as a chip in the library — tap it to see what was picked."
-  },
-  {
-   "versionCode": 63001,
-   "versionName": "6.30.1",
-   "date": "2026-08-30",
-   "critical": false,
-   "title": "v6.30.1 — Menüeintrag \"Bibliothek neu laden\"",
-   "de": "• VERBESSERT: Der Menüpunkt \"Audio-Player\" heißt jetzt \"Bibliothek neu laden\" — das trifft, was er tut: Musikdateien neu einlesen und die Bibliothek öffnen.\n• Das Verhalten bleibt unverändert.",
-   "en": "• IMPROVED: The menu entry \"Audio Player\" is now called \"Reload library\" — which is what it does: re-read the music files and open the library.\n• The behaviour is unchanged."
   }
  ]
 }
