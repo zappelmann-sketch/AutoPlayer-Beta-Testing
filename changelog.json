@@ -1,6 +1,42 @@
 {
- "latest": 64400,
+ "latest": 64405,
  "entries": [
+  {
+   "versionCode": 64405,
+   "versionName": "6.44.5",
+   "date": "2026-09-08",
+   "critical": false,
+   "title": "v6.44.5 — Die Warteschlange des Beifahrers hält sich aktuell",
+   "de": "• FIX: Der Beifahrer sah nach einer automatischen Übernahme weiter die alte Warteschlange — erst ein Reiterwechsel holte die neue nach",
+   "en": "• FIX: After an automatic handover the passenger kept seeing the old queue — only switching tabs brought up the new one"
+  },
+  {
+   "versionCode": 64404,
+   "versionName": "6.44.4",
+   "date": "2026-09-08",
+   "critical": false,
+   "title": "v6.44.4 — Mit Überblenden endete keine Liste jemals",
+   "de": "• FIX: Bei eingeschaltetem Überblenden begann jede Playlist am Ende wieder von vorn — auch ohne Wiederholung\n• Dadurch übernahmen Fahrmodus-DJ und Kontext-Regeln am Listenende nicht, weil das Ende nie gemeldet wurde\n• FIX: Bei „einen Titel wiederholen“ wurde zum nächsten Titel übergeblendet statt den laufenden zu wiederholen",
+   "en": "• FIX: With crossfade on, every playlist restarted from the top instead of ending — even with repeat switched off\n• As a result Drive Mode DJ and context rules never took over at the end of a list, because the end was never reported\n• FIX: With “repeat one” the player crossfaded into the next track instead of repeating the current one"
+  },
+  {
+   "versionCode": 64403,
+   "versionName": "6.44.3",
+   "date": "2026-09-08",
+   "critical": false,
+   "title": "v6.44.3 — Das Ende einer Liste geht nicht mehr verloren",
+   "de": "• FIX: Am Ende einer Playlist übernahm der Fahrmodus-DJ nicht — das Signal „Liste durchgelaufen“ konnte verlorengehen, bevor es jemand bemerkt hatte\n• Betroffen war jede Übergabe am Listenende, nicht nur die im Beifahrer-Modus",
+   "en": "• FIX: Drive Mode DJ did not take over when a playlist ended — the “queue finished” signal could be lost before anyone noticed it\n• This affected every handover at the end of a list, not just in passenger mode"
+  },
+  {
+   "versionCode": 64402,
+   "versionName": "6.44.2",
+   "date": "2026-09-07",
+   "critical": false,
+   "title": "v6.44.2 — Beifahrer-Modus: ein Fahrmodus statt zwei",
+   "de": "• FIX: Der Fahrmodus stoppte die Musik, sobald sich die Fahrsituation änderte\n• FIX: Beifahrer und Fahrer teilen sich jetzt denselben Fahrmodus — vorher liefen zwei nebeneinander, und der Fahrer sah nichts davon auf seinem Gerät\n• FIX: Startet der Beifahrer eine Stimmung oder den Wetter-DJ, bleibt seine Auswahl stehen, bis die Liste durch ist\n• NEU: Der Fahrmodus startet auf Knopfdruck auch aus der Stille",
+   "en": "• FIX: Drive mode stopped the music whenever the driving situation changed\n• FIX: Passenger and driver now share one drive mode — two ran side by side before, and the driver saw none of it on their own device\n• FIX: A mood or Weather DJ started by the passenger now stays until the list ends\n• NEW: Drive mode starts from silence when switched on deliberately"
+  },
   {
    "versionCode": 64400,
    "versionName": "6.44.0",
@@ -99,42 +135,6 @@
    "title": "v6.39.0 — Fahrmodus: Namen, Wetter und Titelliste",
    "de": "• FIX: Ein Wetterwechsel stellte eine neue Liste zusammen, spielte sie aber nicht ab\n• NEU: Mit „An mein Tempo anpassen“ heissen die Lagen jetzt Ruhig, Normal und Zügig statt Stau, Stadt und Autobahn\n• VERBESSERT: Die Titelliste fährt auf Tippen von unten herein — vollständig und scrollbar, statt einer einzelnen Zeile",
    "en": "• FIX: A weather change compiled a new list but never played it\n• NEW: With “Match my pace” the modes are now called Calm, Steady and Brisk instead of Traffic, City and Highway\n• IMPROVED: The track list slides up on tap — complete and scrollable, instead of a single line"
-  },
-  {
-   "versionCode": 63800,
-   "versionName": "6.38.0",
-   "date": "2026-09-05",
-   "critical": false,
-   "title": "v6.38.0 — Fahrmodus für Rad, Boot und zu Fuß",
-   "de": "• NEU: Schalter „An mein Tempo anpassen“ im Fahrmodus-DJ — die Umschaltung richtet sich dann nach deinem Zieltempo statt nach Autowerten\n• FIX: Auf Rad, Boot und zu Fuß landete der Fahrmodus dauerhaft im Stau-Profil, weil man nie über 15 km/h kam\n• Im Fahrzeug bleibt alles wie bisher: mit Android Auto gelten weiter die Autoschwellen",
-   "en": "• NEW: “Match my pace” switch in Drive Mode DJ — mode switching then follows your target speed instead of car values\n• FIX: When cycling, boating or walking, drive mode was stuck in the traffic-jam profile because you never exceed 15 km/h\n• In the car nothing changes: with Android Auto the car thresholds still apply"
-  },
-  {
-   "versionCode": 63701,
-   "versionName": "6.37.1",
-   "date": "2026-09-05",
-   "critical": false,
-   "title": "v6.37.1 — Lautstärke fällt nach der Fahrt zurück",
-   "de": "• FIX: Nach dem Anhalten blieb die Musik auf Fahrtlautstärke stehen — jetzt geht sie in rund 30 Sekunden auf deine Grundlautstärke zurück\n• FIX: Ohne GPS-Empfang regelte die Lautstärke gar nicht mehr und blieb laut hängen\n• VERBESSERT: Ein kurzer Halt an der Ampel dreht weiterhin nicht sofort herunter",
-   "en": "• FIX: After stopping, the music stayed at driving volume — it now returns to your base volume in about 30 seconds\n• FIX: Without GPS reception the volume stopped adjusting at all and stayed loud\n• IMPROVED: A brief stop at a traffic light still does not turn it down right away"
-  },
-  {
-   "versionCode": 63700,
-   "versionName": "6.37.0",
-   "date": "2026-09-04",
-   "critical": false,
-   "title": "v6.37.0 — Fahrmodus geschliffen, Lautstärke neu gedacht",
-   "de": "• FIX: Der Fahrmodus schneidet das laufende Lied nicht mehr ab — es spielt zu Ende\n• FIX: Bei jedem Wechsel kam dieselbe Liste, jetzt ist sie jedes Mal anders\n• NEU: Fahrmodus und Weather DJ zusammen — Tempo vom Fahrmodus, Stimmung vom Wetter\n• NEU: Geschwindigkeitsbasierte Lautstärke wirkt jetzt über Bluetooth und Kopfhörer, mit einstellbarem Zieltempo für Rad, Boot oder Jogging\n• FIX: Leiser drehen macht jetzt leiser — vorher hielt die App dagegen",
-   "en": "• FIX: Drive mode no longer cuts off the current song — it plays to the end\n• FIX: Every switch produced the same list, now it differs each time\n• NEW: Drive mode and Weather DJ combined — tempo from driving, mood from weather\n• NEW: Speed-based volume now works over Bluetooth and headphones, with an adjustable target speed for bike, boat or jogging\n• FIX: Turning the volume down now makes it quieter — the app used to push back"
-  },
-  {
-   "versionCode": 63600,
-   "versionName": "6.36.0",
-   "date": "2026-09-02",
-   "critical": false,
-   "title": "v6.36.0 — Stimmungssuche im Fahrzeug",
-   "de": "• NEU: Die Suche in Android Auto versteht Stimmungen — „fröhliche Musik“, „traurige Musik“, „melancholische Musik“\n• VERBESSERT: Eine Sprachsuche ohne Treffer startet jetzt eine Auswahl, statt mit einer Fehlermeldung zu enden\n• VERBESSERT: Das Handbuch-Kapitel „Android Auto“ führt nur noch Sprachbefehle auf, die im Fahrzeug geprüft wurden",
-   "en": "• NEW: Search in Android Auto now understands moods — “happy music”, “sad music”, “melancholic music”\n• IMPROVED: A voice search without matches now starts a selection instead of ending in an error\n• IMPROVED: The “Android Auto” manual chapter now lists only voice commands verified in the car"
   }
  ]
 }
