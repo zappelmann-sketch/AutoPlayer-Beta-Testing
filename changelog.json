@@ -1,6 +1,24 @@
 {
- "latest": 64300,
+ "latest": 64400,
  "entries": [
+  {
+   "versionCode": 64400,
+   "versionName": "6.44.0",
+   "date": "2026-09-07",
+   "critical": false,
+   "title": "v6.44.0 — Beifahrer-Modus: die Warteschlange bleibt stehen",
+   "de": "• FIX: Tippt der Beifahrer einen Titel an, bleibt die Warteschlange jetzt erhalten — bisher wurde sie durch diesen einen Titel ersetzt\n• FIX: Damit funktionieren Weiter, Zurück, Zufall und Wiederholen im Beifahrer-Bildschirm endlich\n• FIX: Antippen in der Warteschlange springt an diese Stelle, statt die Liste zu löschen\n• FIX: Der laufende Titel ist in der Warteschlange hervorgehoben und wandert mit\n• VERBESSERT: Die Warteschlange aktualisiert sich von selbst, ohne Reiterwechsel",
+   "en": "• FIX: Tapping a track as passenger now keeps the queue — it used to be replaced by that single track\n• FIX: Next, previous, shuffle and repeat finally work on the passenger screen\n• FIX: Tapping in the queue jumps to that position instead of clearing the list\n• FIX: The playing track is highlighted in the queue and the marker follows along\n• IMPROVED: The queue refreshes on its own, no tab switch needed"
+  },
+  {
+   "versionCode": 64301,
+   "versionName": "6.43.1",
+   "date": "2026-09-07",
+   "critical": false,
+   "title": "v6.43.1 — Sprachbefehle, die ins Leere liefen",
+   "de": "• FIX: „Kabine“ und „Kalibrierung“ öffnen jetzt wirklich den Kabinen-Kalibrator — bisher passierte nichts\n• FIX: „Starte …“ landete bei vielen Bildschirmen in der Bibliothek statt am gewünschten Ziel\n• NEU: Der Kalibrator steht jetzt auch in der Sprachbefehl-Übersicht der App",
+   "en": "• FIX: “Cabin” and “Calibration” now actually open the cabin calibrator — nothing used to happen\n• FIX: “Start …” opened the library instead of the requested screen for many destinations\n• NEW: The calibrator is now listed in the voice command overview"
+  },
   {
    "versionCode": 64300,
    "versionName": "6.43.0",
@@ -117,24 +135,6 @@
    "title": "v6.36.0 — Stimmungssuche im Fahrzeug",
    "de": "• NEU: Die Suche in Android Auto versteht Stimmungen — „fröhliche Musik“, „traurige Musik“, „melancholische Musik“\n• VERBESSERT: Eine Sprachsuche ohne Treffer startet jetzt eine Auswahl, statt mit einer Fehlermeldung zu enden\n• VERBESSERT: Das Handbuch-Kapitel „Android Auto“ führt nur noch Sprachbefehle auf, die im Fahrzeug geprüft wurden",
    "en": "• NEW: Search in Android Auto now understands moods — “happy music”, “sad music”, “melancholic music”\n• IMPROVED: A voice search without matches now starts a selection instead of ending in an error\n• IMPROVED: The “Android Auto” manual chapter now lists only voice commands verified in the car"
-  },
-  {
-   "versionCode": 63500,
-   "versionName": "6.35.0",
-   "date": "2026-09-02",
-   "critical": false,
-   "title": "v6.35.0 — Song-Pfade: eigener Name für die Playlist",
-   "de": "• NEU: Beim Speichern eines Pfads lässt sich jetzt ein eigener Playlist-Name vergeben — oder wie bisher automatisch benennen\n• FIX: „Song-Pfad“ und „Pfad finden“ wurden nicht erkannt, weil die Spracherkennung „Pfad“ als „Fahrt“ versteht\n• FIX: „Finde den Weg“ wurde von der Titelsuche abgefangen",
-   "en": "• NEW: When saving a path you can now choose your own playlist name — or keep the automatic one\n• FIX: “Song path” and “find path” were not recognised because speech recognition hears “Pfad” as “Fahrt”\n• FIX: “Find the way” was swallowed by the title search"
-  },
-  {
-   "versionCode": 63406,
-   "versionName": "6.34.6",
-   "date": "2026-09-01",
-   "critical": false,
-   "title": "v6.34.6 — Smart Reorder per Sprache repariert",
-   "de": "• FIX: Nach dem Sortieren lief immer derselbe Titel an und die Warteschlange schien unverändert — beides behoben\n• FIX: „Sortiere für Party“ und „DJ Mix“ wurden als Titelsuche verstanden statt als Sortierbefehl\n• NEU: Die Meldung nennt jetzt das verwendete Profil\n• VERBESSERT: Party Build-Up beginnt wirklich langsam und leise, Chill Fade schnell und kräftig\n• VERBESSERT: Auch „Party sortieren“ und „entspannt sortieren“ werden erkannt",
-   "en": "• FIX: The same track started every time and the queue appeared unchanged — both fixed\n• FIX: “Sort for party” and “DJ Mix” were treated as a title search instead of a sort command\n• NEW: The message now names the profile that was used\n• IMPROVED: Party Build-Up now truly starts slow and quiet, Chill Fade fast and strong\n• IMPROVED: “Sort party” and “sort relaxed” are recognised as well"
   }
  ]
 }
