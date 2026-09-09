@@ -1,6 +1,15 @@
 {
- "latest": 64500,
+ "latest": 64601,
  "entries": [
+  {
+   "versionCode": 64601,
+   "versionName": "6.46.1",
+   "date": "2026-09-09",
+   "critical": false,
+   "title": "v6.46.0 — Alben und Künstler als Kacheln im Auto",
+   "de": "• NEU: Alben und Künstler erscheinen in Android Auto als Kachelraster statt als Textliste\n• NEU: Jede Kachel zeigt das Cover eines Titels aus dem Album beziehungsweise vom Künstler\n• Titel-Listen bleiben Listen — im Fahrzeug besser lesbar",
+   "en": "• NEW: Albums and artists appear as a grid of tiles in Android Auto instead of a text list\n• NEW: Every tile shows the cover art of a track from that album or artist\n• Track lists stay lists — easier to read while driving"
+  },
   {
    "versionCode": 64500,
    "versionName": "6.45.0",
@@ -126,15 +135,6 @@
    "title": "v6.40.4 — Kabinen-Kalibrator misst richtig",
    "de": "• FIX: Der Kalibrator wertete die Stille NACH dem Testton aus — die Ergebnisse waren dadurch zufällig\n• FIX: Kein Kratzen mehr: Frequenzen, die dein Lautsprecher gar nicht wiedergeben kann, werden nicht mehr hochgedreht\n• FIX: Die Verzögerung von Bluetooth-Lautsprechern wird jetzt erkannt und herausgerechnet\n• NEU: Laufende Musik wird für die Messung automatisch angehalten",
    "en": "• FIX: The calibrator analysed the silence AFTER the test tone — results were random as a consequence\n• FIX: No more crackling: frequencies your speaker cannot reproduce are no longer boosted\n• FIX: The latency of Bluetooth speakers is now detected and compensated\n• NEW: Playback is paused automatically for the measurement"
-  },
-  {
-   "versionCode": 64001,
-   "versionName": "6.40.1",
-   "date": "2026-09-05",
-   "critical": false,
-   "title": "v6.40.1 — Kabinen-Kalibrator misst richtig",
-   "de": "• FIX: Der Kalibrator wertete eine Stelle der Aufnahme aus, an der der Testton schon vorbei war — die Ergebnisse waren dadurch zufällig\n• NEU: Laufende Musik wird für die Messung automatisch angehalten\n• VERBESSERT: Das Handbuch sagt jetzt, wie laut es sein soll und warum es still sein muss",
-   "en": "• FIX: The calibrator analysed a part of the recording where the test tone was already over — results were random as a result\n• NEW: Playback is paused automatically for the measurement\n• IMPROVED: The manual now states how loud it should be and why it needs to be quiet"
   }
  ]
 }
