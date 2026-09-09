@@ -1,6 +1,15 @@
 {
- "latest": 64409,
+ "latest": 64500,
  "entries": [
+  {
+   "versionCode": 64500,
+   "versionName": "6.45.0",
+   "date": "2026-09-09",
+   "critical": false,
+   "title": "v6.45.0 — Suchen statt scrollen",
+   "de": "• NEU: Alben, Künstler und Ordner haben jetzt ein eigenes Suchfeld\n• NEU: Alben findest du auch über den Künstler, Ordner über den ganzen Pfad statt nur über den Ordnernamen\n• FIX: Eigene Arbeitsordner der App (Loop-Mixer-Exporte, Schnipsel, Synth-Aufnahmen) landen nicht mehr als Titel in der Bibliothek\n• FIX: Ausgeblendete Ordner zeigen wieder ihren Pfad — vorher waren gleichnamige Ordner nicht zu unterscheiden",
+   "en": "• NEW: Albums, artists and folders now have their own search field\n• NEW: Albums can be found by artist too, folders by their full path instead of just the folder name\n• FIX: The app's own working folders (loop mixer exports, cut segments, synth recordings) no longer show up as tracks in the library\n• FIX: Hidden folders show their path again — identically named folders could not be told apart before"
+  },
   {
    "versionCode": 64409,
    "versionName": "6.44.9",
@@ -126,15 +135,6 @@
    "title": "v6.40.1 — Kabinen-Kalibrator misst richtig",
    "de": "• FIX: Der Kalibrator wertete eine Stelle der Aufnahme aus, an der der Testton schon vorbei war — die Ergebnisse waren dadurch zufällig\n• NEU: Laufende Musik wird für die Messung automatisch angehalten\n• VERBESSERT: Das Handbuch sagt jetzt, wie laut es sein soll und warum es still sein muss",
    "en": "• FIX: The calibrator analysed a part of the recording where the test tone was already over — results were random as a result\n• NEW: Playback is paused automatically for the measurement\n• IMPROVED: The manual now states how loud it should be and why it needs to be quiet"
-  },
-  {
-   "versionCode": 64000,
-   "versionName": "6.40.0",
-   "date": "2026-09-05",
-   "critical": false,
-   "title": "v6.40.0 — Kabinen-Kalibrator zuverlässiger",
-   "de": "• FIX: Ein belegtes Mikrofon fiel bei der Kalibrierung nicht auf — die Messung lief dann auf leeren Daten weiter\n• FIX: Die Tonaufnahme lief nach dem Ende der Messung weiter\n• VERBESSERT: Das Handbuch-Kapitel beschreibt jetzt, was wirklich gemessen wird und wo das Ergebnis landet",
-   "en": "• FIX: A microphone in use by another app went unnoticed during calibration — the measurement then continued on empty data\n• FIX: Audio recording kept running after the measurement had finished\n• IMPROVED: The manual chapter now describes what is actually measured and where the result ends up"
   }
  ]
 }
