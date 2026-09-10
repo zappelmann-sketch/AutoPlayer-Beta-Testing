@@ -1,6 +1,24 @@
 {
- "latest": 64601,
+ "latest": 64701,
  "entries": [
+  {
+   "versionCode": 64701,
+   "versionName": "6.47.1",
+   "date": "2026-09-10",
+   "critical": true,
+   "title": "v6.47.1 — Absturz beim Zurückkehren behoben",
+   "de": "• FIX: „Zurück zur Warteschlange“ hat die App zum Absturz gebracht. Die Wiedergabesteuerung wird jetzt immer vom richtigen Programmfaden aus bedient – das betraf auch den automatischen Warteschlangen-Wechsel durch eine Kontextregel.\n• GEÄNDERT: Der Menüpunkt heißt „Als Abstecher abspielen“.",
+   "en": "• FIX: “Back to queue” crashed the app. Playback control is now always driven from the right thread — this also affected automatic queue switching by a context rule.\n• CHANGED: The menu entry is now “Play as Abstecher” (German)."
+  },
+  {
+   "versionCode": 64700,
+   "versionName": "6.47.0",
+   "date": "2026-09-10",
+   "critical": false,
+   "title": "v6.47.0 — Abstecher auf Deutsch",
+   "de": "• FIX: „Queue erweitern“ hängte fünf beliebige Titel an. Jetzt wird nach Tempo, Tonart und Energie ausgewählt.\n• GEÄNDERT: Der Abstecher heißt jetzt „Abstecher [Titel]“ – auch „Umweg“ und „Einschieben“.\n• ENTFERNT: Fünf Warteschlangen-Sprachbefehle. In Android Auto kamen sie nie an, am Telefon scheiterte „Queue“ an der Erkennung. Alles bleibt über den Warteschlangen-Bildschirm bedienbar.",
+   "en": "• FIX: “Extend queue” appended five arbitrary tracks. It now picks by tempo, key and energy.\n• CHANGED: The detour command is now “Abstecher [title]” (German) alongside “detour”.\n• REMOVED: Five queue voice commands. Android Auto never passed them to the app, and “queue” kept being misheard on the phone. Every function stays available on the queue screen."
+  },
   {
    "versionCode": 64601,
    "versionName": "6.46.1",
@@ -117,24 +135,6 @@
    "title": "v6.42.0 — Deine Regeln gehen vor",
    "de": "• FIX: Der Fahrmodus-DJ ersetzte die Playlist, die eine Kontext-Regel gerade gestartet hatte — oft schon nach einem Lied\n• NEU: Löst eine Regel aus, halten sich Fahrmodus und Wetter-DJ zurück, bis die Liste durch ist — danach geht es ohne Pause weiter\n• Startest du selbst etwas anderes, hat das natürlich Vorrang",
    "en": "• FIX: Drive Mode DJ replaced the playlist a context rule had just started — often after a single track\n• NEW: When a rule fires, Drive Mode and Weather DJ hold back until the list has finished — then it continues without a gap\n• If you start something yourself, that takes precedence of course"
-  },
-  {
-   "versionCode": 64100,
-   "versionName": "6.41.0",
-   "date": "2026-09-06",
-   "critical": false,
-   "title": "v6.41.0 — Neue Regel-Vorlage: Ankunft an einem Ort",
-   "de": "• NEU: Vorlage „Ankunft an einem Ort“ — Musik startet, sobald du an einem gesetzten Ort ankommst\n• VERBESSERT: Kürzere Sperrfrist bei dieser Vorlage, damit sich das Ankommen mehrfach ausprobieren lässt",
-   "en": "• NEW: “Arriving at a place” template — music starts as soon as you reach a pinned location\n• IMPROVED: Shorter cooldown on this template so arrival can be tried repeatedly"
-  },
-  {
-   "versionCode": 64004,
-   "versionName": "6.40.4",
-   "date": "2026-09-06",
-   "critical": false,
-   "title": "v6.40.4 — Kabinen-Kalibrator misst richtig",
-   "de": "• FIX: Der Kalibrator wertete die Stille NACH dem Testton aus — die Ergebnisse waren dadurch zufällig\n• FIX: Kein Kratzen mehr: Frequenzen, die dein Lautsprecher gar nicht wiedergeben kann, werden nicht mehr hochgedreht\n• FIX: Die Verzögerung von Bluetooth-Lautsprechern wird jetzt erkannt und herausgerechnet\n• NEU: Laufende Musik wird für die Messung automatisch angehalten",
-   "en": "• FIX: The calibrator analysed the silence AFTER the test tone — results were random as a consequence\n• FIX: No more crackling: frequencies your speaker cannot reproduce are no longer boosted\n• FIX: The latency of Bluetooth speakers is now detected and compensated\n• NEW: Playback is paused automatically for the measurement"
   }
  ]
 }
