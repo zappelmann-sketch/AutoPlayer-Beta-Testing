@@ -1,6 +1,15 @@
 {
- "latest": 64803,
+ "latest": 64804,
  "entries": [
+  {
+   "versionCode": 64804,
+   "versionName": "6.48.4",
+   "date": "2026-09-10",
+   "critical": false,
+   "title": "v6.48.4 — Vorlage nennt beide Zahlen",
+   "de": "• GEÄNDERT: Beim Laden einer Vorlage stehen jetzt beide Zahlen da, etwa „Geladen: nacht (42/43)“. Dass Titel fehlen, fiel vorher nicht auf.",
+   "en": "• CHANGED: Loading a preset now shows both numbers, e.g. “Loaded: night (42/43)”. Missing tracks went unnoticed before."
+  },
   {
    "versionCode": 64803,
    "versionName": "6.48.3",
@@ -126,15 +135,6 @@
    "title": "v6.44.3 — Das Ende einer Liste geht nicht mehr verloren",
    "de": "• FIX: Am Ende einer Playlist übernahm der Fahrmodus-DJ nicht — das Signal „Liste durchgelaufen“ konnte verlorengehen, bevor es jemand bemerkt hatte\n• Betroffen war jede Übergabe am Listenende, nicht nur die im Beifahrer-Modus",
    "en": "• FIX: Drive Mode DJ did not take over when a playlist ended — the “queue finished” signal could be lost before anyone noticed it\n• This affected every handover at the end of a list, not just in passenger mode"
-  },
-  {
-   "versionCode": 64402,
-   "versionName": "6.44.2",
-   "date": "2026-09-07",
-   "critical": false,
-   "title": "v6.44.2 — Beifahrer-Modus: ein Fahrmodus statt zwei",
-   "de": "• FIX: Der Fahrmodus stoppte die Musik, sobald sich die Fahrsituation änderte\n• FIX: Beifahrer und Fahrer teilen sich jetzt denselben Fahrmodus — vorher liefen zwei nebeneinander, und der Fahrer sah nichts davon auf seinem Gerät\n• FIX: Startet der Beifahrer eine Stimmung oder den Wetter-DJ, bleibt seine Auswahl stehen, bis die Liste durch ist\n• NEU: Der Fahrmodus startet auf Knopfdruck auch aus der Stille",
-   "en": "• FIX: Drive mode stopped the music whenever the driving situation changed\n• FIX: Passenger and driver now share one drive mode — two ran side by side before, and the driver saw none of it on their own device\n• FIX: A mood or Weather DJ started by the passenger now stays until the list ends\n• NEW: Drive mode starts from silence when switched on deliberately"
   }
  ]
 }
