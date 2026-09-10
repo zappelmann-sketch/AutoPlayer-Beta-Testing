@@ -1,6 +1,15 @@
 {
- "latest": 64701,
+ "latest": 64702,
  "entries": [
+  {
+   "versionCode": 64702,
+   "versionName": "6.47.2",
+   "date": "2026-09-10",
+   "critical": false,
+   "title": "v6.47.2 — Rahmen sitzt",
+   "de": "• FIX: Der Rahmen um „X Songs abspielen“ in einer Playlist ließ oben und unten Luft. Er liegt jetzt bündig am Knopf.",
+   "en": "• FIX: The outline around “Play X songs” in a playlist left a gap above and below. It now hugs the button."
+  },
   {
    "versionCode": 64701,
    "versionName": "6.47.1",
@@ -126,15 +135,6 @@
    "title": "v6.42.2 — Nachtrag zum Vorrang, zwei Bedienfehler",
    "de": "• FIX: Nach dem Ende einer Regel-Playlist blieb die Wiedergabe stehen, statt nahtlos weiterzulaufen\n• FIX: Bei langen Regelnamen waren Bearbeiten und Löschen nicht mehr erreichbar — der Name bricht jetzt um\n• FIX: Das Zeichen zum Entfernen einer Bedingung war unsichtbar (schwarz auf schwarz)\n• FIX: Beim Abspielen von Hand fehlte der Eintrag in der Bibliothek",
    "en": "• FIX: After a rule playlist ended, playback stopped instead of continuing seamlessly\n• FIX: With long rule names, edit and delete were pushed out of reach — the name now wraps\n• FIX: The icon for removing a condition was invisible (black on black)\n• FIX: Playing by hand did not create the library entry"
-  },
-  {
-   "versionCode": 64200,
-   "versionName": "6.42.0",
-   "date": "2026-09-06",
-   "critical": false,
-   "title": "v6.42.0 — Deine Regeln gehen vor",
-   "de": "• FIX: Der Fahrmodus-DJ ersetzte die Playlist, die eine Kontext-Regel gerade gestartet hatte — oft schon nach einem Lied\n• NEU: Löst eine Regel aus, halten sich Fahrmodus und Wetter-DJ zurück, bis die Liste durch ist — danach geht es ohne Pause weiter\n• Startest du selbst etwas anderes, hat das natürlich Vorrang",
-   "en": "• FIX: Drive Mode DJ replaced the playlist a context rule had just started — often after a single track\n• NEW: When a rule fires, Drive Mode and Weather DJ hold back until the list has finished — then it continues without a gap\n• If you start something yourself, that takes precedence of course"
   }
  ]
 }
