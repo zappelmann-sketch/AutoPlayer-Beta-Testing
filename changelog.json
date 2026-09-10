@@ -1,6 +1,42 @@
 {
- "latest": 64702,
+ "latest": 64803,
  "entries": [
+  {
+   "versionCode": 64803,
+   "versionName": "6.48.3",
+   "date": "2026-09-10",
+   "critical": false,
+   "title": "v6.48.3 — Hörstelle bleibt beim Warteschlangenwechsel",
+   "de": "• FIX: Wer mitten im Titel die Warteschlange wechselte und später zurückkam, hörte ihn von vorn. Die Hörstelle wird jetzt gesichert, bevor die Liste ersetzt wird – das gilt auch für Playlist, Album und Genre.",
+   "en": "• FIX: Switching queues mid-track and coming back later restarted the track. The listening position is now saved before the list is replaced — this also applies to playlists, albums and genres."
+  },
+  {
+   "versionCode": 64802,
+   "versionName": "6.48.2",
+   "date": "2026-09-10",
+   "critical": true,
+   "title": "v6.48.2 — Abstecher kehrt an die richtige Stelle zurück",
+   "de": "• FIX: Absturz beim Anlegen einer Warteschlange, wenn zuvor eine gelöscht wurde.\n• FIX: Der Abstecher sprang per Sprachbefehl an den Anfang des Titels statt an die unterbrochene Stelle. Über das Menü stimmte es.\n• FIX: Auch der Wechsel zwischen Warteschlangen setzte die gespeicherte Stelle nicht zuverlässig.",
+   "en": "• FIX: Crash when creating a queue after deleting one.\n• FIX: The detour returned to the start of the track by voice command instead of the point of interruption. Via the menu it was correct.\n• FIX: Switching between queues did not reliably restore the saved position either."
+  },
+  {
+   "versionCode": 64801,
+   "versionName": "6.48.1",
+   "date": "2026-09-10",
+   "critical": false,
+   "title": "v6.48.1 — Smart Reorder bleibt erhalten",
+   "de": "• FIX: Eine mit Smart Reorder erzeugte Reihenfolge war beim nächsten Wechsel des Fachs wieder fort – sie wurde nur im Player gesetzt.\n• FIX: Smart Reorder sortierte die laufende Wiedergabe statt des Fachs, das gerade angezeigt wird.\n• GEÄNDERT: „Zur Queue“ hängt ein Genre ans Ende der Warteschlange statt an den Anfang.",
+   "en": "• FIX: An order created with Smart Reorder was gone on the next slot switch — it was only applied to the player.\n• FIX: Smart Reorder sorted the running playback instead of the slot on screen.\n• CHANGED: “To queue” appends a genre to the end of the queue instead of the front."
+  },
+  {
+   "versionCode": 64800,
+   "versionName": "6.48.0",
+   "date": "2026-09-10",
+   "critical": false,
+   "title": "v6.48.0 — Warteschlange hält, was hineinkommt",
+   "de": "• FIX: Zur Warteschlange hinzugefügte Titel verschwanden beim nächsten Wechsel des Fachs. Sie landeten nur im laufenden Player, nie in der Warteschlange selbst.\n• FIX: Ein ganzes Genre landete in umgekehrter Reihenfolge.\n• GEÄNDERT: Ein hervorgehobenes Fach heißt jetzt, dass genau dieses Fach läuft. Spielst du etwas anderes ab, zeigt der Bildschirm die laufende Wiedergabe.",
+   "en": "• FIX: Tracks added to the queue vanished on the next slot switch. They only ever went into the running player, never into the queue itself.\n• FIX: Adding a whole genre reversed its order.\n• CHANGED: A highlighted slot now means that this slot is what's playing. Play something else and the screen shows what is actually running."
+  },
   {
    "versionCode": 64702,
    "versionName": "6.47.2",
@@ -99,42 +135,6 @@
    "title": "v6.44.2 — Beifahrer-Modus: ein Fahrmodus statt zwei",
    "de": "• FIX: Der Fahrmodus stoppte die Musik, sobald sich die Fahrsituation änderte\n• FIX: Beifahrer und Fahrer teilen sich jetzt denselben Fahrmodus — vorher liefen zwei nebeneinander, und der Fahrer sah nichts davon auf seinem Gerät\n• FIX: Startet der Beifahrer eine Stimmung oder den Wetter-DJ, bleibt seine Auswahl stehen, bis die Liste durch ist\n• NEU: Der Fahrmodus startet auf Knopfdruck auch aus der Stille",
    "en": "• FIX: Drive mode stopped the music whenever the driving situation changed\n• FIX: Passenger and driver now share one drive mode — two ran side by side before, and the driver saw none of it on their own device\n• FIX: A mood or Weather DJ started by the passenger now stays until the list ends\n• NEW: Drive mode starts from silence when switched on deliberately"
-  },
-  {
-   "versionCode": 64400,
-   "versionName": "6.44.0",
-   "date": "2026-09-07",
-   "critical": false,
-   "title": "v6.44.0 — Beifahrer-Modus: die Warteschlange bleibt stehen",
-   "de": "• FIX: Tippt der Beifahrer einen Titel an, bleibt die Warteschlange jetzt erhalten — bisher wurde sie durch diesen einen Titel ersetzt\n• FIX: Damit funktionieren Weiter, Zurück, Zufall und Wiederholen im Beifahrer-Bildschirm endlich\n• FIX: Antippen in der Warteschlange springt an diese Stelle, statt die Liste zu löschen\n• FIX: Der laufende Titel ist in der Warteschlange hervorgehoben und wandert mit\n• VERBESSERT: Die Warteschlange aktualisiert sich von selbst, ohne Reiterwechsel",
-   "en": "• FIX: Tapping a track as passenger now keeps the queue — it used to be replaced by that single track\n• FIX: Next, previous, shuffle and repeat finally work on the passenger screen\n• FIX: Tapping in the queue jumps to that position instead of clearing the list\n• FIX: The playing track is highlighted in the queue and the marker follows along\n• IMPROVED: The queue refreshes on its own, no tab switch needed"
-  },
-  {
-   "versionCode": 64301,
-   "versionName": "6.43.1",
-   "date": "2026-09-07",
-   "critical": false,
-   "title": "v6.43.1 — Sprachbefehle, die ins Leere liefen",
-   "de": "• FIX: „Kabine“ und „Kalibrierung“ öffnen jetzt wirklich den Kabinen-Kalibrator — bisher passierte nichts\n• FIX: „Starte …“ landete bei vielen Bildschirmen in der Bibliothek statt am gewünschten Ziel\n• NEU: Der Kalibrator steht jetzt auch in der Sprachbefehl-Übersicht der App",
-   "en": "• FIX: “Cabin” and “Calibration” now actually open the cabin calibrator — nothing used to happen\n• FIX: “Start …” opened the library instead of the requested screen for many destinations\n• NEW: The calibrator is now listed in the voice command overview"
-  },
-  {
-   "versionCode": 64300,
-   "versionName": "6.43.0",
-   "date": "2026-09-07",
-   "critical": false,
-   "title": "v6.43.0 — Fahrtprotokoll ab dem Start der App",
-   "de": "• FIX: Das Fahrtprotokoll der Beta zeichnet ab dem Start der App auf. Bisher begann es erst, wenn du eine der Fahrfunktionen umgelegt hast — nach einer Neuinstallation blieb es darum leer\n• VERBESSERT: Im Kopf der Protokolldatei steht jetzt, welche App-Version sie geschrieben hat",
-   "en": "• FIX: The beta drive log now records from app start. Previously it only began once you toggled one of the driving features — so it stayed empty after a fresh install\n• IMPROVED: The log file header now states which app version wrote it"
-  },
-  {
-   "versionCode": 64202,
-   "versionName": "6.42.2",
-   "date": "2026-09-06",
-   "critical": false,
-   "title": "v6.42.2 — Nachtrag zum Vorrang, zwei Bedienfehler",
-   "de": "• FIX: Nach dem Ende einer Regel-Playlist blieb die Wiedergabe stehen, statt nahtlos weiterzulaufen\n• FIX: Bei langen Regelnamen waren Bearbeiten und Löschen nicht mehr erreichbar — der Name bricht jetzt um\n• FIX: Das Zeichen zum Entfernen einer Bedingung war unsichtbar (schwarz auf schwarz)\n• FIX: Beim Abspielen von Hand fehlte der Eintrag in der Bibliothek",
-   "en": "• FIX: After a rule playlist ended, playback stopped instead of continuing seamlessly\n• FIX: With long rule names, edit and delete were pushed out of reach — the name now wraps\n• FIX: The icon for removing a condition was invisible (black on black)\n• FIX: Playing by hand did not create the library entry"
   }
  ]
 }
