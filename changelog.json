@@ -1,6 +1,33 @@
 {
- "latest": 64804,
+ "latest": 64902,
  "entries": [
+  {
+   "versionCode": 64902,
+   "versionName": "6.49.2",
+   "date": "2026-09-12",
+   "critical": false,
+   "title": "v6.49.2 — Weiterlaufen auch in Android Auto",
+   "de": "• FIX: In Android Auto lief eine Warteschlange nicht in die nächste weiter. Tippt man dort einen Titel mitten in der Liste an, dreht Android Auto die Reihenfolge – die Warteschlange wurde dadurch nicht wiedererkannt.",
+   "en": "• FIX: In Android Auto a queue did not continue into the next one. Tapping a track in the middle of the list makes Android Auto rotate the order, so the queue was no longer recognised."
+  },
+  {
+   "versionCode": 64901,
+   "versionName": "6.49.1",
+   "date": "2026-09-11",
+   "critical": false,
+   "title": "v6.49.1 — Crossfade bei jedem Übergang",
+   "de": "• FIX: Das Crossfade zwischen Titeln ließ jeden zweiten Übergang aus.\n• FIX: Nach einem Crossfade begann der nächste angetippte Titel ohne seine gemerkte Stelle.",
+   "en": "• FIX: The crossfade between tracks skipped every second transition.\n• FIX: After a crossfade, the next tapped track started without its saved position."
+  },
+  {
+   "versionCode": 64900,
+   "versionName": "6.49.0",
+   "date": "2026-09-11",
+   "critical": false,
+   "title": "v6.49.0 — Queue Crossfade auf drei Wegen",
+   "de": "• NEU: Queue Crossfade wirkt jetzt auf drei Wegen – einen Titel in einer anderen Warteschlange antippen, per Sprache „Wechsel zur Warteschlange [Name]“ und automatisch am Ende einer Warteschlange.\n• NEU: Schalter „Danach nächste Warteschlange“ – ab Werk aus.\n• FIX: Nach einer Überblendung zeigte die App noch die Titel der alten Warteschlange, und die Hörstelle des ausgeblendeten Titels ging verloren.\n• FIX: Der Erfolg „Smooth Operator“ ließ sich nicht erreichen.\n• ENTFERNT: Die Sprachbefehle „Crossfade an/aus“ – sie trafen das Queue Crossfade auch dann, wenn das gewöhnliche gemeint war.",
+   "en": "• NEW: Queue Crossfade now works three ways – tap a track in another queue, say “Switch to queue [name]”, or automatically at the end of a queue.\n• NEW: “Continue with next queue” setting – off by default.\n• FIX: After a crossfade the app still showed the old queue’s tracks, and the listening position of the faded-out track was lost.\n• FIX: The “Smooth Operator” achievement could not be earned.\n• REMOVED: The “crossfade on/off” voice commands – they switched Queue Crossfade even when the regular crossfade was meant."
+  },
   {
    "versionCode": 64804,
    "versionName": "6.48.4",
@@ -108,33 +135,6 @@
    "title": "v6.44.7 — Der Wetter-DJ bleibt an, wenn er an ist",
    "de": "• FIX: Wählte der Beifahrer eine Stimmung, sprang der Wetter-DJ-Schalter auf „aus“ — obwohl nichts abgeschaltet wurde\n• FIX: Eine Stimmung legt sich nur davor; Fahrmodus und Wetter-DJ bleiben an und übernehmen wieder, sobald sie durchgelaufen ist\n• NEU: Startet der Beifahrer den Wetter-DJ, gilt das für die ganze App — nur so entsteht die gemeinsame Liste aus Fahrmodus und Wetter\n• FIX: Ein bewusster Stop beendet auch den Vorrang; vorher blieb der Fahrmodus stillgelegt",
    "en": "• FIX: Picking a mood made the Weather DJ switch jump back to “off” — although nothing had been switched off\n• FIX: A mood only takes precedence; Drive Mode and Weather DJ stay on and resume once it has finished\n• NEW: When the passenger starts the Weather DJ it now applies app-wide — only then do Drive Mode and Weather form their combined list\n• FIX: A deliberate stop now also ends the precedence hold; Drive Mode used to stay idle"
-  },
-  {
-   "versionCode": 64405,
-   "versionName": "6.44.5",
-   "date": "2026-09-08",
-   "critical": false,
-   "title": "v6.44.5 — Die Warteschlange des Beifahrers hält sich aktuell",
-   "de": "• FIX: Der Beifahrer sah nach einer automatischen Übernahme weiter die alte Warteschlange — erst ein Reiterwechsel holte die neue nach",
-   "en": "• FIX: After an automatic handover the passenger kept seeing the old queue — only switching tabs brought up the new one"
-  },
-  {
-   "versionCode": 64404,
-   "versionName": "6.44.4",
-   "date": "2026-09-08",
-   "critical": false,
-   "title": "v6.44.4 — Mit Überblenden endete keine Liste jemals",
-   "de": "• FIX: Bei eingeschaltetem Überblenden begann jede Playlist am Ende wieder von vorn — auch ohne Wiederholung\n• Dadurch übernahmen Fahrmodus-DJ und Kontext-Regeln am Listenende nicht, weil das Ende nie gemeldet wurde\n• FIX: Bei „einen Titel wiederholen“ wurde zum nächsten Titel übergeblendet statt den laufenden zu wiederholen",
-   "en": "• FIX: With crossfade on, every playlist restarted from the top instead of ending — even with repeat switched off\n• As a result Drive Mode DJ and context rules never took over at the end of a list, because the end was never reported\n• FIX: With “repeat one” the player crossfaded into the next track instead of repeating the current one"
-  },
-  {
-   "versionCode": 64403,
-   "versionName": "6.44.3",
-   "date": "2026-09-08",
-   "critical": false,
-   "title": "v6.44.3 — Das Ende einer Liste geht nicht mehr verloren",
-   "de": "• FIX: Am Ende einer Playlist übernahm der Fahrmodus-DJ nicht — das Signal „Liste durchgelaufen“ konnte verlorengehen, bevor es jemand bemerkt hatte\n• Betroffen war jede Übergabe am Listenende, nicht nur die im Beifahrer-Modus",
-   "en": "• FIX: Drive Mode DJ did not take over when a playlist ended — the “queue finished” signal could be lost before anyone noticed it\n• This affected every handover at the end of a list, not just in passenger mode"
   }
  ]
 }
