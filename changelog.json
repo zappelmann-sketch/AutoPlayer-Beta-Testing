@@ -1,6 +1,15 @@
 {
- "latest": 64906,
+ "latest": 64907,
  "entries": [
+  {
+   "versionCode": 64907,
+   "versionName": "6.49.7",
+   "date": "2026-09-13",
+   "critical": false,
+   "title": "v6.49.7 — Zehn Landschaften für die Wellenform",
+   "de": "• NEU: Die Vollbild-Wellenform hat zehn neue Designs, jedes nach einer echten Landschaft: Tiefsee, Korallenriff, Schwarzes Loch, Sternenfeld, Wüste, Polarlicht, Magma, Regenwald, Sonnenuntergang und Gewitter.\n• Die App zeichnet für die A–B-Wiederholung nichts mehr auf.",
+   "en": "• NEW: The full-screen waveform has ten new designs, each modelled on a real landscape: deep sea, coral reef, black hole, starfield, desert, aurora, magma, rainforest, sunset and thunderstorm.\n• The app no longer records anything for A–B repeat."
+  },
   {
    "versionCode": 64906,
    "versionName": "6.49.6",
@@ -126,15 +135,6 @@
    "title": "v6.47.1 — Absturz beim Zurückkehren behoben",
    "de": "• FIX: „Zurück zur Warteschlange“ hat die App zum Absturz gebracht. Die Wiedergabesteuerung wird jetzt immer vom richtigen Programmfaden aus bedient – das betraf auch den automatischen Warteschlangen-Wechsel durch eine Kontextregel.\n• GEÄNDERT: Der Menüpunkt heißt „Als Abstecher abspielen“.",
    "en": "• FIX: “Back to queue” crashed the app. Playback control is now always driven from the right thread — this also affected automatic queue switching by a context rule.\n• CHANGED: The menu entry is now “Play as Abstecher” (German)."
-  },
-  {
-   "versionCode": 64700,
-   "versionName": "6.47.0",
-   "date": "2026-09-10",
-   "critical": false,
-   "title": "v6.47.0 — Abstecher auf Deutsch",
-   "de": "• FIX: „Queue erweitern“ hängte fünf beliebige Titel an. Jetzt wird nach Tempo, Tonart und Energie ausgewählt.\n• GEÄNDERT: Der Abstecher heißt jetzt „Abstecher [Titel]“ – auch „Umweg“ und „Einschieben“.\n• ENTFERNT: Fünf Warteschlangen-Sprachbefehle. In Android Auto kamen sie nie an, am Telefon scheiterte „Queue“ an der Erkennung. Alles bleibt über den Warteschlangen-Bildschirm bedienbar.",
-   "en": "• FIX: “Extend queue” appended five arbitrary tracks. It now picks by tempo, key and energy.\n• CHANGED: The detour command is now “Abstecher [title]” (German) alongside “detour”.\n• REMOVED: Five queue voice commands. Android Auto never passed them to the app, and “queue” kept being misheard on the phone. Every function stays available on the queue screen."
   }
  ]
 }
