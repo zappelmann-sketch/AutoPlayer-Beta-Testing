@@ -1,6 +1,15 @@
 {
- "latest": 64902,
+ "latest": 64903,
  "entries": [
+  {
+   "versionCode": 64903,
+   "versionName": "6.49.3",
+   "date": "2026-09-12",
+   "critical": false,
+   "title": "v6.49.3 — Aufgeraeumt",
+   "de": "• VERBESSERT: Die App zeichnet keine Fahrtprotokolle mehr auf. Die Diagnose-Zeilen aus den Testfahrten sind vollstaendig aus dem Code entfernt; es wird keine Protokolldatei mehr angelegt.\n• An der Bedienung und an den Funktionen ändert sich nichts.",
+   "en": "• IMPROVED: The app no longer records drive logs. The diagnostic lines from the test drives have been fully removed from the code; no log file is created any more.\n• Nothing changes in how the app looks or works."
+  },
   {
    "versionCode": 64902,
    "versionName": "6.49.2",
@@ -126,15 +135,6 @@
    "title": "v6.44.9 — Die Chips zeigen, was wirklich läuft",
    "de": "• NEU: Was der Beifahrer startet, erscheint jetzt auch als Chip in der Bibliothek des Fahrers — Stimmung wie Wetter-DJ\n• NEU: Stellen Fahrmodus und Wetter-DJ gemeinsam zusammen, trägt ein Chip beide Namen\n• FIX: Die Chips lösen sich jetzt ab, statt sich zu stapeln; der Stimmungs-Chip verschwindet, sobald die Liste durch ist\n• FIX: Bei laufendem Wetter-DJ übernahm der Fahrmodus die gemeinsame Liste nicht",
    "en": "• NEW: What the passenger starts now shows up as a chip in the driver’s library — moods as well as the Weather DJ\n• NEW: When Drive Mode and Weather DJ build a list together, one chip carries both names\n• FIX: Chips now replace each other instead of piling up; the mood chip disappears once its list has finished\n• FIX: With the Weather DJ running, Drive Mode never took over the combined list"
-  },
-  {
-   "versionCode": 64407,
-   "versionName": "6.44.7",
-   "date": "2026-09-08",
-   "critical": false,
-   "title": "v6.44.7 — Der Wetter-DJ bleibt an, wenn er an ist",
-   "de": "• FIX: Wählte der Beifahrer eine Stimmung, sprang der Wetter-DJ-Schalter auf „aus“ — obwohl nichts abgeschaltet wurde\n• FIX: Eine Stimmung legt sich nur davor; Fahrmodus und Wetter-DJ bleiben an und übernehmen wieder, sobald sie durchgelaufen ist\n• NEU: Startet der Beifahrer den Wetter-DJ, gilt das für die ganze App — nur so entsteht die gemeinsame Liste aus Fahrmodus und Wetter\n• FIX: Ein bewusster Stop beendet auch den Vorrang; vorher blieb der Fahrmodus stillgelegt",
-   "en": "• FIX: Picking a mood made the Weather DJ switch jump back to “off” — although nothing had been switched off\n• FIX: A mood only takes precedence; Drive Mode and Weather DJ stay on and resume once it has finished\n• NEW: When the passenger starts the Weather DJ it now applies app-wide — only then do Drive Mode and Weather form their combined list\n• FIX: A deliberate stop now also ends the precedence hold; Drive Mode used to stay idle"
   }
  ]
 }
