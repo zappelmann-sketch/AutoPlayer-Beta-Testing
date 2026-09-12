@@ -1,6 +1,33 @@
 {
- "latest": 64903,
+ "latest": 64906,
  "entries": [
+  {
+   "versionCode": 64906,
+   "versionName": "6.49.6",
+   "date": "2026-09-12",
+   "critical": false,
+   "title": "v6.49.6 — Durchlaufanzeige und Wiederholungs-Regler",
+   "de": "• FIX: Die A–B-Wiederholung zeigte den gerade laufenden Durchlauf um eins zu niedrig – der letzte war nie zu sehen. Jetzt steht dort von Anfang an 1/3, 2/3, 3/3.\n• NEU: Die Zahl der Wiederholungen lässt sich mit einem Schieberegler frei von 1 bis 30 wählen (ganz links: unendlich). Vorher gab es nur fünf feste Stufen.",
+   "en": "• FIX: A–B repeat showed the current pass one too low – the last one never appeared. It now reads 1/3, 2/3, 3/3 from the start.\n• NEW: The repeat count is now a slider from 1 to 30 (far left: infinite). Previously only five fixed steps were available."
+  },
+  {
+   "versionCode": 64905,
+   "versionName": "6.49.5",
+   "date": "2026-09-12",
+   "critical": false,
+   "title": "v6.49.5 — A–B-Wiederholung durchgeprüft",
+   "de": "• FIX: „Tonhöhe beibehalten“ wirkt jetzt wirklich. Ausgeschaltet sinkt und steigt die Tonhöhe mit dem Tempo wie bei einer Schallplatte.\n• FIX: Langsame Tempi unter 0,5x kamen nicht an – der Regler reicht jetzt wirklich bis zum Viertel-Tempo.\n• FIX: Ein Loop-Lesezeichen zu öffnen verlor den gespeicherten Abschnitt. Jetzt startet es genau dort und läuft sofort.\n• FIX: Die Wiederholungszahl mitten im Lauf zu ändern brach die Schleife ab. Jetzt zählt sie neu.\n• FIX: Die Sprachbefehle „Schleife stoppen“, „Schleife aufheben“ und „Schleifengeschwindigkeit … Prozent“ wurden nicht erkannt – letzterer stellte die Lautstärke.\n• NEU: Im Übungsmodus lassen sich Schrittweite und Durchläufe je Stufe einstellen.\n• Loop-Lesezeichen sind jetzt auch beim Speichern als Pro-Funktion gekennzeichnet.",
+   "en": "• FIX: “Preserve pitch” now actually works. Switched off, pitch follows the tempo like on a record player.\n• FIX: Speeds below 0.5x never took effect – the slider now really reaches quarter speed.\n• FIX: Opening a loop bookmark lost the saved section. It now starts exactly there and plays right away.\n• FIX: Changing the repeat count mid-loop aborted it. It now counts afresh.\n• FIX: The voice commands “stop loop”, “clear loop” and “loop speed … percent” were not recognised – the latter changed the volume instead.\n• NEW: Practice mode lets you set the step size and loops per step.\n• Loop bookmarks are now gated as a Pro feature when saving, too."
+  },
+  {
+   "versionCode": 64904,
+   "versionName": "6.49.4",
+   "date": "2026-09-12",
+   "critical": false,
+   "title": "v6.49.4 — Pruefstand A–B-Wiederholung",
+   "de": "• Diese Fassung zeichnet die A–B-Wiederholung fuer eine Pruefung auf. An der Bedienung und an den Funktionen ändert sich nichts.",
+   "en": "• This build records A–B repeat for a test run. Nothing changes in how the app looks or works."
+  },
   {
    "versionCode": 64903,
    "versionName": "6.49.3",
@@ -108,33 +135,6 @@
    "title": "v6.47.0 — Abstecher auf Deutsch",
    "de": "• FIX: „Queue erweitern“ hängte fünf beliebige Titel an. Jetzt wird nach Tempo, Tonart und Energie ausgewählt.\n• GEÄNDERT: Der Abstecher heißt jetzt „Abstecher [Titel]“ – auch „Umweg“ und „Einschieben“.\n• ENTFERNT: Fünf Warteschlangen-Sprachbefehle. In Android Auto kamen sie nie an, am Telefon scheiterte „Queue“ an der Erkennung. Alles bleibt über den Warteschlangen-Bildschirm bedienbar.",
    "en": "• FIX: “Extend queue” appended five arbitrary tracks. It now picks by tempo, key and energy.\n• CHANGED: The detour command is now “Abstecher [title]” (German) alongside “detour”.\n• REMOVED: Five queue voice commands. Android Auto never passed them to the app, and “queue” kept being misheard on the phone. Every function stays available on the queue screen."
-  },
-  {
-   "versionCode": 64601,
-   "versionName": "6.46.1",
-   "date": "2026-09-09",
-   "critical": false,
-   "title": "v6.46.0 — Alben und Künstler als Kacheln im Auto",
-   "de": "• NEU: Alben und Künstler erscheinen in Android Auto als Kachelraster statt als Textliste\n• NEU: Jede Kachel zeigt das Cover eines Titels aus dem Album beziehungsweise vom Künstler\n• Titel-Listen bleiben Listen — im Fahrzeug besser lesbar",
-   "en": "• NEW: Albums and artists appear as a grid of tiles in Android Auto instead of a text list\n• NEW: Every tile shows the cover art of a track from that album or artist\n• Track lists stay lists — easier to read while driving"
-  },
-  {
-   "versionCode": 64500,
-   "versionName": "6.45.0",
-   "date": "2026-09-09",
-   "critical": false,
-   "title": "v6.45.0 — Suchen statt scrollen",
-   "de": "• NEU: Alben, Künstler und Ordner haben jetzt ein eigenes Suchfeld\n• NEU: Alben findest du auch über den Künstler, Ordner über den ganzen Pfad statt nur über den Ordnernamen\n• FIX: Eigene Arbeitsordner der App (Loop-Mixer-Exporte, Schnipsel, Synth-Aufnahmen) landen nicht mehr als Titel in der Bibliothek\n• FIX: Ausgeblendete Ordner zeigen wieder ihren Pfad — vorher waren gleichnamige Ordner nicht zu unterscheiden",
-   "en": "• NEW: Albums, artists and folders now have their own search field\n• NEW: Albums can be found by artist too, folders by their full path instead of just the folder name\n• FIX: The app's own working folders (loop mixer exports, cut segments, synth recordings) no longer show up as tracks in the library\n• FIX: Hidden folders show their path again — identically named folders could not be told apart before"
-  },
-  {
-   "versionCode": 64409,
-   "versionName": "6.44.9",
-   "date": "2026-09-08",
-   "critical": false,
-   "title": "v6.44.9 — Die Chips zeigen, was wirklich läuft",
-   "de": "• NEU: Was der Beifahrer startet, erscheint jetzt auch als Chip in der Bibliothek des Fahrers — Stimmung wie Wetter-DJ\n• NEU: Stellen Fahrmodus und Wetter-DJ gemeinsam zusammen, trägt ein Chip beide Namen\n• FIX: Die Chips lösen sich jetzt ab, statt sich zu stapeln; der Stimmungs-Chip verschwindet, sobald die Liste durch ist\n• FIX: Bei laufendem Wetter-DJ übernahm der Fahrmodus die gemeinsame Liste nicht",
-   "en": "• NEW: What the passenger starts now shows up as a chip in the driver’s library — moods as well as the Weather DJ\n• NEW: When Drive Mode and Weather DJ build a list together, one chip carries both names\n• FIX: Chips now replace each other instead of piling up; the mood chip disappears once its list has finished\n• FIX: With the Weather DJ running, Drive Mode never took over the combined list"
   }
  ]
 }
