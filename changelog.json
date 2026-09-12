@@ -1,6 +1,15 @@
 {
- "latest": 64907,
+ "latest": 64908,
  "entries": [
+  {
+   "versionCode": 64908,
+   "versionName": "6.49.8",
+   "date": "2026-09-13",
+   "critical": false,
+   "title": "v6.49.8 — Freie Farbwahl im Theme Builder",
+   "de": "• NEU: Im Editor für Visualizer-Themes steht neben den zwölf festen Farben jetzt ein Farbkreis – mit Helligkeitsregler und Vorschau für jede beliebige Farbe.\n• VERBESSERT: Die zehn Landschafts-Designs der Wellenform sind neu abgestimmt und tragen jetzt einen eigenen Farbverlauf im Hintergrund. Sie unterscheiden sich damit deutlich stärker.",
+   "en": "• NEW: The visualizer theme editor now offers a colour wheel next to the twelve fixed colours – with a brightness slider and preview for any colour.\n• IMPROVED: The ten landscape designs of the waveform have been re-tuned and now carry their own background gradient, so they differ much more clearly."
+  },
   {
    "versionCode": 64907,
    "versionName": "6.49.7",
@@ -126,15 +135,6 @@
    "title": "v6.47.2 — Rahmen sitzt",
    "de": "• FIX: Der Rahmen um „X Songs abspielen“ in einer Playlist ließ oben und unten Luft. Er liegt jetzt bündig am Knopf.",
    "en": "• FIX: The outline around “Play X songs” in a playlist left a gap above and below. It now hugs the button."
-  },
-  {
-   "versionCode": 64701,
-   "versionName": "6.47.1",
-   "date": "2026-09-10",
-   "critical": true,
-   "title": "v6.47.1 — Absturz beim Zurückkehren behoben",
-   "de": "• FIX: „Zurück zur Warteschlange“ hat die App zum Absturz gebracht. Die Wiedergabesteuerung wird jetzt immer vom richtigen Programmfaden aus bedient – das betraf auch den automatischen Warteschlangen-Wechsel durch eine Kontextregel.\n• GEÄNDERT: Der Menüpunkt heißt „Als Abstecher abspielen“.",
-   "en": "• FIX: “Back to queue” crashed the app. Playback control is now always driven from the right thread — this also affected automatic queue switching by a context rule.\n• CHANGED: The menu entry is now “Play as Abstecher” (German)."
   }
  ]
 }
