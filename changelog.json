@@ -1,6 +1,42 @@
 {
- "latest": 65001,
+ "latest": 65005,
  "entries": [
+  {
+   "versionCode": 65005,
+   "versionName": "6.50.5",
+   "date": "2026-09-13",
+   "critical": false,
+   "title": "v6.50.5 — Beat-Match fertig geprüft",
+   "de": "• VERBESSERT: Der Beat-Match-Bildschirm zeigt den Tempounterschied so, wie angeglichen wird – halbes und doppeltes Tempo zählen als gleicher Takt.\n• Aufgeräumt: Die Prüfprotokolle für Beat-Match sind wieder entfernt.",
+   "en": "• IMPROVED: The Beat-Match screen shows the tempo difference the way it is matched – half and double tempo count as the same beat.\n• Cleaned up: the Beat-Match test logs have been removed again."
+  },
+  {
+   "versionCode": 65004,
+   "versionName": "6.50.4",
+   "date": "2026-09-13",
+   "critical": false,
+   "title": "v6.50.4 — Tempoänderungen ohne Knacksen",
+   "de": "• FIX: Tempoänderungen knacksen nicht mehr – bei Beat-Match, A-B-Wiederholung und eigener Geschwindigkeit.\n• FIX: Beat-Match überspringt keine Titel mehr beim Übergang.\n• VERBESSERT: Beat-Match gleicht immer durch Beschleunigen an; „Sanft“ verteilt die Anpassung auf sechs Sekunden, „Schnell“ auf anderthalb.",
+   "en": "• FIX: Tempo changes no longer crackle – in Beat-Match, A-B repeat and custom playback speed.\n• FIX: Beat-Match no longer skips tracks during the transition.\n• IMPROVED: Beat-Match always matches by speeding up; “Smooth” spreads the change over six seconds, “Quick” over one and a half."
+  },
+  {
+   "versionCode": 65003,
+   "versionName": "6.50.3",
+   "date": "2026-09-13",
+   "critical": false,
+   "title": "v6.50.3 — Beat-Match ohne Abbrüche",
+   "de": "• FIX: Ist der nächste Titel langsamer, bricht der Übergang nicht mehr ab und springt nicht mehr zwei Sekunden zu früh weiter.\n• VERBESSERT: Beat-Match erkennt halbes und doppeltes Tempo als gleichen Takt – viel mehr Übergänge werden angeglichen.\n• FIX: Nach dem Schließen der App liefen Hintergrund-Beobachter des Wiedergabedienstes weiter und vervielfachten sich.",
+   "en": "• FIX: When the next track is slower, the transition no longer breaks off and no longer skips ahead two seconds early.\n• IMPROVED: Beat-Match treats half and double tempo as the same beat – far more transitions are matched.\n• FIX: After closing the app, background observers of the playback service kept running and multiplied."
+  },
+  {
+   "versionCode": 65002,
+   "versionName": "6.50.2",
+   "date": "2026-09-13",
+   "critical": false,
+   "title": "v6.50.2 — Prüfstand Beat-Match",
+   "de": "• FIX: Beat-Match „Sanft“ lässt den nächsten Titel jetzt im gemeinsamen Tempo beginnen und erst dann zu seinem eigenen zurückfinden – bisher sprang das Tempo beim Wechsel.\n• FIX: Beat-Match funktioniert auch zusammen mit dem Crossfade – bisher war es nach dem ersten Überblenden bis zur nächsten Pause wirkungslos.\n• FIX: Bei Zufallswiedergabe und „Einen Titel wiederholen“ gleicht Beat-Match an den Titel an, der wirklich als Nächstes kommt.\n• Prüfstand: Protokollzeilen für die Übergänge.",
+   "en": "• FIX: Beat-Match “Smooth” now starts the next track at the shared tempo and only then lets it return to its own – previously the tempo jumped at the change.\n• FIX: Beat-Match also works together with crossfade – previously it stopped working after the first fade until the next pause.\n• FIX: With shuffle and “Repeat one”, Beat-Match matches the track that actually plays next.\n• Test build: log lines for the transitions."
+  },
   {
    "versionCode": 65001,
    "versionName": "6.50.1",
@@ -99,42 +135,6 @@
    "title": "v6.49.0 — Queue Crossfade auf drei Wegen",
    "de": "• NEU: Queue Crossfade wirkt jetzt auf drei Wegen – einen Titel in einer anderen Warteschlange antippen, per Sprache „Wechsel zur Warteschlange [Name]“ und automatisch am Ende einer Warteschlange.\n• NEU: Schalter „Danach nächste Warteschlange“ – ab Werk aus.\n• FIX: Nach einer Überblendung zeigte die App noch die Titel der alten Warteschlange, und die Hörstelle des ausgeblendeten Titels ging verloren.\n• FIX: Der Erfolg „Smooth Operator“ ließ sich nicht erreichen.\n• ENTFERNT: Die Sprachbefehle „Crossfade an/aus“ – sie trafen das Queue Crossfade auch dann, wenn das gewöhnliche gemeint war.",
    "en": "• NEW: Queue Crossfade now works three ways – tap a track in another queue, say “Switch to queue [name]”, or automatically at the end of a queue.\n• NEW: “Continue with next queue” setting – off by default.\n• FIX: After a crossfade the app still showed the old queue’s tracks, and the listening position of the faded-out track was lost.\n• FIX: The “Smooth Operator” achievement could not be earned.\n• REMOVED: The “crossfade on/off” voice commands – they switched Queue Crossfade even when the regular crossfade was meant."
-  },
-  {
-   "versionCode": 64804,
-   "versionName": "6.48.4",
-   "date": "2026-09-10",
-   "critical": false,
-   "title": "v6.48.4 — Vorlage nennt beide Zahlen",
-   "de": "• GEÄNDERT: Beim Laden einer Vorlage stehen jetzt beide Zahlen da, etwa „Geladen: nacht (42/43)“. Dass Titel fehlen, fiel vorher nicht auf.",
-   "en": "• CHANGED: Loading a preset now shows both numbers, e.g. “Loaded: night (42/43)”. Missing tracks went unnoticed before."
-  },
-  {
-   "versionCode": 64803,
-   "versionName": "6.48.3",
-   "date": "2026-09-10",
-   "critical": false,
-   "title": "v6.48.3 — Hörstelle bleibt beim Warteschlangenwechsel",
-   "de": "• FIX: Wer mitten im Titel die Warteschlange wechselte und später zurückkam, hörte ihn von vorn. Die Hörstelle wird jetzt gesichert, bevor die Liste ersetzt wird – das gilt auch für Playlist, Album und Genre.",
-   "en": "• FIX: Switching queues mid-track and coming back later restarted the track. The listening position is now saved before the list is replaced — this also applies to playlists, albums and genres."
-  },
-  {
-   "versionCode": 64802,
-   "versionName": "6.48.2",
-   "date": "2026-09-10",
-   "critical": true,
-   "title": "v6.48.2 — Abstecher kehrt an die richtige Stelle zurück",
-   "de": "• FIX: Absturz beim Anlegen einer Warteschlange, wenn zuvor eine gelöscht wurde.\n• FIX: Der Abstecher sprang per Sprachbefehl an den Anfang des Titels statt an die unterbrochene Stelle. Über das Menü stimmte es.\n• FIX: Auch der Wechsel zwischen Warteschlangen setzte die gespeicherte Stelle nicht zuverlässig.",
-   "en": "• FIX: Crash when creating a queue after deleting one.\n• FIX: The detour returned to the start of the track by voice command instead of the point of interruption. Via the menu it was correct.\n• FIX: Switching between queues did not reliably restore the saved position either."
-  },
-  {
-   "versionCode": 64801,
-   "versionName": "6.48.1",
-   "date": "2026-09-10",
-   "critical": false,
-   "title": "v6.48.1 — Smart Reorder bleibt erhalten",
-   "de": "• FIX: Eine mit Smart Reorder erzeugte Reihenfolge war beim nächsten Wechsel des Fachs wieder fort – sie wurde nur im Player gesetzt.\n• FIX: Smart Reorder sortierte die laufende Wiedergabe statt des Fachs, das gerade angezeigt wird.\n• GEÄNDERT: „Zur Queue“ hängt ein Genre ans Ende der Warteschlange statt an den Anfang.",
-   "en": "• FIX: An order created with Smart Reorder was gone on the next slot switch — it was only applied to the player.\n• FIX: Smart Reorder sorted the running playback instead of the slot on screen.\n• CHANGED: “To queue” appends a genre to the end of the queue instead of the front."
   }
  ]
 }
