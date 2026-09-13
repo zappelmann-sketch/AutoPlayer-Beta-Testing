@@ -1,6 +1,15 @@
 {
- "latest": 65007,
+ "latest": 65008,
  "entries": [
+  {
+   "versionCode": 65008,
+   "versionName": "6.50.8",
+   "date": "2026-09-13",
+   "critical": false,
+   "title": "v6.50.8 — Fang-Erfolge richtig zugeordnet",
+   "de": "• FIX: Fängt Katze oder Fuchs eine Maus, zählt sie sofort beim Mäusefänger – ein Vogel beim Vogelfänger. Bisher erschien jeder Fang erst beim nächsten und landete so scheinbar beim falschen Erfolg.\n• FIX: Auch Jägerinstinkt und Spitzenräuber zählen jetzt ohne Verzögerung.",
+   "en": "• FIX: When the cat or fox catches a mouse, it now counts for Mouse Catcher right away – a bird for Bird Catcher. Before, each catch only appeared with the next one and so seemed to land on the wrong achievement.\n• FIX: Hunter Instinct and Apex Predator also count without delay."
+  },
   {
    "versionCode": 65007,
    "versionName": "6.50.7",
@@ -126,15 +135,6 @@
    "title": "v6.49.3 — Aufgeraeumt",
    "de": "• VERBESSERT: Die App zeichnet keine Fahrtprotokolle mehr auf. Die Diagnose-Zeilen aus den Testfahrten sind vollstaendig aus dem Code entfernt; es wird keine Protokolldatei mehr angelegt.\n• An der Bedienung und an den Funktionen ändert sich nichts.",
    "en": "• IMPROVED: The app no longer records drive logs. The diagnostic lines from the test drives have been fully removed from the code; no log file is created any more.\n• Nothing changes in how the app looks or works."
-  },
-  {
-   "versionCode": 64902,
-   "versionName": "6.49.2",
-   "date": "2026-09-12",
-   "critical": false,
-   "title": "v6.49.2 — Weiterlaufen auch in Android Auto",
-   "de": "• FIX: In Android Auto lief eine Warteschlange nicht in die nächste weiter. Tippt man dort einen Titel mitten in der Liste an, dreht Android Auto die Reihenfolge – die Warteschlange wurde dadurch nicht wiedererkannt.",
-   "en": "• FIX: In Android Auto a queue did not continue into the next one. Tapping a track in the middle of the list makes Android Auto rotate the order, so the queue was no longer recognised."
   }
  ]
 }
