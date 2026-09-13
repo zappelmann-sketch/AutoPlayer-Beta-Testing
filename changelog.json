@@ -1,6 +1,33 @@
 {
- "latest": 65200,
+ "latest": 65203,
  "entries": [
+  {
+   "versionCode": 65203,
+   "versionName": "6.52.3",
+   "date": "2026-09-14",
+   "critical": false,
+   "title": "v6.52.3 — Sound Souvenir fertig geprüft",
+   "de": "• VERBESSERT: Sound Souvenir trägt nur noch Standorte ein, die höchstens zwei Minuten alt sind – kein Titel landet mehr kilometerweit daneben.\n• Aufgeräumt: Die Prüfprotokolle für Sound Souvenir sind wieder entfernt.",
+   "en": "• IMPROVED: Sound Souvenir only uses locations at most two minutes old – no track ends up kilometres away any more.\n• Cleaned up: the Sound Souvenir test logs have been removed again."
+  },
+  {
+   "versionCode": 65202,
+   "versionName": "6.52.2",
+   "date": "2026-09-14",
+   "critical": false,
+   "title": "v6.52.2 — Sound Souvenir auch im Stehen",
+   "de": "• FIX: Sound Souvenir hält auch dann weiter Titel fest, wenn man länger an einem Ort bleibt – die App fragt die aktuelle Position gezielt ab.",
+   "en": "• FIX: Sound Souvenir keeps capturing tracks when you stay in one place for a while – the app asks for the current position when needed."
+  },
+  {
+   "versionCode": 65201,
+   "versionName": "6.52.1",
+   "date": "2026-09-13",
+   "critical": false,
+   "title": "v6.52.1 — Sound Souvenir hält wirklich fest",
+   "de": "• FIX: Sound Souvenir hält einen Titel fest, sobald er 30 Sekunden gelaufen ist – auch bei geöffnetem Bildschirm, mit Crossfade und wenn die Musik danach angehalten wird.\n• FIX: Der Ort wird zusätzlich über das Netzwerk bestimmt, wenn gerade kein GPS da ist.\n• FIX: Der Hinweis „Du hast … hier gehört“ erscheint auch ohne geöffneten Bildschirm und nur für Erinnerungen von früheren Tagen.",
+   "en": "• FIX: Sound Souvenir captures a track once it has played for 30 seconds – also with the screen open, with crossfade and when the music is stopped afterwards.\n• FIX: The place is also determined via the network when there is no GPS fix.\n• FIX: The “You heard … here” hint also appears without the screen open, and only for memories from earlier days."
+  },
   {
    "versionCode": 65200,
    "versionName": "6.52.0",
@@ -108,33 +135,6 @@
    "title": "v6.50.1 — Wiedergabeposition zuverlässig gemerkt",
    "de": "• FIX: Titel, die bis zum Ende laufen, behalten keine Marke kurz vor Schluss mehr.\n• FIX: Beim Wechsel zu einem anderen Titel geht kein Fortschritt mehr verloren – bisher bis zu 30 Sekunden.\n• FIX: In Android Auto über „Weiterhören“ gestartete Titel merken sich ihre Stelle wieder und zählen in der Hörstatistik.\n• FIX: Der Sprachbefehl „Fortsetzen“ spielt jetzt immer weiter, statt nur zur gemerkten Stelle zu springen.\n• FIX: Die Sprachbefehle „Wiederholen alle/eins/aus“ schalten wieder den Wiederholungsmodus, „starte Loop Mixer“ öffnet wieder den Loop Mixer – sie starteten die A-B-Schleife oder wiederholten nur einen Titel.",
    "en": "• FIX: Tracks played to the end no longer keep a mark just before their end.\n• FIX: Switching to another track no longer loses progress – previously up to 30 seconds.\n• FIX: Tracks started from “Continue listening” in Android Auto remember their position again and count in the listening stats.\n• FIX: The voice command “Resume” now always continues playback instead of only jumping to the saved position.\n• FIX: The voice commands “Repeat all/one/off” switch repeat mode again, “start Loop Mixer” opens the Loop Mixer again – they started the A-B loop or repeated only one track."
-  },
-  {
-   "versionCode": 65000,
-   "versionName": "6.50.0",
-   "date": "2026-09-13",
-   "critical": false,
-   "title": "v6.50.0 — Farbverläufe für die Wellenform",
-   "de": "• NEU: Jeder Abschnitt eines Visualizer-Themes kann einen Farbverlauf tragen – zwei bis fünf Farben, sechs Muster, Bewegung bis hin zum Takt der Musik, über das Element oder den ganzen Bildschirm, auf Wunsch vom Verlauf eines anderen Abschnitts.\n• NEU: Die zehn Landschafts-Designs nutzen Verläufe und Bewegung – Blitze im Takt, eine rasende Akkretionsscheibe, wandernde Polarlichter.\n• VERBESSERT: Die Designauswahl der Wellenform ist ein scrollbares Panel mit Vorschau je Design.\n• FIX: „Secondary Glow“ wirkt jetzt: als weiter Schein ums Cover und im A-B-Abschnitt der Wellenform.\n• FIX: Basis-Farbe und Regenbogen-Schalter der Partikel wurden ignoriert.",
-   "en": "• NEW: Every section of a visualizer theme can carry a colour gradient – two to five colours, six patterns, motion up to the beat of the music, across the element or the whole screen, optionally taken from another section.\n• NEW: The ten landscape designs use gradients and motion – lightning on the beat, a racing accretion disc, drifting auroras.\n• IMPROVED: The waveform's design picker is a scrollable panel with a preview for each design.\n• FIX: “Secondary Glow” now takes effect: as a wide halo around the cover and in the A-B section of the waveform.\n• FIX: The particles' base colour and rainbow switch were ignored."
-  },
-  {
-   "versionCode": 64908,
-   "versionName": "6.49.8",
-   "date": "2026-09-13",
-   "critical": false,
-   "title": "v6.49.8 — Freie Farbwahl im Theme Builder",
-   "de": "• NEU: Im Editor für Visualizer-Themes steht neben den zwölf festen Farben jetzt ein Farbkreis – mit Helligkeitsregler und Vorschau für jede beliebige Farbe.\n• VERBESSERT: Die zehn Landschafts-Designs der Wellenform sind neu abgestimmt und tragen jetzt einen eigenen Farbverlauf im Hintergrund. Sie unterscheiden sich damit deutlich stärker.",
-   "en": "• NEW: The visualizer theme editor now offers a colour wheel next to the twelve fixed colours – with a brightness slider and preview for any colour.\n• IMPROVED: The ten landscape designs of the waveform have been re-tuned and now carry their own background gradient, so they differ much more clearly."
-  },
-  {
-   "versionCode": 64907,
-   "versionName": "6.49.7",
-   "date": "2026-09-13",
-   "critical": false,
-   "title": "v6.49.7 — Zehn Landschaften für die Wellenform",
-   "de": "• NEU: Die Vollbild-Wellenform hat zehn neue Designs, jedes nach einer echten Landschaft: Tiefsee, Korallenriff, Schwarzes Loch, Sternenfeld, Wüste, Polarlicht, Magma, Regenwald, Sonnenuntergang und Gewitter.\n• Die App zeichnet für die A–B-Wiederholung nichts mehr auf.",
-   "en": "• NEW: The full-screen waveform has ten new designs, each modelled on a real landscape: deep sea, coral reef, black hole, starfield, desert, aurora, magma, rainforest, sunset and thunderstorm.\n• The app no longer records anything for A–B repeat."
   }
  ]
 }
