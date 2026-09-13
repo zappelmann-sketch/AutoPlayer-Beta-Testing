@@ -1,6 +1,15 @@
 {
- "latest": 65009,
+ "latest": 65100,
  "entries": [
+  {
+   "versionCode": 65100,
+   "versionName": "6.51.0",
+   "date": "2026-09-13",
+   "critical": false,
+   "title": "v6.51.0 — Schlaf-Erkennung per Sprache",
+   "de": "• NEU: „Schlaferkennung ein“ und „Schlaferkennung aus“ schalten die Schlaf-Erkennung, ohne den Bildschirm zu öffnen – über das Mikrofon der App, in allen 26 Sprachen.\n• NEU: „Schlafdauer 10 Minuten“ stellt die Ausblend-Dauer (1–30 Minuten), auch mit Zahlwörtern.\n• FIX: „Schlaferkennung aus“ beendete bisher stattdessen den Schlaf-Timer.\n• VERBESSERT: Der Schlaf-Erkennungs-Bildschirm fragt nicht mehr nach der Berechtigung „Körperliche Aktivität“ – er braucht sie nicht.",
+   "en": "• NEW: “Sleep detection on” and “Sleep detection off” switch sleep detection without opening the screen – via the app’s microphone, in all 26 languages.\n• NEW: “Sleep duration 10 minutes” sets the fade duration (1–30 minutes), number words work too.\n• FIX: Saying “Sleep detection off” in German used to cancel the sleep timer instead.\n• IMPROVED: The sleep detection screen no longer asks for the Physical activity permission – it does not need it."
+  },
   {
    "versionCode": 65009,
    "versionName": "6.50.9",
@@ -126,15 +135,6 @@
    "title": "v6.49.5 — A–B-Wiederholung durchgeprüft",
    "de": "• FIX: „Tonhöhe beibehalten“ wirkt jetzt wirklich. Ausgeschaltet sinkt und steigt die Tonhöhe mit dem Tempo wie bei einer Schallplatte.\n• FIX: Langsame Tempi unter 0,5x kamen nicht an – der Regler reicht jetzt wirklich bis zum Viertel-Tempo.\n• FIX: Ein Loop-Lesezeichen zu öffnen verlor den gespeicherten Abschnitt. Jetzt startet es genau dort und läuft sofort.\n• FIX: Die Wiederholungszahl mitten im Lauf zu ändern brach die Schleife ab. Jetzt zählt sie neu.\n• FIX: Die Sprachbefehle „Schleife stoppen“, „Schleife aufheben“ und „Schleifengeschwindigkeit … Prozent“ wurden nicht erkannt – letzterer stellte die Lautstärke.\n• NEU: Im Übungsmodus lassen sich Schrittweite und Durchläufe je Stufe einstellen.\n• Loop-Lesezeichen sind jetzt auch beim Speichern als Pro-Funktion gekennzeichnet.",
    "en": "• FIX: “Preserve pitch” now actually works. Switched off, pitch follows the tempo like on a record player.\n• FIX: Speeds below 0.5x never took effect – the slider now really reaches quarter speed.\n• FIX: Opening a loop bookmark lost the saved section. It now starts exactly there and plays right away.\n• FIX: Changing the repeat count mid-loop aborted it. It now counts afresh.\n• FIX: The voice commands “stop loop”, “clear loop” and “loop speed … percent” were not recognised – the latter changed the volume instead.\n• NEW: Practice mode lets you set the step size and loops per step.\n• Loop bookmarks are now gated as a Pro feature when saving, too."
-  },
-  {
-   "versionCode": 64904,
-   "versionName": "6.49.4",
-   "date": "2026-09-12",
-   "critical": false,
-   "title": "v6.49.4 — Pruefstand A–B-Wiederholung",
-   "de": "• Diese Fassung zeichnet die A–B-Wiederholung fuer eine Pruefung auf. An der Bedienung und an den Funktionen ändert sich nichts.",
-   "en": "• This build records A–B repeat for a test run. Nothing changes in how the app looks or works."
   }
  ]
 }
