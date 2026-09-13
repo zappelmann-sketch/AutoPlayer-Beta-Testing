@@ -1,6 +1,15 @@
 {
- "latest": 65000,
+ "latest": 65001,
  "entries": [
+  {
+   "versionCode": 65001,
+   "versionName": "6.50.1",
+   "date": "2026-09-13",
+   "critical": false,
+   "title": "v6.50.1 — Wiedergabeposition zuverlässig gemerkt",
+   "de": "• FIX: Titel, die bis zum Ende laufen, behalten keine Marke kurz vor Schluss mehr.\n• FIX: Beim Wechsel zu einem anderen Titel geht kein Fortschritt mehr verloren – bisher bis zu 30 Sekunden.\n• FIX: In Android Auto über „Weiterhören“ gestartete Titel merken sich ihre Stelle wieder und zählen in der Hörstatistik.\n• FIX: Der Sprachbefehl „Fortsetzen“ spielt jetzt immer weiter, statt nur zur gemerkten Stelle zu springen.\n• FIX: Die Sprachbefehle „Wiederholen alle/eins/aus“ schalten wieder den Wiederholungsmodus, „starte Loop Mixer“ öffnet wieder den Loop Mixer – sie starteten die A-B-Schleife oder wiederholten nur einen Titel.",
+   "en": "• FIX: Tracks played to the end no longer keep a mark just before their end.\n• FIX: Switching to another track no longer loses progress – previously up to 30 seconds.\n• FIX: Tracks started from “Continue listening” in Android Auto remember their position again and count in the listening stats.\n• FIX: The voice command “Resume” now always continues playback instead of only jumping to the saved position.\n• FIX: The voice commands “Repeat all/one/off” switch repeat mode again, “start Loop Mixer” opens the Loop Mixer again – they started the A-B loop or repeated only one track."
+  },
   {
    "versionCode": 65000,
    "versionName": "6.50.0",
@@ -126,15 +135,6 @@
    "title": "v6.48.1 — Smart Reorder bleibt erhalten",
    "de": "• FIX: Eine mit Smart Reorder erzeugte Reihenfolge war beim nächsten Wechsel des Fachs wieder fort – sie wurde nur im Player gesetzt.\n• FIX: Smart Reorder sortierte die laufende Wiedergabe statt des Fachs, das gerade angezeigt wird.\n• GEÄNDERT: „Zur Queue“ hängt ein Genre ans Ende der Warteschlange statt an den Anfang.",
    "en": "• FIX: An order created with Smart Reorder was gone on the next slot switch — it was only applied to the player.\n• FIX: Smart Reorder sorted the running playback instead of the slot on screen.\n• CHANGED: “To queue” appends a genre to the end of the queue instead of the front."
-  },
-  {
-   "versionCode": 64800,
-   "versionName": "6.48.0",
-   "date": "2026-09-10",
-   "critical": false,
-   "title": "v6.48.0 — Warteschlange hält, was hineinkommt",
-   "de": "• FIX: Zur Warteschlange hinzugefügte Titel verschwanden beim nächsten Wechsel des Fachs. Sie landeten nur im laufenden Player, nie in der Warteschlange selbst.\n• FIX: Ein ganzes Genre landete in umgekehrter Reihenfolge.\n• GEÄNDERT: Ein hervorgehobenes Fach heißt jetzt, dass genau dieses Fach läuft. Spielst du etwas anderes ab, zeigt der Bildschirm die laufende Wiedergabe.",
-   "en": "• FIX: Tracks added to the queue vanished on the next slot switch. They only ever went into the running player, never into the queue itself.\n• FIX: Adding a whole genre reversed its order.\n• CHANGED: A highlighted slot now means that this slot is what's playing. Play something else and the screen shows what is actually running."
   }
  ]
 }
