@@ -1,6 +1,15 @@
 {
- "latest": 65101,
+ "latest": 65200,
  "entries": [
+  {
+   "versionCode": 65200,
+   "versionName": "6.52.0",
+   "date": "2026-09-13",
+   "critical": false,
+   "title": "v6.52.0 — Orte suchen in „Meine Orte“",
+   "de": "• NEU: Suchzeile über der Karte in „Meine Orte“ – Ort, Straße oder Adresse eingeben, die Karte springt hin, und „Pin hier setzen“ übernimmt den Namen.\n• NEU: Sprachbefehl „Öffne Meine Orte“ über das Mikrofon der App.\n• VERBESSERT: Die Karte zeigt die OpenStreetMap-Quellenangabe; in der Pin-Liste öffnet ein Stift die Bearbeitung.\n• VERBESSERT: „Öffne …“ versteht in mehreren Sprachen jetzt auch die Befehlsform (etwa „Abre“, „Ouvre“, „Открой“).",
+   "en": "• NEW: Search line above the map in “My places” – type a place, street or address, the map jumps there and “Set pin here” takes over the name.\n• NEW: Voice command “Open My places” via the app’s microphone.\n• IMPROVED: The map shows the OpenStreetMap attribution; in the pin list a pencil opens editing.\n• IMPROVED: “Open …” now also understands the imperative in several languages (e.g. “Abre”, “Ouvre”, “Открой”)."
+  },
   {
    "versionCode": 65101,
    "versionName": "6.51.1",
@@ -126,15 +135,6 @@
    "title": "v6.49.7 — Zehn Landschaften für die Wellenform",
    "de": "• NEU: Die Vollbild-Wellenform hat zehn neue Designs, jedes nach einer echten Landschaft: Tiefsee, Korallenriff, Schwarzes Loch, Sternenfeld, Wüste, Polarlicht, Magma, Regenwald, Sonnenuntergang und Gewitter.\n• Die App zeichnet für die A–B-Wiederholung nichts mehr auf.",
    "en": "• NEW: The full-screen waveform has ten new designs, each modelled on a real landscape: deep sea, coral reef, black hole, starfield, desert, aurora, magma, rainforest, sunset and thunderstorm.\n• The app no longer records anything for A–B repeat."
-  },
-  {
-   "versionCode": 64906,
-   "versionName": "6.49.6",
-   "date": "2026-09-12",
-   "critical": false,
-   "title": "v6.49.6 — Durchlaufanzeige und Wiederholungs-Regler",
-   "de": "• FIX: Die A–B-Wiederholung zeigte den gerade laufenden Durchlauf um eins zu niedrig – der letzte war nie zu sehen. Jetzt steht dort von Anfang an 1/3, 2/3, 3/3.\n• NEU: Die Zahl der Wiederholungen lässt sich mit einem Schieberegler frei von 1 bis 30 wählen (ganz links: unendlich). Vorher gab es nur fünf feste Stufen.",
-   "en": "• FIX: A–B repeat showed the current pass one too low – the last one never appeared. It now reads 1/3, 2/3, 3/3 from the start.\n• NEW: The repeat count is now a slider from 1 to 30 (far left: infinite). Previously only five fixed steps were available."
   }
  ]
 }
