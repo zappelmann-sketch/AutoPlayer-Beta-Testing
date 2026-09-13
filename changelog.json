@@ -1,6 +1,15 @@
 {
- "latest": 65008,
+ "latest": 65009,
  "entries": [
+  {
+   "versionCode": 65009,
+   "versionName": "6.50.9",
+   "date": "2026-09-13",
+   "critical": false,
+   "title": "v6.50.9 — Octo fängt jetzt auch Erfolge",
+   "de": "• NEU: Erfolg „Fischfänger“ für Octo – er zählt jeden gefangenen Fisch, auch die bisherigen.\n• FIX: „Genre-Tänzer“ zählt verschiedene Genres statt jedes Songstarts.\n• FIX: Noch nicht freigeschaltete Erfolge zeigen ihren Fortschritt jetzt laufend an – vorher blieb die Zahl bis zur Bronze-Stufe stehen.\n• FIX: Octos Fischzähler wird gesichert und beim Wiederherstellen nicht mehr auf null gesetzt.",
+   "en": "• NEW: “Fish Catcher” achievement for Octo – it counts every fish caught, including earlier ones.\n• FIX: “Genre Dancer” counts different genres instead of every song start.\n• FIX: Achievements that are not unlocked yet now show their progress as it grows – before, the number stood still until bronze.\n• FIX: Octo’s fish counter is included in backups and no longer reset to zero on restore."
+  },
   {
    "versionCode": 65008,
    "versionName": "6.50.8",
@@ -126,15 +135,6 @@
    "title": "v6.49.4 — Pruefstand A–B-Wiederholung",
    "de": "• Diese Fassung zeichnet die A–B-Wiederholung fuer eine Pruefung auf. An der Bedienung und an den Funktionen ändert sich nichts.",
    "en": "• This build records A–B repeat for a test run. Nothing changes in how the app looks or works."
-  },
-  {
-   "versionCode": 64903,
-   "versionName": "6.49.3",
-   "date": "2026-09-12",
-   "critical": false,
-   "title": "v6.49.3 — Aufgeraeumt",
-   "de": "• VERBESSERT: Die App zeichnet keine Fahrtprotokolle mehr auf. Die Diagnose-Zeilen aus den Testfahrten sind vollstaendig aus dem Code entfernt; es wird keine Protokolldatei mehr angelegt.\n• An der Bedienung und an den Funktionen ändert sich nichts.",
-   "en": "• IMPROVED: The app no longer records drive logs. The diagnostic lines from the test drives have been fully removed from the code; no log file is created any more.\n• Nothing changes in how the app looks or works."
   }
  ]
 }
