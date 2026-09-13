@@ -1,6 +1,15 @@
 {
- "latest": 64908,
+ "latest": 65000,
  "entries": [
+  {
+   "versionCode": 65000,
+   "versionName": "6.50.0",
+   "date": "2026-09-13",
+   "critical": false,
+   "title": "v6.50.0 — Farbverläufe für die Wellenform",
+   "de": "• NEU: Jeder Abschnitt eines Visualizer-Themes kann einen Farbverlauf tragen – zwei bis fünf Farben, sechs Muster, Bewegung bis hin zum Takt der Musik, über das Element oder den ganzen Bildschirm, auf Wunsch vom Verlauf eines anderen Abschnitts.\n• NEU: Die zehn Landschafts-Designs nutzen Verläufe und Bewegung – Blitze im Takt, eine rasende Akkretionsscheibe, wandernde Polarlichter.\n• VERBESSERT: Die Designauswahl der Wellenform ist ein scrollbares Panel mit Vorschau je Design.\n• FIX: „Secondary Glow“ wirkt jetzt: als weiter Schein ums Cover und im A-B-Abschnitt der Wellenform.\n• FIX: Basis-Farbe und Regenbogen-Schalter der Partikel wurden ignoriert.",
+   "en": "• NEW: Every section of a visualizer theme can carry a colour gradient – two to five colours, six patterns, motion up to the beat of the music, across the element or the whole screen, optionally taken from another section.\n• NEW: The ten landscape designs use gradients and motion – lightning on the beat, a racing accretion disc, drifting auroras.\n• IMPROVED: The waveform's design picker is a scrollable panel with a preview for each design.\n• FIX: “Secondary Glow” now takes effect: as a wide halo around the cover and in the A-B section of the waveform.\n• FIX: The particles' base colour and rainbow switch were ignored."
+  },
   {
    "versionCode": 64908,
    "versionName": "6.49.8",
@@ -126,15 +135,6 @@
    "title": "v6.48.0 — Warteschlange hält, was hineinkommt",
    "de": "• FIX: Zur Warteschlange hinzugefügte Titel verschwanden beim nächsten Wechsel des Fachs. Sie landeten nur im laufenden Player, nie in der Warteschlange selbst.\n• FIX: Ein ganzes Genre landete in umgekehrter Reihenfolge.\n• GEÄNDERT: Ein hervorgehobenes Fach heißt jetzt, dass genau dieses Fach läuft. Spielst du etwas anderes ab, zeigt der Bildschirm die laufende Wiedergabe.",
    "en": "• FIX: Tracks added to the queue vanished on the next slot switch. They only ever went into the running player, never into the queue itself.\n• FIX: Adding a whole genre reversed its order.\n• CHANGED: A highlighted slot now means that this slot is what's playing. Play something else and the screen shows what is actually running."
-  },
-  {
-   "versionCode": 64702,
-   "versionName": "6.47.2",
-   "date": "2026-09-10",
-   "critical": false,
-   "title": "v6.47.2 — Rahmen sitzt",
-   "de": "• FIX: Der Rahmen um „X Songs abspielen“ in einer Playlist ließ oben und unten Luft. Er liegt jetzt bündig am Knopf.",
-   "en": "• FIX: The outline around “Play X songs” in a playlist left a gap above and below. It now hugs the button."
   }
  ]
 }
