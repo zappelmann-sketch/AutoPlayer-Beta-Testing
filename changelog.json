@@ -1,6 +1,15 @@
 {
- "latest": 65203,
+ "latest": 65300,
  "entries": [
+  {
+   "versionCode": 65300,
+   "versionName": "6.53.0",
+   "date": "2026-09-14",
+   "critical": false,
+   "title": "v6.53.0 — Geo-Musik mit Meine Orte",
+   "de": "• NEU: Geo-Musik wählt Orte aus „Meine Orte“ – keine Koordinaten mehr eintippen. Dazu „Aktuelles WLAN übernehmen“ und eine Auswahl für Gehen, Laufen und Fahren.\n• FIX: Eine Regel startet ihre Playlist beim Ankommen – nicht mehr alle 30 Minuten von vorn.\n• FIX: Der Schalter „Standort-Autoplay“ wirkt sofort, und Regeln starten auch, wenn nur Android Auto läuft.\n• VERBESSERT: Wer einen Ort in „Meine Orte“ umbenennt, behält seine Regeln.",
+   "en": "• NEW: Geo-Music picks places from “My places” – no more typing coordinates. Plus “Use current WiFi” and a choice of walking, running and driving.\n• FIX: A rule starts its playlist when you arrive – no longer from the top every 30 minutes.\n• FIX: The “Location Auto-Play” switch takes effect immediately, and rules also start when only Android Auto is running.\n• IMPROVED: Renaming a place in “My places” keeps its rules working."
+  },
   {
    "versionCode": 65203,
    "versionName": "6.52.3",
@@ -126,15 +135,6 @@
    "title": "v6.50.2 — Prüfstand Beat-Match",
    "de": "• FIX: Beat-Match „Sanft“ lässt den nächsten Titel jetzt im gemeinsamen Tempo beginnen und erst dann zu seinem eigenen zurückfinden – bisher sprang das Tempo beim Wechsel.\n• FIX: Beat-Match funktioniert auch zusammen mit dem Crossfade – bisher war es nach dem ersten Überblenden bis zur nächsten Pause wirkungslos.\n• FIX: Bei Zufallswiedergabe und „Einen Titel wiederholen“ gleicht Beat-Match an den Titel an, der wirklich als Nächstes kommt.\n• Prüfstand: Protokollzeilen für die Übergänge.",
    "en": "• FIX: Beat-Match “Smooth” now starts the next track at the shared tempo and only then lets it return to its own – previously the tempo jumped at the change.\n• FIX: Beat-Match also works together with crossfade – previously it stopped working after the first fade until the next pause.\n• FIX: With shuffle and “Repeat one”, Beat-Match matches the track that actually plays next.\n• Test build: log lines for the transitions."
-  },
-  {
-   "versionCode": 65001,
-   "versionName": "6.50.1",
-   "date": "2026-09-13",
-   "critical": false,
-   "title": "v6.50.1 — Wiedergabeposition zuverlässig gemerkt",
-   "de": "• FIX: Titel, die bis zum Ende laufen, behalten keine Marke kurz vor Schluss mehr.\n• FIX: Beim Wechsel zu einem anderen Titel geht kein Fortschritt mehr verloren – bisher bis zu 30 Sekunden.\n• FIX: In Android Auto über „Weiterhören“ gestartete Titel merken sich ihre Stelle wieder und zählen in der Hörstatistik.\n• FIX: Der Sprachbefehl „Fortsetzen“ spielt jetzt immer weiter, statt nur zur gemerkten Stelle zu springen.\n• FIX: Die Sprachbefehle „Wiederholen alle/eins/aus“ schalten wieder den Wiederholungsmodus, „starte Loop Mixer“ öffnet wieder den Loop Mixer – sie starteten die A-B-Schleife oder wiederholten nur einen Titel.",
-   "en": "• FIX: Tracks played to the end no longer keep a mark just before their end.\n• FIX: Switching to another track no longer loses progress – previously up to 30 seconds.\n• FIX: Tracks started from “Continue listening” in Android Auto remember their position again and count in the listening stats.\n• FIX: The voice command “Resume” now always continues playback instead of only jumping to the saved position.\n• FIX: The voice commands “Repeat all/one/off” switch repeat mode again, “start Loop Mixer” opens the Loop Mixer again – they started the A-B loop or repeated only one track."
   }
  ]
 }
