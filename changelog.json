@@ -1,6 +1,51 @@
 {
- "latest": 65308,
+ "latest": 65313,
  "entries": [
+  {
+   "versionCode": 65313,
+   "versionName": "6.53.13",
+   "date": "2026-09-15",
+   "critical": false,
+   "title": "v6.53.13 — Gestensteuerung fertig eingestellt",
+   "de": "• Aufgeräumt: Die Prüfprotokolle der Gesten sind wieder entfernt – alle neun Gesten sind bei mittlerer Empfindlichkeit geprüft.",
+   "en": "• Cleaned up: the gesture test logs have been removed again – all nine gestures have been checked at medium sensitivity."
+  },
+  {
+   "versionCode": 65312,
+   "versionName": "6.53.12",
+   "date": "2026-09-15",
+   "critical": false,
+   "title": "v6.53.12 — Doppeltippen trennt Tipps sauber",
+   "de": "• FIX: Ein einzelner kräftiger Tipper, das Ablegen und das Aufnehmen des Handys lösen kein Doppeltippen mehr aus.\n• VERBESSERT: Ein Doppeltippen zählt auch, wenn der erste Tipper leichter ausfällt.",
+   "en": "• FIX: A single hard tap, putting the phone down and picking it up no longer trigger a double tap.\n• IMPROVED: A double tap counts even when the first tap is lighter."
+  },
+  {
+   "versionCode": 65311,
+   "versionName": "6.53.11",
+   "date": "2026-09-15",
+   "critical": false,
+   "title": "v6.53.11 — Doppeltippen zuverlässig",
+   "de": "• FIX: Doppeltippen reagiert auf zwei Tipper – bisher kam oft erst der dritte an, und ein einzelner kräftiger Tipper konnte als Doppeltippen zählen.",
+   "en": "• FIX: Double tap responds to two taps – until now often only the third got through, and a single hard tap could count as a double tap."
+  },
+  {
+   "versionCode": 65310,
+   "versionName": "6.53.10",
+   "date": "2026-09-15",
+   "critical": false,
+   "title": "v6.53.10 — Gesten nach Messung eingestellt",
+   "de": "• VERBESSERT: Doppeltippen erkennt schon leichte Tipper; Ablegen oder Aufnehmen des Handys zählt nicht mehr als Doppeltippen.\n• VERBESSERT: Die Hackbewegung braucht deutlich weniger Kraft.\n• FIX: Drehen und Kippen lösen nicht mehr bei jeder kleinen Bewegung aus. Drehen reagiert auf das Handgelenk, Kippen auf das seitliche Neigen, der Rückschwung zählt nicht mehr.\n• FIX: Im Test-Bereich reagieren „Hand über Sensor“ und „Über Sensor wischen“ wieder jedes Mal.",
+   "en": "• IMPROVED: Double tap recognises light taps; putting the phone down or picking it up no longer counts as a double tap.\n• IMPROVED: The chop needs much less force.\n• FIX: Twist and tilt no longer trigger on every small movement. Twist follows the wrist, tilt the sideways lean, and the swing back no longer counts.\n• FIX: In the test area, “Hand over sensor” and “Wave over sensor” respond every time again."
+  },
+  {
+   "versionCode": 65309,
+   "versionName": "6.53.9",
+   "date": "2026-09-15",
+   "critical": false,
+   "title": "v6.53.9 — Prüfstand aller Gesten",
+   "de": "• VERBESSERT: Der Empfindlichkeitsregler der Gesten hat fünf Stufen mit einer echten Mitte. Bisher gespeicherte Zwischenwerte rücken auf die nächste Stufe.\n• Prüfstand: vorübergehendes Protokoll für alle neun Gesten, mit Messwerten auch bei Versuchen, die nicht ausgelöst haben.",
+   "en": "• IMPROVED: The gesture sensitivity slider has five positions with a true middle. Previously stored in-between values move to the nearest position.\n• Test build: temporary log for all nine gestures, with measurements also for attempts that did not trigger."
+  },
   {
    "versionCode": 65308,
    "versionName": "6.53.8",
@@ -90,51 +135,6 @@
    "title": "v6.52.3 — Sound Souvenir fertig geprüft",
    "de": "• VERBESSERT: Sound Souvenir trägt nur noch Standorte ein, die höchstens zwei Minuten alt sind – kein Titel landet mehr kilometerweit daneben.\n• Aufgeräumt: Die Prüfprotokolle für Sound Souvenir sind wieder entfernt.",
    "en": "• IMPROVED: Sound Souvenir only uses locations at most two minutes old – no track ends up kilometres away any more.\n• Cleaned up: the Sound Souvenir test logs have been removed again."
-  },
-  {
-   "versionCode": 65202,
-   "versionName": "6.52.2",
-   "date": "2026-09-14",
-   "critical": false,
-   "title": "v6.52.2 — Sound Souvenir auch im Stehen",
-   "de": "• FIX: Sound Souvenir hält auch dann weiter Titel fest, wenn man länger an einem Ort bleibt – die App fragt die aktuelle Position gezielt ab.",
-   "en": "• FIX: Sound Souvenir keeps capturing tracks when you stay in one place for a while – the app asks for the current position when needed."
-  },
-  {
-   "versionCode": 65201,
-   "versionName": "6.52.1",
-   "date": "2026-09-13",
-   "critical": false,
-   "title": "v6.52.1 — Sound Souvenir hält wirklich fest",
-   "de": "• FIX: Sound Souvenir hält einen Titel fest, sobald er 30 Sekunden gelaufen ist – auch bei geöffnetem Bildschirm, mit Crossfade und wenn die Musik danach angehalten wird.\n• FIX: Der Ort wird zusätzlich über das Netzwerk bestimmt, wenn gerade kein GPS da ist.\n• FIX: Der Hinweis „Du hast … hier gehört“ erscheint auch ohne geöffneten Bildschirm und nur für Erinnerungen von früheren Tagen.",
-   "en": "• FIX: Sound Souvenir captures a track once it has played for 30 seconds – also with the screen open, with crossfade and when the music is stopped afterwards.\n• FIX: The place is also determined via the network when there is no GPS fix.\n• FIX: The “You heard … here” hint also appears without the screen open, and only for memories from earlier days."
-  },
-  {
-   "versionCode": 65200,
-   "versionName": "6.52.0",
-   "date": "2026-09-13",
-   "critical": false,
-   "title": "v6.52.0 — Orte suchen in „Meine Orte“",
-   "de": "• NEU: Suchzeile über der Karte in „Meine Orte“ – Ort, Straße oder Adresse eingeben, die Karte springt hin, und „Pin hier setzen“ übernimmt den Namen.\n• NEU: Sprachbefehl „Öffne Meine Orte“ über das Mikrofon der App.\n• VERBESSERT: Die Karte zeigt die OpenStreetMap-Quellenangabe; in der Pin-Liste öffnet ein Stift die Bearbeitung.\n• VERBESSERT: „Öffne …“ versteht in mehreren Sprachen jetzt auch die Befehlsform (etwa „Abre“, „Ouvre“, „Открой“).",
-   "en": "• NEW: Search line above the map in “My places” – type a place, street or address, the map jumps there and “Set pin here” takes over the name.\n• NEW: Voice command “Open My places” via the app’s microphone.\n• IMPROVED: The map shows the OpenStreetMap attribution; in the pin list a pencil opens editing.\n• IMPROVED: “Open …” now also understands the imperative in several languages (e.g. “Abre”, “Ouvre”, “Открой”)."
-  },
-  {
-   "versionCode": 65101,
-   "versionName": "6.51.1",
-   "date": "2026-09-13",
-   "critical": false,
-   "title": "v6.51.1 — Quick-Wins-Einstellungen aufgeräumt",
-   "de": "• VERBESSERT: In den Quick-Wins-Einstellungen des Kontext-Wechsels stehen Knöpfe und Beschriftungen sauber nebeneinander – nichts rutscht mehr senkrecht untereinander.\n• GEÄNDERT: Der Vorhersage-Horizont bietet 60, 120 und 180 Minuten. Die Wettervorhersage kommt stundenweise, 30 Minuten wirkten wie 60.\n• FIX: Eine ungültige Uhrzeit für „Tiefe Nacht“ wird rot markiert und nicht mehr gespeichert – bisher galt dann still 02:00 bis 05:00.",
-   "en": "• IMPROVED: In the Context Auto-Switch quick-wins settings, buttons and labels now sit neatly side by side – nothing slides vertically any more.\n• CHANGED: The forecast horizon offers 60, 120 and 180 minutes. The weather forecast is hourly, so 30 minutes acted like 60.\n• FIX: An invalid time for “Deep night” is marked red and no longer saved – before, 02:00 to 05:00 silently applied."
-  },
-  {
-   "versionCode": 65100,
-   "versionName": "6.51.0",
-   "date": "2026-09-13",
-   "critical": false,
-   "title": "v6.51.0 — Schlaf-Erkennung per Sprache",
-   "de": "• NEU: „Schlaferkennung ein“ und „Schlaferkennung aus“ schalten die Schlaf-Erkennung, ohne den Bildschirm zu öffnen – über das Mikrofon der App, in allen 26 Sprachen.\n• NEU: „Schlafdauer 10 Minuten“ stellt die Ausblend-Dauer (1–30 Minuten), auch mit Zahlwörtern.\n• FIX: „Schlaferkennung aus“ beendete bisher stattdessen den Schlaf-Timer.\n• VERBESSERT: Der Schlaf-Erkennungs-Bildschirm fragt nicht mehr nach der Berechtigung „Körperliche Aktivität“ – er braucht sie nicht.",
-   "en": "• NEW: “Sleep detection on” and “Sleep detection off” switch sleep detection without opening the screen – via the app’s microphone, in all 26 languages.\n• NEW: “Sleep duration 10 minutes” sets the fade duration (1–30 minutes), number words work too.\n• FIX: Saying “Sleep detection off” in German used to cancel the sleep timer instead.\n• IMPROVED: The sleep detection screen no longer asks for the Physical activity permission – it does not need it."
   }
  ]
 }
