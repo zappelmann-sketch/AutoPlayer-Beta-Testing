@@ -1,6 +1,78 @@
 {
- "latest": 65300,
+ "latest": 65308,
  "entries": [
+  {
+   "versionCode": 65308,
+   "versionName": "6.53.8",
+   "date": "2026-09-15",
+   "critical": false,
+   "title": "v6.53.8 — Gestensteuerung fertig geprüft",
+   "de": "• Aufgeräumt: Die Prüfprotokolle der Sensor-Gesten sind wieder entfernt – „Hand über Sensor“, „Über Sensor wischen“ und das Umschalten zwischen beiden funktionieren.",
+   "en": "• Cleaned up: the sensor gesture test logs have been removed again – “Hand over sensor”, “Wave over sensor” and switching between them work."
+  },
+  {
+   "versionCode": 65307,
+   "versionName": "6.53.7",
+   "date": "2026-09-15",
+   "critical": false,
+   "title": "v6.53.7 — Prüfstand Sensor-Gesten",
+   "de": "• FIX: Beim Umschalten zwischen „Hand über Sensor“ und „Über Sensor wischen“ kann keine zweite Messschleife mehr zurückbleiben.\n• Prüfstand: vorübergehendes Protokoll für die beiden Sensor-Gesten, mit Umgebungs- und Displayhelligkeit.",
+   "en": "• FIX: Switching between “Hand over sensor” and “Wave over sensor” can no longer leave a second measuring loop behind.\n• Test build: temporary log for both sensor gestures, including ambient light and display brightness."
+  },
+  {
+   "versionCode": 65306,
+   "versionName": "6.53.6",
+   "date": "2026-09-15",
+   "critical": false,
+   "title": "v6.53.6 — Gesten ohne passenden Sensor",
+   "de": "• NEU: Fehlt dem Handy der Sensor für eine Geste, lässt sie sich nicht einschalten. Wer den grauen Schalter antippt, sieht unten fünf Sekunden lang, welcher Sensor fehlt.\n• FIX: Eine Sicherung von einem anderen Handy schaltet solche Gesten nicht mehr ein.",
+   "en": "• NEW: If the phone lacks the sensor for a gesture, it cannot be switched on. Tapping the grey switch shows for five seconds which sensor is missing.\n• FIX: A backup from another phone no longer switches such gestures on."
+  },
+  {
+   "versionCode": 65305,
+   "versionName": "6.53.5",
+   "date": "2026-09-15",
+   "critical": false,
+   "title": "v6.53.5 — Sensor-Gesten nacheinander",
+   "de": "• FIX: „Hand über Sensor“ und „Über Sensor wischen“ schließen sich jetzt gegenseitig aus – beide zusammen legten den Sensor lahm. Ein Hinweis sagt, welche ausgeschaltet wurde.\n• Aufgeräumt: Die Prüfprotokolle der Gesten sind wieder entfernt.",
+   "en": "• FIX: “Hand over sensor” and “Wave over sensor” now exclude each other – both together stalled the sensor. A notice tells which one was switched off.\n• Cleaned up: the gesture test logs have been removed again."
+  },
+  {
+   "versionCode": 65304,
+   "versionName": "6.53.4",
+   "date": "2026-09-15",
+   "critical": false,
+   "title": "v6.53.4 — Hand über Sensor und Aufheben",
+   "de": "• FIX: „Hand über Sensor“ misst auf Handys, die den Näherungssensor nur kurz einschalten, jetzt dauerhaft.\n• FIX: „Aufheben“ erkennt auch ruhiges Aufnehmen – ein Ruck ist nicht mehr nötig.\n• Prüfstand: Protokoll für beide Gesten läuft weiter.",
+   "en": "• FIX: “Hand over sensor” now keeps measuring on phones that only switch the proximity sensor on briefly.\n• FIX: “Pick up” also recognises a calm pick-up – no jerk needed any more.\n• Test build: the log for both gestures keeps running."
+  },
+  {
+   "versionCode": 65303,
+   "versionName": "6.53.3",
+   "date": "2026-09-14",
+   "critical": false,
+   "title": "v6.53.3 — Prüfprotokoll Gesten",
+   "de": "• Prüfstand: vorübergehendes Protokoll für die Gesten „Hand über Sensor“ und „Aufheben“, um Aussetzer zu finden.",
+   "en": "• Test build: temporary log for the gestures “Hand over sensor” and “Pick up”, to track down dropouts."
+  },
+  {
+   "versionCode": 65302,
+   "versionName": "6.53.2",
+   "date": "2026-09-14",
+   "critical": false,
+   "title": "v6.53.2 — Gestensteuerung überarbeitet",
+   "de": "• FIX: Gesten wirken auch, wenn die App geschlossen ist und die Musik weiterläuft. Stumm bleibt stumm, auch beim nächsten Crossfade.\n• FIX: Vibrations- und Audio-Feedback sowie der Batterie-Sparmodus wirken jetzt wirklich; das Einstecken in die Tasche löst „Hand über Sensor“ nicht mehr aus.\n• NEU: Der Test-Bereich erkennt jede Geste und zeigt, was sie auslösen würde – ohne es auszuführen.\n• VERBESSERT: Eine Bewegung löst nur noch eine Geste aus, Aufheben pausiert nie, Zurückdrehen hebt Stumm auf; verständlichere Namen.",
+   "en": "• FIX: Gestures also work when the app is closed and music keeps playing. Mute stays muted, even at the next crossfade.\n• FIX: Vibration and audio feedback and the battery saver now really work; putting the phone in a pocket no longer triggers “Hand over sensor”.\n• NEW: The test area detects every gesture and shows what it would trigger – without doing it.\n• IMPROVED: One movement triggers only one gesture, picking up never pauses, turning back unmutes; clearer names."
+  },
+  {
+   "versionCode": 65301,
+   "versionName": "6.53.1",
+   "date": "2026-09-14",
+   "critical": false,
+   "title": "v6.53.1 — Geste „Favorit“ wirkt",
+   "de": "• FIX: Die Gesten-Aktion „Favorit“ markiert den laufenden Titel jetzt wirklich als Favorit – oder nimmt ihn wieder heraus. Ein kurzer Hinweis sagt, was passiert ist.",
+   "en": "• FIX: The gesture action “Favorite” now really marks the playing track as a favorite – or removes it again. A short notice tells you what happened."
+  },
   {
    "versionCode": 65300,
    "versionName": "6.53.0",
@@ -63,78 +135,6 @@
    "title": "v6.51.0 — Schlaf-Erkennung per Sprache",
    "de": "• NEU: „Schlaferkennung ein“ und „Schlaferkennung aus“ schalten die Schlaf-Erkennung, ohne den Bildschirm zu öffnen – über das Mikrofon der App, in allen 26 Sprachen.\n• NEU: „Schlafdauer 10 Minuten“ stellt die Ausblend-Dauer (1–30 Minuten), auch mit Zahlwörtern.\n• FIX: „Schlaferkennung aus“ beendete bisher stattdessen den Schlaf-Timer.\n• VERBESSERT: Der Schlaf-Erkennungs-Bildschirm fragt nicht mehr nach der Berechtigung „Körperliche Aktivität“ – er braucht sie nicht.",
    "en": "• NEW: “Sleep detection on” and “Sleep detection off” switch sleep detection without opening the screen – via the app’s microphone, in all 26 languages.\n• NEW: “Sleep duration 10 minutes” sets the fade duration (1–30 minutes), number words work too.\n• FIX: Saying “Sleep detection off” in German used to cancel the sleep timer instead.\n• IMPROVED: The sleep detection screen no longer asks for the Physical activity permission – it does not need it."
-  },
-  {
-   "versionCode": 65009,
-   "versionName": "6.50.9",
-   "date": "2026-09-13",
-   "critical": false,
-   "title": "v6.50.9 — Octo fängt jetzt auch Erfolge",
-   "de": "• NEU: Erfolg „Fischfänger“ für Octo – er zählt jeden gefangenen Fisch, auch die bisherigen.\n• FIX: „Genre-Tänzer“ zählt verschiedene Genres statt jedes Songstarts.\n• FIX: Noch nicht freigeschaltete Erfolge zeigen ihren Fortschritt jetzt laufend an – vorher blieb die Zahl bis zur Bronze-Stufe stehen.\n• FIX: Octos Fischzähler wird gesichert und beim Wiederherstellen nicht mehr auf null gesetzt.",
-   "en": "• NEW: “Fish Catcher” achievement for Octo – it counts every fish caught, including earlier ones.\n• FIX: “Genre Dancer” counts different genres instead of every song start.\n• FIX: Achievements that are not unlocked yet now show their progress as it grows – before, the number stood still until bronze.\n• FIX: Octo’s fish counter is included in backups and no longer reset to zero on restore."
-  },
-  {
-   "versionCode": 65008,
-   "versionName": "6.50.8",
-   "date": "2026-09-13",
-   "critical": false,
-   "title": "v6.50.8 — Fang-Erfolge richtig zugeordnet",
-   "de": "• FIX: Fängt Katze oder Fuchs eine Maus, zählt sie sofort beim Mäusefänger – ein Vogel beim Vogelfänger. Bisher erschien jeder Fang erst beim nächsten und landete so scheinbar beim falschen Erfolg.\n• FIX: Auch Jägerinstinkt und Spitzenräuber zählen jetzt ohne Verzögerung.",
-   "en": "• FIX: When the cat or fox catches a mouse, it now counts for Mouse Catcher right away – a bird for Bird Catcher. Before, each catch only appeared with the next one and so seemed to land on the wrong achievement.\n• FIX: Hunter Instinct and Apex Predator also count without delay."
-  },
-  {
-   "versionCode": 65007,
-   "versionName": "6.50.7",
-   "date": "2026-09-13",
-   "critical": false,
-   "title": "v6.50.7 — Schlaf-Timer fertig geprüft",
-   "de": "• FIX: Wird die App beendet, endet auch ein laufender Schlaf-Timer – er stoppt keine später neu gestartete Musik mehr.\n• Aufgeräumt: Die Prüfprotokolle und die Test-Taste für den Schlaf-Timer sind wieder entfernt.",
-   "en": "• FIX: Closing the app also ends a running sleep timer – it no longer stops music started later.\n• Cleaned up: the sleep timer test logs and test button have been removed again."
-  },
-  {
-   "versionCode": 65006,
-   "versionName": "6.50.6",
-   "date": "2026-09-13",
-   "critical": false,
-   "title": "v6.50.6 — Schlaf-Timer hält wirklich an",
-   "de": "• FIX: „Ende des Songs“ hält jetzt am Ende des laufenden Titels an – vorher lief einfach der nächste weiter.\n• FIX: Der Schlaf-Timer hält die Musik auch bei geschlossener App an und endet auf die Sekunde.\n• FIX: Beim Ablauf verstummen auch Atmosphäre-Klänge und binaurale Beats.\n• GEÄNDERT: Den Schlaf-Timer per Sprache gibt es nur noch über das Mikrofon der App – in Android Auto stellte der Assistent stattdessen einen fremden Wecker-Timer.\n• FIX: Die Geste „Schlaf-Timer +5 Min“ tut jetzt, was sie verspricht.",
-   "en": "• FIX: “End of song” now stops at the end of the current track – previously the next one simply started.\n• FIX: The sleep timer also stops the music when the app is closed, and ends to the second.\n• FIX: When it runs out, atmosphere sounds and binaural beats go quiet too.\n• CHANGED: Setting the sleep timer by voice now only works via the app’s microphone – in Android Auto the assistant set an unrelated alarm timer instead.\n• FIX: The “Sleep timer +5 min” gesture now does what it says."
-  },
-  {
-   "versionCode": 65005,
-   "versionName": "6.50.5",
-   "date": "2026-09-13",
-   "critical": false,
-   "title": "v6.50.5 — Beat-Match fertig geprüft",
-   "de": "• VERBESSERT: Der Beat-Match-Bildschirm zeigt den Tempounterschied so, wie angeglichen wird – halbes und doppeltes Tempo zählen als gleicher Takt.\n• Aufgeräumt: Die Prüfprotokolle für Beat-Match sind wieder entfernt.",
-   "en": "• IMPROVED: The Beat-Match screen shows the tempo difference the way it is matched – half and double tempo count as the same beat.\n• Cleaned up: the Beat-Match test logs have been removed again."
-  },
-  {
-   "versionCode": 65004,
-   "versionName": "6.50.4",
-   "date": "2026-09-13",
-   "critical": false,
-   "title": "v6.50.4 — Tempoänderungen ohne Knacksen",
-   "de": "• FIX: Tempoänderungen knacksen nicht mehr – bei Beat-Match, A-B-Wiederholung und eigener Geschwindigkeit.\n• FIX: Beat-Match überspringt keine Titel mehr beim Übergang.\n• VERBESSERT: Beat-Match gleicht immer durch Beschleunigen an; „Sanft“ verteilt die Anpassung auf sechs Sekunden, „Schnell“ auf anderthalb.",
-   "en": "• FIX: Tempo changes no longer crackle – in Beat-Match, A-B repeat and custom playback speed.\n• FIX: Beat-Match no longer skips tracks during the transition.\n• IMPROVED: Beat-Match always matches by speeding up; “Smooth” spreads the change over six seconds, “Quick” over one and a half."
-  },
-  {
-   "versionCode": 65003,
-   "versionName": "6.50.3",
-   "date": "2026-09-13",
-   "critical": false,
-   "title": "v6.50.3 — Beat-Match ohne Abbrüche",
-   "de": "• FIX: Ist der nächste Titel langsamer, bricht der Übergang nicht mehr ab und springt nicht mehr zwei Sekunden zu früh weiter.\n• VERBESSERT: Beat-Match erkennt halbes und doppeltes Tempo als gleichen Takt – viel mehr Übergänge werden angeglichen.\n• FIX: Nach dem Schließen der App liefen Hintergrund-Beobachter des Wiedergabedienstes weiter und vervielfachten sich.",
-   "en": "• FIX: When the next track is slower, the transition no longer breaks off and no longer skips ahead two seconds early.\n• IMPROVED: Beat-Match treats half and double tempo as the same beat – far more transitions are matched.\n• FIX: After closing the app, background observers of the playback service kept running and multiplied."
-  },
-  {
-   "versionCode": 65002,
-   "versionName": "6.50.2",
-   "date": "2026-09-13",
-   "critical": false,
-   "title": "v6.50.2 — Prüfstand Beat-Match",
-   "de": "• FIX: Beat-Match „Sanft“ lässt den nächsten Titel jetzt im gemeinsamen Tempo beginnen und erst dann zu seinem eigenen zurückfinden – bisher sprang das Tempo beim Wechsel.\n• FIX: Beat-Match funktioniert auch zusammen mit dem Crossfade – bisher war es nach dem ersten Überblenden bis zur nächsten Pause wirkungslos.\n• FIX: Bei Zufallswiedergabe und „Einen Titel wiederholen“ gleicht Beat-Match an den Titel an, der wirklich als Nächstes kommt.\n• Prüfstand: Protokollzeilen für die Übergänge.",
-   "en": "• FIX: Beat-Match “Smooth” now starts the next track at the shared tempo and only then lets it return to its own – previously the tempo jumped at the change.\n• FIX: Beat-Match also works together with crossfade – previously it stopped working after the first fade until the next pause.\n• FIX: With shuffle and “Repeat one”, Beat-Match matches the track that actually plays next.\n• Test build: log lines for the transitions."
   }
  ]
 }
