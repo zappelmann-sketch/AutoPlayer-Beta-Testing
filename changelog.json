@@ -1,6 +1,33 @@
 {
- "latest": 65313,
+ "latest": 65316,
  "entries": [
+  {
+   "versionCode": 65316,
+   "versionName": "6.53.16",
+   "date": "2026-09-17",
+   "critical": false,
+   "title": "v6.53.16 — Party Mode fertig geprüft",
+   "de": "• Aufgeräumt: Das Prüfprotokoll des Party Mode ist wieder entfernt.\n• Handbuch: Kapitel Party Mode überarbeitet und neu vertont.",
+   "en": "• Cleanup: The Party Mode test log has been removed again.\n• Manual: Party Mode chapter revised and re-recorded."
+  },
+  {
+   "versionCode": 65315,
+   "versionName": "6.53.15",
+   "date": "2026-09-16",
+   "critical": false,
+   "title": "v6.53.15 — Party Mode überarbeitet",
+   "de": "• FIX: Kein Absturz mehr, wenn eine Party beendet und direkt neu gestartet wird.\n• NEU: Gästewünsche kommen als nächster Titel in die laufende Wiedergabe; ohne Wünsche läuft die Musik normal weiter – auch bei geschlossenem Party-Bildschirm.\n• FIX: Abstimmen schiebt Wünsche wirklich nach vorn, ist bei ausgeschalteter Abstimmung gesperrt, und „Nach oben“ hält.\n• VERBESSERT: Laufende Einstellungen bleiben beim Wiederöffnen sichtbar; Gäste sehen „Name vergeben“ und am Ende eine Dankesseite.\n• VERBESSERT: „Beende Party“ beendet die Party, „Wie viele Gäste?“ nennt Zahl und Namen; „Zeig QR Code“ entfällt.",
+   "en": "• FIX: No more crash when a party is ended and started again right away.\n• NEW: Guest requests play as the next track in the running playback; without requests the music simply continues – even with the Party Mode screen closed.\n• FIX: Voting really moves requests up, is blocked when voting is off, and \"Move to top\" sticks.\n• IMPROVED: Running settings stay visible when the screen is reopened; guests see \"name taken\" and a thank-you page at the end.\n• IMPROVED: \"End party\" ends the party, \"How many guests?\" tells the number and names; \"Show QR code\" is gone."
+  },
+  {
+   "versionCode": 65314,
+   "versionName": "6.53.14",
+   "date": "2026-09-16",
+   "critical": false,
+   "title": "v6.53.14 — Prüfstand Party Mode",
+   "de": "• Prüfstand: vorübergehendes Protokoll für den Party Mode – Anmeldung, Wünsche, Abstimmung, Genehmigung, Warteschlange, Wiedergabe und Sprachbefehle. Am Verhalten ändert sich nichts.",
+   "en": "• Test build: temporary log for Party Mode – joining, requests, voting, approval, queue, playback and voice commands. Behaviour is unchanged."
+  },
   {
    "versionCode": 65313,
    "versionName": "6.53.13",
@@ -108,33 +135,6 @@
    "title": "v6.53.2 — Gestensteuerung überarbeitet",
    "de": "• FIX: Gesten wirken auch, wenn die App geschlossen ist und die Musik weiterläuft. Stumm bleibt stumm, auch beim nächsten Crossfade.\n• FIX: Vibrations- und Audio-Feedback sowie der Batterie-Sparmodus wirken jetzt wirklich; das Einstecken in die Tasche löst „Hand über Sensor“ nicht mehr aus.\n• NEU: Der Test-Bereich erkennt jede Geste und zeigt, was sie auslösen würde – ohne es auszuführen.\n• VERBESSERT: Eine Bewegung löst nur noch eine Geste aus, Aufheben pausiert nie, Zurückdrehen hebt Stumm auf; verständlichere Namen.",
    "en": "• FIX: Gestures also work when the app is closed and music keeps playing. Mute stays muted, even at the next crossfade.\n• FIX: Vibration and audio feedback and the battery saver now really work; putting the phone in a pocket no longer triggers “Hand over sensor”.\n• NEW: The test area detects every gesture and shows what it would trigger – without doing it.\n• IMPROVED: One movement triggers only one gesture, picking up never pauses, turning back unmutes; clearer names."
-  },
-  {
-   "versionCode": 65301,
-   "versionName": "6.53.1",
-   "date": "2026-09-14",
-   "critical": false,
-   "title": "v6.53.1 — Geste „Favorit“ wirkt",
-   "de": "• FIX: Die Gesten-Aktion „Favorit“ markiert den laufenden Titel jetzt wirklich als Favorit – oder nimmt ihn wieder heraus. Ein kurzer Hinweis sagt, was passiert ist.",
-   "en": "• FIX: The gesture action “Favorite” now really marks the playing track as a favorite – or removes it again. A short notice tells you what happened."
-  },
-  {
-   "versionCode": 65300,
-   "versionName": "6.53.0",
-   "date": "2026-09-14",
-   "critical": false,
-   "title": "v6.53.0 — Geo-Musik mit Meine Orte",
-   "de": "• NEU: Geo-Musik wählt Orte aus „Meine Orte“ – keine Koordinaten mehr eintippen. Dazu „Aktuelles WLAN übernehmen“ und eine Auswahl für Gehen, Laufen und Fahren.\n• FIX: Eine Regel startet ihre Playlist beim Ankommen – nicht mehr alle 30 Minuten von vorn.\n• FIX: Der Schalter „Standort-Autoplay“ wirkt sofort, und Regeln starten auch, wenn nur Android Auto läuft.\n• VERBESSERT: Wer einen Ort in „Meine Orte“ umbenennt, behält seine Regeln.",
-   "en": "• NEW: Geo-Music picks places from “My places” – no more typing coordinates. Plus “Use current WiFi” and a choice of walking, running and driving.\n• FIX: A rule starts its playlist when you arrive – no longer from the top every 30 minutes.\n• FIX: The “Location Auto-Play” switch takes effect immediately, and rules also start when only Android Auto is running.\n• IMPROVED: Renaming a place in “My places” keeps its rules working."
-  },
-  {
-   "versionCode": 65203,
-   "versionName": "6.52.3",
-   "date": "2026-09-14",
-   "critical": false,
-   "title": "v6.52.3 — Sound Souvenir fertig geprüft",
-   "de": "• VERBESSERT: Sound Souvenir trägt nur noch Standorte ein, die höchstens zwei Minuten alt sind – kein Titel landet mehr kilometerweit daneben.\n• Aufgeräumt: Die Prüfprotokolle für Sound Souvenir sind wieder entfernt.",
-   "en": "• IMPROVED: Sound Souvenir only uses locations at most two minutes old – no track ends up kilometres away any more.\n• Cleaned up: the Sound Souvenir test logs have been removed again."
   }
  ]
 }
