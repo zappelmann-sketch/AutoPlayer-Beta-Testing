@@ -1,6 +1,24 @@
 {
- "latest": 65316,
+ "latest": 65318,
  "entries": [
+  {
+   "versionCode": 65318,
+   "versionName": "6.53.18",
+   "date": "2026-09-17",
+   "critical": false,
+   "title": "v6.53.18 — Music Wrapped fertig geprüft",
+   "de": "• FIX: Aktivitäts-Karte der Erfolge und tägliche Serie zählen Kalendertage nach Ortszeit.\n• Aufgeräumt: Das Prüfprotokoll von Music Wrapped ist wieder entfernt.\n• Handbuch: Kapitel Music Wrapped überarbeitet und neu vertont.",
+   "en": "• FIX: The achievements activity map and the daily streak count local calendar days.\n• Cleanup: The Music Wrapped test log has been removed again.\n• Manual: Music Wrapped chapter revised and re-recorded."
+  },
+  {
+   "versionCode": 65317,
+   "versionName": "6.53.17",
+   "date": "2026-09-17",
+   "critical": false,
+   "title": "v6.53.17 — Music Wrapped rechnet mit allen Titeln",
+   "de": "• FIX: Künstler, Alben, Genres, Überraschungsfakten und Durchschnittstempo zählen jetzt alle gehörten Titel, nicht nur die 50 meistgespielten.\n• FIX: Die Hörserie zählt Kalendertage nach Ortszeit und läuft weiter, solange gestern gehört wurde.\n• FIX: Titel, die nicht mehr in der Bibliothek sind, erscheinen nicht mehr als „Unbekannt“ in den Bestenlisten; ein Hinweis nennt ihre Wiedergaben.\n• VERBESSERT: Top Songs nach Wiedergaben; lesbare Persönlichkeit und Poster; Zurück schließt nur die Bildschirmfolge; „Öffne Musik-Rückblick“ als Sprachbefehl.\n• Prüfstand: vorübergehendes Protokoll für Music Wrapped.",
+   "en": "• FIX: Artists, albums, genres, fun facts and average tempo now count every song played, not just the 50 most played.\n• FIX: The listening streak counts local calendar days and keeps running as long as you listened yesterday.\n• FIX: Songs no longer in the library no longer show up as “Unknown” in the rankings; a note lists their plays.\n• IMPROVED: Top songs by plays; readable personality and poster; Back closes only the slideshow; “Open music recap” as a voice command.\n• Test build: temporary log for Music Wrapped."
+  },
   {
    "versionCode": 65316,
    "versionName": "6.53.16",
@@ -117,24 +135,6 @@
    "title": "v6.53.4 — Hand über Sensor und Aufheben",
    "de": "• FIX: „Hand über Sensor“ misst auf Handys, die den Näherungssensor nur kurz einschalten, jetzt dauerhaft.\n• FIX: „Aufheben“ erkennt auch ruhiges Aufnehmen – ein Ruck ist nicht mehr nötig.\n• Prüfstand: Protokoll für beide Gesten läuft weiter.",
    "en": "• FIX: “Hand over sensor” now keeps measuring on phones that only switch the proximity sensor on briefly.\n• FIX: “Pick up” also recognises a calm pick-up – no jerk needed any more.\n• Test build: the log for both gestures keeps running."
-  },
-  {
-   "versionCode": 65303,
-   "versionName": "6.53.3",
-   "date": "2026-09-14",
-   "critical": false,
-   "title": "v6.53.3 — Prüfprotokoll Gesten",
-   "de": "• Prüfstand: vorübergehendes Protokoll für die Gesten „Hand über Sensor“ und „Aufheben“, um Aussetzer zu finden.",
-   "en": "• Test build: temporary log for the gestures “Hand over sensor” and “Pick up”, to track down dropouts."
-  },
-  {
-   "versionCode": 65302,
-   "versionName": "6.53.2",
-   "date": "2026-09-14",
-   "critical": false,
-   "title": "v6.53.2 — Gestensteuerung überarbeitet",
-   "de": "• FIX: Gesten wirken auch, wenn die App geschlossen ist und die Musik weiterläuft. Stumm bleibt stumm, auch beim nächsten Crossfade.\n• FIX: Vibrations- und Audio-Feedback sowie der Batterie-Sparmodus wirken jetzt wirklich; das Einstecken in die Tasche löst „Hand über Sensor“ nicht mehr aus.\n• NEU: Der Test-Bereich erkennt jede Geste und zeigt, was sie auslösen würde – ohne es auszuführen.\n• VERBESSERT: Eine Bewegung löst nur noch eine Geste aus, Aufheben pausiert nie, Zurückdrehen hebt Stumm auf; verständlichere Namen.",
-   "en": "• FIX: Gestures also work when the app is closed and music keeps playing. Mute stays muted, even at the next crossfade.\n• FIX: Vibration and audio feedback and the battery saver now really work; putting the phone in a pocket no longer triggers “Hand over sensor”.\n• NEW: The test area detects every gesture and shows what it would trigger – without doing it.\n• IMPROVED: One movement triggers only one gesture, picking up never pauses, turning back unmutes; clearer names."
   }
  ]
 }
