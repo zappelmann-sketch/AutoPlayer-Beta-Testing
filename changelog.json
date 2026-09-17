@@ -1,6 +1,15 @@
 {
- "latest": 65318,
+ "latest": 65319,
  "entries": [
+  {
+   "versionCode": 65319,
+   "versionName": "6.53.19",
+   "date": "2026-09-17",
+   "critical": false,
+   "title": "v6.53.19 — Hörverlauf löschen",
+   "de": "• NEU: Der Hörverlauf lässt sich jetzt direkt im Musik-Rückblick löschen – über die drei Punkte oben rechts.\n• NEU: Vor dem Löschen legt die App auf Wunsch eine Sicherung an, aus der sich der Verlauf zurückholen lässt.\n• NEU: Zwei Nachfragen schützen vor dem versehentlichen Löschen.",
+   "en": "• NEW: You can now delete your listening history right in Music Wrapped – via the three dots at the top right.\n• NEW: On request the app writes a backup first, so the history can be restored.\n• NEW: Two confirmations guard against deleting it by accident."
+  },
   {
    "versionCode": 65318,
    "versionName": "6.53.18",
@@ -126,15 +135,6 @@
    "title": "v6.53.5 — Sensor-Gesten nacheinander",
    "de": "• FIX: „Hand über Sensor“ und „Über Sensor wischen“ schließen sich jetzt gegenseitig aus – beide zusammen legten den Sensor lahm. Ein Hinweis sagt, welche ausgeschaltet wurde.\n• Aufgeräumt: Die Prüfprotokolle der Gesten sind wieder entfernt.",
    "en": "• FIX: “Hand over sensor” and “Wave over sensor” now exclude each other – both together stalled the sensor. A notice tells which one was switched off.\n• Cleaned up: the gesture test logs have been removed again."
-  },
-  {
-   "versionCode": 65304,
-   "versionName": "6.53.4",
-   "date": "2026-09-15",
-   "critical": false,
-   "title": "v6.53.4 — Hand über Sensor und Aufheben",
-   "de": "• FIX: „Hand über Sensor“ misst auf Handys, die den Näherungssensor nur kurz einschalten, jetzt dauerhaft.\n• FIX: „Aufheben“ erkennt auch ruhiges Aufnehmen – ein Ruck ist nicht mehr nötig.\n• Prüfstand: Protokoll für beide Gesten läuft weiter.",
-   "en": "• FIX: “Hand over sensor” now keeps measuring on phones that only switch the proximity sensor on briefly.\n• FIX: “Pick up” also recognises a calm pick-up – no jerk needed any more.\n• Test build: the log for both gestures keeps running."
   }
  ]
 }
