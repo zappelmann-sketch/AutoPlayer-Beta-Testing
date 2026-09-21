@@ -1,6 +1,15 @@
 {
- "latest": 65500,
+ "latest": 65501,
  "entries": [
+  {
+   "versionCode": 65501,
+   "versionName": "6.55.1",
+   "date": "2026-09-21",
+   "critical": false,
+   "title": "v6.55.1 — Absturz beim Start behoben",
+   "de": "• FIX: Die App stürzte beim Start ab, wenn die Medienliste des Systems beschädigt war — danach ließ sie sich überhaupt nicht mehr öffnen. Jetzt bleibt sie offen und sagt, woran es liegt.\n• FIX: Die leere Bibliothek bat in diesem Fall um die Speicherberechtigung, obwohl die längst erteilt war. Jetzt steht dort die richtige Ursache.\n• FIX: Derselbe Schutz beim Laden eines einzelnen Titels.",
+   "en": "• FIX: The app crashed on startup when the system media list was damaged — after that it would not open at all. It now stays open and explains what is wrong.\n• FIX: The empty library asked for storage permission in that case, although it had long been granted. It now states the real cause.\n• FIX: Same protection when loading a single track."
+  },
   {
    "versionCode": 65500,
    "versionName": "6.55.0",
@@ -126,15 +135,6 @@
    "title": "v6.53.11 — Doppeltippen zuverlässig",
    "de": "• FIX: Doppeltippen reagiert auf zwei Tipper – bisher kam oft erst der dritte an, und ein einzelner kräftiger Tipper konnte als Doppeltippen zählen.",
    "en": "• FIX: Double tap responds to two taps – until now often only the third got through, and a single hard tap could count as a double tap."
-  },
-  {
-   "versionCode": 65310,
-   "versionName": "6.53.10",
-   "date": "2026-09-15",
-   "critical": false,
-   "title": "v6.53.10 — Gesten nach Messung eingestellt",
-   "de": "• VERBESSERT: Doppeltippen erkennt schon leichte Tipper; Ablegen oder Aufnehmen des Handys zählt nicht mehr als Doppeltippen.\n• VERBESSERT: Die Hackbewegung braucht deutlich weniger Kraft.\n• FIX: Drehen und Kippen lösen nicht mehr bei jeder kleinen Bewegung aus. Drehen reagiert auf das Handgelenk, Kippen auf das seitliche Neigen, der Rückschwung zählt nicht mehr.\n• FIX: Im Test-Bereich reagieren „Hand über Sensor“ und „Über Sensor wischen“ wieder jedes Mal.",
-   "en": "• IMPROVED: Double tap recognises light taps; putting the phone down or picking it up no longer counts as a double tap.\n• IMPROVED: The chop needs much less force.\n• FIX: Twist and tilt no longer trigger on every small movement. Twist follows the wrist, tilt the sideways lean, and the swing back no longer counts.\n• FIX: In the test area, “Hand over sensor” and “Wave over sensor” respond every time again."
   }
  ]
 }
