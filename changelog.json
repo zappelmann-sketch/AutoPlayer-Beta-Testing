@@ -1,6 +1,15 @@
 {
- "latest": 65501,
+ "latest": 65600,
  "entries": [
+  {
+   "versionCode": 65600,
+   "versionName": "6.56.0",
+   "date": "2026-09-21",
+   "critical": false,
+   "title": "v6.56.0 — Octo tarnt sich",
+   "de": "• NEU: Octo nimmt die Farbe des Bildschirms an, über dem er gerade schwebt — in der Bibliothek grünlich, im Player türkis, beim Genre rot.\n• NEU: Der Wechsel kommt mit kurzer Verzögerung und weichem Übergang, wie bei einem echten Oktopus. Seine Tentakel folgen weiter der Musik.\n• NEU: Umriss und Mund passen sich an und bleiben auf jeder Farbe sichtbar.\n• NEU: Schalter „Tarnung“ unter Vumikio Pets → Verhalten. Im Vollbild-Visualizer behält Octo seine Standardfarbe.",
+   "en": "• NEW: Octo takes on the colour of the screen he is floating over — greenish in the library, turquoise in the player, red when browsing genres.\n• NEW: The change comes with a short delay and a soft fade, like a real octopus. His tentacles keep following the music.\n• NEW: Outline and mouth adapt and stay visible on every colour.\n• NEW: A \"Camouflage\" switch under Vumikio Pets, Behaviour. In the fullscreen visualizer Octo keeps his default colour."
+  },
   {
    "versionCode": 65501,
    "versionName": "6.55.1",
@@ -126,15 +135,6 @@
    "title": "v6.53.12 — Doppeltippen trennt Tipps sauber",
    "de": "• FIX: Ein einzelner kräftiger Tipper, das Ablegen und das Aufnehmen des Handys lösen kein Doppeltippen mehr aus.\n• VERBESSERT: Ein Doppeltippen zählt auch, wenn der erste Tipper leichter ausfällt.",
    "en": "• FIX: A single hard tap, putting the phone down and picking it up no longer trigger a double tap.\n• IMPROVED: A double tap counts even when the first tap is lighter."
-  },
-  {
-   "versionCode": 65311,
-   "versionName": "6.53.11",
-   "date": "2026-09-15",
-   "critical": false,
-   "title": "v6.53.11 — Doppeltippen zuverlässig",
-   "de": "• FIX: Doppeltippen reagiert auf zwei Tipper – bisher kam oft erst der dritte an, und ein einzelner kräftiger Tipper konnte als Doppeltippen zählen.",
-   "en": "• FIX: Double tap responds to two taps – until now often only the third got through, and a single hard tap could count as a double tap."
   }
  ]
 }
