@@ -1,6 +1,15 @@
 {
- "latest": 65700,
+ "latest": 65800,
  "entries": [
+  {
+   "versionCode": 65800,
+   "versionName": "6.58.0",
+   "date": "2026-09-21",
+   "critical": false,
+   "title": "v6.58.0 — Octo blubbert",
+   "de": "• NEU: Octo spitzt ab und zu den Mund und lässt eine Kette schillernder Blasen aufsteigen — manchmal mit einer dicken zum Schluss. Sie werden beim Aufsteigen größer, schwanken und platzen am Ende.\n• NEU: Auch beim Gähnen entwischen ihm ein paar Blasen.\n• FIX: Mit allen fünf Tieren flog die Erde beim Graben viel zu schnell und war sofort wieder weg.",
+   "en": "• NEW: Now and then Octo purses his mouth and blows a string of shimmering bubbles — sometimes with a fat one at the end. They grow as they rise, wobble and pop at the top.\n• NEW: A few bubbles escape when he yawns, too.\n• FIX: With all five pets on screen, the earth from digging flew far too fast and was gone at once."
+  },
   {
    "versionCode": 65700,
    "versionName": "6.57.0",
@@ -126,15 +135,6 @@
    "title": "v6.53.14 — Prüfstand Party Mode",
    "de": "• Prüfstand: vorübergehendes Protokoll für den Party Mode – Anmeldung, Wünsche, Abstimmung, Genehmigung, Warteschlange, Wiedergabe und Sprachbefehle. Am Verhalten ändert sich nichts.",
    "en": "• Test build: temporary log for Party Mode – joining, requests, voting, approval, queue, playback and voice commands. Behaviour is unchanged."
-  },
-  {
-   "versionCode": 65313,
-   "versionName": "6.53.13",
-   "date": "2026-09-15",
-   "critical": false,
-   "title": "v6.53.13 — Gestensteuerung fertig eingestellt",
-   "de": "• Aufgeräumt: Die Prüfprotokolle der Gesten sind wieder entfernt – alle neun Gesten sind bei mittlerer Empfindlichkeit geprüft.",
-   "en": "• Cleaned up: the gesture test logs have been removed again – all nine gestures have been checked at medium sensitivity."
   }
  ]
 }
