@@ -1,6 +1,15 @@
 {
- "latest": 65600,
+ "latest": 65700,
  "entries": [
+  {
+   "versionCode": 65700,
+   "versionName": "6.57.0",
+   "date": "2026-09-21",
+   "critical": false,
+   "title": "v6.57.0 — Instinkte",
+   "de": "• NEU: Jedes Tier holt sich seine Beute selbst — der Hase hoppelt hin, das Eichhörnchen flitzt im Zickzack, der Fuchs springt quer über den Bildschirm, die Katze pirscht sich an. Die Maus erstarrt, solange der Jäger in der Luft ist.\n• NEU: Das Eichhörnchen gräbt Scheinverstecke: Erde fliegt, ein Loch bleibt eine Weile liegen.\n• NEU: Kommt ein Jäger dem Hasen zu nah, trommelt er — und das Eichhörnchen bringt sich in Sicherheit.\n• NEU: Nachts leuchten die Augen der Katze grün.\n• VERBESSERT: Unter „Nachtmodus“ steht jetzt, dass er sich nach der Uhrzeit richtet (ab 22 Uhr).",
+   "en": "• NEW: Every pet fetches its own prey — the bunny hops over, the squirrel dashes in a zigzag, the fox leaps across the screen, the cat stalks. The mouse freezes while the hunter is in the air.\n• NEW: The squirrel digs decoy stores: earth flies, a hole stays for a while.\n• NEW: When a hunter gets too close to the bunny, it thumps — and the squirrel runs for safety.\n• NEW: At night the cat's eyes glow green.\n• IMPROVED: \"Night mode\" now says that it follows the clock (from 10 pm)."
+  },
   {
    "versionCode": 65600,
    "versionName": "6.56.0",
@@ -126,15 +135,6 @@
    "title": "v6.53.13 — Gestensteuerung fertig eingestellt",
    "de": "• Aufgeräumt: Die Prüfprotokolle der Gesten sind wieder entfernt – alle neun Gesten sind bei mittlerer Empfindlichkeit geprüft.",
    "en": "• Cleaned up: the gesture test logs have been removed again – all nine gestures have been checked at medium sensitivity."
-  },
-  {
-   "versionCode": 65312,
-   "versionName": "6.53.12",
-   "date": "2026-09-15",
-   "critical": false,
-   "title": "v6.53.12 — Doppeltippen trennt Tipps sauber",
-   "de": "• FIX: Ein einzelner kräftiger Tipper, das Ablegen und das Aufnehmen des Handys lösen kein Doppeltippen mehr aus.\n• VERBESSERT: Ein Doppeltippen zählt auch, wenn der erste Tipper leichter ausfällt.",
-   "en": "• FIX: A single hard tap, putting the phone down and picking it up no longer trigger a double tap.\n• IMPROVED: A double tap counts even when the first tap is lighter."
   }
  ]
 }
