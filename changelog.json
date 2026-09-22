@@ -1,6 +1,15 @@
 {
- "latest": 65800,
+ "latest": 65900,
  "entries": [
+  {
+   "versionCode": 65900,
+   "versionName": "6.59.0",
+   "date": "2026-09-22",
+   "critical": false,
+   "title": "v6.59.0 — Erfolge erklärt",
+   "de": "• NEU: Tippe auf einen Erfolg — ein Fenster erklärt, wodurch er zustande kommt, was jede Stufe verlangt, wie viele Punkte sie bringt und wo du gerade stehst. Für alle 64 Erfolge.\n• FIX: „Genre-Tänzer“ zählt jetzt auch, wenn Octo nicht dein Haupttier ist.\n• FIX: „Energiesparer“ zählt nur noch das Einschalten des Stromsparmodus, nicht mehr das Ausschalten.",
+   "en": "• NEW: Tap an achievement — a window explains how it is earned, what each tier needs, how many points it brings and where you stand. For all 64 achievements.\n• FIX: \"Genre Dancer\" now also counts when Octo is not your main pet.\n• FIX: \"Power Saver\" now counts only switching the power-saving mode on, not off."
+  },
   {
    "versionCode": 65800,
    "versionName": "6.58.0",
@@ -126,15 +135,6 @@
    "title": "v6.53.15 — Party Mode überarbeitet",
    "de": "• FIX: Kein Absturz mehr, wenn eine Party beendet und direkt neu gestartet wird.\n• NEU: Gästewünsche kommen als nächster Titel in die laufende Wiedergabe; ohne Wünsche läuft die Musik normal weiter – auch bei geschlossenem Party-Bildschirm.\n• FIX: Abstimmen schiebt Wünsche wirklich nach vorn, ist bei ausgeschalteter Abstimmung gesperrt, und „Nach oben“ hält.\n• VERBESSERT: Laufende Einstellungen bleiben beim Wiederöffnen sichtbar; Gäste sehen „Name vergeben“ und am Ende eine Dankesseite.\n• VERBESSERT: „Beende Party“ beendet die Party, „Wie viele Gäste?“ nennt Zahl und Namen; „Zeig QR Code“ entfällt.",
    "en": "• FIX: No more crash when a party is ended and started again right away.\n• NEW: Guest requests play as the next track in the running playback; without requests the music simply continues – even with the Party Mode screen closed.\n• FIX: Voting really moves requests up, is blocked when voting is off, and \"Move to top\" sticks.\n• IMPROVED: Running settings stay visible when the screen is reopened; guests see \"name taken\" and a thank-you page at the end.\n• IMPROVED: \"End party\" ends the party, \"How many guests?\" tells the number and names; \"Show QR code\" is gone."
-  },
-  {
-   "versionCode": 65314,
-   "versionName": "6.53.14",
-   "date": "2026-09-16",
-   "critical": false,
-   "title": "v6.53.14 — Prüfstand Party Mode",
-   "de": "• Prüfstand: vorübergehendes Protokoll für den Party Mode – Anmeldung, Wünsche, Abstimmung, Genehmigung, Warteschlange, Wiedergabe und Sprachbefehle. Am Verhalten ändert sich nichts.",
-   "en": "• Test build: temporary log for Party Mode – joining, requests, voting, approval, queue, playback and voice commands. Behaviour is unchanged."
   }
  ]
 }
