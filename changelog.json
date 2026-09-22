@@ -1,6 +1,15 @@
 {
- "latest": 65900,
+ "latest": 65901,
  "entries": [
+  {
+   "versionCode": 65901,
+   "versionName": "6.59.1",
+   "date": "2026-09-22",
+   "critical": false,
+   "title": "v6.59.1 — Erfolge zählen richtig",
+   "de": "• NEU: „Dunkle Seite“ zählt jetzt die Visualizer-Themes, die drei Minuten am Stück in der Wellenform im Vollbild liefen — eigene schon beim Speichern. Stufen 10 / 20 / 30, der alte Stand beginnt bei null.\n• FIX: „Genre-Tourist“ zählt jetzt die Genres, die du gehört hast — nicht mehr die deiner ganzen Sammlung.\n• FIX: „Eco-Listener“ zählt die echte Hörzeit im Stromsparmodus, Titel für Titel — auch wenn du den Modus dauerhaft anlässt.\n• FIX: Nach dem Wiederherstellen einer Sicherung wurden die Punkte aller Erfolge ein zweites Mal gutgeschrieben.",
+   "en": "• NEW: \"Dark Side\" now counts the visualizer themes that ran for three minutes at a stretch in the fullscreen waveform — your own ones as soon as you save them. Tiers 10 / 20 / 30; the old count starts again at zero.\n• FIX: \"Genre Tourist\" now counts the genres you have listened to — no longer those of your whole collection.\n• FIX: \"Eco Listener\" counts the real listening time in the power-saving mode, song by song — even if you leave the mode on for good.\n• FIX: After restoring a backup, the points of every achievement were credited a second time."
+  },
   {
    "versionCode": 65900,
    "versionName": "6.59.0",
@@ -126,15 +135,6 @@
    "title": "v6.53.16 — Party Mode fertig geprüft",
    "de": "• Aufgeräumt: Das Prüfprotokoll des Party Mode ist wieder entfernt.\n• Handbuch: Kapitel Party Mode überarbeitet und neu vertont.",
    "en": "• Cleanup: The Party Mode test log has been removed again.\n• Manual: Party Mode chapter revised and re-recorded."
-  },
-  {
-   "versionCode": 65315,
-   "versionName": "6.53.15",
-   "date": "2026-09-16",
-   "critical": false,
-   "title": "v6.53.15 — Party Mode überarbeitet",
-   "de": "• FIX: Kein Absturz mehr, wenn eine Party beendet und direkt neu gestartet wird.\n• NEU: Gästewünsche kommen als nächster Titel in die laufende Wiedergabe; ohne Wünsche läuft die Musik normal weiter – auch bei geschlossenem Party-Bildschirm.\n• FIX: Abstimmen schiebt Wünsche wirklich nach vorn, ist bei ausgeschalteter Abstimmung gesperrt, und „Nach oben“ hält.\n• VERBESSERT: Laufende Einstellungen bleiben beim Wiederöffnen sichtbar; Gäste sehen „Name vergeben“ und am Ende eine Dankesseite.\n• VERBESSERT: „Beende Party“ beendet die Party, „Wie viele Gäste?“ nennt Zahl und Namen; „Zeig QR Code“ entfällt.",
-   "en": "• FIX: No more crash when a party is ended and started again right away.\n• NEW: Guest requests play as the next track in the running playback; without requests the music simply continues – even with the Party Mode screen closed.\n• FIX: Voting really moves requests up, is blocked when voting is off, and \"Move to top\" sticks.\n• IMPROVED: Running settings stay visible when the screen is reopened; guests see \"name taken\" and a thank-you page at the end.\n• IMPROVED: \"End party\" ends the party, \"How many guests?\" tells the number and names; \"Show QR code\" is gone."
   }
  ]
 }
