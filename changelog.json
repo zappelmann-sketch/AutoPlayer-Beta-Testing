@@ -1,6 +1,15 @@
 {
- "latest": 65901,
+ "latest": 66000,
  "entries": [
+  {
+   "versionCode": 66000,
+   "versionName": "6.60.0",
+   "date": "2026-09-23",
+   "critical": false,
+   "title": "v6.60.0 — Tag-Editor überarbeitet",
+   "de": "• FIX: „Öffne Tag-Editor“ per Sprache tat nichts – jetzt öffnet der Befehl den Titel, den du markiert hast, sonst den laufenden.\n• FIX: Tags lassen sich jetzt auch in FLAC, M4A, OGG, WMA und WAV speichern, nicht nur in MP3. Opus und AAC können keine Tags – das sagt die App jetzt auch.\n• FIX: Nach dem Speichern zeigt die Bibliothek sofort den neuen Titel, und im Genre-Feld bleibt die Tastatur offen.\n• FIX: Ausgeblendete Titel verschwinden jetzt überall – auch aus Alben, Interpreten, Genres und Android Auto, nicht nur aus der Titelliste.\n• FIX: Beim Löschen eines Titels bleiben keine Reste mehr zurück; eine Genre-Kachel zählte dadurch Titel mit, die es nicht mehr gab.",
+   "en": "• FIX: \"Open tag editor\" did nothing when spoken – it now opens the song you marked, or the one playing.\n• FIX: Tags can now be saved in FLAC, M4A, OGG, WMA and WAV as well, not only in MP3. Opus and AAC cannot hold tags – the app says so now.\n• FIX: After saving, the library shows the new title right away, and the keyboard stays up in the genre field.\n• FIX: Hidden songs now stay hidden everywhere – in albums, artists, genres and Android Auto too, not just in the song list.\n• FIX: Deleting a song no longer leaves anything behind; a genre tile used to count songs that were gone."
+  },
   {
    "versionCode": 65901,
    "versionName": "6.59.1",
@@ -126,15 +135,6 @@
    "title": "v6.53.17 — Music Wrapped rechnet mit allen Titeln",
    "de": "• FIX: Künstler, Alben, Genres, Überraschungsfakten und Durchschnittstempo zählen jetzt alle gehörten Titel, nicht nur die 50 meistgespielten.\n• FIX: Die Hörserie zählt Kalendertage nach Ortszeit und läuft weiter, solange gestern gehört wurde.\n• FIX: Titel, die nicht mehr in der Bibliothek sind, erscheinen nicht mehr als „Unbekannt“ in den Bestenlisten; ein Hinweis nennt ihre Wiedergaben.\n• VERBESSERT: Top Songs nach Wiedergaben; lesbare Persönlichkeit und Poster; Zurück schließt nur die Bildschirmfolge; „Öffne Musik-Rückblick“ als Sprachbefehl.\n• Prüfstand: vorübergehendes Protokoll für Music Wrapped.",
    "en": "• FIX: Artists, albums, genres, fun facts and average tempo now count every song played, not just the 50 most played.\n• FIX: The listening streak counts local calendar days and keeps running as long as you listened yesterday.\n• FIX: Songs no longer in the library no longer show up as “Unknown” in the rankings; a note lists their plays.\n• IMPROVED: Top songs by plays; readable personality and poster; Back closes only the slideshow; “Open music recap” as a voice command.\n• Test build: temporary log for Music Wrapped."
-  },
-  {
-   "versionCode": 65316,
-   "versionName": "6.53.16",
-   "date": "2026-09-17",
-   "critical": false,
-   "title": "v6.53.16 — Party Mode fertig geprüft",
-   "de": "• Aufgeräumt: Das Prüfprotokoll des Party Mode ist wieder entfernt.\n• Handbuch: Kapitel Party Mode überarbeitet und neu vertont.",
-   "en": "• Cleanup: The Party Mode test log has been removed again.\n• Manual: Party Mode chapter revised and re-recorded."
   }
  ]
 }
