@@ -1,6 +1,15 @@
 {
- "latest": 66000,
+ "latest": 66001,
  "entries": [
+  {
+   "versionCode": 66001,
+   "versionName": "6.60.1",
+   "date": "2026-09-23",
+   "critical": false,
+   "title": "v6.60.1 — Ordner-Reiter",
+   "de": "• FIX: Blendest du einen Ordner aus, waren seine Unterordner zwar mitgefiltert, standen aber unmarkiert in der Liste. Jetzt zeigt die Liste, welcher Ordner sie ausblendet.",
+   "en": "• FIX: Hiding a folder also hid everything below it, but those subfolders still looked visible in the list. Now the list names the folder they are hidden by."
+  },
   {
    "versionCode": 66000,
    "versionName": "6.60.0",
@@ -126,15 +135,6 @@
    "title": "v6.53.18 — Music Wrapped fertig geprüft",
    "de": "• FIX: Aktivitäts-Karte der Erfolge und tägliche Serie zählen Kalendertage nach Ortszeit.\n• Aufgeräumt: Das Prüfprotokoll von Music Wrapped ist wieder entfernt.\n• Handbuch: Kapitel Music Wrapped überarbeitet und neu vertont.",
    "en": "• FIX: The achievements activity map and the daily streak count local calendar days.\n• Cleanup: The Music Wrapped test log has been removed again.\n• Manual: Music Wrapped chapter revised and re-recorded."
-  },
-  {
-   "versionCode": 65317,
-   "versionName": "6.53.17",
-   "date": "2026-09-17",
-   "critical": false,
-   "title": "v6.53.17 — Music Wrapped rechnet mit allen Titeln",
-   "de": "• FIX: Künstler, Alben, Genres, Überraschungsfakten und Durchschnittstempo zählen jetzt alle gehörten Titel, nicht nur die 50 meistgespielten.\n• FIX: Die Hörserie zählt Kalendertage nach Ortszeit und läuft weiter, solange gestern gehört wurde.\n• FIX: Titel, die nicht mehr in der Bibliothek sind, erscheinen nicht mehr als „Unbekannt“ in den Bestenlisten; ein Hinweis nennt ihre Wiedergaben.\n• VERBESSERT: Top Songs nach Wiedergaben; lesbare Persönlichkeit und Poster; Zurück schließt nur die Bildschirmfolge; „Öffne Musik-Rückblick“ als Sprachbefehl.\n• Prüfstand: vorübergehendes Protokoll für Music Wrapped.",
-   "en": "• FIX: Artists, albums, genres, fun facts and average tempo now count every song played, not just the 50 most played.\n• FIX: The listening streak counts local calendar days and keeps running as long as you listened yesterday.\n• FIX: Songs no longer in the library no longer show up as “Unknown” in the rankings; a note lists their plays.\n• IMPROVED: Top songs by plays; readable personality and poster; Back closes only the slideshow; “Open music recap” as a voice command.\n• Test build: temporary log for Music Wrapped."
   }
  ]
 }
