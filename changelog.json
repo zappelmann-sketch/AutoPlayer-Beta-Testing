@@ -1,6 +1,15 @@
 {
- "latest": 66100,
+ "latest": 66101,
  "entries": [
+  {
+   "versionCode": 66101,
+   "versionName": "6.61.1",
+   "date": "2026-09-23",
+   "critical": false,
+   "title": "v6.61.1 — Klingelton-Wechsler",
+   "de": "• FIX: Kopien für Klingeltöne tauchten als zweiter Titel in der Bibliothek auf – auch in Zufallswiedergabe, Alben und Android Auto. Jetzt bleiben sie draußen.\n• FIX: „Öffne Klingelton“ klappt jetzt in allen 26 Sprachen, nicht nur in fünf.\n• FIX: Scheitert das Setzen eines Tons, steht der Grund jetzt in deiner Sprache statt auf Deutsch.\n• FIX: Nach „Öffnen mit AutoPlayer“ für eine Datei außerhalb der Bibliothek hieß es bei jedem Start fälschlich, die Medienliste lasse sich nicht lesen. Solche Dateien zeigen jetzt auch ihren echten Titel statt einer Zahl.",
+   "en": "• FIX: Ringtone copies showed up as a second song in the library – in shuffle, albums and Android Auto too. They now stay out.\n• FIX: \"Open ringtone\" now works in all 26 languages, not just five.\n• FIX: If setting a tone fails, the reason now shows in your language instead of German.\n• FIX: After \"Open with AutoPlayer\" on a file outside the library, every start wrongly said the media list could not be read. Such files now also show their real title instead of a number."
+  },
   {
    "versionCode": 66100,
    "versionName": "6.61.0",
@@ -126,15 +135,6 @@
    "title": "v6.53.22 — Erfolge und Level repariert",
    "de": "• FIX: 22 von 64 Erfolgen konnten sich nie bewegen – Stimmung, Party, Haptik, Design, Loops, Wellenform, Karaoke und Batteriemodus zählen jetzt wirklich.\n• NEU: Freigeschaltete Erfolge und Levelaufstiege melden sich mit einer kurzen Einblendung.\n• FIX: Der Fortschritt geht beim Neustart nicht mehr verloren und wandert in die Sicherung mit.\n• FIX: Der XP-Balken zeigt den Fortschritt im laufenden Level statt den Gesamtstand.\n• VERBESSERT: Tägliche Serie bringt Punkte, Frostschutz wächst alle 30 Tage nach.",
    "en": "• FIX: 22 of 64 achievements could never move – mood, party, haptics, themes, loops, waveform, karaoke and battery mode now actually count.\n• NEW: Unlocked achievements and level-ups announce themselves with a short notice.\n• FIX: Progress survives a restart and is included in the backup.\n• FIX: The XP bar shows progress within the current level instead of the running total.\n• IMPROVED: The daily streak grants XP, and a freeze grows back every 30 days."
-  },
-  {
-   "versionCode": 65319,
-   "versionName": "6.53.19",
-   "date": "2026-09-17",
-   "critical": false,
-   "title": "v6.53.19 — Hörverlauf löschen",
-   "de": "• NEU: Der Hörverlauf lässt sich jetzt direkt im Musik-Rückblick löschen – über die drei Punkte oben rechts.\n• NEU: Vor dem Löschen legt die App auf Wunsch eine Sicherung an, aus der sich der Verlauf zurückholen lässt.\n• NEU: Zwei Nachfragen schützen vor dem versehentlichen Löschen.",
-   "en": "• NEW: You can now delete your listening history right in Music Wrapped – via the three dots at the top right.\n• NEW: On request the app writes a backup first, so the history can be restored.\n• NEW: Two confirmations guard against deleting it by accident."
   }
  ]
 }
