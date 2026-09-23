@@ -1,6 +1,15 @@
 {
- "latest": 66001,
+ "latest": 66100,
  "entries": [
+  {
+   "versionCode": 66100,
+   "versionName": "6.61.0",
+   "date": "2026-09-23",
+   "critical": false,
+   "title": "v6.61.0 — Track-Cutter und Crossfade",
+   "de": "• FIX: Der Track-Cutter schneidet jetzt jedes Format richtig – MP3 (auch mit variabler Bitrate), FLAC, WAV, M4A/AAC und Opus verlustfrei, OGG wird als WAV gespeichert. Titel, Künstler und Album bleiben erhalten.\n• FIX: „Vorhören“ spielt den gewählten Bereich und hält an seinem Ende an. Der Anfangsregler schließt den Bildschirm nicht mehr, geschnitten wird immer der Titel, der beim Öffnen lief, und „Öffne Track-Cutter“ klappt in allen 26 Sprachen.\n• NEU: Der Klingelton-Wechsler hat ein Suchfeld und zeigt unter „Schnitte“ die Ausschnitte aus dem Track-Cutter. In der Bibliothek tauchen die Schnitte nicht mehr auf.\n• FIX: Wer denselben Titel als Klingelton und danach als Weckton setzte, verlor den Klingelton wieder. Außerdem behalten Klingeltöne jetzt ihr Dateiformat, und ihre Namen bleiben in jeder Schrift lesbar.\n• FIX: Mit Crossfade gingen beim Titelwechsel Shuffle, Tempo und Tonhöhe verloren, und ReplayGain sprang bei jeder Überblendung – alle drei bleiben jetzt erhalten.",
+   "en": "• FIX: The Track Cutter now cuts every format properly – MP3 (variable bitrate too), FLAC, WAV, M4A/AAC and Opus without loss, OGG is saved as WAV. Title, artist and album are kept.\n• FIX: \"Preview\" plays the chosen range and stops at its end. The start handle no longer closes the screen, the cut always comes from the song that was playing when you opened it, and \"Open Track Cutter\" works in all 26 languages.\n• NEW: The Ringtone Changer has a search field and lists the Track Cutter's pieces under \"Cuts\". The cuts no longer show up in the library.\n• FIX: Setting the same song as ringtone and then as alarm lost the ringtone again. Ringtones also keep their file format now, and their names stay readable in every script.\n• FIX: With crossfade, shuffle, tempo and pitch got lost at every song change, and ReplayGain jumped at every fade – all three now carry through."
+  },
   {
    "versionCode": 66001,
    "versionName": "6.60.1",
@@ -126,15 +135,6 @@
    "title": "v6.53.19 — Hörverlauf löschen",
    "de": "• NEU: Der Hörverlauf lässt sich jetzt direkt im Musik-Rückblick löschen – über die drei Punkte oben rechts.\n• NEU: Vor dem Löschen legt die App auf Wunsch eine Sicherung an, aus der sich der Verlauf zurückholen lässt.\n• NEU: Zwei Nachfragen schützen vor dem versehentlichen Löschen.",
    "en": "• NEW: You can now delete your listening history right in Music Wrapped – via the three dots at the top right.\n• NEW: On request the app writes a backup first, so the history can be restored.\n• NEW: Two confirmations guard against deleting it by accident."
-  },
-  {
-   "versionCode": 65318,
-   "versionName": "6.53.18",
-   "date": "2026-09-17",
-   "critical": false,
-   "title": "v6.53.18 — Music Wrapped fertig geprüft",
-   "de": "• FIX: Aktivitäts-Karte der Erfolge und tägliche Serie zählen Kalendertage nach Ortszeit.\n• Aufgeräumt: Das Prüfprotokoll von Music Wrapped ist wieder entfernt.\n• Handbuch: Kapitel Music Wrapped überarbeitet und neu vertont.",
-   "en": "• FIX: The achievements activity map and the daily streak count local calendar days.\n• Cleanup: The Music Wrapped test log has been removed again.\n• Manual: Music Wrapped chapter revised and re-recorded."
   }
  ]
 }
