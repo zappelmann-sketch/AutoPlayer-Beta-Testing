@@ -110,7 +110,7 @@ AutoPlayer entstand aus einem echten Bedarf: Ein modernes Fahrzeug mit 10,1"-And
 │ 📱 Privacy-Nutzer │ Lokal-first: Keine Daten verlassen das       │
 │                   │ Gerät (außer opt-in Crash Reports)           │
 ├───────────────────┼─────────────────────────────────────────────┤
-│ 🎮 Power-User     │ Tamagotchi-Maskottchen, Party-Modus,         │
+│ 🎮 Power-User     │ Vumikio Pets, Party-Modus,         │
 │                   │ Genome Visualizer, AI-Music Bibliothek        │
 ├───────────────────┼─────────────────────────────────────────────┤
 │ 🌍 INTERNATIONAL  │ 26 Sprachen von Arabisch bis Vietnamesisch    │
@@ -231,7 +231,7 @@ März 2026
 
 April 2026
   ├─ 01.04  ✅ v3.12: Draggable Mic FAB, Sleep Fade Persistent
-  ├─ 11.04  ✅ v4.0: Tamagotchi-Maskottchen (5 Pets, 62 Achievements)
+  ├─ 11.04  ✅ v4.0: Vumikio Pets (5 Pets, 62 Achievements)
   ├─ 13.04  ✅ v4.1: Haptic Feedback App-weit (522+ Aufrufe, 83 Dateien)
   ├─ 13.04  ✅ v4.2: Party-Modus v2 + Genome Visualizer
   ├─ 15.04  ✅ v3.15: Genre-Browse (F-106, Room DB v23)
@@ -404,7 +404,7 @@ PAD MODE ───────────────────────�
 - **BPM-Anzeige** auf allen 72 Screens
 - Glass-Dark-Neon Design durchgehend
 
-### 🐾 Tamagotchi-Maskottchen (F-111)
+### 🐾 Vumikio Pets (F-111)
 
 ```
 5 Haustiere:
@@ -545,7 +545,7 @@ Kategorien im Testplan:
 ├── Sharing & Export
 ├── Passenger Mode
 ├── Party Mode
-├── Tamagotchi Maskottchen
+├── Vumikio Pets
 ├── Tag Editor & Tag Rescue
 ├── Gestensteuerung
 ├── Lokalisierung
@@ -624,7 +624,7 @@ AutoPlayer was born out of a real need: a modern vehicle with a 10.1" Android Au
 │ 📱 PRIVACY USERS  │ Local-first: no data leaves the device       │
 │                   │ (except opt-in crash reports)                │
 ├───────────────────┼─────────────────────────────────────────────┤
-│ 🎮 POWER USERS    │ Tamagotchi mascot, Party Mode,               │
+│ 🎮 POWER USERS    │ Vumikio Pets, Party Mode,               │
 │                   │ Genome Visualizer, AI Music Library          │
 ├───────────────────┼─────────────────────────────────────────────┤
 │ 🌍 INTERNATIONAL  │ 26 languages from Arabic to Vietnamese       │
@@ -710,7 +710,7 @@ March 2026
 
 April 2026
   ├─ 01.04  ✅ v3.12: Draggable Mic FAB, sleep fade persistent
-  ├─ 11.04  ✅ v4.0: Tamagotchi mascot (5 pets, 62 achievements)
+  ├─ 11.04  ✅ v4.0: Vumikio Pets (5 pets, 62 achievements)
   ├─ 13.04  ✅ v4.1: Haptic feedback app-wide (522+ calls, 83 files)
   ├─ 13.04  ✅ v4.2: Party mode v2 + genome visualizer
   ├─ 15.04  ✅ v3.15: Genre Browse (F-106, Room DB v23)
@@ -780,7 +780,7 @@ Arpeggiator  — 16-step grid · BPM sync · Swing · Hold
 Pad Mode     — 16 pads · 16 tracks · 1:1 mapping · Recording
 ```
 
-### 🐾 Tamagotchi Mascot (F-111)
+### 🐾 Vumikio Pets (F-111)
 
 ```
 5 pets: 🐙 Octo · 🐱 Melo · 🐰 Benny · 🐿️ Chip · 🦊 Foxy
