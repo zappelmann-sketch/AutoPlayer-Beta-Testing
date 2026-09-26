@@ -1,6 +1,15 @@
 {
- "latest": 66202,
+ "latest": 66300,
  "entries": [
+  {
+   "versionCode": 66300,
+   "versionName": "6.63.0",
+   "date": "2026-09-26",
+   "critical": false,
+   "title": "v6.63.0 — Neues Startbildschirm-Widget",
+   "de": "• NEU: Das Widget nimmt die Farben des Covers an – Farbverlauf, Glas und Neon-Rahmen; ohne Cover im Neon-Glas der App.\n• NEU: Ab zwei Zeilen mit Zeitleiste (antippen springt dorthin), Herz für Favoriten, Mikrofon für die Sprachsteuerung, „Als Nächstes“ und einem Öffnen-Knopf.\n• NEU: Ist vom letzten Hören nichts mehr da, spielt „Wiedergabe“ im Widget, an der Medientaste oder per Bluetooth alle Songs gemischt.\n• FIX: Das Widget zeigte nie das Cover und nach einem Neustart „AutoPlayer“ statt des letzten Titels.\n• FIX: Fortsetzen nach einem Neustart dauerte bei großen Sammlungen sehr lange – jetzt in einem Zug.",
+   "en": "• NEW: The widget takes on the cover's colours – gradient, glass and neon frame; without a cover in the app's neon glass look.\n• NEW: From two rows with a timeline (tap to jump), a heart for favourites, a microphone for voice control, \"Up next\" and an Open button.\n• NEW: If nothing is left from your last session, \"Play\" in the widget, on the media button or via Bluetooth plays all songs shuffled.\n• FIX: The widget never showed the cover, and after a restart it showed \"AutoPlayer\" instead of the last song.\n• FIX: Resuming after a restart took very long with large libraries – now in one go."
+  },
   {
    "versionCode": 66202,
    "versionName": "6.62.2",
@@ -126,15 +135,6 @@
    "title": "v6.55.0 — Lebendigkeit",
    "de": "• NEU: Die Vumikio Pets nehmen einander wahr — sie schauen dem zu, der spricht, dem Sieger einer Jagd und dem Konfetti, und hüpfen einmal mit.\n• NEU: Jedes Tier hat eigene Eigenheiten: die Katze streckt sich, der Hase buddelt, der Fuchs schüttelt den Kopf. Gähnen steckt an.\n• NEU: Sie weichen einander aus, halten zeitweise zusammen und schlafen als Haufen ein. Scheue Tiere weichen deinem Finger aus.\n• NEU: Das Genre bestimmt das Bewegungstempo, Müdigkeit verlangsamt. Beim Titelwechsel schauen alle zum Player.\n• NEU: Regler „Lebendigkeit\" (1–10) unter Vumikio Pets → Verhalten bestimmt, wie oft das alles passiert.",
    "en": "• NEW: The Vumikio Pets notice each other — they watch whoever is talking, the winner of a hunt and the confetti, and hop along once.\n• NEW: Every pet has its own habits: the cat stretches, the bunny digs, the fox shakes its head. Yawning is catching.\n• NEW: They give way to each other, keep company for a while and fall asleep in a heap. Shy pets back away from your finger.\n• NEW: The genre sets the pace of their movement, tiredness slows it. On a song change every head turns to the player.\n• NEW: A \"Liveliness\" slider (1-10) under Vumikio Pets, Behaviour decides how often all of this happens."
-  },
-  {
-   "versionCode": 65400,
-   "versionName": "6.54.0",
-   "date": "2026-09-20",
-   "critical": false,
-   "title": "v6.54.0 — Blickkontakt",
-   "de": "• NEU: Die Vumikio Pets schauen hin — die Augen folgen Fisch, Maus, Nuss und Löwenzahn, auch wenn die Beute nur vorbeizieht.\n• NEU: Solange dein Finger den Bildschirm berührt, schaut dein Tier dir nach — beim Schalten, Ziehen und Blättern.\n• NEU: Der Kopf neigt sich dezent mit. Schlafende Tiere schauen nicht.\n• NEU: Abschaltbar unter Vumikio Pets → Verhalten → Blickkontakt.",
-   "en": "• NEW: The Vumikio Pets look at things — their eyes follow fish, mouse, nut and dandelion, even prey that just drifts past.\n• NEW: While your finger is on the screen, your pet watches it — flipping switches, dragging sliders, scrolling lists.\n• NEW: The head leans along, gently. Sleeping pets keep their eyes shut.\n• NEW: Can be switched off under Vumikio Pets → Behaviour → Eye contact."
   }
  ]
 }
