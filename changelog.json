@@ -1,6 +1,15 @@
 {
- "latest": 66301,
+ "latest": 66400,
  "entries": [
+  {
+   "versionCode": 66400,
+   "versionName": "6.64.0",
+   "date": "2026-09-26",
+   "critical": false,
+   "title": "v6.64.0 — Theme-Builder",
+   "de": "• NEU: Themes und Visualizer-Themes als Datei teilen und mit „Theme importieren“ wieder einlesen.\n• NEU: Ein zweiter Tipp wählt ein Theme wieder ab; eine Visualizer-Kachel setzt das Design der Vollbild-Wellenform.\n• VERBESSERT: Beide Bereiche gleich bedient – Stift, Mülleimer, langes Drücken für Duplizieren und Exportieren.\n• FIX: Eigene Themes bleiben immer lesbar; Montserrat, Nunito und Source Sans erscheinen in normaler Stärke statt hauchdünn.\n• FIX: „Öffne Theme-Builder“ wird zuverlässig erkannt und öffnet den richtigen Bildschirm.",
+   "en": "• NEW: Share themes and visualizer themes as files and read them back with \"Import theme\".\n• NEW: A second tap deselects a theme; a visualizer tile sets the design of the full-screen waveform.\n• IMPROVED: Both sections work the same – pencil, bin, long press for duplicate and export.\n• FIX: Own themes always stay readable; Montserrat, Nunito and Source Sans show in normal weight instead of hairline-thin.\n• FIX: \"Open Theme Builder\" is recognised reliably and opens the right screen."
+  },
   {
    "versionCode": 66301,
    "versionName": "6.63.1",
@@ -126,15 +135,6 @@
    "title": "v6.56.0 — Octo tarnt sich",
    "de": "• NEU: Octo nimmt die Farbe des Bildschirms an, über dem er gerade schwebt — in der Bibliothek grünlich, im Player türkis, beim Genre rot.\n• NEU: Der Wechsel kommt mit kurzer Verzögerung und weichem Übergang, wie bei einem echten Oktopus. Seine Tentakel folgen weiter der Musik.\n• NEU: Umriss und Mund passen sich an und bleiben auf jeder Farbe sichtbar.\n• NEU: Schalter „Tarnung“ unter Vumikio Pets → Verhalten. Im Vollbild-Visualizer behält Octo seine Standardfarbe.",
    "en": "• NEW: Octo takes on the colour of the screen he is floating over — greenish in the library, turquoise in the player, red when browsing genres.\n• NEW: The change comes with a short delay and a soft fade, like a real octopus. His tentacles keep following the music.\n• NEW: Outline and mouth adapt and stay visible on every colour.\n• NEW: A \"Camouflage\" switch under Vumikio Pets, Behaviour. In the fullscreen visualizer Octo keeps his default colour."
-  },
-  {
-   "versionCode": 65501,
-   "versionName": "6.55.1",
-   "date": "2026-09-21",
-   "critical": false,
-   "title": "v6.55.1 — Absturz beim Start behoben",
-   "de": "• FIX: Die App stürzte beim Start ab, wenn die Medienliste des Systems beschädigt war — danach ließ sie sich überhaupt nicht mehr öffnen. Jetzt bleibt sie offen und sagt, woran es liegt.\n• FIX: Die leere Bibliothek bat in diesem Fall um die Speicherberechtigung, obwohl die längst erteilt war. Jetzt steht dort die richtige Ursache.\n• FIX: Derselbe Schutz beim Laden eines einzelnen Titels.",
-   "en": "• FIX: The app crashed on startup when the system media list was damaged — after that it would not open at all. It now stays open and explains what is wrong.\n• FIX: The empty library asked for storage permission in that case, although it had long been granted. It now states the real cause.\n• FIX: Same protection when loading a single track."
   }
  ]
 }
