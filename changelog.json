@@ -1,6 +1,15 @@
 {
- "latest": 66300,
+ "latest": 66301,
  "entries": [
+  {
+   "versionCode": 66301,
+   "versionName": "6.63.1",
+   "date": "2026-09-26",
+   "critical": false,
+   "title": "v6.63.1 — Kurzbefehle am App-Symbol",
+   "de": "• FIX: „Fortsetzen“ am App-Symbol setzt jetzt auch bei geschlossener App den zuletzt gehörten Titel fort, statt die Sammlung von vorn zu beginnen.\n• FIX: „Favoriten öffnen“ zeigt wieder den Favoriten-Reiter – beim Start der App und von jedem Bildschirm aus.\n• VERBESSERT: Die Kurzbefehle haben passende Symbole – Wiedergabe, gekreuzte Pfeile fürs Mischen, ein Herz für die Favoriten.",
+   "en": "• FIX: \"Resume\" on the app icon now picks up the last song even when the app was closed, instead of starting the library from the top.\n• FIX: \"Open favorites\" shows the favorites tab again – when the app starts and from any screen.\n• IMPROVED: The shortcuts have fitting icons – play, crossed arrows for shuffle, a heart for favourites."
+  },
   {
    "versionCode": 66300,
    "versionName": "6.63.0",
@@ -126,15 +135,6 @@
    "title": "v6.55.1 — Absturz beim Start behoben",
    "de": "• FIX: Die App stürzte beim Start ab, wenn die Medienliste des Systems beschädigt war — danach ließ sie sich überhaupt nicht mehr öffnen. Jetzt bleibt sie offen und sagt, woran es liegt.\n• FIX: Die leere Bibliothek bat in diesem Fall um die Speicherberechtigung, obwohl die längst erteilt war. Jetzt steht dort die richtige Ursache.\n• FIX: Derselbe Schutz beim Laden eines einzelnen Titels.",
    "en": "• FIX: The app crashed on startup when the system media list was damaged — after that it would not open at all. It now stays open and explains what is wrong.\n• FIX: The empty library asked for storage permission in that case, although it had long been granted. It now states the real cause.\n• FIX: Same protection when loading a single track."
-  },
-  {
-   "versionCode": 65500,
-   "versionName": "6.55.0",
-   "date": "2026-09-20",
-   "critical": false,
-   "title": "v6.55.0 — Lebendigkeit",
-   "de": "• NEU: Die Vumikio Pets nehmen einander wahr — sie schauen dem zu, der spricht, dem Sieger einer Jagd und dem Konfetti, und hüpfen einmal mit.\n• NEU: Jedes Tier hat eigene Eigenheiten: die Katze streckt sich, der Hase buddelt, der Fuchs schüttelt den Kopf. Gähnen steckt an.\n• NEU: Sie weichen einander aus, halten zeitweise zusammen und schlafen als Haufen ein. Scheue Tiere weichen deinem Finger aus.\n• NEU: Das Genre bestimmt das Bewegungstempo, Müdigkeit verlangsamt. Beim Titelwechsel schauen alle zum Player.\n• NEU: Regler „Lebendigkeit\" (1–10) unter Vumikio Pets → Verhalten bestimmt, wie oft das alles passiert.",
-   "en": "• NEW: The Vumikio Pets notice each other — they watch whoever is talking, the winner of a hunt and the confetti, and hop along once.\n• NEW: Every pet has its own habits: the cat stretches, the bunny digs, the fox shakes its head. Yawning is catching.\n• NEW: They give way to each other, keep company for a while and fall asleep in a heap. Shy pets back away from your finger.\n• NEW: The genre sets the pace of their movement, tiredness slows it. On a song change every head turns to the player.\n• NEW: A \"Liveliness\" slider (1-10) under Vumikio Pets, Behaviour decides how often all of this happens."
   }
  ]
 }
