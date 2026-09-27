@@ -1,6 +1,15 @@
 {
- "latest": 66500,
+ "latest": 66501,
  "entries": [
+  {
+   "versionCode": 66501,
+   "versionName": "6.65.1",
+   "date": "2026-09-27",
+   "critical": false,
+   "title": "v6.65.1 — Sprachbefehle",
+   "de": "• FIX: „Abspielen“ und „Weiter“ halten laufende Musik nicht mehr an; „Lautstärke reduzieren“ und der Gehörschutz senken die Lautstärke, statt sie voll aufzudrehen.\n• FIX: „Stopp Vorlesen“ und „Aufhören“ beenden das Vorlesen; „Marker löschen“ löscht den Loop-Mixer-Marker statt der A-B-Schleife; „Zufall aus“ schaltet den Zufall wirklich aus; Stimmungen und Vibrationsstufen erscheinen mit ihrem deutschen Namen.\n• FIX: „Spiele …“ mit einem Funktionsnamen im Titel (etwa „Herzschlag“) spielt den Titel, statt einen Bildschirm zu öffnen; eine Playlist mit Stimmungswort im Namen startet per Sprache.\n• FIX: Alle Beispiele der Sprachbefehl-Liste funktionieren, etwa „Vorspulen 30“, „Kapitel überspringen“ und „Playlist [Beschreibung]“. Lautstärke, Smart Playlists und Vorlesen sind dort nicht mehr als Android-Auto-fähig markiert.\n• VERBESSERT: Fragen wie „Mein Level“, „Welche Stimmung?“ oder „Hörbudget?“ beantwortet die App auch mit Stimme. „Zeige meine Playlists“ öffnet die Übersicht. Smart Reorder gehört wie geplant zu Pro – jetzt auch in der Warteschlange.",
+   "en": "• FIX: “Play” and “Continue” no longer pause music that is already playing; “Reduce volume” and hearing protection lower the volume instead of turning it all the way up.\n• FIX: “Stop reading” ends the read-aloud; “Delete marker” deletes the Loop Mixer marker instead of the A-B loop; “Shuffle off” in German really switches shuffle off; moods and vibration levels appear with their translated names.\n• FIX: “Play …” with a feature name in the title (such as “Heartbeat”) plays the song instead of opening a screen; a playlist with a mood word in its name starts by voice.\n• FIX: All examples on the voice command list work, such as “Skip 30”, “Skip chapter” and “Playlist [description]”. Volume, Smart Playlists and Read Aloud are no longer marked as working in Android Auto.\n• IMPROVED: Questions such as “My level”, “Which mood?” or “Hearing budget?” are also answered aloud. “Show my playlists” opens the overview. Smart Reorder is part of Pro as planned – now in the queue as well."
+  },
   {
    "versionCode": 66500,
    "versionName": "6.65.0",
@@ -126,15 +135,6 @@
    "title": "v6.58.0 — Octo blubbert",
    "de": "• NEU: Octo spitzt ab und zu den Mund und lässt eine Kette schillernder Blasen aufsteigen — manchmal mit einer dicken zum Schluss. Sie werden beim Aufsteigen größer, schwanken und platzen am Ende.\n• NEU: Auch beim Gähnen entwischen ihm ein paar Blasen.\n• FIX: Mit allen fünf Tieren flog die Erde beim Graben viel zu schnell und war sofort wieder weg.",
    "en": "• NEW: Now and then Octo purses his mouth and blows a string of shimmering bubbles — sometimes with a fat one at the end. They grow as they rise, wobble and pop at the top.\n• NEW: A few bubbles escape when he yawns, too.\n• FIX: With all five pets on screen, the earth from digging flew far too fast and was gone at once."
-  },
-  {
-   "versionCode": 65700,
-   "versionName": "6.57.0",
-   "date": "2026-09-21",
-   "critical": false,
-   "title": "v6.57.0 — Instinkte",
-   "de": "• NEU: Jedes Tier holt sich seine Beute selbst — der Hase hoppelt hin, das Eichhörnchen flitzt im Zickzack, der Fuchs springt quer über den Bildschirm, die Katze pirscht sich an. Die Maus erstarrt, solange der Jäger in der Luft ist.\n• NEU: Das Eichhörnchen gräbt Scheinverstecke: Erde fliegt, ein Loch bleibt eine Weile liegen.\n• NEU: Kommt ein Jäger dem Hasen zu nah, trommelt er — und das Eichhörnchen bringt sich in Sicherheit.\n• NEU: Nachts leuchten die Augen der Katze grün.\n• VERBESSERT: Unter „Nachtmodus“ steht jetzt, dass er sich nach der Uhrzeit richtet (ab 22 Uhr).",
-   "en": "• NEW: Every pet fetches its own prey — the bunny hops over, the squirrel dashes in a zigzag, the fox leaps across the screen, the cat stalks. The mouse freezes while the hunter is in the air.\n• NEW: The squirrel digs decoy stores: earth flies, a hole stays for a while.\n• NEW: When a hunter gets too close to the bunny, it thumps — and the squirrel runs for safety.\n• NEW: At night the cat's eyes glow green.\n• IMPROVED: \"Night mode\" now says that it follows the clock (from 10 pm)."
   }
  ]
 }
