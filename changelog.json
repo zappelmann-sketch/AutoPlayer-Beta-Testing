@@ -1,6 +1,15 @@
 {
- "latest": 66400,
+ "latest": 66500,
  "entries": [
+  {
+   "versionCode": 66500,
+   "versionName": "6.65.0",
+   "date": "2026-09-26",
+   "critical": false,
+   "title": "v6.65.0 — Batterie-Modus",
+   "de": "• NEU: Der Batterie-Modus misst auf deinem Handy, was es beim Musikhören verbraucht – je Modus, mit Akkukapazität und Restspielzeit. Nichts mehr geschätzt.\n• NEU: Die Schwelle für den Batteriesparmodus kann aus diesem Verbrauch berechnet werden – passend zu Akku und Handy.\n• NEU: Schaltest du im Sparmodus eine ruhende Funktion ein, fragt die App einmal nach – „Trotzdem nutzen“ lässt nur diese laufen.\n• VERBESSERT: Der Sparmodus pausiert nur, was wirklich Strom braucht, und bringt alles unverändert zurück; nur noch eine Benachrichtigung an der Schwelle.\n• FIX: Der Sparmodus schaltet Hall, Gesangs-Isolator, Beat-Match und Tempo nicht mehr dauerhaft ab; GPS läuft ohne Kontext-Wechsel nicht mehr mit; das gespeicherte Tempo gilt nach einem Neustart sofort.",
+   "en": "• NEW: Battery Mode measures what your phone uses while playing music – per mode, with battery capacity and remaining playtime. Nothing estimated any more.\n• NEW: The battery saver threshold can be calculated from that consumption – to fit your battery and phone.\n• NEW: If you switch on a resting feature in the saver, the app asks once – “Use anyway” lets only that one run.\n• IMPROVED: The saver pauses only what really uses power and brings everything back unchanged; just one notification at the threshold.\n• FIX: The saver no longer switches hall, vocal isolator, Beat-Match and tempo off for good; GPS no longer runs without context switching; the saved tempo applies right after a restart."
+  },
   {
    "versionCode": 66400,
    "versionName": "6.64.0",
@@ -126,15 +135,6 @@
    "title": "v6.57.0 — Instinkte",
    "de": "• NEU: Jedes Tier holt sich seine Beute selbst — der Hase hoppelt hin, das Eichhörnchen flitzt im Zickzack, der Fuchs springt quer über den Bildschirm, die Katze pirscht sich an. Die Maus erstarrt, solange der Jäger in der Luft ist.\n• NEU: Das Eichhörnchen gräbt Scheinverstecke: Erde fliegt, ein Loch bleibt eine Weile liegen.\n• NEU: Kommt ein Jäger dem Hasen zu nah, trommelt er — und das Eichhörnchen bringt sich in Sicherheit.\n• NEU: Nachts leuchten die Augen der Katze grün.\n• VERBESSERT: Unter „Nachtmodus“ steht jetzt, dass er sich nach der Uhrzeit richtet (ab 22 Uhr).",
    "en": "• NEW: Every pet fetches its own prey — the bunny hops over, the squirrel dashes in a zigzag, the fox leaps across the screen, the cat stalks. The mouse freezes while the hunter is in the air.\n• NEW: The squirrel digs decoy stores: earth flies, a hole stays for a while.\n• NEW: When a hunter gets too close to the bunny, it thumps — and the squirrel runs for safety.\n• NEW: At night the cat's eyes glow green.\n• IMPROVED: \"Night mode\" now says that it follows the clock (from 10 pm)."
-  },
-  {
-   "versionCode": 65600,
-   "versionName": "6.56.0",
-   "date": "2026-09-21",
-   "critical": false,
-   "title": "v6.56.0 — Octo tarnt sich",
-   "de": "• NEU: Octo nimmt die Farbe des Bildschirms an, über dem er gerade schwebt — in der Bibliothek grünlich, im Player türkis, beim Genre rot.\n• NEU: Der Wechsel kommt mit kurzer Verzögerung und weichem Übergang, wie bei einem echten Oktopus. Seine Tentakel folgen weiter der Musik.\n• NEU: Umriss und Mund passen sich an und bleiben auf jeder Farbe sichtbar.\n• NEU: Schalter „Tarnung“ unter Vumikio Pets → Verhalten. Im Vollbild-Visualizer behält Octo seine Standardfarbe.",
-   "en": "• NEW: Octo takes on the colour of the screen he is floating over — greenish in the library, turquoise in the player, red when browsing genres.\n• NEW: The change comes with a short delay and a soft fade, like a real octopus. His tentacles keep following the music.\n• NEW: Outline and mouth adapt and stay visible on every colour.\n• NEW: A \"Camouflage\" switch under Vumikio Pets, Behaviour. In the fullscreen visualizer Octo keeps his default colour."
   }
  ]
 }
