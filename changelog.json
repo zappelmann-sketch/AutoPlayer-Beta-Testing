@@ -1,6 +1,15 @@
 {
- "latest": 66501,
+ "latest": 66600,
  "entries": [
+  {
+   "versionCode": 66600,
+   "versionName": "6.66.0",
+   "date": "2026-09-28",
+   "critical": false,
+   "title": "v6.66.0 — Sprachbefehle in 26 Sprachen",
+   "de": "• NEU: Alle Sprachbefehle funktionieren in allen 26 Sprachen der App – mit den Sätzen, die die Liste in der jeweiligen Sprache zeigt.\n• NEU: Die Sprachbefehl-Liste zeigt jetzt alle Befehle aus dem Handbuch, rund 115, in 14 Gruppen – mit Beschreibung, Android-Auto-Abzeichen und Pro-Kennzeichnung.\n• VERBESSERT: Wer in einer anderen Sprache spricht als der eingestellten, wird trotzdem verstanden.",
+   "en": "• NEW: All voice commands work in all 26 app languages – with the sentences the list shows in that language.\n• NEW: The voice command list now shows every command from the user guide, about 115, in 14 groups – with description, Android Auto badge and Pro mark.\n• IMPROVED: Speaking a language other than the one set is still understood."
+  },
   {
    "versionCode": 66501,
    "versionName": "6.65.1",
@@ -126,15 +135,6 @@
    "title": "v6.59.0 — Erfolge erklärt",
    "de": "• NEU: Tippe auf einen Erfolg — ein Fenster erklärt, wodurch er zustande kommt, was jede Stufe verlangt, wie viele Punkte sie bringt und wo du gerade stehst. Für alle 64 Erfolge.\n• FIX: „Genre-Tänzer“ zählt jetzt auch, wenn Octo nicht dein Haupttier ist.\n• FIX: „Energiesparer“ zählt nur noch das Einschalten des Stromsparmodus, nicht mehr das Ausschalten.",
    "en": "• NEW: Tap an achievement — a window explains how it is earned, what each tier needs, how many points it brings and where you stand. For all 64 achievements.\n• FIX: \"Genre Dancer\" now also counts when Octo is not your main pet.\n• FIX: \"Power Saver\" now counts only switching the power-saving mode on, not off."
-  },
-  {
-   "versionCode": 65800,
-   "versionName": "6.58.0",
-   "date": "2026-09-21",
-   "critical": false,
-   "title": "v6.58.0 — Octo blubbert",
-   "de": "• NEU: Octo spitzt ab und zu den Mund und lässt eine Kette schillernder Blasen aufsteigen — manchmal mit einer dicken zum Schluss. Sie werden beim Aufsteigen größer, schwanken und platzen am Ende.\n• NEU: Auch beim Gähnen entwischen ihm ein paar Blasen.\n• FIX: Mit allen fünf Tieren flog die Erde beim Graben viel zu schnell und war sofort wieder weg.",
-   "en": "• NEW: Now and then Octo purses his mouth and blows a string of shimmering bubbles — sometimes with a fat one at the end. They grow as they rise, wobble and pop at the top.\n• NEW: A few bubbles escape when he yawns, too.\n• FIX: With all five pets on screen, the earth from digging flew far too fast and was gone at once."
   }
  ]
 }
