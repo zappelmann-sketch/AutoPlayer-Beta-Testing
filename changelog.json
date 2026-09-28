@@ -1,6 +1,15 @@
 {
- "latest": 66600,
+ "latest": 66601,
  "entries": [
+  {
+   "versionCode": 66601,
+   "versionName": "6.66.1",
+   "date": "2026-09-28",
+   "critical": false,
+   "title": "v6.66.1 — Playlist-Auswahl zum Antippen",
+   "de": "• FIX: Klingen bei „Spiele Playlist …“ mehrere Playlists ähnlich, lässt sich die gewünschte im Auswahlfenster jetzt antippen – vorher ging der Tipp auf die Bibliothek dahinter und startete dort einen Song.\n• VERBESSERT: Am Handy bleibt die Auswahl still – keine gesprochene Abbruch-Meldung mehr.",
+   "en": "• FIX: When several playlists sound alike for “play playlist …”, you can now tap the one you want in the selection window – before, the tap went to the library behind it and started a song there.\n• IMPROVED: On the phone the selection stays silent – no spoken cancel message anymore."
+  },
   {
    "versionCode": 66600,
    "versionName": "6.66.0",
@@ -126,15 +135,6 @@
    "title": "v6.59.1 — Erfolge zählen richtig",
    "de": "• NEU: „Dunkle Seite“ zählt jetzt die Visualizer-Themes, die drei Minuten am Stück in der Wellenform im Vollbild liefen — eigene schon beim Speichern. Stufen 10 / 20 / 30, der alte Stand beginnt bei null.\n• FIX: „Genre-Tourist“ zählt jetzt die Genres, die du gehört hast — nicht mehr die deiner ganzen Sammlung.\n• FIX: „Eco-Listener“ zählt die echte Hörzeit im Stromsparmodus, Titel für Titel — auch wenn du den Modus dauerhaft anlässt.\n• FIX: Nach dem Wiederherstellen einer Sicherung wurden die Punkte aller Erfolge ein zweites Mal gutgeschrieben.",
    "en": "• NEW: \"Dark Side\" now counts the visualizer themes that ran for three minutes at a stretch in the fullscreen waveform — your own ones as soon as you save them. Tiers 10 / 20 / 30; the old count starts again at zero.\n• FIX: \"Genre Tourist\" now counts the genres you have listened to — no longer those of your whole collection.\n• FIX: \"Eco Listener\" counts the real listening time in the power-saving mode, song by song — even if you leave the mode on for good.\n• FIX: After restoring a backup, the points of every achievement were credited a second time."
-  },
-  {
-   "versionCode": 65900,
-   "versionName": "6.59.0",
-   "date": "2026-09-22",
-   "critical": false,
-   "title": "v6.59.0 — Erfolge erklärt",
-   "de": "• NEU: Tippe auf einen Erfolg — ein Fenster erklärt, wodurch er zustande kommt, was jede Stufe verlangt, wie viele Punkte sie bringt und wo du gerade stehst. Für alle 64 Erfolge.\n• FIX: „Genre-Tänzer“ zählt jetzt auch, wenn Octo nicht dein Haupttier ist.\n• FIX: „Energiesparer“ zählt nur noch das Einschalten des Stromsparmodus, nicht mehr das Ausschalten.",
-   "en": "• NEW: Tap an achievement — a window explains how it is earned, what each tier needs, how many points it brings and where you stand. For all 64 achievements.\n• FIX: \"Genre Dancer\" now also counts when Octo is not your main pet.\n• FIX: \"Power Saver\" now counts only switching the power-saving mode on, not off."
   }
  ]
 }
