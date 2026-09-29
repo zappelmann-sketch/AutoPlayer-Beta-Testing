@@ -1,6 +1,15 @@
 {
- "latest": 66601,
+ "latest": 66602,
  "entries": [
+  {
+   "versionCode": 66602,
+   "versionName": "6.66.2",
+   "date": "2026-09-29",
+   "critical": false,
+   "title": "v6.66.2 — Pets nennen das richtige Tempo",
+   "de": "• FIX: Die Vumikio Pets nennen in ihren Sprüchen die BPM des Titels, der gerade läuft – vorher konnte es die Zahl eines Titels sein, der längst vorbei war.\n• FIX: Auch Tempo-Bemerkungen, Tageszeit, Level und Streak im Spruch sind jetzt immer aktuell.\n• FIX: Wissens-Sprüche der Pets zeigen keine Lücken wie „{bühne}“ mehr – in allen 26 Sprachen.\n• FIX: In acht Sprachen sprachen einzelne Pets Teile ihrer Sprüche auf Englisch – jetzt in der eingestellten Sprache.",
+   "en": "• FIX: The Vumikio Pets now name the BPM of the song that is playing – before, it could be the number of a song that had long finished.\n• FIX: Tempo remarks, time of day, level and streak in a line are now always current too.\n• FIX: The pets' fun facts no longer show gaps like “{bühne}” – in all 26 languages.\n• FIX: In eight languages some pets said part of their lines in English – now in the language that is set."
+  },
   {
    "versionCode": 66601,
    "versionName": "6.66.1",
@@ -126,15 +135,6 @@
    "title": "v6.60.0 — Tag-Editor überarbeitet",
    "de": "• FIX: „Öffne Tag-Editor“ per Sprache tat nichts – jetzt öffnet der Befehl den Titel, den du markiert hast, sonst den laufenden.\n• FIX: Tags lassen sich jetzt auch in FLAC, M4A, OGG, WMA und WAV speichern, nicht nur in MP3. Opus und AAC können keine Tags – das sagt die App jetzt auch.\n• FIX: Nach dem Speichern zeigt die Bibliothek sofort den neuen Titel, und im Genre-Feld bleibt die Tastatur offen.\n• FIX: Ausgeblendete Titel verschwinden jetzt überall – auch aus Alben, Interpreten, Genres und Android Auto, nicht nur aus der Titelliste.\n• FIX: Beim Löschen eines Titels bleiben keine Reste mehr zurück; eine Genre-Kachel zählte dadurch Titel mit, die es nicht mehr gab.",
    "en": "• FIX: \"Open tag editor\" did nothing when spoken – it now opens the song you marked, or the one playing.\n• FIX: Tags can now be saved in FLAC, M4A, OGG, WMA and WAV as well, not only in MP3. Opus and AAC cannot hold tags – the app says so now.\n• FIX: After saving, the library shows the new title right away, and the keyboard stays up in the genre field.\n• FIX: Hidden songs now stay hidden everywhere – in albums, artists, genres and Android Auto too, not just in the song list.\n• FIX: Deleting a song no longer leaves anything behind; a genre tile used to count songs that were gone."
-  },
-  {
-   "versionCode": 65901,
-   "versionName": "6.59.1",
-   "date": "2026-09-22",
-   "critical": false,
-   "title": "v6.59.1 — Erfolge zählen richtig",
-   "de": "• NEU: „Dunkle Seite“ zählt jetzt die Visualizer-Themes, die drei Minuten am Stück in der Wellenform im Vollbild liefen — eigene schon beim Speichern. Stufen 10 / 20 / 30, der alte Stand beginnt bei null.\n• FIX: „Genre-Tourist“ zählt jetzt die Genres, die du gehört hast — nicht mehr die deiner ganzen Sammlung.\n• FIX: „Eco-Listener“ zählt die echte Hörzeit im Stromsparmodus, Titel für Titel — auch wenn du den Modus dauerhaft anlässt.\n• FIX: Nach dem Wiederherstellen einer Sicherung wurden die Punkte aller Erfolge ein zweites Mal gutgeschrieben.",
-   "en": "• NEW: \"Dark Side\" now counts the visualizer themes that ran for three minutes at a stretch in the fullscreen waveform — your own ones as soon as you save them. Tiers 10 / 20 / 30; the old count starts again at zero.\n• FIX: \"Genre Tourist\" now counts the genres you have listened to — no longer those of your whole collection.\n• FIX: \"Eco Listener\" counts the real listening time in the power-saving mode, song by song — even if you leave the mode on for good.\n• FIX: After restoring a backup, the points of every achievement were credited a second time."
   }
  ]
 }
