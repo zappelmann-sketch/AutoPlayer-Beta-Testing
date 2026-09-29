@@ -1,6 +1,15 @@
 {
- "latest": 66602,
+ "latest": 66603,
  "entries": [
+  {
+   "versionCode": 66603,
+   "versionName": "6.66.3",
+   "date": "2026-09-29",
+   "critical": false,
+   "title": "v6.66.3 — Vorlesen per Sprache",
+   "de": "• NEU: „Lese vor“ liest den Text vor, der gerade offen ist – Handbuch, Änderungsprotokoll, Datenschutz oder Nutzungsbedingungen.\n• NEU: „Lese die Nutzungsbedingungen vor“.\n• VERBESSERT: Die Vorlese-Befehle heißen „Lese … vor“ – ein kurzes „Lies“ erkennt die Spracherkennung oft nicht. „Lies“ wird weiter verstanden.\n• FIX: Im Fahrzeug liest die App keine Texte mehr vor.",
+   "en": "• NEW: “Read aloud” reads the text that is open – user guide, changelog, privacy policy or terms of use.\n• NEW: “Read terms of use”.\n• IMPROVED: The German read-aloud commands now start with “Lese” – a short “Lies” was often not recognised. “Lies” still works.\n• FIX: In the car the app no longer reads texts aloud."
+  },
   {
    "versionCode": 66602,
    "versionName": "6.66.2",
@@ -126,15 +135,6 @@
    "title": "v6.60.1 — Ordner-Reiter",
    "de": "• FIX: Blendest du einen Ordner aus, waren seine Unterordner zwar mitgefiltert, standen aber unmarkiert in der Liste. Jetzt zeigt die Liste, welcher Ordner sie ausblendet.",
    "en": "• FIX: Hiding a folder also hid everything below it, but those subfolders still looked visible in the list. Now the list names the folder they are hidden by."
-  },
-  {
-   "versionCode": 66000,
-   "versionName": "6.60.0",
-   "date": "2026-09-23",
-   "critical": false,
-   "title": "v6.60.0 — Tag-Editor überarbeitet",
-   "de": "• FIX: „Öffne Tag-Editor“ per Sprache tat nichts – jetzt öffnet der Befehl den Titel, den du markiert hast, sonst den laufenden.\n• FIX: Tags lassen sich jetzt auch in FLAC, M4A, OGG, WMA und WAV speichern, nicht nur in MP3. Opus und AAC können keine Tags – das sagt die App jetzt auch.\n• FIX: Nach dem Speichern zeigt die Bibliothek sofort den neuen Titel, und im Genre-Feld bleibt die Tastatur offen.\n• FIX: Ausgeblendete Titel verschwinden jetzt überall – auch aus Alben, Interpreten, Genres und Android Auto, nicht nur aus der Titelliste.\n• FIX: Beim Löschen eines Titels bleiben keine Reste mehr zurück; eine Genre-Kachel zählte dadurch Titel mit, die es nicht mehr gab.",
-   "en": "• FIX: \"Open tag editor\" did nothing when spoken – it now opens the song you marked, or the one playing.\n• FIX: Tags can now be saved in FLAC, M4A, OGG, WMA and WAV as well, not only in MP3. Opus and AAC cannot hold tags – the app says so now.\n• FIX: After saving, the library shows the new title right away, and the keyboard stays up in the genre field.\n• FIX: Hidden songs now stay hidden everywhere – in albums, artists, genres and Android Auto too, not just in the song list.\n• FIX: Deleting a song no longer leaves anything behind; a genre tile used to count songs that were gone."
   }
  ]
 }
