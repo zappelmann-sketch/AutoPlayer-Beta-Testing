@@ -1,6 +1,24 @@
 {
- "latest": 66603,
+ "latest": 66605,
  "entries": [
+  {
+   "versionCode": 66605,
+   "versionName": "6.66.5",
+   "date": "2026-09-30",
+   "critical": false,
+   "title": "v6.66.5 — Stimmungsnamen einheitlich",
+   "de": "• FIX: Der Beifahrer-Modus zeigt die Stimmungen mit denselben Namen wie der Rest der App – vorher stand dort zum Beispiel „Energisch“ statt „Energetisch“.\n• FIX: Stimmungsnamen in mehreren Sprachen korrigiert – falsche Wörter, vertauschte Bedeutungen und fehlende Akzente.\n• VERBESSERT: In den Einstellungen halten lange Beschreibungen jetzt Abstand zum Schalter.\n• Datenschutzerklärung ergänzt: Der Test-Bereich der Gestensteuerung nutzt das Mikrofon.",
+   "en": "• FIX: Passenger mode shows the moods with the same names as the rest of the app – before, German said “Energisch” instead of “Energetisch”, for example.\n• FIX: Mood names corrected in several languages – wrong words, swapped meanings and missing accents.\n• IMPROVED: In the settings, long descriptions now keep their distance from the switch.\n• Privacy policy updated: the gesture control test area uses the microphone."
+  },
+  {
+   "versionCode": 66604,
+   "versionName": "6.66.4",
+   "date": "2026-09-30",
+   "critical": false,
+   "title": "v6.66.4 — Musik-DNA: Pfeile und Pause",
+   "de": "• FIX: In der Musik-DNA springen die Pfeile neben dem Titel jetzt zum vorherigen und nächsten Titel – vorher ging das nur per Wisch.\n• NEU: Ein Tippen auf den Titel hält die Musik an und lässt sie weiterlaufen.",
+   "en": "• FIX: In Music DNA the arrows next to the title now skip to the previous and next song – before, only a swipe did.\n• NEW: A tap on the title pauses and resumes the music."
+  },
   {
    "versionCode": 66603,
    "versionName": "6.66.3",
@@ -117,24 +135,6 @@
    "title": "v6.61.1 — Klingelton-Wechsler",
    "de": "• FIX: Kopien für Klingeltöne tauchten als zweiter Titel in der Bibliothek auf – auch in Zufallswiedergabe, Alben und Android Auto. Jetzt bleiben sie draußen.\n• FIX: „Öffne Klingelton“ klappt jetzt in allen 26 Sprachen, nicht nur in fünf.\n• FIX: Scheitert das Setzen eines Tons, steht der Grund jetzt in deiner Sprache statt auf Deutsch.\n• FIX: Nach „Öffnen mit AutoPlayer“ für eine Datei außerhalb der Bibliothek hieß es bei jedem Start fälschlich, die Medienliste lasse sich nicht lesen. Solche Dateien zeigen jetzt auch ihren echten Titel statt einer Zahl.",
    "en": "• FIX: Ringtone copies showed up as a second song in the library – in shuffle, albums and Android Auto too. They now stay out.\n• FIX: \"Open ringtone\" now works in all 26 languages, not just five.\n• FIX: If setting a tone fails, the reason now shows in your language instead of German.\n• FIX: After \"Open with AutoPlayer\" on a file outside the library, every start wrongly said the media list could not be read. Such files now also show their real title instead of a number."
-  },
-  {
-   "versionCode": 66100,
-   "versionName": "6.61.0",
-   "date": "2026-09-23",
-   "critical": false,
-   "title": "v6.61.0 — Track-Cutter und Crossfade",
-   "de": "• FIX: Der Track-Cutter schneidet jetzt jedes Format richtig – MP3 (auch mit variabler Bitrate), FLAC, WAV, M4A/AAC und Opus verlustfrei, OGG wird als WAV gespeichert. Titel, Künstler und Album bleiben erhalten.\n• FIX: „Vorhören“ spielt den gewählten Bereich und hält an seinem Ende an. Der Anfangsregler schließt den Bildschirm nicht mehr, geschnitten wird immer der Titel, der beim Öffnen lief, und „Öffne Track-Cutter“ klappt in allen 26 Sprachen.\n• NEU: Der Klingelton-Wechsler hat ein Suchfeld und zeigt unter „Schnitte“ die Ausschnitte aus dem Track-Cutter. In der Bibliothek tauchen die Schnitte nicht mehr auf.\n• FIX: Wer denselben Titel als Klingelton und danach als Weckton setzte, verlor den Klingelton wieder. Außerdem behalten Klingeltöne jetzt ihr Dateiformat, und ihre Namen bleiben in jeder Schrift lesbar.\n• FIX: Mit Crossfade gingen beim Titelwechsel Shuffle, Tempo und Tonhöhe verloren, und ReplayGain sprang bei jeder Überblendung – alle drei bleiben jetzt erhalten.",
-   "en": "• FIX: The Track Cutter now cuts every format properly – MP3 (variable bitrate too), FLAC, WAV, M4A/AAC and Opus without loss, OGG is saved as WAV. Title, artist and album are kept.\n• FIX: \"Preview\" plays the chosen range and stops at its end. The start handle no longer closes the screen, the cut always comes from the song that was playing when you opened it, and \"Open Track Cutter\" works in all 26 languages.\n• NEW: The Ringtone Changer has a search field and lists the Track Cutter's pieces under \"Cuts\". The cuts no longer show up in the library.\n• FIX: Setting the same song as ringtone and then as alarm lost the ringtone again. Ringtones also keep their file format now, and their names stay readable in every script.\n• FIX: With crossfade, shuffle, tempo and pitch got lost at every song change, and ReplayGain jumped at every fade – all three now carry through."
-  },
-  {
-   "versionCode": 66001,
-   "versionName": "6.60.1",
-   "date": "2026-09-23",
-   "critical": false,
-   "title": "v6.60.1 — Ordner-Reiter",
-   "de": "• FIX: Blendest du einen Ordner aus, waren seine Unterordner zwar mitgefiltert, standen aber unmarkiert in der Liste. Jetzt zeigt die Liste, welcher Ordner sie ausblendet.",
-   "en": "• FIX: Hiding a folder also hid everything below it, but those subfolders still looked visible in the list. Now the list names the folder they are hidden by."
   }
  ]
 }
