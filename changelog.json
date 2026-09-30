@@ -1,6 +1,15 @@
 {
- "latest": 66605,
+ "latest": 66606,
  "entries": [
+  {
+   "versionCode": 66606,
+   "versionName": "6.66.6",
+   "date": "2026-10-01",
+   "critical": false,
+   "title": "v6.66.6 — Party-Modus: WLAN-Hinweis",
+   "de": "• FIX: Unter dem WLAN-Passwort im Party-Modus stand, es werde verschlüsselt in den QR-Code gelegt. Das stimmte nicht – der Code enthält das Passwort, damit sich Gäste ohne Eintippen verbinden. Der Hinweis sagt das jetzt so.",
+   "en": "• FIX: Below the Wi-Fi password in Party Mode it said the password was embedded encrypted in the QR code. That was wrong – the code contains the password so guests can connect without typing it. The note now says so."
+  },
   {
    "versionCode": 66605,
    "versionName": "6.66.5",
@@ -126,15 +135,6 @@
    "title": "v6.62.0 — Einheitliche Namen & Mehrzahl",
    "de": "• NEU: Jede Funktion heißt jetzt überall gleich – im Menü, in Titeln, Schaltern, Chips und Sprachansagen, in allen 26 Sprachen. Vumikio Pets heißt in jeder Sprache Vumikio Pets.\n• NEU: Richtige Einzahl und Mehrzahl in allen Sprachen („1 Song“ statt „1 Songs“).\n• VERBESSERT: Chips in der Bibliothek: Antippen zeigt die Titel, ein zweites Tippen blendet sie aus – nichts startet mehr neu. Feature-Playlists beginnen beim ersten angezeigten Titel.\n• FIX: Party Mode-Reiter und Stimmungs-Kacheln brechen nicht mehr mitten im Wort um; Smart Reorder und Song-Pfade zeigen die Spielzeit statt Millisekunden; keine unsichtbaren Texte mehr auf dunklem Grund.\n• FIX: Die Sprachsteuerung öffnet wieder den richtigen Bildschirm (z. B. Stimmungswandler, Theme-Builder, Smarte Playlists).",
    "en": "• NEW: Every feature now has one name everywhere – menu, titles, switches, chips and voice feedback, in all 26 languages. Vumikio Pets is called Vumikio Pets in every language.\n• NEW: Correct singular and plural in all languages (\"1 song\" instead of \"1 songs\").\n• IMPROVED: Library chips: a tap shows the songs, a second tap hides them – nothing restarts. Feature playlists start with the first song shown.\n• FIX: Party Mode tabs and mood tiles no longer break mid-word; Smart Reorder and Song Paths show the playing time instead of milliseconds; no more invisible text on dark backgrounds.\n• FIX: Voice control opens the right screen again (e.g. Mood Morph, Theme Builder, Smart Playlists)."
-  },
-  {
-   "versionCode": 66101,
-   "versionName": "6.61.1",
-   "date": "2026-09-23",
-   "critical": false,
-   "title": "v6.61.1 — Klingelton-Wechsler",
-   "de": "• FIX: Kopien für Klingeltöne tauchten als zweiter Titel in der Bibliothek auf – auch in Zufallswiedergabe, Alben und Android Auto. Jetzt bleiben sie draußen.\n• FIX: „Öffne Klingelton“ klappt jetzt in allen 26 Sprachen, nicht nur in fünf.\n• FIX: Scheitert das Setzen eines Tons, steht der Grund jetzt in deiner Sprache statt auf Deutsch.\n• FIX: Nach „Öffnen mit AutoPlayer“ für eine Datei außerhalb der Bibliothek hieß es bei jedem Start fälschlich, die Medienliste lasse sich nicht lesen. Solche Dateien zeigen jetzt auch ihren echten Titel statt einer Zahl.",
-   "en": "• FIX: Ringtone copies showed up as a second song in the library – in shuffle, albums and Android Auto too. They now stay out.\n• FIX: \"Open ringtone\" now works in all 26 languages, not just five.\n• FIX: If setting a tone fails, the reason now shows in your language instead of German.\n• FIX: After \"Open with AutoPlayer\" on a file outside the library, every start wrongly said the media list could not be read. Such files now also show their real title instead of a number."
   }
  ]
 }
