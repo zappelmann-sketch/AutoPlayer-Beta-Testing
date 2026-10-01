@@ -1,6 +1,15 @@
 {
- "latest": 66606,
+ "latest": 66607,
  "entries": [
+  {
+   "versionCode": 66607,
+   "versionName": "6.66.7",
+   "date": "2026-10-01",
+   "critical": false,
+   "title": "v6.66.7 — Party-Modus: Warteschlange der Gäste",
+   "de": "• FIX: Auf der Party-Seite der Gäste stand der gerade laufende Wunsch zusätzlich unter „Als Nächstes“, samt Abstimmen-Pfeil. Jetzt steht er nur noch oben, und der nächste Wunsch rückt nach.",
+   "en": "• FIX: On the guests’ party page the wish that was playing also appeared under “Up next”, vote arrow included. Now it only shows at the top, and the next wish moves up."
+  },
   {
    "versionCode": 66606,
    "versionName": "6.66.6",
@@ -126,15 +135,6 @@
    "title": "v6.62.1 — Tag-Retter",
    "de": "• NEU: Der Tag-Retter findet Zeichenfehler („BrieftrÃ¤ger“), verlorene Buchstaben, fehlende Angaben und Formfehler – und sagt bei jedem Fund, ob die Korrektur sicher ist oder geprüft werden sollte.\n• NEU: Je Fund: übernehmen, im Tag-Editor bearbeiten, anhören, im Internet nachschlagen (über deine eigene Such-App – AutoPlayer sendet nichts), Shazam starten oder mit „Stimmt so“ dauerhaft ausblenden.\n• NEU: Sprachbefehl „Öffne Shazam“ in allen 26 Sprachen.\n• FIX: Der Tag-Retter schlug eine interne Nummer als Titel vor, fand Dateien ohne Tags nicht und meldete richtige Titel wie „The Unknown Soldier“ als Fehler.\n• FIX: „Öffne Tagretter“ funktioniert jetzt in allen Sprachen; auf Japanisch öffnete der Befehl die Warteschlange.",
    "en": "• NEW: Tag Rescue finds encoding errors (\"BrieftrÃ¤ger\"), lost letters, missing details and formatting errors – and says for every finding whether the fix is safe or should be checked.\n• NEW: For every finding: apply, edit in the Tag Editor, listen, look it up online (through your own search app – AutoPlayer sends nothing), start Shazam, or hide it for good with \"It's correct\".\n• NEW: Voice command \"Open Shazam\" in all 26 languages.\n• FIX: Tag Rescue suggested an internal number as the title, missed files without tags and flagged correct titles like \"The Unknown Soldier\".\n• FIX: \"Open Tag Rescue\" now works in all languages; in Japanese the command opened the queue."
-  },
-  {
-   "versionCode": 66200,
-   "versionName": "6.62.0",
-   "date": "2026-09-25",
-   "critical": false,
-   "title": "v6.62.0 — Einheitliche Namen & Mehrzahl",
-   "de": "• NEU: Jede Funktion heißt jetzt überall gleich – im Menü, in Titeln, Schaltern, Chips und Sprachansagen, in allen 26 Sprachen. Vumikio Pets heißt in jeder Sprache Vumikio Pets.\n• NEU: Richtige Einzahl und Mehrzahl in allen Sprachen („1 Song“ statt „1 Songs“).\n• VERBESSERT: Chips in der Bibliothek: Antippen zeigt die Titel, ein zweites Tippen blendet sie aus – nichts startet mehr neu. Feature-Playlists beginnen beim ersten angezeigten Titel.\n• FIX: Party Mode-Reiter und Stimmungs-Kacheln brechen nicht mehr mitten im Wort um; Smart Reorder und Song-Pfade zeigen die Spielzeit statt Millisekunden; keine unsichtbaren Texte mehr auf dunklem Grund.\n• FIX: Die Sprachsteuerung öffnet wieder den richtigen Bildschirm (z. B. Stimmungswandler, Theme-Builder, Smarte Playlists).",
-   "en": "• NEW: Every feature now has one name everywhere – menu, titles, switches, chips and voice feedback, in all 26 languages. Vumikio Pets is called Vumikio Pets in every language.\n• NEW: Correct singular and plural in all languages (\"1 song\" instead of \"1 songs\").\n• IMPROVED: Library chips: a tap shows the songs, a second tap hides them – nothing restarts. Feature playlists start with the first song shown.\n• FIX: Party Mode tabs and mood tiles no longer break mid-word; Smart Reorder and Song Paths show the playing time instead of milliseconds; no more invisible text on dark backgrounds.\n• FIX: Voice control opens the right screen again (e.g. Mood Morph, Theme Builder, Smart Playlists)."
   }
  ]
 }
