@@ -1,6 +1,15 @@
 {
- "latest": 66701,
+ "latest": 66702,
  "entries": [
+  {
+   "versionCode": 66702,
+   "versionName": "6.67.2",
+   "date": "2026-10-03",
+   "critical": false,
+   "title": "v6.67.2 — Genaues Springen, Loop Mixer",
+   "de": "• FIX: Der Player springt in MP3s mit variabler Bitrate genau an die gewählte Stelle (Regler, Lesezeichen, A-B-Schleife) – Liedtexte laufen nicht mehr versetzt.\n• NEU: Loop Mixer – die Abspielmarke rastet mit Beat-Snap auf die Schläge, die Plattform-Ausgabe warnt vor zu langen oder zu großen Dateien, und die Vorschau zeigt, wenn sie sich vorbereitet.\n• VERBESSERT: Synth Studio – ein Preset ohne eigenes Arpeggio lässt den Arpeggiator, wie er ist. „Leeres Projekt“ übernimmt das Tempo des ersten Segments.\n• FIX: In der Anleitung steht „%“ statt „%%“.",
+   "en": "• FIX: The player jumps exactly to the chosen position in variable-bitrate MP3s (slider, bookmarks, A-B loop) – lyrics no longer run out of sync.\n• NEW: Loop Mixer – the playhead snaps to the beats with beat snap on, the platform export warns about files that are too long or too large, and the preview shows while it is preparing.\n• IMPROVED: Synth Studio – a preset without an arpeggio of its own leaves the arpeggiator as it is. “Empty project” takes the tempo of the first segment.\n• FIX: The guide shows “%” instead of “%%”."
+  },
   {
    "versionCode": 66701,
    "versionName": "6.67.1",
@@ -126,15 +135,6 @@
    "title": "v6.63.1 — Kurzbefehle am App-Symbol",
    "de": "• FIX: „Fortsetzen“ am App-Symbol setzt jetzt auch bei geschlossener App den zuletzt gehörten Titel fort, statt die Sammlung von vorn zu beginnen.\n• FIX: „Favoriten öffnen“ zeigt wieder den Favoriten-Reiter – beim Start der App und von jedem Bildschirm aus.\n• VERBESSERT: Die Kurzbefehle haben passende Symbole – Wiedergabe, gekreuzte Pfeile fürs Mischen, ein Herz für die Favoriten.",
    "en": "• FIX: \"Resume\" on the app icon now picks up the last song even when the app was closed, instead of starting the library from the top.\n• FIX: \"Open favorites\" shows the favorites tab again – when the app starts and from any screen.\n• IMPROVED: The shortcuts have fitting icons – play, crossed arrows for shuffle, a heart for favourites."
-  },
-  {
-   "versionCode": 66300,
-   "versionName": "6.63.0",
-   "date": "2026-09-26",
-   "critical": false,
-   "title": "v6.63.0 — Neues Startbildschirm-Widget",
-   "de": "• NEU: Das Widget nimmt die Farben des Covers an – Farbverlauf, Glas und Neon-Rahmen; ohne Cover im Neon-Glas der App.\n• NEU: Ab zwei Zeilen mit Zeitleiste (antippen springt dorthin), Herz für Favoriten, Mikrofon für die Sprachsteuerung, „Als Nächstes“ und einem Öffnen-Knopf.\n• NEU: Ist vom letzten Hören nichts mehr da, spielt „Wiedergabe“ im Widget, an der Medientaste oder per Bluetooth alle Songs gemischt.\n• FIX: Das Widget zeigte nie das Cover und nach einem Neustart „AutoPlayer“ statt des letzten Titels.\n• FIX: Fortsetzen nach einem Neustart dauerte bei großen Sammlungen sehr lange – jetzt in einem Zug.",
-   "en": "• NEW: The widget takes on the cover's colours – gradient, glass and neon frame; without a cover in the app's neon glass look.\n• NEW: From two rows with a timeline (tap to jump), a heart for favourites, a microphone for voice control, \"Up next\" and an Open button.\n• NEW: If nothing is left from your last session, \"Play\" in the widget, on the media button or via Bluetooth plays all songs shuffled.\n• FIX: The widget never showed the cover, and after a restart it showed \"AutoPlayer\" instead of the last song.\n• FIX: Resuming after a restart took very long with large libraries – now in one go."
   }
  ]
 }
