@@ -1,14 +1,32 @@
 {
- "latest": 66702,
+ "latest": 66704,
  "entries": [
+  {
+   "versionCode": 66704,
+   "versionName": "6.67.4",
+   "date": "2026-10-03",
+   "critical": false,
+   "title": "v6.67.4 — Hinweis beim Start",
+   "de": "• NEU: Während die Bibliothek beim Start aufgebaut wird, steht unter dem Ladekreis, was gerade passiert: AutoPlayer durchsucht das Gerät nach Musik und stellt daraus die Bibliothek zusammen.",
+   "en": "• NEW: While the library is being built at startup, a note under the spinner explains what is happening: AutoPlayer searches the device for music and builds the library from it."
+  },
+  {
+   "versionCode": 66703,
+   "versionName": "6.67.3",
+   "date": "2026-10-03",
+   "critical": false,
+   "title": "v6.67.3 — Wiedergabeposition",
+   "de": "• FIX: Nach einem Neustart der App steht der zuletzt gespielte Titel wieder genau dort, wo er angehalten wurde – vorher rückte er bei jedem Neustart drei Sekunden zurück.",
+   "en": "• FIX: After restarting the app, the last song is again exactly where it was paused – before, it moved back three seconds with every restart."
+  },
   {
    "versionCode": 66702,
    "versionName": "6.67.2",
    "date": "2026-10-03",
    "critical": false,
    "title": "v6.67.2 — Genaues Springen, Loop Mixer",
-   "de": "• FIX: Der Player springt in MP3s mit variabler Bitrate genau an die gewählte Stelle (Regler, Lesezeichen, A-B-Schleife) – Liedtexte laufen nicht mehr versetzt.\n• NEU: Loop Mixer – die Abspielmarke rastet mit Beat-Snap auf die Schläge, die Plattform-Ausgabe warnt vor zu langen oder zu großen Dateien, und die Vorschau zeigt, wenn sie sich vorbereitet.\n• VERBESSERT: Synth Studio – ein Preset ohne eigenes Arpeggio lässt den Arpeggiator, wie er ist. „Leeres Projekt“ übernimmt das Tempo des ersten Segments.\n• FIX: In der Anleitung steht „%“ statt „%%“.",
-   "en": "• FIX: The player jumps exactly to the chosen position in variable-bitrate MP3s (slider, bookmarks, A-B loop) – lyrics no longer run out of sync.\n• NEW: Loop Mixer – the playhead snaps to the beats with beat snap on, the platform export warns about files that are too long or too large, and the preview shows while it is preparing.\n• IMPROVED: Synth Studio – a preset without an arpeggio of its own leaves the arpeggiator as it is. “Empty project” takes the tempo of the first segment.\n• FIX: The guide shows “%” instead of “%%”."
+   "de": "• FIX: Der Player springt in MP3s mit variabler Bitrate genau an die gewählte Stelle (Regler, Lesezeichen, A-B-Schleife, Fortsetzen nach dem Start).\n• NEU: Loop Mixer – die Abspielmarke rastet mit Beat-Snap auf die Schläge, die Plattform-Ausgabe warnt vor zu langen oder zu großen Dateien, und die Vorschau zeigt, wenn sie sich vorbereitet.\n• VERBESSERT: Synth Studio – ein Preset ohne eigenes Arpeggio lässt den Arpeggiator, wie er ist. „Leeres Projekt“ übernimmt das Tempo des ersten Segments.\n• FIX: In der Anleitung steht „%“ statt „%%“.",
+   "en": "• FIX: The player jumps exactly to the chosen position in variable-bitrate MP3s (slider, bookmarks, A-B loop, resuming after a restart).\n• NEW: Loop Mixer – the playhead snaps to the beats with beat snap on, the platform export warns about files that are too long or too large, and the preview shows while it is preparing.\n• IMPROVED: Synth Studio – a preset without an arpeggio of its own leaves the arpeggiator as it is. “Empty project” takes the tempo of the first segment.\n• FIX: The guide shows “%” instead of “%%”."
   },
   {
    "versionCode": 66701,
@@ -117,24 +135,6 @@
    "title": "v6.65.0 — Batterie-Modus",
    "de": "• NEU: Der Batterie-Modus misst auf deinem Handy, was es beim Musikhören verbraucht – je Modus, mit Akkukapazität und Restspielzeit. Nichts mehr geschätzt.\n• NEU: Die Schwelle für den Batteriesparmodus kann aus diesem Verbrauch berechnet werden – passend zu Akku und Handy.\n• NEU: Schaltest du im Sparmodus eine ruhende Funktion ein, fragt die App einmal nach – „Trotzdem nutzen“ lässt nur diese laufen.\n• VERBESSERT: Der Sparmodus pausiert nur, was wirklich Strom braucht, und bringt alles unverändert zurück; nur noch eine Benachrichtigung an der Schwelle.\n• FIX: Der Sparmodus schaltet Hall, Gesangs-Isolator, Beat-Match und Tempo nicht mehr dauerhaft ab; GPS läuft ohne Kontext-Wechsel nicht mehr mit; das gespeicherte Tempo gilt nach einem Neustart sofort.",
    "en": "• NEW: Battery Mode measures what your phone uses while playing music – per mode, with battery capacity and remaining playtime. Nothing estimated any more.\n• NEW: The battery saver threshold can be calculated from that consumption – to fit your battery and phone.\n• NEW: If you switch on a resting feature in the saver, the app asks once – “Use anyway” lets only that one run.\n• IMPROVED: The saver pauses only what really uses power and brings everything back unchanged; just one notification at the threshold.\n• FIX: The saver no longer switches hall, vocal isolator, Beat-Match and tempo off for good; GPS no longer runs without context switching; the saved tempo applies right after a restart."
-  },
-  {
-   "versionCode": 66400,
-   "versionName": "6.64.0",
-   "date": "2026-09-26",
-   "critical": false,
-   "title": "v6.64.0 — Theme-Builder",
-   "de": "• NEU: Themes und Visualizer-Themes als Datei teilen und mit „Theme importieren“ wieder einlesen.\n• NEU: Ein zweiter Tipp wählt ein Theme wieder ab; eine Visualizer-Kachel setzt das Design der Vollbild-Wellenform.\n• VERBESSERT: Beide Bereiche gleich bedient – Stift, Mülleimer, langes Drücken für Duplizieren und Exportieren.\n• FIX: Eigene Themes bleiben immer lesbar; Montserrat, Nunito und Source Sans erscheinen in normaler Stärke statt hauchdünn.\n• FIX: „Öffne Theme-Builder“ wird zuverlässig erkannt und öffnet den richtigen Bildschirm.",
-   "en": "• NEW: Share themes and visualizer themes as files and read them back with \"Import theme\".\n• NEW: A second tap deselects a theme; a visualizer tile sets the design of the full-screen waveform.\n• IMPROVED: Both sections work the same – pencil, bin, long press for duplicate and export.\n• FIX: Own themes always stay readable; Montserrat, Nunito and Source Sans show in normal weight instead of hairline-thin.\n• FIX: \"Open Theme Builder\" is recognised reliably and opens the right screen."
-  },
-  {
-   "versionCode": 66301,
-   "versionName": "6.63.1",
-   "date": "2026-09-26",
-   "critical": false,
-   "title": "v6.63.1 — Kurzbefehle am App-Symbol",
-   "de": "• FIX: „Fortsetzen“ am App-Symbol setzt jetzt auch bei geschlossener App den zuletzt gehörten Titel fort, statt die Sammlung von vorn zu beginnen.\n• FIX: „Favoriten öffnen“ zeigt wieder den Favoriten-Reiter – beim Start der App und von jedem Bildschirm aus.\n• VERBESSERT: Die Kurzbefehle haben passende Symbole – Wiedergabe, gekreuzte Pfeile fürs Mischen, ein Herz für die Favoriten.",
-   "en": "• FIX: \"Resume\" on the app icon now picks up the last song even when the app was closed, instead of starting the library from the top.\n• FIX: \"Open favorites\" shows the favorites tab again – when the app starts and from any screen.\n• IMPROVED: The shortcuts have fitting icons – play, crossed arrows for shuffle, a heart for favourites."
   }
  ]
 }
