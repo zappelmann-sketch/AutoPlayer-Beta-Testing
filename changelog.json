@@ -1,6 +1,15 @@
 {
- "latest": 66801,
+ "latest": 66802,
  "entries": [
+  {
+   "versionCode": 66802,
+   "versionName": "6.68.2",
+   "date": "2026-10-04",
+   "critical": false,
+   "title": "v6.68.2 — Wellenform im Player",
+   "de": "• VERBESSERT: Im Player lässt sich sofort spulen, auch während die Wellenform eines Titels noch berechnet wird. Bis sie da ist, steht dort eine flache Balkenreihe mit der Abspielmarke – bisher nur ein Ladekreis.\n• VERBESSERT: Die Wellenform eines neuen Titels wird schneller berechnet.\n• FIX: Ließ sich für einen Titel keine Wellenform berechnen, zeigte der Player die des vorigen Titels oder eine leere Fläche. Jetzt bleibt die Balkenreihe stehen, und Spulen geht trotzdem.",
+   "en": "• IMPROVED: You can seek in the player right away, even while a song's waveform is still being computed. Until it is there, a flat row of bars with the playhead takes its place – it used to be just a loading circle.\n• IMPROVED: The waveform of a new song is computed faster.\n• FIX: If no waveform could be computed for a song, the player showed the previous song's waveform or an empty area. Now the row of bars stays, and seeking still works."
+  },
   {
    "versionCode": 66801,
    "versionName": "6.68.1",
@@ -126,15 +135,6 @@
    "title": "v6.66.1 — Playlist-Auswahl zum Antippen",
    "de": "• FIX: Klingen bei „Spiele Playlist …“ mehrere Playlists ähnlich, lässt sich die gewünschte im Auswahlfenster jetzt antippen – vorher ging der Tipp auf die Bibliothek dahinter und startete dort einen Song.\n• VERBESSERT: Am Handy bleibt die Auswahl still – keine gesprochene Abbruch-Meldung mehr.",
    "en": "• FIX: When several playlists sound alike for “play playlist …”, you can now tap the one you want in the selection window – before, the tap went to the library behind it and started a song there.\n• IMPROVED: On the phone the selection stays silent – no spoken cancel message anymore."
-  },
-  {
-   "versionCode": 66600,
-   "versionName": "6.66.0",
-   "date": "2026-09-28",
-   "critical": false,
-   "title": "v6.66.0 — Sprachbefehle in 26 Sprachen",
-   "de": "• NEU: Alle Sprachbefehle funktionieren in allen 26 Sprachen der App – mit den Sätzen, die die Liste in der jeweiligen Sprache zeigt.\n• NEU: Die Sprachbefehl-Liste zeigt jetzt alle Befehle aus dem Handbuch, rund 115, in 14 Gruppen – mit Beschreibung, Android-Auto-Abzeichen und Pro-Kennzeichnung.\n• VERBESSERT: Wer in einer anderen Sprache spricht als der eingestellten, wird trotzdem verstanden.",
-   "en": "• NEW: All voice commands work in all 26 app languages – with the sentences the list shows in that language.\n• NEW: The voice command list now shows every command from the user guide, about 115, in 14 groups – with description, Android Auto badge and Pro mark.\n• IMPROVED: Speaking a language other than the one set is still understood."
   }
  ]
 }
