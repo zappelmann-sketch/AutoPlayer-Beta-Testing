@@ -1,6 +1,15 @@
 {
- "latest": 66704,
+ "latest": 66800,
  "entries": [
+  {
+   "versionCode": 66800,
+   "versionName": "6.68.0",
+   "date": "2026-10-04",
+   "critical": false,
+   "title": "v6.68.0 — Mixer-Projekte bleiben erhalten",
+   "de": "• NEU: Loop Mixer – gespeicherte Projekte liegen zusätzlich im Sicherungsordner (Unterordner „Mixer-Projekte“). Nach einer Neuinstallation den Ordner einmal neu wählen, dann sind die Projekte wieder da.\n• NEU: Geräteübertragung mit dem Punkt „Mixer-Projekte (Dateien)“ – die Projekte ziehen samt Tondateien mit um.\n• VERBESSERT: Pad-Samples werden mit dem Projekt gespeichert. Ein Pad bleibt nicht mehr stumm, wenn der Titel gelöscht oder das Handy gewechselt wurde.\n• FIX: Ein Projektname aus lauter Punkten ergab ein Projekt, das in keiner Liste stand.",
+   "en": "• NEW: Loop Mixer – saved projects are also kept in the backup folder (subfolder “Mixer-Projekte”). After reinstalling, choose the folder once more and the projects are back.\n• NEW: Device transfer with the item “Mixer projects (files)” – the projects move along with their audio files.\n• IMPROVED: Pad samples are saved with the project. A pad no longer stays silent after the song was deleted or the phone was changed.\n• FIX: A project name made of dots only produced a project that appeared in no list."
+  },
   {
    "versionCode": 66704,
    "versionName": "6.67.4",
@@ -126,15 +135,6 @@
    "title": "v6.65.1 — Sprachbefehle",
    "de": "• FIX: „Abspielen“ und „Weiter“ halten laufende Musik nicht mehr an; „Lautstärke reduzieren“ und der Gehörschutz senken die Lautstärke, statt sie voll aufzudrehen.\n• FIX: „Stopp Vorlesen“ und „Aufhören“ beenden das Vorlesen; „Marker löschen“ löscht den Loop-Mixer-Marker statt der A-B-Schleife; „Zufall aus“ schaltet den Zufall wirklich aus; Stimmungen und Vibrationsstufen erscheinen mit ihrem deutschen Namen.\n• FIX: „Spiele …“ mit einem Funktionsnamen im Titel (etwa „Herzschlag“) spielt den Titel, statt einen Bildschirm zu öffnen; eine Playlist mit Stimmungswort im Namen startet per Sprache.\n• FIX: Alle Beispiele der Sprachbefehl-Liste funktionieren, etwa „Vorspulen 30“, „Kapitel überspringen“ und „Playlist [Beschreibung]“. Lautstärke, Smart Playlists und Vorlesen sind dort nicht mehr als Android-Auto-fähig markiert.\n• VERBESSERT: Fragen wie „Mein Level“, „Welche Stimmung?“ oder „Hörbudget?“ beantwortet die App auch mit Stimme. „Zeige meine Playlists“ öffnet die Übersicht. Smart Reorder gehört wie geplant zu Pro – jetzt auch in der Warteschlange.",
    "en": "• FIX: “Play” and “Continue” no longer pause music that is already playing; “Reduce volume” and hearing protection lower the volume instead of turning it all the way up.\n• FIX: “Stop reading” ends the read-aloud; “Delete marker” deletes the Loop Mixer marker instead of the A-B loop; “Shuffle off” in German really switches shuffle off; moods and vibration levels appear with their translated names.\n• FIX: “Play …” with a feature name in the title (such as “Heartbeat”) plays the song instead of opening a screen; a playlist with a mood word in its name starts by voice.\n• FIX: All examples on the voice command list work, such as “Skip 30”, “Skip chapter” and “Playlist [description]”. Volume, Smart Playlists and Read Aloud are no longer marked as working in Android Auto.\n• IMPROVED: Questions such as “My level”, “Which mood?” or “Hearing budget?” are also answered aloud. “Show my playlists” opens the overview. Smart Reorder is part of Pro as planned – now in the queue as well."
-  },
-  {
-   "versionCode": 66500,
-   "versionName": "6.65.0",
-   "date": "2026-09-26",
-   "critical": false,
-   "title": "v6.65.0 — Batterie-Modus",
-   "de": "• NEU: Der Batterie-Modus misst auf deinem Handy, was es beim Musikhören verbraucht – je Modus, mit Akkukapazität und Restspielzeit. Nichts mehr geschätzt.\n• NEU: Die Schwelle für den Batteriesparmodus kann aus diesem Verbrauch berechnet werden – passend zu Akku und Handy.\n• NEU: Schaltest du im Sparmodus eine ruhende Funktion ein, fragt die App einmal nach – „Trotzdem nutzen“ lässt nur diese laufen.\n• VERBESSERT: Der Sparmodus pausiert nur, was wirklich Strom braucht, und bringt alles unverändert zurück; nur noch eine Benachrichtigung an der Schwelle.\n• FIX: Der Sparmodus schaltet Hall, Gesangs-Isolator, Beat-Match und Tempo nicht mehr dauerhaft ab; GPS läuft ohne Kontext-Wechsel nicht mehr mit; das gespeicherte Tempo gilt nach einem Neustart sofort.",
-   "en": "• NEW: Battery Mode measures what your phone uses while playing music – per mode, with battery capacity and remaining playtime. Nothing estimated any more.\n• NEW: The battery saver threshold can be calculated from that consumption – to fit your battery and phone.\n• NEW: If you switch on a resting feature in the saver, the app asks once – “Use anyway” lets only that one run.\n• IMPROVED: The saver pauses only what really uses power and brings everything back unchanged; just one notification at the threshold.\n• FIX: The saver no longer switches hall, vocal isolator, Beat-Match and tempo off for good; GPS no longer runs without context switching; the saved tempo applies right after a restart."
   }
  ]
 }
