@@ -1,6 +1,24 @@
 {
- "latest": 67000,
+ "latest": 67100,
  "entries": [
+  {
+   "versionCode": 67100,
+   "versionName": "6.71.0",
+   "date": "2026-10-05",
+   "critical": false,
+   "title": "v6.71.0 — Der Verlauf bleibt bei seinen Titeln",
+   "de": "• NEU: Musik neu aufs Handy kopiert? Hörverlauf, Favoriten, Playlists und Lesezeichen bleiben erhalten – AutoPlayer erkennt die Titel am Klang wieder und ordnet alles von selbst zu.\n• NEU: Musik-Rückblick und Nostalgie-Maschine – „Einträge ohne Titel entfernen“ räumt Verlaufseinträge von Titeln weg, die nicht mehr auf dem Gerät sind.\n• NEU: Die Nostalgie-Maschine nennt Titel, die nicht mehr in der Bibliothek sind.",
+   "en": "• NEW: Copied your music to the phone again? Listening history, favorites, playlists and bookmarks stay – AutoPlayer recognizes the songs by their sound and puts everything back by itself.\n• NEW: Music Wrapped and Nostalgie Machine – “Remove entries of missing songs” clears history entries of songs that are no longer on the device.\n• NEW: The Nostalgie Machine names songs that are no longer in your library."
+  },
+  {
+   "versionCode": 67001,
+   "versionName": "6.70.1",
+   "date": "2026-10-05",
+   "critical": false,
+   "title": "v6.70.1 — Wartung für den Hörverlauf",
+   "de": "• INTERN: Nur in der Testversion – Einträge im Hörverlauf, deren Titel nach dem Neuaufspielen der Musik nicht mehr gefunden werden, lassen sich über eine ältere Sicherung wieder zuordnen.\n• Für alle anderen ändert sich nichts.",
+   "en": "• INTERNAL: Test build only – listening history entries whose titles are no longer found after the music was copied to the phone again can be matched to their titles through an older backup.\n• Nothing changes for everyone else."
+  },
   {
    "versionCode": 67000,
    "versionName": "6.70.0",
@@ -117,24 +135,6 @@
    "title": "v6.67.0 — Loop Mixer: Klang und Schnitt",
    "de": "• FIX: Loop Mixer – Titel mit 48 kHz klangen zu tief und zu langsam. Vorschau und fertige Datei stimmen jetzt überein: stumme Spuren, Wiederholen und Stereo kommen in beiden gleich an.\n• FIX: Abschnitte beginnen genau an der geschnittenen Stelle, auch mitten in langen MP3-Titeln. Die Schere in den Loop-Lesezeichen schneidet den markierten Ausschnitt jetzt genau aus (als WAV).\n• VERBESSERT: Pitch ändert die Tonhöhe, ohne die Länge zu ändern. Reverb klingt so lange nach wie eingestellt, und Reverb und Echo klingen über das Ende eines Abschnitts hinaus aus.\n• FIX: Nach dem Laden eines Projekts sind Wiederholen-Schalter, Tempo und Marker wieder da. Titel, Künstler und Album stehen jetzt in der ausgegebenen Datei.\n• NEU: Lange auf einen Abschnitt drücken öffnet seine Eigenschaften.",
    "en": "• FIX: Loop Mixer – tracks at 48 kHz sounded too low and too slow. Preview and exported file now match: muted tracks, repeat and stereo arrive the same in both.\n• FIX: Segments start exactly where they were cut, even deep inside long MP3 tracks. The scissors in the loop bookmarks now cut out exactly the marked stretch (as WAV).\n• IMPROVED: Pitch changes the pitch without changing the length. Reverb rings for as long as set, and reverb and echo ring out past the end of a segment.\n• FIX: After loading a project the repeat switch, tempo and markers are back. Title, artist and album are now written into the exported file.\n• NEW: A long press on a segment opens its properties."
-  },
-  {
-   "versionCode": 66607,
-   "versionName": "6.66.7",
-   "date": "2026-10-01",
-   "critical": false,
-   "title": "v6.66.7 — Party-Modus: Warteschlange der Gäste",
-   "de": "• FIX: Auf der Party-Seite der Gäste stand der gerade laufende Wunsch zusätzlich unter „Als Nächstes“, samt Abstimmen-Pfeil. Jetzt steht er nur noch oben, und der nächste Wunsch rückt nach.",
-   "en": "• FIX: On the guests’ party page the wish that was playing also appeared under “Up next”, vote arrow included. Now it only shows at the top, and the next wish moves up."
-  },
-  {
-   "versionCode": 66606,
-   "versionName": "6.66.6",
-   "date": "2026-10-01",
-   "critical": false,
-   "title": "v6.66.6 — Party-Modus: WLAN-Hinweis",
-   "de": "• FIX: Unter dem WLAN-Passwort im Party-Modus stand, es werde verschlüsselt in den QR-Code gelegt. Das stimmte nicht – der Code enthält das Passwort, damit sich Gäste ohne Eintippen verbinden. Der Hinweis sagt das jetzt so.",
-   "en": "• FIX: Below the Wi-Fi password in Party Mode it said the password was embedded encrypted in the QR code. That was wrong – the code contains the password so guests can connect without typing it. The note now says so."
   }
  ]
 }
