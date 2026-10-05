@@ -1,6 +1,15 @@
 {
- "latest": 66901,
+ "latest": 67000,
  "entries": [
+  {
+   "versionCode": 67000,
+   "versionName": "6.70.0",
+   "date": "2026-10-05",
+   "critical": false,
+   "title": "v6.70.0 — Geräte-Transfer nimmt sich selbst wieder auf",
+   "de": "• NEU: Geräte-Transfer – reißt das WLAN kurz ab, nehmen beide Geräte die Übertragung von selbst wieder auf. PIN, Auswahl und Bestätigung müssen nicht noch einmal sein.\n• VERBESSERT: Im Geräte-Transfer und am Hauptschalter heißen die Vumikio Pets jetzt überall so.\n• FIX: Android 10 – der gewählte Sicherungsordner wird als „Documents/…“ angezeigt statt als „home:…“.\n• FIX: Arabisch – in fünf Texten des Geräte-Transfers standen die Ziffern „2026“ statt der Auslassungspunkte.",
+   "en": "• NEW: Device transfer – if the Wi-Fi drops for a moment, both devices pick the transfer up again by themselves. No need to go through PIN, selection and confirmation once more.\n• IMPROVED: In the device transfer and on the main switch the Vumikio Pets are now called that everywhere.\n• FIX: Android 10 – the chosen backup folder is shown as “Documents/…” instead of “home:…”.\n• FIX: Arabic – five device transfer texts showed the digits “2026” instead of the ellipsis."
+  },
   {
    "versionCode": 66901,
    "versionName": "6.69.1",
@@ -126,15 +135,6 @@
    "title": "v6.66.6 — Party-Modus: WLAN-Hinweis",
    "de": "• FIX: Unter dem WLAN-Passwort im Party-Modus stand, es werde verschlüsselt in den QR-Code gelegt. Das stimmte nicht – der Code enthält das Passwort, damit sich Gäste ohne Eintippen verbinden. Der Hinweis sagt das jetzt so.",
    "en": "• FIX: Below the Wi-Fi password in Party Mode it said the password was embedded encrypted in the QR code. That was wrong – the code contains the password so guests can connect without typing it. The note now says so."
-  },
-  {
-   "versionCode": 66605,
-   "versionName": "6.66.5",
-   "date": "2026-09-30",
-   "critical": false,
-   "title": "v6.66.5 — Stimmungsnamen einheitlich",
-   "de": "• FIX: Der Beifahrer-Modus zeigt die Stimmungen mit denselben Namen wie der Rest der App – vorher stand dort zum Beispiel „Energisch“ statt „Energetisch“.\n• FIX: Stimmungsnamen in mehreren Sprachen korrigiert – falsche Wörter, vertauschte Bedeutungen und fehlende Akzente.\n• VERBESSERT: In den Einstellungen halten lange Beschreibungen jetzt Abstand zum Schalter.\n• Datenschutzerklärung ergänzt: Der Test-Bereich der Gestensteuerung nutzt das Mikrofon.",
-   "en": "• FIX: Passenger mode shows the moods with the same names as the rest of the app – before, German said “Energisch” instead of “Energetisch”, for example.\n• FIX: Mood names corrected in several languages – wrong words, swapped meanings and missing accents.\n• IMPROVED: In the settings, long descriptions now keep their distance from the switch.\n• Privacy policy updated: the gesture control test area uses the microphone."
   }
  ]
 }
