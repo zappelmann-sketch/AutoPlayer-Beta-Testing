@@ -1,6 +1,42 @@
 {
- "latest": 66802,
+ "latest": 66901,
  "entries": [
+  {
+   "versionCode": 66901,
+   "versionName": "6.69.1",
+   "date": "2026-10-05",
+   "critical": false,
+   "title": "v6.69.1 — Geräte-Transfer: Loops, Hörverlauf und Regeln kommen mit",
+   "de": "• FIX: Geräte-Transfer – deine eigenen Schnitte und Loop-Segmente kommen jetzt mit ihren Tondateien an. Bisher kamen nur die Namen.\n• FIX: Der Hörverlauf von Titeln, die es nicht mehr gibt, bleibt beim Transfer erhalten – Hörzeit und Fortschritt der Erfolge stimmen auf dem neuen Gerät.\n• FIX: Warteschlangen-Plätze wissen auch auf dem neuen Gerät, wo sie stehen geblieben sind. Regeln, die eine Playlist starten, finden sie nach Transfer und Wiederherstellung wieder.\n• FIX: Die Daten kamen bei einem Transfer in seltenen Fällen gar nicht an, obwohl „Datenbank“ abgehakt war. Jetzt meldet das neue Gerät einen unvollständigen Transfer als unterbrochen.\n• VERBESSERT: Das empfangende Gerät zeigt, wie weit das Einordnen in die Bibliothek ist. Das sendende zeigt die Auswahl auch, während es auf die Bestätigung wartet.",
+   "en": "• FIX: Device transfer – your own cuts and loop segments now arrive with their sound files. Only the names used to arrive.\n• FIX: The listening history of songs that no longer exist is kept in a transfer – listening time and achievement progress are right on the new device.\n• FIX: Queue slots remember on the new device where they stopped. Rules that start a playlist find it again after a transfer and after a restore.\n• FIX: In rare cases the data did not arrive in a transfer at all although “Database” was ticked. The new device now reports an incomplete transfer as interrupted.\n• IMPROVED: The receiving device shows how far sorting into the library has got. The sending device shows the selection while it waits for the confirmation, too."
+  },
+  {
+   "versionCode": 66900,
+   "versionName": "6.69.0",
+   "date": "2026-10-05",
+   "critical": false,
+   "title": "v6.69.0 — Wellenform-Zoom im Player",
+   "de": "• NEU: Player – ein Regler zwischen den beiden Zeitangaben vergrößert die Wellenform bis zum Zehnfachen rund um die Abspielmarke. So lassen sich die Marken A und B genau setzen.",
+   "en": "• NEW: Player – a slider between the two time labels zooms the waveform up to ten times around the playhead. That lets you set the A and B markers precisely."
+  },
+  {
+   "versionCode": 66804,
+   "versionName": "6.68.4",
+   "date": "2026-10-05",
+   "critical": false,
+   "title": "v6.68.4 — Geräte-Transfer: alles kommt an",
+   "de": "• FIX: Geräte-Transfer – Titel mit Leerzeichen, Umlauten oder Satzzeichen im Namen oder Ordner landen wieder in ihrem Ordner und behalten Wiedergabeverlauf, Positionen, Favoriten und Playlists. Bisher gingen diese Verknüpfungen beim Transfer verloren.\n• FIX: Loop Mixer – Pads und Marker gleichnamiger Projekte gehen bei Transfer und Wiederherstellung nicht mehr verloren.\n• VERBESSERT: Bricht ein Transfer ab, zeigt das empfangende Gerät, wie viele Titel angekommen sind und wie viele fehlen. Ein neuer Transfer holt nur die fehlenden nach.\n• VERBESSERT: Die mitgelieferten Demo-Mixe werden nicht mehr gesichert oder übertragen – nur deine eigenen Projekte.",
+   "en": "• FIX: Device transfer – songs with spaces, umlauts or punctuation in their name or folder land in their folder again and keep play history, positions, favorites and playlists. These links used to get lost in a transfer.\n• FIX: Loop Mixer – pads and markers of projects that share a name are no longer lost in a transfer or a restore.\n• IMPROVED: If a transfer breaks off, the receiving device shows how many songs arrived and how many are missing. A new transfer only fetches the missing ones.\n• IMPROVED: The demo mixes that ship with the app are no longer backed up or transferred – only your own projects."
+  },
+  {
+   "versionCode": 66803,
+   "versionName": "6.68.3",
+   "date": "2026-10-04",
+   "critical": false,
+   "title": "v6.68.3 — Geräte-Transfer",
+   "de": "• FIX: Geräte-Transfer – bricht das empfangende Gerät ab, hört das sendende sofort auf, statt jede restliche Datei noch einzeln zu versuchen.\n• VERBESSERT: Geräte-Transfer – das Protokoll hält fest, wie schnell die Übertragung läuft und ob sie auf das WLAN oder auf den Speicher wartet. So lässt sich eine langsame Übertragung einordnen.",
+   "en": "• FIX: Device transfer – if the receiving device cancels, the sending one stops at once instead of still trying every remaining file one by one.\n• IMPROVED: Device transfer – the log records how fast the transfer runs and whether it is waiting for the Wi-Fi or for the storage. That tells why a transfer is slow."
+  },
   {
    "versionCode": 66802,
    "versionName": "6.68.2",
@@ -99,42 +135,6 @@
    "title": "v6.66.5 — Stimmungsnamen einheitlich",
    "de": "• FIX: Der Beifahrer-Modus zeigt die Stimmungen mit denselben Namen wie der Rest der App – vorher stand dort zum Beispiel „Energisch“ statt „Energetisch“.\n• FIX: Stimmungsnamen in mehreren Sprachen korrigiert – falsche Wörter, vertauschte Bedeutungen und fehlende Akzente.\n• VERBESSERT: In den Einstellungen halten lange Beschreibungen jetzt Abstand zum Schalter.\n• Datenschutzerklärung ergänzt: Der Test-Bereich der Gestensteuerung nutzt das Mikrofon.",
    "en": "• FIX: Passenger mode shows the moods with the same names as the rest of the app – before, German said “Energisch” instead of “Energetisch”, for example.\n• FIX: Mood names corrected in several languages – wrong words, swapped meanings and missing accents.\n• IMPROVED: In the settings, long descriptions now keep their distance from the switch.\n• Privacy policy updated: the gesture control test area uses the microphone."
-  },
-  {
-   "versionCode": 66604,
-   "versionName": "6.66.4",
-   "date": "2026-09-30",
-   "critical": false,
-   "title": "v6.66.4 — Musik-DNA: Pfeile und Pause",
-   "de": "• FIX: In der Musik-DNA springen die Pfeile neben dem Titel jetzt zum vorherigen und nächsten Titel – vorher ging das nur per Wisch.\n• NEU: Ein Tippen auf den Titel hält die Musik an und lässt sie weiterlaufen.",
-   "en": "• FIX: In Music DNA the arrows next to the title now skip to the previous and next song – before, only a swipe did.\n• NEW: A tap on the title pauses and resumes the music."
-  },
-  {
-   "versionCode": 66603,
-   "versionName": "6.66.3",
-   "date": "2026-09-29",
-   "critical": false,
-   "title": "v6.66.3 — Vorlesen per Sprache",
-   "de": "• NEU: „Lese vor“ liest den Text vor, der gerade offen ist – Handbuch, Änderungsprotokoll, Datenschutz oder Nutzungsbedingungen.\n• NEU: „Lese die Nutzungsbedingungen vor“.\n• VERBESSERT: Die Vorlese-Befehle heißen „Lese … vor“ – ein kurzes „Lies“ erkennt die Spracherkennung oft nicht. „Lies“ wird weiter verstanden.\n• FIX: Im Fahrzeug liest die App keine Texte mehr vor.",
-   "en": "• NEW: “Read aloud” reads the text that is open – user guide, changelog, privacy policy or terms of use.\n• NEW: “Read terms of use”.\n• IMPROVED: The German read-aloud commands now start with “Lese” – a short “Lies” was often not recognised. “Lies” still works.\n• FIX: In the car the app no longer reads texts aloud."
-  },
-  {
-   "versionCode": 66602,
-   "versionName": "6.66.2",
-   "date": "2026-09-29",
-   "critical": false,
-   "title": "v6.66.2 — Pets nennen das richtige Tempo",
-   "de": "• FIX: Die Vumikio Pets nennen in ihren Sprüchen die BPM des Titels, der gerade läuft – vorher konnte es die Zahl eines Titels sein, der längst vorbei war.\n• FIX: Auch Tempo-Bemerkungen, Tageszeit, Level und Streak im Spruch sind jetzt immer aktuell.\n• FIX: Wissens-Sprüche der Pets zeigen keine Lücken wie „{bühne}“ mehr – in allen 26 Sprachen.\n• FIX: In acht Sprachen sprachen einzelne Pets Teile ihrer Sprüche auf Englisch – jetzt in der eingestellten Sprache.",
-   "en": "• FIX: The Vumikio Pets now name the BPM of the song that is playing – before, it could be the number of a song that had long finished.\n• FIX: Tempo remarks, time of day, level and streak in a line are now always current too.\n• FIX: The pets' fun facts no longer show gaps like “{bühne}” – in all 26 languages.\n• FIX: In eight languages some pets said part of their lines in English – now in the language that is set."
-  },
-  {
-   "versionCode": 66601,
-   "versionName": "6.66.1",
-   "date": "2026-09-28",
-   "critical": false,
-   "title": "v6.66.1 — Playlist-Auswahl zum Antippen",
-   "de": "• FIX: Klingen bei „Spiele Playlist …“ mehrere Playlists ähnlich, lässt sich die gewünschte im Auswahlfenster jetzt antippen – vorher ging der Tipp auf die Bibliothek dahinter und startete dort einen Song.\n• VERBESSERT: Am Handy bleibt die Auswahl still – keine gesprochene Abbruch-Meldung mehr.",
-   "en": "• FIX: When several playlists sound alike for “play playlist …”, you can now tap the one you want in the selection window – before, the tap went to the library behind it and started a song there.\n• IMPROVED: On the phone the selection stays silent – no spoken cancel message anymore."
   }
  ]
 }
