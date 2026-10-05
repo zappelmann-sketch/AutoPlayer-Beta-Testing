@@ -1,6 +1,15 @@
 {
- "latest": 67100,
+ "latest": 67200,
  "entries": [
+  {
+   "versionCode": 67200,
+   "versionName": "6.72.0",
+   "date": "2026-10-05",
+   "critical": false,
+   "title": "v6.72.0 — Einträge ohne Titel beim Namen genannt",
+   "de": "• VERBESSERT: „Einträge ohne Titel entfernen“ zeigt vor dem Entfernen, um welche Titel es geht – als Liste mit Titel, Interpret und Zahl der Wiedergaben.\n• NEU: Der Musik-Rückblick nennt unter den Top Songs die meistgehörten Titel, die nicht mehr in der Bibliothek sind.\n• FIX: „Bibliothek neu laden“ übernimmt jetzt auch Tags, die außerhalb der App geändert wurden – unter Android 10 blieb der alte Titel stehen.\n• VERBESSERT: Wird ein Titel umbenannt, zeigt auch sein Hörverlauf den neuen Namen.",
+   "en": "• IMPROVED: “Remove entries of missing songs” now shows which songs are affected before anything is removed – a list with title, artist and number of plays.\n• NEW: Music Wrapped names the most played songs that are no longer in your library, right below the top songs.\n• FIX: “Reload library” now picks up tags changed outside the app – on Android 10 the old title stayed.\n• IMPROVED: When a song is renamed, its listening history shows the new name too."
+  },
   {
    "versionCode": 67100,
    "versionName": "6.71.0",
@@ -126,15 +135,6 @@
    "title": "v6.67.1 — Loop Mixer: Pads, Synth Studio, Vorlagen",
    "de": "• FIX: Loop Mixer – Pad-Modus, Tempo-Erkennung, Marker (jetzt auch als Kapitel in der Datei) und das Speichern von Projekten arbeiten verlässlich. Auf der Timeline zoomen zwei Finger.\n• FIX: Plattform-Ausgabe – Videos entstehen, die Lautheit trifft die Vorgabe der Plattform, und Bandcamp (FLAC) gelingt.\n• FIX: Synth Studio – LFO, Filter-Hüllkurve, Reverb und Echo wirken wie eingestellt. „Meine Aufnahmen“ zeigt und spielt die Aufnahmen. Der Arpeggiator läuft beim Umstellen weiter und springt nach dem Laden eines Projekts nicht mehr zurück.\n• VERBESSERT: Vorlagen – jeder empfohlene Klang ist ein vorhandenes Preset, die Pads zeigen, was auf sie gehört, und „Auf Pad legen“ trifft das vorgesehene Pad.",
    "en": "• FIX: Loop Mixer – pad mode, tempo detection, markers (now also as chapters in the file) and saving projects work reliably. Two fingers zoom the timeline.\n• FIX: Platform export – videos are created, loudness meets the platform target, and Bandcamp (FLAC) succeeds.\n• FIX: Synth Studio – LFO, filter envelope, reverb and echo work as set. “My Recordings” lists and plays the recordings. The arpeggiator keeps running while you change settings and no longer jumps back after a project is loaded.\n• IMPROVED: Templates – every recommended sound is an existing preset, the pads show what belongs on them, and “Assign to pad” hits the intended pad."
-  },
-  {
-   "versionCode": 66700,
-   "versionName": "6.67.0",
-   "date": "2026-10-02",
-   "critical": false,
-   "title": "v6.67.0 — Loop Mixer: Klang und Schnitt",
-   "de": "• FIX: Loop Mixer – Titel mit 48 kHz klangen zu tief und zu langsam. Vorschau und fertige Datei stimmen jetzt überein: stumme Spuren, Wiederholen und Stereo kommen in beiden gleich an.\n• FIX: Abschnitte beginnen genau an der geschnittenen Stelle, auch mitten in langen MP3-Titeln. Die Schere in den Loop-Lesezeichen schneidet den markierten Ausschnitt jetzt genau aus (als WAV).\n• VERBESSERT: Pitch ändert die Tonhöhe, ohne die Länge zu ändern. Reverb klingt so lange nach wie eingestellt, und Reverb und Echo klingen über das Ende eines Abschnitts hinaus aus.\n• FIX: Nach dem Laden eines Projekts sind Wiederholen-Schalter, Tempo und Marker wieder da. Titel, Künstler und Album stehen jetzt in der ausgegebenen Datei.\n• NEU: Lange auf einen Abschnitt drücken öffnet seine Eigenschaften.",
-   "en": "• FIX: Loop Mixer – tracks at 48 kHz sounded too low and too slow. Preview and exported file now match: muted tracks, repeat and stereo arrive the same in both.\n• FIX: Segments start exactly where they were cut, even deep inside long MP3 tracks. The scissors in the loop bookmarks now cut out exactly the marked stretch (as WAV).\n• IMPROVED: Pitch changes the pitch without changing the length. Reverb rings for as long as set, and reverb and echo ring out past the end of a segment.\n• FIX: After loading a project the repeat switch, tempo and markers are back. Title, artist and album are now written into the exported file.\n• NEW: A long press on a segment opens its properties."
   }
  ]
 }
