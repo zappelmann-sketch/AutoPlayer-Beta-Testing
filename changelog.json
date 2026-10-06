@@ -1,6 +1,15 @@
 {
- "latest": 67200,
+ "latest": 67201,
  "entries": [
+  {
+   "versionCode": 67201,
+   "versionName": "6.72.1",
+   "date": "2026-10-06",
+   "critical": false,
+   "title": "v6.72.1 — Tag-Retter erkennt Zahlen als Titel",
+   "de": "• NEU: Der Tag-Retter meldet Titel, die nur aus einer Zahl bestehen, und schlägt den Titel aus dem Dateinamen vor – immer zum Prüfen, nie im Stapel.",
+   "en": "• NEW: Tag Rescue reports titles that are nothing but a number and suggests the title from the file name – always for you to check, never in bulk."
+  },
   {
    "versionCode": 67200,
    "versionName": "6.72.0",
@@ -126,15 +135,6 @@
    "title": "v6.67.2 — Genaues Springen, Loop Mixer",
    "de": "• FIX: Der Player springt in MP3s mit variabler Bitrate genau an die gewählte Stelle (Regler, Lesezeichen, A-B-Schleife, Fortsetzen nach dem Start).\n• NEU: Loop Mixer – die Abspielmarke rastet mit Beat-Snap auf die Schläge, die Plattform-Ausgabe warnt vor zu langen oder zu großen Dateien, und die Vorschau zeigt, wenn sie sich vorbereitet.\n• VERBESSERT: Synth Studio – ein Preset ohne eigenes Arpeggio lässt den Arpeggiator, wie er ist. „Leeres Projekt“ übernimmt das Tempo des ersten Segments.\n• FIX: In der Anleitung steht „%“ statt „%%“.",
    "en": "• FIX: The player jumps exactly to the chosen position in variable-bitrate MP3s (slider, bookmarks, A-B loop, resuming after a restart).\n• NEW: Loop Mixer – the playhead snaps to the beats with beat snap on, the platform export warns about files that are too long or too large, and the preview shows while it is preparing.\n• IMPROVED: Synth Studio – a preset without an arpeggio of its own leaves the arpeggiator as it is. “Empty project” takes the tempo of the first segment.\n• FIX: The guide shows “%” instead of “%%”."
-  },
-  {
-   "versionCode": 66701,
-   "versionName": "6.67.1",
-   "date": "2026-10-03",
-   "critical": false,
-   "title": "v6.67.1 — Loop Mixer: Pads, Synth Studio, Vorlagen",
-   "de": "• FIX: Loop Mixer – Pad-Modus, Tempo-Erkennung, Marker (jetzt auch als Kapitel in der Datei) und das Speichern von Projekten arbeiten verlässlich. Auf der Timeline zoomen zwei Finger.\n• FIX: Plattform-Ausgabe – Videos entstehen, die Lautheit trifft die Vorgabe der Plattform, und Bandcamp (FLAC) gelingt.\n• FIX: Synth Studio – LFO, Filter-Hüllkurve, Reverb und Echo wirken wie eingestellt. „Meine Aufnahmen“ zeigt und spielt die Aufnahmen. Der Arpeggiator läuft beim Umstellen weiter und springt nach dem Laden eines Projekts nicht mehr zurück.\n• VERBESSERT: Vorlagen – jeder empfohlene Klang ist ein vorhandenes Preset, die Pads zeigen, was auf sie gehört, und „Auf Pad legen“ trifft das vorgesehene Pad.",
-   "en": "• FIX: Loop Mixer – pad mode, tempo detection, markers (now also as chapters in the file) and saving projects work reliably. Two fingers zoom the timeline.\n• FIX: Platform export – videos are created, loudness meets the platform target, and Bandcamp (FLAC) succeeds.\n• FIX: Synth Studio – LFO, filter envelope, reverb and echo work as set. “My Recordings” lists and plays the recordings. The arpeggiator keeps running while you change settings and no longer jumps back after a project is loaded.\n• IMPROVED: Templates – every recommended sound is an existing preset, the pads show what belongs on them, and “Assign to pad” hits the intended pad."
   }
  ]
 }
