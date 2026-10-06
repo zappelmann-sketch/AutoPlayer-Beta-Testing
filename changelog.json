@@ -1,6 +1,15 @@
 {
- "latest": 67201,
+ "latest": 67300,
  "entries": [
+  {
+   "versionCode": 67300,
+   "versionName": "6.73.0",
+   "date": "2026-10-06",
+   "critical": false,
+   "title": "v6.73.0 — Mixer-Projekte teilen",
+   "de": "• NEU: Mixer-Projekte teilen – ein Bundle enthält jetzt das ganze Projekt mit allen Tondateien, Markern und Pads. Beim Empfänger steht es nach dem Import im Loop Mixer unter „Projekte“.\n• NEU: Sharing-Hub – „Importieren“ mit QR-Code-Scanner (Kamera), QR-Code aus Bild, QR-Text einfügen und Datei öffnen.\n• NEU: Unvollständige Einträge sind ausgegraut und lassen sich löschen, Importiertes ist gekennzeichnet.\n• FIX: Importierte Pad-Belegungen kommen im Projekt an. Reste früherer Importe werden beim Start aufgeräumt.\n• VERBESSERT: Teilen direkt aus der Projektliste des Loop Mixers. Die Ton-Ausgabe prüft die Dateigröße gegen die Grenze der Plattform.",
+   "en": "• NEW: Share mixer projects – a bundle now holds the whole project with all audio files, markers and pads. After the import the recipient finds it in the Loop Mixer under “Projects”.\n• NEW: Sharing Hub – “Import” with a QR code scanner (camera), QR code from image, paste QR text and open file.\n• NEW: Incomplete entries are greyed out and can be deleted, imported ones are marked.\n• FIX: Imported pad layouts arrive in the project. Left-overs of earlier imports are cleared at start.\n• IMPROVED: Share straight from the project list of the Loop Mixer. Audio output checks the file size against the platform limit."
+  },
   {
    "versionCode": 67201,
    "versionName": "6.72.1",
@@ -126,15 +135,6 @@
    "title": "v6.67.3 — Wiedergabeposition",
    "de": "• FIX: Nach einem Neustart der App steht der zuletzt gespielte Titel wieder genau dort, wo er angehalten wurde – vorher rückte er bei jedem Neustart drei Sekunden zurück.",
    "en": "• FIX: After restarting the app, the last song is again exactly where it was paused – before, it moved back three seconds with every restart."
-  },
-  {
-   "versionCode": 66702,
-   "versionName": "6.67.2",
-   "date": "2026-10-03",
-   "critical": false,
-   "title": "v6.67.2 — Genaues Springen, Loop Mixer",
-   "de": "• FIX: Der Player springt in MP3s mit variabler Bitrate genau an die gewählte Stelle (Regler, Lesezeichen, A-B-Schleife, Fortsetzen nach dem Start).\n• NEU: Loop Mixer – die Abspielmarke rastet mit Beat-Snap auf die Schläge, die Plattform-Ausgabe warnt vor zu langen oder zu großen Dateien, und die Vorschau zeigt, wenn sie sich vorbereitet.\n• VERBESSERT: Synth Studio – ein Preset ohne eigenes Arpeggio lässt den Arpeggiator, wie er ist. „Leeres Projekt“ übernimmt das Tempo des ersten Segments.\n• FIX: In der Anleitung steht „%“ statt „%%“.",
-   "en": "• FIX: The player jumps exactly to the chosen position in variable-bitrate MP3s (slider, bookmarks, A-B loop, resuming after a restart).\n• NEW: Loop Mixer – the playhead snaps to the beats with beat snap on, the platform export warns about files that are too long or too large, and the preview shows while it is preparing.\n• IMPROVED: Synth Studio – a preset without an arpeggio of its own leaves the arpeggiator as it is. “Empty project” takes the tempo of the first segment.\n• FIX: The guide shows “%” instead of “%%”."
   }
  ]
 }
