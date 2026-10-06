@@ -1,6 +1,15 @@
 {
- "latest": 67300,
+ "latest": 67400,
  "entries": [
+  {
+   "versionCode": 67400,
+   "versionName": "6.74.0",
+   "date": "2026-10-06",
+   "critical": false,
+   "title": "v6.74.0 — Teilen per QR-Code",
+   "de": "• NEU: Bundles, Loop-Segmente und Pad-Belegungen per QR-Code teilen – das andere Handy scannt den Code im Sharing-Hub unter „Importieren“ und holt die Datei direkt, ohne Versand. Beide Handys müssen im selben WLAN sein.\n• NEU: Was du importiert hast, lässt sich im Sharing-Hub wieder löschen – Projekte, Loop-Segmente, Presets und Pad-Belegungen.\n• VERBESSERT: Der Sharing-Hub zeigt nur noch Eigenes – mitgelieferte Presets und die Showcase-Mixe stehen nicht mehr zum Teilen.\n• VERBESSERT: Importieren gehört zu Pro, wie der ganze Sharing-Hub.",
+   "en": "• NEW: Share bundles, loop segments and pad layouts by QR code – the other phone scans the code in the Sharing Hub under “Import” and fetches the file directly, without sending anything. Both phones have to be in the same Wi-Fi.\n• NEW: What you imported can be deleted again in the Sharing Hub – projects, loop segments, presets and pad layouts.\n• IMPROVED: The Sharing Hub lists only what is yours – the presets and showcase mixes that ship with the app are no longer offered.\n• IMPROVED: Importing is part of Pro, like the whole Sharing Hub."
+  },
   {
    "versionCode": 67300,
    "versionName": "6.73.0",
@@ -126,15 +135,6 @@
    "title": "v6.67.4 — Hinweis beim Start",
    "de": "• NEU: Während die Bibliothek beim Start aufgebaut wird, steht unter dem Ladekreis, was gerade passiert: AutoPlayer durchsucht das Gerät nach Musik und stellt daraus die Bibliothek zusammen.",
    "en": "• NEW: While the library is being built at startup, a note under the spinner explains what is happening: AutoPlayer searches the device for music and builds the library from it."
-  },
-  {
-   "versionCode": 66703,
-   "versionName": "6.67.3",
-   "date": "2026-10-03",
-   "critical": false,
-   "title": "v6.67.3 — Wiedergabeposition",
-   "de": "• FIX: Nach einem Neustart der App steht der zuletzt gespielte Titel wieder genau dort, wo er angehalten wurde – vorher rückte er bei jedem Neustart drei Sekunden zurück.",
-   "en": "• FIX: After restarting the app, the last song is again exactly where it was paused – before, it moved back three seconds with every restart."
   }
  ]
 }
