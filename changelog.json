@@ -1,6 +1,15 @@
 {
- "latest": 67405,
+ "latest": 67406,
  "entries": [
+  {
+   "versionCode": 67406,
+   "versionName": "6.74.6",
+   "date": "2026-10-08",
+   "critical": false,
+   "title": "v6.74.6 — Wetter-DJ: ein Symbol je Wetterlage",
+   "de": "• VERBESSERT: Die Wetterkarte im Wetter-DJ zeigt jetzt ein Symbol je Wetterlage – Regenschirm bei Regen, Schneeflocke bei Schnee, Mond bei klarer Nacht. Vorher stand tagsüber immer eine Sonne dort.",
+   "en": "• IMPROVED: The weather card in Weather DJ now shows a symbol for each kind of weather – an umbrella for rain, a snowflake for snow, a moon for a clear night. Before, it always showed a sun during the day."
+  },
   {
    "versionCode": 67405,
    "versionName": "6.74.5",
@@ -126,15 +135,6 @@
    "title": "v6.69.0 — Wellenform-Zoom im Player",
    "de": "• NEU: Player – ein Regler zwischen den beiden Zeitangaben vergrößert die Wellenform bis zum Zehnfachen rund um die Abspielmarke. So lassen sich die Marken A und B genau setzen.",
    "en": "• NEW: Player – a slider between the two time labels zooms the waveform up to ten times around the playhead. That lets you set the A and B markers precisely."
-  },
-  {
-   "versionCode": 66804,
-   "versionName": "6.68.4",
-   "date": "2026-10-05",
-   "critical": false,
-   "title": "v6.68.4 — Geräte-Transfer: alles kommt an",
-   "de": "• FIX: Geräte-Transfer – Titel mit Leerzeichen, Umlauten oder Satzzeichen im Namen oder Ordner landen wieder in ihrem Ordner und behalten Wiedergabeverlauf, Positionen, Favoriten und Playlists. Bisher gingen diese Verknüpfungen beim Transfer verloren.\n• FIX: Loop Mixer – Pads und Marker gleichnamiger Projekte gehen bei Transfer und Wiederherstellung nicht mehr verloren.\n• VERBESSERT: Bricht ein Transfer ab, zeigt das empfangende Gerät, wie viele Titel angekommen sind und wie viele fehlen. Ein neuer Transfer holt nur die fehlenden nach.\n• VERBESSERT: Die mitgelieferten Demo-Mixe werden nicht mehr gesichert oder übertragen – nur deine eigenen Projekte.",
-   "en": "• FIX: Device transfer – songs with spaces, umlauts or punctuation in their name or folder land in their folder again and keep play history, positions, favorites and playlists. These links used to get lost in a transfer.\n• FIX: Loop Mixer – pads and markers of projects that share a name are no longer lost in a transfer or a restore.\n• IMPROVED: If a transfer breaks off, the receiving device shows how many songs arrived and how many are missing. A new transfer only fetches the missing ones.\n• IMPROVED: The demo mixes that ship with the app are no longer backed up or transferred – only your own projects."
   }
  ]
 }
