@@ -1,6 +1,15 @@
 {
- "latest": 67406,
+ "latest": 67407,
  "entries": [
+  {
+   "versionCode": 67407,
+   "versionName": "6.74.7",
+   "date": "2026-10-08",
+   "critical": false,
+   "title": "v6.74.7 — Wetter-DJ: Der Schalter bestimmt",
+   "de": "• FIX: Im Wetter-DJ bestimmt jetzt der Schalter. Ist er aus, zeigt der Bildschirm weder Wetter noch Titelliste und fragt nicht nach dem Standort – die Frage kommt erst beim Einschalten.\n• FIX: Das Einschalten startet keine Musik mehr. Gespielt wird mit dem Abspielknopf.\n• NEU: Ein Tipp auf einen Titel der Liste spielt sie ab dieser Stelle.\n• Ausschalten räumt den Bildschirm auf und nimmt die Schaltfläche des Wetter-DJ aus der Bibliothek.",
+   "en": "• FIX: In Weather DJ the switch now decides. Switched off, the screen shows neither weather nor track list and does not ask for the location – the question comes only when you switch it on.\n• FIX: Switching it on no longer starts music. Play the list with the play button.\n• NEW: Tapping a track in the list plays it from there.\n• Switching it off clears the screen and removes the Weather DJ button from the library."
+  },
   {
    "versionCode": 67406,
    "versionName": "6.74.6",
@@ -126,15 +135,6 @@
    "title": "v6.69.1 — Geräte-Transfer: Loops, Hörverlauf und Regeln kommen mit",
    "de": "• FIX: Geräte-Transfer – deine eigenen Schnitte und Loop-Segmente kommen jetzt mit ihren Tondateien an. Bisher kamen nur die Namen.\n• FIX: Der Hörverlauf von Titeln, die es nicht mehr gibt, bleibt beim Transfer erhalten – Hörzeit und Fortschritt der Erfolge stimmen auf dem neuen Gerät.\n• FIX: Warteschlangen-Plätze wissen auch auf dem neuen Gerät, wo sie stehen geblieben sind. Regeln, die eine Playlist starten, finden sie nach Transfer und Wiederherstellung wieder.\n• FIX: Die Daten kamen bei einem Transfer in seltenen Fällen gar nicht an, obwohl „Datenbank“ abgehakt war. Jetzt meldet das neue Gerät einen unvollständigen Transfer als unterbrochen.\n• VERBESSERT: Das empfangende Gerät zeigt, wie weit das Einordnen in die Bibliothek ist. Das sendende zeigt die Auswahl auch, während es auf die Bestätigung wartet.",
    "en": "• FIX: Device transfer – your own cuts and loop segments now arrive with their sound files. Only the names used to arrive.\n• FIX: The listening history of songs that no longer exist is kept in a transfer – listening time and achievement progress are right on the new device.\n• FIX: Queue slots remember on the new device where they stopped. Rules that start a playlist find it again after a transfer and after a restore.\n• FIX: In rare cases the data did not arrive in a transfer at all although “Database” was ticked. The new device now reports an incomplete transfer as interrupted.\n• IMPROVED: The receiving device shows how far sorting into the library has got. The sending device shows the selection while it waits for the confirmation, too."
-  },
-  {
-   "versionCode": 66900,
-   "versionName": "6.69.0",
-   "date": "2026-10-05",
-   "critical": false,
-   "title": "v6.69.0 — Wellenform-Zoom im Player",
-   "de": "• NEU: Player – ein Regler zwischen den beiden Zeitangaben vergrößert die Wellenform bis zum Zehnfachen rund um die Abspielmarke. So lassen sich die Marken A und B genau setzen.",
-   "en": "• NEW: Player – a slider between the two time labels zooms the waveform up to ten times around the playhead. That lets you set the A and B markers precisely."
   }
  ]
 }
