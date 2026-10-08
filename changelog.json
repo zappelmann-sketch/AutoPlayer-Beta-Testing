@@ -1,6 +1,15 @@
 {
- "latest": 67403,
+ "latest": 67404,
  "entries": [
+  {
+   "versionCode": 67404,
+   "versionName": "6.74.4",
+   "date": "2026-10-08",
+   "critical": false,
+   "title": "v6.74.4 — Wetter-DJ mit ungefährem Standort",
+   "de": "• VERBESSERT: Der Wetter-DJ arbeitet jetzt auch, wenn du Android nur den ungefähren Standort erlaubst. Fürs Wetter reicht das.\n• Alle anderen Standort-Funktionen brauchen weiter den genauen Standort.",
+   "en": "• IMPROVED: Weather DJ now also works when you allow Android the approximate location only. That is enough for the weather.\n• All other location features still need the precise location."
+  },
   {
    "versionCode": 67403,
    "versionName": "6.74.3",
@@ -126,15 +135,6 @@
    "title": "v6.68.3 — Geräte-Transfer",
    "de": "• FIX: Geräte-Transfer – bricht das empfangende Gerät ab, hört das sendende sofort auf, statt jede restliche Datei noch einzeln zu versuchen.\n• VERBESSERT: Geräte-Transfer – das Protokoll hält fest, wie schnell die Übertragung läuft und ob sie auf das WLAN oder auf den Speicher wartet. So lässt sich eine langsame Übertragung einordnen.",
    "en": "• FIX: Device transfer – if the receiving device cancels, the sending one stops at once instead of still trying every remaining file one by one.\n• IMPROVED: Device transfer – the log records how fast the transfer runs and whether it is waiting for the Wi-Fi or for the storage. That tells why a transfer is slow."
-  },
-  {
-   "versionCode": 66802,
-   "versionName": "6.68.2",
-   "date": "2026-10-04",
-   "critical": false,
-   "title": "v6.68.2 — Wellenform im Player",
-   "de": "• VERBESSERT: Im Player lässt sich sofort spulen, auch während die Wellenform eines Titels noch berechnet wird. Bis sie da ist, steht dort eine flache Balkenreihe mit der Abspielmarke – bisher nur ein Ladekreis.\n• VERBESSERT: Die Wellenform eines neuen Titels wird schneller berechnet.\n• FIX: Ließ sich für einen Titel keine Wellenform berechnen, zeigte der Player die des vorigen Titels oder eine leere Fläche. Jetzt bleibt die Balkenreihe stehen, und Spulen geht trotzdem.",
-   "en": "• IMPROVED: You can seek in the player right away, even while a song's waveform is still being computed. Until it is there, a flat row of bars with the playhead takes its place – it used to be just a loading circle.\n• IMPROVED: The waveform of a new song is computed faster.\n• FIX: If no waveform could be computed for a song, the player showed the previous song's waveform or an empty area. Now the row of bars stays, and seeking still works."
   }
  ]
 }
