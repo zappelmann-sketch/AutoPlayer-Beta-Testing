@@ -1,6 +1,15 @@
 {
- "latest": 67402,
+ "latest": 67403,
  "entries": [
+  {
+   "versionCode": 67403,
+   "versionName": "6.74.3",
+   "date": "2026-10-07",
+   "critical": false,
+   "title": "v6.74.3 — Berechtigungen und Bluetooth Auto-Resume",
+   "de": "• FIX: Bluetooth Auto-Resume startet die Musik wieder, sobald sich ein Lautsprecher oder das Auto verbindet. Ab Android 13 kam das Signal nicht mehr an. Auch Kontext-Regeln mit Bluetooth-Gerät greifen wieder.\n• NEU: Unter Einstellungen → Berechtigungen lässt sich eine erteilte Berechtigung wieder zurücknehmen. Dazu kommen zwei Blöcke: Benachrichtigungen sowie Musik und Audio.\n• VERBESSERT: Fragt Android nach mehrfachem Ablehnen nicht mehr nach, führt die App jetzt in die Einstellungen, statt nichts zu tun.\n• VERBESSERT: Der Player fragt nur noch einmal nach dem Mikrofon und erklärt vorher, wofür. Fehlt es, steht an der betroffenen Anzeige ein Hinweis mit dem Weg zum Erteilen.\n• FIX: Die Frage nach Benachrichtigungen geht beim ersten Abspielen nicht mehr verloren.",
+   "en": "• FIX: Bluetooth Auto-Resume starts the music again as soon as a speaker or the car connects. From Android 13 on the signal no longer arrived. Context rules with a Bluetooth device work again as well.\n• NEW: Under Settings → Permissions a granted permission can now be withdrawn. Two blocks were added: Notifications, and Music and audio.\n• IMPROVED: When Android no longer asks after repeated declining, the app now leads to the settings instead of doing nothing.\n• IMPROVED: The player asks for the microphone only once and explains first what it is for. If it is missing, the affected display shows a hint with the way to grant it.\n• FIX: The notification question no longer gets lost on the first playback."
+  },
   {
    "versionCode": 67402,
    "versionName": "6.74.2",
@@ -126,15 +135,6 @@
    "title": "v6.68.2 — Wellenform im Player",
    "de": "• VERBESSERT: Im Player lässt sich sofort spulen, auch während die Wellenform eines Titels noch berechnet wird. Bis sie da ist, steht dort eine flache Balkenreihe mit der Abspielmarke – bisher nur ein Ladekreis.\n• VERBESSERT: Die Wellenform eines neuen Titels wird schneller berechnet.\n• FIX: Ließ sich für einen Titel keine Wellenform berechnen, zeigte der Player die des vorigen Titels oder eine leere Fläche. Jetzt bleibt die Balkenreihe stehen, und Spulen geht trotzdem.",
    "en": "• IMPROVED: You can seek in the player right away, even while a song's waveform is still being computed. Until it is there, a flat row of bars with the playhead takes its place – it used to be just a loading circle.\n• IMPROVED: The waveform of a new song is computed faster.\n• FIX: If no waveform could be computed for a song, the player showed the previous song's waveform or an empty area. Now the row of bars stays, and seeking still works."
-  },
-  {
-   "versionCode": 66801,
-   "versionName": "6.68.1",
-   "date": "2026-10-04",
-   "critical": false,
-   "title": "v6.68.1 — Akku und Bibliothek",
-   "de": "• FIX: Die App zeichnet den Bildschirm nicht mehr ununterbrochen neu, wenn sich nichts bewegt. Ein pulsierender Rahmen im geschlossenen Menü hielt sie ständig beschäftigt – das kostete Akku.\n• FIX: Die Bass-Vibration misst den Ton nur noch, während Musik läuft – nicht mehr schon ab dem App-Start.\n• FIX: Loop Mixer – die Tondateien der abgelegten Projekte erscheinen nicht mehr als Titel in der Bibliothek.",
-   "en": "• FIX: The app no longer redraws the screen all the time while nothing moves. A pulsing frame in the closed menu kept it busy – that cost battery.\n• FIX: Bass vibration only measures the sound while music is playing – no longer from the moment the app starts.\n• FIX: Loop Mixer – the audio files of the stored projects no longer show up as songs in the library."
   }
  ]
 }
