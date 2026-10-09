@@ -1,6 +1,15 @@
 {
- "latest": 67408,
+ "latest": 67409,
  "entries": [
+  {
+   "versionCode": 67409,
+   "versionName": "6.74.9",
+   "date": "2026-10-09",
+   "critical": false,
+   "title": "v6.74.9 — Absturzberichte: Schalter wirkt sofort",
+   "de": "• FIX: Der Schalter „Crash Reports“ wirkt jetzt sofort. Bisher griff er erst nach einem Neustart der App.\n• FIX: Stürzt die App im Hintergrund ab, kommt die Rückfrage zum Bericht jetzt, sobald du die App wieder öffnest.\n• VERBESSERT: Das Absturzfenster erscheint schneller, und das lokale Protokoll wird bei jedem Absturz geschrieben.",
+   "en": "• FIX: The “Crash Reports” switch now takes effect at once. Before, it only applied after restarting the app.\n• FIX: If the app crashes in the background, the question about the report now comes as soon as you open the app again.\n• IMPROVED: The crash window appears faster, and the local log is written at every crash."
+  },
   {
    "versionCode": 67408,
    "versionName": "6.74.8",
@@ -126,15 +135,6 @@
    "title": "v6.70.1 — Wartung für den Hörverlauf",
    "de": "• INTERN: Nur in der Testversion – Einträge im Hörverlauf, deren Titel nach dem Neuaufspielen der Musik nicht mehr gefunden werden, lassen sich über eine ältere Sicherung wieder zuordnen.\n• Für alle anderen ändert sich nichts.",
    "en": "• INTERNAL: Test build only – listening history entries whose titles are no longer found after the music was copied to the phone again can be matched to their titles through an older backup.\n• Nothing changes for everyone else."
-  },
-  {
-   "versionCode": 67000,
-   "versionName": "6.70.0",
-   "date": "2026-10-05",
-   "critical": false,
-   "title": "v6.70.0 — Geräte-Transfer nimmt sich selbst wieder auf",
-   "de": "• NEU: Geräte-Transfer – reißt das WLAN kurz ab, nehmen beide Geräte die Übertragung von selbst wieder auf. PIN, Auswahl und Bestätigung müssen nicht noch einmal sein.\n• VERBESSERT: Im Geräte-Transfer und am Hauptschalter heißen die Vumikio Pets jetzt überall so.\n• FIX: Android 10 – der gewählte Sicherungsordner wird als „Documents/…“ angezeigt statt als „home:…“.\n• FIX: Arabisch – in fünf Texten des Geräte-Transfers standen die Ziffern „2026“ statt der Auslassungspunkte.",
-   "en": "• NEW: Device transfer – if the Wi-Fi drops for a moment, both devices pick the transfer up again by themselves. No need to go through PIN, selection and confirmation once more.\n• IMPROVED: In the device transfer and on the main switch the Vumikio Pets are now called that everywhere.\n• FIX: Android 10 – the chosen backup folder is shown as “Documents/…” instead of “home:…”.\n• FIX: Arabic – five device transfer texts showed the digits “2026” instead of the ellipsis."
   }
  ]
 }
