@@ -1,6 +1,15 @@
 {
- "latest": 67409,
+ "latest": 67410,
  "entries": [
+  {
+   "versionCode": 67410,
+   "versionName": "6.74.10",
+   "date": "2026-10-09",
+   "critical": false,
+   "title": "v6.74.10 — Absturzberichte ohne Dateipfade",
+   "de": "• VERBESSERT: Absturzberichte enthalten keine Datei- und Ordnernamen mehr. Die App nimmt sie aus der Fehlermeldung, bevor der Bericht entsteht; von Internetadressen bleibt nur der Servername.\n• FIX: Die Datenschutzerklärung nennt jetzt richtig den freien und gesamten Gerätespeicher im Bericht – bisher stand dort „Arbeitsspeicher“.",
+   "en": "• IMPROVED: Crash reports no longer contain file or folder names. The app removes them from the error message before the report is created; of web addresses only the server name remains.\n• FIX: The privacy policy now correctly names the free and total device storage in a report – it used to say “memory”."
+  },
   {
    "versionCode": 67409,
    "versionName": "6.74.9",
@@ -126,15 +135,6 @@
    "title": "v6.71.0 — Der Verlauf bleibt bei seinen Titeln",
    "de": "• NEU: Musik neu aufs Handy kopiert? Hörverlauf, Favoriten, Playlists und Lesezeichen bleiben erhalten – AutoPlayer erkennt die Titel am Klang wieder und ordnet alles von selbst zu.\n• NEU: Musik-Rückblick und Nostalgie-Maschine – „Einträge ohne Titel entfernen“ räumt Verlaufseinträge von Titeln weg, die nicht mehr auf dem Gerät sind.\n• NEU: Die Nostalgie-Maschine nennt Titel, die nicht mehr in der Bibliothek sind.",
    "en": "• NEW: Copied your music to the phone again? Listening history, favorites, playlists and bookmarks stay – AutoPlayer recognizes the songs by their sound and puts everything back by itself.\n• NEW: Music Wrapped and Nostalgie Machine – “Remove entries of missing songs” clears history entries of songs that are no longer on the device.\n• NEW: The Nostalgie Machine names songs that are no longer in your library."
-  },
-  {
-   "versionCode": 67001,
-   "versionName": "6.70.1",
-   "date": "2026-10-05",
-   "critical": false,
-   "title": "v6.70.1 — Wartung für den Hörverlauf",
-   "de": "• INTERN: Nur in der Testversion – Einträge im Hörverlauf, deren Titel nach dem Neuaufspielen der Musik nicht mehr gefunden werden, lassen sich über eine ältere Sicherung wieder zuordnen.\n• Für alle anderen ändert sich nichts.",
-   "en": "• INTERNAL: Test build only – listening history entries whose titles are no longer found after the music was copied to the phone again can be matched to their titles through an older backup.\n• Nothing changes for everyone else."
   }
  ]
 }
