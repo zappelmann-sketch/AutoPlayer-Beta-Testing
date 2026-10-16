@@ -1,6 +1,15 @@
 {
- "latest": 67410,
+ "latest": 67500,
  "entries": [
+  {
+   "versionCode": 67500,
+   "versionName": "6.75.0",
+   "date": "2026-10-17",
+   "critical": false,
+   "title": "v6.75.0 — Surf the Beat",
+   "de": "• NEU: Surf the Beat – ein Spiel auf der Bühne des Fullscreen-Visualizers. Aus der Musik, die gerade läuft, wird ein Tunnel aus Licht; deine Vumikio Pets surfen hindurch, weichen Sperrblöcken aus und fangen Noten, Sterne, Herzen und ihre eigene Beute.\n• NEU: Zehn Level mit Fähigkeiten, Groove-Kette, Gabelungen, Phasen wie Welle, Sog und Zeitlupe, Riesenwelle, Sturm und Bosslauf – nach dem Sieg das Erinnerungs-Finale. Oder der Endlos-Modus, in dem es nichts zu verlieren gibt.\n• NEU: Farbwelten für den Tunnel nach dem Genre des Liedes, eigene Spiel-Themes im Theme-Builder (Pro), ein leiser Spiel-Ton, Highscore und Trophäen – alles in Sicherung und Geräte-Transfer.\n• Einschalten: Vumikio Pets → Kachel „Spiele“, dann den Fullscreen-Visualizer öffnen.",
+   "en": "• NEW: Surf the Beat – a game on the stage of the fullscreen visualiser. The music that is playing becomes a tunnel of light; your Vumikio Pets surf through it, dodge blockers and catch notes, stars, hearts and their own prey.\n• NEW: Ten levels with abilities, a groove chain, forks, phases like wave, whirl and slow motion, the giant wave, a storm and a boss run – and after a win, the finale of memories. Or endless mode, where there is nothing to lose.\n• NEW: Colour worlds for the tunnel by the genre of the song, your own game themes in the Theme Builder (Pro), a quiet game sound, highscore and trophies – all included in backup and device transfer.\n• To switch it on: Vumikio Pets → \"Games\" tile, then open the fullscreen visualiser."
+  },
   {
    "versionCode": 67410,
    "versionName": "6.74.10",
@@ -126,15 +135,6 @@
    "title": "v6.72.0 — Einträge ohne Titel beim Namen genannt",
    "de": "• VERBESSERT: „Einträge ohne Titel entfernen“ zeigt vor dem Entfernen, um welche Titel es geht – als Liste mit Titel, Interpret und Zahl der Wiedergaben.\n• NEU: Der Musik-Rückblick nennt unter den Top Songs die meistgehörten Titel, die nicht mehr in der Bibliothek sind.\n• FIX: „Bibliothek neu laden“ übernimmt jetzt auch Tags, die außerhalb der App geändert wurden – unter Android 10 blieb der alte Titel stehen.\n• VERBESSERT: Wird ein Titel umbenannt, zeigt auch sein Hörverlauf den neuen Namen.",
    "en": "• IMPROVED: “Remove entries of missing songs” now shows which songs are affected before anything is removed – a list with title, artist and number of plays.\n• NEW: Music Wrapped names the most played songs that are no longer in your library, right below the top songs.\n• FIX: “Reload library” now picks up tags changed outside the app – on Android 10 the old title stayed.\n• IMPROVED: When a song is renamed, its listening history shows the new name too."
-  },
-  {
-   "versionCode": 67100,
-   "versionName": "6.71.0",
-   "date": "2026-10-05",
-   "critical": false,
-   "title": "v6.71.0 — Der Verlauf bleibt bei seinen Titeln",
-   "de": "• NEU: Musik neu aufs Handy kopiert? Hörverlauf, Favoriten, Playlists und Lesezeichen bleiben erhalten – AutoPlayer erkennt die Titel am Klang wieder und ordnet alles von selbst zu.\n• NEU: Musik-Rückblick und Nostalgie-Maschine – „Einträge ohne Titel entfernen“ räumt Verlaufseinträge von Titeln weg, die nicht mehr auf dem Gerät sind.\n• NEU: Die Nostalgie-Maschine nennt Titel, die nicht mehr in der Bibliothek sind.",
-   "en": "• NEW: Copied your music to the phone again? Listening history, favorites, playlists and bookmarks stay – AutoPlayer recognizes the songs by their sound and puts everything back by itself.\n• NEW: Music Wrapped and Nostalgie Machine – “Remove entries of missing songs” clears history entries of songs that are no longer on the device.\n• NEW: The Nostalgie Machine names songs that are no longer in your library."
   }
  ]
 }
