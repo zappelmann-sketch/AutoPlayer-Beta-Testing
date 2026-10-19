@@ -763,7 +763,7 @@ const D=[
 {n:"F-069: Heartbeat Sync DJ",tt:[
 {t:"Manueller Modus: Slider BPM",d:"Drawer -> Heartbeat Sync DJ. Toggle AN. SegmentedButton: 'Manuell'. Slider: BPM einstellen (60-200). Zone aendert sich (Rest/Light/Moderate/Intense/Maximum)."},
 {t:"Zone-Buttons direkt anklickbar",d:"Zone-Buttons (Rest, Light, etc.) direkt antippen -> Slider springt auf entsprechenden BPM-Wert. Passende Songs werden geladen."},
-{t:"Smartwatch-Modus",d:"SegmentedButton: 'Smartwatch' waehlen. Falls Health Connect + Smartwatch: Live-BPM wird angezeigt. Falls nicht: Fehlermeldung + automatisch zurueck auf 'Manuell'."},
+{t:"Live-Puls per Bluetooth",d:"Herzschlag-Sync oeffnen, Hauptschalter AN, einwilligen und in Androids Geraeteauswahl die Uhr (Pulsuebertragung an) oder den Brustgurt waehlen -> Live-BPM wird angezeigt. Faellt die Verbindung weg: Suche ohne alten Wert, danach verbindet die App von selbst."},
 {t:"Songs passen zur Zone",d:"Songs in der Liste muessen BPM/Energy-Werte haben die zur gewaehlten Zone passen."}
 ]},
 {n:"F-061: Speed-based Volume",tt:[
@@ -1160,9 +1160,9 @@ const D=[
 {t:"Nutzungsbedingungen oeffnen",d:"Drawer -> About -> Nutzungsbedingungen. Vollstaendiger Text muss angezeigt werden."},
 {t:"Texte in allen 26 Sprachen korrekt",d:"Sprache auf z.B. Japanisch wechseln -> Datenschutz und Nutzungsbedingungen muessen auf Japanisch erscheinen (nicht Deutsch/Englisch)."},
 {t:"Datenschutz Version + Datum aktuell",d:"Datenschutz oeffnen -> Header zeigt Version 5.0 und Datum 2026-04-29 (oder hoeher)."},
-{t:"Datenschutz Abschnitt Health Connect (4.13)",d:"Datenschutz scrollen bis Abschnitt 4.13 'Health Connect / Herzfrequenz' -> erklaert opt-in Echtzeit-Zugriff fuer Heartbeat Sync DJ."},
-{t:"Datenschutz Abschnitt Bibliothekstabelle",d:"Bibliothekstabelle enthaelt mind. ACRA, Ktor, Health Connect, JAudioTagger, ExoPlayer, Coil, ZXing."},
-{t:"Datenschutz Permission 5.11 (Health Connect)",d:"Permissions-Liste enthaelt 'health.READ_HEART_RATE' mit Begruendung 'Heartbeat Sync DJ'."},
+{t:"Datenschutz Abschnitt Herzfrequenz (9)",d:"Datenschutz scrollen bis Abschnitt 9 'Herzfrequenz' -> erklaert den Live-Puls per Bluetooth von Uhr oder Brustgurt nach Einwilligung: nur im Arbeitsspeicher, nichts wird gespeichert oder uebertragen."},
+{t:"Datenschutz: was gespeichert wird",d:"Abschnitt 9 nennt als gespeichert nur Einstellungen: gewaehltes Geraet, Einwilligung, Hauptschalter, Vibrationsstaerke, Session-Einstellungen und Puls-Vorlagen - keine Pulswerte."},
+{t:"Datenschutz Berechtigung Bluetooth",d:"Berechtigungen im Datenschutz: Zeile 'Bluetooth und Geraete in der Naehe' nennt die Verbindung zu einer Uhr oder einem Brustgurt fuer den Puls (Abschnitt 9). Eine Berechtigung health.READ_HEART_RATE gibt es nicht mehr."},
 {t:"DE-Tippfehler-Frei",d:"Datenschutz auf Deutsch durchscrollen -> keine offensichtlichen Tippfehler/Buchstabendreher (Stichprobe)."}
 ]},
 {n:"F-050: About-Screen",tt:[
@@ -1798,7 +1798,7 @@ const D_EN=[
 {n:"F-069: Heartbeat Sync DJ",tt:[
 {t:"Manual mode: Slider BPM",d:"Drawer -> Heartbeat Sync DJ. Toggle ON. Segmented button: 'Manual'. Slider: set BPM (60-200). Zone changes (Rest/Light/Moderate/Intense/Maximum)."},
 {t:"Zone buttons directly tappable",d:"Tap zone buttons (Rest, Light, etc.) directly -> slider jumps to the corresponding BPM value. Matching songs are loaded."},
-{t:"Smartwatch mode",d:"Select 'Smartwatch' in the segmented button. If Health Connect + smartwatch available: live BPM is displayed. If not: error message + automatically reverts to 'Manual'."},
+{t:"Live heart rate via Bluetooth",d:"Open Heartbeat Sync, master switch ON, give consent and choose the watch (heart rate broadcast on) or chest strap in Android's device picker -> live BPM is displayed. If the connection drops: searching without the old value, then the app reconnects by itself."},
 {t:"Songs match the zone",d:"Songs in the list must have BPM/Energy values that match the selected zone."}
 ]},
 {n:"F-061: Speed-based Volume",tt:[
@@ -2195,9 +2195,9 @@ const D_EN=[
 {t:"Open Terms of Use",d:"Drawer -> About -> Terms of Use. Full text must be displayed."},
 {t:"Texts correct in all 26 languages",d:"Switch language to e.g. Japanese -> Privacy Policy and Terms of Use must appear in Japanese (not German/English)."},
 {t:"Privacy Policy version + date current",d:"Open Privacy Policy -> header shows version 5.0 and date 2026-04-29 (or later)."},
-{t:"Privacy Policy section Health Connect (4.13)",d:"Scroll to section 4.13 'Health Connect / Heart Rate' -> explains opt-in real-time access for Heartbeat Sync DJ."},
-{t:"Privacy Policy library table",d:"Library table contains at least: ACRA, Ktor, Health Connect, JAudioTagger, ExoPlayer, Coil, ZXing."},
-{t:"Privacy Policy permission 5.11 (Health Connect)",d:"Permissions list contains 'health.READ_HEART_RATE' with justification 'Heartbeat Sync DJ'."},
+{t:"Privacy Policy section Heart rate (9)",d:"Scroll to section 9 'Heart rate' -> explains the live heart rate via Bluetooth from a watch or chest strap after consent: in memory only, nothing is stored or transmitted."},
+{t:"Privacy Policy: what is stored",d:"Section 9 lists only settings as stored: chosen device, consent, master switch, vibration strength, session settings and pulse templates - no heart rate values."},
+{t:"Privacy Policy permission Bluetooth",d:"Permissions in the Privacy Policy: the row 'Bluetooth and nearby devices' names the connection to a watch or chest strap for your heart rate (section 9). There is no health.READ_HEART_RATE permission any more."},
 {t:"German version typo-free",d:"Scroll through Privacy Policy in German -> no obvious typos/transpositions (spot check)."}
 ]},
 {n:"F-050: About Screen",tt:[

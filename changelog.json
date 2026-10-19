@@ -1,6 +1,15 @@
 {
- "latest": 67500,
+ "latest": 67600,
  "entries": [
+  {
+   "versionCode": 67600,
+   "versionName": "6.76.0",
+   "date": "2026-10-19",
+   "critical": false,
+   "title": "v6.76.0 — Herzschlag-Sync",
+   "de": "• NEU: Herzschlag-Sync, ganz neu gebaut – dein Puls kommt live per Bluetooth von deiner Uhr oder deinem Brustgurt statt über Health Connect. Er läuft in der ganzen App weiter, im Hintergrund zeigt eine stille Meldung „Herzschlag-Sync aktiv“.\n• NEU: Herzschlag-Sessions – wähle ein Ziel wie Relax, Cooldown oder Push, und die App führt dich Lied für Lied über eine Musikkurve dorthin. In der Automatik plant sie nach deinem Puls neu; am Ende zeigt ein Rückblick Pulskurve, Zonen und die passendsten Lieder.\n• NEU: Puls-Vorlagen, Herzschlag-Vibration, ein Leuchten der Bühne im Herztakt, Pets, die deinem Puls folgen, und der Cool-Bonus in Surf the Beat.\n• FIX: Bass-Vibration, Pets, Bandmaschine und die Ringe der Vollbild-Wellenform bekommen jetzt echte Frequenzbänder – der Frequenzbereich der Bass-Vibration wirkt.\n• Dein Puls bleibt auf dem Gerät: nur im Arbeitsspeicher, nie gespeichert, nie übertragen.",
+   "en": "• NEW: Heartbeat Sync, completely rebuilt – your heart rate comes live via Bluetooth from your watch or chest strap instead of Health Connect. It keeps running throughout the app; in the background a silent notice shows “Heartbeat Sync active”.\n• NEW: Heartbeat sessions – choose a goal such as Relax, Cooldown or Push, and the app leads you there song by song along a music curve. In automatic mode it plans anew from your heart rate; at the end a look back shows the heart rate curve, zones and the best-fitting songs.\n• NEW: Pulse templates, heartbeat vibration, a glow on the stage in time with your heart, Pets that follow your heart rate, and the Cool bonus in Surf the Beat.\n• FIX: Bass vibration, Pets, the tape machine and the rings of the fullscreen waveform now get real frequency bands – the frequency range of the bass vibration takes effect.\n• Your heart rate stays on the device: in memory only, never stored, never transmitted."
+  },
   {
    "versionCode": 67500,
    "versionName": "6.75.0",
@@ -126,15 +135,6 @@
    "title": "v6.72.1 — Tag-Retter erkennt Zahlen als Titel",
    "de": "• NEU: Der Tag-Retter meldet Titel, die nur aus einer Zahl bestehen, und schlägt den Titel aus dem Dateinamen vor – immer zum Prüfen, nie im Stapel.",
    "en": "• NEW: Tag Rescue reports titles that are nothing but a number and suggests the title from the file name – always for you to check, never in bulk."
-  },
-  {
-   "versionCode": 67200,
-   "versionName": "6.72.0",
-   "date": "2026-10-05",
-   "critical": false,
-   "title": "v6.72.0 — Einträge ohne Titel beim Namen genannt",
-   "de": "• VERBESSERT: „Einträge ohne Titel entfernen“ zeigt vor dem Entfernen, um welche Titel es geht – als Liste mit Titel, Interpret und Zahl der Wiedergaben.\n• NEU: Der Musik-Rückblick nennt unter den Top Songs die meistgehörten Titel, die nicht mehr in der Bibliothek sind.\n• FIX: „Bibliothek neu laden“ übernimmt jetzt auch Tags, die außerhalb der App geändert wurden – unter Android 10 blieb der alte Titel stehen.\n• VERBESSERT: Wird ein Titel umbenannt, zeigt auch sein Hörverlauf den neuen Namen.",
-   "en": "• IMPROVED: “Remove entries of missing songs” now shows which songs are affected before anything is removed – a list with title, artist and number of plays.\n• NEW: Music Wrapped names the most played songs that are no longer in your library, right below the top songs.\n• FIX: “Reload library” now picks up tags changed outside the app – on Android 10 the old title stayed.\n• IMPROVED: When a song is renamed, its listening history shows the new name too."
   }
  ]
 }

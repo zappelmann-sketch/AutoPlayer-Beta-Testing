@@ -349,7 +349,7 @@ Android Auto Browse-Hierarchie:
 | **Passenger Mode** | Beifahrer steuert Musik (Nearby Connections) |
 | **Party Mode** | Gäste per QR-Code einladen (lokaler HTTP-Server) |
 | **Weather DJ** | Wetter → passende Musik (opt-in) |
-| **Heartbeat Sync** | Health Connect → BPM-angepasste Wiedergabe |
+| **Herzschlag-Sync** | Live-Puls per Bluetooth von Uhr oder Brustgurt → BPM-angepasste Wiedergabe |
 | **Kontext Auto-Wechsel** | 12+ Bedingungen (Bewegung, Tageszeit, Kalender, GPS) |
 | **Music Genome Visualizer** | Song-DNA visualisiert (24 Farbpaletten) |
 | **Sleep Fade** | Sanftes Einschlafen mit Lautstärke-Kurve |
@@ -481,7 +481,6 @@ Easter Egg: Trick Lab
 | **jAudioTagger** | 3.0.1 | ID3-Tag lesen/schreiben |
 | **Coil** | 2.7.0 | Album Art laden/cachen |
 | **ACRA** | 5.11.4 | Opt-in Crash Reporting |
-| **Health Connect** | 1.1.0-alpha10 | Herzfrequenz-Sync |
 | **Palette API** | 1.0.0 | Dynamische Farb-Extraktion |
 | **KSP** | 2.1.0-1.0.29 | Kotlin Symbol Processing |
 | **Kotlinx Serialization** | 1.7.3 | JSON-Serialisierung |
@@ -819,7 +818,6 @@ Reacts to music taste, listening duration, time of day
 | **jAudioTagger** | 3.0.1 | ID3 tag read/write |
 | **Coil** | 2.7.0 | Album art loading |
 | **ACRA** | 5.11.4 | Opt-in crash reporting |
-| **Health Connect** | 1.1.0-alpha10 | Heart rate sync |
 
 **Android SDK:** Min API 29 (Android 10) · Target API 35 (Android 15)
 

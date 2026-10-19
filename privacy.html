@@ -6,7 +6,7 @@
 <title>AutoPlayer – Datenschutzerklärung</title>
 <!--
   AutoPlayer - Datenschutzerklaerung
-  Stand: 2026-10-17
+  Stand: 2026-10-19
 
   Diese Seite laedt bewusst KEINE Inhalte von Dritten (keine Schriftarten,
   keine Symbol-Bibliothek, keine Skripte) und speichert nichts im Browser.
@@ -280,7 +280,7 @@ table.dsgvo td:first-child{width:36%}
 <!-- ==================================================================== -->
 <main class="legal-content active" data-lang="de">
 <h1>Datenschutzerklärung – AutoPlayer</h1>
-<p class="meta">Stand: 17. Oktober 2026</p>
+<p class="meta">Stand: 19. Oktober 2026</p>
 
 <nav class="toc">
   <div class="toc-title" onclick="this.parentElement.classList.toggle('collapsed')">Inhalt</div>
@@ -343,7 +343,8 @@ bleiben auf Ihrem Gerät, sofern in Abschnitt 6 nichts anderes angegeben ist.</p
     <tr><td>Zugriff auf Audiodateien</td>
         <td>Ihre Musik finden und abspielen, Titelangaben und Cover lesen.</td></tr>
     <tr><td>Benachrichtigungen</td>
-        <td>Wiedergabesteuerung in der Benachrichtigungsleiste und auf dem Sperrbildschirm.</td></tr>
+        <td>Wiedergabesteuerung in der Benachrichtigungsleiste und auf dem Sperrbildschirm; beim
+            Herzschlag-Sync die stille Benachrichtigung „Herzschlag-Sync aktiv“ (Abschnitt 9).</td></tr>
     <tr><td>Mikrofon</td>
         <td>Fünf Zwecke, im Einzelnen in Abschnitt 5 beschrieben.</td></tr>
     <tr><td>Kamera</td>
@@ -357,8 +358,9 @@ bleiben auf Ihrem Gerät, sofern in Abschnitt 6 nichts anderes angegeben ist.</p
     <tr><td>Körperliche Aktivität</td>
         <td>Erkennen von Gehen, Laufen oder Autofahrt für aktivitätsabhängige Funktionen.</td></tr>
     <tr><td>Bluetooth und Geräte in der Nähe</td>
-        <td>Verbindung zu Autoradio und Kopfhörern sowie zu einem zweiten Gerät,
-            siehe Abschnitt 7.</td></tr>
+        <td>Verbindung zu Autoradio und Kopfhörern, zu einem zweiten Gerät (siehe
+            Abschnitt 7) sowie zu einer Uhr oder einem Brustgurt für den Puls (siehe
+            Abschnitt 9).</td></tr>
     <tr><td>WLAN-Status und WLAN-Änderung</td>
         <td>Technische Voraussetzung für die Geräteverbindungen und den
             Party-Modus im lokalen Netz.</td></tr>
@@ -366,8 +368,6 @@ bleiben auf Ihrem Gerät, sofern in Abschnitt 6 nichts anderes angegeben ist.</p
         <td>Ausschließlich für die in Abschnitt 6 genannten Funktionen.</td></tr>
     <tr><td>Vibration, Bildschirm aktiv halten, Vordergrunddienst</td>
         <td>Haptische Rückmeldung und unterbrechungsfreie Wiedergabe.</td></tr>
-    <tr><td>Herzfrequenz (Health Connect)</td>
-        <td>Nur bei ausdrücklicher Freigabe, siehe Abschnitt 9.</td></tr>
     <tr><td>USB und MIDI</td>
         <td>Anschluss eines MIDI-Controllers, falls Sie einen verwenden.</td></tr>
   </tbody>
@@ -540,13 +540,24 @@ greifen.</p>
 
 <section>
 <h2 id="de-9">9. Herzfrequenz</h2>
-<p>Eine optionale Funktion passt die Musik an Ihre Herzfrequenz an. Dafür liest die App den
-Wert über Health Connect. Das geschieht erst, nachdem Sie den Zugriff dort ausdrücklich
-erteilt haben. Die Werte werden nur auf dem Gerät und nur für die laufende Anpassung
-verwendet, nicht dauerhaft gespeichert und <strong>zu keinem Zeitpunkt an den Anbieter oder
-Dritte übermittelt</strong>. Sie können die Freigabe in Health Connect jederzeit
-zurücknehmen. Ohne Freigabe steht ein manueller Modus zur Verfügung, bei dem Sie den Takt
-selbst vorgeben.</p>
+<p>Eine optionale Funktion (Herzschlag-Sync) zeigt Ihren Puls live an und nutzt ihn für die
+Auswahl der Musik, für Herzschlag-Sessions mit Rückblick, für eine Vibration im Takt des
+Pulses, für ein Leuchten der Bühne, für das Verhalten der Vumikio Pets und für einen Bonus im
+Spiel „Surf the Beat“. Dafür empfängt die App den Wert per Bluetooth direkt von Ihrer Uhr oder
+Ihrem Brustgurt, über den allgemeinen Bluetooth-Standard für Herzfrequenz. Das geschieht erst,
+nachdem Sie in der App ausdrücklich eingewilligt und die Verbindung im Herzschlag-Sync
+hergestellt haben. Danach läuft der Empfang in der ganzen App und, solange die Musikwiedergabe
+die App aktiv hält, auch im Hintergrund; währenddessen zeigt eine stille Benachrichtigung
+„Herzschlag-Sync aktiv“, ohne Pulswert. Der Empfang endet, wenn Sie trennen, den
+Herzschlag-Sync ausschalten oder die App beenden. Der Puls wird nur im Arbeitsspeicher des
+Geräts verarbeitet – auch der Verlauf einer Herzschlag-Session, der verworfen wird, sobald Sie
+den Rückblick schließen oder die App beenden –, er wird <strong>nicht gespeichert und zu keinem
+Zeitpunkt an den Anbieter oder Dritte übermittelt</strong>. Gespeichert werden nur das gewählte
+Gerät (Name und Bluetooth-Adresse), Datum und Textfassung Ihrer Einwilligung, ob der Herzschlag-Sync eingeschaltet ist, die Stärke der Herzschlag-Vibration, die zuletzt gewählten Session-Einstellungen und von Ihnen
+angelegte Puls-Vorlagen (beides nur Einstellungen wie Ziel und Dauer, keine Pulswerte); all das geht mit in Ihre selbst erstellte Sicherung und
+in die Geräte-Übertragung. Sie können die Einwilligung jederzeit widerrufen: im Herzschlag-Sync
+unter „Trennen“ oder in den Einstellungen unter „Berechtigungen“. Ohne Einwilligung steht ein
+manueller Modus zur Verfügung, bei dem Sie den Takt selbst vorgeben.</p>
 </section>
 
 <section>
@@ -602,7 +613,7 @@ zuzurechnen ist, gilt:</p>
     <tr><td>Fehlerbericht, den Sie einschalten und im Dialog bestätigen</td>
         <td>Art. 6 Abs. 1 lit. a DSGVO – Einwilligung, jederzeit mit Wirkung für
             die Zukunft widerrufbar</td></tr>
-    <tr><td>Auslesen der Herzfrequenz nach Freigabe in Health Connect</td>
+    <tr><td>Live-Empfang des Pulses von Uhr oder Brustgurt nach Ihrer Einwilligung in der App</td>
         <td>Art. 6 Abs. 1 lit. a in Verbindung mit Art. 9 Abs. 2 lit. a DSGVO –
             ausdrückliche Einwilligung in die Verarbeitung von Gesundheitsdaten</td></tr>
     <tr><td>Kauf der Vollversion und Prüfung der Lizenz</td>
@@ -686,7 +697,7 @@ Maßgeblich ist die jeweils hier veröffentlichte Fassung; das Datum steht oben.
 <!-- ==================================================================== -->
 <main class="legal-content" data-lang="en">
 <h1>Privacy Policy – AutoPlayer</h1>
-<p class="meta">Last updated: 17 October 2026</p>
+<p class="meta">Last updated: 19 October 2026</p>
 
 <nav class="toc">
   <div class="toc-title" onclick="this.parentElement.classList.toggle('collapsed')">Contents</div>
@@ -748,7 +759,8 @@ stays on your device unless section 6 states otherwise.</p>
     <tr><td>Access to audio files</td>
         <td>Finding and playing your music, reading track details and cover art.</td></tr>
     <tr><td>Notifications</td>
-        <td>Playback controls in the notification shade and on the lock screen.</td></tr>
+        <td>Playback controls in the notification shade and on the lock screen; with Heartbeat Sync
+            the silent notification “Heartbeat Sync active” (section 9).</td></tr>
     <tr><td>Microphone</td>
         <td>Five purposes, detailed in section 5.</td></tr>
     <tr><td>Camera</td>
@@ -762,8 +774,8 @@ stays on your device unless section 6 states otherwise.</p>
     <tr><td>Physical activity</td>
         <td>Detecting walking, running or driving for activity-based features.</td></tr>
     <tr><td>Bluetooth and nearby devices</td>
-        <td>Connecting to car stereos and headphones, and to a second device, see
-            section 7.</td></tr>
+        <td>Connecting to car stereos and headphones, to a second device (see section 7)
+            and to a watch or chest strap for your heart rate (see section 9).</td></tr>
     <tr><td>Wi-Fi state and Wi-Fi change</td>
         <td>Technical prerequisite for device connections and party mode on your
             local network.</td></tr>
@@ -771,8 +783,6 @@ stays on your device unless section 6 states otherwise.</p>
         <td>Only for the features listed in section 6.</td></tr>
     <tr><td>Vibration, keep screen awake, foreground service</td>
         <td>Haptic feedback and uninterrupted playback.</td></tr>
-    <tr><td>Heart rate (Health Connect)</td>
-        <td>Only with your explicit approval, see section 9.</td></tr>
     <tr><td>USB and MIDI</td>
         <td>Connecting a MIDI controller, if you use one.</td></tr>
   </tbody>
@@ -930,11 +940,22 @@ duties remain unaffected; they may apply, for instance, to messages concerning a
 
 <section>
 <h2 id="en-9">9. Heart rate</h2>
-<p>An optional feature adapts the music to your heart rate, reading the value through Health
-Connect. This happens only after you have explicitly granted access there. Values are used on
-the device only, for the current adjustment, are not stored permanently and are <strong>never
-transmitted to the developer or third parties</strong>. You can revoke the grant in Health
-Connect at any time. Without it, a manual mode lets you set the tempo yourself.</p>
+<p>An optional feature (Heartbeat Sync) shows your heart rate live and uses it to choose the
+music, for heartbeat sessions with a look back, for a vibration in time with your heart rate,
+for a glow on the stage, for the behaviour of the Vumikio Pets and for a bonus in the game
+“Surf the Beat”. To do so, the app receives the value via Bluetooth directly from your watch or
+chest strap, through the general Bluetooth standard for heart rate. This happens only after you
+have explicitly consented in the app and connected in Heartbeat Sync. From then on, reception
+runs throughout the app and, while music playback keeps the app active, also in the background;
+meanwhile a silent notification shows “Heartbeat Sync active”, without a heart rate value.
+Reception ends when you disconnect, switch Heartbeat Sync off or exit the app. Your heart rate
+is processed in the device's memory only – including the course of a heartbeat session, which
+is discarded as soon as you close the look back or exit the app – and is <strong>not stored and
+never transmitted to the developer or third parties</strong>. Only the chosen device (name and
+Bluetooth address), the date and text version of your consent, whether Heartbeat Sync is switched on, the strength of the heartbeat vibration, the session settings you chose last and pulse templates you
+create (both settings such as goal and duration only, no heart rate values) are stored; all of this is included in backups you create and in the device transfer.
+You can withdraw your consent at any time: in Heartbeat Sync under “Disconnect” or in Settings
+under “Permissions”. Without consent, a manual mode lets you set the tempo yourself.</p>
 </section>
 
 <section>
@@ -984,7 +1005,7 @@ the following applies:</p>
         <td>Art. 6(1)(b) GDPR</td></tr>
     <tr><td>An error report you enable and confirm in the dialog</td>
         <td>Art. 6(1)(a) GDPR – consent, revocable at any time with future effect</td></tr>
-    <tr><td>Reading heart rate after approval in Health Connect</td>
+    <tr><td>Receiving your heart rate live from a watch or chest strap after your consent in the app</td>
         <td>Art. 6(1)(a) together with Art. 9(2)(a) GDPR – explicit consent to
             processing health data</td></tr>
     <tr><td>Purchasing the full version and licence verification</td>
