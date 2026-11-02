@@ -6,7 +6,7 @@
 <title>AutoPlayer – Datenschutzerklärung</title>
 <!--
   AutoPlayer - Datenschutzerklaerung
-  Stand: 2026-10-19
+  Stand: 2026-11-02
 
   Diese Seite laedt bewusst KEINE Inhalte von Dritten (keine Schriftarten,
   keine Symbol-Bibliothek, keine Skripte) und speichert nichts im Browser.
@@ -280,7 +280,7 @@ table.dsgvo td:first-child{width:36%}
 <!-- ==================================================================== -->
 <main class="legal-content active" data-lang="de">
 <h1>Datenschutzerklärung – AutoPlayer</h1>
-<p class="meta">Stand: 19. Oktober 2026</p>
+<p class="meta">Stand: 2. November 2026</p>
 
 <nav class="toc">
   <div class="toc-title" onclick="this.parentElement.classList.toggle('collapsed')">Inhalt</div>
@@ -445,9 +445,12 @@ bedingt Ihre IP-Adresse.</p>
         <td>Open-Meteo. Übermittelt werden gerundete Koordinaten (etwa 110 Meter
             genau).
             <a href="https://open-meteo.com/en/terms" target="_blank" rel="noopener noreferrer">Datenschutzhinweise von Open-Meteo</a></td></tr>
-    <tr><td>Ortsnamen für ortsbezogene Funktionen (optional)</td>
+    <tr><td>Kontext-Regel &bdquo;Natur in der Nähe&ldquo; (optional)</td>
         <td>Overpass-API (OpenStreetMap, betrieben durch FOSSGIS e.&nbsp;V.).
-            Übermittelt werden gerundete Koordinaten.
+            Erst wenn Sie &bdquo;OpenStreetMap-Abfragen&ldquo; in den Einstellungen
+            einschalten, übermittelt die App gerundete Koordinaten (etwa 110 Meter
+            genau) und den gewählten Umkreis. Zurück kommt nur, ob Gewässer, Wald,
+            Berge, Strand oder Parks in der Nähe liegen.
             <a href="https://wiki.osmfoundation.org/wiki/Privacy_Policy" target="_blank" rel="noopener noreferrer">Datenschutzerklärung der OSM Foundation</a></td></tr>
     <tr><td>Karte in &bdquo;Meine Orte&ldquo;</td>
         <td>OpenStreetMap Foundation. Geladen werden Kartenausschnitte; daraus ist die
@@ -455,8 +458,14 @@ bedingt Ihre IP-Adresse.</p>
     <tr><td>Ortssuche in &bdquo;Meine Orte&ldquo; (nur auf Ihre Eingabe)</td>
         <td>Nominatim (OpenStreetMap Foundation). Übermittelt werden der eingegebene
             Suchbegriff und die App-Sprache, kein Standort.</td></tr>
-    <tr><td>Suche nach App-Aktualisierungen und Änderungsprotokoll</td>
-        <td>GitHub Pages (GitHub, Inc.). Übermittelt werden IP-Adresse und
+    <tr><td>Suche nach App-Aktualisierungen</td>
+        <td>Google Play. Bei jedem Start und auf Ihren Tipp auf &bdquo;Auf Update
+            prüfen&ldquo; fragt die App über den Play Store Ihres Geräts, ob eine
+            neue Fassung bereitsteht.
+            <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Datenschutzerklärung von Google</a></td></tr>
+    <tr><td>Änderungsprotokoll einer neuen Fassung</td>
+        <td>GitHub Pages (GitHub, Inc.). Nur wenn eine neue Fassung bereitsteht,
+            lädt die App deren Änderungsprotokoll. Übermittelt werden IP-Adresse und
             technische Abrufdaten. Inhalte Ihrer Bibliothek werden nicht gesendet.
             <a href="https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener noreferrer">Datenschutzerklärung von GitHub</a></td></tr>
     <tr><td>Kauf und Lizenzprüfung</td>
@@ -673,7 +682,7 @@ eigenen Angaben zu Sicherheitszwecken.
 Dritten</strong> nach – keine Schriftarten, keine Symbole, keine Skripte. Die
 gewählte Sprache steht ausschließlich in der Adresse der Seite
 (<code>?lang=de</code>).</p>
-<p>Diese Erklärung ist dauerhaft abrufbar unter <a href="https://zappelmann-sketch.github.io/AutoPlayer-Beta-Testing/privacy.html">https://zappelmann-sketch.github.io/AutoPlayer-Beta-Testing/privacy.html</a> – dort können Sie sie auch ausdrucken oder weitergeben.</p>
+<p>Diese Erklärung ist dauerhaft abrufbar unter <a href="https://zappelmann-sketch.github.io/AutoPlayer-Beta-Testing/privacy.html">https://zappelmann-sketch.github.io/AutoPlayer-Beta-Testing/privacy.html</a> – dort können Sie sie auch ausdrucken oder weitergeben. In der App steht sie Wort für Wort ebenso; beim Lesen dort wird nichts übertragen, erst ein angetippter Verweis öffnet die jeweilige Seite im Browser.</p>
 </section>
 
 <section>
@@ -697,7 +706,7 @@ Maßgeblich ist die jeweils hier veröffentlichte Fassung; das Datum steht oben.
 <!-- ==================================================================== -->
 <main class="legal-content" data-lang="en">
 <h1>Privacy Policy – AutoPlayer</h1>
-<p class="meta">Last updated: 19 October 2026</p>
+<p class="meta">Last updated: 2 November 2026</p>
 
 <nav class="toc">
   <div class="toc-title" onclick="this.parentElement.classList.toggle('collapsed')">Contents</div>
@@ -854,9 +863,12 @@ every connection the respective provider necessarily learns your IP address.</p>
     <tr><td>Weather DJ and weather in Context Auto-Switch (optional)</td>
         <td>Open-Meteo. Rounded coordinates (roughly 110 metres) are sent.
             <a href="https://open-meteo.com/en/terms" target="_blank" rel="noopener noreferrer">Open-Meteo privacy terms</a></td></tr>
-    <tr><td>Place names for location-based features (optional)</td>
-        <td>Overpass API (OpenStreetMap, operated by FOSSGIS e.&nbsp;V.). Rounded
-            coordinates are sent.
+    <tr><td>Context rule &ldquo;Nature Nearby&rdquo; (optional)</td>
+        <td>Overpass API (OpenStreetMap, operated by FOSSGIS e.&nbsp;V.). Only once
+            you switch on &ldquo;OpenStreetMap Lookups&rdquo; in the settings does the
+            app send rounded coordinates (roughly 110 metres) and the chosen radius.
+            All that comes back is whether water, forest, mountains, beach or parks
+            are nearby.
             <a href="https://wiki.osmfoundation.org/wiki/Privacy_Policy" target="_blank" rel="noopener noreferrer">OSM Foundation privacy policy</a></td></tr>
     <tr><td>Map in &ldquo;My places&rdquo;</td>
         <td>OpenStreetMap Foundation. Map sections are loaded, which reveals the area
@@ -864,9 +876,15 @@ every connection the respective provider necessarily learns your IP address.</p>
     <tr><td>Place search in &ldquo;My places&rdquo; (only when you search)</td>
         <td>Nominatim (OpenStreetMap Foundation). The search term you entered and the
             app language are sent, no location.</td></tr>
-    <tr><td>Checking for app updates and the changelog</td>
-        <td>GitHub Pages (GitHub, Inc.). IP address and technical request data
-            are transmitted. No library content is sent.
+    <tr><td>Checking for app updates</td>
+        <td>Google Play. Each time the app starts and when you tap &ldquo;Check for
+            updates&rdquo;, the app asks via the Play Store on your device whether a
+            new version is available.
+            <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google privacy policy</a></td></tr>
+    <tr><td>Changelog of a new version</td>
+        <td>GitHub Pages (GitHub, Inc.). Only when a new version is available does
+            the app load its changelog. IP address and technical request data are
+            transmitted. No library content is sent.
             <a href="https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener noreferrer">GitHub privacy statement</a></td></tr>
     <tr><td>Purchase and licence checks</td>
         <td>Google Play, see section 11.
@@ -1057,7 +1075,7 @@ security purposes.
 in your browser and loads <strong>no third-party content</strong> – no fonts, no
 icons, no scripts. Your chosen language lives solely in the page address
 (<code>?lang=en</code>).</p>
-<p>This policy is permanently available at <a href="https://zappelmann-sketch.github.io/AutoPlayer-Beta-Testing/privacy.html">https://zappelmann-sketch.github.io/AutoPlayer-Beta-Testing/privacy.html</a> – there you can also print or share it.</p>
+<p>This policy is permanently available at <a href="https://zappelmann-sketch.github.io/AutoPlayer-Beta-Testing/privacy.html">https://zappelmann-sketch.github.io/AutoPlayer-Beta-Testing/privacy.html</a> – there you can also print or share it. The app contains it word for word as well; reading it there transmits nothing – only a link you tap opens the page in your browser.</p>
 </section>
 
 <section>
