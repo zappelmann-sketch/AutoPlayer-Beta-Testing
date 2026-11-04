@@ -1,6 +1,15 @@
 {
- "latest": 67600,
+ "latest": 67700,
  "entries": [
+  {
+   "versionCode": 67700,
+   "versionName": "6.77.0",
+   "date": "2026-11-04",
+   "critical": false,
+   "title": "v6.77.0 — Neues Benutzerhandbuch",
+   "de": "• NEU: Das Benutzerhandbuch in der App ist neu – das ganze Online-Handbuch mit 113 Kapiteln, Bildern, Suche und Inhaltsverzeichnis, ohne Internet.\n• NEU: Vorlesen – ein Kapitel, ein Bereich oder das ganze Handbuch; die Seite läuft mit und zeigt, was gerade gelesen wird.\n• NEU: Das Handbuch gibt es auf Deutsch, Englisch, Spanisch, Arabisch, Portugiesisch (Brasilien) und Französisch; in den übrigen Sprachen zeigt die App es auf Englisch.\n• NEU: Neue Sprachbefehle in allen Sprachen – Loop Mixer, Sharing Hub, Smart Reorder und den Vintage-Plattenspieler öffnen.\n• FIX: Vorlesen klappt wieder nach Schließen und Wiederöffnen der App; Sichern und Wiederherstellen und die App-Sprache für Pets und Medienmeldung unter Android 10–12 berichtigt; „Natur in der Nähe“ sendet nur noch gerundete Koordinaten.",
+   "en": "• NEW: The in-app user guide is new – the complete online guide with 113 chapters, pictures, search and contents, without internet.\n• NEW: Read aloud – one chapter, one section or the whole guide; the page follows along and shows what is being read.\n• NEW: The guide is available in German, English, Spanish, Arabic, Portuguese (Brazil) and French; in the other languages the app shows it in English.\n• NEW: New voice commands in every language – open Loop Mixer, Sharing Hub, Smart Reorder and the Vintage Turntable.\n• FIX: Read aloud works again after closing and reopening the app; backup and restore and the app language for pets and the media notification on Android 10–12 corrected; “Nature Nearby” only sends rounded coordinates."
+  },
   {
    "versionCode": 67600,
    "versionName": "6.76.0",
@@ -126,15 +135,6 @@
    "title": "v6.73.0 — Mixer-Projekte teilen",
    "de": "• NEU: Mixer-Projekte teilen – ein Bundle enthält jetzt das ganze Projekt mit allen Tondateien, Markern und Pads. Beim Empfänger steht es nach dem Import im Loop Mixer unter „Projekte“.\n• NEU: Sharing-Hub – „Importieren“ mit QR-Code-Scanner (Kamera), QR-Code aus Bild, QR-Text einfügen und Datei öffnen.\n• NEU: Unvollständige Einträge sind ausgegraut und lassen sich löschen, Importiertes ist gekennzeichnet.\n• FIX: Importierte Pad-Belegungen kommen im Projekt an. Reste früherer Importe werden beim Start aufgeräumt.\n• VERBESSERT: Teilen direkt aus der Projektliste des Loop Mixers. Die Ton-Ausgabe prüft die Dateigröße gegen die Grenze der Plattform.",
    "en": "• NEW: Share mixer projects – a bundle now holds the whole project with all audio files, markers and pads. After the import the recipient finds it in the Loop Mixer under “Projects”.\n• NEW: Sharing Hub – “Import” with a QR code scanner (camera), QR code from image, paste QR text and open file.\n• NEW: Incomplete entries are greyed out and can be deleted, imported ones are marked.\n• FIX: Imported pad layouts arrive in the project. Left-overs of earlier imports are cleared at start.\n• IMPROVED: Share straight from the project list of the Loop Mixer. Audio output checks the file size against the platform limit."
-  },
-  {
-   "versionCode": 67201,
-   "versionName": "6.72.1",
-   "date": "2026-10-06",
-   "critical": false,
-   "title": "v6.72.1 — Tag-Retter erkennt Zahlen als Titel",
-   "de": "• NEU: Der Tag-Retter meldet Titel, die nur aus einer Zahl bestehen, und schlägt den Titel aus dem Dateinamen vor – immer zum Prüfen, nie im Stapel.",
-   "en": "• NEW: Tag Rescue reports titles that are nothing but a number and suggests the title from the file name – always for you to check, never in bulk."
   }
  ]
 }
