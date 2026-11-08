@@ -21,7 +21,7 @@ Wechsle die Ansicht mit einem Tipp: Kassettendeck, Jukebox, DJ-Plattenspieler, B
 - **119 Sprachbefehle** – freihändig, auch im Auto
 - **5 Vumikio Pets** – die auf deine Musik reagieren
 - **10 Level** – in Surf the Beat
-- **2.310 automatische Tests** – laufen vor jeder neuen Version
+- **2.312 automatische Tests** – laufen vor jeder neuen Version
 - **10–16 Android-Versionen** – von Android 10 bis Android 16
 
 ## Surf the Beat. Dein Lied wird zum Tunnel.
@@ -63,7 +63,7 @@ Switch the look with one tap: cassette deck, jukebox, DJ turntable, reel-to-reel
 - **119 Voice commands** – hands-free, even in the car
 - **5 Vumikio Pets** – that react to your music
 - **10 Levels** – in Surf the Beat
-- **2,310 automated tests** – run before every new version
+- **2,312 automated tests** – run before every new version
 - **10–16 Android versions** – from Android 10 to Android 16
 
 ## Surf the Beat. Your song becomes a tunnel.
