@@ -118,6 +118,14 @@ code { background: rgba(255, 255, 255, 0.06); border-color: var(--rand); font-fa
 /* language switch */
 .sprachwahl { border-color: var(--rand); background: var(--karte); }
 .sprachwahl a[aria-current="true"] { background: rgba(98, 232, 200, 0.14); color: var(--akzent); }
+
+/* back to the landing page: left in the row of the language switch, the same pill (website only, the
+   build script adds it). Both language links are in the shared header row; <html lang> picks one. */
+.kopfzeile { justify-content: space-between; align-items: center; gap: 12px; }
+.startwahl { display: inline-flex; border: 1px solid var(--rand); border-radius: 999px; overflow: hidden; background: var(--karte); }
+.startwahl a { padding: 5px 15px; font-size: 13.5px; color: var(--gedaempft); text-decoration: none; }
+.startwahl a:hover { color: var(--text); background: #1c2333; }
+html[lang="en"] .startwahl a[data-fuer="de"], html:not([lang="en"]) .startwahl a[data-fuer="en"] { display: none; }
 footer.fuss { border-top-color: var(--rand); }
 
 /* ---------- chapter build (js/kapitelbau.js) ---------- */
