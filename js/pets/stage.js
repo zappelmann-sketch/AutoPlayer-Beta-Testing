@@ -317,7 +317,8 @@
   let scriptIdx = 0;
   // Finale of the 30 s demo: on the last big hit of the song "Neon-Baustelle" (25.0 s) all five
   // pets do a trick at once.
-  const FINALE_MS = /[?&]demo=30\b/.test(location.search)
+  // (the engine knows which demo runs - the start page runs the 30 s demo without ?demo=30)
+  const FINALE_MS = window.APEngine && window.APEngine.demoName === '30'
     ? ((window.APLang && window.APLang.finaleMs) || 25000) : null;   // English song: 25.2 s
   let finaleDone = false;
   function script(tMs) {

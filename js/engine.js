@@ -2,9 +2,16 @@
    Sections "build themselves" while they scroll into view: a swarm of labelled cursors drags
    boxes open, types headlines, fills colours, raises glass blur and counts numbers up, each with a
    live spec chip. State is a pure function of time t, so demo mode and video export are exact.
-   Modes: live (visitor scrolls), demo (?demo=15|30, scripted scroll), frozen (renderAt(t) for export). */
+   Modes: live (visitor scrolls), demo (?demo=15|30, scripted scroll), frozen (renderAt(t) for export).
+   The start page runs the 30 s demo by itself (Kay 08.11.2026); ?demo=aus = the visitor scrolls. */
 (function () {
   'use strict';
+
+  // Which demo runs: the address decides, the start page without one gets the 30 s demo with its song
+  // (page.js). Not when the system asks for reduced motion - then everything stands there at once.
+  const QUERY = new URLSearchParams(location.search);
+  const REDUCE = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const DEMO = QUERY.get('demo') || (REDUCE ? null : '30');
 
   const clamp = (v, a, b) => Math.min(b, Math.max(a, v));
   const lerp = (a, b, p) => a + (b - a) * p;
@@ -334,10 +341,10 @@
 
   // ---------- boot ----------
   function boot(opts) {
-    const q = new URLSearchParams(location.search);
-    const demo = q.get('demo');
+    const q = QUERY;
+    const demo = DEMO;
     const frozenAt = q.has('t') ? parseFloat(q.get('t')) : null;
-    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches && !demo;
+    const reduce = REDUCE && !(demo && opts.demos[demo]);   // a demo asked for in the address still runs
     if (q.has('clean')) document.documentElement.classList.add('clean');   // reference stills for Veo
     const ready = Promise.all([
       document.fonts ? document.fonts.ready : Promise.resolve(),
@@ -389,19 +396,37 @@
         // built yet build when they come into view (live mode). R starts the demo again.
         let t0 = performance.now() + 400;
         let handedOver = false;
-        const handOver = () => {
+        const handOver = (e) => {
+          // the sound button of the demo (data-keep-demo) is not taking over
+          if (e && e.target && e.target.closest && e.target.closest('[data-keep-demo]')) return;
           if (handedOver) return;
           handedOver = true;
           S.mode = 'live';
           document.documentElement.classList.remove('demo');
         };
-        // armed only once the demo runs - the click on the start button must not count as taking over
+        // where the demo stands (s), or null once the visitor took over or it is over
+        api.time = () => (handedOver ? null : Math.max(0, (performance.now() - t0) / 1000));
+        // the demo once more from the top (sound button after the demo, page.js)
+        api.restart = () => {
+          t0 = performance.now();
+          handedOver = false;
+          S.mode = 'demo';
+          document.documentElement.classList.add('demo');
+        };
+        // armed only once the demo runs
         const arm = () => {
           ['wheel', 'touchstart', 'mousedown'].forEach((ev) => window.addEventListener(ev, handOver, { passive: true }));
-          window.addEventListener('keydown', (e) => { if (e.key === 'r' || e.key === 'R') location.reload(); else handOver(); });
+          window.addEventListener('keydown', (e) => { if (e.key === 'r' || e.key === 'R') location.reload(); else handOver(e); });
         };
         const loop = (now) => {
-          const t = Math.max(0, (now - t0) / 1000);
+          let t = Math.max(0, (now - t0) / 1000);
+          // with the song (page.js): the picture follows the song's clock - slowly, at most half a
+          // frame per frame, so it never visibly jumps back
+          const song = !handedOver && opts.clockOf ? opts.clockOf(t) : null;
+          if (song != null) {
+            t0 -= clamp((song - t) * 1000, -8, 8);
+            t = Math.max(0, (now - t0) / 1000);
+          }
           if (!handedOver) {
             if (t > cfg.duration + 0.3) handOver();
             else window.scrollTo(0, scrollAt(Math.min(t, cfg.duration)));
@@ -409,8 +434,9 @@
           render(t);
           requestAnimationFrame(loop);
         };
-        // opts.gate may hold the start back (demo with music: browsers play sound only after a click)
-        if (opts.gate) opts.gate(demo).then(() => { t0 = performance.now(); arm(); requestAnimationFrame(loop); });
+        // opts.gate may hold the start back until the song plays; it answers with how far the song
+        // already is (s), so picture and music start together
+        if (opts.gate) opts.gate(demo).then((skew) => { t0 = performance.now() - (skew || 0) * 1000; arm(); requestAnimationFrame(loop); });
         else { arm(); requestAnimationFrame(loop); }
         return;
       }
@@ -424,6 +450,8 @@
 
   window.APEngine = {
     agents, section, start: boot, EASE,
+    /** The demo of this page view ('15', '30', null = none) - stage.js times the finale of the pets by it. */
+    demoName: DEMO,
     onFrame: (fn) => S.hooks.push(fn),
     /** Current jobs of the builders: { petKey: { pt: {x, y} in page px, since, busy } } */
     work: () => S.work || {},

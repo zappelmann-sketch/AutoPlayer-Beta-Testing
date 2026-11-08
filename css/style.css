@@ -368,9 +368,17 @@ html.clean #swarm, html.clean #pets, html.clean .tools { display: none !importan
 
 /* the real Surf the Beat clip (screen recording) - centre of the tunnel in the frame */
 #surfA video { object-position: 50% 48%; }
-/* demo with music: one click starts film and song together */
-.play-gate { position: fixed; inset: 0; z-index: 90; display: grid; place-items: center; background: rgba(5, 10, 18, 0.6); }
-.play-gate .btn { font-size: 20px; padding: 18px 30px; --fill: 1; }
+/* the sound button of the 30 s demo (page.js): mint while it offers the song, quiet while the song plays */
+.sound-pill {
+  position: fixed; left: 50%; bottom: 18px; transform: translateX(-50%); z-index: 70;
+  padding: 11px 20px; border-radius: 999px; cursor: pointer; white-space: nowrap;
+  font: inherit; font-size: 15px; font-weight: 600; color: #04221c;
+  background: var(--mint); border: 1px solid var(--mint);
+  box-shadow: 0 8px 30px -8px rgba(98, 232, 200, 0.55);
+}
+.sound-pill.on { color: var(--ink); background: rgba(5, 10, 18, 0.72); border-color: var(--line); box-shadow: none; }
+.sound-pill:focus-visible { outline: 2px solid #fff; outline-offset: 3px; }
+html.clean .sound-pill { display: none; }
 
 /* sound of the Surf the Beat clip: tap the phone (or the button) to switch it on and off */
 #surfA { cursor: pointer; }

@@ -233,31 +233,77 @@
     document.getElementById('surfA').addEventListener('click', toggleClipSound);
   }
 
-  // Demo with music (?musik=1): "Neon-Baustelle" (track 161) runs once under the 30 s demo.
-  // Browsers play sound only after a click, so the demo waits for one.
-  function gate() {
-    if (!new URLSearchParams(location.search).has('musik')) return Promise.resolve();
+  // The 30 s demo with its song "Neon-Baustelle" / "Neon Build Site" (track 161) - on the start page
+  // by itself (Kay 08.11.2026), and with ?demo=30&musik=1. The demo starts at once. The song starts
+  // with it when the browser lets the page play sound; on a first visit most browsers wait for a
+  // click or tap. Then the demo runs without sound and the sound button brings the song in exactly
+  // where the demo stands. While the song plays, the same button turns it off (sound that starts by
+  // itself must be stoppable).
+  function gate(demo) {
+    const q = new URLSearchParams(location.search);
+    if (demo !== '30' || (q.has('demo') && !q.has('musik'))) return Promise.resolve(0);
     const music = new Audio(L.t('music'));
     music.preload = 'auto';
     demoMusic = music;
-    const box = document.createElement('div');
-    box.className = 'play-gate';
-    const btn = document.createElement('button');
-    btn.className = 'btn btn-mint';
-    btn.type = 'button';
-    const label = document.createElement('span');
-    label.textContent = L.t('playDemo');
-    btn.appendChild(label);
-    box.appendChild(btn);
-    document.body.appendChild(box);
+    soundPill(music);
     return new Promise((res) => {
-      box.querySelector('button').addEventListener('click', () => {
-        box.remove();
-        music.currentTime = 0;
-        music.play().catch(() => {});
-        res();
+      let started = false;
+      const go = (skew) => { if (!started) { started = true; res(skew); } };
+      // play() reports "playing" before the song's clock really moves (up to 0.4 s in Edge): the
+      // demo starts once it does, at most 1.5 s later
+      const moving = () => new Promise((ok) => {
+        const until = performance.now() + 1500;
+        const look = () => (music.currentTime > 0.02 || performance.now() > until ? ok() : requestAnimationFrame(look));
+        look();
       });
+      music.play().then(() => moving().then(() => go(music.currentTime)), () => go(0));
+      // a slow line: the picture does not wait longer; the song joins where the demo stands
+      setTimeout(() => {
+        if (started) return;
+        go(0);
+        music.addEventListener('playing', () => {
+          const t = window.__AP && window.__AP.time ? window.__AP.time() : null;
+          if (t != null && Math.abs(music.currentTime - t) > 0.15) music.currentTime = t;
+        }, { once: true });
+      }, 2500);
     });
+  }
+
+  // the small sound button at the bottom: "♪ Ton an" / "♪ Ton aus" / "↺ Demo mit Musik"
+  function soundPill(music) {
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'sound-pill glass';
+    btn.setAttribute('data-keep-demo', '');   // engine.js: pressing it does not end the demo
+    document.body.appendChild(btn);
+    const api = () => window.__AP || {};
+    let shown = '';
+    function state() {
+      if (!music.paused && !music.ended) return 'off';
+      const t = api().time ? api().time() : null;
+      return t != null && t < (api().duration || 30) - 0.5 ? 'on' : 'again';
+    }
+    function show() {
+      const s = state();
+      if (s === shown) return;
+      shown = s;
+      const key = { on: 'musicOn', off: 'musicOff', again: 'musicAgain' }[s];
+      btn.textContent = L.t(key);
+      btn.setAttribute('aria-label', L.t(key + 'Label'));
+      btn.classList.toggle('on', s === 'off');
+    }
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      if (!music.paused && !music.ended) { music.pause(); show(); return; }
+      const t = api().time ? api().time() : null;
+      if (t != null && t < (api().duration || 30) - 0.5) music.currentTime = t;   // join the demo in time
+      else { if (api().restart) api().restart(); music.currentTime = 0; }       // the demo once more
+      music.play().catch(() => {});
+      show();
+    });
+    ['play', 'pause', 'ended'].forEach((ev) => music.addEventListener(ev, show));
+    E.onFrame(show);
+    show();
   }
 
   // ---------- demo scroll scripts ----------
@@ -267,8 +313,18 @@
   // the middle of a section in the middle of the screen (+ px to drift on while holding)
   const mid = (sel, px) => () => { const r = E.rectOf(document.querySelector(sel)); return r.y + r.h / 2 - vh() / 2 + (px || 0); };
 
+  // the song's clock for the demo (engine.js), null while it does not play; far off (the line
+  // stalled, or it just joined) the song is set to the picture instead
+  function clockOf(t) {
+    const m = demoMusic;
+    if (!m || m.paused || m.ended || m.seeking || m.currentTime <= 0.02) return null;
+    if (Math.abs(m.currentTime - t) > 0.5) { if (t < (m.duration || 1e9)) m.currentTime = t; return null; }
+    return m.currentTime;
+  }
+
   E.start({
     gate,
+    clockOf,
     onReady: () => {
       ring.obj = new window.APRing(document.getElementById('ringBack'), document.getElementById('ringFront'));
       window.addEventListener('resize', () => ring.obj.resize());

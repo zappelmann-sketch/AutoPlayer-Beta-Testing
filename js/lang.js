@@ -19,7 +19,10 @@
       soundOn: 'Ton an', soundOff: 'Ton aus',
       soundOnLabel: 'Ton des Surf-the-Beat-Clips einschalten',
       soundOffLabel: 'Ton des Surf-the-Beat-Clips ausschalten',
-      playDemo: '▶ Demo mit Musik starten',
+      // sound button of the 30 s demo (page.js)
+      musicOn: '♪ Ton an', musicOff: '♪ Ton aus', musicAgain: '↺ Demo mit Musik',
+      musicOnLabel: 'Musik zur Demo einschalten', musicOffLabel: 'Musik ausschalten',
+      musicAgainLabel: 'Demo mit Musik noch einmal von vorn',
       scoreChip: 'score 1.010.425 · alle 10 Level',
       music: 'audio/Neon-Baustelle.mp3',
       switchTitle: 'English version',
@@ -29,7 +32,9 @@
       soundOn: 'Sound on', soundOff: 'Sound off',
       soundOnLabel: 'Turn on the sound of the Surf the Beat clip',
       soundOffLabel: 'Turn off the sound of the Surf the Beat clip',
-      playDemo: '▶ Start demo with music',
+      musicOn: '♪ Sound on', musicOff: '♪ Sound off', musicAgain: '↺ Demo with music',
+      musicOnLabel: 'Turn on the music of the demo', musicOffLabel: 'Turn off the music',
+      musicAgainLabel: 'Demo with music once more from the start',
       scoreChip: 'score 1,766,913 · all 10 levels',   // the English win screen is another round (img/en/)
       // track 161 in English ("Neon Build Site", SUNO cover of the German one, Kay 07.11.2026)
       music: 'audio/Neon-Build-Site.mp3',
