@@ -1,880 +1,368 @@
-<div align="center">
+# AutoPlayer
 
-```
-╔═══════════════════════════════════════════════════════════════╗
-║                                                               ║
-║    ██████╗ ██╗   ██╗████████╗ ██████╗ ██████╗ ██╗      ╔═╗  ║
-║   ██╔═══██╗██║   ██║╚══██╔══╝██╔═══██╗██╔══██╗██║     ║▶ ║  ║
-║   ███████║██║   ██║   ██║   ██║   ██║██████╔╝██║     ╚═╝  ║
-║   ██╔══██║██║   ██║   ██║   ██║   ██║██╔═══╝ ██║           ║
-║   ██║  ██║╚██████╔╝   ██║   ╚██████╔╝██║     ███████╗      ║
-║   ╚═╝  ╚═╝ ╚═════╝    ╚═╝    ╚═════╝ ╚═╝     ╚══════╝      ║
-║                                                               ║
-║         P L A Y E R  ·  F O R  A N D R O I D                ║
-║                                                               ║
-╚═══════════════════════════════════════════════════════════════╝
-```
+**Musik-Player für die eigene Musiksammlung – auf dem Android-Handy und im Auto über Android Auto.**
+**A music player for your own music collection – on Android phones and in the car through Android Auto.**
 
-**Der lokale MP3-Player der nächsten Generation für Android & Android Auto**  
-**The next-generation local MP3 player for Android & Android Auto**
+[Website](https://zappelmann-sketch.github.io/AutoPlayer-Beta-Testing/) ·
+[Benutzerhandbuch](https://zappelmann-sketch.github.io/AutoPlayer-Beta-Testing/handbuch/index.html) /
+[User Guide](https://zappelmann-sketch.github.io/AutoPlayer-Beta-Testing/handbuch/index.html?lang=en) ·
+[Datenschutz / Privacy](https://zappelmann-sketch.github.io/AutoPlayer-Beta-Testing/privacy.html) ·
+[Nutzungsbedingungen / Terms](https://zappelmann-sketch.github.io/AutoPlayer-Beta-Testing/terms.html) ·
+[Impressum / Legal Notice](https://zappelmann-sketch.github.io/AutoPlayer-Beta-Testing/impressum.html)
+
+**Stand / As of:** 8. November 2026 · Version **6.77.0** (versionCode 344) ·
+geschlossene Beta, Veröffentlichung im Play Store in Vorbereitung /
+closed beta, Play Store release in preparation
 
 ---
 
-![Version](https://img.shields.io/badge/Version-6.1.10-brightgreen?style=for-the-badge)
-![Build](https://img.shields.io/badge/Build-95-blue?style=for-the-badge)
-![Android](https://img.shields.io/badge/Android-10%2B-green?style=for-the-badge&logo=android)
-![Kotlin](https://img.shields.io/badge/Kotlin-2.1.0-purple?style=for-the-badge&logo=kotlin)
-![Compose](https://img.shields.io/badge/Jetpack_Compose-2024.12-orange?style=for-the-badge)
-![Languages](https://img.shields.io/badge/Languages-26-red?style=for-the-badge)
-![Features](https://img.shields.io/badge/Features-133%2B-yellow?style=for-the-badge)
-![Beta](https://img.shields.io/badge/Status-Closed_Beta-blueviolet?style=for-the-badge)
+## Projekt auf einen Blick / Project at a glance
+
+Gemessen am 08.11.2026 im Projekt-Repository (alle Dateien unter Git, mit den Zählwerkzeugen des Projekts).
+Measured on 2026-11-08 in the project repository (all files under Git, with the project's own counting tools).
+
+| Kennzahl / Metric | Wert / Value |
+|---|---|
+| Version | 6.77.0 (versionCode 344) |
+| Android | 10 bis 16 / 10 to 16 – minSdk 29, targetSdk und compileSdk 36 |
+| In Entwicklung seit / In development since | 7. März 2026 / 7 March 2026 (erster Commit / first commit) – 898 Commits |
+| App-Quellcode Kotlin / App source code Kotlin | 232.561 Zeilen in 942 Dateien, davon 177.981 ohne Leer- und Kommentarzeilen / 232,561 lines in 942 files, 177,981 of them without blank and comment lines |
+| Unit-Tests / Unit tests | 2.312 Tests in 251 Dateien, letzter Lauf ohne Fehler / 2,312 tests in 251 files, last run without failures |
+| Bildschirme / ViewModels – Screens / ViewModels | 75 / 26 |
+| Datenbank / Database | Room, Schema-Version 49, 46 Tabellen, 41 DAOs, verschlüsselt mit SQLCipher / schema version 49, 46 tables, 41 DAOs, encrypted with SQLCipher |
+| Sprachen / Languages | 26 – Oberfläche, Sprachbefehle, Handbuch in der App / user interface, voice commands, in-app guide |
+| Texte je Sprache / Strings per language | 4.352 Texte, 112 Pluralformen, 19 Listen / 4,352 strings, 112 plurals, 19 arrays |
+| Benutzerhandbuch / User guide | 113 Kapitel in 13 Bereichen; online Deutsch und Englisch mit 726 Bildern, Vorlesen auf Deutsch / 113 chapters in 13 sections; online in German and English with 726 pictures, read-aloud in German |
+| Funktionen laut Handbuch / Features per guide | 39 frei, 68 Pro, 6 teilweise frei / 39 free, 68 Pro, 6 partly free |
+| Vumikio Pets und Surf the Beat | 59.718 Zeilen Kotlin (Code und Tests); Sprechtexte in 26 Sprachen, je 25 Dateien / 59,718 lines of Kotlin (code and tests); speech texts in 26 languages, 25 files each |
 
 ---
 
-### 📊 Projekt auf einen Blick / Project at a Glance
+## Dieses Repository / This repository
 
-| 🔢 Metric | 📈 Wert / Value |
-|:---:|:---:|
-| **Kotlin-Dateien / Kotlin Files** | 542 |
-| **Lines of Code** | 92.366 |
-| **Features** | 133+ (F-001 – F-133) |
-| **UI-Screens** | 72 |
-| **Sprachen / Languages** | 26 |
-| **Strings je Sprache / per Language** | 2.776 |
-| **Room Entities** | 40 |
-| **Room DAOs** | 34 |
-| **Room DB Version** | 37 |
-| **Player-Engine Module** | 149 |
-| **Synth-Stimmen / Synth Voices** | 16 polyphone |
-| **Loop Mixer Tonspuren / Tracks** | 16 |
-| **Synth-Presets (Factory)** | 300+ |
-| **Achievements** | 62 |
-| **Entwicklungsdauer / Dev Duration** | ~8 Wochen / ~8 weeks |
-| **Version Code** | 95 |
-| **Min SDK** | API 29 (Android 10) |
-| **Target SDK** | API 35 (Android 15) |
-
-</div>
-
----
-
-## 🗂️ Inhalt dieses Repositories / Contents of this Repository
+Hier liegt der Internetauftritt von AutoPlayer, ausgeliefert über GitHub Pages. Er wird im Projekt-Repository aus dem
+Ordner `website/` gebaut und hierher übertragen.
+This repository holds the AutoPlayer website, served through GitHub Pages. It is built from the `website/` folder of
+the project repository and copied here.
 
 ```
 AutoPlayer-Beta-Testing/
-├── index.html          ← Interaktiver Testplan v5.4.0 (434+ Testpunkte / test points)
-├── privacy.html        ← Datenschutzerklärung / Privacy Policy
-├── terms.html          ← Nutzungsbedingungen / Terms of Service
-└── README.md           ← Diese Datei / This file
+├── index.html            Startseite (Deutsch/Englisch) / landing page (German/English)
+├── handbuch/             Online-Benutzerhandbuch: 113 Kapitel, Bilder, deutsche Vorlese-Aufnahmen
+│                         online user guide: 113 chapters, pictures, German read-aloud recordings
+├── privacy.html          Datenschutzerklärung / Privacy Policy
+├── terms.html            Nutzungsbedingungen / Terms of Use
+├── impressum.html        Impressum / Legal Notice
+├── changelog.json        Änderungsprotokoll für die Update-Karte der App (letzte 15 Versionen)
+│                         changelog for the app's update card (last 15 versions)
+├── llms.txt, index.md,   für Suchmaschinen und KI-Modelle: Kurzüberblick und Markdown-Fassungen
+│   robots.txt,           for search engines and AI models: overview and Markdown versions
+│   sitemap.xml
+├── css/, js/, img/,      Startseite – eigene Skripte, keine fremden Bibliotheken
+│   audio/                landing page – own scripts, no third-party libraries
+└── .github/              Vorlagen für Fehlerberichte, Wünsche und Testberichte
+                          templates for bug reports, feature requests and test reports
 ```
 
-> **Testplan direkt öffnen / Open test plan directly:**  
-> 🔗 **[https://zappelmann-sketch.github.io/AutoPlayer-Beta-Testing/](https://zappelmann-sketch.github.io/AutoPlayer-Beta-Testing/)**
+**Grundsätze der Website / Website principles:** keine Cookies, kein Tracking, keine Inhalte von fremden Servern,
+strenge Content-Security-Policy, Systemschrift. Sprache und Anzeige stehen nur in der Adresse (`?lang=`, `?pets=aus`,
+`?bau=aus`); das Handbuch merkt sich gehörte Kapitel im Browser (siehe Datenschutzerklärung).
+No cookies, no tracking, no content from third-party servers, strict Content Security Policy, system fonts. Language
+and display options live only in the address; the guide remembers chapters you have listened to in the browser (see
+the Privacy Policy).
 
 ---
 
----
+## Technik / Technology
 
-# 🇩🇪 DEUTSCH
+### Architektur / Architecture
 
----
-
-## 🎵 Was ist AutoPlayer?
-
-**AutoPlayer** ist ein vollständig offline funktionierender, lokaler MP3-Player für Android – entwickelt von Grund auf mit dem Ziel, der beste und funktionsreichste lokale Musikplayer auf dem Markt zu werden. Keine Abonnements, keine Cloud-Pflicht, keine Werbung. Deine Musik, dein Gerät, deine Kontrolle.
-
-Der besondere Fokus liegt auf der nahtlosen **Android Auto**-Integration: AutoPlayer wurde entwickelt, um im Fahrzeug genau so zu funktionieren wie auf dem Handy – mit vollständiger Sprachsteuerung in 26 Sprachen, einem erweiterten Browse-Tree und automatischer Wiedergabe beim Verbinden.
-
-### Entstehungsgeschichte
-
-AutoPlayer entstand aus einem echten Bedarf: Ein modernes Fahrzeug mit 10,1"-Android-Auto-Display, aber kein Player am Markt der sowohl vollständige Offline-Bibliothek als auch intelligente Funktionen und erstklassige Auto-Integration bietet. Was als persönliches Projekt begann, entwickelte sich in ~8 Wochen zu einer App mit 133+ Features, 72 UI-Screens und 26 Sprachen – entwickelt mit Unterstützung von Claude AI als Entwicklungspartner.
-
----
-
-## 🎯 Zielgruppen
+Clean Architecture mit MVVM, einschichtige App (ein Gradle-Modul), ohne Dependency-Injection-Framework.
+Clean Architecture with MVVM, single Gradle module, no dependency injection framework.
 
 ```
-┌─────────────────────────────────────────────────────────────────┐
-│                     AUTOPLAYER ZIELGRUPPEN                      │
-├───────────────────┬─────────────────────────────────────────────┤
-│ 🚗 FAHRER         │ Menschen mit Android Auto Fahrzeug die       │
-│                   │ offline Musik hören möchten                  │
-├───────────────────┼─────────────────────────────────────────────┤
-│ 🎵 AUDIOPHILE     │ Nutzer die EQ, BPM-Analyse, Vocal Isolator, │
-│                   │ Crossfade und professionelle Audio-Tools      │
-│                   │ suchen – ohne Streaming-Pflicht              │
-├───────────────────┼─────────────────────────────────────────────┤
-│ 🎸 MUSIKER        │ Beat-Matching, A-B Repeat, Pitch/Speed,      │
-│                   │ Waveform-Editor, Loop Mixer, Synthesizer      │
-├───────────────────┼─────────────────────────────────────────────┤
-│ 📱 Privacy-Nutzer │ Lokal-first: Keine Daten verlassen das       │
-│                   │ Gerät (außer opt-in Crash Reports)           │
-├───────────────────┼─────────────────────────────────────────────┤
-│ 🎮 Power-User     │ Vumikio Pets, Party-Modus,         │
-│                   │ Genome Visualizer, AI-Music Bibliothek        │
-├───────────────────┼─────────────────────────────────────────────┤
-│ 🌍 INTERNATIONAL  │ 26 Sprachen von Arabisch bis Vietnamesisch    │
-│                   │ – vollständig, inkl. Sprachbefehle           │
-└───────────────────┴─────────────────────────────────────────────┘
+Oberfläche / UI          Jetpack Compose, Material 3 – 75 Bildschirme / screens, 26 ViewModels
+        │
+Daten / Data             Room + SQLCipher (46 Tabellen / tables), DataStore, MediaStore, jAudioTagger
+        │
+Wiedergabe / Playback    Media3 ExoPlayer, eigene Audio-Kette / own audio chain
+                         (Equalizer, Effekte / effects, Crossfade, Tempo über / via AudioTrack)
+        │
+Dienste / Services       MusicService (MediaLibraryService, MediaSession) – Android Auto,
+                         Party-Modus (Ktor-Server), Mitfahrer und Geräte-Transfer (Nearby),
+                         Herzschlag-Sync (Bluetooth LE), Widget
 ```
 
----
+### Tech-Stack
 
-## 🏗️ App-Architektur
+| Bereich / Area | Technik / Technology |
+|---|---|
+| Sprache und Bau / Language and build | Kotlin 2.4.21, Java 17, Gradle 8.11.1 (Kotlin DSL), Android Gradle Plugin 8.9.3, KSP 2.3.7, Version Catalog, R8 |
+| Oberfläche / UI | Jetpack Compose (BOM 2026.06.01, UI 1.11.4), Material 3, Navigation Compose 2.9.8, Lifecycle 2.10.0, Activity Compose 1.13.0, Core KTX 1.18.0, AppCompat 1.8.0 |
+| Wiedergabe / Playback | Media3 1.11.1 (ExoPlayer, Session, UI) |
+| Daten / Data | Room 2.8.5, SQLCipher 4.20.0, DataStore 1.3.0, WorkManager 2.12.0, DocumentFile 1.1.0, jAudioTagger 3.0.1 |
+| Nebenläufigkeit, Formate / Concurrency, formats | Kotlin Coroutines 1.11.0, kotlinx.serialization 1.12.0 |
+| Verbindungen / Connectivity | Ktor Server 3.5.2 (CIO, WebSockets), Play Services Nearby 19.5.0, Bluetooth LE |
+| Bilder, Karte, QR / Images, map, QR | Coil 2.7.0, Palette 1.1.0, osmdroid 6.1.20, CameraX 1.6.2, ZXing 3.5.4 |
+| Kauf, Updates, Absturzberichte / Purchase, updates, crash reports | Play Billing 9.1.0, Play In-App Update 2.1.0, ACRA 5.13.1 (nur mit Einwilligung / only with consent) |
+| Tests | JUnit 4.13.2, MockK 1.14.11, Turbine 1.2.1, kotlinx-coroutines-test, AndroidX Test 1.7.0, Espresso 3.7.0, Compose UI Test |
+| Website | HTML, CSS und JavaScript ohne Frameworks / without frameworks; Vumikio Pets als eigene Canvas-Zeichnung / drawn on canvas |
 
-AutoPlayer folgt **Clean Architecture** mit strikter Schichtentrennung und **MVVM**-Pattern:
+### Code nach Paketen / Code by package (`app/src/main`)
 
-```
-╔══════════════════════════════════════════════════════════════════╗
-║                      AUTOPLAYER ARCHITEKTUR                      ║
-╠══════════════════════════════════════════════════════════════════╣
-║                                                                  ║
-║  ┌─────────────────────────────────────────────────────────┐    ║
-║  │              PRESENTATION LAYER                          │    ║
-║  │  ┌──────────┐  ┌──────────┐  ┌────────────────────┐    │    ║
-║  │  │  Compose  │  │ViewModels│  │  Navigation (Hilt) │    │    ║
-║  │  │ 72 Screens│  │23 VMs    │  │  Drawer + NavHost  │    │    ║
-║  │  └──────────┘  └──────────┘  └────────────────────┘    │    ║
-║  └─────────────────────────────────────────────────────────┘    ║
-║                              │                                   ║
-║  ┌─────────────────────────────────────────────────────────┐    ║
-║  │                 DOMAIN LAYER                             │    ║
-║  │  ┌────────────┐  ┌────────────┐  ┌──────────────────┐  │    ║
-║  │  │  Use Cases  │  │  Models    │  │  Repositories    │  │    ║
-║  │  │ (Business   │  │ Song/Album │  │  (Interface)     │  │    ║
-║  │  │  Logic)     │  │ Artist/Pet │  │  7 Repos         │  │    ║
-║  │  └────────────┘  └────────────┘  └──────────────────┘  │    ║
-║  └─────────────────────────────────────────────────────────┘    ║
-║                              │                                   ║
-║  ┌─────────────────────────────────────────────────────────┐    ║
-║  │                  DATA LAYER                              │    ║
-║  │  ┌────────────┐  ┌──────────────┐  ┌────────────────┐  │    ║
-║  │  │  Room DB   │  │  DataStore   │  │  MediaStore    │  │    ║
-║  │  │ 40 Entities│  │  Settings    │  │  (Audio Files) │  │    ║
-║  │  │ 34 DAOs    │  │  Preferences │  │  Scanner       │  │    ║
-║  │  └────────────┘  └──────────────┘  └────────────────┘  │    ║
-║  └─────────────────────────────────────────────────────────┘    ║
-║                              │                                   ║
-║  ┌─────────────────────────────────────────────────────────┐    ║
-║  │              PLAYER ENGINE (149 Module)                  │    ║
-║  │  ┌──────────┐ ┌──────────┐ ┌──────────┐ ┌──────────┐   │    ║
-║  │  │ ExoPlayer│ │   EQ /   │ │   BPM /  │ │  Synth   │   │    ║
-║  │  │ Media3   │ │ Effects  │ │  Key     │ │  Studio  │   │    ║
-║  │  │ 1.5.1    │ │ DSP      │ │ Analyzer │ │ Loop Mix │   │    ║
-║  │  └──────────┘ └──────────┘ └──────────┘ └──────────┘   │    ║
-║  └─────────────────────────────────────────────────────────┘    ║
-║                              │                                   ║
-║  ┌─────────────────────────────────────────────────────────┐    ║
-║  │              SERVICES / ANDROID INTEGRATION             │    ║
-║  │  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐  │    ║
-║  │  │ MusicService │  │Android Auto  │  │  Passenger   │  │    ║
-║  │  │ MediaLibrary │  │MediaBrowser  │  │  Party Mode  │  │    ║
-║  │  │ MediaSession │  │ AutoMediaBr. │  │  Nearby API  │  │    ║
-║  │  └──────────────┘  └──────────────┘  └──────────────┘  │    ║
-║  └─────────────────────────────────────────────────────────┘    ║
-║                                                                  ║
-╚══════════════════════════════════════════════════════════════════╝
-```
-
-### Package-Struktur
-
-```
-com/autoplayer/mp3/
-│
-├── 📦 auto/               Android Auto (AutoMediaBrowser.kt)
-├── 📦 data/
-│   ├── local/dao/        34 DAOs (Room Datenbankzugriff)
-│   ├── local/entity/     40 Entities (Datenbankmodelle)
-│   └── repository/       7 Repositories (MusicRepo, PetRepo, etc.)
-│
-├── 📦 domain/
-│   ├── model/            Domain-Modelle (Song, Album, Artist, Pet...)
-│   └── usecase/          Business-Logik Use Cases
-│
-├── 📦 player/ (149 Module)
-│   ├── gesture/          Gestensteuerung
-│   ├── sound/voices/     Voice-TTS Engine
-│   └── synth/            Synthesizer-Engine (FM, Wavetable, Subtractive, Drum)
-│
-├── 📦 presentation/
-│   ├── components/       58+ wiederverwendbare Compose-Komponenten
-│   ├── navigation/       Navigation + Drawer
-│   ├── screens/          72 Feature-Screens
-│   ├── theme/            12 Farbthemes
-│   └── viewmodels/       23 ViewModels
-│
-├── 📦 service/           MusicService + ListenDurationTracker
-├── 📦 passenger/         Beifahrer-Modus (Nearby Connections)
-├── 📦 party/             Party-Modus (Ktor HTTP Server)
-├── 📦 sharing/           6 Export-Formate + QR-Code
-├── 📦 transfer/          Geräte-zu-Geräte Transfer (TCP)
-└── 📦 widget/            Homescreen-Widget
-```
+| Paket / Package | Inhalt / Contents | Dateien / Files | Zeilen / Lines |
+|---|---|---:|---:|
+| `presentation/screens` | Bildschirme / screens (Compose) | 214 | 83.991 |
+| `player` | Wiedergabe, Audio, Effekte / playback, audio, effects | 216 | 57.781 |
+| `presentation/components` | Bausteine, darunter die Pets / components, incl. the pets | 98 | 22.947 |
+| `data` | Datenbank, Einstellungen, Sicherung / database, settings, backup | 148 | 17.323 |
+| `domain` | Modelle und Regeln, darunter das Spiel / models and rules, incl. the game | 95 | 16.229 |
+| `sharing` | Sharing-Hub, Mixer-Bundles, QR | 89 | 11.014 |
+| `service` | MusicService, Android Auto | 4 | 4.227 |
+| übrige / other | Transfer, Party, Pro-Kauf, Mitfahrer, Widget, Update … | 78 | 19.049 |
+| **Summe / Total** | | **942** | **232.561** |
 
 ---
-
-## 🚀 Entwicklungsverlauf
-
-```
-TIMELINE: AutoPlayer Entwicklung (2026)
-════════════════════════════════════════════════════════════════════
-
-März 2026
-  ├─ 05.03  🚀 Projektstart — Grundarchitektur, MediaSession, ExoPlayer
-  ├─ 07.03  ✅ v1.0: Player-Core, Bibliothek, Android Auto Basis
-  ├─ 10.03  ✅ v1.1: EQ, Crossfade, Sleep Timer
-  ├─ 14.03  ✅ v1.2: Vocal Isolator, Waveform, Tag Editor
-  ├─ 18.03  ✅ v1.3: Smart DJ BPM/Key, Beat-Match Crossfade
-  ├─ 20.03  ✅ v2.0: 6 Player-Skins, Theme Builder
-  ├─ 25.03  🚗 FELDTEST: Roadtrip — Beifahrer-Modus bestanden
-  └─ 29.03  ✅ v3.0: Testplan v1.0 (388 Testpunkte)
-
-April 2026
-  ├─ 01.04  ✅ v3.12: Draggable Mic FAB, Sleep Fade Persistent
-  ├─ 11.04  ✅ v4.0: Vumikio Pets (5 Pets, 62 Achievements)
-  ├─ 13.04  ✅ v4.1: Haptic Feedback App-weit (522+ Aufrufe, 83 Dateien)
-  ├─ 13.04  ✅ v4.2: Party-Modus v2 + Genome Visualizer
-  ├─ 15.04  ✅ v3.15: Genre-Browse (F-106, Room DB v23)
-  ├─ 22.04  ✅ v4.3: Loop Mixer + Pad Mode (16 Spuren)
-  ├─ 24.04  ✅ v4.4: Synth Studio (300+ Factory Presets)
-  ├─ 25.04  ✅ v4.5: FM-Synthese DX7-Style (200 Presets)
-  ├─ 25.04  ✅ v4.6: Wavetable-Synthesizer (8 Tables)
-  ├─ 25.04  ✅ v4.7: Arpeggiator + Step-Sequencer
-  ├─ 25.04  ✅ F-109: Sharing-Suite (6 Formate + QR)
-  ├─ 28.04  ✅ F-133: Lenkrad-Sprechtaste Fix (Auto-Test bestanden)
-  ├─ 29.04  ✅ v5.0–5.4: Testplan i18n EN/DE
-  └─ 30.04  ✅ v6.1.10: Phase 2B i18n — 26 Sprachen vollständig
-
-Juni 2026 (Ziel)
-  └─ 01.06  🎯 PLAY STORE LAUNCH
-════════════════════════════════════════════════════════════════════
-```
-
 ---
 
-## 🎮 Features — Vollständige Übersicht
+# Deutsch
 
-### 🎨 Player-Skins (7)
+## Was ist AutoPlayer?
 
-```
-┌─────────────┬──────────────┬──────────────┬─────────────────┐
-│  Standard   │ DJ Turntable │ Vintage Hi-Fi│    Jukebox      │
-├─────────────┼──────────────┼──────────────┼─────────────────┤
-│  Kassette   │ Bandmaschine │  Sci-Fi      │                 │
-│  (Cassette) │ (Reel-to-    │  Hologramm   │                 │
-│             │  Reel)       │              │                 │
-└─────────────┴──────────────┴──────────────┴─────────────────┘
-```
+**AutoPlayer** ist ein Musik-Player für Android, der deine eigene Musik abspielt: die Musikdateien, die auf deinem
+Handy liegen – deine MP3-Sammlung. Er läuft auf dem Handy und im Auto über **Android Auto**. Streaming, Abo und
+Benutzerkonto gibt es nicht.
 
-### 🔊 Wiedergabe & Audio
+### Wie es dazu kam
 
-| Feature | Details |
-|---------|---------|
-| **Formate** | MP3, FLAC, AAC, OGG, WAV, M4A |
-| **Gapless Playback** | Nahtlose Wiedergabe ohne Pausen |
-| **Crossfade** | 1–10 Sekunden, AI Beat-Match |
-| **Geschwindigkeit** | 0,5× bis 2,0× (Pitch-korrigiert) |
-| **Tonhöhe** | −6 bis +6 Halbtöne |
-| **ReplayGain** | Track + Album Modus |
-| **Bluetooth** | Auto-Resume bei Verbindung |
-| **Queue** | Vollständiges Queue-Management mit Undo |
-| **Sleep Timer** | Timer mit sanftem Fade-Out |
-| **A-B Repeat** | Loop mit Practice Mode |
+Am Anfang stand ein Wunsch aus dem Alltag: die eigene Musiksammlung im Auto hören – bedient über den Bildschirm im
+Armaturenbrett und per Sprache, ohne Internet und ohne Abo. Musik ist beim Fahren mehr als Unterhaltung. Wenn es auf
+der Straße hektisch wird, holt die richtige Musik einen herunter: Man fährt ruhiger und kommt entspannter an. Aus
+diesem Wunsch ist AutoPlayer entstanden – zuerst als Player für die Fahrt, dann Stück für Stück für alles, was man mit
+seiner Musik machen möchte.
 
-### 🎛️ Equalizer & Effekte
+### Für wen AutoPlayer gedacht ist
 
-- 5-Band Equalizer mit Presets
-- Bass Boost & Loudness Enhancer
-- 3D Surround Sound
-- Dynamic Ambient EQ (passt sich der Umgebung an)
-- Live Concert Simulator
-- Atmosphere Mixer
-- Binaural Beats Generator
-- Car Cabin Calibrator
+- Für alle, die **eigene Musikdateien** besitzen und sie hören, ordnen und pflegen wollen – mit Playlists, Favoriten,
+  Genres und dem Tag-Editor.
+- Für **Autofahrer mit Android Auto**: große Bedienflächen, Sprachbefehle und Funktionen für die Fahrt – Musik passend
+  zu Stadt, Autobahn und Stau oder zum Wetter.
+- Für alle, die **ohne Streaming** hören möchten – ohne Abo, ohne Werbung, auch im Funkloch, im Ausland oder im
+  Flugzeug.
+- Für **Musik-Bastler**, die mit dem Loop-Mixer und dem Synth Studio aus ihren Titeln eigene Mixe bauen.
+- Und für alle, die beim Hören **Freude am Spiel** haben: Player-Ansichten, Visualizer, die Vumikio Pets und das
+  Spiel Surf the Beat.
 
-### 🎤 Vocal Isolator / Karaoke
+### Wie AutoPlayer mit deinen Daten umgeht
 
-- Echtzeit-Vokalunterdrückung (0–100%)
-- Karaoke-Modus (Gesang raus)
-- Vocals-Only-Modus (Instrumental raus)
-- DSP-basiert, vollständig offline
+AutoPlayer ist eine **lokale App**. Deine Musik, die Bibliothek, Playlists, der Verlauf und alle Einstellungen werden
+nur auf deinem Gerät verarbeitet. Es gibt kein Konto, keine Cloud und keinen Server des Anbieters, auf dem deine Daten
+liegen – kein Tracking, keine Werbung, kein Verkauf von Daten. Die Datenbank der App ist verschlüsselt.
 
-### 📚 Musikbibliothek
+Zum Musikhören braucht AutoPlayer kein Internet, die App läuft auch im Flugmodus. Ins Netz geht sie nur bei wenigen
+Funktionen am Rand, etwa für das Wetter beim Wetter-DJ, für die Suche nach Aktualisierungen oder für den Kauf von Pro
+über Google Play. Absturzberichte gehen nur mit deiner Einwilligung hinaus. Einzelheiten stehen in der
+[Datenschutzerklärung](https://zappelmann-sketch.github.io/AutoPlayer-Beta-Testing/privacy.html).
 
-- MediaStore Scanner (Android Scoped Storage)
-- Ansichten: Alle Songs, Alben, Künstler, Ordner, Genre
-- Smart Playlists: Meistgehört, Zuletzt gespielt, Nie gespielt
-- Manuelle Playlists + Favoriten
-- Play History + Statistiken
-- Genre Browse mit Cover-Grid (F-106)
-- Alphabet-Navigation
+### Frei und Pro
 
-### 🚗 Android Auto
+Die Grundfunktionen sind frei. **AutoPlayer Pro** schaltet die übrigen Funktionen frei – **einmalig, kein Abo**. Von
+den 113 Kapiteln des Handbuchs beschreiben 39 freie Funktionen, 68 Pro-Funktionen und 6 Funktionen, die teilweise
+frei sind. Das Handbuch kennzeichnet jedes Kapitel.
 
-```
-Android Auto Browse-Hierarchie:
-│
-├── 🎵 Alle Songs
-├── 💿 Alben
-├── 🎤 Künstler
-├── 📋 Playlists
-│   ├── Manuelle Playlists
-│   ├── ❤️  Favoriten
-│   ├── 🕐  Zuletzt gespielt
-│   ├── 🎵  Meistgehört
-│   └── 🆕  Neu hinzugefügt
-├── 🎭 Mood Browse (Stimmungsbasiert)
-├── 🎸 Genre Browse
-├── 🔁 Aktuelle Queue
-└── ⏯️  Continue Listening
-```
+## Funktionen nach Bereichen
 
-- **26-Sprachen Sprachsteuerung**: „Spiel [Song]", „Weiter", „Lauter" etc.
-- Individuelles Album Art pro Song (ArtworkProvider)
-- Crash-Protection (automatischer Skip bei Fehlern)
-- Autoplay bei Auto-Verbindung (konfigurierbar)
-- Lenkrad-Sprechtaste vollständig unterstützt (F-133)
-- Getestet im Dacia Jogger (10,1" Display)
+So gegliedert wie das [Benutzerhandbuch](https://zappelmann-sketch.github.io/AutoPlayer-Beta-Testing/handbuch/index.html)
+(113 Kapitel in 13 Bereichen):
 
-### 🧠 Intelligente Features
+1. **Grundlagen** (12) – Erste Schritte, Musikbibliothek, der Player, Menü am Titel, Playlists, Favoriten,
+   Einstellungen, Song-Details, Genre durchsuchen, App-Aktualisierungen, Hauptmenü, AutoPlayer Pro
+2. **Die Player-Ansichten** (10) – DJ-Plattenspieler, Jukebox, Kassette, Bandmaschine, Vintage-Plattenspieler,
+   Sci-Fi-Hologramm, Balken-Visualizer, Vollbild-Visualizer, Musik-DNA
+3. **Klang und Effekte** (7) – Equalizer, Konzert-Modus, Gesangs-Isolator, Binaurale Beats, Atmosphären-Mixer,
+   Gehörschutz, Bass-Vibration
+4. **Was die App selbst aussucht** (7) – Smart DJ, Smarte Playlists, Auto-Playlists, Stimmungswandler,
+   Stimmungs-Browse, Smart Reorder, Song-Pfade
+5. **Im Fahrzeug** (6) – Android Auto, Fahrmodus-DJ, Wetter-DJ, geschwindigkeitsbasierte Lautstärke,
+   Kabinen-Kalibrator, Beifahrer-Modus
+6. **Die Wiedergabe steuern** (9) – Warteschlangen, Abstecher, Queue Crossfade, A–B-Wiederholung, Wellenform,
+   Wiedergabeposition merken, Beat-Match DJ, Schlaf-Timer, Schlaf-Ausblendung
+7. **Wenn die App selbst reagiert** (7) – Kontext Auto-Wechsel, Meine Orte, Herzschlag-Sync, Klangerinnerung,
+   Geo-Musik, Schütteln zum Mischen, Gestensteuerung
+8. **Zu mehreren** (2) – Party-Modus, Sharing-Hub
+9. **Statistiken, Erfolge und Maskottchen** (5) – Musik-Rückblick, Erfolge und Level, Nostalgie-Maschine,
+   Vumikio Pets, Surf the Beat
+10. **Werkzeuge** (8) – Tag-Editor, Track-Cutter, Klingelton-Wechsler, Tag-Retter, Startbildschirm-Widget,
+    Kurzbefehle am App-Symbol, Theme-Builder, Batterie-Modus
+11. **Mit der Stimme steuern** (3) – Sprachbefehle, Playlists per Sprache, Vorlesen
+12. **Loop-Mixer und Synth Studio** (30) – Mixe aus eigenen Titeln mit Tonspuren, Segmenten, Beat-Match, Effekten,
+    Automation, Markern und Export; Pad-Mode; Synth Studio (subtraktiv, FM, Wavetable), Arpeggiator, Projektvorlagen
+13. **Daten, Datenschutz und Umzug** (7) – Sichern und Wiederherstellen, Datenschutz, Berechtigungen,
+    Absturzberichte, Geräte-Transfer, Werkseinstellungen, App beenden
 
-| Feature | Beschreibung |
-|---------|-------------|
-| **Smart DJ** | BPM/Key/Energy-Analyse, automatisches Mixing |
-| **Geo-Music** | Standortbasierte Playlists |
-| **Nostalgia Machine** | Musik nach Jahrgang/Epoche |
-| **Mood Morph** | Stimmungsbasierte Übergänge |
-| **Drive Mode DJ** | Fahrtgeschwindigkeit → Musikauswahl |
-| **Sound Souvenir** | Ortsgebundene Musikerinnerungen |
-| **Passenger Mode** | Beifahrer steuert Musik (Nearby Connections) |
-| **Party Mode** | Gäste per QR-Code einladen (lokaler HTTP-Server) |
-| **Weather DJ** | Wetter → passende Musik (opt-in) |
-| **Herzschlag-Sync** | Live-Puls per Bluetooth von Uhr oder Brustgurt → BPM-angepasste Wiedergabe |
-| **Kontext Auto-Wechsel** | 12+ Bedingungen (Bewegung, Tageszeit, Kalender, GPS) |
-| **Music Genome Visualizer** | Song-DNA visualisiert (24 Farbpaletten) |
-| **Sleep Fade** | Sanftes Einschlafen mit Lautstärke-Kurve |
-| **Shake to Shuffle** | Schütteln → zufälliger Song |
-| **Speed-based Volume** | Lautstärke folgt Fahrtgeschwindigkeit |
+Android Auto wird im eigenen Fahrzeug (10,1-Zoll-Display) und mit der Desktop Head Unit getestet.
 
-### 🎹 Musik-Studio Features
+## Sprachen
 
-```
-LOOP MIXER ──────────────────────────────────────────────────
-│  16 Spuren · 4 Effekte · BPM-Sync · Swing · Bounce to WAV
-│  Templates · Marker · Loop-Bookmarks · Projekt-Sharing
-│
-SYNTHESIZER STUDIO ──────────────────────────────────────────
-│  Subtractive Synth  │  300+ Factory Presets (20 Kategorien)
-│  FM DX7-Style       │  200 Presets, 4 Operatoren, 8 Alg.
-│  Wavetable          │  8 Tables, Position Modulation
-│  Drum Synth         │  Schlaginstrument-Synthese
-│  MIDI USB + BLE     │  Live-Recording, Recording-Manager
-│
-ARPEGGIATOR & STEP-SEQUENCER ────────────────────────────────
-│  6 Muster · 16-Step-Grid · BPM-Sync · Hold · Swing
-│
-PAD MODE ────────────────────────────────────────────────────
-│  16 Pads · 16 Spuren · 1:1 Mapping · Recording
-```
+26 Sprachen für Oberfläche, Sprachbefehle und das Handbuch in der App: Deutsch, English, Español, Français,
+Italiano, Nederlands, Polski, Português (Brasil), Русский, Українська, Čeština, Dansk, Norsk, Suomi, Svenska,
+Türkçe, العربية, हिन्दी, ไทย, Tiếng Việt, Bahasa Indonesia, Bahasa Melayu, 日本語, 한국어, 简体中文, 繁體中文.
+Die Rechtstexte und das Online-Handbuch gibt es auf Deutsch und Englisch.
 
-### 🛠️ Tools & Hilfsfunktionen
+## Entwicklungsverlauf
 
-| Tool | Funktion |
-|------|----------|
-| **Tag Editor** | ID3-Tags bearbeiten (jAudioTagger) |
-| **Tag Rescue** | Automatische Tag-Reparatur (JAudioTagger + MediaStore) |
-| **Track Cutter** | Songs zuschneiden & exportieren |
-| **Ringtone Setter** | Song als Klingelton setzen |
-| **Waveform Editor** | Visueller Editor mit Lesezeichen & Farbauswahl |
-| **BPM Analyzer** | FFT-basierte BPM- und Key-Erkennung |
-| **Backup & Restore** | Vollständiges JSON-Backup |
-| **Geräte-Transfer** | Song-Bibliothek per TCP/Nearby übertragen (F-112) |
+| Datum | Version | Was |
+|---|---|---|
+| 07.03.2026 | 0.1.0 | Projektstart (erster Commit) |
+| 10.03.2026 | 1.0.0 | erste vollständige Fassung, u. a. Fahrmodus-DJ |
+| 19.03.2026 | 3.0.0 | Kontext Auto-Wechsel |
+| 14.04.2026 | 4.0.0 | Vumikio Pets mit Level-System bis 1000 |
+| 26.04.2026 | 5.0.0 | Teilen von Loop-Mixer-Inhalten |
+| 27.04.2026 | 6.0.0 | neue Klangerzeugung im Synth Studio |
+| 17.10.2026 | 6.75.0 | Surf the Beat |
+| 19.10.2026 | 6.76.0 | Herzschlag-Sync, neu gebaut |
+| 04.11.2026 | 6.77.0 | neues Benutzerhandbuch in der App (113 Kapitel, Vorlesen), bis 05.11. in allen 26 Sprachen |
+| 08.11.2026 | – | Website mit Online-Handbuch (dieses Repository) |
 
-### 🎨 UI & Design
+Die Veröffentlichung im Google Play Store ist in Vorbereitung; einen festen Termin gibt es noch nicht.
 
-- **12 Farbthemes** (inkl. AMOLED Black, Neon Glas-Dark)
-- **Theme Builder**: Eigene Themes erstellen
-- **Dynamic Background**: Album Art als Hintergrund (Blur-Effekt)
-- Tageszeit-adaptives Dark/Light Mode
-- **Adjustable UI**: Schrift- und Icongröße 80–140%
-- Konfigurierbare Tab-Reihenfolge
-- Navigation Drawer + Bottom Navigation
-- Swipe-Gesten (9 konfigurierbare Aktionen)
-- **Haptic Feedback**: 522+ Aufrufe in 83 Dateien
-- **BPM-Anzeige** auf allen 72 Screens
-- Glass-Dark-Neon Design durchgehend
+## Beta-Test
 
-### 🐾 Vumikio Pets (F-111)
+Der frühere interaktive Testplan ist vorerst nicht mehr online; wie die Beta-Tests künftig ablaufen, wird gerade neu
+festgelegt. Fehler und Wünsche bitte weiterhin als
+[GitHub-Issue](https://github.com/zappelmann-sketch/AutoPlayer-Beta-Testing/issues/new/choose) melden – mit den
+Vorlagen für Fehlerbericht, Feature-Wunsch oder Testbericht.
 
-```
-5 Haustiere:
-  🐙 Octo  (Oktopus)    🐱 Melo  (Katze)    🐰 Benny (Kaninchen)
-  🐿️ Chip  (Eichhörnchen)                   🦊 Foxy  (Fuchs)
+Voraussetzungen: Android 10 oder neuer, eigene Musikdateien auf dem Gerät; für Android Auto ein passendes Fahrzeug
+oder die Desktop Head Unit.
 
-10 Entwicklungsphasen:
-  Baby → Kind → Teen → Adult → Star → Master → Legend → Mythic → Divine → Eternal
-
-62 Achievements · 50 Trick-Animationen · Level 1–1000
-Reagiert auf Musikgeschmack, Hördauer, Tageszeit
-Easter Egg: Trick Lab
-```
-
-### 📊 Music Wrapped (F-077)
-
-- Jahresrückblick wie Spotify Wrapped – vollständig lokal
-- 15 Statistik-Slides
-- 8 Hörer-Persönlichkeiten
-- Dashboard mit Top-Songs, -Alben, -Künstlern
-- Genre-Statistiken + Stunden-Verlauf
-
-### 🔗 Sharing & Export (F-109)
-
-```
-6 Export-Formate:
-  .arpset    — Arpeggiator Presets
-  .synthset  — Synthesizer Presets
-  .loopseg   — Loop-Mixer Segmente
-  .padconfig — Pad-Konfiguration
-  .mxproj    — Mixer-Projekt
-  .mxbundle  — Komplettes Bundle (alle Formate)
-
-+ QR-Code Sharing für alle Formate
-```
-
-### 🔒 Privacy & Datenschutz
-
-```
-✅ Vollständig offline (außer Weather DJ: opt-in)
-✅ Keine Nutzerdaten werden übermittelt
-✅ Keine Werbung · Keine Tracker · Kein Analytics
-✅ Crash Reports nur mit expliziter Zustimmung (ACRA opt-in)
-✅ DSGVO/GDPR-konform
-✅ Privacy Policy in 26 Sprachen
-✅ Alle Daten durch Deinstallation löschbar
-```
-
----
-
-## 🔧 Tech Stack
-
-### Kern-Technologien
-
-| Technologie | Version | Verwendung |
-|-------------|---------|-----------|
-| **Kotlin** | 2.1.0 | Primäre Programmiersprache |
-| **Jetpack Compose BOM** | 2024.12.01 | Gesamte UI |
-| **Media3 / ExoPlayer** | 1.5.1 | Audio-Wiedergabe, MediaSession |
-| **Room Database** | 2.6.1 | Lokale Datenpersistenz (40 Tabellen, DB v37) |
-| **Hilt (Dependency Injection)** | 2.53.1 | DI Framework |
-| **Kotlin Coroutines** | 1.9.0 | Asynchrone Operationen |
-| **Kotlin Flow** | — | Reaktive Datenstreams |
-| **Navigation Compose** | 2.8.5 | Screen-Navigation |
-| **DataStore** | 1.1.1 | Einstellungen-Persistenz |
-
-### Spezialbibliotheken
-
-| Bibliothek | Version | Funktion |
-|-----------|---------|----------|
-| **Ktor Server** | 3.0.3 | Lokaler HTTP-Server (Party Mode) |
-| **Google Nearby** | 19.3.0 | Passenger Mode (Peer-to-Peer) |
-| **ZXing (QR)** | 3.5.3 | QR-Code generieren/scannen |
-| **jAudioTagger** | 3.0.1 | ID3-Tag lesen/schreiben |
-| **Coil** | 2.7.0 | Album Art laden/cachen |
-| **ACRA** | 5.11.4 | Opt-in Crash Reporting |
-| **Palette API** | 1.0.0 | Dynamische Farb-Extraktion |
-| **KSP** | 2.1.0-1.0.29 | Kotlin Symbol Processing |
-| **Kotlinx Serialization** | 1.7.3 | JSON-Serialisierung |
-
-### Build-System
-
-```
-├── Gradle 8.7.3 (Kotlin DSL)
-├── Version Catalog (gradle/libs.versions.toml)
-├── ProGuard + R8 (Release-Build)
-├── KSP (statt KAPT für schnellere Builds)
-└── AAB-Format für Play Store
-```
-
-### Android-SDK Anforderungen
-
-```
-Min SDK:     29  (Android 10, Scoped Storage)
-Target SDK:  35  (Android 15)
-Compile SDK: 35
-```
-
----
-
-## 🌍 Lokalisierung (26 Sprachen)
-
-```
-🇩🇪 Deutsch    🇬🇧 English    🇫🇷 Français    🇪🇸 Español
-🇮🇹 Italiano   🇳🇱 Nederlands 🇵🇱 Polski      🇷🇺 Русский
-🇵🇹 Português  🇸🇪 Svenska    🇳🇴 Norsk       🇩🇰 Dansk
-🇫🇮 Suomi      🇺🇦 Українська 🇨🇿 Česky       🇹🇷 Türkçe
-🇸🇦 العربية    🇯🇵 日本語       🇰🇷 한국어        🇨🇳 中文(简)
-🇹🇼 中文(繁)    🇮🇳 हिन्दी      🇮🇩 Bahasa      🇲🇾 Melayu
-🇹🇭 ไทย        🇻🇳 Tiếng Việt
-```
-
-- **2.776 Strings** je Sprache vollständig übersetzt
-- Sprachsteuerung (Voice Commands) in allen 26 Sprachen
-- Benutzerhandbuch (35 Abschnitte) in allen 26 Sprachen
-- Datenschutzerklärung + Nutzungsbedingungen in 26 Sprachen
-
----
-
-## 🧪 Beta-Testing
-
-### Schritt 1 — Testplan öffnen
-👉 **[https://zappelmann-sketch.github.io/AutoPlayer-Beta-Testing/](https://zappelmann-sketch.github.io/AutoPlayer-Beta-Testing/)**
-
-Der interaktive Testplan enthält **434+ Testpunkte** in 20+ Kategorien:
-
-```
-Kategorien im Testplan:
-├── Player-Grundfunktionen
-├── Musikbibliothek & Scanner
-├── Android Auto
-├── Equalizer & Effekte
-├── Vocal Isolator / Karaoke
-├── Loop Mixer & Studio (16 Spuren)
-├── Synthesizer (Subtractive, FM, Wavetable, Drum)
-├── Arpeggiator & Step-Sequencer
-├── Sharing & Export
-├── Passenger Mode
-├── Party Mode
-├── Vumikio Pets
-├── Tag Editor & Tag Rescue
-├── Gestensteuerung
-├── Lokalisierung
-├── Datenschutz & Legal
-├── Barrierefreiheit
-├── Performance & Stabilität
-├── Android Auto (DHU-Tests)
-└── Geräte-Transfer
-```
-
-### Schritt 2 — Geräte eintragen
-Dein Gerät, Android-Version, Bildschirmgröße — alles direkt im Testplan eingeben.
-
-### Schritt 3 — Testen & dokumentieren
-Jeden Testpunkt abarbeiten, Bugs und Wünsche markieren.
-
-### Schritt 4 — Ergebnis senden
-
-```
-Option A: "Per E-Mail an Entwickler senden" (direkt im Testplan)
-Option B: GitHub Issue erstellen + JSON-Datei anhängen
-          → https://github.com/zappelmann-sketch/AutoPlayer-Beta-Testing/issues
-```
-
-### Anforderungen
-
-- **Android 10** (API 29) oder höher
-- Lokale Musikdateien auf dem Gerät
-- Für Android Auto Tests: Kompatibles Fahrzeug oder DHU (Desktop Head Unit)
-
----
-
-## 📬 Kontakt
+## Kontakt
 
 - **E-Mail:** zappelmann+autoplayer@googlemail.com
-- **GitHub Issues:** [Fehler melden](https://github.com/zappelmann-sketch/AutoPlayer-Beta-Testing/issues/new)
-- **Datenschutz:** [privacy.html](https://zappelmann-sketch.github.io/AutoPlayer-Beta-Testing/privacy.html)
-- **Nutzungsbedingungen:** [terms.html](https://zappelmann-sketch.github.io/AutoPlayer-Beta-Testing/terms.html)
+- **Fehler melden:** [GitHub Issues](https://github.com/zappelmann-sketch/AutoPlayer-Beta-Testing/issues/new/choose)
+- [Datenschutzerklärung](https://zappelmann-sketch.github.io/AutoPlayer-Beta-Testing/privacy.html) ·
+  [Nutzungsbedingungen](https://zappelmann-sketch.github.io/AutoPlayer-Beta-Testing/terms.html) ·
+  [Impressum](https://zappelmann-sketch.github.io/AutoPlayer-Beta-Testing/impressum.html)
 
 ---
-
 ---
 
-# 🇬🇧 ENGLISH
+# English
 
----
+## What is AutoPlayer?
 
-## 🎵 What is AutoPlayer?
+**AutoPlayer** is a music player for Android that plays your own music: the music files stored on your phone – your
+MP3 collection. It runs on your phone and in the car through **Android Auto**. There is no streaming, no subscription
+and no user account.
 
-**AutoPlayer** is a fully offline, local MP3 player for Android — built from scratch with the goal of becoming the best and most feature-rich local music player on the market. No subscriptions, no mandatory cloud, no ads. Your music, your device, your control.
+### How it started
 
-The special focus is on seamless **Android Auto** integration: AutoPlayer was designed to work just as well in the car as on the phone — with full voice control in 26 languages, an extended browse tree, and automatic playback when connecting.
+It started with an everyday wish: to listen to your own music collection in the car – controlled from the dashboard
+screen and by voice, without internet and without a subscription. When you drive, music is more than entertainment.
+When traffic gets hectic, the right music helps you calm down: you drive more calmly and arrive more relaxed.
+AutoPlayer grew out of this wish – first as a player for the road, then, step by step, for everything you might want
+to do with your music.
 
-### Background & Story
+### Who AutoPlayer is for
 
-AutoPlayer was born out of a real need: a modern vehicle with a 10.1" Android Auto display, but no player on the market offering both a complete offline library and intelligent features with first-class Auto integration. What started as a personal project grew into an app with 133+ features, 72 UI screens and 26 languages in ~8 weeks — developed with Claude AI as a development partner.
+- Anyone who owns **their own music files** and wants to listen to them, organize them and keep them in order – with
+  playlists, favorites, genres and the tag editor.
+- **Drivers with Android Auto**: large controls, voice commands and features for the road – music to suit the city,
+  the highway, a traffic jam or the weather.
+- Anyone who wants to listen **without streaming** – no subscription, no ads, even without a signal, abroad or on a
+  plane.
+- **Music tinkerers** who build their own mixes from their songs with the Loop Mixer and the Synth Studio.
+- And anyone who likes a bit of **play** while listening: player views, visualizers, the Vumikio Pets and the game
+  Surf the Beat.
 
----
+### How AutoPlayer handles your data
 
-## 🎯 Target Audience
+AutoPlayer is a **local app**. Your music, library, playlists, history and all settings are processed on your device
+only. There is no account, no cloud and no server of the provider holding your data – no tracking, no ads, no selling
+of data. The app's database is encrypted.
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                    AUTOPLAYER TARGET GROUPS                      │
-├───────────────────┬─────────────────────────────────────────────┤
-│ 🚗 DRIVERS        │ People with Android Auto vehicles who want   │
-│                   │ offline music — reliable & feature-rich      │
-├───────────────────┼─────────────────────────────────────────────┤
-│ 🎵 AUDIOPHILES    │ Users seeking EQ, BPM analysis, Vocal        │
-│                   │ Isolator, Crossfade & pro audio tools        │
-│                   │ without streaming subscriptions              │
-├───────────────────┼─────────────────────────────────────────────┤
-│ 🎸 MUSICIANS      │ Beat-Matching, A-B Repeat, Pitch/Speed,      │
-│                   │ Waveform Editor, Loop Mixer, Synthesizer     │
-├───────────────────┼─────────────────────────────────────────────┤
-│ 📱 PRIVACY USERS  │ Local-first: no data leaves the device       │
-│                   │ (except opt-in crash reports)                │
-├───────────────────┼─────────────────────────────────────────────┤
-│ 🎮 POWER USERS    │ Vumikio Pets, Party Mode,               │
-│                   │ Genome Visualizer, AI Music Library          │
-├───────────────────┼─────────────────────────────────────────────┤
-│ 🌍 INTERNATIONAL  │ 26 languages from Arabic to Vietnamese       │
-│                   │ — fully localized, incl. voice commands      │
-└───────────────────┴─────────────────────────────────────────────┘
-```
+AutoPlayer needs no internet to play music; it also works in airplane mode. It only goes online for a few features on
+the side, such as the weather for the Weather DJ, checking for updates or buying Pro through Google Play. Crash reports
+are only sent with your consent. Details are in the
+[Privacy Policy](https://zappelmann-sketch.github.io/AutoPlayer-Beta-Testing/privacy.html?lang=en).
 
----
+### Free and Pro
 
-## 🏗️ App Architecture
+The basic features are free. **AutoPlayer Pro** unlocks the rest – **a one-time purchase, no subscription**. Of the
+guide's 113 chapters, 39 describe free features, 68 Pro features and 6 features that are partly free. The guide marks
+every chapter.
 
-AutoPlayer follows **Clean Architecture** with strict layer separation and **MVVM** pattern:
+## Features by section
 
-```
-╔══════════════════════════════════════════════════════════════════╗
-║                     AUTOPLAYER ARCHITECTURE                      ║
-╠══════════════════════════════════════════════════════════════════╣
-║                                                                  ║
-║  ┌─────────────────────────────────────────────────────────┐    ║
-║  │              PRESENTATION LAYER                          │    ║
-║  │  ┌──────────┐  ┌──────────┐  ┌────────────────────┐    │    ║
-║  │  │  Compose  │  │ViewModels│  │  Navigation (Hilt) │    │    ║
-║  │  │ 72 Screens│  │23 VMs    │  │  Drawer + NavHost  │    │    ║
-║  │  └──────────┘  └──────────┘  └────────────────────┘    │    ║
-║  └─────────────────────────────────────────────────────────┘    ║
-║                              │                                   ║
-║  ┌─────────────────────────────────────────────────────────┐    ║
-║  │                 DOMAIN LAYER                             │    ║
-║  │  ┌────────────┐  ┌────────────┐  ┌──────────────────┐  │    ║
-║  │  │  Use Cases  │  │  Models    │  │  Repositories    │  │    ║
-║  │  │ (Business   │  │ Song/Album │  │  (Interface)     │  │    ║
-║  │  │  Logic)     │  │ Artist/Pet │  │  7 Repos         │  │    ║
-║  │  └────────────┘  └────────────┘  └──────────────────┘  │    ║
-║  └─────────────────────────────────────────────────────────┘    ║
-║                              │                                   ║
-║  ┌─────────────────────────────────────────────────────────┐    ║
-║  │                  DATA LAYER                              │    ║
-║  │  ┌────────────┐  ┌──────────────┐  ┌────────────────┐  │    ║
-║  │  │  Room DB   │  │  DataStore   │  │  MediaStore    │  │    ║
-║  │  │ 40 Entities│  │  Settings    │  │  (Audio Files) │  │    ║
-║  │  │ 34 DAOs    │  │  Preferences │  │  Scanner       │  │    ║
-║  │  └────────────┘  └──────────────┘  └────────────────┘  │    ║
-║  └─────────────────────────────────────────────────────────┘    ║
-║                              │                                   ║
-║  ┌─────────────────────────────────────────────────────────┐    ║
-║  │              PLAYER ENGINE (149 Modules)                 │    ║
-║  │  ┌──────────┐ ┌──────────┐ ┌──────────┐ ┌──────────┐   │    ║
-║  │  │ ExoPlayer│ │   EQ /   │ │   BPM /  │ │  Synth   │   │    ║
-║  │  │ Media3   │ │ Effects  │ │  Key     │ │  Studio  │   │    ║
-║  │  │ 1.5.1    │ │ DSP      │ │ Analyzer │ │ Loop Mix │   │    ║
-║  │  └──────────┘ └──────────┘ └──────────┘ └──────────┘   │    ║
-║  └─────────────────────────────────────────────────────────┘    ║
-║                              │                                   ║
-║  ┌─────────────────────────────────────────────────────────┐    ║
-║  │              SERVICES / ANDROID INTEGRATION             │    ║
-║  │  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐  │    ║
-║  │  │ MusicService │  │Android Auto  │  │  Passenger   │  │    ║
-║  │  │ MediaLibrary │  │MediaBrowser  │  │  Party Mode  │  │    ║
-║  │  │ MediaSession │  │ AutoMediaBr. │  │  Nearby API  │  │    ║
-║  │  └──────────────┘  └──────────────┘  └──────────────┘  │    ║
-║  └─────────────────────────────────────────────────────────┘    ║
-║                                                                  ║
-╚══════════════════════════════════════════════════════════════════╝
-```
+Organized like the [User Guide](https://zappelmann-sketch.github.io/AutoPlayer-Beta-Testing/handbuch/index.html?lang=en)
+(113 chapters in 13 sections):
 
----
+1. **Basics** (12) – getting started, music library, the player, the song menu, playlists, favorites, settings, song
+   details, Genre Browse, app updates, main menu, AutoPlayer Pro
+2. **The player views** (10) – DJ Turntable, Jukebox, Cassette, Reel-to-Reel, Vintage Turntable, Sci-Fi Hologram, bar
+   visualizer, Fullscreen Visualizer, Music DNA
+3. **Sound and effects** (7) – Equalizer, Concert Mode, Vocal Isolator, Binaural Beats, Atmosphere Mixer, Hearing
+   Protection, Bass Vibration
+4. **What the app picks by itself** (7) – Smart DJ, Smart Playlists, Auto Playlists, Mood Morph, Mood Browse, Smart
+   Reorder, Song Paths
+5. **In the vehicle** (6) – Android Auto, Drive Mode DJ, Weather DJ, Speed-based Volume, Cabin Calibrator, Passenger
+   Mode
+6. **Controlling playback** (9) – queues, Detour, Queue Crossfade, A–B Repeat, Waveform, Remember Playback Position,
+   Beat-Match DJ, Sleep Timer, Sleep Fade
+7. **When the app reacts by itself** (7) – Context Auto-Switch, My places, Heartbeat Sync, Sound Souvenir, Geo Music,
+   Shake to Shuffle, Gesture Control
+8. **With others** (2) – Party Mode, Sharing Hub
+9. **Statistics, achievements and mascots** (5) – Music Wrapped, achievements and levels, Nostalgia Machine,
+   Vumikio Pets, Surf the Beat
+10. **Tools** (8) – Tag Editor, Track Cutter, Ringtone Changer, Tag Rescue, home screen widget, app icon shortcuts,
+    Theme Builder, Battery Mode
+11. **Controlling by voice** (3) – voice commands, playlists by voice, read aloud
+12. **Loop Mixer and Synth Studio** (30) – mixes from your own songs with tracks, segments, beat matching, effects,
+    automation, markers and export; Pad Mode; Synth Studio (subtractive, FM, wavetable), Arpeggiator, project
+    templates
+13. **Data, privacy and moving** (7) – backing up and restoring, privacy, permissions, crash reports, Device Transfer,
+    factory reset, exit app
 
-## 🚀 Development Timeline
+Android Auto is tested in the developer's own car (10.1-inch display) and with the Desktop Head Unit.
 
-```
-TIMELINE: AutoPlayer Development (2026)
-════════════════════════════════════════════════════════════════════
+## Languages
 
-March 2026
-  ├─ 05.03  🚀 Project start — core architecture, MediaSession
-  ├─ 07.03  ✅ v1.0: Player core, library, Android Auto basis
-  ├─ 10.03  ✅ v1.1: EQ, crossfade, sleep timer
-  ├─ 14.03  ✅ v1.2: Vocal isolator, waveform, tag editor
-  ├─ 18.03  ✅ v1.3: Smart DJ BPM/Key, beat-match crossfade
-  ├─ 20.03  ✅ v2.0: 6 player skins, theme builder
-  ├─ 25.03  🚗 FIELD TEST: Road trip — passenger mode passed
-  └─ 29.03  ✅ v3.0: Test plan v1.0 (388 test points)
+26 languages for the user interface, voice commands and the in-app guide: Deutsch, English, Español, Français,
+Italiano, Nederlands, Polski, Português (Brasil), Русский, Українська, Čeština, Dansk, Norsk, Suomi, Svenska,
+Türkçe, العربية, हिन्दी, ไทย, Tiếng Việt, Bahasa Indonesia, Bahasa Melayu, 日本語, 한국어, 简体中文, 繁體中文.
+The legal texts and the online guide are available in German and English.
 
-April 2026
-  ├─ 01.04  ✅ v3.12: Draggable Mic FAB, sleep fade persistent
-  ├─ 11.04  ✅ v4.0: Vumikio Pets (5 pets, 62 achievements)
-  ├─ 13.04  ✅ v4.1: Haptic feedback app-wide (522+ calls, 83 files)
-  ├─ 13.04  ✅ v4.2: Party mode v2 + genome visualizer
-  ├─ 15.04  ✅ v3.15: Genre Browse (F-106, Room DB v23)
-  ├─ 22.04  ✅ v4.3: Loop mixer + pad mode (16 tracks)
-  ├─ 24.04  ✅ v4.4: Synth Studio (300+ factory presets)
-  ├─ 25.04  ✅ v4.5: FM synthesis DX7-style (200 presets)
-  ├─ 25.04  ✅ v4.6: Wavetable synthesizer (8 tables)
-  ├─ 25.04  ✅ v4.7: Arpeggiator + step sequencer
-  ├─ 25.04  ✅ F-109: Sharing suite (6 formats + QR)
-  ├─ 28.04  ✅ F-133: Steering wheel voice button fix (Auto passed)
-  ├─ 29.04  ✅ v5.0–5.4: Test plan EN/DE i18n
-  └─ 30.04  ✅ v6.1.10: Phase 2B i18n — 26 languages complete
+## Development timeline
 
-June 2026 (Target)
-  └─ 01.06  🎯 PLAY STORE LAUNCH
-════════════════════════════════════════════════════════════════════
-```
+| Date | Version | What |
+|---|---|---|
+| 2026-03-07 | 0.1.0 | project start (first commit) |
+| 2026-03-10 | 1.0.0 | first complete version, including Drive Mode DJ |
+| 2026-03-19 | 3.0.0 | Context Auto-Switch |
+| 2026-04-14 | 4.0.0 | Vumikio Pets with a level system up to 1000 |
+| 2026-04-26 | 5.0.0 | sharing Loop Mixer content |
+| 2026-04-27 | 6.0.0 | new sound engine in the Synth Studio |
+| 2026-10-17 | 6.75.0 | Surf the Beat |
+| 2026-10-19 | 6.76.0 | Heartbeat Sync, rebuilt |
+| 2026-11-04 | 6.77.0 | new in-app user guide (113 chapters, read-aloud), in all 26 languages by 2026-11-05 |
+| 2026-11-08 | – | website with the online guide (this repository) |
 
----
+The release on the Google Play Store is in preparation; there is no fixed date yet.
 
-## 🎮 Features — Complete Overview
+## Beta testing
 
-### 🎨 Player Skins (7)
+The former interactive test plan is no longer online for now; how beta testing will work from here is being
+redefined. Please keep reporting bugs and wishes as a
+[GitHub issue](https://github.com/zappelmann-sketch/AutoPlayer-Beta-Testing/issues/new/choose) – with the templates for
+bug report, feature request or test report.
 
-Standard · DJ Turntable · Vintage Hi-Fi · Jukebox · Cassette · Reel-to-Reel · Sci-Fi Hologram
+Requirements: Android 10 or newer, your own music files on the device; for Android Auto a compatible car or the
+Desktop Head Unit.
 
-### 🔊 Playback & Audio
+## Contact
 
-| Feature | Details |
-|---------|---------|
-| **Formats** | MP3, FLAC, AAC, OGG, WAV, M4A |
-| **Gapless Playback** | Seamless playback without gaps |
-| **Crossfade** | 1–10 seconds, AI beat-match |
-| **Speed** | 0.5× to 2.0× (pitch-corrected) |
-| **Pitch** | −6 to +6 semitones |
-| **ReplayGain** | Track + album mode |
-| **Bluetooth** | Auto-resume on connection |
-| **Queue** | Full queue management with undo |
-| **Sleep Timer** | Timer with gentle fade-out |
-| **A-B Repeat** | Loop with practice mode |
-
-### 🎛️ Equalizer & Effects
-
-5-Band EQ · Bass Boost · Loudness Enhancer · 3D Surround · Dynamic Ambient EQ  
-Live Concert Simulator · Atmosphere Mixer · Binaural Beats · Car Cabin Calibrator
-
-### 🚗 Android Auto
-
-Full MediaBrowserService browse tree with 8 categories (Songs, Albums, Artists, Playlists,  
-Mood, Genre, Queue, Continue Listening), individual album art per song, voice control in  
-26 languages, steering wheel button support (F-133), autoplay on connect, tested in Dacia Jogger.
-
-### 🧠 Smart Features
-
-Smart DJ · Geo-Music · Nostalgia Machine · Mood Morph · Drive Mode DJ  
-Sound Souvenir · Passenger Mode · Party Mode · Weather DJ (opt-in) · Heartbeat Sync  
-Context Auto-Switch (12+ conditions) · Genome Visualizer · Sleep Fade · Shake to Shuffle  
-Speed-based Volume · Music Wrapped (15 slides, 8 listener personalities)
-
-### 🎹 Music Studio
-
-```
-Loop Mixer   — 16 tracks · Templates · Markers · BPM-Sync · Swing · WAV Export
-Synth Studio — Subtractive + FM DX7 (200 presets) + Wavetable (8 tables) + Drum Synth
-             — 300+ factory presets across 20 categories · MIDI USB + BLE
-Arpeggiator  — 16-step grid · BPM sync · Swing · Hold
-Pad Mode     — 16 pads · 16 tracks · 1:1 mapping · Recording
-```
-
-### 🐾 Vumikio Pets (F-111)
-
-```
-5 pets: 🐙 Octo · 🐱 Melo · 🐰 Benny · 🐿️ Chip · 🦊 Foxy
-10 evolution phases: Baby → Child → Teen → Adult → Star → Master → Legend → Mythic → Divine → Eternal
-62 achievements · 50 trick animations · Level 1–1000 · Easter Egg: Trick Lab
-Reacts to music taste, listening duration, time of day
-```
-
-### 🔒 Privacy
-
-```
-✅ Fully offline (except Weather DJ: opt-in)
-✅ No user data transmitted
-✅ No ads · No trackers · No analytics
-✅ Crash reports only with explicit consent (ACRA opt-in)
-✅ GDPR compliant
-✅ Privacy Policy in 26 languages
-✅ All data deletable via uninstall
-```
-
----
-
-## 🔧 Tech Stack
-
-| Technology | Version | Purpose |
-|-----------|---------|---------|
-| **Kotlin** | 2.1.0 | Primary language |
-| **Jetpack Compose BOM** | 2024.12.01 | Entire UI |
-| **Media3 / ExoPlayer** | 1.5.1 | Audio engine + MediaSession |
-| **Room Database** | 2.6.1 | Local persistence (40 tables, DB v37) |
-| **Hilt** | 2.53.1 | Dependency injection |
-| **Kotlin Coroutines** | 1.9.0 | Async operations |
-| **Ktor Server** | 3.0.3 | Local HTTP server (party mode) |
-| **Google Nearby** | 19.3.0 | Peer-to-peer (passenger mode) |
-| **ZXing** | 3.5.3 | QR code generation/scanning |
-| **jAudioTagger** | 3.0.1 | ID3 tag read/write |
-| **Coil** | 2.7.0 | Album art loading |
-| **ACRA** | 5.11.4 | Opt-in crash reporting |
-
-**Android SDK:** Min API 29 (Android 10) · Target API 35 (Android 15)
-
----
-
-## 🌍 Localization (26 Languages)
-
-🇩🇪 🇬🇧 🇫🇷 🇪🇸 🇮🇹 🇳🇱 🇵🇱 🇷🇺 🇵🇹 🇸🇪 🇳🇴 🇩🇰 🇫🇫🇮 🇺🇦 🇨🇿 🇹🇷 🇸🇦 🇯🇵 🇰🇷 🇨🇳 🇹🇼 🇮🇳 🇮🇩 🇲🇾 🇹🇭 🇻🇳
-
-**2,776 strings** per language · Voice commands in all 26 languages  
-User guide (35 sections) · Privacy Policy · Terms of Service — all in 26 languages
-
----
-
-## 🧪 Beta Testing
-
-### Step 1 — Open Test Plan
-👉 **[https://zappelmann-sketch.github.io/AutoPlayer-Beta-Testing/](https://zappelmann-sketch.github.io/AutoPlayer-Beta-Testing/)**
-
-The interactive test plan contains **434+ test points** across 20+ categories.
-
-### Step 2 — Enter Device Info
-Your device model, Android version, screen size — directly in the test plan.
-
-### Step 3 — Test & Document
-Work through each test point, mark bugs and wishes.
-
-### Step 4 — Submit Results
-
-```
-Option A: Click "Send to developer via email" (built into test plan)
-Option B: Create GitHub Issue + attach JSON file
-          → https://github.com/zappelmann-sketch/AutoPlayer-Beta-Testing/issues
-```
-
-### Requirements
-
-- **Android 10** (API 29) or higher
-- Local music files on your device
-- For Android Auto tests: compatible vehicle or DHU (Desktop Head Unit)
-
----
-
-## 📬 Contact
-
-- **E-Mail:** zappelmann+autoplayer@googlemail.com
-- **Report a bug:** [GitHub Issues](https://github.com/zappelmann-sketch/AutoPlayer-Beta-Testing/issues/new)
-- **Privacy Policy:** [privacy.html](https://zappelmann-sketch.github.io/AutoPlayer-Beta-Testing/privacy.html)
-- **Terms of Service:** [terms.html](https://zappelmann-sketch.github.io/AutoPlayer-Beta-Testing/terms.html)
-
----
-
-<div align="center">
-
-*AutoPlayer wird entwickelt von Kay | Powered by Claude AI*  
-*AutoPlayer is developed by Kay | Powered by Claude AI*
-
-**Version 6.1.10 · Build 95 · © 2026**
-
-</div>
+- **E-mail:** zappelmann+autoplayer@googlemail.com
+- **Report a bug:** [GitHub Issues](https://github.com/zappelmann-sketch/AutoPlayer-Beta-Testing/issues/new/choose)
+- [Privacy Policy](https://zappelmann-sketch.github.io/AutoPlayer-Beta-Testing/privacy.html?lang=en) ·
+  [Terms of Use](https://zappelmann-sketch.github.io/AutoPlayer-Beta-Testing/terms.html?lang=en) ·
+  [Legal Notice](https://zappelmann-sketch.github.io/AutoPlayer-Beta-Testing/impressum.html?lang=en)
