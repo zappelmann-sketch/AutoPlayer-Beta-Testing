@@ -237,13 +237,17 @@ footer a { color: var(--accent); }
   a { color: #000; text-decoration: underline; }
   a[href]::after { content: " (" attr(href) ")"; font-size: 0.85em; }
 }
+
+/* App-Logo vor dem Namen; der Name fuehrt zur Startseite (07.11.2026) */
+.brand-logo { width: 30px; height: 30px; border-radius: 8px; flex-shrink: 0; }
+a.brand, a.brand:hover { color: inherit; text-decoration: none; }
 </style>
 </head>
 <body>
 
 <header>
   <div class="header-inner">
-    <div class="brand">AutoPlayer</div>
+    <a href="index.html" class="brand" id="brand-link"><img class="brand-logo" src="img/icon.png" alt="" width="30" height="30">AutoPlayer</a>
     <div class="lang-drop" id="langDrop">
       <div class="lang-btn" id="langBtn" onclick="document.getElementById('langList').classList.toggle('open')">
         <span id="langCurrent">DE</span>
@@ -368,6 +372,10 @@ footer a { color: var(--accent); }
     <a href="mailto:zappelmann+autoplayer@googlemail.com">zappelmann+autoplayer@googlemail.com</a>
   </div>
   <div class="footer-links">
+    <a href="index.html" id="footer-home-link">Startseite</a>
+    <span>&middot;</span>
+    <a href="handbuch/index.html" id="footer-manual-link">Benutzerhandbuch</a>
+    <span>&middot;</span>
     <a href="privacy.html" id="footer-privacy-link"><span id="footer-privacy-text">Datenschutzerklärung</span></a>
     <span>&middot;</span>
     <a href="terms.html" id="footer-terms-link">Nutzungsbedingungen</a>
@@ -455,6 +463,13 @@ function switchLang(lang) {
   document.getElementById('footer-terms-link').href = 'terms.html?lang=' + lang;
   document.getElementById('footer-privacy-link').href = 'privacy.html?lang=' + lang;
   document.getElementById('footer-imprint-text').textContent = (lang === 'de') ? 'Impressum' : 'Legal Notice';
+  // Startseite und Handbuch (07.11.2026)
+  var fh = document.getElementById('footer-home-link');
+  if (fh) { fh.textContent = (lang === 'de') ? 'Startseite' : 'Home'; fh.href = 'index.html?lang=' + lang; }
+  var fm = document.getElementById('footer-manual-link');
+  if (fm) { fm.textContent = (lang === 'de') ? 'Benutzerhandbuch' : 'User Guide'; fm.href = 'handbuch/index.html?lang=' + lang; }
+  var bl = document.getElementById('brand-link');
+  if (bl) { bl.href = 'index.html?lang=' + lang; }
 
   // Update HTML lang
   document.documentElement.lang = lang;

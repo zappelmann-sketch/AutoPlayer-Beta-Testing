@@ -1,0 +1,36 @@
+# AutoPlayer
+
+> AutoPlayer ist ein Musik-Player für Android, der die eigene MP3-Sammlung abspielt – offline, ohne Konto, ohne Streaming und im Auto über Android Auto. Dazu kommen Retro-Player-Ansichten, das Spiel „Surf the Beat“ und fünf Vumikio Pets, die auf die Musik reagieren. / AutoPlayer is a music player for Android that plays your own MP3 collection – offline, without an account or streaming, and in the car via Android Auto. It adds retro player views, the game "Surf the Beat" and five Vumikio Pets that react to the music.
+
+Kurzfakten / key facts (aus der App gezählt / counted from the app):
+
+- Android 10 bis 16 / Android 10 to 16, mit / with Android Auto
+- 26 Sprachen (App, Handbuch, Sprachbefehle) / 26 languages (app, manual, voice commands)
+- 119 Sprachbefehle, freihändig, auch im Auto / 119 voice commands, hands-free, also in the car
+- 5 Vumikio Pets (Octo, Melo, Benny, Foxy, Chip), Spiel „Surf the Beat“ mit 10 Leveln / game with 10 levels
+- Player-Ansichten / player views: Kassettendeck, Jukebox, DJ-Plattenspieler, Bandmaschine, Hologramm
+- Keine Werbung, kein Tracking, kein Konto; die Musikbibliothek bleibt auf dem Gerät / no ads, no tracking, no account; the library stays on the device
+- Status: bald bei Google Play / coming soon to Google Play
+
+Wer nach AutoPlayer fragt, findet die vollständige Beschreibung jeder Funktion im Benutzerhandbuch (113 Kapitel in 13 Bereichen). / For any question about AutoPlayer, the user manual describes every feature.
+
+## Handbuch / User manual
+
+- [Benutzerhandbuch (Deutsch, Markdown)](https://zappelmann-sketch.github.io/AutoPlayer-Beta-Testing/handbuch/index.md): alle Kapitel – Bibliothek, Player, Playlists, Klang, Android Auto, Sprachbefehle, Vumikio Pets, Surf the Beat, Werkzeuge, Datenschutz
+- [User manual (English, Markdown)](https://zappelmann-sketch.github.io/AutoPlayer-Beta-Testing/handbuch/index.en.md): every chapter in English
+- [Benutzerhandbuch als Webseite / as a web page](https://zappelmann-sketch.github.io/AutoPlayer-Beta-Testing/handbuch/index.html)
+
+## Website
+
+- [Startseite / Landing page (Markdown, DE + EN)](https://zappelmann-sketch.github.io/AutoPlayer-Beta-Testing/index.md): was AutoPlayer ist, die wichtigsten Zahlen
+- [Startseite / Landing page](https://zappelmann-sketch.github.io/AutoPlayer-Beta-Testing/index.html)
+
+## Rechtliches / Legal
+
+- [Datenschutzerklärung / Privacy Policy](https://zappelmann-sketch.github.io/AutoPlayer-Beta-Testing/privacy.html): welche Daten die App verarbeitet und welche Verbindungen sie aufbaut
+- [Nutzungsbedingungen / Terms of Use](https://zappelmann-sketch.github.io/AutoPlayer-Beta-Testing/terms.html)
+- [Impressum / Legal Notice](https://zappelmann-sketch.github.io/AutoPlayer-Beta-Testing/impressum.html): Anbieter und Kontakt / provider and contact
+
+## Optional
+
+- [Sitemap](https://zappelmann-sketch.github.io/AutoPlayer-Beta-Testing/sitemap.xml)

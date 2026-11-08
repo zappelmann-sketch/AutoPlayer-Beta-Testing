@@ -1,0 +1,37 @@
+# AutoPlayer website - settings for an Apache host (own domain later).
+# GitHub Pages ignores this file (it does not publish files starting with a dot).
+
+# No directory listings, no server signature
+Options -Indexes
+ServerSignature Off
+
+# Types: Markdown versions for AI readers (llms.txt v2), all texts as UTF-8
+AddType text/markdown .md
+AddType image/webp .webp
+AddCharset utf-8 .html .css .js .md .txt .xml
+
+<IfModule mod_headers.c>
+  # The same rules as the <meta> tag in the pages, plus what a meta tag cannot do (frame-ancestors).
+  # The legal pages keep their own inline script for the language switch - so the strict policy is
+  # set for the landing page and the handbook only.
+  <FilesMatch "^(index\.html)$">
+    Header always set Content-Security-Policy "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self'; media-src 'self'; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'; frame-ancestors 'none'"
+  </FilesMatch>
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set X-Frame-Options "DENY"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=(), usb=(), interest-cohort=()"
+  Header always set Cross-Origin-Opener-Policy "same-origin"
+  # Only once the domain runs on HTTPS:
+  # Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+
+  # llms.txt v2: every page points AI readers to the llms.txt that describes the site
+  <FilesMatch "\.html$">
+    Header append Link "</llms.txt>; rel=\"describedby\""
+  </FilesMatch>
+</IfModule>
+
+# Only HTTPS (once the certificate is set up at the host):
+# RewriteEngine On
+# RewriteCond %{HTTPS} !=on
+# RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]

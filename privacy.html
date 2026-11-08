@@ -6,7 +6,7 @@
 <title>AutoPlayer – Datenschutzerklärung</title>
 <!--
   AutoPlayer - Datenschutzerklaerung
-  Stand: 2026-11-02
+  Stand: 2026-11-07
 
   Diese Seite laedt bewusst KEINE Inhalte von Dritten (keine Schriftarten,
   keine Symbol-Bibliothek, keine Skripte) und speichert nichts im Browser.
@@ -240,6 +240,10 @@ footer a { color: var(--accent); }
   a { color: #000; text-decoration: underline; }
   a[href]::after { content: " (" attr(href) ")"; font-size: 0.85em; }
 }
+
+/* App-Logo vor dem Namen; der Name fuehrt zur Startseite (07.11.2026) */
+.brand-logo { width: 30px; height: 30px; border-radius: 8px; flex-shrink: 0; }
+a.brand, a.brand:hover { color: inherit; text-decoration: none; }
 </style>
 <style>
 /* Ergaenzungen fuer diese Entwurfsfassung */
@@ -264,7 +268,7 @@ table.dsgvo td:first-child{width:36%}
 
 <header>
   <div class="header-inner">
-    <a href="index.html" class="brand">AutoPlayer</a>
+    <a href="index.html" class="brand" id="brand-link"><img class="brand-logo" src="img/icon.png" alt="" width="30" height="30">AutoPlayer</a>
     <div class="lang-drop" id="langDrop">
       <button class="lang-btn" id="langCurrent" onclick="toggleLangList()">DE</button>
       <div class="lang-list" id="langList">
@@ -280,7 +284,7 @@ table.dsgvo td:first-child{width:36%}
 <!-- ==================================================================== -->
 <main class="legal-content active" data-lang="de">
 <h1>Datenschutzerklärung – AutoPlayer</h1>
-<p class="meta">Stand: 2. November 2026</p>
+<p class="meta">Stand: 7. November 2026</p>
 
 <nav class="toc">
   <div class="toc-title" onclick="this.parentElement.classList.toggle('collapsed')">Inhalt</div>
@@ -316,7 +320,8 @@ table.dsgvo td:first-child{width:36%}
   E-Mail: <a href="mailto:zappelmann+autoplayer@googlemail.com">zappelmann+autoplayer@googlemail.com</a>
 </p>
 <p>Diese Erklärung gilt für die Android-App AutoPlayer einschließlich ihrer
-Android-Auto-Funktionen sowie für diese über GitHub Pages bereitgestellte Seite.
+Android-Auto-Funktionen sowie für diese über GitHub Pages bereitgestellte
+Website (Startseite, Benutzerhandbuch und Rechtstexte).
 Für Dienste, die Google, Open-Meteo, OpenStreetMap oder GitHub in eigener
 Verantwortung betreiben, gelten ergänzend deren Datenschutzbestimmungen.</p>
 </section>
@@ -673,15 +678,26 @@ Datenschutz und Informationsfreiheit Nordrhein-Westfalen</a>.</p>
 
 <section>
 <h2 id="de-15">15. Diese Website</h2>
-<p>Diese Seite wird über GitHub Pages bereitgestellt. Beim Aufruf verarbeitet
+<p>Diese Website wird über GitHub Pages bereitgestellt. Beim Aufruf verarbeitet
 GitHub Ihre IP-Adresse und technische Zugriffsdaten und speichert diese nach
 eigenen Angaben zu Sicherheitszwecken.
 <a href="https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener noreferrer">Datenschutzerklärung von GitHub</a></p>
-<p>Die Seite selbst setzt <strong>keine Cookies</strong>, speichert
-<strong>nichts</strong> in Ihrem Browser und lädt <strong>keine Inhalte von
-Dritten</strong> nach – keine Schriftarten, keine Symbole, keine Skripte. Die
-gewählte Sprache steht ausschließlich in der Adresse der Seite
-(<code>?lang=de</code>).</p>
+<p>Die Website setzt <strong>keine Cookies</strong> und lädt <strong>keine Inhalte
+von Dritten</strong> nach – keine Schriftarten, keine Symbole, keine Skripte. Die
+gewählte Sprache und Anzeige-Einstellungen (etwa ob die Vumikio Pets und die
+Aufbau-Animation erscheinen) stehen ausschließlich in der Adresse der Seite
+(zum Beispiel <code>?lang=de</code>).</p>
+<p><strong>Speicher im Browser – nur im Benutzerhandbuch.</strong> Nutzen Sie dort
+die Vorlese-Funktion, legt das Handbuch im lokalen Speicher Ihres Browsers
+(localStorage) höchstens zwei Einträge an: „handbuch-gehoert“ – welche Kapitel
+Sie bis zum Ende angehört haben, damit sie auch bei einem späteren Besuch als
+gehört markiert sind; „handbuch-mitlesen“ – ob die Seite beim Vorlesen mitläuft,
+nur wenn Sie diese Einstellung ändern. Die Einträge bleiben auf Ihrem Gerät und
+werden weder an uns noch an Dritte übertragen. Rechtsgrundlage ist § 25 Abs. 2
+Nr. 2 TDDDG: Das Speichern ist erforderlich, damit die von Ihnen genutzte
+Vorlese-Funktion so arbeitet, wie Sie es gewählt haben. Die Merkliste löschen Sie
+jederzeit mit „Zurücksetzen“ im Handbuch, alle Einträge über die Einstellungen
+Ihres Browsers (Websitedaten löschen).</p>
 <p>Diese Erklärung ist dauerhaft abrufbar unter <a href="https://zappelmann-sketch.github.io/AutoPlayer-Beta-Testing/privacy.html">https://zappelmann-sketch.github.io/AutoPlayer-Beta-Testing/privacy.html</a> – dort können Sie sie auch ausdrucken oder weitergeben. In der App steht sie Wort für Wort ebenso; beim Lesen dort wird nichts übertragen, erst ein angetippter Verweis öffnet die jeweilige Seite im Browser.</p>
 </section>
 
@@ -706,7 +722,7 @@ Maßgeblich ist die jeweils hier veröffentlichte Fassung; das Datum steht oben.
 <!-- ==================================================================== -->
 <main class="legal-content" data-lang="en">
 <h1>Privacy Policy – AutoPlayer</h1>
-<p class="meta">Last updated: 2 November 2026</p>
+<p class="meta">Last updated: 7 November 2026</p>
 
 <nav class="toc">
   <div class="toc-title" onclick="this.parentElement.classList.toggle('collapsed')">Contents</div>
@@ -742,7 +758,8 @@ Maßgeblich ist die jeweils hier veröffentlichte Fassung; das Datum steht oben.
   Email: <a href="mailto:zappelmann+autoplayer@googlemail.com">zappelmann+autoplayer@googlemail.com</a>
 </p>
 <p>This policy covers the Android app AutoPlayer including its Android Auto
-features, and this page hosted on GitHub Pages. Services operated by Google,
+features, and this website hosted on GitHub Pages (home page, user guide and
+legal texts). Services operated by Google,
 Open-Meteo, OpenStreetMap or GitHub under their own responsibility are
 additionally governed by their own privacy terms.</p>
 </section>
@@ -1067,14 +1084,25 @@ Protection and Freedom of Information of North Rhine-Westphalia</a>.</p>
 
 <section>
 <h2 id="en-15">15. This website</h2>
-<p>This page is hosted on GitHub Pages. When you open it, GitHub processes your
+<p>This website is hosted on GitHub Pages. When you open it, GitHub processes your
 IP address and technical access data and, by its own account, stores these for
 security purposes.
 <a href="https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener noreferrer">GitHub privacy statement</a></p>
-<p>The page itself sets <strong>no cookies</strong>, stores <strong>nothing</strong>
-in your browser and loads <strong>no third-party content</strong> – no fonts, no
-icons, no scripts. Your chosen language lives solely in the page address
-(<code>?lang=en</code>).</p>
+<p>The website sets <strong>no cookies</strong> and loads <strong>no third-party
+content</strong> – no fonts, no icons, no scripts. Your chosen language and display
+settings (for example whether the Vumikio Pets and the build animation appear) live
+solely in the page address (for example <code>?lang=en</code>).</p>
+<p><strong>Browser storage – only in the user guide.</strong> If you use its
+read-aloud function, the user guide creates at most two entries in your browser’s
+local storage (localStorage): “handbuch-gehoert” – which chapters you have listened
+to until the end, so that they are still marked as heard on a later visit;
+“handbuch-mitlesen” – whether the page scrolls along while reading, only if you
+change this setting. The entries stay on your device and are transferred neither
+to us nor to third parties. The legal basis is Section 25(2) no. 2 TDDDG (German
+Telecommunications Digital Services Data Protection Act): storing them is
+necessary so that the read-aloud function you use works the way you chose. You can
+delete the list at any time with “Reset” in the user guide, and all entries via
+your browser settings (clear site data).</p>
 <p>This policy is permanently available at <a href="https://zappelmann-sketch.github.io/AutoPlayer-Beta-Testing/privacy.html">https://zappelmann-sketch.github.io/AutoPlayer-Beta-Testing/privacy.html</a> – there you can also print or share it. The app contains it word for word as well; reading it there transmits nothing – only a link you tap opens the page in your browser.</p>
 </section>
 
@@ -1099,6 +1127,10 @@ version published here at the time applies; the date is shown at the top.</p>
     <a href="mailto:zappelmann+autoplayer@googlemail.com">zappelmann+autoplayer@googlemail.com</a>
   </div>
   <div class="footer-links">
+    <a href="index.html" id="footer-home-link">Startseite</a>
+    <span>&middot;</span>
+    <a href="handbuch/index.html" id="footer-manual-link">Benutzerhandbuch</a>
+    <span>&middot;</span>
     <span><strong id="footer-privacy-text">Datenschutzerklärung</strong></span>
     <span>&middot;</span>
     <a href="terms.html?lang=de" id="footer-terms-link">Nutzungsbedingungen</a>
@@ -1153,6 +1185,13 @@ function switchLang(lang) {
   t.textContent = l.terms; t.href = 'terms.html?lang=' + lang;
   var i = document.getElementById('footer-imprint-link');
   i.textContent = l.imprint; i.href = 'impressum.html?lang=' + lang;
+  // Startseite und Handbuch (07.11.2026)
+  var fh = document.getElementById('footer-home-link');
+  if (fh) { fh.textContent = (lang === 'de') ? 'Startseite' : 'Home'; fh.href = 'index.html?lang=' + lang; }
+  var fm = document.getElementById('footer-manual-link');
+  if (fm) { fm.textContent = (lang === 'de') ? 'Benutzerhandbuch' : 'User Guide'; fm.href = 'handbuch/index.html?lang=' + lang; }
+  var bl = document.getElementById('brand-link');
+  if (bl) { bl.href = 'index.html?lang=' + lang; }
 
   var url = new URL(window.location);
   url.searchParams.set('lang', lang);

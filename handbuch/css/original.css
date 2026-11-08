@@ -1,0 +1,308 @@
+/* Aus BENUTZERHANDBUCH_NEU.html uebernommen von tools/website/baue_website.py - nicht von Hand aendern. */
+:root {
+    --bg: #0d1117; --karte: #161b22; --rand: #30363d;
+    --text: #e6edf3; --gedaempft: #9aa4b2; --akzent: #58a6ff;
+    --pro: #f0b429; --frei: #3fb950; --warn: #ff7b72;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--text);
+    font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.65; font-size: 16px;
+  }
+  .huelle { max-width: 1080px; margin: 0 auto; padding: 24px 20px 80px; }
+  header.titel {
+    border-bottom: 2px solid var(--akzent); padding-bottom: 18px; margin-bottom: 8px;
+  }
+  /* Das App-Symbol links neben dem Titel, damit man das Handbuch der App sofort zuordnet (Kay,
+     22.10.2026). Abgerundet wie auf dem Startbildschirm. */
+  header.titel { display: flex; align-items: center; gap: 18px; }
+  header.titel .app-logo { width: 72px; height: 72px; border-radius: 22%; flex-shrink: 0; }
+  header.titel h1 { margin: 0 0 6px; font-size: 30px; letter-spacing: -.4px; }
+  @media (max-width: 600px) {
+    header.titel { gap: 14px; }
+    header.titel .app-logo { width: 56px; height: 56px; }
+    header.titel h1 { font-size: 24px; }
+  }
+  header.titel .unter { color: var(--gedaempft); font-size: 15px; }
+
+  /* flow-root: Ein Kasten steht als Ganzes NEBEN einem schwebenden Bild. Als gewoehnlicher Block lief
+     sein Hintergrund unter dem Bild durch, nur der Text wich aus - der Rahmen sah angeschnitten aus
+     (Kay, 22.10.2026). pruefe_layout.mjs meldet seitdem jeden Kasten unter einem Bild. */
+  .hinweis {
+    display: flow-root;
+    background: #1c2333; border: 1px solid var(--akzent); border-left-width: 4px;
+    border-radius: 8px; padding: 14px 18px; margin: 22px 0;
+  }
+  .hinweis h2 { margin: 0 0 8px; font-size: 17px; color: var(--akzent); }
+  .hinweis p  { margin: 6px 0; font-size: 15px; }
+  .hinweis ul { margin: 8px 0 0 18px; padding: 0; font-size: 15px; }
+  .hinweis h3 { margin: 16px 0 4px; font-size: 15.5px; color: var(--text); }
+
+  nav.inhalt {
+    background: var(--karte); border: 1px solid var(--rand); border-radius: 10px;
+    padding: 18px 22px; margin: 26px 0 34px;
+  }
+  nav.inhalt h2 { margin: 0 0 12px; font-size: 18px; }
+  nav.inhalt ol { margin: 0; padding-left: 22px; }
+  nav.inhalt > ol > li { margin: 7px 0; font-weight: 600; }
+  nav.inhalt ol ol { padding-left: 18px; margin: 4px 0 10px; }
+  nav.inhalt ol ol li { font-weight: 400; margin: 2px 0; }
+  nav.inhalt a { color: var(--akzent); text-decoration: none; }
+  nav.inhalt a:hover { text-decoration: underline; }
+
+  /* Querverweise im Fließtext. Ohne eigene Regel erben sie das
+     Browser-Blau (#0000EE) — auf dem dunklen Grund weder lesbar noch als
+     Link erkennbar. Unterstrichen, damit sie sich auch vom Fettdruck
+     unterscheiden. */
+  article a, .hinweis a, .achtung a {
+    color: var(--akzent);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    text-decoration-thickness: 1px;
+    text-decoration-color: rgba(88, 166, 255, .5);
+  }
+  article a:hover, .hinweis a:hover, .achtung a:hover {
+    color: #8cc6ff; text-decoration-color: #8cc6ff;
+  }
+
+  h2.kategorie {
+    margin: 46px 0 6px; padding: 12px 0 8px; font-size: 24px;
+    border-bottom: 2px solid var(--rand);
+  }
+  h2.kategorie .zahl { color: var(--gedaempft); font-weight: 400; }
+
+  article {
+    background: var(--karte); border: 1px solid var(--rand); border-radius: 10px;
+    padding: 18px 22px; margin: 18px 0;
+  }
+  article h3 {
+    margin: 0 0 4px; font-size: 20px; display: flex; flex-wrap: wrap;
+    align-items: center; gap: 10px;
+  }
+  article h4 {
+    margin: 18px 0 6px; font-size: 14px; letter-spacing: .8px;
+    text-transform: uppercase; color: var(--akzent);
+  }
+  article p  { margin: 6px 0; }
+  article ul, article ol { margin: 6px 0 6px 20px; padding: 0; }
+  article li { margin: 4px 0; }
+  article b  { color: #fff; }
+  code {
+    background: #21262d; border: 1px solid var(--rand); border-radius: 4px;
+    padding: 1px 6px; font-size: 14px; font-family: Consolas, monospace;
+  }
+
+  .marke {
+    font-size: 11px; font-weight: 700; letter-spacing: .6px; text-transform: uppercase;
+    padding: 3px 9px; border-radius: 999px; white-space: nowrap;
+  }
+  .marke.pro  { background: rgba(240,180,41,.15); color: var(--pro);  border: 1px solid var(--pro); }
+  .marke.frei { background: rgba(63,185,80,.14);  color: var(--frei); border: 1px solid var(--frei); }
+  .marke.auto { background: rgba(88,166,255,.14); color: var(--akzent); border: 1px solid var(--akzent); }
+  .marke.teil { background: rgba(240,180,41,.10); color: #d8b26a; border: 1px solid #8a6d2f; }
+
+  /* Bildschirmfotos. Sie stehen rechts neben dem Text und werden bei schmalem Fenster
+     darunter gesetzt. Die Bildunterschrift traegt den Weg dorthin - das ist die Frage,
+     die ein Leser am haeufigsten hat. Gehoeren NUR in die Online-Fassung: der Export in
+     die guide_*-Strings der App laesst alles mit der Klasse "schirm" weg. */
+  /* clear: right - folgt ein Bild dicht auf das vorige, steht es darunter statt daneben;
+     zwei nebeneinander liessen dem Text bei 900 px keinen Platz mehr (23.09.2026). */
+  figure.schirm {
+    float: right; clear: right; width: 272px; margin: 2px 0 16px 22px; padding: 10px;
+    background: #0d1117; border: 1px solid var(--rand); border-radius: 10px;
+  }
+  figure.schirm.quer { width: 380px; }
+  figure.schirm a { display: block; text-decoration: none; }
+  figure.schirm img {
+    display: block; width: 100%; height: auto;
+    border-radius: 6px; border: 1px solid #22272e;
+  }
+  /* In Spaltenbreite sind Einzelheiten klein - ein Klick oeffnet das Bild gross. */
+  figure.schirm a:hover img { border-color: var(--akzent); }
+  figure.schirm figcaption {
+    margin-top: 9px; font-size: 13px; line-height: 1.45; color: var(--gedaempft);
+  }
+  figure.schirm .pfad {
+    display: block; margin-top: 3px; color: var(--akzent); font-size: 12.5px;
+  }
+  article::after { content: ""; display: block; clear: both; }
+  /* Mehrere Ansichten desselben Bildschirms nebeneinander, unter dem Text statt rechts
+     daneben - drei schwebende Bilder stapelten sich und rutschten von ihren Abschnitten
+     weg (Equalizer, 30.09.2026). Am Handy untereinander. */
+  .bildreihe { clear: both; display: flex; flex-wrap: wrap; gap: 14px; align-items: flex-start;
+    margin: 8px 0 18px; }
+  .bildreihe figure.schirm, .bildreihe figure.schirm.quer {
+    float: none; flex: 1 1 200px; width: auto; margin: 0; }
+  /* Reihe, in der die Bilder schmal bleiben statt die Zeile zu fuellen - fuer ein Kapitel mit vielen
+     Bildern und wenig Text dazwischen: schwebend stapelten sie sich rechts, rutschten von ihren
+     Abschnitten weg und standen am Ende zu fuenft untereinander (Sharing-Hub, 06.10.2026). */
+  .bildreihe.eng figure.schirm { flex: 0 1 236px; }
+  .bildreihe.eng figure.schirm.quer { flex: 0 1 310px; }
+  @media (max-width: 760px) {
+    figure.schirm, figure.schirm.quer {
+      float: none; width: 100%; max-width: 330px; margin: 16px auto;
+    }
+    .bildreihe figure.schirm, .bildreihe figure.schirm.quer { flex-basis: 100%; margin: 0 auto; }
+    .bildreihe.eng figure.schirm, .bildreihe.eng figure.schirm.quer { flex: 1 1 100%; }
+  }
+
+  .achtung {
+    display: flow-root;
+    background: rgba(255,123,114,.08); border-left: 3px solid var(--warn);
+    border-radius: 0 6px 6px 0; padding: 10px 14px; margin: 12px 0 4px;
+    font-size: 14.5px; color: #ffc9c4;
+  }
+  .achtung b { color: var(--warn); }
+  .achtung ul { margin: 6px 0 0 18px; }
+
+  table { border-collapse: collapse; width: 100%; margin: 10px 0; font-size: 15px; }
+  th, td { border: 1px solid var(--rand); padding: 7px 10px; text-align: left; vertical-align: top; }
+  th { background: #1c2128; font-weight: 600; }
+  /* Tabellen neben einem Bildschirmfoto bekamen im schmalen Streifen einen waagerechten
+     Scrollbalken (Pets-Kapitel bei 900 px: 103 px, 23.09.2026). Pauschal darunter setzen liess
+     dafuer am PC Leerstellen bis 980 px. Jetzt entscheidet das Skript am Seitenende je Tabelle:
+     Nur wer neben dem Bild nicht passt, bekommt "unter-bild" (24.09.2026). Silbentrennung in
+     den Zellen hilft, dass die meisten passen. */
+  .tab-huelle { overflow-x: auto; }
+  .tab-huelle.unter-bild { clear: both; }
+  td { hyphens: auto; }
+  /* Handy: kleinere Schrift, engere Zellen, lange Woerter duerfen umbrechen - sonst lief
+     bei 360 px jede vierte Tabelle seitlich ueber. Pruefen: node tools/handbuch/pruefe_layout.mjs */
+  @media (max-width: 600px) {
+    table { font-size: 13.5px; }
+    th, td { padding: 6px 7px; hyphens: auto; }
+    /* Nur Zellen duerfen notfalls mitten im Wort umbrechen - Kopfzeilen nicht, sonst stand
+       dort "For / mat" (Track-Cutter, 360 px). */
+    td { overflow-wrap: anywhere; }
+  }
+
+  footer.fuss {
+    margin-top: 56px; padding-top: 18px; border-top: 1px solid var(--rand);
+    color: var(--gedaempft); font-size: 14px;
+  }
+  a.hoch { color: var(--gedaempft); text-decoration: none; font-size: 13px; float: right; }
+  a.hoch:hover { color: var(--akzent); }
+
+  /* ---- Vorlesen ------------------------------------------------------- */
+  .vorlese-leiste {
+    display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+    background: #10161f; border: 1px solid var(--rand); border-radius: 8px;
+    padding: 8px 12px; margin: 0 0 14px;
+  }
+  .vorlese-knopf {
+    display: inline-flex; align-items: center; gap: 7px;
+    background: var(--akzent); color: #08111e; border: none; border-radius: 6px;
+    padding: 7px 15px; font-size: 14.5px; font-weight: 700; cursor: pointer;
+    font-family: inherit; white-space: nowrap;
+  }
+  .vorlese-knopf:hover { filter: brightness(1.12); }
+  .vorlese-knopf.laeuft { background: var(--warn); color: #2a0d0b; }
+
+  .vorlese-neben {
+    background: transparent; color: var(--gedaempft);
+    border: 1px solid var(--rand); border-radius: 6px;
+    padding: 6px 11px; font-size: 13px; cursor: pointer; font-family: inherit;
+    white-space: nowrap;
+  }
+  .vorlese-neben:hover { color: var(--text); border-color: var(--akzent); }
+
+  .vorlese-dauer { color: var(--gedaempft); font-size: 13px; font-variant-numeric: tabular-nums; }
+
+  .vorlese-balken {
+    flex: 1 1 120px; min-width: 110px; height: 6px; border-radius: 3px;
+    background: #262d38; overflow: hidden; cursor: pointer; position: relative;
+  }
+  .vorlese-balken > i {
+    display: block; height: 100%; width: 0; background: var(--akzent);
+    border-radius: 3px; transition: width .15s linear;
+  }
+  .vorlese-leiste.aktiv { border-color: var(--akzent); background: #14202f; }
+
+  .gehoert-haken {
+    color: var(--frei); font-size: 15px; font-weight: 700; display: none;
+  }
+
+  /* Ruecksprung zum Inhaltsverzeichnis - rechts in der Kapitel-Leiste. Die
+     Link-Regel fuer Artikel (unterstrichen, Akzentfarbe) gilt hier nicht. */
+  article a.inhalt-knopf {
+    margin-left: auto; color: var(--gedaempft); text-decoration: none;
+  }
+  article a.inhalt-knopf:hover { color: var(--text); border-color: var(--akzent); }
+  /* Der angesprungene Eintrag leuchtet kurz auf. */
+  nav.inhalt li.angesprungen > a {
+    background: rgba(88,166,255,.22); border-radius: 4px;
+    box-shadow: 0 0 0 4px rgba(88,166,255,.22);
+  }
+  nav.inhalt li > a { transition: background .6s, box-shadow .6s; }
+  article.gehoert .gehoert-haken { display: inline; }
+  nav.inhalt a.gehoert::after { content: ' \2713'; color: var(--frei); }
+
+  /* Das laufende Kapitel bekommt einen ruhigen Rahmen - beim Mitlesen sieht
+     man dann auf einen Blick, wo man ist. */
+  article.liest { border-color: var(--akzent); box-shadow: 0 0 0 1px rgba(88,166,255,.25); }
+
+  /* ---- Dauerleiste am unteren Rand ------------------------------------ */
+  /* Steht immer da, nicht erst beim Abspielen: Wer die Seite oeffnet, soll Pause, Tempo und
+     Mitlesen sehen, bevor er weiss, wo der Vorlese-Knopf ist (Kay, 21.10.2026). Die Klasse
+     "an" heisst nur noch: es laeuft ein Kapitel. Die Beschriftung wechselt mit der Sprache. */
+  #tonleiste {
+    position: fixed; left: 0; right: 0; bottom: 0; z-index: 50;
+    display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
+    background: rgba(13,17,23,.97); border-top: 2px solid var(--akzent);
+    padding: 10px 16px; backdrop-filter: blur(6px);
+  }
+  #tonleiste .titel {
+    flex: 1 1 200px; font-size: 14px; font-weight: 600;
+    overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  }
+  #tonleiste .titel.ruhe { color: var(--gedaempft); font-weight: 400; }
+  #tonleiste button {
+    background: #1c2431; color: var(--text); border: 1px solid var(--rand);
+    border-radius: 6px; padding: 6px 12px; font-size: 13px; cursor: pointer;
+    font-family: inherit; white-space: nowrap;
+  }
+  #tonleiste button:hover { border-color: var(--akzent); }
+  #tonleiste button.haupt { background: var(--akzent); color: #08111e; font-weight: 700; border: none; }
+  #tonleiste button.ein { border-color: var(--frei); color: var(--frei); }
+  #tonleiste select {
+    background: #1c2431; color: var(--text); border: 1px solid var(--rand);
+    border-radius: 6px; padding: 6px 8px; font-size: 13px; font-family: inherit;
+  }
+  #tonleiste .zeit { font-size: 13px; color: var(--gedaempft); font-variant-numeric: tabular-nums; }
+
+  .bereich-knopf {
+    margin-left: auto; background: transparent; color: var(--gedaempft);
+    border: 1px solid var(--rand); border-radius: 6px; padding: 5px 12px;
+    font-size: 13px; font-weight: 400; cursor: pointer; font-family: inherit;
+    white-space: nowrap;
+  }
+  .bereich-knopf:hover { color: var(--akzent); border-color: var(--akzent); }
+  h2.kategorie { display: flex; align-items: center; gap: 12px; }
+
+  /* Am Handy steht die Leiste immer da - sie soll nicht ein Fuenftel des Schirms belegen: In Ruhe
+     faellt der Hinweistext weg, die Zeitanzeige immer, die Knoepfe werden kleiner (22.10.2026). */
+  @media (max-width: 620px) {
+    .vorlese-leiste { gap: 7px; padding: 7px 9px; }
+    .vorlese-dauer { display: none; }
+    #tonleiste { gap: 6px 8px; padding: 8px 10px; }
+    #tonleiste .titel { flex-basis: 100%; }
+    #tonleiste .titel.ruhe, #tonleiste .zeit { display: none; }
+    #tonleiste button, #tonleiste select { padding: 5px 9px; font-size: 12.5px; }
+  }
+
+
+  /* ---- Kopfzeile mit Sprachwahl ----------------------------------------- */
+  .kopfzeile { display: flex; justify-content: flex-end; margin: 0 0 12px; }
+  .sprachwahl {
+    display: inline-flex; border: 1px solid var(--rand); border-radius: 999px; overflow: hidden;
+  }
+  .sprachwahl a {
+    padding: 5px 15px; font-size: 13.5px; color: var(--gedaempft); text-decoration: none;
+  }
+  .sprachwahl a + a { border-left: 1px solid var(--rand); }
+  .sprachwahl a:hover { color: var(--text); background: #1c2333; }
+  .sprachwahl a[aria-current="true"] {
+    background: rgba(88,166,255,.16); color: var(--akzent); font-weight: 600;
+  }
+  main.sprache[hidden] { display: none !important; }

@@ -1,0 +1,194 @@
+/* Handbook prototype - the look of the landing page on top of the original handbook styles.
+   Only colours, surfaces and type change; the layout rules of the original stay in force.
+   System fonts only, nothing from other servers. */
+
+:root {
+  --bg: #050a12; --karte: rgba(255, 255, 255, 0.045); --rand: rgba(255, 255, 255, 0.12);
+  --text: #eef3f8; --gedaempft: #9fb0c3; --akzent: #62e8c8;
+  --pro: #ffd15c; --frei: #5fe3a1; --warn: #ff7b9c;
+  --violet: #9b8cff; --pink: #ff5fa8;
+  --font: "Segoe UI Variable Display", "Segoe UI", "SF Pro Display", -apple-system, Roboto, system-ui, sans-serif;
+  --mono: "Cascadia Mono", "SF Mono", Consolas, ui-monospace, monospace;
+}
+body { background: var(--bg); font-family: var(--font); -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+#bg {
+  position: fixed; inset: 0; z-index: -1; pointer-events: none;
+  background:
+    radial-gradient(1100px 620px at 50% 100%, rgba(40, 200, 180, 0.18), transparent 70%),
+    radial-gradient(900px 500px at 10% 0%, rgba(155, 140, 255, 0.14), transparent 70%),
+    radial-gradient(800px 600px at 95% 30%, rgba(255, 95, 168, 0.07), transparent 70%),
+    linear-gradient(180deg, #071020 0%, var(--bg) 60%, #03060c 100%);
+}
+::selection { background: rgba(98, 232, 200, 0.3); }
+
+/* title */
+header.titel { border-bottom: 0; position: relative; padding-bottom: 22px; }
+header.titel::after {
+  content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 2px; border-radius: 2px;
+  background: linear-gradient(90deg, var(--akzent), var(--violet) 60%, var(--pink));
+}
+header.titel h1 { font-size: 38px; font-weight: 700; letter-spacing: -0.035em; line-height: 1.1; }
+header.titel .app-logo { box-shadow: 0 10px 40px -10px rgba(98, 232, 200, 0.55); }
+
+/* glass surfaces */
+article, nav.inhalt, .hinweis, figure.schirm, .vorlese-leiste {
+  background: var(--karte); border: 1px solid var(--rand);
+}
+article { border-radius: 22px; padding: 22px 26px; margin: 22px 0; box-shadow: 0 30px 60px -40px rgba(0, 0, 0, 0.9); }
+nav.inhalt { border-radius: 22px; padding: 22px 26px; }
+nav.inhalt h2 { font-size: 22px; letter-spacing: -0.02em; }
+nav.inhalt a { color: var(--text); }
+nav.inhalt a:hover { color: var(--akzent); text-decoration: none; }
+nav.inhalt > ol > li > a { color: var(--akzent); }
+@media (min-width: 900px) {
+  nav.inhalt > ol { columns: 2; column-gap: 44px; }
+  nav.inhalt > ol > li { break-inside: avoid; }
+}
+
+/* headings: big and tight like the landing page, categories with the gradient */
+h2.kategorie {
+  border-bottom: 0; font-size: 34px; font-weight: 700; letter-spacing: -0.035em; line-height: 1.1;
+  margin-top: 64px; padding-bottom: 0.15em;
+}
+h2.kategorie {
+  background: linear-gradient(90deg, var(--akzent), var(--violet) 55%, var(--pink));
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+h2.kategorie .zahl { color: transparent; font-weight: 700; }
+h2.kategorie .bereich-knopf { color: var(--gedaempft); -webkit-text-fill-color: var(--gedaempft); }
+article h3 { font-size: 26px; font-weight: 700; letter-spacing: -0.025em; line-height: 1.2; }
+article h4 {
+  font: 600 12px var(--mono); letter-spacing: 0.14em; color: var(--akzent); margin-top: 22px;
+}
+article b { color: #fff; }
+article a, .hinweis a, .achtung a { color: var(--akzent); text-decoration-color: rgba(98, 232, 200, 0.45); }
+article a:hover, .hinweis a:hover, .achtung a:hover { color: #a8fff0; text-decoration-color: #a8fff0; }
+
+/* screenshots: glass cards like on the landing page */
+figure.schirm { border-radius: 18px; padding: 10px; box-shadow: 0 24px 50px -30px rgba(0, 0, 0, 0.9), 0 0 50px -24px rgba(98, 232, 200, 0.25); }
+figure.schirm img { border-radius: 12px; border-color: rgba(255, 255, 255, 0.08); }
+figure.schirm a:hover img { border-color: var(--akzent); }
+figure.schirm .pfad { color: var(--akzent); }
+
+/* boxes */
+.hinweis {
+  border-radius: 16px; border-left: 3px solid var(--akzent);
+  background: linear-gradient(90deg, rgba(98, 232, 200, 0.08), rgba(255, 255, 255, 0.035) 40%);
+}
+.hinweis h2 { color: var(--akzent); }
+.achtung {
+  border-radius: 0 14px 14px 0; border-left-color: var(--warn);
+  background: linear-gradient(90deg, rgba(255, 123, 156, 0.12), rgba(255, 123, 156, 0.04) 60%);
+  color: #ffd2dc;
+}
+
+/* tables */
+table { border-radius: 12px; overflow: hidden; }
+th, td { border-color: var(--rand); }
+th { background: rgba(255, 255, 255, 0.06); }
+tr:nth-child(even) td { background: rgba(255, 255, 255, 0.02); }
+
+/* labels */
+.marke.pro  { background: rgba(255, 209, 92, 0.12); color: var(--pro); border-color: rgba(255, 209, 92, 0.6); }
+.marke.frei { background: rgba(95, 227, 161, 0.12); color: var(--frei); border-color: rgba(95, 227, 161, 0.6); }
+.marke.auto { background: rgba(98, 232, 200, 0.12); color: var(--akzent); border-color: rgba(98, 232, 200, 0.6); }
+code { background: rgba(255, 255, 255, 0.06); border-color: var(--rand); font-family: var(--mono); }
+
+/* read aloud */
+.vorlese-leiste { border-radius: 14px; }
+.vorlese-knopf { background: var(--akzent); color: #04221c; border-radius: 999px; box-shadow: 0 8px 26px -10px rgba(98, 232, 200, 0.6); }
+.vorlese-neben, .bereich-knopf { border-radius: 999px; }
+.vorlese-balken { background: rgba(255, 255, 255, 0.08); }
+.vorlese-balken > i { background: linear-gradient(90deg, var(--akzent), var(--violet)); }
+.vorlese-leiste.aktiv { border-color: var(--akzent); background: rgba(98, 232, 200, 0.08); }
+#tonleiste {
+  background: rgba(5, 10, 18, 0.82); border-top: 1px solid var(--rand);
+  backdrop-filter: blur(16px) saturate(1.4); -webkit-backdrop-filter: blur(16px) saturate(1.4);
+}
+#tonleiste::before {
+  content: ""; position: absolute; left: 0; right: 0; top: -1px; height: 1px;
+  background: linear-gradient(90deg, transparent, var(--akzent), var(--violet), var(--pink), transparent);
+}
+#tonleiste button, #tonleiste select { background: rgba(255, 255, 255, 0.06); border-color: var(--rand); border-radius: 999px; }
+#tonleiste button.haupt { background: var(--akzent); color: #04221c; }
+/* the two switches of js/kapitelbau.js, after the read-aloud controls */
+#tonleiste .kb-erster { margin-left: 10px; }
+@media (max-width: 620px) { #tonleiste .kb-erster { margin-left: 0; } }
+
+/* language switch */
+.sprachwahl { border-color: var(--rand); background: var(--karte); }
+.sprachwahl a[aria-current="true"] { background: rgba(98, 232, 200, 0.14); color: var(--akzent); }
+footer.fuss { border-top-color: var(--rand); }
+
+/* ---------- chapter build (js/kapitelbau.js) ---------- */
+/* waiting for its step: invisible and free for the browser (no mask, clip or blur to compute yet) */
+.kb-wait { visibility: hidden; }
+.kb-type { clip-path: inset(-0.5em var(--kb-r, 0px) -0.5em -0.5em); }
+.kb-lines, .kb-table {
+  -webkit-mask-image: linear-gradient(180deg, #000 calc(var(--p, 1) * 112% - 12%), transparent calc(var(--p, 1) * 112%));
+  mask-image: linear-gradient(180deg, #000 calc(var(--p, 1) * 112% - 12%), transparent calc(var(--p, 1) * 112%));
+}
+.kb-item { opacity: var(--p, 1); transform: translateX(calc((1 - var(--p, 1)) * -18px)); }
+/* links in the table of contents are inline - as a block they can be clipped and moved */
+a.kb-type, a.kb-item { display: inline-block; }
+.kb-bar { opacity: var(--p, 1); transform: scale(calc(0.97 + 0.03 * var(--p, 1))); }
+.kb-glass { opacity: var(--p, 1); }
+.kb-figure { opacity: var(--f, 1); }
+.kb-figure img {
+  clip-path: inset(0 0 calc((1 - var(--r, 1)) * 100%) 0);
+  filter: blur(calc((1 - var(--r, 1)) * 12px)) saturate(calc(0.4 + var(--r, 1) * 0.6));
+}
+.kb-figure figcaption { opacity: var(--c, 1); }
+
+#swarm { position: absolute; left: 0; top: 0; width: 100%; height: 0; z-index: 54; pointer-events: none; overflow-x: clip; }
+#swarm > div { position: absolute; left: 0; top: 0; display: none; will-change: transform; }
+.bx { border: 1.5px solid; border-radius: 4px; }
+.bx i { position: absolute; width: 7px; height: 7px; background: #fff; border: 1.5px solid; border-color: inherit; }
+.bx i:nth-child(1) { left: -4px; top: -4px; }
+.bx i:nth-child(2) { right: -4px; top: -4px; }
+.bx i:nth-child(3) { left: -4px; bottom: -4px; }
+.bx i:nth-child(4) { right: -4px; bottom: -4px; }
+.chip { padding: 3px 7px; border-radius: 4px; white-space: nowrap; font: 600 11px var(--mono); color: #071019; }
+.kb-caret { width: 3px; border-radius: 2px; box-shadow: 0 0 12px rgba(196, 168, 255, 0.8); }
+.kb-scan { height: 2px; background: var(--akzent); box-shadow: 0 0 18px 4px rgba(98, 232, 200, 0.7); }
+
+/* ---------- Vumikio Pets (shared js/pets/stage.js) - they live on the page; "Pets: aus" in the bar hides them ---------- */
+#vpPets { position: fixed; inset: 0; z-index: 55; pointer-events: none; overflow: hidden; }
+.pet {
+  position: absolute; left: 0; top: 0; pointer-events: auto; cursor: grab; touch-action: none;
+  transform-origin: 50% 90%; -webkit-tap-highlight-color: transparent;
+}
+.pet:active { cursor: grabbing; }
+.pet canvas { position: absolute; left: -100%; top: -100%; pointer-events: none; }
+.pet-bubble {
+  position: absolute; left: 0; top: 0; width: 200px; padding: 8px 12px; border-radius: 12px; opacity: 0;
+  color: #fff; font: 500 13px/17px var(--font); pointer-events: none; transform-origin: 50% 100%;
+  border: 1px solid transparent;
+  background: linear-gradient(rgba(13, 17, 23, 0.867), rgba(13, 17, 23, 0.867)) padding-box,
+              linear-gradient(90deg, #00e5ff, #ff00ff, #00e5ff) border-box;
+}
+
+@media (max-width: 600px) {
+  header.titel h1 { font-size: 28px; }
+  h2.kategorie { font-size: 27px; }
+  article { padding: 18px 16px; border-radius: 18px; }
+  article h3 { font-size: 22px; }
+}
+
+/* site footer (tools/website/baue_website.py): back to the landing page and to the legal texts */
+footer.fuss .site-fuss { display: flex; flex-wrap: wrap; gap: 8px 22px; margin-top: 12px; }
+footer.fuss .site-fuss a { color: var(--akzent); text-decoration: none; }
+footer.fuss .site-fuss a:hover { color: #a8fff0; text-decoration: underline; }
+
+/* js/frueh.js: the top of the page (title, introduction, contents) stays hidden until the first frame of
+   js/kapitelbau.js has prepared it for the pets (no flash on load) */
+html.kb-frueh main.sprache > header.titel, html.kb-frueh main.sprache > .hinweis,
+html.kb-frueh main.sprache > nav.inhalt { visibility: hidden; }
+
+/* printing shows the whole handbook, also the parts that wait out of view for the pets */
+@media print {
+  .kb { visibility: visible !important; clip-path: none !important; -webkit-mask-image: none !important; mask-image: none !important; opacity: 1 !important; transform: none !important; }
+  .kb img { clip-path: none !important; filter: none !important; }
+  .kb figcaption { opacity: 1 !important; }
+  #swarm, #vpPets { display: none !important; }
+}

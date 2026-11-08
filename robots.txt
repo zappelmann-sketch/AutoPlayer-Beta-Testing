@@ -1,0 +1,6 @@
+# AutoPlayer - alle Inhalte duerfen gelesen werden, von Suchmaschinen und von KI-Crawlern.
+# Fuer KI-Modelle gibt es eine kuratierte Uebersicht: llms.txt
+User-agent: *
+Allow: /
+
+Sitemap: https://zappelmann-sketch.github.io/AutoPlayer-Beta-Testing/sitemap.xml
