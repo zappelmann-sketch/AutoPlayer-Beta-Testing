@@ -252,8 +252,10 @@
     background: rgba(13,17,23,.97); border-top: 2px solid var(--akzent);
     padding: 10px 16px; backdrop-filter: blur(6px);
   }
+  /* Grundbreite 120 statt 200 px: Mit dem Stimmen-Schalter (09.11.2026) brach die Leiste bei 1280 px sonst
+     in zwei Zeilen um - der Umbruch rechnet mit der Grundbreite, nicht mit der geschrumpften Breite. */
   #tonleiste .titel {
-    flex: 1 1 200px; font-size: 14px; font-weight: 600;
+    flex: 1 1 120px; font-size: 14px; font-weight: 600;
     overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
   }
   #tonleiste .titel.ruhe { color: var(--gedaempft); font-weight: 400; }

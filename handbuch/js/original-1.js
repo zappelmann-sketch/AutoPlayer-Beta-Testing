@@ -11,12 +11,13 @@
   var eTempo = document.getElementById("tl-tempo");
   var eKette = document.getElementById("tl-kette");
   var eMit   = document.getElementById("tl-mit");
+  var eStimme = document.getElementById("tl-stimme");
 
   var aktiv = null;          // gerade laufender Knopf
   var kette = false;         // automatisch zum naechsten Kapitel
   // Beschriftungen je Sprache (einleitung.py, von baue.py eingesetzt). Die Leiste gibt es nur einmal;
   // beim Sprachwechsel wird sie umbeschriftet.
-  var TEXTE = {"de": {"ruhe": "▶ Vorlesen liest das Kapitel, das gerade oben steht", "vorlesen": "▶ Vorlesen", "pause": "Pause", "weiter": "Weiter", "stopp": "Stopp", "mit": "Mitlesen", "kette": "Kette", "an": "an", "aus": "aus", "zurueck": "10 Sekunden zurück", "vor": "10 Sekunden vor", "tempoTitel": "Sprechtempo", "tempo": ["langsamer", "normal", "etwas schneller", "schneller", "schnell"], "mitTitel": "Seite läuft beim Vorlesen mit", "ketteTitel": "Nach dem Kapitel automatisch weiterlesen", "fehlt": "Datei nicht gefunden: {datei}"}, "en": {"ruhe": "▶ Read aloud starts with the chapter at the top of the screen", "vorlesen": "▶ Read aloud", "pause": "Pause", "weiter": "Resume", "stopp": "Stop", "mit": "Read along", "kette": "Chain", "an": "on", "aus": "off", "zurueck": "10 seconds back", "vor": "10 seconds forward", "tempoTitel": "Speaking speed", "tempo": ["slower", "normal", "a bit faster", "faster", "fast"], "mitTitel": "The page scrolls along while reading", "ketteTitel": "Continue with the next chapter automatically", "fehlt": "No English recording for this chapter yet – the narration is being prepared."}};
+  var TEXTE = {"de": {"ruhe": "▶ Vorlesen liest das Kapitel, das gerade oben steht", "vorlesen": "▶ Vorlesen", "pause": "Pause", "weiter": "Weiter", "stopp": "Stopp", "mit": "Mitlesen", "kette": "Kette", "an": "an", "aus": "aus", "zurueck": "10 Sekunden zurück", "vor": "10 Sekunden vor", "tempoTitel": "Sprechtempo", "tempo": ["langsamer", "normal", "etwas schneller", "schneller", "schnell"], "mitTitel": "Seite läuft beim Vorlesen mit", "ketteTitel": "Nach dem Kapitel automatisch weiterlesen", "stimme": "Stimme", "w": "weiblich", "m": "männlich", "stimmeTitel": "Vorlesestimme wechseln – weiblich oder männlich", "fehlt": "Datei nicht gefunden: {datei}"}, "en": {"ruhe": "▶ Read aloud starts with the chapter at the top of the screen", "vorlesen": "▶ Read aloud", "pause": "Pause", "weiter": "Resume", "stopp": "Stop", "mit": "Read along", "kette": "Chain", "an": "on", "aus": "off", "zurueck": "10 seconds back", "vor": "10 seconds forward", "tempoTitel": "Speaking speed", "tempo": ["slower", "normal", "a bit faster", "faster", "fast"], "mitTitel": "The page scrolls along while reading", "ketteTitel": "Continue with the next chapter automatically", "stimme": "Voice", "w": "female", "m": "male", "stimmeTitel": "Switch the reading voice – female or male", "fehlt": "No English recording for this chapter yet – the narration is being prepared."}};
   var sprache = "de";
   function T(k) { return (TEXTE[sprache] || TEXTE.de)[k]; }
   var SPEICHER = "handbuch-gehoert";
@@ -182,6 +183,64 @@
     if (mitlesen && aktiv && !ton.paused) { pauseBis = 0; starteSchleife(); }
   });
 
+
+  // =========================================================================
+  //  Stimme: weiblich (Gemini, Ordner w/) oder maennlich (Piper)
+  // =========================================================================
+  //
+  //  Die Wahl gilt fuer diesen Besuch und wird NICHT gespeichert: Die Datenschutzerklaerung nennt
+  //  genau zwei Eintraege im Browser-Speicher (gehoert, mitlesen). Hat ein Kapitel die gewaehlte
+  //  Stimme nicht, liest die andere (data-stimmen). Wer waehrend des Vorlesens wechselt, hoert an
+  //  derselben Stelle des Kapitels weiter - gleicher Anteil der Aufnahme. Der Mitlauf rechnet ohnehin
+  //  mit dem Anteil, die Seite bleibt also stehen, auch wenn die Stimmen verschieden lang sind.
+  //
+  var STIMME_ORDNER = { w: "w/", m: "" };
+  var stimme = "w";
+  var aktivStimme = "";
+
+  function stimmeFuer(knopf) {
+    var da = (knopf.dataset.stimmen || "").split(" ").filter(Boolean);
+    if (!da.length) { return ""; }
+    return da.indexOf(stimme) >= 0 ? stimme : da[0];
+  }
+
+  function quelleFuer(knopf, s) {
+    return ORDNER + (s ? STIMME_ORDNER[s] : "") + knopf.dataset.datei + ".mp3";
+  }
+
+  // Beschriftung des Schalters und die Spieldauer an jedem Kapitel (data-w / data-m).
+  function zeigeStimme() {
+    eStimme.textContent = T("stimme") + ": " + T(stimme);
+    eStimme.title = T("stimmeTitel");
+    var d = document.querySelectorAll(".vorlese-dauer");
+    for (var i = 0; i < d.length; i++) {
+      var t = d[i].dataset[stimme] || d[i].dataset.w || d[i].dataset.m;
+      if (t) { d[i].textContent = t; }
+    }
+  }
+
+  eStimme.addEventListener("click", function () {
+    stimme = stimme === "w" ? "m" : "w";
+    zeigeStimme();
+    if (!aktiv) { return; }
+    var neu = stimmeFuer(aktiv);
+    if (neu === aktivStimme) { return; }
+    var anteil = (ton.duration && isFinite(ton.duration)) ? ton.currentTime / ton.duration : 0;
+    var lief = !ton.paused;
+    aktivStimme = neu;
+    ton.src = quelleFuer(aktiv, neu);
+    ton.playbackRate = parseFloat(eTempo.value) || 1;
+    ton.addEventListener("loadedmetadata", function setze() {
+      ton.removeEventListener("loadedmetadata", setze);
+      if (isFinite(ton.duration)) { ton.currentTime = anteil * ton.duration; }
+    });
+    pauseBis = 0;
+    if (lief) {
+      var versuch = ton.play();
+      if (versuch && versuch.catch) { versuch.catch(function () {}); }
+    }
+  });
+
   // --- Hilfen -------------------------------------------------------------
   function zeit(s) {
     if (!isFinite(s) || s < 0) { s = 0; }
@@ -251,7 +310,8 @@
     var artikel = document.getElementById(knopf.dataset.anker);
     if (artikel) { artikel.classList.add("liest"); }
 
-    ton.src = ORDNER + knopf.dataset.datei + ".mp3";
+    aktivStimme = stimmeFuer(knopf);
+    ton.src = quelleFuer(knopf, aktivStimme);
     ton.playbackRate = parseFloat(eTempo.value) || 1;
     eTitel.textContent = knopf.dataset.titel;
     eTitel.classList.remove("ruhe");
@@ -378,6 +438,7 @@
     eKette.title = T("ketteTitel");
     zeigeMitlesen();
     zeigeKette();
+    zeigeStimme();
     if (!aktiv) { zeigeRuhe(); }
   }
 
