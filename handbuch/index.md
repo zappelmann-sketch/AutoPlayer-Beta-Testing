@@ -35,7 +35,7 @@
 
 > ### Vorlesen statt lesen
 >
-> Über jedem Kapitel steht ein **Vorlesen**-Knopf. Der Text wurde mit der Sprachsoftware Piper aufgesprochen (Stimme *Thorsten*) – im ruhigen Vorlesetempo, nicht gehetzt. Insgesamt sind das gut **sechs Stunden** Sprache.
+> Über jedem Kapitel steht ein **Vorlesen**-Knopf. Der Text wurde mit zwei KI-Stimmen von Google (Gemini) aufgesprochen, einer weiblichen und einer männlichen – umschalten lässt sich in der Leiste. Gelesen wird im ruhigen Vorlesetempo, nicht gehetzt. Insgesamt sind das je Stimme rund **sieben Stunden** Sprache.
 >
 > - Unten steht die **Vorlese-Leiste**. Ihr Knopf **▶ Vorlesen** beginnt mit dem Kapitel, das gerade oben auf dem Bildschirm steht. Dazu kommen **Pause**, **10 Sekunden zurück** und vor sowie das **Sprechtempo**. Der Balken im Kapitel lässt sich anklicken, um zu springen.
 > - **Mitlesen** ist von Anfang an eingeschaltet: Die Seite wandert so langsam mit, wie vorgelesen wird – wer mitlesen will, muss nicht scrollen. Wer doch selbst scrollt, hält den Mitlauf für ein paar Sekunden an; danach fängt er sich wieder ein. Abschalten lässt er sich in der Leiste.

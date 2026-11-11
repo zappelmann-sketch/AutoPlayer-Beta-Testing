@@ -185,7 +185,7 @@
 
 
   // =========================================================================
-  //  Stimme: weiblich (Gemini, Ordner w/) oder maennlich (Piper)
+  //  Stimme: weiblich (Gemini, Ordner w/) oder maennlich (Gemini, Ordner selbst; bis 10.11.2026 Piper)
   // =========================================================================
   //
   //  Die Wahl gilt fuer diesen Besuch und wird NICHT gespeichert: Die Datenschutzerklaerung nennt
