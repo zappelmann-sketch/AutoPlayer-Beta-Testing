@@ -4156,7 +4156,7 @@ Das eigene Handy wird zum Musikserver. Gäste scannen einen Code und wünschen s
   - **Aktuelles WLAN verwenden** – das WLAN-Passwort eintragen, damit es in den Code eingebettet werden kann
   - **WLAN-Hotspot** – einen eigenen aufmachen. Ein Link führt zu den Android-Einstellungen.
 4. Nach Wunsch absichern (siehe unten)
-5. **Party starten**
+5. **Party starten**. Auf Handys mit Android 17 braucht die Party die Erlaubnis **Geräte in der Nähe** – fehlt sie noch, fragt Android einmal danach. Ohne sie startet die Party nicht.
 
 ![Party-Name und Netzwerk – hier ein eigener WLAN-Hotspot. Der Knopf öffnet die Hotspot-Einstellungen von Android; Name und Passwort kommen in den WLAN-Code.](bilder/party-start.webp)
 *→ Menü → Tools & Funktionen → Party-Modus*
@@ -4436,7 +4436,7 @@ Ein Bundle, ein Loop-Segment oder eine Pad-Belegung mit Samples ist zu groß fü
 *Den Code in den Rahmen halten.*
 *→ Sharing-Hub → Importieren → QR-Code scannen*
 
-Beide Handys müssen im selben WLAN sein – oder eines im Hotspot des anderen. Die Datei steht nur bereit, solange das Fenster mit dem Code offen ist. Sie reist verschlüsselt; den Schlüssel trägt der Code. Meldet das andere Handy, dass deines nicht erreichbar ist, sind die beiden nicht im selben WLAN, oder das Fenster ist schon geschlossen.
+Beide Handys müssen im selben WLAN sein – oder eines im Hotspot des anderen. Die Datei steht nur bereit, solange das Fenster mit dem Code offen ist. Sie reist verschlüsselt; den Schlüssel trägt der Code. Meldet das andere Handy, dass deines nicht erreichbar ist, sind die beiden nicht im selben WLAN, oder das Fenster ist schon geschlossen. Auf Handys mit Android 17 braucht die Übertragung auf beiden Seiten die Erlaubnis **Geräte in der Nähe** – fehlt sie noch, fragt Android einmal danach. Ohne sie steht dort „Sharing-Hub braucht Zugriff auf: Geräte in der Nähe.“
 
 #### Importieren
 
@@ -8607,7 +8607,7 @@ Ein Überblick, was die App darf – und wofür sie es braucht. Jede Berechtigun
 |---|---|
 | **Mikrofon** | Balken im Player, Vollbild-Visualizer, Zeiger der Bandmaschine, Equalizer, DJ-Plattenspieler, Wellenform, Bass-Vibration, Sprachsteuerung, Kabinen-Kalibrator, Surf the Beat |
 | **Standort** | Fahrmodus-DJ, Wetter-DJ, geschwindigkeitsbasierte Lautstärke, Geo-Musik, Klangerinnerung, Kontext Auto-Wechsel, Meine Orte, Beifahrer-Modus, Geräte-Transfer |
-| **Bluetooth** | Beifahrer-Modus, Geräte-Transfer, Bluetooth Auto-Resume, Kontext Auto-Wechsel, Herzschlag-Sync |
+| **Bluetooth** | Beifahrer-Modus, Geräte-Transfer, Bluetooth Auto-Resume, Kontext Auto-Wechsel, Herzschlag-Sync; ab Android 17 auch Party-Modus und Sharing-Hub (Zugriff auf das lokale Netz) |
 | **Bewegungserkennung** | Schritte und Aktivität im Kontext Auto-Wechsel und in der Geo-Musik |
 | **Kamera** | QR-Code scannen im [Sharing-Hub](index.html#teilen) |
 | **Benachrichtigungen** | Hinweise von Fahrmodus-DJ, Wetter-DJ, Batterie-Modus und Geräte-Transfer sowie die stille Meldung „Herzschlag-Sync aktiv“, solange der Puls im Hintergrund ankommt. Die Zeile gibt es ab Android 13 |

@@ -4156,7 +4156,7 @@ Your own phone becomes a music server. Guests scan a code and request songs thro
   - **Use current WiFi** – enter the Wi-Fi password so that it can be embedded in the code
   - **WiFi Hotspot** – set up one of your own. A link leads to the Android settings.
 4. Secure it as you like (see below)
-5. **Start Party**
+5. **Start Party**. On phones with Android 17 the party needs the **Nearby devices** permission – if it is still missing, Android asks for it once. Without it the party does not start.
 
 ![Party name and network – here a Wi-Fi hotspot of your own. The button opens Android’s hotspot settings; name and password go into the Wi-Fi code.](bilder/en/party-start.webp)
 *→ Menu → Tools & Features → Party Mode*
@@ -4436,7 +4436,7 @@ A bundle, a loop segment or a pad layout with samples is too large for a QR code
 *Hold the code inside the frame.*
 *→ Sharing Hub → Import → Scan QR code*
 
-Both phones have to be on the same Wi-Fi – or one on the other’s hotspot. The file is only available as long as the window with the code is open. It travels encrypted; the code carries the key. If the other phone reports that yours cannot be reached, the two are not on the same Wi-Fi, or the window is already closed.
+Both phones have to be on the same Wi-Fi – or one on the other’s hotspot. The file is only available as long as the window with the code is open. It travels encrypted; the code carries the key. If the other phone reports that yours cannot be reached, the two are not on the same Wi-Fi, or the window is already closed. On phones with Android 17 the transfer needs the **Nearby devices** permission on both sides – if it is still missing, Android asks for it once. Without it the phone shows “Sharing Hub needs access to: Nearby devices.”
 
 #### Import
 
@@ -8607,7 +8607,7 @@ An overview of what the app may do – and what it needs it for. Each permission
 |---|---|
 | **Microphone Access** | Bars in the player, full-screen visualizer, needles of the Reel-to-Reel, equalizer, DJ Turntable, waveform, Bass Vibration, voice control, Cabin Calibrator, Surf the Beat |
 | **Location Access (GPS)** | Drive Mode DJ, Weather DJ, speed-based volume, Geo Music, Sound Souvenir, Context Auto-Switch, My places, Passenger Mode, device transfer |
-| **Bluetooth Access** | Passenger Mode, device transfer, Bluetooth Auto-Resume, Context Auto-Switch, Heartbeat Sync |
+| **Bluetooth Access** | Passenger Mode, device transfer, Bluetooth Auto-Resume, Context Auto-Switch, Heartbeat Sync; from Android 17 on also Party Mode and Sharing Hub (access to the local network) |
 | **Motion Detection** | Steps and activity in Context Auto-Switch and in Geo Music |
 | **Camera Access** | Scanning a QR code in the [Sharing Hub](index.html?lang=en#en-teilen) |
 | **Notifications** | Notices from Drive Mode DJ, Weather DJ, Battery Mode and device transfer, as well as the silent message “Heartbeat Sync active” while the heart rate arrives in the background. The row exists from Android 13 |
