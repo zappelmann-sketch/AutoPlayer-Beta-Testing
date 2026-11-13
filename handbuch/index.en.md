@@ -35,7 +35,7 @@
 
 > ### Listen instead of reading
 >
-> Every chapter has a **Read aloud** button. **The English recordings are still being prepared** – until they are ready, the button shows a short notice instead.
+> Every chapter has a **Read aloud** button. The text was recorded with two AI voices from Google (Gemini), one female and one male – you can switch between them in the bar. It is read at a calm reading pace, not rushed. Altogether that is about **seven hours** of speech per voice.
 >
 > - At the bottom is the **read-aloud bar**. Its **▶ Read aloud** button starts with the chapter at the top of the screen. It also has **Pause**, **10 seconds back** and forward and the **speaking speed**. The bar inside a chapter can be clicked to jump.
 > - **Read along** is on from the start: the page scrolls as slowly as it is read aloud. If you scroll yourself, it pauses for a few seconds and then catches up again. You can turn it off in the bar.
