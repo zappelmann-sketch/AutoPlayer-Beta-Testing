@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self'; media-src 'self'; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>AutoPlayer</title>
+<meta name="description" content="AutoPlayer spielt deine eigenen MP3s – offline, mit Android Auto, Retro-Playern, Spielen und fünf Vumikio Pets.">
+<link rel="icon" href="img/icon.png">
+<link rel="describedby" href="llms.txt">
+<!-- one page for Dienstag bis Sonntag: the day comes from the address (?tag=di..so) or the visitor's weekday
+     (js/wochentag.js); its content from js/days/<tag>.js, its way of building from js/styles/<stil>.js -->
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/tag.css">
+<script src="js/wochentag.js"></script>
+<script src="js/konstanten.js"></script>
+<script src="js/lang.js"></script>
+</head>
+<body class="tagseite">
+<div id="bg"></div>
+
+<header class="nav">
+  <a class="logo" id="logo" data-b href="index.html?tag=mo"><img src="img/icon.png" alt=""><span>AutoPlayer</span></a>
+  <nav class="pills glass ph-able" id="pills" data-b data-blur="20" data-sat="1.7"><a class="lang" id="langSwitch" href="?lang=en" hreflang="en" lang="en">EN</a></nav>
+  <a class="btn btn-mint btn-sm ph-able" id="navCta" data-b href="#qr"><span>Bald bei Google Play</span></a>
+</header>
+
+<main id="tagMain"></main>
+
+<section id="qr" class="sec qr-sec" aria-label="Google Play"></section>
+
+<footer class="foot" id="foot" data-b>
+  <span>AutoPlayer</span>
+  <nav><a href="handbuch/index.html" data-lang-link id="fHandbuch">Handbuch</a><a href="privacy.html" data-lang-link id="fDaten">Datenschutz</a><a href="terms.html" data-lang-link id="fNutzung">Nutzungsbedingungen</a><a href="impressum.html" data-lang-link id="fImpressum">Impressum</a></nav>
+</footer>
+
+<div id="swarm"></div>
+<canvas id="stilfx" aria-hidden="true"></canvas>
+<div id="pets" aria-label="Vumikio Pets"></div>
+<div class="tools" id="tools">
+  <button class="tools-fab glass" id="toolsFab" type="button" aria-expanded="false" aria-controls="toolsPanel" title="Werkzeuge">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+  </button>
+  <div class="tools-panel glass" id="toolsPanel" hidden>
+    <a href="#" id="toolDemo">Demo</a>
+    <a href="#" id="toolDemoMusik">Demo mit Musik</a>
+    <a href="#" id="toolSelbst">Selbst scrollen (ohne Demo)</a>
+    <a href="#" id="petsToggle">Pets aus</a>
+    <span class="pet-hint" id="petHint">Pets: antippen = reden · doppelt = Trick · ziehen = mitnehmen</span>
+  </div>
+</div>
+
+<script src="js/engine.js"></script>
+<script src="js/demomusik.js"></script>
+<script src="js/stilbasis.js"></script>
+<!-- every style and every day registers itself; tagbau.js takes the one of today (small files, cached) -->
+<script src="js/styles/wellenform.js"></script>
+<script src="js/styles/kassette.js"></script>
+<script src="js/styles/pixel.js"></script>
+<script src="js/styles/origami.js"></script>
+<script src="js/styles/lego.js"></script>
+<script src="js/styles/holo.js"></script>
+<script src="js/days/di.js"></script>
+<script src="js/days/mi.js"></script>
+<script src="js/days/do.js"></script>
+<script src="js/days/fr.js"></script>
+<script src="js/days/sa.js"></script>
+<script src="js/days/so.js"></script>
+<script src="js/handbuch_link.js"></script>
+<script src="js/tagbau.js"></script>
+<script src="js/qr.js"></script>
+<script src="js/pets/compose.js"></script>
+<script src="js/pets/anim.js"></script>
+<script src="js/pets/octo.js"></script>
+<script src="js/pets/melo_tricks.js"></script>
+<script src="js/pets/melo.js"></script>
+<script src="js/pets/benny_tricks.js"></script>
+<script src="js/pets/benny.js"></script>
+<script src="js/pets/foxy_tricks.js"></script>
+<script src="js/pets/foxy.js"></script>
+<script src="js/pets/chip_tricks.js"></script>
+<script src="js/pets/chip.js"></script>
+<script src="js/pets/speech.js"></script>
+<script src="js/pets/stage.js"></script>
+<script src="js/tools.js"></script>
+</body>
+</html>

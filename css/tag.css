@@ -1,0 +1,172 @@
+/* AutoPlayer weekday pages (tag.html) - layout of the use-case sections and the six building styles.
+   Shares style.css with the start page (colours, glass, phones, build states). Performance (Datei 14):
+   the styles move elements with transform/opacity only; filters are not animated. */
+
+/* ---------- hero ---------- */
+.tag-hero { padding-top: 56px; text-align: center; }
+.tag-badge {
+  padding: 7px 14px; border-radius: 999px; border: 1px solid rgba(98, 232, 200, 0.35);
+  background: rgba(98, 232, 200, 0.08); margin-bottom: 22px;
+}
+.tag-stage { position: relative; height: 640px; margin-top: 20px; }
+.tag-stage .phone#heroPhone { position: absolute; left: 50%; top: 40px; transform: translateX(-50%); z-index: 2; --w: 262px; }
+.stil-buehne { position: absolute; pointer-events: none; z-index: 1; }
+.stil-buehne canvas { position: absolute; inset: 0; width: 100%; height: 100%; }
+#heroFx { left: 4%; right: 4%; top: 0; bottom: 0; }
+.tag-card { position: absolute; z-index: 4; width: 240px; padding: 16px 18px; border-radius: 20px; text-align: left; }
+.tag-card.k0 { left: 4%; top: 120px; }
+.tag-card.k1 { right: 4%; top: 300px; }
+
+/* the car's display as the hero picture (Mittwoch): above, the two cards below it */
+.tag-stage .car#heroPhone {
+  position: absolute; left: 50%; top: 30px; width: min(600px, 62%); margin: 0; padding: 16px; z-index: 2;
+  transform: translateX(-50%) perspective(1600px) rotateX(9deg);
+}
+.tag-stage .car#heroPhone .scr { aspect-ratio: var(--ar, 860 / 456); }
+.tag-stage:has(.car#heroPhone) .tag-card.k0 { top: 410px; }
+.tag-stage:has(.car#heroPhone) .tag-card.k1 { top: 410px; }
+
+/* ---------- use-case sections ---------- */
+.tag-sec { padding-top: 150px; }
+.tag-row { display: grid; grid-template-columns: 1fr 1.05fr; gap: 56px; align-items: center; }
+.tag-sec.rechts .tag-text { order: 2; }
+.tag-text { text-align: left; }
+.tag-text .sub { margin-left: 0; }
+.tag-text .h-lg { font-size: clamp(34px, 4vw, 58px); }
+.fakten { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 26px; }
+.fakten .pill { font-size: 14px; padding: 10px 15px; }
+.tag-hinweis { margin: 18px 0 0; font-size: 13px; color: var(--muted); opacity: 0.85; }
+.tag-media { position: relative; min-height: 560px; display: flex; justify-content: center; align-items: center; gap: 26px; }
+.tag-media .stil-buehne { inset: -6% -8%; }
+.tag-media .phone { --w: 262px; z-index: 2; }
+.tag-media.n2 .phone { --w: 236px; }
+.tag-media.n2 .phone:nth-of-type(1) { transform: rotate(-4deg) translateY(10px); }
+.tag-media.n2 .phone:nth-of-type(2) { transform: rotate(4deg) translateY(-14px); }
+.tag-media .phone.klein { --w: 210px; }
+/* a cut-out of a screen (a card of the app): the upper part of a phone, fading out at the bottom */
+.phone.teil {
+  --w: 340px; aspect-ratio: auto; padding-bottom: 0; border-bottom-left-radius: 0; border-bottom-right-radius: 0;
+  -webkit-mask-image: linear-gradient(#000 78%, transparent); mask-image: linear-gradient(#000 78%, transparent);
+}
+.phone.teil .scr { aspect-ratio: var(--ar); height: auto; border-bottom-left-radius: 0; border-bottom-right-radius: 0; }
+.tag-media .phone.teil { --w: 400px; }
+.tag-media.n2 .phone.teil { --w: 300px; }
+
+/* the car's display (Android Auto) in a section: the car frame of the start page, a little smaller */
+.tag-media .car.tag-car { width: min(560px, 100%); margin: 0; padding: 14px; z-index: 2; transform: perspective(1600px) rotateX(7deg); }
+.tag-car .scr { aspect-ratio: var(--ar, 860 / 456); }
+html[lang="en"] .tag-car .scr { aspect-ratio: var(--ar, 860 / 456); }
+.tag-media.n2 .car.tag-car { width: min(440px, 100%); }
+
+/* ---------- closing ---------- */
+.tag-ende { padding-top: 160px; padding-bottom: 30px; }
+.tag-ende .cta-card { padding: 80px 30px 110px; }
+.passt { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin: 6px auto 30px; max-width: 760px; }
+.passt-titel { width: 100%; font: 600 12px var(--mono); letter-spacing: 0.14em; text-transform: uppercase; color: var(--mint); }
+.passt-link {
+  display: flex; flex-direction: column; gap: 2px; padding: 10px 16px; border-radius: 16px; text-align: left;
+  background: rgba(255, 255, 255, 0.05); border: 1px solid var(--line); max-width: 360px;
+}
+.passt-link b { font-size: 14px; }
+.passt-link span { font-size: 13px; color: var(--muted); }
+.passt-link:hover { border-color: rgba(98, 232, 200, 0.5); }
+.tag-knoepfe { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; position: relative; z-index: 2; }
+
+/* ---------- the fx canvas of the styles (pets' tools) ---------- */
+#stilfx { position: fixed; left: 0; top: 0; z-index: 52; pointer-events: none; }
+html.clean #stilfx { display: none; }
+
+/* ---------- letters that move (styles with charBlocks) ---------- */
+.chw { display: inline-block; white-space: nowrap; }
+.chw.sp { white-space: pre; }
+[data-stil] .chw .ch { display: inline-block; will-change: auto; }
+
+/* while a box step builds, the element itself is the moving part (origami, lego, holo, kassette) */
+[data-stil] .zeigt { opacity: 1 !important; }
+
+/* ---------- Wellenform (Dienstag) ---------- */
+[data-stil="wellenform"] .scr .scan {
+  height: 10px; background:
+    radial-gradient(circle at 50% 100%, transparent 5px, rgba(98, 232, 200, 0.95) 6px, transparent 7.5px) 0 0 / 16px 10px repeat-x;
+  box-shadow: none; filter: drop-shadow(0 0 6px rgba(98, 232, 200, 0.8));
+}
+
+/* ---------- Kassetten-Band (Mittwoch) ---------- */
+[data-stil="kassette"] .zeigt { clip-path: inset(0 calc((1 - var(--bp, 1)) * 100%) 0 0); }
+[data-stil="kassette"] .scr img, [data-stil="kassette"] .scr video {
+  clip-path: inset(0 calc((1 - var(--reveal, 1)) * 100%) 0 0);
+}
+[data-stil="kassette"] .scr .scan {
+  top: 0; bottom: 0; left: calc(var(--reveal, 1) * 100%); right: auto; width: 3px; height: auto;
+  background: #ffcf7a; box-shadow: 0 0 16px 4px rgba(255, 190, 90, 0.7);
+}
+[data-stil="kassette"] .caret { border-left-width: 6px; border-radius: 1px; border-left-color: #ffcf7a !important; }
+.bx.band { border: 0; height: 14px !important; border-radius: 3px;
+  background: linear-gradient(180deg, #5a3a22, #2b1a0f 60%, #4a2f1b); box-shadow: 0 0 0 1px rgba(255, 207, 122, 0.4), 0 4px 14px rgba(0, 0, 0, 0.5); }
+.bx.band i { display: none; }
+.bx.band::after { content: ""; position: absolute; right: -9px; top: -6px; width: 26px; height: 26px; border-radius: 50%;
+  background: radial-gradient(circle, #ffcf7a 0 3px, #2b1a0f 4px 8px, #6b4a2c 9px 12px, transparent 13px); }
+
+/* ---------- Pixel (Donnerstag) ---------- */
+[data-stil="pixel"] .scr img, [data-stil="pixel"] .scr video { clip-path: none; filter: none; }
+[data-stil="pixel"] .scr .scan { display: none; }
+[data-stil="pixel"] .caret { border-left-width: 0.42em; height: 0.75em; }
+
+/* ---------- Origami (Freitag) ---------- */
+[data-stil="origami"] .zeigt { transform-origin: 50% 0; transform: perspective(1100px) rotateX(calc((1 - var(--bp, 1)) * -86deg)); }
+[data-stil="origami"] .tag-media.n2 .phone.zeigt:nth-of-type(1) { transform: rotate(-4deg) perspective(1100px) rotateX(calc((1 - var(--bp, 1)) * -86deg)); }
+[data-stil="origami"] .tag-media.n2 .phone.zeigt:nth-of-type(2) { transform: rotate(4deg) perspective(1100px) rotateX(calc((1 - var(--bp, 1)) * -86deg)); }
+[data-stil="origami"] .zeigt::after { content: ""; position: absolute; inset: 0; border-radius: inherit; pointer-events: none;
+  background: linear-gradient(180deg, rgba(255, 245, 225, 0.32), rgba(0, 0, 0, 0.35)); opacity: calc(1 - var(--bp, 1)); }
+[data-stil="origami"] .faltlinie { transform-origin: 50% 0; }
+[data-stil="origami"] .scr .scan { height: 3px; background: #fff3dc; box-shadow: 0 0 14px 3px rgba(255, 236, 200, 0.6); }
+
+/* ---------- Lego (Samstag) ---------- */
+[data-stil="lego"] .zeigt { transform: translateY(var(--fall, 0px)); }
+[data-stil="lego"] .tag-media.n2 .phone.zeigt:nth-of-type(1) { transform: rotate(-4deg) translateY(var(--fall, 0px)); }
+[data-stil="lego"] .tag-media.n2 .phone.zeigt:nth-of-type(2) { transform: rotate(4deg) translateY(var(--fall, 0px)); }
+[data-stil="lego"] .scr .scan {
+  height: 12px; box-shadow: none; background:
+    radial-gradient(circle, #ffd666 0 4px, transparent 4.5px) 0 0 / 18px 12px repeat-x;
+}
+
+/* ---------- Holo (Sonntag) ---------- */
+[data-stil="holo"] .zeigt { clip-path: inset(0 0 calc((1 - var(--bp, 1)) * 100%) 0); opacity: var(--flimmer, 1) !important; }
+[data-stil="holo"] .scr::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none; opacity: calc((1 - var(--reveal, 1)) * 0.9);
+  background: repeating-linear-gradient(180deg, rgba(79, 227, 255, 0.22) 0 2px, transparent 2px 5px);
+}
+[data-stil="holo"] .scr .scan { background: #7ff0ff; box-shadow: 0 0 22px 6px rgba(79, 227, 255, 0.75); }
+
+/* ---------- manual links (js/handbuch_link.js, also the start page) ---------- */
+/* in style.css */
+
+/* ---------- small screens ---------- */
+@media (max-width: 860px) {
+  .tag-stage { height: auto; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 30px; }
+  .tag-stage .phone#heroPhone { position: relative; left: auto; top: auto; transform: none; grid-area: 1 / 1 / 2 / 3;
+    justify-self: center; margin: 24px 0 40px; --w: clamp(180px, 50vw, 240px); }
+  .tag-card { position: relative; width: auto; padding: 14px 14px 15px; }
+  .tag-card.k0, .tag-card.k1 { left: auto; right: auto; top: auto; }
+  #heroFx { left: 0; right: 0; top: 0; height: 70%; bottom: auto; }
+  .tag-sec { padding-top: 100px; }
+  .tag-row { grid-template-columns: 1fr; gap: 30px; }
+  .tag-sec.rechts .tag-text { order: 0; }
+  .tag-media { min-height: 0; padding: 10px 0 20px; }
+  .tag-media .phone { --w: clamp(170px, 56vw, 240px); }
+  .tag-media.n2 .phone { --w: clamp(130px, 40vw, 200px); }
+  .tag-media .phone.teil { --w: min(92vw, 380px); }
+  .tag-ende { padding-top: 110px; }
+  /* the car's display as the hero picture (Mittwoch): in the flow, full width, the cards below it */
+  .tag-stage .car#heroPhone {
+    position: relative; left: auto; top: auto; width: 100%; grid-area: 1 / 1 / 2 / 3; margin: 18px 0 30px;
+    padding: 10px; transform: perspective(1600px) rotateX(7deg);
+  }
+  .tag-stage:has(.car#heroPhone) .tag-card.k0, .tag-stage:has(.car#heroPhone) .tag-card.k1 { top: auto; }
+}
+
+/* Origami: the screenshot opens like a page (the revealed picture stands flat again, .fertig) */
+[data-stil="origami"] .scr img, [data-stil="origami"] .scr video {
+  transform-origin: 0 50%; transform: perspective(900px) rotateY(calc((1 - var(--reveal, 1)) * -70deg));
+}
+[data-stil="origami"] .fertig .scr img, [data-stil="origami"] .fertig .scr video { transform: none; }

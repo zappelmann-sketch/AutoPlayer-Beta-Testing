@@ -21,8 +21,8 @@ Wechsle die Ansicht mit einem Tipp: Kassettendeck, Jukebox, DJ-Plattenspieler, B
 - **119 Sprachbefehle** – freihändig, auch im Auto
 - **5 Vumikio Pets** – die auf deine Musik reagieren
 - **10 Level** – in Surf the Beat
-- **2.312 automatische Tests** – laufen vor jeder neuen Version
-- **10–16 Android-Versionen** – von Android 10 bis Android 16
+- **2.315 automatische Tests** – laufen vor jeder neuen Version
+- **10–17 Android-Versionen** – von Android 10 bis Android 17
 
 ## Surf the Beat. Dein Lied wird zum Tunnel.
 
@@ -32,11 +32,11 @@ Ein Vumikio Pet surft durch deine Musik. Der Tunnel schlägt im Takt aus – zeh
 
 - Per Sprache steuern
 - Läuft ohne Internet
-- Android 10 bis 16
+- Android 10 bis 17
 
 ## Hol deine Musik zurück ins Auto.
 
-Für Android 10 bis 16. Bald bei Google Play.
+Für Android 10 bis 17. Bald bei Google Play.
 
 - [Benutzerhandbuch](handbuch/index.md) · [Datenschutz](privacy.html) · [Nutzungsbedingungen](terms.html) · [Impressum](impressum.html)
 
@@ -63,8 +63,8 @@ Switch the look with one tap: cassette deck, jukebox, DJ turntable, reel-to-reel
 - **119 Voice commands** – hands-free, even in the car
 - **5 Vumikio Pets** – that react to your music
 - **10 Levels** – in Surf the Beat
-- **2,312 automated tests** – run before every new version
-- **10–16 Android versions** – from Android 10 to Android 16
+- **2,315 automated tests** – run before every new version
+- **10–17 Android versions** – from Android 10 to Android 17
 
 ## Surf the Beat. Your song becomes a tunnel.
 
@@ -74,10 +74,10 @@ A Vumikio Pet surfs through your music. The tunnel pulses to the beat – ten le
 
 - Voice control
 - Works without internet
-- Android 10 to 16
+- Android 10 to 17
 
 ## Bring your music back to the car.
 
-For Android 10 to 16. Coming soon to Google Play.
+For Android 10 to 17. Coming soon to Google Play.
 
 - [User manual](handbuch/index.en.md) · [Privacy Policy](privacy.html?lang=en) · [Terms of Use](terms.html?lang=en) · [Legal Notice](impressum.html?lang=en)

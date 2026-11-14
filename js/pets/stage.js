@@ -180,6 +180,10 @@
       layer.appendChild(bubble);
     }
     bubble.textContent = text;
+    // its size only changes with the text: measured once here, not in every frame (Datei 14)
+    bubble.style.scale = '1';
+    bubble.bw = bubble.offsetWidth;
+    bubble.bh = bubble.offsetHeight;
     bubble.owner = p;
     bubble.start = p.clock;
     bubble.until = p.clock + S.durationMs(text);
@@ -199,8 +203,8 @@
     const sc = gone > 0 ? 1 - 0.2 * (gone / 300) : 0.6 + 0.4 * springy;
     bubble.style.opacity = op.toFixed(3);
     bubble.style.scale = sc.toFixed(3);
-    const bw = bubble.offsetWidth;
-    const bh = bubble.offsetHeight;
+    const bw = bubble.bw;
+    const bh = bubble.bh;
     const pad = 16;
     const x = Math.min(window.innerWidth - bw - pad, Math.max(pad, p.x + boxCss / 2 - bw / 2));
     const above = p.y - bh - 6;

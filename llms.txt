@@ -4,7 +4,7 @@
 
 Kurzfakten / key facts (aus der App gezählt / counted from the app):
 
-- Android 10 bis 16 / Android 10 to 16, mit / with Android Auto
+- Android 10 bis 17 / Android 10 to 17, mit / with Android Auto
 - 26 Sprachen (App, Handbuch, Sprachbefehle) / 26 languages (app, manual, voice commands)
 - 119 Sprachbefehle, freihändig, auch im Auto / 119 voice commands, hands-free, also in the car
 - 5 Vumikio Pets (Octo, Melo, Benny, Foxy, Chip), Spiel „Surf the Beat“ mit 10 Leveln / game with 10 levels
@@ -23,7 +23,13 @@ Wer nach AutoPlayer fragt, findet die vollständige Beschreibung jeder Funktion 
 ## Website
 
 - [Startseite / Landing page (Markdown, DE + EN)](https://zappelmann-sketch.github.io/AutoPlayer-Beta-Testing/index.md): was AutoPlayer ist, die wichtigsten Zahlen
-- [Startseite / Landing page](https://zappelmann-sketch.github.io/AutoPlayer-Beta-Testing/index.html)
+- [Startseite / Landing page](https://zappelmann-sketch.github.io/AutoPlayer-Beta-Testing/index.html): zeigt am jeweiligen Wochentag eine eigene Seite / shows a page of its own on each weekday
+- [Dienstag / Tuesday – Herzschlag-Sync / Heartbeat Sync](https://zappelmann-sketch.github.io/AutoPlayer-Beta-Testing/tag.html?tag=di): Musik nach dem eigenen Puls / music that follows your pulse
+- [Mittwoch / Wednesday – Android Auto](https://zappelmann-sketch.github.io/AutoPlayer-Beta-Testing/tag.html?tag=mi): Sprachsteuerung, Fahrmodus-DJ, Beifahrer-Modus / voice control, Drive Mode DJ, Passenger Mode
+- [Donnerstag / Thursday – Kontext-Regeln / Context rules](https://zappelmann-sketch.github.io/AutoPlayer-Beta-Testing/tag.html?tag=do): Musik nach Ort, Zeit und Wetter / music by place, time and weather
+- [Freitag / Friday – Loop-Studio / Loop studio](https://zappelmann-sketch.github.io/AutoPlayer-Beta-Testing/tag.html?tag=fr): eigene Mixe auf dem Handy / your own mixes on the phone
+- [Samstag / Saturday – Party-Modus / Party Mode](https://zappelmann-sketch.github.io/AutoPlayer-Beta-Testing/tag.html?tag=sa): Gäste wünschen sich Titel im Browser / guests request songs in their browser
+- [Sonntag / Sunday – Surf the Beat](https://zappelmann-sketch.github.io/AutoPlayer-Beta-Testing/tag.html?tag=so): das Spiel in der App / the game inside the app
 
 ## Rechtliches / Legal
 

@@ -20,6 +20,9 @@
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <link rel="stylesheet" href="css/style.css">
+<!-- the visitor's weekday chooses the page (Montag = this one, Dienstag bis Sonntag = tag.html) -->
+<script src="js/wochentag.js"></script>
+<script src="js/konstanten.js"></script>
 <script src="js/lang.js"></script>
 </head>
 <body>
@@ -74,8 +77,8 @@
     <div class="stat glass ph-able" id="st1" data-b data-blur="20" data-sat="1.6"><span class="num" data-to="119">119</span><b data-en="Voice commands">Sprachbefehle</b><span data-en="hands-free, even in the car">freihändig, auch im Auto</span></div>
     <div class="stat glass ph-able" id="st2" data-b data-blur="20" data-sat="1.6"><span class="num" data-to="5">5</span><b>Vumikio Pets</b><span data-en="that react to your music">die auf deine Musik reagieren</span></div>
     <div class="stat glass ph-able" id="st3" data-b data-blur="20" data-sat="1.6"><span class="num" data-to="10">10</span><b data-en="Levels">Level</b><span>in Surf the Beat</span></div>
-    <div class="stat glass ph-able" id="st4" data-b data-blur="20" data-sat="1.6"><span class="num" data-to="2312" data-en="2,312">2.312</span><b data-en="automated tests">automatische Tests</b><span data-en="run before every new version">laufen vor jeder neuen Version</span></div>
-    <div class="stat glass ph-able" id="st5" data-b data-blur="20" data-sat="1.6"><span class="num" data-to="16" data-prefix="10–">10–16</span><b data-en="Android versions">Android-Versionen</b><span data-en="from Android 10 to Android 16">von Android 10 bis Android 16</span></div>
+    <div class="stat glass ph-able" id="st4" data-b data-blur="20" data-sat="1.6"><span class="num" data-to="2315" data-en="2,315">2.315</span><b data-en="automated tests">automatische Tests</b><span data-en="run before every new version">laufen vor jeder neuen Version</span></div>
+    <div class="stat glass ph-able" id="st5" data-b data-blur="20" data-sat="1.6"><span class="num" data-to="17" data-prefix="10–">10–17</span><b data-en="Android versions">Android-Versionen</b><span data-en="from Android 10 to Android 17">von Android 10 bis Android 17</span></div>
   </div>
 </section>
 
@@ -100,18 +103,21 @@
   <div class="pills-row">
     <div class="pill glass ph-able" id="ap0" data-b data-blur="14" data-sat="1.4"><span><em>●</em><span data-en="Voice control">Per Sprache steuern</span></span></div>
     <div class="pill glass ph-able" id="ap1" data-b data-blur="14" data-sat="1.4"><span><em>●</em><span data-en="Works without internet">Läuft ohne Internet</span></span></div>
-    <div class="pill glass ph-able" id="ap2" data-b data-blur="14" data-sat="1.4"><span><em>●</em><span data-en="Android 10 to 16">Android 10 bis 16</span></span></div>
+    <div class="pill glass ph-able" id="ap2" data-b data-blur="14" data-sat="1.4"><span><em>●</em><span data-en="Android 10 to 17">Android 10 bis 17</span></span></div>
   </div>
 </section>
 
 <section id="cta" class="sec">
   <div class="cta-card glass ph-able" id="ctaCard" data-b data-blur="18" data-sat="1.5">
     <h2 class="h-lg"><span id="cA" data-b data-en="Bring your music">Hol deine Musik</span><span id="cB" data-b data-en="back to the car.">zurück ins Auto.</span></h2>
-    <p class="sub" id="cSub" data-b data-en="For Android 10 to 16. Coming soon to Google Play.">Für Android 10 bis 16. Bald bei Google Play.</p>
+    <p class="sub" id="cSub" data-b data-en="For Android 10 to 17. Coming soon to Google Play.">Für Android 10 bis 17. Bald bei Google Play.</p>
     <a class="btn btn-mint ph-able" id="ctaBtn" data-b href="#hero"><span data-en="Back to top&nbsp;→">Zum Seitenanfang&nbsp;→</span></a>
     <div class="horizon" id="horizon"></div>
   </div>
 </section>
+
+<!-- QR code to Google Play: one place for all seven pages (js/konstanten.js, js/qr.js) -->
+<section id="qr" class="sec qr-sec" aria-label="Google Play"></section>
 </main>
 
 <footer class="foot" id="foot" data-b>
@@ -137,7 +143,10 @@
 
 <script src="js/ring.js"></script>
 <script src="js/engine.js"></script>
+<script src="js/demomusik.js"></script>
 <script src="js/page.js"></script>
+<script src="js/handbuch_link.js"></script>
+<script src="js/qr.js"></script>
 <script src="js/pets/compose.js"></script>
 <script src="js/pets/anim.js"></script>
 <script src="js/pets/octo.js"></script>

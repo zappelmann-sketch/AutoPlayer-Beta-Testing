@@ -157,6 +157,9 @@ img { display: block; }
   clip-path: inset(0 0 calc((1 - var(--reveal, 1)) * 100%) 0);
   filter: blur(calc((1 - var(--reveal, 1)) * 14px)) saturate(calc(0.4 + var(--reveal, 1) * 0.6));
 }
+/* revealed (engine.js sets .fertig): the same picture without the reveal's filter and clip - a filter
+   layer on every screenshot cost frame time while scrolling (Datei 14, Kay 14.11.2026) */
+.fertig .scr img, .fertig .scr video { filter: none; clip-path: none; }
 .scr .scan {          /* glowing edge that runs down while the screenshot appears */
   position: absolute; left: 0; right: 0; height: 2px; top: calc(var(--reveal, 1) * 100%);
   background: var(--mint); box-shadow: 0 0 18px 4px rgba(98, 232, 200, 0.7);
@@ -394,3 +397,47 @@ html.clean .sound-pill { display: none; }
 .clip-sound.on .on { display: inline; }
 .clip-sound.on .off { display: none; }
 html.demo .clip-sound { display: none; }
+
+/* ---------- manual links (js/handbuch_link.js, Wochentags-Konzept Datei 13) ---------- */
+/* a link over the whole element, clickable once the element is built (.hb-bereit) */
+.hb-host { position: relative; }
+.hb-link {
+  position: absolute; inset: 0; z-index: 5; border-radius: inherit; pointer-events: none;
+  transition: box-shadow 0.2s ease;
+}
+.hb-bereit > .hb-link { pointer-events: auto; cursor: pointer; }
+.hb-bereit > .hb-link:hover, .hb-bereit > .hb-link:focus-visible {
+  box-shadow: 0 0 0 2px var(--mint), 0 0 28px -4px rgba(98, 232, 200, 0.6); outline: none;
+}
+.hb-hint {
+  position: absolute; left: 50%; bottom: -13px; transform: translateX(-50%); z-index: 6;
+  padding: 4px 11px; border-radius: 999px; white-space: nowrap; pointer-events: none;
+  font: 600 12px var(--font); color: #04221c; background: var(--mint); opacity: 0;
+  box-shadow: 0 6px 18px -6px rgba(98, 232, 200, 0.7); transition: opacity 0.35s ease;
+}
+.hb-bereit .hb-hint { opacity: 0.92; }
+a.hb-hint.hb-link { inset: auto; left: 50%; bottom: -13px; border-radius: 999px; }
+.hb-bereit > a.hb-hint { pointer-events: auto; cursor: pointer; }
+.hb-bereit > .hb-link:hover .hb-hint, .hb-bereit > a.hb-hint:hover { opacity: 1; }
+/* back from the manual (?stelle=): the element glows once */
+.hb-ziel { animation: hbZiel 2.4s ease-out 1; }
+@keyframes hbZiel {
+  0%, 30% { box-shadow: 0 0 0 3px var(--mint), 0 0 60px 6px rgba(98, 232, 200, 0.55); }
+  100% { box-shadow: 0 0 0 0 rgba(98, 232, 200, 0); }
+}
+/* the videos: no hints, no QR code (Datei 13, Datei 50 Punkt 22) */
+html.render .hb-hint, html.render .qr-sec { display: none !important; }
+
+/* ---------- QR code to Google Play (js/qr.js, Datei 50 Punkt 19) - quiet, at the end ---------- */
+.qr-sec { display: flex; justify-content: center; padding-top: 70px; }
+.qr-karte {
+  display: flex; align-items: center; gap: 18px; padding: 16px 22px 16px 16px; border-radius: 20px;
+  --bg-final: var(--glass); background: var(--glass); max-width: 520px;
+}
+.qr-code { flex: none; width: 112px; height: 112px; border-radius: 12px; display: grid; place-items: center; background: #fff; color: #0b111a; }
+.qr-code img { width: 112px; height: 112px; border-radius: 12px; }
+.qr-platzhalter { background: rgba(255, 255, 255, 0.05); color: rgba(238, 243, 248, 0.42); border: 1.5px dashed rgba(255, 255, 255, 0.22); }
+.qr-platzhalter svg { width: 78px; height: 78px; }
+.qr-text b { display: block; font-size: 16px; margin-bottom: 4px; }
+.qr-text span { display: block; font-size: 14px; color: var(--muted); line-height: 1.45; }
+@media (max-width: 480px) { .qr-karte { gap: 14px; } .qr-code, .qr-code img { width: 92px; height: 92px; } }

@@ -200,3 +200,15 @@ html.kb-frueh main.sprache > nav.inhalt { visibility: hidden; }
   .kb figcaption { opacity: 1 !important; }
   #swarm, #vpPets { display: none !important; }
 }
+
+/* the way back to the landing page the visitor came from (js/rueckweg.js, Wochentags-Konzept Datei 13):
+   above the read-aloud bar, above the pets */
+.rueckweg {
+  position: fixed; left: 50%; transform: translateX(-50%); bottom: var(--rueck-unten, 84px); z-index: 60;
+  padding: 11px 20px; border-radius: 999px; white-space: nowrap; max-width: calc(100vw - 24px);
+  overflow: hidden; text-overflow: ellipsis;
+  background: var(--akzent); color: #04221c; font-weight: 650; font-size: 15px; text-decoration: none;
+  box-shadow: 0 8px 30px -8px rgba(98, 232, 200, 0.6);
+}
+.rueckweg:hover { filter: brightness(1.08); }
+.rueckweg:focus-visible { outline: 2px solid #fff; outline-offset: 3px; }

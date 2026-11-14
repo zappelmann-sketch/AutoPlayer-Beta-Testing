@@ -36,8 +36,15 @@
     if (!pool) return null;
     if (Array.isArray(pool)) return pick(pool, rnd);
     const list = (pool.templates || []).filter((t) => usable(t, runtime));
-    const tpl = pick(list, rnd);
-    return tpl ? fill(tpl, Object.assign({}, shared, pool.vars || {}), runtime, rnd) : null;
+    const vars = Object.assign({}, shared, pool.vars || {});
+    // a template whose placeholder only the app can fill (e.g. {greeting}) is skipped - the bubble showed
+    // "{greeting} Ich bin ganz schön chillig" (found 14.11.2026)
+    for (let i = 0; i < 6 && list.length; i++) {
+      const line = fill(pick(list, rnd), vars, runtime, rnd);
+      VAR.lastIndex = 0;
+      if (!VAR.test(line)) return line;
+    }
+    return null;
   }
 
   function runtimeFor(T, bpm, now) {

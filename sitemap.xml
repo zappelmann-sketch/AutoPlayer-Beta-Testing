@@ -2,31 +2,67 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://zappelmann-sketch.github.io/AutoPlayer-Beta-Testing/</loc>
-    <lastmod>2026-11-13</lastmod>
+    <lastmod>2026-11-14</lastmod>
     <xhtml:link rel="alternate" hreflang="de" href="https://zappelmann-sketch.github.io/AutoPlayer-Beta-Testing/?lang=de"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://zappelmann-sketch.github.io/AutoPlayer-Beta-Testing/?lang=en"/>
   </url>
   <url>
+    <loc>https://zappelmann-sketch.github.io/AutoPlayer-Beta-Testing/tag.html?tag=di</loc>
+    <lastmod>2026-11-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="de" href="https://zappelmann-sketch.github.io/AutoPlayer-Beta-Testing/tag.html?tag=di&amp;lang=de"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://zappelmann-sketch.github.io/AutoPlayer-Beta-Testing/tag.html?tag=di&amp;lang=en"/>
+  </url>
+  <url>
+    <loc>https://zappelmann-sketch.github.io/AutoPlayer-Beta-Testing/tag.html?tag=mi</loc>
+    <lastmod>2026-11-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="de" href="https://zappelmann-sketch.github.io/AutoPlayer-Beta-Testing/tag.html?tag=mi&amp;lang=de"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://zappelmann-sketch.github.io/AutoPlayer-Beta-Testing/tag.html?tag=mi&amp;lang=en"/>
+  </url>
+  <url>
+    <loc>https://zappelmann-sketch.github.io/AutoPlayer-Beta-Testing/tag.html?tag=do</loc>
+    <lastmod>2026-11-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="de" href="https://zappelmann-sketch.github.io/AutoPlayer-Beta-Testing/tag.html?tag=do&amp;lang=de"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://zappelmann-sketch.github.io/AutoPlayer-Beta-Testing/tag.html?tag=do&amp;lang=en"/>
+  </url>
+  <url>
+    <loc>https://zappelmann-sketch.github.io/AutoPlayer-Beta-Testing/tag.html?tag=fr</loc>
+    <lastmod>2026-11-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="de" href="https://zappelmann-sketch.github.io/AutoPlayer-Beta-Testing/tag.html?tag=fr&amp;lang=de"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://zappelmann-sketch.github.io/AutoPlayer-Beta-Testing/tag.html?tag=fr&amp;lang=en"/>
+  </url>
+  <url>
+    <loc>https://zappelmann-sketch.github.io/AutoPlayer-Beta-Testing/tag.html?tag=sa</loc>
+    <lastmod>2026-11-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="de" href="https://zappelmann-sketch.github.io/AutoPlayer-Beta-Testing/tag.html?tag=sa&amp;lang=de"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://zappelmann-sketch.github.io/AutoPlayer-Beta-Testing/tag.html?tag=sa&amp;lang=en"/>
+  </url>
+  <url>
+    <loc>https://zappelmann-sketch.github.io/AutoPlayer-Beta-Testing/tag.html?tag=so</loc>
+    <lastmod>2026-11-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="de" href="https://zappelmann-sketch.github.io/AutoPlayer-Beta-Testing/tag.html?tag=so&amp;lang=de"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://zappelmann-sketch.github.io/AutoPlayer-Beta-Testing/tag.html?tag=so&amp;lang=en"/>
+  </url>
+  <url>
     <loc>https://zappelmann-sketch.github.io/AutoPlayer-Beta-Testing/handbuch/index.html</loc>
-    <lastmod>2026-11-13</lastmod>
+    <lastmod>2026-11-14</lastmod>
     <xhtml:link rel="alternate" hreflang="de" href="https://zappelmann-sketch.github.io/AutoPlayer-Beta-Testing/handbuch/index.html?lang=de"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://zappelmann-sketch.github.io/AutoPlayer-Beta-Testing/handbuch/index.html?lang=en"/>
   </url>
   <url>
     <loc>https://zappelmann-sketch.github.io/AutoPlayer-Beta-Testing/privacy.html</loc>
-    <lastmod>2026-11-13</lastmod>
+    <lastmod>2026-11-14</lastmod>
     <xhtml:link rel="alternate" hreflang="de" href="https://zappelmann-sketch.github.io/AutoPlayer-Beta-Testing/privacy.html?lang=de"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://zappelmann-sketch.github.io/AutoPlayer-Beta-Testing/privacy.html?lang=en"/>
   </url>
   <url>
     <loc>https://zappelmann-sketch.github.io/AutoPlayer-Beta-Testing/terms.html</loc>
-    <lastmod>2026-11-13</lastmod>
+    <lastmod>2026-11-14</lastmod>
     <xhtml:link rel="alternate" hreflang="de" href="https://zappelmann-sketch.github.io/AutoPlayer-Beta-Testing/terms.html?lang=de"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://zappelmann-sketch.github.io/AutoPlayer-Beta-Testing/terms.html?lang=en"/>
   </url>
   <url>
     <loc>https://zappelmann-sketch.github.io/AutoPlayer-Beta-Testing/impressum.html</loc>
-    <lastmod>2026-11-13</lastmod>
+    <lastmod>2026-11-14</lastmod>
     <xhtml:link rel="alternate" hreflang="de" href="https://zappelmann-sketch.github.io/AutoPlayer-Beta-Testing/impressum.html?lang=de"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://zappelmann-sketch.github.io/AutoPlayer-Beta-Testing/impressum.html?lang=en"/>
   </url>
