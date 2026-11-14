@@ -70,7 +70,7 @@ html[lang="en"] .tag-car .scr { aspect-ratio: var(--ar, 860 / 456); }
 .passt-link b { font-size: 14px; }
 .passt-link span { font-size: 13px; color: var(--muted); }
 .passt-link:hover { border-color: rgba(98, 232, 200, 0.5); }
-.tag-knoepfe { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; position: relative; z-index: 2; }
+/* .tag-knoepfe (the two buttons at the end) lives in style.css: the start page uses it too */
 
 /* ---------- the fx canvas of the styles (pets' tools) ---------- */
 #stilfx { position: fixed; left: 0; top: 0; z-index: 52; pointer-events: none; }

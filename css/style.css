@@ -228,6 +228,11 @@ html[lang="en"] .car .scr { aspect-ratio: 860 / 426; }   /* the English Android 
   position: relative; overflow: hidden; text-align: center; border-radius: 34px; padding: 90px 30px 120px;
 }
 .cta-card .sub { margin-bottom: 30px; }
+/* the two buttons at the end of all seven pages: back to the start, next use case */
+.tag-knoepfe { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; position: relative; z-index: 2; }
+/* "Naechster Use Case: Donnerstag · Kontext-Regeln →" is wider than the card on a phone (the card
+   clips it): there the label may wrap onto a second line, centred, instead of being cut off */
+.tag-knoepfe .btn { max-width: 100%; white-space: normal; justify-content: center; text-align: center; line-height: 1.3; }
 .horizon {
   position: absolute; left: -15%; right: -15%; bottom: -78%; height: 120%; border-radius: 50%;
   border-top: 1.5px solid rgba(98, 232, 200, 0.7);

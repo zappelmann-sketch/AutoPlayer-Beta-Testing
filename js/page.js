@@ -6,6 +6,16 @@
   // language first: the texts must be in place before the builders measure and type them
   const L = window.APLang || { lang: 'de', t: (k) => k, apply: () => {} };
   L.apply();
+  // "Naechster Use Case": target and label from the one list of the seven pages (js/konstanten.js)
+  const K = window.APKonst;
+  const weiterBtn = document.getElementById('ctaWeiter');
+  if (K && weiterBtn) {
+    const next = K.naechster('mo');
+    const tx = (o) => o[L.lang] || o.de;
+    weiterBtn.href = K.adresse(next.kurz, L.lang);
+    weiterBtn.querySelector('span').textContent =
+      (L.lang === 'en' ? 'Next use case' : 'Nächster Use Case') + ': ' + tx(next.tag) + ' · ' + tx(next.thema) + ' →';
+  }
   const E = window.APEngine;
   const ring = { obj: null };
 
@@ -170,8 +180,12 @@
     step('#cA', 'type', 'melo-type', 0.8, 0.4),
     step('#cB', 'type', 'melo-copy', 0.85, 0.4),
     step('#cSub', 'type', 'benny-a11y', 1.15, 0.45),
-    step('#ctaBtn', 'box', 'foxy-color', 1.0, 0.28),
-    step('#ctaBtn', 'fill', 'foxy-color', 1.35, 0.3, { label: MINT }),
+    // the two buttons built like at the end of the weekday pages (js/tagbau.js)
+    step('#ctaBtn', 'box', 'chip-icons', 1.0, 0.28),
+    step('#ctaBtn', 'fill', 'octo-layout', 1.25, 0.3, { label: GLASS, noChip: true }),
+    step('#ctaBtn', 'glass', 'foxy-glass', 1.2, 0.35, { noChip: true }),
+    step('#ctaWeiter', 'box', 'foxy-color', 1.08, 0.28),
+    step('#ctaWeiter', 'fill', 'foxy-color', 1.35, 0.3, { label: MINT }),
     step('#horizon', 'fn', 'octo-3d', 0.9, 0.8, {
       init: () => document.getElementById('horizon').style.setProperty('--hz', '0'),
       apply: (p) => document.getElementById('horizon').style.setProperty('--hz', E.EASE.out(p).toFixed(3)),
