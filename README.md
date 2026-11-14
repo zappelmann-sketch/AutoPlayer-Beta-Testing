@@ -10,7 +10,7 @@
 [Nutzungsbedingungen / Terms](https://zappelmann-sketch.github.io/AutoPlayer-Beta-Testing/terms.html) ·
 [Impressum / Legal Notice](https://zappelmann-sketch.github.io/AutoPlayer-Beta-Testing/impressum.html)
 
-**Stand / As of:** 8. November 2026 · Version **6.77.0** (versionCode 344) ·
+**Stand / As of:** 14. November 2026 · Version **6.78.0** (versionCode 345) ·
 geschlossene Beta, Veröffentlichung im Play Store in Vorbereitung /
 closed beta, Play Store release in preparation
 
@@ -18,16 +18,18 @@ closed beta, Play Store release in preparation
 
 ## Projekt auf einen Blick / Project at a glance
 
-Gemessen am 08.11.2026 im Projekt-Repository (alle Dateien unter Git, mit den Zählwerkzeugen des Projekts).
-Measured on 2026-11-08 in the project repository (all files under Git, with the project's own counting tools).
+Gemessen am 08.11.2026 im Projekt-Repository (alle Dateien unter Git, mit den Zählwerkzeugen des Projekts);
+Version, Android und Unit-Tests auf dem Stand vom 14.11.2026.
+Measured on 2026-11-08 in the project repository (all files under Git, with the project's own counting tools);
+version, Android and unit tests as of 2026-11-14.
 
 | Kennzahl / Metric | Wert / Value |
 |---|---|
-| Version | 6.77.0 (versionCode 344) |
-| Android | 10 bis 16 / 10 to 16 – minSdk 29, targetSdk und compileSdk 36 |
+| Version | 6.78.0 (versionCode 345) |
+| Android | 10 bis 17 / 10 to 17 – minSdk 29, targetSdk und compileSdk 37 |
 | In Entwicklung seit / In development since | 7. März 2026 / 7 March 2026 (erster Commit / first commit) – 898 Commits |
 | App-Quellcode Kotlin / App source code Kotlin | 232.561 Zeilen in 942 Dateien, davon 177.981 ohne Leer- und Kommentarzeilen / 232,561 lines in 942 files, 177,981 of them without blank and comment lines |
-| Unit-Tests / Unit tests | 2.312 Tests in 251 Dateien, letzter Lauf ohne Fehler / 2,312 tests in 251 files, last run without failures |
+| Unit-Tests / Unit tests | 2.315 Tests in 251 Dateien, letzter Lauf ohne Fehler / 2,315 tests in 251 files, last run without failures |
 | Bildschirme / ViewModels – Screens / ViewModels | 75 / 26 |
 | Datenbank / Database | Room, Schema-Version 49, 46 Tabellen, 41 DAOs, verschlüsselt mit SQLCipher / schema version 49, 46 tables, 41 DAOs, encrypted with SQLCipher |
 | Sprachen / Languages | 26 – Oberfläche, Sprachbefehle, Handbuch in der App / user interface, voice commands, in-app guide |
@@ -223,6 +225,7 @@ Die Rechtstexte und das Online-Handbuch gibt es auf Deutsch und Englisch.
 | 19.10.2026 | 6.76.0 | Herzschlag-Sync, neu gebaut |
 | 04.11.2026 | 6.77.0 | neues Benutzerhandbuch in der App (113 Kapitel, Vorlesen), bis 05.11. in allen 26 Sprachen |
 | 08.11.2026 | – | Website mit Online-Handbuch (dieses Repository) |
+| 14.11.2026 | 6.78.0 | bereit für Android 17 (targetSdk 37), Smart DJ in der Landessprache |
 
 Die Veröffentlichung im Google Play Store ist in Vorbereitung; einen festen Termin gibt es noch nicht.
 
@@ -346,6 +349,7 @@ The legal texts and the online guide are available in German and English.
 | 2026-10-19 | 6.76.0 | Heartbeat Sync, rebuilt |
 | 2026-11-04 | 6.77.0 | new in-app user guide (113 chapters, read-aloud), in all 26 languages by 2026-11-05 |
 | 2026-11-08 | – | website with the online guide (this repository) |
+| 2026-11-14 | 6.78.0 | ready for Android 17 (targetSdk 37), Smart DJ in each app language |
 
 The release on the Google Play Store is in preparation; there is no fixed date yet.
 
