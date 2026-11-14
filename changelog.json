@@ -1,6 +1,15 @@
 {
- "latest": 67800,
+ "latest": 67801,
  "entries": [
+  {
+   "versionCode": 67801,
+   "versionName": "6.78.1",
+   "date": "2026-11-14",
+   "critical": false,
+   "title": "v6.78.1 — Handbuch: Mix und Bibliothek",
+   "de": "• FIX: Handbuch, Kapitel „Ausgeben als Datei“ im Loop Mixer: Ein fertiger Mix steht nicht in der Bibliothek, denn den Ordner AutoPlayer blendet die App ab Werk aus. Das Kapitel sagt jetzt, wie du ihn im Reiter Ordner wieder einblendest – in allen Sprachen der App.",
+   "en": "• FIX: User guide, chapter “Exporting as a file” in the Loop Mixer: a finished mix does not appear in the library, because the app hides the AutoPlayer folder by default. The chapter now explains how to show it again in the Folders tab – in every language of the app."
+  },
   {
    "versionCode": 67800,
    "versionName": "6.78.0",
@@ -126,15 +135,6 @@
    "title": "v6.74.1 — Loop Mixer schließt sein Projekt beim Beenden",
    "de": "• FIX: Beim Beenden der App – über das Menü oder durch Wegwischen – schließt der Loop Mixer jetzt das offene Projekt. Nach dem nächsten Start ist der Mixer leer, und das Projekt lässt sich wieder als Ziel für eine importierte Pad-Belegung wählen.",
    "en": "• FIX: When you exit the app – from the menu or by swiping it away – the Loop Mixer now closes the open project. After the next start the mixer is empty, and the project can again be chosen as the target for an imported pad layout."
-  },
-  {
-   "versionCode": 67400,
-   "versionName": "6.74.0",
-   "date": "2026-10-06",
-   "critical": false,
-   "title": "v6.74.0 — Teilen per QR-Code",
-   "de": "• NEU: Bundles, Loop-Segmente und Pad-Belegungen per QR-Code teilen – das andere Handy scannt den Code im Sharing-Hub unter „Importieren“ und holt die Datei direkt, ohne Versand. Beide Handys müssen im selben WLAN sein.\n• NEU: Was du importiert hast, lässt sich im Sharing-Hub wieder löschen – Projekte, Loop-Segmente, Presets und Pad-Belegungen.\n• VERBESSERT: Der Sharing-Hub zeigt nur noch Eigenes – mitgelieferte Presets und die Showcase-Mixe stehen nicht mehr zum Teilen.\n• VERBESSERT: Importieren gehört zu Pro, wie der ganze Sharing-Hub.",
-   "en": "• NEW: Share bundles, loop segments and pad layouts by QR code – the other phone scans the code in the Sharing Hub under “Import” and fetches the file directly, without sending anything. Both phones have to be in the same Wi-Fi.\n• NEW: What you imported can be deleted again in the Sharing Hub – projects, loop segments, presets and pad layouts.\n• IMPROVED: The Sharing Hub lists only what is yours – the presets and showcase mixes that ship with the app are no longer offered.\n• IMPROVED: Importing is part of Pro, like the whole Sharing Hub."
   }
  ]
 }

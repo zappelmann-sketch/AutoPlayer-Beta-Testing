@@ -88,9 +88,9 @@
         en: 'Whatever you mark with a heart on your phone sits up front in the car menu – the shortest way to the music you love. Continue Listening takes songs you started back to the saved spot.',
       },
       fakten: [{ de: 'Favoriten · Zuletzt gespielt · Alle Songs', en: 'Favorites · Recently Played · All Songs' }, { de: 'Alles Weitere unter „Mehr“', en: 'Everything else under “More”' }],
-      // LUECKE: DHU-Aufnahme Favoriten folgt
-      bilder: [{ de: 'handbuch/bilder/favoriten.webp', en: 'handbuch/bilder/en/favoriten.webp', ar: '540 / 1170',
-        alt: { de: 'Reiter Favoriten mit allen Titeln mit Herz', en: 'Favorites tab with every song marked with a heart' }, kapitel: 'favoriten' }],
+      // eigene DHU-Aufnahme 14.11.2026 (Emulator Android 17, Android Auto, App-Sprache DE/EN): Reiter Favoriten vorn
+      bilder: [{ de: 'img/tage/mi-favoriten-de.webp', en: 'img/tage/mi-favoriten-en.webp', ar: '800 / 480', auto: true,
+        alt: { de: 'Android Auto: der Reiter Favoriten steht vorn, darin die Titel mit Herz', en: 'Android Auto: the Favorites tab comes first, holding the songs marked with a heart' }, kapitel: 'androidauto' }],
     },
     {
       name: { de: 'Gut zu wissen', en: 'Good to know' }, pet: 'melo-type', effekt: 'zaehler',

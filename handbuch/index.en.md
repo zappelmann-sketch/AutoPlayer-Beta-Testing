@@ -7564,7 +7564,7 @@ The mixer does not export MP3.
 
 #### File details
 
-What is in the fields is written into the file and later appears in the library. If a field stays empty, the mixer fills something in itself:
+What is in the fields is written into the file – other players display it. If a field stays empty, the mixer fills something in itself:
 
 | Field | If empty |
 |---|---|
@@ -7576,7 +7576,7 @@ What is in the fields is written into the file and later appears in the library.
 
 #### Where the file ends up
 
-In the Music folder under **AutoPlayer/Mixes**, named after the title. If the name exists already, Android appends a number in parentheses. Afterward the share sheet opens – if you do not want to share anything, close it. The mix also appears as a **Mix** in the **Add Segment** list and can be reused in a new project.
+In the Music folder under **AutoPlayer/Mixes**, named after the title. If the name exists already, Android appends a number in parentheses. Afterward the share sheet opens – if you do not want to share anything, close it. The mix also appears as a **Mix** in the **Add Segment** list and can be reused in a new project. It does not appear in the library: the app hides the *AutoPlayer* folder by default. If you want it there, go to the Library tab **Folders** and turn on the *AutoPlayer* folder – the Track Cutter’s cuts then appear there as well.
 
 #### The platform export
 

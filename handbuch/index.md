@@ -7564,7 +7564,7 @@ MP3 gibt der Mixer nicht aus.
 
 #### Angaben zur Datei
 
-Was in den Feldern steht, wird in die Datei geschrieben und erscheint später in der Bibliothek. Bleibt ein Feld leer, trägt der Mixer selbst etwas ein:
+Was in den Feldern steht, wird in die Datei geschrieben – andere Player zeigen es an. Bleibt ein Feld leer, trägt der Mixer selbst etwas ein:
 
 | Feld | Wenn leer |
 |---|---|
@@ -7576,7 +7576,7 @@ Was in den Feldern steht, wird in die Datei geschrieben und erscheint später in
 
 #### Wo die Datei landet
 
-Im Musik-Ordner unter **AutoPlayer/Mixes**, benannt nach dem Titel. Gibt es den Namen schon, hängt Android eine Zahl in Klammern an. Danach öffnet sich das Teilen-Fenster – wer nichts teilen will, schließt es. Die Mischung steht außerdem als **Mix** in der Liste **Segment hinzufügen** und lässt sich in einem neuen Projekt weiterverwenden.
+Im Musik-Ordner unter **AutoPlayer/Mixes**, benannt nach dem Titel. Gibt es den Namen schon, hängt Android eine Zahl in Klammern an. Danach öffnet sich das Teilen-Fenster – wer nichts teilen will, schließt es. Die Mischung steht außerdem als **Mix** in der Liste **Segment hinzufügen** und lässt sich in einem neuen Projekt weiterverwenden. In der Bibliothek steht sie nicht: Den Ordner *AutoPlayer* blendet die App ab Werk aus. Wer sie dort haben will, blendet im Bibliothek-Reiter **Ordner** den Ordner *AutoPlayer* ein – dann stehen dort auch die Schnitte aus dem Track-Cutter.
 
 #### Die Plattform-Ausgabe
 

@@ -24,8 +24,10 @@
       de: 'Sonntag, ein Lied läuft. Mia öffnet den Fullscreen-Visualizer und tippt lange auf Octo – schon surft er durch einen Tunnel aus Licht, gebaut aus genau diesem Lied.',
       en: 'Sunday, a song is playing. Mia opens the Fullscreen Visualizer and presses and holds Octo – and Octo is off, surfing a tunnel of light built from exactly that song.',
     },
-    bild: { de: 'handbuch/bilder/surf-bereit.webp', en: 'handbuch/bilder/en/surf-bereit.webp', ar: '540 / 925',
-      alt: { de: 'Die Pets warten über dem Tunnel', en: 'The pets wait above the tunnel' }, kapitel: 'surf-the-beat' },
+    // eigene Aufnahmen 14.11.2026 (Kay): echte Runden als Clip im Handy, wie auf der Startseite - Emulator Android 17,
+    // eigene Musik ("After Me the Light"), alle fuenf Tiere; Standbild = erstes Bild des Clips
+    bild: { de: 'img/tage/so-start-de.webp', en: 'img/tage/so-start-en.webp', video: { de: 'img/tage/so-start-de.mp4', en: 'img/tage/so-start-en.mp4' }, ar: '540 / 924',
+      alt: { de: 'Die Pets warten über dem Tunnel – langer Druck auf Octo, und er surft los', en: 'The pets wait above the tunnel – press and hold Octo, and off he surfs' }, kapitel: 'surf-the-beat' },
     karten: [
       { icon: 'welle', kapitel: 'surf-the-beat',
         titel: { de: 'Deine Musik, dein Tunnel', en: 'Your music, your tunnel' },
@@ -44,9 +46,9 @@
         en: 'The song that is playing becomes a tunnel of light – its tempo drives the rings, its key sets the color. One of your Vumikio Pets surfs through and dodges the blockers.',
       },
       fakten: [{ de: '5 Bahnen · 10 Level', en: '5 lanes · 10 levels' }, { de: '13 Phasen', en: '13 phases' }],
-      // sprachneutral
-      bilder: [{ de: 'handbuch/bilder/surf-runde.webp', en: 'handbuch/bilder/surf-runde.webp', ar: '540 / 925',
-        alt: { de: 'Octo surft durch den Tunnel, vor ihm Note, Herz und Sperrblock', en: 'Octo surfs through the tunnel, ahead a note, a heart and a blocker' }, kapitel: 'surf-the-beat' }],
+      // sprachneutral (im Bild nur "Level 1" und Punkte); Clip aus derselben Runde wie Herz und Fang
+      bilder: [{ de: 'img/tage/so-runde.webp', en: 'img/tage/so-runde.webp', video: { de: 'img/tage/so-runde.mp4', en: 'img/tage/so-runde.mp4' }, ar: '540 / 924',
+        alt: { de: 'Octo surft durch den Tunnel, vor ihm Sterne, Herzen und Sperrblöcke', en: 'Octo surfs through the tunnel, ahead stars, hearts and blockers' }, kapitel: 'surf-the-beat' }],
     },
     {
       name: { de: 'Werkzeuge', en: 'Tools' }, pet: 'chip-icons', effekt: 'flug',
@@ -102,12 +104,12 @@
         en: 'Move onto the green heart’s lane and tap at the right moment – the heart that fills up pulses in the life display. Every song is a level, and if you hold out for ten in a row, you win – with the music you play anyway.',
       },
       fakten: [{ de: 'Grünes Herz heilt', en: 'Green heart heals' }, { de: '18 Trophäen', en: '18 trophies' }],
-      // sprachneutral (beide Spielszenen ohne Text)
+      // sprachneutral (beide Spielszenen ohne Text), Clips aus einer echten Runde
       bilder: [
-        { de: 'handbuch/bilder/surf-dinge.webp', en: 'handbuch/bilder/surf-dinge.webp', ar: '540 / 925',
-          alt: { de: 'Ein grünes Herz kommt auf Octo zu', en: 'A green heart comes toward Octo' }, kapitel: 'surf-the-beat' },
-        { de: 'handbuch/bilder/surf-fang.webp', en: 'handbuch/bilder/surf-fang.webp', ar: '540 / 925',
-          alt: { de: 'Gefangen: Um Octo geht ein grüner Ring auf', en: 'Caught: a green ring opens around Octo' }, kapitel: 'surf-the-beat' },
+        { de: 'img/tage/so-herz.webp', en: 'img/tage/so-herz.webp', video: { de: 'img/tage/so-herz.mp4', en: 'img/tage/so-herz.mp4' }, ar: '540 / 924',
+          alt: { de: 'Grüne Herzen kommen durch den Tunnel auf Octo zu', en: 'Green hearts come down the tunnel toward Octo' }, kapitel: 'surf-the-beat' },
+        { de: 'img/tage/so-fang.webp', en: 'img/tage/so-fang.webp', video: { de: 'img/tage/so-fang.mp4', en: 'img/tage/so-fang.mp4' }, ar: '540 / 924',
+          alt: { de: 'Gefangen: Um Octo geht ein grüner Ring auf, +4', en: 'Caught: a green ring opens around Octo, +4' }, kapitel: 'surf-the-beat' },
       ],
     },
   ],
