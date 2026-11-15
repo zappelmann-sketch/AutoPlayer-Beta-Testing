@@ -78,8 +78,10 @@ html.clean #stilfx { display: none; }
 
 /* ---------- letters that move (styles with charBlocks) ---------- */
 .chw { display: inline-block; white-space: nowrap; }
-.chw.sp { white-space: pre; }
 [data-stil] .chw .ch { display: inline-block; will-change: auto; }
+/* the space between words stays an ordinary inline space: as an inline-block (white-space: pre) it could wrap to the
+   start of the next line and indent it (Kay's Sonntag page, 15.11.2026); a space has nothing to move anyway */
+.chw.sp, [data-stil] .chw.sp .ch { display: inline; white-space: normal; }
 
 /* while a box step builds, the element itself is the moving part (origami, lego, holo, kassette) */
 [data-stil] .zeigt { opacity: 1 !important; }

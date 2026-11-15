@@ -24,9 +24,10 @@
       de: 'Sonntag, ein Lied läuft. Mia öffnet den Fullscreen-Visualizer und tippt lange auf Octo – schon surft er durch einen Tunnel aus Licht, gebaut aus genau diesem Lied.',
       en: 'Sunday, a song is playing. Mia opens the Fullscreen Visualizer and presses and holds Octo – and Octo is off, surfing a tunnel of light built from exactly that song.',
     },
-    // eigene Aufnahmen 14.11.2026 (Kay): echte Runden als Clip im Handy, wie auf der Startseite - Emulator Android 17,
-    // eigene Musik ("After Me the Light"), alle fuenf Tiere; Standbild = erstes Bild des Clips
-    bild: { de: 'img/tage/so-start-de.webp', en: 'img/tage/so-start-en.webp', video: { de: 'img/tage/so-start-de.mp4', en: 'img/tage/so-start-en.mp4' }, ar: '540 / 924',
+    // Spielclips aus Kays Bildschirmaufnahmen am Xiaomi 15 Ultra (15.11.2026, gleichmaessig 24 Bilder je Sekunde - die
+    // Emulator-Clips ruckelten), eigene Musik; geschnitten mit tools/surf-test/pruefen/clips_xiaomi.sh, jede Attrappe aus
+    // einer eigenen Aufnahme; sprachneutral (im Bild nur "Level 1" und Zahlen); Standbild = erstes Bild des Clips
+    bild: { de: 'img/tage/so-start.webp', en: 'img/tage/so-start.webp', video: { de: 'img/tage/so-start.mp4', en: 'img/tage/so-start.mp4' }, ar: '540 / 924',
       alt: { de: 'Die Pets warten über dem Tunnel – langer Druck auf Octo, und er surft los', en: 'The pets wait above the tunnel – press and hold Octo, and off he surfs' }, kapitel: 'surf-the-beat' },
     karten: [
       { icon: 'welle', kapitel: 'surf-the-beat',
@@ -46,7 +47,7 @@
         en: 'The song that is playing becomes a tunnel of light – its tempo drives the rings, its key sets the color. One of your Vumikio Pets surfs through and dodges the blockers.',
       },
       fakten: [{ de: '5 Bahnen · 10 Level', en: '5 lanes · 10 levels' }, { de: '13 Phasen', en: '13 phases' }],
-      // sprachneutral (im Bild nur "Level 1" und Punkte); Clip aus derselben Runde wie Herz und Fang
+      // sprachneutral (im Bild nur "Level 1" und Punkte); Octo surft
       bilder: [{ de: 'img/tage/so-runde.webp', en: 'img/tage/so-runde.webp', video: { de: 'img/tage/so-runde.mp4', en: 'img/tage/so-runde.mp4' }, ar: '540 / 924',
         alt: { de: 'Octo surft durch den Tunnel, vor ihm Sterne, Herzen und Sperrblöcke', en: 'Octo surfs through the tunnel, ahead stars, hearts and blockers' }, kapitel: 'surf-the-beat' }],
     },
@@ -69,12 +70,14 @@
       name: { de: 'Player und Visualizer', en: 'Player and visualizer' }, pet: 'benny-motion', effekt: 'visualizer',
       titel1: { de: 'Platte, Kassette,', en: 'Record, cassette,' }, titel2: { de: 'Tiefsee, Polarlicht.', en: 'Deep Sea, Aurora.' },
       text: {
-        de: 'Am DJ-Plattenspieler scratchst du mit dem Finger, im Kassetten-Player drehen sich die Spulen. In der Vollbild-Wellenform pulsieren bei Tiefsee Quallen, bei Polarlicht wandern Lichtvorhänge über den Himmel.',
-        en: 'On the DJ Turntable you scratch with your finger, in the Cassette Player the reels turn. In the full-screen waveform, jellyfish pulse in Deep Sea, and curtains of light drift across the sky in Aurora.',
+        de: 'Am DJ-Plattenspieler scratchst du mit dem Finger, im Kassetten-Player drehen sich die Spulen. In der Vollbild-Wellenform schwingen Ringe um das Cover, Balken und Linie folgen dem Klang, darunter läuft die Wellenform des Titels – Tiefsee taucht alles in Blau und Cyan, Polarlicht in Grün und Violett.',
+        en: 'On the DJ Turntable you scratch with your finger, in the Cassette Player the reels turn. In the full-screen waveform, rings swing around the cover, bars and a line follow the sound, and the song’s waveform runs below – Deep Sea bathes it all in blue and cyan, Aurora in green and violet.',
       },
+      // Kay 15.11.2026: Quallen und Lichtvorhaenge gibt es nicht - die Designs (VisualizerModels.kt) setzen nur Farben und
+      // Verlaeufe der zwoelf Ebenen; beschrieben ist, was im Clip zu sehen ist (Frequenzringe, EQ-Balken, Oszilloskop, Wellenform)
       fakten: [{ de: '13 Designs · 10 Landschaften', en: '13 designs · 10 landscapes' }, { de: '12 Ebenen einzeln schaltbar', en: '12 layers, each switchable' }],
       bilder: [
-        // eigene Aufnahmen 14.11.2026 (Datei 50 Punkt 16): Vollbild-Wellenform in Bewegung, Musik laeuft
+        // Kays Bildschirmaufnahmen am Xiaomi 15 Ultra (15.11.2026): Vollbild-Wellenform, Voreinstellung Voll, Musik laeuft
         { de: 'img/tage/so-tiefsee-de.webp', en: 'img/tage/so-tiefsee-en.webp', video: { de: 'img/tage/so-tiefsee-de.mp4', en: 'img/tage/so-tiefsee-en.mp4' },
           ar: '540 / 1200', alt: { de: 'Vollbild-Wellenform im Design Tiefsee', en: 'Full-screen waveform in the Deep Sea design' }, kapitel: 'wellenform' },
         { de: 'img/tage/so-polarlicht-de.webp', en: 'img/tage/so-polarlicht-en.webp', video: { de: 'img/tage/so-polarlicht-de.mp4', en: 'img/tage/so-polarlicht-en.mp4' },
@@ -104,12 +107,12 @@
         en: 'Move onto the green heart’s lane and tap at the right moment – the heart that fills up pulses in the life display. Every song is a level, and if you hold out for ten in a row, you win – with the music you play anyway.',
       },
       fakten: [{ de: 'Grünes Herz heilt', en: 'Green heart heals' }, { de: '18 Trophäen', en: '18 trophies' }],
-      // sprachneutral (beide Spielszenen ohne Text), Clips aus einer echten Runde
+      // sprachneutral (beide Spielszenen ohne Text); hier surfen Benny (Hase) und Chip (Eichhoernchen)
       bilder: [
         { de: 'img/tage/so-herz.webp', en: 'img/tage/so-herz.webp', video: { de: 'img/tage/so-herz.mp4', en: 'img/tage/so-herz.mp4' }, ar: '540 / 924',
-          alt: { de: 'Grüne Herzen kommen durch den Tunnel auf Octo zu', en: 'Green hearts come down the tunnel toward Octo' }, kapitel: 'surf-the-beat' },
+          alt: { de: 'Grüne Herzen kommen durch den Tunnel auf Benny zu', en: 'Green hearts come down the tunnel toward Benny' }, kapitel: 'surf-the-beat' },
         { de: 'img/tage/so-fang.webp', en: 'img/tage/so-fang.webp', video: { de: 'img/tage/so-fang.mp4', en: 'img/tage/so-fang.mp4' }, ar: '540 / 924',
-          alt: { de: 'Gefangen: Um Octo geht ein grüner Ring auf, +4', en: 'Caught: a green ring opens around Octo, +4' }, kapitel: 'surf-the-beat' },
+          alt: { de: 'Gefangen: Um Chip geht ein grüner Ring auf, +16', en: 'Caught: a green ring opens around Chip, +16' }, kapitel: 'surf-the-beat' },
       ],
     },
   ],
