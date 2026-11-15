@@ -3204,19 +3204,19 @@ Einzuschalten unter **Einstellungen → Wiedergabe → Wellenform-Anzeige**. Dan
 | Frequenzringe | Album-Cover | LED-Fortschritt | EQ-Balken |
 | Oszilloskop | Wellenform | Wellenform-Spiegel | Neon-Leuchten |
 
-**Dreizehn Designs** bestimmen die Farben. Das **Paletten-Symbol** oben rechts öffnet die Auswahl; jede Kachel zeigt eine kleine Vorschau. Drei Designs sind allgemein – **Neon Noir**, **Sequoia DNA** und das **App-Theme**, das die eigenen Farben übernimmt. Zehn zeichnen eine Landschaft nach, mit Farbverläufen und eigener Bewegung:
+**Dreizehn Designs** bestimmen die Farben. Das **Paletten-Symbol** oben rechts öffnet die Auswahl; jede Kachel zeigt eine kleine Vorschau. Drei Designs sind allgemein – **Neon Noir**, **Sequoia DNA** und das **App-Theme**, das die eigenen Farben übernimmt. Zehn sind nach einer Landschaft benannt – sie färben die Ebenen oben passend dazu ein:
 
-| **Tiefsee** | Lichtstrahlen verblassen nach unten, Plankton glimmt, Quallen pulsieren in Cyan und Violett |
-|---|---|
-| **Korallenriff** | helles Türkis, bunte Fische ziehen vorbei, eine Anemone pulsiert im Takt |
-| **Schwarzes Loch** | schwarze Mitte, eine glühende Scheibe rast ums Zentrum, Lichtringe drehen sich im Takt |
-| **Sternenfeld** | das Band der Milchstraße, weiße Sterne, eine langsam drehende Galaxie |
-| **Wüste** | violette Dämmerung über Terrakotta, die Sonne im Cover, Sand weht quer |
-| **Polarlicht** | grüne und violette Lichtvorhänge wandern über den Himmel, Schnee fällt |
-| **Magma** | Glut von unten, Lava-Fontänen und Funken spritzen im Takt |
-| **Regenwald** | Licht fällt schräg durchs Blätterdach, Glühwürmchen, bunte Vögel |
-| **Sonnenuntergang** | Nachtblau bis Orange, die Sonne im Cover, Glitzern auf dem Wasser |
-| **Gewitter** | helle Wolkenwand, Blitze schlagen im Takt ein, Regen fällt |
+| **Tiefsee** |
+|---|
+| **Korallenriff** |
+| **Schwarzes Loch** |
+| **Sternenfeld** |
+| **Wüste** |
+| **Polarlicht** |
+| **Magma** |
+| **Regenwald** |
+| **Sonnenuntergang** |
+| **Gewitter** |
 
 Eigene Designs entstehen im **Theme-Builder** – mit festen Farben, frei gewählten Farben oder bewegten Farbverläufen je Ebene. Sie stehen hier unter den mitgelieferten.
 

@@ -1,6 +1,15 @@
 {
- "latest": 67801,
+ "latest": 67802,
  "entries": [
+  {
+   "versionCode": 67802,
+   "versionName": "6.78.2",
+   "date": "2026-11-15",
+   "critical": false,
+   "title": "v6.78.2 — Handbuch: Designs der Wellenform",
+   "de": "• FIX: Handbuch, Kapitel „Wellenform“: Die Liste der zehn Landschafts-Designs beschrieb Dinge, die es nicht gibt – Quallen, Fische, Lichtvorhänge, Blitze. Ein Design färbt nur die Ebenen der Ansicht ein; das Kapitel nennt jetzt nur noch die Namen – in allen Sprachen der App.",
+   "en": "• FIX: User guide, chapter “Waveform”: the list of the ten landscape designs described things that do not exist – jellyfish, fish, curtains of light, lightning. A design only colors the layers of the view; the chapter now just lists the names – in every language of the app."
+  },
   {
    "versionCode": 67801,
    "versionName": "6.78.1",
@@ -126,15 +135,6 @@
    "title": "v6.74.2 — Import auch ins geladene Projekt",
    "de": "• VERBESSERT: Eine Pad-Belegung lässt sich jetzt auch in das Projekt importieren, das gerade im Loop Mixer geladen ist – der Mixer übernimmt die neuen Pads sofort. Du musst dafür kein zweites Projekt anlegen und die App nicht mehr beenden.\n• VERBESSERT: Auch das Löschen und Ersetzen im Sharing-Hub geht bei einem geladenen Projekt. Nur wenn im Mixer etwas nicht gespeichert ist, bleibt beim Ersetzen die Kopie.",
    "en": "• IMPROVED: A pad layout can now be imported into the project that is loaded in the Loop Mixer – the mixer takes the new pads over at once. No second project needed, and no need to exit the app first.\n• IMPROVED: Deleting and replacing in the Sharing Hub works for a loaded project as well. Only if the mixer holds unsaved changes does replacing fall back to the copy."
-  },
-  {
-   "versionCode": 67401,
-   "versionName": "6.74.1",
-   "date": "2026-10-06",
-   "critical": false,
-   "title": "v6.74.1 — Loop Mixer schließt sein Projekt beim Beenden",
-   "de": "• FIX: Beim Beenden der App – über das Menü oder durch Wegwischen – schließt der Loop Mixer jetzt das offene Projekt. Nach dem nächsten Start ist der Mixer leer, und das Projekt lässt sich wieder als Ziel für eine importierte Pad-Belegung wählen.",
-   "en": "• FIX: When you exit the app – from the menu or by swiping it away – the Loop Mixer now closes the open project. After the next start the mixer is empty, and the project can again be chosen as the target for an imported pad layout."
   }
  ]
 }

@@ -3204,19 +3204,19 @@ Via the **third icon from the right** in the second icon row of the player – a
 | Frequency Rings | Album Art | LED Progress | EQ Bars |
 | Oscilloscope | Waveform | Waveform Mirror | Neon Bloom |
 
-**Thirteen designs** determine the colors. The **palette icon** at the top right opens the selection; each tile shows a small preview. Three designs are general – **Neon Noir**, **Sequoia DNA** and the **App Theme**, which takes on your own colors. Ten depict a landscape, with color gradients and movement of their own:
+**Thirteen designs** determine the colors. The **palette icon** at the top right opens the selection; each tile shows a small preview. Three designs are general – **Neon Noir**, **Sequoia DNA** and the **App Theme**, which takes on your own colors. Ten are named after a landscape – they tint the layers above to match:
 
-| **Deep Sea** | Light rays fade downward, plankton glimmers, jellyfish pulse in cyan and violet |
-|---|---|
-| **Coral Reef** | Bright turquoise, colorful fish swim by, an anemone pulses to the beat |
-| **Black Hole** | Black center, a glowing disc races around the center, rings of light turn to the beat |
-| **Starfield** | The band of the Milky Way, white stars, a slowly turning galaxy |
-| **Desert** | Violet dusk over terracotta, the sun in the cover, sand blowing sideways |
-| **Aurora** | Green and violet curtains of light drift across the sky, snow falls |
-| **Magma** | Embers from below, lava fountains and sparks spray to the beat |
-| **Rainforest** | Light falls at an angle through the canopy, fireflies, colorful birds |
-| **Sunset** | Night blue to orange, the sun in the cover, glitter on the water |
-| **Thunderstorm** | Bright wall of cloud, lightning strikes to the beat, rain falls |
+| **Deep Sea** |
+|---|
+| **Coral Reef** |
+| **Black Hole** |
+| **Starfield** |
+| **Desert** |
+| **Aurora** |
+| **Magma** |
+| **Rainforest** |
+| **Sunset** |
+| **Thunderstorm** |
 
 Designs of your own are created in the **Theme Builder** – with fixed colors, freely chosen colors or moving color gradients per layer. They appear here below the built-in ones.
 
