@@ -1,6 +1,15 @@
 {
- "latest": 67802,
+ "latest": 67803,
  "entries": [
+  {
+   "versionCode": 67803,
+   "versionName": "6.78.3",
+   "date": "2026-11-15",
+   "critical": false,
+   "title": "v6.78.3 — Genres neuer Musik",
+   "de": "• FIX: Kam neue Musik dazu, während die App lief – etwa per Geräte-Transfer –, fehlten ihre Genres: Die Genre-Kacheln zeigten weiter nur die alten Genres, auch nach dem Neu-Scannen. Die App liest die Genres jetzt neu, sobald Android Titel hinzufügt, entfernt oder neu einliest.",
+   "en": "• FIX: When new music arrived while the app was running – for example by device transfer – its genres were missing: the genre tiles kept showing only the old genres, even after a rescan. The app now reads the genres again as soon as Android adds, removes or rereads songs."
+  },
   {
    "versionCode": 67802,
    "versionName": "6.78.2",
@@ -126,15 +135,6 @@
    "title": "v6.74.3 — Berechtigungen und Bluetooth Auto-Resume",
    "de": "• FIX: Bluetooth Auto-Resume startet die Musik wieder, sobald sich ein Lautsprecher oder das Auto verbindet. Ab Android 13 kam das Signal nicht mehr an. Auch Kontext-Regeln mit Bluetooth-Gerät greifen wieder.\n• NEU: Unter Einstellungen → Berechtigungen lässt sich eine erteilte Berechtigung wieder zurücknehmen. Dazu kommen zwei Blöcke: Benachrichtigungen sowie Musik und Audio.\n• VERBESSERT: Fragt Android nach mehrfachem Ablehnen nicht mehr nach, führt die App jetzt in die Einstellungen, statt nichts zu tun.\n• VERBESSERT: Der Player fragt nur noch einmal nach dem Mikrofon und erklärt vorher, wofür. Fehlt es, steht an der betroffenen Anzeige ein Hinweis mit dem Weg zum Erteilen.\n• FIX: Die Frage nach Benachrichtigungen geht beim ersten Abspielen nicht mehr verloren.",
    "en": "• FIX: Bluetooth Auto-Resume starts the music again as soon as a speaker or the car connects. From Android 13 on the signal no longer arrived. Context rules with a Bluetooth device work again as well.\n• NEW: Under Settings → Permissions a granted permission can now be withdrawn. Two blocks were added: Notifications, and Music and audio.\n• IMPROVED: When Android no longer asks after repeated declining, the app now leads to the settings instead of doing nothing.\n• IMPROVED: The player asks for the microphone only once and explains first what it is for. If it is missing, the affected display shows a hint with the way to grant it.\n• FIX: The notification question no longer gets lost on the first playback."
-  },
-  {
-   "versionCode": 67402,
-   "versionName": "6.74.2",
-   "date": "2026-10-06",
-   "critical": false,
-   "title": "v6.74.2 — Import auch ins geladene Projekt",
-   "de": "• VERBESSERT: Eine Pad-Belegung lässt sich jetzt auch in das Projekt importieren, das gerade im Loop Mixer geladen ist – der Mixer übernimmt die neuen Pads sofort. Du musst dafür kein zweites Projekt anlegen und die App nicht mehr beenden.\n• VERBESSERT: Auch das Löschen und Ersetzen im Sharing-Hub geht bei einem geladenen Projekt. Nur wenn im Mixer etwas nicht gespeichert ist, bleibt beim Ersetzen die Kopie.",
-   "en": "• IMPROVED: A pad layout can now be imported into the project that is loaded in the Loop Mixer – the mixer takes the new pads over at once. No second project needed, and no need to exit the app first.\n• IMPROVED: Deleting and replacing in the Sharing Hub works for a loaded project as well. Only if the mixer holds unsaved changes does replacing fall back to the copy."
   }
  ]
 }
