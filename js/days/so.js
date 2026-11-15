@@ -24,11 +24,12 @@
       de: 'Sonntag, ein Lied läuft. Mia öffnet den Fullscreen-Visualizer und tippt lange auf Octo – schon surft er durch einen Tunnel aus Licht, gebaut aus genau diesem Lied.',
       en: 'Sunday, a song is playing. Mia opens the Fullscreen Visualizer and presses and holds Octo – and Octo is off, surfing a tunnel of light built from exactly that song.',
     },
-    // Spielclips aus Kays Bildschirmaufnahmen am Xiaomi 15 Ultra (15.11.2026, gleichmaessig 24 Bilder je Sekunde - die
-    // Emulator-Clips ruckelten), eigene Musik; geschnitten mit tools/surf-test/pruefen/clips_xiaomi.sh, jede Attrappe aus
-    // einer eigenen Aufnahme; sprachneutral (im Bild nur "Level 1" und Zahlen); Standbild = erstes Bild des Clips
+    // Spielclips aus Kays Bildschirmaufnahmen am Xiaomi 15 Ultra (15.11.2026 abends, mit 6.78.4 - in den Aufnahmen der
+    // Nacht sprang der Tunnel, Media3 1.11; gleichmaessig 24 Bilder je Sekunde), eigene Musik; geschnitten mit
+    // tools/surf-test/pruefen/clips_xiaomi.sh, jede Attrappe aus einer eigenen Aufnahme; sprachneutral (im Bild nur
+    // "Level 1" und Zahlen); Standbild = erstes Bild des Clips
     bild: { de: 'img/tage/so-start.webp', en: 'img/tage/so-start.webp', video: { de: 'img/tage/so-start.mp4', en: 'img/tage/so-start.mp4' }, ar: '540 / 924',
-      alt: { de: 'Die Pets warten über dem Tunnel – langer Druck auf Octo, und er surft los', en: 'The pets wait above the tunnel – press and hold Octo, and off he surfs' }, kapitel: 'surf-the-beat' },
+      alt: { de: 'Anzählen – Octo surft los und fängt ein grünes Herz', en: 'The count-in – Octo surfs off and catches a green heart' }, kapitel: 'surf-the-beat' },
     karten: [
       { icon: 'welle', kapitel: 'surf-the-beat',
         titel: { de: 'Deine Musik, dein Tunnel', en: 'Your music, your tunnel' },
@@ -47,9 +48,9 @@
         en: 'The song that is playing becomes a tunnel of light – its tempo drives the rings, its key sets the color. One of your Vumikio Pets surfs through and dodges the blockers.',
       },
       fakten: [{ de: '5 Bahnen · 10 Level', en: '5 lanes · 10 levels' }, { de: '13 Phasen', en: '13 phases' }],
-      // sprachneutral (im Bild nur "Level 1" und Punkte); Octo surft
+      // sprachneutral (im Bild nur "Level 1" und Punkte); Foxy (Fuchs) surft
       bilder: [{ de: 'img/tage/so-runde.webp', en: 'img/tage/so-runde.webp', video: { de: 'img/tage/so-runde.mp4', en: 'img/tage/so-runde.mp4' }, ar: '540 / 924',
-        alt: { de: 'Octo surft durch den Tunnel, vor ihm Sterne, Herzen und Sperrblöcke', en: 'Octo surfs through the tunnel, ahead stars, hearts and blockers' }, kapitel: 'surf-the-beat' }],
+        alt: { de: 'Foxy surft durch den Tunnel, fängt ein grünes Herz und einen Stern, Sperrblöcke ziehen vorbei', en: 'Foxy surfs through the tunnel, catches a green heart and a star, blockers rush past' }, kapitel: 'surf-the-beat' }],
     },
     {
       name: { de: 'Werkzeuge', en: 'Tools' }, pet: 'chip-icons', effekt: 'flug',
@@ -112,7 +113,7 @@
         { de: 'img/tage/so-herz.webp', en: 'img/tage/so-herz.webp', video: { de: 'img/tage/so-herz.mp4', en: 'img/tage/so-herz.mp4' }, ar: '540 / 924',
           alt: { de: 'Grüne Herzen kommen durch den Tunnel auf Benny zu', en: 'Green hearts come down the tunnel toward Benny' }, kapitel: 'surf-the-beat' },
         { de: 'img/tage/so-fang.webp', en: 'img/tage/so-fang.webp', video: { de: 'img/tage/so-fang.mp4', en: 'img/tage/so-fang.mp4' }, ar: '540 / 924',
-          alt: { de: 'Gefangen: Um Chip geht ein grüner Ring auf, +16', en: 'Caught: a green ring opens around Chip, +16' }, kapitel: 'surf-the-beat' },
+          alt: { de: 'Gefangen: Um Chip geht ein grüner Ring auf, +15', en: 'Caught: a green ring opens around Chip, +15' }, kapitel: 'surf-the-beat' },
       ],
     },
   ],
