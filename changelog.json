@@ -1,6 +1,15 @@
 {
- "latest": 67803,
+ "latest": 67804,
  "entries": [
+  {
+   "versionCode": 67804,
+   "versionName": "6.78.4",
+   "date": "2026-11-15",
+   "critical": false,
+   "title": "v6.78.4 — Surf the Beat: Tunnel läuft wieder ruhig",
+   "de": "• FIX: Surf the Beat: Der Tunnel sprang während des Spiels immer wieder ein Stück vor und zurück. Die Wiedergabe meldet ihre Stelle im Lied jetzt wieder fein genug – der Tunnel läuft ruhig und im Takt.",
+   "en": "• FIX: Surf the Beat: the tunnel kept jumping a little forward and back during play. Playback now reports its place in the song finely enough again – the tunnel runs smoothly and on the beat."
+  },
   {
    "versionCode": 67803,
    "versionName": "6.78.3",
@@ -126,15 +135,6 @@
    "title": "v6.74.4 — Wetter-DJ mit ungefährem Standort",
    "de": "• VERBESSERT: Der Wetter-DJ arbeitet jetzt auch, wenn du Android nur den ungefähren Standort erlaubst. Fürs Wetter reicht das.\n• Alle anderen Standort-Funktionen brauchen weiter den genauen Standort.",
    "en": "• IMPROVED: Weather DJ now also works when you allow Android the approximate location only. That is enough for the weather.\n• All other location features still need the precise location."
-  },
-  {
-   "versionCode": 67403,
-   "versionName": "6.74.3",
-   "date": "2026-10-07",
-   "critical": false,
-   "title": "v6.74.3 — Berechtigungen und Bluetooth Auto-Resume",
-   "de": "• FIX: Bluetooth Auto-Resume startet die Musik wieder, sobald sich ein Lautsprecher oder das Auto verbindet. Ab Android 13 kam das Signal nicht mehr an. Auch Kontext-Regeln mit Bluetooth-Gerät greifen wieder.\n• NEU: Unter Einstellungen → Berechtigungen lässt sich eine erteilte Berechtigung wieder zurücknehmen. Dazu kommen zwei Blöcke: Benachrichtigungen sowie Musik und Audio.\n• VERBESSERT: Fragt Android nach mehrfachem Ablehnen nicht mehr nach, führt die App jetzt in die Einstellungen, statt nichts zu tun.\n• VERBESSERT: Der Player fragt nur noch einmal nach dem Mikrofon und erklärt vorher, wofür. Fehlt es, steht an der betroffenen Anzeige ein Hinweis mit dem Weg zum Erteilen.\n• FIX: Die Frage nach Benachrichtigungen geht beim ersten Abspielen nicht mehr verloren.",
-   "en": "• FIX: Bluetooth Auto-Resume starts the music again as soon as a speaker or the car connects. From Android 13 on the signal no longer arrived. Context rules with a Bluetooth device work again as well.\n• NEW: Under Settings → Permissions a granted permission can now be withdrawn. Two blocks were added: Notifications, and Music and audio.\n• IMPROVED: When Android no longer asks after repeated declining, the app now leads to the settings instead of doing nothing.\n• IMPROVED: The player asks for the microphone only once and explains first what it is for. If it is missing, the affected display shows a hint with the way to grant it.\n• FIX: The notification question no longer gets lost on the first playback."
   }
  ]
 }
