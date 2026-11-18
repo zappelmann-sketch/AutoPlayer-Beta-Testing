@@ -270,7 +270,11 @@
   #tonleiste select {
     background: #1c2431; color: var(--text); border: 1px solid var(--rand);
     border-radius: 6px; padding: 6px 8px; font-size: 13px; font-family: inherit;
+    color-scheme: dark;
   }
+  /* Die aufgeklappte Liste zeichnet der Browser selbst: Ohne diese Zeilen malte Edge/Chrome unter
+     Windows sie weiss, die Eintraege behielten die helle Schrift - nicht lesbar (Kay, 18.11.2026). */
+  #tonleiste select option { background: #1c2431; color: var(--text); }
   #tonleiste .zeit { font-size: 13px; color: var(--gedaempft); font-variant-numeric: tabular-nums; }
 
   .bereich-knopf {
