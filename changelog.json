@@ -1,6 +1,15 @@
 {
- "latest": 67900,
+ "latest": 67901,
  "entries": [
+  {
+   "versionCode": 67901,
+   "versionName": "6.79.1",
+   "date": "2026-11-19",
+   "critical": false,
+   "title": "v6.79.1 — DJ-Plattenspieler und Hologramm im Querformat",
+   "de": "• VERBESSERT: DJ-Plattenspieler im Querformat und auf Tablet und Foldable: links der Plattenteller so groß, wie die Höhe erlaubt, rechts Titel, Wellenform, Pitch und Bedienung – nichts wird mehr abgeschnitten.\n• VERBESSERT: Sci-Fi-Hologramm im Querformat: links die Projektion in ihren gewohnten Proportionen, rechts Titel, Zeit und Knöpfe. Hochkant am Handy bleiben beide Ansichten, wie sie waren.\n• VERBESSERT: Bandmaschine quer am Handy: Die Zeitzeile hat unten wieder etwas Luft zum Bildrand.",
+   "en": "• IMPROVED: DJ turntable in landscape and on tablets and foldables: the platter on the left as large as the height allows, title, waveform, pitch and controls on the right – nothing is cut off any more.\n• IMPROVED: Sci-fi hologram in landscape: the projection on the left in its usual proportions, title, time and buttons on the right. On a phone held upright both views stay as they were.\n• IMPROVED: Reel-to-reel on a phone held sideways: the time line has some room to the screen edge again."
+  },
   {
    "versionCode": 67900,
    "versionName": "6.79.0",
@@ -126,15 +135,6 @@
    "title": "v6.74.6 — Wetter-DJ: ein Symbol je Wetterlage",
    "de": "• VERBESSERT: Die Wetterkarte im Wetter-DJ zeigt jetzt ein Symbol je Wetterlage – Regenschirm bei Regen, Schneeflocke bei Schnee, Mond bei klarer Nacht. Vorher stand tagsüber immer eine Sonne dort.",
    "en": "• IMPROVED: The weather card in Weather DJ now shows a symbol for each kind of weather – an umbrella for rain, a snowflake for snow, a moon for a clear night. Before, it always showed a sun during the day."
-  },
-  {
-   "versionCode": 67405,
-   "versionName": "6.74.5",
-   "date": "2026-10-08",
-   "critical": false,
-   "title": "v6.74.5 — „Einstellungen öffnen“ auf Xiaomi-Geräten",
-   "de": "• FIX: „Einstellungen öffnen“ führt auf Xiaomi-Geräten jetzt zur App-Info von Android. Dort lassen sich die Berechtigungen unter „App-Berechtigungen“ erlauben – vorher landete man auf einer Seite, auf der das nicht ging.",
-   "en": "• FIX: On Xiaomi devices “Open settings” now leads to Android’s app info page. Permissions can be allowed there under “App permissions” – before, it led to a page where that was not possible."
   }
  ]
 }
