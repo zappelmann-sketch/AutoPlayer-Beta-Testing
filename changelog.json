@@ -1,6 +1,15 @@
 {
- "latest": 67903,
+ "latest": 67904,
  "entries": [
+  {
+   "versionCode": 67904,
+   "versionName": "6.79.4",
+   "date": "2026-11-19",
+   "critical": false,
+   "title": "v6.79.4 — Bibliothek im Querformat zweigeteilt",
+   "de": "• VERBESSERT: Bibliothek im Querformat (Handy quer, Tablet, Foldable): Links stehen Mini-Player, Playlist-Chips, Reiter und Suche, rechts die Liste über die volle Höhe mit der Alphabet-Leiste darüber. Am Handy quer sind jetzt vier Songzeilen zu sehen statt einer. Hochkant bleibt alles, wie es war.",
+   "en": "• IMPROVED: Library in landscape (phone sideways, tablet, foldable): mini player, playlist chips, tabs and search stand on the left, the list fills the full height on the right with the alphabet bar above it. A phone held sideways now shows four song rows instead of one. Upright everything stays as it was."
+  },
   {
    "versionCode": 67903,
    "versionName": "6.79.3",
@@ -126,15 +135,6 @@
    "title": "v6.74.9 — Absturzberichte: Schalter wirkt sofort",
    "de": "• FIX: Der Schalter „Crash Reports“ wirkt jetzt sofort. Bisher griff er erst nach einem Neustart der App.\n• FIX: Stürzt die App im Hintergrund ab, kommt die Rückfrage zum Bericht jetzt, sobald du die App wieder öffnest.\n• VERBESSERT: Das Absturzfenster erscheint schneller, und das lokale Protokoll wird bei jedem Absturz geschrieben.",
    "en": "• FIX: The “Crash Reports” switch now takes effect at once. Before, it only applied after restarting the app.\n• FIX: If the app crashes in the background, the question about the report now comes as soon as you open the app again.\n• IMPROVED: The crash window appears faster, and the local log is written at every crash."
-  },
-  {
-   "versionCode": 67408,
-   "versionName": "6.74.8",
-   "date": "2026-10-08",
-   "critical": false,
-   "title": "v6.74.8 — Wetter-Regeln holen das Wetter selbst",
-   "de": "• FIX: Kontext-Regeln mit Wetter, Temperatur oder Starker Wind bekommen das aktuelle Wetter jetzt selbst. Bisher klappte das nur, wenn der Wetter-DJ eingeschaltet oder der Monitor geöffnet war.\n• FIX: Die Regelauswertung im Kontext-Monitor zeigte Bedingungen zu Wetter, Tempo, Aktivität, Ort und Sensoren immer als nicht erfüllt. Jetzt prüft sie mit denselben Werten wie die Regeln selbst.\n• Datenschutzerklärung (Stand 08.10.2026): Der Wetterdienst steht jetzt auch beim Wetter im Kontext Auto-Wechsel. Gestrichen ist die Angabe, die Zeitzone werde gesendet – das geschieht nicht.\n• Der Hinweis „kein Internet nötig“ beim Kontext Auto-Wechsel ist gestrichen – für Wetter und Natur in der Nähe stimmte er nicht.",
-   "en": "• FIX: Context rules on weather, temperature or strong wind now get the current weather themselves. Before, that only worked while Weather DJ was switched on or the monitor was open.\n• FIX: The rule check in the context monitor always showed conditions on weather, speed, activity, place and sensors as not met. It now checks with the same values the rules themselves use.\n• Privacy policy (as of 8 Oct 2026): the weather service is now also listed for weather in Context Auto-Switch. The statement that the time zone is sent has been removed – it is not.\n• The note “no internet required” in Context Auto-Switch has been removed – it was not true for weather and nearby nature."
   }
  ]
 }
