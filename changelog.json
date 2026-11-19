@@ -1,6 +1,15 @@
 {
- "latest": 67904,
+ "latest": 67905,
  "entries": [
+  {
+   "versionCode": 67905,
+   "versionName": "6.79.5",
+   "date": "2026-11-19",
+   "critical": false,
+   "title": "v6.79.5 — Loop Mixer am Handy quer",
+   "de": "• VERBESSERT: Loop Mixer am Handy quer: Titel und Werkzeuge stehen in einer Zeile, die Reiter Timeline, Pad Mode und Synth Studio am Ende der Projektzeile, Bildlaufleiste und Zoom nebeneinander. Timeline, Pads und Synth bekommen rund 100 dp mehr Höhe. Alle Knöpfe bleiben, hochkant und am Tablet ändert sich nichts.",
+   "en": "• IMPROVED: Loop Mixer on a phone held sideways: title and tools share one row, the Timeline, Pad Mode and Synth Studio tabs sit at the end of the project row, scrollbar and zoom side by side. Timeline, pads and synth get about 100 dp more height. Every button stays; upright and on tablets nothing changes."
+  },
   {
    "versionCode": 67904,
    "versionName": "6.79.4",
@@ -126,15 +135,6 @@
    "title": "v6.74.10 — Absturzberichte ohne Dateipfade",
    "de": "• VERBESSERT: Absturzberichte enthalten keine Datei- und Ordnernamen mehr. Die App nimmt sie aus der Fehlermeldung, bevor der Bericht entsteht; von Internetadressen bleibt nur der Servername.\n• FIX: Die Datenschutzerklärung nennt jetzt richtig den freien und gesamten Gerätespeicher im Bericht – bisher stand dort „Arbeitsspeicher“.",
    "en": "• IMPROVED: Crash reports no longer contain file or folder names. The app removes them from the error message before the report is created; of web addresses only the server name remains.\n• FIX: The privacy policy now correctly names the free and total device storage in a report – it used to say “memory”."
-  },
-  {
-   "versionCode": 67409,
-   "versionName": "6.74.9",
-   "date": "2026-10-09",
-   "critical": false,
-   "title": "v6.74.9 — Absturzberichte: Schalter wirkt sofort",
-   "de": "• FIX: Der Schalter „Crash Reports“ wirkt jetzt sofort. Bisher griff er erst nach einem Neustart der App.\n• FIX: Stürzt die App im Hintergrund ab, kommt die Rückfrage zum Bericht jetzt, sobald du die App wieder öffnest.\n• VERBESSERT: Das Absturzfenster erscheint schneller, und das lokale Protokoll wird bei jedem Absturz geschrieben.",
-   "en": "• FIX: The “Crash Reports” switch now takes effect at once. Before, it only applied after restarting the app.\n• FIX: If the app crashes in the background, the question about the report now comes as soon as you open the app again.\n• IMPROVED: The crash window appears faster, and the local log is written at every crash."
   }
  ]
 }
