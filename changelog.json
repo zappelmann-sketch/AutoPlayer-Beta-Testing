@@ -1,6 +1,15 @@
 {
- "latest": 67901,
+ "latest": 67902,
  "entries": [
+  {
+   "versionCode": 67902,
+   "versionName": "6.79.2",
+   "date": "2026-11-19",
+   "critical": false,
+   "title": "v6.79.2 — Loop Mixer: Pads im Querformat",
+   "de": "• FIX: Loop Mixer, Pad-Modus im Querformat (Tablet, Foldable, Handy quer): Die 16 Pads lagen übereinander und über den Reitern. Jetzt stehen sie als Quadrat in der linken Hälfte, Hinweis und Aufnahme-/Quantisier-Leiste in der rechten. Hochkant bleibt alles, wie es war.",
+   "en": "• FIX: Loop Mixer, pad mode in landscape (tablet, foldable, phone held sideways): the 16 pads lay on top of each other and over the tabs. Now they form a square on the left half, the hint and the record/quantize bar sit on the right half. Upright everything stays as it was."
+  },
   {
    "versionCode": 67901,
    "versionName": "6.79.1",
@@ -126,15 +135,6 @@
    "title": "v6.74.7 — Wetter-DJ: Der Schalter bestimmt",
    "de": "• FIX: Im Wetter-DJ bestimmt jetzt der Schalter. Ist er aus, zeigt der Bildschirm weder Wetter noch Titelliste und fragt nicht nach dem Standort – die Frage kommt erst beim Einschalten.\n• FIX: Das Einschalten startet keine Musik mehr. Gespielt wird mit dem Abspielknopf.\n• NEU: Ein Tipp auf einen Titel der Liste spielt sie ab dieser Stelle.\n• Ausschalten räumt den Bildschirm auf und nimmt die Schaltfläche des Wetter-DJ aus der Bibliothek.",
    "en": "• FIX: In Weather DJ the switch now decides. Switched off, the screen shows neither weather nor track list and does not ask for the location – the question comes only when you switch it on.\n• FIX: Switching it on no longer starts music. Play the list with the play button.\n• NEW: Tapping a track in the list plays it from there.\n• Switching it off clears the screen and removes the Weather DJ button from the library."
-  },
-  {
-   "versionCode": 67406,
-   "versionName": "6.74.6",
-   "date": "2026-10-08",
-   "critical": false,
-   "title": "v6.74.6 — Wetter-DJ: ein Symbol je Wetterlage",
-   "de": "• VERBESSERT: Die Wetterkarte im Wetter-DJ zeigt jetzt ein Symbol je Wetterlage – Regenschirm bei Regen, Schneeflocke bei Schnee, Mond bei klarer Nacht. Vorher stand tagsüber immer eine Sonne dort.",
-   "en": "• IMPROVED: The weather card in Weather DJ now shows a symbol for each kind of weather – an umbrella for rain, a snowflake for snow, a moon for a clear night. Before, it always showed a sun during the day."
   }
  ]
 }
