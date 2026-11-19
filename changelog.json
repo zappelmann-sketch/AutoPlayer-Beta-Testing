@@ -1,6 +1,15 @@
 {
- "latest": 67902,
+ "latest": 67903,
  "entries": [
+  {
+   "versionCode": 67903,
+   "versionName": "6.79.3",
+   "date": "2026-11-19",
+   "critical": false,
+   "title": "v6.79.3 — Vollbild-Wellenform im Querformat",
+   "de": "• VERBESSERT: Vollbild-Wellenform im Querformat: Der Zoom-Regler steht jetzt senkrecht am rechten Rand (oben näher heran, unten das ganze Lied) und liegt nicht mehr auf der Wellenform. Ringe, Cover und Wellenform passen zwischen Kopfzeile und Bedienleiste – nichts verdeckt mehr die Wellenform. Hochkant bleibt alles, wie es war.\n• VERBESSERT: Loop Mixer, Timeline am Handy quer: Das zweite Projektnamen-Feld entfällt dort (der Name bleibt oben in der Projektzeile bearbeitbar) – die Spuren bekommen mehr Höhe.",
+   "en": "• IMPROVED: Fullscreen waveform in landscape: the zoom slider now stands upright at the right edge (up = closer, down = whole song) and no longer lies on the waveform. Rings, cover and waveform fit between the header and the controls – nothing covers the waveform any more. Upright everything stays as it was.\n• IMPROVED: Loop Mixer, timeline on a phone held sideways: the second project name field is left out there (the name stays editable in the project row at the top) – the tracks get more height."
+  },
   {
    "versionCode": 67902,
    "versionName": "6.79.2",
@@ -126,15 +135,6 @@
    "title": "v6.74.8 — Wetter-Regeln holen das Wetter selbst",
    "de": "• FIX: Kontext-Regeln mit Wetter, Temperatur oder Starker Wind bekommen das aktuelle Wetter jetzt selbst. Bisher klappte das nur, wenn der Wetter-DJ eingeschaltet oder der Monitor geöffnet war.\n• FIX: Die Regelauswertung im Kontext-Monitor zeigte Bedingungen zu Wetter, Tempo, Aktivität, Ort und Sensoren immer als nicht erfüllt. Jetzt prüft sie mit denselben Werten wie die Regeln selbst.\n• Datenschutzerklärung (Stand 08.10.2026): Der Wetterdienst steht jetzt auch beim Wetter im Kontext Auto-Wechsel. Gestrichen ist die Angabe, die Zeitzone werde gesendet – das geschieht nicht.\n• Der Hinweis „kein Internet nötig“ beim Kontext Auto-Wechsel ist gestrichen – für Wetter und Natur in der Nähe stimmte er nicht.",
    "en": "• FIX: Context rules on weather, temperature or strong wind now get the current weather themselves. Before, that only worked while Weather DJ was switched on or the monitor was open.\n• FIX: The rule check in the context monitor always showed conditions on weather, speed, activity, place and sensors as not met. It now checks with the same values the rules themselves use.\n• Privacy policy (as of 8 Oct 2026): the weather service is now also listed for weather in Context Auto-Switch. The statement that the time zone is sent has been removed – it is not.\n• The note “no internet required” in Context Auto-Switch has been removed – it was not true for weather and nearby nature."
-  },
-  {
-   "versionCode": 67407,
-   "versionName": "6.74.7",
-   "date": "2026-10-08",
-   "critical": false,
-   "title": "v6.74.7 — Wetter-DJ: Der Schalter bestimmt",
-   "de": "• FIX: Im Wetter-DJ bestimmt jetzt der Schalter. Ist er aus, zeigt der Bildschirm weder Wetter noch Titelliste und fragt nicht nach dem Standort – die Frage kommt erst beim Einschalten.\n• FIX: Das Einschalten startet keine Musik mehr. Gespielt wird mit dem Abspielknopf.\n• NEU: Ein Tipp auf einen Titel der Liste spielt sie ab dieser Stelle.\n• Ausschalten räumt den Bildschirm auf und nimmt die Schaltfläche des Wetter-DJ aus der Bibliothek.",
-   "en": "• FIX: In Weather DJ the switch now decides. Switched off, the screen shows neither weather nor track list and does not ask for the location – the question comes only when you switch it on.\n• FIX: Switching it on no longer starts music. Play the list with the play button.\n• NEW: Tapping a track in the list plays it from there.\n• Switching it off clears the screen and removes the Weather DJ button from the library."
   }
  ]
 }
