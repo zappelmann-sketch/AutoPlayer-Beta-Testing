@@ -1,6 +1,24 @@
 {
- "latest": 67905,
+ "latest": 68001,
  "entries": [
+  {
+   "versionCode": 68001,
+   "versionName": "6.80.1",
+   "date": "2026-11-20",
+   "critical": false,
+   "title": "v6.80.1 — Querformat auch für Unterseiten und Dialoge",
+   "de": "• VERBESSERT: Querformat auch für die Unterseiten: Gesten-Anleitung und Test-Bereich, Themes je Level, Track-Cutter, Nostalgie „An diesem Tag“ und „Zeitreise“, laufende Party, Fernbedienung im Beifahrer-Modus und der Rückblick von Music Wrapped stehen quer nebeneinander; Datenschutz, Nutzungsbedingungen und Impressum lesen sich quer in einer Spalte gut lesbarer Breite. Dialoge sind am Handy quer breiter.\n• BEHOBEN: Am Handy quer fehlten in der Pro-Kaufkarte die Kaufknöpfe, im Track-Cutter der Speichern-Knopf, im Import-Dialog des Sharing Hub ein Weg, im QR-Dialog die Knöpfe; mehrere Dialoge waren abgeschnitten. Beim Drehen schließt sich der Import-Dialog nicht mehr, und ruhende Vumikio Pets bleiben im Bild. Im Beifahrer-Modus wartet der Host wieder mit derselben PIN, wenn der Beifahrer trennt, und der Beifahrer sucht wieder, wenn der Host trennt; die Reiter brechen bei großer Schrift nicht mehr mitten im Wort um. Auf Android 10 und 11 stimmen die Ansichten jetzt auch nach dem Drehen.",
+   "en": "• IMPROVED: Landscape for the sub-screens too: gesture guide and test area, themes per level, Track Cutter, Nostalgia \"On This Day\" and \"Time Travel\", a running party, the passenger remote and the Music Wrapped story sit side by side; privacy policy, terms and legal notice read as one column of comfortable width. On a phone held sideways dialogs are wider.\n• FIXED: On a phone held sideways the Pro sheet lacked its buy buttons, Track Cutter its save button, the Sharing Hub import dialog one of its ways and the QR dialog its buttons; several dialogs were cut off. Turning the device no longer closes the import dialog, and resting Vumikio Pets stay on the screen. In passenger mode the host waits again under the same PIN when the passenger disconnects, and the passenger searches again when the host disconnects; with a large font the tabs no longer break inside a word. On Android 10 and 11 the screens are now right after turning, too."
+  },
+  {
+   "versionCode": 68000,
+   "versionName": "6.80.0",
+   "date": "2026-11-20",
+   "critical": false,
+   "title": "v6.80.0 — Querformat für alle Screens",
+   "de": "• VERBESSERT: Querformat auf Handy, Tablet und Foldable für alle Screens des Menüs: Status und Auswahl links, Einstellungen, Listen und Ergebnisse rechts; die Einstellungen mit Abschnittsverzeichnis, Meine Orte mit der Karte links, Heartbeat Sync und Music DNA mit ihrem Bild links. Am Handy quer ist die Titelleiste flacher, der große Player hat eine Kopfzeile statt drei.\n• BEHOBEN: Am Handy quer ging der Ebenen-Dialog der Wellenform nicht auf, im Sleep Timer fehlten drei Zeiten, Drive Mode DJ scrollte nicht, und mehrere Dialoge waren abgeschnitten. Hochkant ändert sich nichts.",
+   "en": "• IMPROVED: Landscape on phones, tablets and foldables for every screen of the menu: status and choices on the left, settings, lists and results on the right; settings with an index of their sections, My places with the map on the left, Heartbeat Sync and Music DNA with their picture on the left. On a phone held sideways the title bar is lower and the big player has one header row instead of three.\n• FIXED: On a phone held sideways the layer dialog of the waveform did not open, the sleep timer lacked three times, Drive Mode DJ did not scroll, and several dialogs were cut off. Upright nothing changes."
+  },
   {
    "versionCode": 67905,
    "versionName": "6.79.5",
@@ -117,24 +135,6 @@
    "title": "v6.76.0 — Herzschlag-Sync",
    "de": "• NEU: Herzschlag-Sync, ganz neu gebaut – dein Puls kommt live per Bluetooth von deiner Uhr oder deinem Brustgurt. Er läuft in der ganzen App weiter, im Hintergrund zeigt eine stille Meldung „Herzschlag-Sync aktiv“.\n• NEU: Herzschlag-Sessions – wähle ein Ziel wie Relax, Cooldown oder Push, und die App führt dich Lied für Lied über eine Musikkurve dorthin. In der Automatik plant sie nach deinem Puls neu; am Ende zeigt ein Rückblick Pulskurve, Zonen und die passendsten Lieder.\n• NEU: Puls-Vorlagen, Herzschlag-Vibration, ein Leuchten der Bühne im Herztakt, Pets, die deinem Puls folgen, und der Cool-Bonus in Surf the Beat.\n• FIX: Bass-Vibration, Pets, Bandmaschine und die Ringe der Vollbild-Wellenform bekommen jetzt echte Frequenzbänder – der Frequenzbereich der Bass-Vibration wirkt.\n• Dein Puls bleibt auf dem Gerät: nur im Arbeitsspeicher, nie gespeichert, nie übertragen.",
    "en": "• NEW: Heartbeat Sync, completely rebuilt – your heart rate comes live via Bluetooth from your watch or chest strap. It keeps running throughout the app; in the background a silent notice shows “Heartbeat Sync active”.\n• NEW: Heartbeat sessions – choose a goal such as Relax, Cooldown or Push, and the app leads you there song by song along a music curve. In automatic mode it plans anew from your heart rate; at the end a look back shows the heart rate curve, zones and the best-fitting songs.\n• NEW: Pulse templates, heartbeat vibration, a glow on the stage in time with your heart, Pets that follow your heart rate, and the Cool bonus in Surf the Beat.\n• FIX: Bass vibration, Pets, the tape machine and the rings of the fullscreen waveform now get real frequency bands – the frequency range of the bass vibration takes effect.\n• Your heart rate stays on the device: in memory only, never stored, never transmitted."
-  },
-  {
-   "versionCode": 67500,
-   "versionName": "6.75.0",
-   "date": "2026-10-17",
-   "critical": false,
-   "title": "v6.75.0 — Surf the Beat",
-   "de": "• NEU: Surf the Beat – ein Spiel auf der Bühne des Fullscreen-Visualizers. Aus der Musik, die gerade läuft, wird ein Tunnel aus Licht; deine Vumikio Pets surfen hindurch, weichen Sperrblöcken aus und fangen Noten, Sterne, Herzen und ihre eigene Beute.\n• NEU: Zehn Level mit Fähigkeiten, Groove-Kette, Gabelungen, Phasen wie Welle, Sog und Zeitlupe, Riesenwelle, Sturm und Bosslauf – nach dem Sieg das Erinnerungs-Finale. Oder der Endlos-Modus, in dem es nichts zu verlieren gibt.\n• NEU: Farbwelten für den Tunnel nach dem Genre des Liedes, eigene Spiel-Themes im Theme-Builder (Pro), ein leiser Spiel-Ton, Highscore und Trophäen – alles in Sicherung und Geräte-Transfer.\n• Einschalten: Vumikio Pets → Kachel „Spiele“, dann den Fullscreen-Visualizer öffnen.",
-   "en": "• NEW: Surf the Beat – a game on the stage of the fullscreen visualiser. The music that is playing becomes a tunnel of light; your Vumikio Pets surf through it, dodge blockers and catch notes, stars, hearts and their own prey.\n• NEW: Ten levels with abilities, a groove chain, forks, phases like wave, whirl and slow motion, the giant wave, a storm and a boss run – and after a win, the finale of memories. Or endless mode, where there is nothing to lose.\n• NEW: Colour worlds for the tunnel by the genre of the song, your own game themes in the Theme Builder (Pro), a quiet game sound, highscore and trophies – all included in backup and device transfer.\n• To switch it on: Vumikio Pets → \"Games\" tile, then open the fullscreen visualiser."
-  },
-  {
-   "versionCode": 67410,
-   "versionName": "6.74.10",
-   "date": "2026-10-09",
-   "critical": false,
-   "title": "v6.74.10 — Absturzberichte ohne Dateipfade",
-   "de": "• VERBESSERT: Absturzberichte enthalten keine Datei- und Ordnernamen mehr. Die App nimmt sie aus der Fehlermeldung, bevor der Bericht entsteht; von Internetadressen bleibt nur der Servername.\n• FIX: Die Datenschutzerklärung nennt jetzt richtig den freien und gesamten Gerätespeicher im Bericht – bisher stand dort „Arbeitsspeicher“.",
-   "en": "• IMPROVED: Crash reports no longer contain file or folder names. The app removes them from the error message before the report is created; of web addresses only the server name remains.\n• FIX: The privacy policy now correctly names the free and total device storage in a report – it used to say “memory”."
   }
  ]
 }
