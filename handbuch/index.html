@@ -5703,7 +5703,7 @@ Mikrofon-Knopf der App.</p>
 <div class="vorlese-leiste">
 <button class="vorlese-knopf" data-datei="kontext" data-anker="kontext" data-stimmen="w m" data-titel="Kontext Auto-Wechsel" data-haupt="1" data-beschriftung="&#9654; Vorlesen">&#9654; Vorlesen</button>
 <div class="vorlese-balken"><i></i></div>
-<span class="vorlese-dauer" data-w="6:16" data-m="7:06">6:16</span>
+<span class="vorlese-dauer" data-w="7:22" data-m="8:02">7:22</span>
 <span class="gehoert-haken" title="schon geh&ouml;rt">&#10003;</span>
 <a class="vorlese-neben inhalt-knopf" href="#inh-kontext" title="Zum Inhaltsverzeichnis, an die Stelle dieses Kapitels">&#8593; Inhalt</a>
 </div>
@@ -5735,11 +5735,13 @@ einer Ausnahme, siehe unten.</p>
 <p>Alle Bedingungen einer Regel m&uuml;ssen <b>gleichzeitig</b> zutreffen. Jede
 l&auml;sst sich mit <b>NICHT</b> umkehren.</p>
 
-<h4>Die sechs Aktionen</h4>
+<h4>Die zehn Aktionen</h4>
 <ul>
   <li><b>Queue wechseln</b> &middot; <b>Playlist abspielen</b> &middot;
-      <b>Smart Playlist</b></li>
-  <li><b>Auto-Playlist</b> &middot; <b>Queue-Vorlage</b> &middot; <b>Ordner abspielen</b></li>
+      <b>Smarte Playlist</b></li>
+  <li><b>Auto-Playlist</b> &middot; <b>Queue-Vorlage</b> &middot; <b>Ordner abspielen</b> &middot;
+      <b>Genre abspielen</b> &middot; <b>K&uuml;nstler abspielen</b> &middot; <b>Album abspielen</b> &middot;
+      <b>Favoriten abspielen</b></li>
 </ul>
 
 <h4>Die 100 Vorlagen</h4>
@@ -5764,7 +5766,9 @@ anpassen. Sie liegen in zehn Kategorien:</p>
   <li><b>+</b> f&uuml;r eine neue Regel &ndash; oder eine Vorlage w&auml;hlen</li>
   <li>Namen vergeben</li>
   <li>Bedingungen hinzuf&uuml;gen</li>
-  <li>Aktion und Ziel w&auml;hlen</li>
+  <li>Aktion und Ziel w&auml;hlen &ndash; das Ziel kommt aus einer Liste mit der Titelzahl je
+      Eintrag, lange Listen haben ein Suchfeld. Ohne Ziel l&auml;sst sich die Regel nicht speichern;
+      nur <b>Favoriten abspielen</b> braucht keins.</li>
   <li><b>Priorit&auml;t</b> festlegen &ndash; bei mehreren zutreffenden Regeln gewinnt die
       h&ouml;here</li>
   <li><b>Abklingzeit</b> festlegen &ndash; danach ruht die Regel eine Weile</li>
@@ -5849,8 +5853,11 @@ stilllegt.</p>
 
 <h4>Zusammenspiel</h4>
 <ul>
-  <li>Greift auf Warteschlangen, Playlists, smarte Playlists, Auto-Playlists, Vorlagen und
-      Ordner zu.</li>
+  <li>Greift auf Warteschlangen, Playlists, smarte Playlists, Auto-Playlists, Vorlagen, Ordner,
+      Genres, K&uuml;nstler, Alben und Favoriten zu &ndash; immer auf die Bibliothek, wie ihre Reiter
+      sie zeigen: Ausgeblendetes spielt eine Regel nie. K&uuml;nstler, Alben und Ordner laufen nach
+      Titelnummer, Genres und Favoriten gemischt. Gibt es das Ziel nicht mehr, spielt die Regel
+      nichts.</li>
   <li><b>Meine Orte</b> liefert die Punkte f&uuml;r die Bedingung <b>Bekannter Ort</b>.</li>
   <li>Manche Bedingungen brauchen eine <b>Berechtigung</b>: Geschwindigkeit, H&ouml;he, Ort,
       Wetter und WLAN-Netzwerk den Standort; die Bluetooth-Bedingungen Bluetooth; Schritte,
@@ -5877,7 +5884,9 @@ stilllegt.</p>
   <li>Die <b>Kopfh&ouml;rer</b>-Bedingung meint nur gesteckte. Kabellose erkennt man
       &uuml;ber Bluetooth.</li>
   <li>Zwei Regeln f&uuml;r Hin- und R&uuml;ckweg mit unterschiedlichen Zeiten sind das
-      naheliegendste Beispiel &ndash; und funktionieren am zuverl&auml;ssigsten.</li>
+      naheliegendste Beispiel &ndash; und funktionieren am zuverl&auml;ssigsten. F&uuml;r die Fahrt
+      selbst reicht oft eine: Bedingung <b>Bluetooth-Ger&auml;t</b> (dein Auto), Aktion
+      <b>Favoriten abspielen</b>.</li>
 </ul>
 </article>
 <article id="orte">
@@ -20143,7 +20152,7 @@ app's microphone button.</p>
 <div class="vorlese-leiste">
 <button class="vorlese-knopf" data-datei="en/kontext" data-anker="en-kontext" data-stimmen="w m" data-titel="Context Auto-Switch" data-haupt="1" data-beschriftung="&#9654; Read aloud">&#9654; Read aloud</button>
 <div class="vorlese-balken"><i></i></div>
-<span class="vorlese-dauer" data-w="6:59" data-m="6:15">6:59</span>
+<span class="vorlese-dauer" data-w="7:38" data-m="7:10">7:38</span>
 <span class="gehoert-haken" title="already heard">&#10003;</span>
 <a class="vorlese-neben inhalt-knopf" href="#en-inh-kontext" title="Back to the table of contents, at this chapter">&#8593; Contents</a>
 </div>
@@ -20175,11 +20184,13 @@ below.</p>
 <p>All conditions of a rule must be true <b>at the same time</b>. Each one
 can be reversed with <b>NOT</b>.</p>
 
-<h4>The six actions</h4>
+<h4>The ten actions</h4>
 <ul>
   <li><b>Switch Queue</b> &middot; <b>Play Playlist</b> &middot;
       <b>Smart Playlist</b></li>
-  <li><b>Auto Playlist</b> &middot; <b>Queue Preset</b> &middot; <b>Play Folder</b></li>
+  <li><b>Auto Playlist</b> &middot; <b>Queue Preset</b> &middot; <b>Play Folder</b> &middot;
+      <b>Play Genre</b> &middot; <b>Play Artist</b> &middot; <b>Play Album</b> &middot;
+      <b>Play Favorites</b></li>
 </ul>
 
 <h4>The 100 presets</h4>
@@ -20204,7 +20215,9 @@ adjust it. They come in ten categories:</p>
   <li><b>+</b> for a new rule &ndash; or pick a preset</li>
   <li>Give it a name</li>
   <li>Add conditions</li>
-  <li>Choose the action and the target</li>
+  <li>Choose the action and the target &ndash; the target comes from a list showing the number of
+      songs for each entry; long lists have a search field. Without a target the rule can&rsquo;t be
+      saved; only <b>Play Favorites</b> needs none.</li>
   <li>Set the <b>Priority</b> &ndash; when several rules match, the higher one
       wins</li>
   <li>Set the <b>Cooldown</b> &ndash; after that, the rule rests for a while</li>
@@ -20288,8 +20301,10 @@ list on endless repeat does not shut down Drive Mode forever.</p>
 
 <h4>How it works with other features</h4>
 <ul>
-  <li>Uses queues, playlists, smart playlists, auto playlists, presets and
-      folders.</li>
+  <li>Uses queues, playlists, smart playlists, auto playlists, presets, folders, genres,
+      artists, albums and favorites &ndash; always the library as its tabs show it: a rule never
+      plays anything you hid. Artists, albums and folders play in track order, genres and favorites
+      shuffled. If the target no longer exists, the rule plays nothing.</li>
   <li><b>My places</b> supplies the points for the condition <b>Known place</b>.</li>
   <li>Some conditions need a <b>permission</b>: speed, altitude, place,
       weather and Wi-Fi network need location; the Bluetooth conditions need Bluetooth; steps,
@@ -20316,7 +20331,8 @@ list on endless repeat does not shut down Drive Mode forever.</p>
   <li>The <b>Headphones</b> condition only means plugged-in ones. Wireless ones are detected
       via Bluetooth.</li>
   <li>Two rules for the way there and the way back with different times are the most
-      obvious example &ndash; and work the most reliably.</li>
+      obvious example &ndash; and work the most reliably. For the drive itself one is often
+      enough: condition <b>Bluetooth Device</b> (your car), action <b>Play Favorites</b>.</li>
 </ul>
 </article>
 <article id="en-orte">

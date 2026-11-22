@@ -1,7 +1,7 @@
 /* Donnerstag - Kontext-Regeln (Wochentags-Konzept Datei 09 und 32), Stil Pixel-Aufbau.
    Zahlen belegt in final-claude-code/analyse/ZAHLEN-BELEG.md (Donnerstag Nr. 14-17 und "Muss geaendert werden"
-   Punkte 10-12): 29 Bedingungen in vier Gruppen, jede mit NICHT umkehrbar; 5 nutzbare Aktionen ("Ordner
-   abspielen" ist im Regel-Editor nicht waehlbar und ohne Wirkung, bleibt deshalb weg); 101 Regel-Vorlagen in
+   Punkte 10-12): 29 Bedingungen in vier Gruppen, jede mit NICHT umkehrbar; seit 6.81.0 (F-168, 22.11.2026) 10
+   Aktionen - dazu Genre, Kuenstler, Album, Ordner und Favoriten aus der Bibliothek; 101 Regel-Vorlagen in
    10 Kategorien plus 10 Komplett-Setups, "Pendeln" ist eine Kategorie, keine Vorlage; Abklingzeit ab Werk 30 min;
    Wetter hoechstens alle 30 min mit auf etwa 110 m gerundeten Koordinaten, "Natur in der Naehe" ab Werk aus.
    Namen aus strings.xml (DE/EN), Texte aus dem Handbuch (07_50, 07_50b, 07_53, 13_102 Datenschutz, 12_93).
@@ -70,13 +70,13 @@
       name: { de: 'Aktionen', en: 'Actions' }, pet: 'foxy-color', effekt: 'aktionen',
       titel1: { de: 'Dann wechselt', en: 'Then the music' }, titel2: { de: 'die Musik.', en: 'switches.' },
       text: {
-        de: 'Trifft alles zu, führt die Regel ihre Aktion aus: Playlist abspielen, Smarte Playlist, Auto-Playlist, Queue wechseln oder Queue-Vorlage. Danach ruht sie eine Weile – so springt die Musik nicht alle paar Minuten um.',
-        en: 'When everything matches, the rule runs its action: Play Playlist, Smart Playlist, Auto Playlist, Switch Queue or Queue Preset. Then it rests for a while – so the music doesn’t jump around every few minutes.',
+        de: 'Trifft alles zu, führt die Regel ihre Aktion aus: eine Playlist, Smarte Playlist oder Auto-Playlist, eine Queue oder Queue-Vorlage – oder direkt aus deiner Bibliothek ein Genre, einen Künstler, ein Album, einen Ordner oder deine Favoriten. Danach ruht sie eine Weile – so springt die Musik nicht alle paar Minuten um.',
+        en: 'When everything matches, the rule runs its action: a playlist, smart playlist or auto playlist, a queue or queue preset – or straight from your library a genre, an artist, an album, a folder or your favorites. Then it rests for a while – so the music doesn’t jump around every few minutes.',
       },
-      fakten: [{ de: '5 Aktionen', en: '5 actions' }, { de: 'Abklingzeit: ab Werk 30 Min.', en: 'Cooldown: 30 min by default' }],
-      // eigene Aufnahme (Datei 50 Punkt 13): die Auswahl der fuenf Aktionen einer Regel
+      fakten: [{ de: '10 Aktionen', en: '10 actions' }, { de: 'Abklingzeit: ab Werk 30 Min.', en: 'Cooldown: 30 min by default' }],
+      // eigene Aufnahme (Datei 50 Punkt 13, neu 22.11.2026 mit 6.81.0): die Auswahl der zehn Aktionen einer Regel
       bilder: [{ de: 'img/tage/do-aktionen-de.webp', en: 'img/tage/do-aktionen-en.webp', ar: '540 / 1200',
-        alt: { de: 'Die fünf Aktionen einer Regel', en: 'The five actions of a rule' }, kapitel: 'kontext' }],
+        alt: { de: 'Die zehn Aktionen einer Regel', en: 'The ten actions of a rule' }, kapitel: 'kontext' }],
     },
     {
       name: { de: 'Kontext-Monitor', en: 'Context Monitor' }, pet: 'benny-motion', effekt: 'monitor',

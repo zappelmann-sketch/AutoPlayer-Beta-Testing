@@ -3495,10 +3495,10 @@ Regeln nach dem Muster *wenn … dann …*. Trifft alles zu, was in einer Regel 
 
 Alle Bedingungen einer Regel müssen **gleichzeitig** zutreffen. Jede lässt sich mit **NICHT** umkehren.
 
-#### Die sechs Aktionen
+#### Die zehn Aktionen
 
-- **Queue wechseln** · **Playlist abspielen** · **Smart Playlist**
-- **Auto-Playlist** · **Queue-Vorlage** · **Ordner abspielen**
+- **Queue wechseln** · **Playlist abspielen** · **Smarte Playlist**
+- **Auto-Playlist** · **Queue-Vorlage** · **Ordner abspielen** · **Genre abspielen** · **Künstler abspielen** · **Album abspielen** · **Favoriten abspielen**
 
 #### Die 100 Vorlagen
 
@@ -3516,7 +3516,7 @@ Statt bei Null anzufangen, lässt sich eine fertige Regel übernehmen und anpass
 3. **+** für eine neue Regel – oder eine Vorlage wählen
 4. Namen vergeben
 5. Bedingungen hinzufügen
-6. Aktion und Ziel wählen
+6. Aktion und Ziel wählen – das Ziel kommt aus einer Liste mit der Titelzahl je Eintrag, lange Listen haben ein Suchfeld. Ohne Ziel lässt sich die Regel nicht speichern; nur **Favoriten abspielen** braucht keins.
 7. **Priorität** festlegen – bei mehreren zutreffenden Regeln gewinnt die höhere
 8. **Abklingzeit** festlegen – danach ruht die Regel eine Weile
 9. Speichern und einschalten
@@ -3575,7 +3575,7 @@ Der Vorrang endet vorzeitig, wenn du **selbst etwas anderes startest** – dann 
 
 #### Zusammenspiel
 
-- Greift auf Warteschlangen, Playlists, smarte Playlists, Auto-Playlists, Vorlagen und Ordner zu.
+- Greift auf Warteschlangen, Playlists, smarte Playlists, Auto-Playlists, Vorlagen, Ordner, Genres, Künstler, Alben und Favoriten zu – immer auf die Bibliothek, wie ihre Reiter sie zeigen: Ausgeblendetes spielt eine Regel nie. Künstler, Alben und Ordner laufen nach Titelnummer, Genres und Favoriten gemischt. Gibt es das Ziel nicht mehr, spielt die Regel nichts.
 - **Meine Orte** liefert die Punkte für die Bedingung **Bekannter Ort**.
 - Manche Bedingungen brauchen eine **Berechtigung**: Geschwindigkeit, Höhe, Ort, Wetter und WLAN-Netzwerk den Standort; die Bluetooth-Bedingungen Bluetooth; Schritte, Aktivität und „Zu lange gesessen“ die Bewegungserkennung. Die App fragt beim Speichern der Regel danach. Lehnst du ab, bleibt die Regel gespeichert und greift erst, wenn die Berechtigung da ist – eine Zeile auf dem Bildschirm erinnert daran.
 - Im **Batteriesparmodus** ruht der Kontext Auto-Wechsel samt GPS und Sensoren; die Einstellung bleibt und kommt beim Zurückschalten wieder. Mit **Trotzdem nutzen** läuft er weiter.
@@ -3588,7 +3588,7 @@ Der Vorrang endet vorzeitig, wenn du **selbst etwas anderes startest** – dann 
 - Die **Abklingzeit** nicht zu kurz setzen – sonst springt die Musik alle paar Minuten um.
 - Das **WLAN** ist das zuverlässigste Zeichen für „zu Hause“ – es braucht kein GPS und kostet keinen Akku. Dazu das Heim-WLAN in den Quick-Wins-Einstellungen eintragen.
 - Die **Kopfhörer**-Bedingung meint nur gesteckte. Kabellose erkennt man über Bluetooth.
-- Zwei Regeln für Hin- und Rückweg mit unterschiedlichen Zeiten sind das naheliegendste Beispiel – und funktionieren am zuverlässigsten.
+- Zwei Regeln für Hin- und Rückweg mit unterschiedlichen Zeiten sind das naheliegendste Beispiel – und funktionieren am zuverlässigsten. Für die Fahrt selbst reicht oft eine: Bedingung **Bluetooth-Gerät** (dein Auto), Aktion **Favoriten abspielen**.
 
 ### Meine Orte (Pro)
 

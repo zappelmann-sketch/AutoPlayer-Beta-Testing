@@ -3495,10 +3495,10 @@ Rules in the pattern *if … then …*. When everything in a rule is true, the m
 
 All conditions of a rule must be true **at the same time**. Each one can be reversed with **NOT**.
 
-#### The six actions
+#### The ten actions
 
 - **Switch Queue** · **Play Playlist** · **Smart Playlist**
-- **Auto Playlist** · **Queue Preset** · **Play Folder**
+- **Auto Playlist** · **Queue Preset** · **Play Folder** · **Play Genre** · **Play Artist** · **Play Album** · **Play Favorites**
 
 #### The 100 presets
 
@@ -3516,7 +3516,7 @@ Instead of starting from scratch, you can take a ready-made rule and adjust it. 
 3. **+** for a new rule – or pick a preset
 4. Give it a name
 5. Add conditions
-6. Choose the action and the target
+6. Choose the action and the target – the target comes from a list showing the number of songs for each entry; long lists have a search field. Without a target the rule can’t be saved; only **Play Favorites** needs none.
 7. Set the **Priority** – when several rules match, the higher one wins
 8. Set the **Cooldown** – after that, the rule rests for a while
 9. Save and turn it on
@@ -3575,7 +3575,7 @@ The priority ends early if you **start something else yourself** – your hand n
 
 #### How it works with other features
 
-- Uses queues, playlists, smart playlists, auto playlists, presets and folders.
+- Uses queues, playlists, smart playlists, auto playlists, presets, folders, genres, artists, albums and favorites – always the library as its tabs show it: a rule never plays anything you hid. Artists, albums and folders play in track order, genres and favorites shuffled. If the target no longer exists, the rule plays nothing.
 - **My places** supplies the points for the condition **Known place**.
 - Some conditions need a **permission**: speed, altitude, place, weather and Wi-Fi network need location; the Bluetooth conditions need Bluetooth; steps, activity and “Sitting too long” need motion detection. The app asks for it when you save the rule. If you decline, the rule stays saved and only fires once the permission is granted – a line on the screen reminds you.
 - In **Battery Saver**, Context Auto-Switch rests, along with GPS and sensors; the setting stays and comes back when you switch back. With **Use anyway** it keeps running.
@@ -3588,7 +3588,7 @@ The priority ends early if you **start something else yourself** – your hand n
 - Don’t set the **Cooldown** too short – otherwise the music jumps around every few minutes.
 - **Wi-Fi** is the most reliable sign of “at home” – it needs no GPS and costs no battery. Also enter your home Wi-Fi in the Quick-Wins Settings.
 - The **Headphones** condition only means plugged-in ones. Wireless ones are detected via Bluetooth.
-- Two rules for the way there and the way back with different times are the most obvious example – and work the most reliably.
+- Two rules for the way there and the way back with different times are the most obvious example – and work the most reliably. For the drive itself one is often enough: condition **Bluetooth Device** (your car), action **Play Favorites**.
 
 ### My places (Pro)
 

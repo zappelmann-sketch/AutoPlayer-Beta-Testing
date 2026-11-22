@@ -1,6 +1,15 @@
 {
- "latest": 68003,
+ "latest": 68100,
  "entries": [
+  {
+   "versionCode": 68100,
+   "versionName": "6.81.0",
+   "date": "2026-11-22",
+   "critical": false,
+   "title": "v6.81.0 — Kontext Auto-Wechsel: neue Aktionen",
+   "de": "• NEU: Kontext-Regeln können jetzt ein Genre, einen Künstler, ein Album, einen Ordner oder deine Favoriten abspielen – direkt aus deiner Bibliothek gewählt, mit Suche.\n• VERBESSERT: Smarte Playlist und Queue-Vorlage wählst du aus einer Liste, und die Regelkarte zeigt Namen statt Nummern.\n• BEHOBEN: „Ordner abspielen“ startet jetzt wirklich den Ordner.\n• BEHOBEN: Treffen mehrere Regeln gleichzeitig zu, spielt jetzt die mit der höheren Priorität – vorher setzte sich nach und nach die niedrigste durch.",
+   "en": "• NEW: Context rules can now play a genre, an artist, an album, a folder or your favorites – picked straight from your library, with search.\n• IMPROVED: You choose smart playlists and queue presets from a list, and the rule card shows names instead of numbers.\n• FIXED: \"Play folder\" now really starts the folder.\n• FIXED: When several rules match at once, the one with the higher priority now plays – before, the lowest one won in the end."
+  },
   {
    "versionCode": 68003,
    "versionName": "6.80.3",
@@ -126,15 +135,6 @@
    "title": "v6.78.1 — Handbuch: Mix und Bibliothek",
    "de": "• FIX: Handbuch, Kapitel „Ausgeben als Datei“ im Loop Mixer: Ein fertiger Mix steht nicht in der Bibliothek, denn den Ordner AutoPlayer blendet die App ab Werk aus. Das Kapitel sagt jetzt, wie du ihn im Reiter Ordner wieder einblendest – in allen Sprachen der App.",
    "en": "• FIX: User guide, chapter “Exporting as a file” in the Loop Mixer: a finished mix does not appear in the library, because the app hides the AutoPlayer folder by default. The chapter now explains how to show it again in the Folders tab – in every language of the app."
-  },
-  {
-   "versionCode": 67800,
-   "versionName": "6.78.0",
-   "date": "2026-11-14",
-   "critical": false,
-   "title": "v6.78.0 — Bereit für Android 17",
-   "de": "• VERBESSERT: Bereit für Android 17 – Party-Modus und Sharing-Hub fragen dort einmal nach „Geräte in der Nähe“, die der Zugriff aufs WLAN jetzt braucht. Die Datenschutzerklärung nennt das (Stand 9. November 2026).\n• VERBESSERT: Die Bibliothek ist nach dem Start viel schneller da, wenn die Musik in vielen Ordnern liegt (ab Android 11).\n• VERBESSERT: Smart DJ heißt jetzt in vielen Sprachen in der eigenen Sprache und Schrift, z. B. auf Russisch „Умный диджей“ – einheitlich im Menü, in Hinweisen, Sprachbefehlen und im Handbuch. Auf Französisch duzt die App jetzt durchgehend.\n• FIX: Kontext-Regeln: Wer eine gespeicherte Regel bearbeitet, sieht wieder genau ihre eigenen Bedingungen – vorher konnten beim Speichern die Bedingungen einer anderen Regel übernommen werden. Die Regelkarte nennt Werktag, Wochenende und Tageszeit in der eigenen Sprache.\n• FIX: Fehlermeldungen im Party-Modus sind wieder sichtbar und gut lesbar; die Suche im Handbuch zeigt die Treffer ohne falsche Leerzeichen.",
-   "en": "• IMPROVED: Ready for Android 17 – Party Mode and Sharing Hub ask once for “Nearby devices”, which Wi-Fi access now needs there. The privacy policy explains this (as of 9 November 2026).\n• IMPROVED: The library is ready much sooner after start-up when your music is spread over many folders (Android 11 and later).\n• IMPROVED: Smart DJ now has a name in the language and script of many app languages, e.g. Russian “Умный диджей” – the same in the menu, hints, voice commands and the user guide. In French the app now uses “tu” throughout.\n• FIX: Context rules: editing a saved rule shows exactly its own conditions again – before, saving could take over the conditions of another rule. The rule card names workday, weekend and time of day in your language.\n• FIX: Party Mode error messages are visible and easy to read again; the user guide search shows matches without stray spaces."
   }
  ]
 }
