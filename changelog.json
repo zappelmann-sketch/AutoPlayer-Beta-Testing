@@ -1,6 +1,15 @@
 {
- "latest": 68100,
+ "latest": 68200,
  "entries": [
+  {
+   "versionCode": 68200,
+   "versionName": "6.82.0",
+   "date": "2026-11-22",
+   "critical": false,
+   "title": "v6.82.0 — Bewertungsfenster",
+   "de": "• NEU: Nach besonderen Momenten – etwa einem Surf-the-Beat-Rekord ab einer Million Punkten – lädt ein kleines Fenster ein, AutoPlayer bei Google Play zu bewerten.\n• Höchstens einmal im Monat, nie im Auto, und mit „Nicht mehr fragen“ ist für immer Ruhe.\n• Aktiv ab dem Start im Play Store.",
+   "en": "• NEW: After special moments – such as a Surf the Beat record of a million points or more – a small window invites you to rate AutoPlayer on Google Play.\n• At most once a month, never in the car, and “Don’t ask again” ends it for good.\n• Active from the Play Store launch."
+  },
   {
    "versionCode": 68100,
    "versionName": "6.81.0",
@@ -126,15 +135,6 @@
    "title": "v6.78.2 — Handbuch: Designs der Wellenform",
    "de": "• FIX: Handbuch, Kapitel „Wellenform“: Die Liste der zehn Landschafts-Designs beschrieb Dinge, die es nicht gibt – Quallen, Fische, Lichtvorhänge, Blitze. Ein Design färbt nur die Ebenen der Ansicht ein; das Kapitel nennt jetzt nur noch die Namen – in allen Sprachen der App.",
    "en": "• FIX: User guide, chapter “Waveform”: the list of the ten landscape designs described things that do not exist – jellyfish, fish, curtains of light, lightning. A design only colors the layers of the view; the chapter now just lists the names – in every language of the app."
-  },
-  {
-   "versionCode": 67801,
-   "versionName": "6.78.1",
-   "date": "2026-11-14",
-   "critical": false,
-   "title": "v6.78.1 — Handbuch: Mix und Bibliothek",
-   "de": "• FIX: Handbuch, Kapitel „Ausgeben als Datei“ im Loop Mixer: Ein fertiger Mix steht nicht in der Bibliothek, denn den Ordner AutoPlayer blendet die App ab Werk aus. Das Kapitel sagt jetzt, wie du ihn im Reiter Ordner wieder einblendest – in allen Sprachen der App.",
-   "en": "• FIX: User guide, chapter “Exporting as a file” in the Loop Mixer: a finished mix does not appear in the library, because the app hides the AutoPlayer folder by default. The chapter now explains how to show it again in the Folders tab – in every language of the app."
   }
  ]
 }
