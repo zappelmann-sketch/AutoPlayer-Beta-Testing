@@ -1,6 +1,24 @@
 {
- "latest": 68300,
+ "latest": 68500,
  "entries": [
+  {
+   "versionCode": 68500,
+   "versionName": "6.85.0",
+   "date": "2026-11-24",
+   "critical": false,
+   "title": "v6.85.0 — Pets auf der Party-Gastseite",
+   "de": "• NEU: Auf der Gastseite einer Party tanzen die Vumikio Pets – Octo begrüßt jeden Gast mit dem Namen der Party. Antippen für einen Spruch, doppelt antippen für einen Trick, ziehen zum Verschieben; Gäste wählen kein, ein oder alle Pets.\n• NEU: Oben auf der Gastseite stehen Logo und Name der App – mit Internet führt ein Knopf zu AutoPlayer bei Google Play (ab dem Store-Start).",
+   "en": "• NEW: The Vumikio Pets dance on a party's guest page – Octo welcomes every guest with the party's name. Tap for a line, double-tap for a trick, drag to move; guests pick no pet, one or all.\n• NEW: The app's logo and name sit at the top of the guest page – with internet a button leads to AutoPlayer on Google Play (from the store launch on)."
+  },
+  {
+   "versionCode": 68400,
+   "versionName": "6.84.0",
+   "date": "2026-11-24",
+   "critical": false,
+   "title": "v6.84.0 — Party-WLAN mit oder ohne Internet",
+   "de": "• NEU: Im Hotspot-Modus öffnet AutoPlayer ein eigenes Party-WLAN ohne Internet – Gäste erreichen nur die Party-Seite, deine mobilen Daten bleiben bei dir. Name und Passwort kommen von selbst in den WLAN-Code.\n• NEU: Schalter „Gäste dürfen über mein Handy ins Internet“ – nur wenn du ihn einschaltest, teilst du deinen Hotspot mit Internet.\n• NEU: Die Party läuft weiter, während du andere Apps nutzt – mit der Mitteilung „Party läuft“ und „Party beenden“.",
+   "en": "• NEW: In hotspot mode AutoPlayer opens its own party Wi-Fi without internet – guests reach only the party page, your mobile data stays yours. Name and password go into the Wi-Fi code by themselves.\n• NEW: Switch “Guests may use my phone’s internet” – only if you turn it on do you share a hotspot with internet.\n• NEW: The party keeps running while you use other apps – with the notification “Party running” and “End party”."
+  },
   {
    "versionCode": 68300,
    "versionName": "6.83.0",
@@ -117,24 +135,6 @@
    "title": "v6.79.0 — Retro-Player auf Tablet, Foldable und im Querformat",
    "de": "• NEU: Die App dreht jetzt auch am Handy mit – quer wie hochkant.\n• VERBESSERT: Vintage-Plattenspieler, Kassette, Jukebox und Bandmaschine sehen auf Tablet, Foldable und im Querformat vollständig aus: das ganze Gerät auf einen Blick, alle Tasten an ihrem Platz, Zeit und BPM darunter. Hochkant am Handy bleibt alles, wie es war.\n• FIX: Jukebox auf Arabisch: Die linke Röhre springt wieder zum vorigen Titel, die rechte zum nächsten.",
    "en": "• NEW: The app now turns with your phone too – landscape as well as portrait.\n• IMPROVED: The vintage turntable, cassette, jukebox and reel-to-reel views look complete on tablets, foldables and in landscape: the whole device at a glance, every button in its place, time and BPM below. On a phone held upright everything stays as it was.\n• FIX: Jukebox in Arabic: the left tube skips back to the previous song again and the right one to the next."
-  },
-  {
-   "versionCode": 67804,
-   "versionName": "6.78.4",
-   "date": "2026-11-15",
-   "critical": false,
-   "title": "v6.78.4 — Surf the Beat: Tunnel läuft wieder ruhig",
-   "de": "• FIX: Surf the Beat: Der Tunnel sprang während des Spiels immer wieder ein Stück vor und zurück. Die Wiedergabe meldet ihre Stelle im Lied jetzt wieder fein genug – der Tunnel läuft ruhig und im Takt.",
-   "en": "• FIX: Surf the Beat: the tunnel kept jumping a little forward and back during play. Playback now reports its place in the song finely enough again – the tunnel runs smoothly and on the beat."
-  },
-  {
-   "versionCode": 67803,
-   "versionName": "6.78.3",
-   "date": "2026-11-15",
-   "critical": false,
-   "title": "v6.78.3 — Genres neuer Musik",
-   "de": "• FIX: Kam neue Musik dazu, während die App lief – etwa per Geräte-Transfer –, fehlten ihre Genres: Die Genre-Kacheln zeigten weiter nur die alten Genres, auch nach dem Neu-Scannen. Die App liest die Genres jetzt neu, sobald Android Titel hinzufügt, entfernt oder neu einliest.",
-   "en": "• FIX: When new music arrived while the app was running – for example by device transfer – its genres were missing: the genre tiles kept showing only the old genres, even after a rescan. The app now reads the genres again as soon as Android adds, removes or rereads songs."
   }
  ]
 }
