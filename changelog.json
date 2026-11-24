@@ -1,6 +1,15 @@
 {
- "latest": 68200,
+ "latest": 68300,
  "entries": [
+  {
+   "versionCode": 68300,
+   "versionName": "6.83.0",
+   "date": "2026-11-24",
+   "critical": false,
+   "title": "v6.83.0 — Party-Modus verschlüsselt",
+   "de": "• NEU: Der Party-Modus ist verschlüsselt – PIN, Namen, Suche und Wünsche der Gäste gehen nur noch verschlüsselt durchs WLAN, ganz ohne Internet und ohne Server.\n• NEU: Der QR-Code trägt einen geheimen Party-Schlüssel; der Schild-Knopf oben erklärt, warum der Browser trotzdem „Nicht sicher“ zeigt.\n• FIX: Alben und Künstler mit Apostroph im Namen lassen sich auf der Gastseite wieder öffnen.",
+   "en": "• NEW: Party Mode is encrypted – the guests’ PIN, names, searches and wishes travel through the Wi-Fi only encrypted, without the internet and without any server.\n• NEW: The QR code carries a secret party key; the shield button at the top explains why the browser still shows “Not secure”.\n• FIX: Albums and artists with an apostrophe in their name open again on the guest page."
+  },
   {
    "versionCode": 68200,
    "versionName": "6.82.0",
@@ -126,15 +135,6 @@
    "title": "v6.78.3 — Genres neuer Musik",
    "de": "• FIX: Kam neue Musik dazu, während die App lief – etwa per Geräte-Transfer –, fehlten ihre Genres: Die Genre-Kacheln zeigten weiter nur die alten Genres, auch nach dem Neu-Scannen. Die App liest die Genres jetzt neu, sobald Android Titel hinzufügt, entfernt oder neu einliest.",
    "en": "• FIX: When new music arrived while the app was running – for example by device transfer – its genres were missing: the genre tiles kept showing only the old genres, even after a rescan. The app now reads the genres again as soon as Android adds, removes or rereads songs."
-  },
-  {
-   "versionCode": 67802,
-   "versionName": "6.78.2",
-   "date": "2026-11-15",
-   "critical": false,
-   "title": "v6.78.2 — Handbuch: Designs der Wellenform",
-   "de": "• FIX: Handbuch, Kapitel „Wellenform“: Die Liste der zehn Landschafts-Designs beschrieb Dinge, die es nicht gibt – Quallen, Fische, Lichtvorhänge, Blitze. Ein Design färbt nur die Ebenen der Ansicht ein; das Kapitel nennt jetzt nur noch die Namen – in allen Sprachen der App.",
-   "en": "• FIX: User guide, chapter “Waveform”: the list of the ten landscape designs described things that do not exist – jellyfish, fish, curtains of light, lightning. A design only colors the layers of the view; the chapter now just lists the names – in every language of the app."
   }
  ]
 }
