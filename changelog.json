@@ -1,6 +1,15 @@
 {
- "latest": 68501,
+ "latest": 68502,
  "entries": [
+  {
+   "versionCode": 68502,
+   "versionName": "6.85.2",
+   "date": "2026-11-25",
+   "critical": false,
+   "title": "v6.85.2 — Genre per Sprache im Auto",
+   "de": "• FIX: „Spiele Genre …“ spielt im Auto jetzt das Genre – vorher startete ein Titel, in dessen Namen die Buchstaben zufällig vorkamen.\n• VERBESSERT: Künstler, Album und Genre werden per Sprache auch erkannt, wenn das Wort „Künstler“, „Album“ oder „Genre“ mitkommt.\n• VERBESSERT: Kürzel-Genres wie „KI“ werden auch erkannt, wenn die Spracherkennung „Kai“ versteht.",
+   "en": "• FIX: “Play genre …” in the car now plays the genre – before, a song whose name happened to contain the letters started.\n• IMPROVED: Artist, album and genre are recognized by voice even when the word “artist”, “album” or “genre” comes along.\n• IMPROVED: Abbreviated genres like “KI” are also recognized when speech recognition hears “Kai”."
+  },
   {
    "versionCode": 68501,
    "versionName": "6.85.1",
@@ -126,15 +135,6 @@
    "title": "v6.79.2 — Loop Mixer: Pads im Querformat",
    "de": "• FIX: Loop Mixer, Pad-Modus im Querformat (Tablet, Foldable, Handy quer): Die 16 Pads lagen übereinander und über den Reitern. Jetzt stehen sie als Quadrat in der linken Hälfte, Hinweis und Aufnahme-/Quantisier-Leiste in der rechten. Hochkant bleibt alles, wie es war.",
    "en": "• FIX: Loop Mixer, pad mode in landscape (tablet, foldable, phone held sideways): the 16 pads lay on top of each other and over the tabs. Now they form a square on the left half, the hint and the record/quantize bar sit on the right half. Upright everything stays as it was."
-  },
-  {
-   "versionCode": 67901,
-   "versionName": "6.79.1",
-   "date": "2026-11-19",
-   "critical": false,
-   "title": "v6.79.1 — DJ-Plattenspieler und Hologramm im Querformat",
-   "de": "• VERBESSERT: DJ-Plattenspieler im Querformat und auf Tablet und Foldable: links der Plattenteller so groß, wie die Höhe erlaubt, rechts Titel, Wellenform, Pitch und Bedienung – nichts wird mehr abgeschnitten.\n• VERBESSERT: Sci-Fi-Hologramm im Querformat: links die Projektion in ihren gewohnten Proportionen, rechts Titel, Zeit und Knöpfe. Hochkant am Handy bleiben beide Ansichten, wie sie waren.\n• VERBESSERT: Bandmaschine quer am Handy: Die Zeitzeile hat unten wieder etwas Luft zum Bildrand.",
-   "en": "• IMPROVED: DJ turntable in landscape and on tablets and foldables: the platter on the left as large as the height allows, title, waveform, pitch and controls on the right – nothing is cut off any more.\n• IMPROVED: Sci-fi hologram in landscape: the projection on the left in its usual proportions, title, time and buttons on the right. On a phone held upright both views stay as they were.\n• IMPROVED: Reel-to-reel on a phone held sideways: the time line has some room to the screen edge again."
   }
  ]
 }
