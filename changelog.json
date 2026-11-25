@@ -1,6 +1,15 @@
 {
- "latest": 68600,
+ "latest": 68601,
  "entries": [
+  {
+   "versionCode": 68601,
+   "versionName": "6.86.1",
+   "date": "2026-11-25",
+   "critical": false,
+   "title": "v6.86.1 — Mikrofon-Knopf immer erreichbar",
+   "de": "• FIX: Der schwebende Mikrofon-Knopf bleibt immer oberhalb der Navigationsleiste und unterhalb der Statusleiste. Lag er bisher darunter, war er nicht mehr zu greifen – jetzt rückt er von selbst in den erreichbaren Bereich.\n• NEU: Einstellungen → Darstellung → „Mikrofon-Schaltfläche zurücksetzen“ setzt den Knopf mit einem Tipp wieder unten rechts ab – falls er einmal nicht mehr zu greifen ist. Im Handbuch unter „Einstellungen“ beschrieben.",
+   "en": "• FIX: The floating microphone button always stays above the navigation bar and below the status bar. If it sat underneath before, it could no longer be grabbed – now it moves into reach by itself.\n• NEW: Settings → Appearance → “Reset microphone button” puts the button back at the bottom right with one tap – in case it can no longer be grabbed. Described in the user guide under “Settings”."
+  },
   {
    "versionCode": 68600,
    "versionName": "6.86.0",
@@ -126,15 +135,6 @@
    "title": "v6.79.5 — Loop Mixer am Handy quer",
    "de": "• VERBESSERT: Loop Mixer am Handy quer: Titel und Werkzeuge stehen in einer Zeile, die Reiter Timeline, Pad Mode und Synth Studio am Ende der Projektzeile, Bildlaufleiste und Zoom nebeneinander. Timeline, Pads und Synth bekommen rund 100 dp mehr Höhe. Alle Knöpfe bleiben, hochkant und am Tablet ändert sich nichts.",
    "en": "• IMPROVED: Loop Mixer on a phone held sideways: title and tools share one row, the Timeline, Pad Mode and Synth Studio tabs sit at the end of the project row, scrollbar and zoom side by side. Timeline, pads and synth get about 100 dp more height. Every button stays; upright and on tablets nothing changes."
-  },
-  {
-   "versionCode": 67904,
-   "versionName": "6.79.4",
-   "date": "2026-11-19",
-   "critical": false,
-   "title": "v6.79.4 — Bibliothek im Querformat zweigeteilt",
-   "de": "• VERBESSERT: Bibliothek im Querformat (Handy quer, Tablet, Foldable): Links stehen Mini-Player, Playlist-Chips, Reiter und Suche, rechts die Liste über die volle Höhe mit der Alphabet-Leiste darüber. Am Handy quer sind jetzt vier Songzeilen zu sehen statt einer. Hochkant bleibt alles, wie es war.",
-   "en": "• IMPROVED: Library in landscape (phone sideways, tablet, foldable): mini player, playlist chips, tabs and search stand on the left, the list fills the full height on the right with the alphabet bar above it. A phone held sideways now shows four song rows instead of one. Upright everything stays as it was."
   }
  ]
 }

@@ -672,7 +672,7 @@ Die zentrale Schaltstelle. Zu erreichen über das Zahnrad oben in der Bibliothek
 - **Textgröße** – stufenlos von 80 % bis 140 %
 - **Symbolgröße** – derselbe Bereich
 
-Beides wirkt in der ganzen App, auch auf dem Fahrzeugbildschirm. Ein Farbdesign lässt sich hier nicht wählen – das macht der Theme-Builder.
+Beides wirkt in der ganzen App, auch auf dem Fahrzeugbildschirm. Ein Farbdesign lässt sich hier nicht wählen – das macht der Theme-Builder. Direkt darunter folgt der Eintrag **Mikrofon-Schaltfläche zurücksetzen**. Ist die runde Schaltfläche nach dem Verschieben hinter einer Leiste des Systems nicht mehr zu greifen, setzt **Zurücksetzen** sie wieder unten rechts ab.
 
 **2. Wiedergabe** – der größte Abschnitt
 

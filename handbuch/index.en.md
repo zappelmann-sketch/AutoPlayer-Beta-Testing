@@ -672,7 +672,7 @@ The central control point. You reach it via the gear at the top of the library o
 - **Text size** – continuously from 80 % to 140 %
 - **Icon size** – the same range
 
-Both apply across the whole app, including on the vehicle screen. You can't choose a color design here – that is done by the Theme Builder.
+Both apply across the whole app, including on the vehicle screen. You can't choose a color design here – that is done by the Theme Builder. Below them is **Reset microphone button**. If the round microphone button is out of reach after moving it, say behind a system bar, **Reset** puts it back at the bottom right.
 
 **2. Playback** – the largest section
 
