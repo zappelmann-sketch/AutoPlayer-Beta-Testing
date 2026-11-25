@@ -1,6 +1,15 @@
 {
- "latest": 68500,
+ "latest": 68501,
  "entries": [
+  {
+   "versionCode": 68501,
+   "versionName": "6.85.1",
+   "date": "2026-11-24",
+   "critical": false,
+   "title": "v6.85.1 — Party Mode im Handbuch, Medientaste",
+   "de": "• VERBESSERT: Das Handbuch-Kapitel Party Mode erklärt das eigene Party-WLAN, Internet für Gäste, die Pets auf der Gastseite, die Sicherheit im Detail und was bei einer Zeitüberschreitung hilft – mit neuen Bildern.\n• NEU: Die Gastseite einer Party gibt es jetzt auch in traditionellem Chinesisch.\n• FIX: Play auf Kopfhörer, Bluetooth oder Autoradio startet die Wiedergabe jetzt auch nach einem Neustart des Handys.\n• FIX: In der Party-Einrichtung steht unter „Aktuelles WLAN verwenden“ immer das WLAN, mit dem das Handy verbunden ist.",
+   "en": "• IMPROVED: The Party Mode chapter of the user guide explains the party's own Wi-Fi, internet for guests, the pets on the guest page, security in detail and what helps with a timeout – with new pictures.\n• NEW: A party's guest page is now also available in Traditional Chinese.\n• FIX: Play on headphones, Bluetooth or a car stereo now starts playback even after the phone has restarted.\n• FIX: In the party setup, “Use current WiFi” always shows the Wi-Fi the phone is connected to."
+  },
   {
    "versionCode": 68500,
    "versionName": "6.85.0",
@@ -126,15 +135,6 @@
    "title": "v6.79.1 — DJ-Plattenspieler und Hologramm im Querformat",
    "de": "• VERBESSERT: DJ-Plattenspieler im Querformat und auf Tablet und Foldable: links der Plattenteller so groß, wie die Höhe erlaubt, rechts Titel, Wellenform, Pitch und Bedienung – nichts wird mehr abgeschnitten.\n• VERBESSERT: Sci-Fi-Hologramm im Querformat: links die Projektion in ihren gewohnten Proportionen, rechts Titel, Zeit und Knöpfe. Hochkant am Handy bleiben beide Ansichten, wie sie waren.\n• VERBESSERT: Bandmaschine quer am Handy: Die Zeitzeile hat unten wieder etwas Luft zum Bildrand.",
    "en": "• IMPROVED: DJ turntable in landscape and on tablets and foldables: the platter on the left as large as the height allows, title, waveform, pitch and controls on the right – nothing is cut off any more.\n• IMPROVED: Sci-fi hologram in landscape: the projection on the left in its usual proportions, title, time and buttons on the right. On a phone held upright both views stay as they were.\n• IMPROVED: Reel-to-reel on a phone held sideways: the time line has some room to the screen edge again."
-  },
-  {
-   "versionCode": 67900,
-   "versionName": "6.79.0",
-   "date": "2026-11-19",
-   "critical": false,
-   "title": "v6.79.0 — Retro-Player auf Tablet, Foldable und im Querformat",
-   "de": "• NEU: Die App dreht jetzt auch am Handy mit – quer wie hochkant.\n• VERBESSERT: Vintage-Plattenspieler, Kassette, Jukebox und Bandmaschine sehen auf Tablet, Foldable und im Querformat vollständig aus: das ganze Gerät auf einen Blick, alle Tasten an ihrem Platz, Zeit und BPM darunter. Hochkant am Handy bleibt alles, wie es war.\n• FIX: Jukebox auf Arabisch: Die linke Röhre springt wieder zum vorigen Titel, die rechte zum nächsten.",
-   "en": "• NEW: The app now turns with your phone too – landscape as well as portrait.\n• IMPROVED: The vintage turntable, cassette, jukebox and reel-to-reel views look complete on tablets, foldables and in landscape: the whole device at a glance, every button in its place, time and BPM below. On a phone held upright everything stays as it was.\n• FIX: Jukebox in Arabic: the left tube skips back to the previous song again and the right one to the next."
   }
  ]
 }

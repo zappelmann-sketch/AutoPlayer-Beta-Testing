@@ -7,7 +7,7 @@
 <link rel="icon" href="favicon.ico">
 <!--
   AutoPlayer - Datenschutzerklaerung
-  Stand: 2026-11-09
+  Stand: 2026-11-24
 
   Diese Seite laedt bewusst KEINE Inhalte von Dritten (keine Schriftarten,
   keine Symbol-Bibliothek, keine Skripte) und speichert nichts im Browser.
@@ -285,7 +285,7 @@ table.dsgvo td:first-child{width:36%}
 <!-- ==================================================================== -->
 <main class="legal-content active" data-lang="de">
 <h1>Datenschutzerklärung – AutoPlayer</h1>
-<p class="meta">Stand: 9. November 2026</p>
+<p class="meta">Stand: 24. November 2026</p>
 
 <nav class="toc">
   <div class="toc-title" onclick="this.parentElement.classList.toggle('collapsed')">Inhalt</div>
@@ -350,7 +350,8 @@ bleiben auf Ihrem Gerät, sofern in Abschnitt 6 nichts anderes angegeben ist.</p
         <td>Ihre Musik finden und abspielen, Titelangaben und Cover lesen.</td></tr>
     <tr><td>Benachrichtigungen</td>
         <td>Wiedergabesteuerung in der Benachrichtigungsleiste und auf dem Sperrbildschirm; beim
-            Herzschlag-Sync die stille Benachrichtigung „Herzschlag-Sync aktiv“ (Abschnitt 9).</td></tr>
+            Herzschlag-Sync die stille Benachrichtigung „Herzschlag-Sync aktiv“ (Abschnitt 9); während einer
+            Party die Benachrichtigung „Party läuft“ (Abschnitt 7).</td></tr>
     <tr><td>Mikrofon</td>
         <td>Fünf Zwecke, im Einzelnen in Abschnitt 5 beschrieben.</td></tr>
     <tr><td>Kamera</td>
@@ -360,7 +361,9 @@ bleiben auf Ihrem Gerät, sofern in Abschnitt 6 nichts anderes angegeben ist.</p
     <tr><td>Standort (genau und ungefähr)</td>
         <td>Optionale Funktionen wie Wetter-DJ, ortsbezogene Musik und
             Fahrtmodus. <strong>Nur im Vordergrund</strong> – die App fordert
-            keinen Hintergrund-Standort an.</td></tr>
+            keinen Hintergrund-Standort an. Auf Android 10 bis 12 verlangt Android
+            die Berechtigung außerdem, damit der Party-Modus ein eigenes WLAN öffnen
+            kann; dabei liest die App keinen Standort.</td></tr>
     <tr><td>Körperliche Aktivität</td>
         <td>Erkennen von Gehen, Laufen oder Autofahrt für aktivitätsabhängige Funktionen.</td></tr>
     <tr><td>Bluetooth und Geräte in der Nähe</td>
@@ -368,7 +371,8 @@ bleiben auf Ihrem Gerät, sofern in Abschnitt 6 nichts anderes angegeben ist.</p
             Abschnitt 7) sowie zu einer Uhr oder einem Brustgurt für den Puls (siehe
             Abschnitt 9). Ab Android 17 gehört dazu auch der Zugriff auf das lokale
             Netz, den der Party-Modus, die Geräte-Übertragung und das Teilen per
-            QR-Code im Sharing-Hub brauchen (siehe Abschnitt 7).</td></tr>
+            QR-Code im Sharing-Hub brauchen (siehe Abschnitt 7). Ab Android 13 braucht
+            der Party-Modus diese Berechtigung auch, um ein eigenes WLAN zu öffnen.</td></tr>
     <tr><td>WLAN-Status und WLAN-Änderung</td>
         <td>Technische Voraussetzung für die Geräteverbindungen und den
             Party-Modus im lokalen Netz.</td></tr>
@@ -507,12 +511,15 @@ Server dazwischensteht und ohne dass der Anbieter davon etwas erfährt:</p>
   <thead><tr><th>Funktion</th><th>Technik und übertragene Daten</th></tr></thead>
   <tbody>
     <tr><td>Party-Modus</td>
-        <td>Ihr Gerät stellt im selben WLAN einen Zugang bereit. Übertragen werden
+        <td>Ihr Gerät stellt im selben WLAN einen Zugang bereit – oder in einem
+            eigenen WLAN ohne Internet, das die App dafür öffnet und beim Beenden wieder
+            schließt. Übertragen werden
             Titelangaben, Wiedergabeposition und Warteschlange. Ihr Gerät verarbeitet
             dabei die IP-Adresse und den selbst gewählten Namen der Gäste, um deren
             Musikwünsche zuzuordnen; diese Angaben verlassen Ihr Netz nicht und werden
-            beim Beenden verworfen. Geschützt durch eine PIN mit Sperre gegen
-            Rateversuche.</td></tr>
+            beim Beenden verworfen. Alles, was zwischen den Browsern der Gäste und
+            Ihrem Gerät läuft, ist verschlüsselt; zusätzlich schützt eine PIN mit Sperre
+            gegen Rateversuche.</td></tr>
     <tr><td>Beifahrer-Modus</td>
         <td>Google Nearby Connections über Bluetooth oder WLAN-Direct. Übertragen
             werden Titelangaben und Steuerbefehle. Die Verbindung muss bestätigt
@@ -613,8 +620,8 @@ App abgelegt haben, bleiben erhalten.</p>
 <p>App-Daten liegen im geschützten Bereich der Android-App-Sandbox; die Datenbank ist
 zusätzlich verschlüsselt. Wie gut die Daten geschützt sind, hängt auch von Ihrem Gerät ab,
 insbesondere von Bildschirmsperre, Systemaktualisierungen und Geräteverschlüsselung.
-Verbindungen ins Internet erfolgen verschlüsselt über HTTPS. Der Zugang im Party-Modus ist
-durch eine PIN geschützt.</p>
+Verbindungen ins Internet erfolgen verschlüsselt über HTTPS. Der Party-Modus verschlüsselt
+den Austausch mit den Gästen; der Zugang ist zusätzlich durch eine PIN geschützt.</p>
 </section>
 
 <section>
@@ -725,7 +732,7 @@ Maßgeblich ist die jeweils hier veröffentlichte Fassung; das Datum steht oben.
 <!-- ==================================================================== -->
 <main class="legal-content" data-lang="en">
 <h1>Privacy Policy – AutoPlayer</h1>
-<p class="meta">Last updated: 9 November 2026</p>
+<p class="meta">Last updated: 24 November 2026</p>
 
 <nav class="toc">
   <div class="toc-title" onclick="this.parentElement.classList.toggle('collapsed')">Contents</div>
@@ -789,7 +796,8 @@ stays on your device unless section 6 states otherwise.</p>
         <td>Finding and playing your music, reading track details and cover art.</td></tr>
     <tr><td>Notifications</td>
         <td>Playback controls in the notification shade and on the lock screen; with Heartbeat Sync
-            the silent notification “Heartbeat Sync active” (section 9).</td></tr>
+            the silent notification “Heartbeat Sync active” (section 9); during a party the
+            notification “Party running” (section 7).</td></tr>
     <tr><td>Microphone</td>
         <td>Five purposes, detailed in section 5.</td></tr>
     <tr><td>Camera</td>
@@ -799,7 +807,9 @@ stays on your device unless section 6 states otherwise.</p>
     <tr><td>Location (precise and approximate)</td>
         <td>Optional features such as Weather DJ, location-based music and drive
             mode. <strong>Foreground only</strong> – the app does not request
-            background location.</td></tr>
+            background location. On Android 10 to 12, Android also requires this
+            permission so that party mode can open a Wi-Fi of its own; the app reads
+            no location for this.</td></tr>
     <tr><td>Physical activity</td>
         <td>Detecting walking, running or driving for activity-based features.</td></tr>
     <tr><td>Bluetooth and nearby devices</td>
@@ -807,7 +817,8 @@ stays on your device unless section 6 states otherwise.</p>
             and to a watch or chest strap for your heart rate (see section 9). From
             Android 17 on, this also covers access to the local network, which party
             mode, device transfer and sharing by QR code in the Sharing Hub need (see
-            section 7).</td></tr>
+            section 7). From Android 13 on, party mode also needs this permission to
+            open a Wi-Fi of its own.</td></tr>
     <tr><td>Wi-Fi state and Wi-Fi change</td>
         <td>Technical prerequisite for device connections and party mode on your
             local network.</td></tr>
@@ -938,11 +949,14 @@ without the developer learning anything about it:</p>
   <thead><tr><th>Feature</th><th>Technology and data exchanged</th></tr></thead>
   <tbody>
     <tr><td>Party mode</td>
-        <td>Your device offers access on the same Wi-Fi network. Track details,
+        <td>Your device offers access on the same Wi-Fi network – or in a Wi-Fi of
+            its own without internet, which the app opens for this and closes again when
+            you stop. Track details,
             playback position and the queue are transmitted. Your device processes each
             guest's IP address and chosen display name to attribute their song requests;
-            this never leaves your network and is discarded when you stop. Protected by a
-            PIN with lockout against guessing.</td></tr>
+            this never leaves your network and is discarded when you stop. Everything
+            exchanged between the guests' browsers and your device is encrypted; a PIN
+            with lockout against guessing adds protection.</td></tr>
     <tr><td>Passenger mode</td>
         <td>Google Nearby Connections over Bluetooth or Wi-Fi Direct. Track details and
             control commands are transmitted. The connection must be confirmed.</td></tr>
@@ -1030,8 +1044,8 @@ Uninstalling removes all data the app created; backups you stored outside the ap
 remain.</p>
 <p>App data resides in the protected Android app sandbox, and the database is additionally
 encrypted. How well it is protected also depends on your device, in particular screen lock,
-system updates and device encryption. Internet connections use HTTPS. Party mode access is
-protected by a PIN.</p>
+system updates and device encryption. Internet connections use HTTPS. Party mode encrypts
+the exchange with the guests; access is additionally protected by a PIN.</p>
 </section>
 
 <section>

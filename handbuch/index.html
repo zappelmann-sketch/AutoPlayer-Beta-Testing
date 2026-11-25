@@ -6817,7 +6817,7 @@ Sleep Timer (+5&nbsp;Min)</p>
 <div class="vorlese-leiste">
 <button class="vorlese-knopf" data-datei="party" data-anker="party" data-stimmen="w m" data-titel="Party-Modus" data-haupt="1" data-beschriftung="&#9654; Vorlesen">&#9654; Vorlesen</button>
 <div class="vorlese-balken"><i></i></div>
-<span class="vorlese-dauer" data-w="4:15" data-m="4:36">4:15</span>
+<span class="vorlese-dauer" data-w="9:58" data-m="10:52">9:58</span>
 <span class="gehoert-haken" title="schon geh&ouml;rt">&#10003;</span>
 <a class="vorlese-neben inhalt-knopf" href="#inh-party" title="Zum Inhaltsverzeichnis, an die Stelle dieses Kapitels">&#8593; Inhalt</a>
 </div>
@@ -6825,7 +6825,8 @@ Sleep Timer (+5&nbsp;Min)</p>
 <h4>Was ist das?</h4>
 <p>Das eigene Handy wird zum Musikserver. G&auml;ste scannen einen Code und w&uuml;nschen
 sich Titel &uuml;ber ihren Browser &ndash; <b>ohne dass sie etwas installieren m&uuml;ssen</b>.
-Alles bleibt im heimischen Netz, ohne Internet.</p>
+Alles bleibt im WLAN vor Ort, ohne Internet und ohne fremden Server &ndash; auf Wunsch in einem
+eigenen Party-WLAN, das AutoPlayer selbst &ouml;ffnet.</p>
 
 <h4>Vorbereitung</h4>
 <ol>
@@ -6835,37 +6836,40 @@ Alles bleibt im heimischen Netz, ohne Internet.</p>
     <ul>
       <li><b>Aktuelles WLAN verwenden</b> &ndash; das WLAN-Passwort eintragen, damit es in
           den Code eingebettet werden kann</li>
-      <li><b>WLAN-Hotspot</b> &ndash; einen eigenen aufmachen. Ein Link f&uuml;hrt zu den
-          Android-Einstellungen.</li>
+      <li><b>WLAN-Hotspot</b> &ndash; AutoPlayer &ouml;ffnet beim Start ein eigenes Party-WLAN ohne
+          Internet; Name und Passwort kommen von selbst in den WLAN-Code. Nur mit dem Schalter
+          <b>G&auml;ste d&uuml;rfen &uuml;ber mein Handy ins Internet</b> nimmt die Party stattdessen den
+          Android-Hotspot (siehe unten &bdquo;Internet f&uuml;r G&auml;ste&ldquo;).</li>
     </ul>
   </li>
   <li>Nach Wunsch absichern (siehe unten)</li>
   <li><b>Party starten</b>. Auf Handys mit Android&nbsp;17 braucht die Party die Erlaubnis
       <b>Ger&auml;te in der N&auml;he</b> &ndash; fehlt sie noch, fragt Android einmal danach. Ohne sie
-      startet die Party nicht.</li>
+      startet die Party nicht. Das eigene Party-WLAN braucht dieselbe Erlaubnis schon ab
+      Android&nbsp;13, auf Android&nbsp;10 bis 12 stattdessen den <b>Standort</b>.</li>
 </ol>
 <div class="bildreihe">
 <figure class="schirm">
   <a href="bilder/party-start.webp" target="_blank" rel="noopener">
-    <img src="bilder/party-start.webp" alt="Party-Name und Netzwerk – hier ein eigener WLAN-Hotspot. Der Knopf öffnet die Hotspot-Einstellungen von Android; Name und Passwort kommen in den WLAN-Code." loading="lazy" width="540" height="1101">
+    <img src="bilder/party-start.webp" alt="Party-Name und Netzwerk – hier WLAN-Hotspot: AutoPlayer öffnet ein eigenes Party-WLAN. Darunter der Schalter „Gäste dürfen über mein Handy ins Internet“, ab Werk aus." loading="lazy" width="540" height="884">
   </a>
-  <figcaption>Party-Name und Netzwerk – hier ein eigener WLAN-Hotspot. Der Knopf öffnet die Hotspot-Einstellungen von Android; Name und Passwort kommen in den WLAN-Code.
+  <figcaption>Party-Name und Netzwerk – hier <b>WLAN-Hotspot</b>: AutoPlayer öffnet ein eigenes Party-WLAN. Darunter der Schalter „Gäste dürfen über mein Handy ins Internet“, ab Werk aus.
     <span class="pfad">Menü → Tools &amp; Funktionen → Party-Modus</span>
   </figcaption>
 </figure>
 <figure class="schirm">
   <a href="bilder/party-absicherung.webp" target="_blank" rel="noopener">
-    <img src="bilder/party-absicherung.webp" alt="Weiter unten die Absicherung: PIN, Genehmigung, Max. Gäste und Abstimmung, dann der Sicherheitshinweis und Party starten." loading="lazy" width="540" height="712">
+    <img src="bilder/party-absicherung.webp" alt="Weiter unten die Absicherung: PIN, Genehmigung, Max. Gäste und Abstimmung, dann der Hinweis zur Verschlüsselung und Party starten." loading="lazy" width="540" height="600">
   </a>
-  <figcaption>Weiter unten die Absicherung: PIN, Genehmigung, Max. Gäste und Abstimmung, dann der Sicherheitshinweis und <b>Party starten</b>.
+  <figcaption>Weiter unten die Absicherung: PIN, Genehmigung, Max. Gäste und Abstimmung, dann der Hinweis zur Verschlüsselung und <b>Party starten</b>.
     <span class="pfad">Party-Modus → nach unten scrollen</span>
   </figcaption>
 </figure>
 <figure class="schirm">
   <a href="bilder/party-laeuft.webp" target="_blank" rel="noopener">
-    <img src="bilder/party-laeuft.webp" alt="Die Party läuft, noch ohne Gäste. Links der Code zur Party-Adresse, daneben Adresse und PIN; rechts unten der WLAN-Code – ihn scannen Gäste zuerst." loading="lazy" width="540" height="1101">
+    <img src="bilder/party-laeuft.webp" alt="Die Party läuft, noch ohne Gäste. Links der Code zur Party-Adresse, daneben Netzname, Adresse und PIN; rechts unten der WLAN-Code – ihn scannen Gäste zuerst. Oben das Schild: So ist deine Party geschützt." loading="lazy" width="540" height="1101">
   </a>
-  <figcaption>Die Party läuft, noch ohne Gäste. Links der Code zur Party-Adresse, daneben Adresse und PIN; rechts unten der WLAN-Code – ihn scannen Gäste zuerst.
+  <figcaption>Die Party läuft, noch ohne Gäste. Links der Code zur Party-Adresse, daneben Netzname, Adresse und PIN; rechts unten der WLAN-Code – ihn scannen Gäste zuerst. Oben das Schild: <b>So ist deine Party geschützt</b>.
     <span class="pfad">Party-Modus → Party starten</span>
   </figcaption>
 </figure>
@@ -6875,9 +6879,10 @@ Alles bleibt im heimischen Netz, ohne Internet.</p>
 <p>Es erscheinen <b>zwei</b> QR-Codes, und die Reihenfolge ist wichtig:</p>
 <ol>
   <li><b>WLAN-Login</b> &ndash; zuerst scannen. Er bringt das Gast-Ger&auml;t ins richtige
-      Netz.</li>
+      Netz. Hat dieses WLAN kein Internet, fragt Android oft &bdquo;Verbindung beibehalten?&ldquo;
+      &ndash; mit &bdquo;Ja&ldquo; antworten.</li>
   <li><b>Party-Adresse</b> &ndash; danach scannen. Er &ouml;ffnet die Bedienseite im
-      Browser, die PIN steckt schon mit drin.</li>
+      Browser, die PIN und der Schl&uuml;ssel f&uuml;r die Verschl&uuml;sselung stecken schon mit drin.</li>
 </ol>
 <p>Wer die Reihenfolge vertauscht, landet im Nichts: Ohne dasselbe Netz ist die Seite
 nicht erreichbar. Die App weist auch darauf hin.</p>
@@ -6906,9 +6911,13 @@ nicht erreichbar. Die App weist auch darauf hin.</p>
 Standardwerten.</p>
 
 <div class="achtung" style="background:rgba(240,180,41,.08);border-left-color:#f0b429;color:#ffe3a3;display:flow-root">
-<b>Sicherheitshinweis der App:</b> Die Verbindung l&auml;uft unverschl&uuml;sselt &uuml;ber
-das WLAN. Empfohlen ist das nur in vertrauensw&uuml;rdigen Netzen &ndash; also im eigenen
-Zuhause, nicht in &ouml;ffentlichen Netzen.
+<b>So ist die Party gesch&uuml;tzt:</b> Alles, was Browser und Handy austauschen, ist
+verschl&uuml;sselt &ndash; Beitritt, Suche, W&uuml;nsche, Stimmen. Den Schl&uuml;ssel bringt der Party-Code
+mit. Wer die Adresse von Hand eintippt, ist ebenfalls verschl&uuml;sselt verbunden, aber ohne diesen
+Schl&uuml;ssel &ndash; die Gastseite zeigt dann ein gelbes statt eines gr&uuml;nen Schlosses. Der Browser
+meldet trotzdem &bdquo;Nicht sicher&ldquo;, weil es f&uuml;r Adressen im Heimnetz keine Zertifikate gibt;
+warum, erkl&auml;rt der Schild-Knopf oben im Party-Screen. Am besten im eigenen WLAN feiern, nicht in
+&ouml;ffentlichen Netzen. Mehr dazu ganz unten unter &bdquo;Sicherheit im Detail&ldquo;.
 </div>
 
 <h4>Wie W&uuml;nsche gespielt werden</h4>
@@ -6916,7 +6925,9 @@ Zuhause, nicht in &ouml;ffentlichen Netzen.
 gerade spielt, l&auml;uft zu Ende &ndash; wer nicht warten will, tippt im Player auf Weiter.
 Sind keine W&uuml;nsche mehr offen, l&auml;uft die bisherige Musik einfach weiter.
 Zufallswiedergabe und Titel-Wiederholung schalten sich daf&uuml;r aus. Das alles l&auml;uft
-auch, wenn der Party-Bildschirm geschlossen ist.</p>
+auch, wenn der Party-Bildschirm geschlossen ist. Solange die Party l&auml;uft, steht in der
+Benachrichtigungsleiste <b>Party l&auml;uft</b>: So h&auml;lt Android die App auch in langen Pausen wach,
+und &uuml;ber <b>Party beenden</b> endet sie direkt von dort.</p>
 <p>Die Reihenfolge der W&uuml;nsche:</p>
 <ol>
   <li>vom Gastgeber nach oben geschobene</li>
@@ -6926,8 +6937,10 @@ auch, wenn der Party-Bildschirm geschlossen ist.</p>
 </ol>
 
 <h4>Was G&auml;ste sehen</h4>
-<p>Zuerst eine Anmeldeseite mit Namensfeld und Sprachauswahl. Wer die Adresse von Hand
-eintippt, gibt dort auch die PIN ein. Ist der Name schon vergeben, sagt die Seite das.</p>
+<p>Zuerst eine Anmeldeseite mit Namensfeld und Sprachauswahl. Oben stehen Logo und Name von
+AutoPlayer und die Pet-Auswahl; Octo begr&uuml;&szlig;t jeden Gast mit dem Namen der Party. Wer die
+Adresse von Hand eintippt, gibt dort auch die PIN ein. Ist der Name schon vergeben, sagt die
+Seite das.</p>
 <p>Danach: der laufende Titel mit Fortschritt, ein Suchfeld, Durchsuchen nach Titeln (mit
 Buchstabenleiste), Alben, K&uuml;nstlern und Genres &ndash; und die Warteschlange. Ein Tippen
 auf Plus w&uuml;nscht einen Titel, der Pfeil daneben ist eine Stimme. Mit Genehmigung
@@ -6936,15 +6949,15 @@ Endet die Party, zeigt sie eine Dankesseite.</p>
 <div class="bildreihe">
 <figure class="schirm">
   <a href="bilder/party-gast-anmelden.webp" target="_blank" rel="noopener">
-    <img src="bilder/party-gast-anmelden.webp" alt="Nach dem Scannen öffnet sich die Anmeldeseite: Namen eintragen, Sprache wählen, Party beitreten. Die PIN steckt schon in der Adresse." loading="lazy" width="540" height="1066">
+    <img src="bilder/party-gast-anmelden.webp" alt="Nach dem Scannen öffnet sich die Anmeldeseite, Octo begrüßt den Gast. Namen eintragen, Sprache wählen, Party beitreten. PIN und Schlüssel stecken schon in der Adresse." loading="lazy" width="540" height="1082">
   </a>
-  <figcaption>Nach dem Scannen öffnet sich die Anmeldeseite: Namen eintragen, Sprache wählen, <b>Party beitreten</b>. Die PIN steckt schon in der Adresse.
+  <figcaption>Nach dem Scannen öffnet sich die Anmeldeseite, Octo begrüßt den Gast. Namen eintragen, Sprache wählen, <b>Party beitreten</b>. PIN und Schlüssel stecken schon in der Adresse.
     <span class="pfad">Gast: Browser nach dem Party-Code</span>
   </figcaption>
 </figure>
 <figure class="schirm">
   <a href="bilder/party-gast-suche.webp" target="_blank" rel="noopener">
-    <img src="bilder/party-gast-suche.webp" alt="Suchen: Schon beim Tippen erscheinen Titel, deren Name, Künstler oder Album passt – mit Länge und Tempo. Das Plus wünscht den Titel." loading="lazy" width="540" height="1068">
+    <img src="bilder/party-gast-suche.webp" alt="Suchen: Schon beim Tippen erscheinen Titel, deren Name, Künstler oder Album passt – mit Länge und Tempo. Das Plus wünscht den Titel." loading="lazy" width="540" height="1082">
   </a>
   <figcaption>Suchen: Schon beim Tippen erscheinen Titel, deren Name, Künstler oder Album passt – mit Länge und Tempo. Das Plus wünscht den Titel.
     <span class="pfad">Gast: Reiter Suchen</span>
@@ -6952,7 +6965,7 @@ Endet die Party, zeigt sie eine Dankesseite.</p>
 </figure>
 <figure class="schirm">
   <a href="bilder/party-gast-durchsuchen.webp" target="_blank" rel="noopener">
-    <img src="bilder/party-gast-durchsuchen.webp" alt="Durchsuchen nach Titeln mit Buchstabenleiste, hier alles mit 4. Graue Zeichen haben keine Titel. Daneben Alben, Künstler und Genres." loading="lazy" width="540" height="1066">
+    <img src="bilder/party-gast-durchsuchen.webp" alt="Durchsuchen nach Titeln mit Buchstabenleiste, hier alles mit 4. Graue Zeichen haben keine Titel. Daneben Alben, Künstler und Genres." loading="lazy" width="540" height="1082">
   </a>
   <figcaption>Durchsuchen nach Titeln mit Buchstabenleiste, hier alles mit 4. Graue Zeichen haben keine Titel. Daneben Alben, Künstler und Genres.
     <span class="pfad">Gast: Reiter Durchsuchen → Songs</span>
@@ -6962,7 +6975,7 @@ Endet die Party, zeigt sie eine Dankesseite.</p>
 <div class="bildreihe">
 <figure class="schirm">
   <a href="bilder/party-gast-genres.webp" target="_blank" rel="noopener">
-    <img src="bilder/party-gast-genres.webp" alt="Die Genres kommen aus den Tags der Musikdateien – ein Tippen zeigt die Titel dazu." loading="lazy" width="540" height="1068">
+    <img src="bilder/party-gast-genres.webp" alt="Die Genres kommen aus den Tags der Musikdateien – ein Tippen zeigt die Titel dazu." loading="lazy" width="540" height="1082">
   </a>
   <figcaption>Die Genres kommen aus den Tags der Musikdateien – ein Tippen zeigt die Titel dazu.
     <span class="pfad">Gast: Durchsuchen → Genres</span>
@@ -6970,7 +6983,7 @@ Endet die Party, zeigt sie eine Dankesseite.</p>
 </figure>
 <figure class="schirm">
   <a href="bilder/party-gast-warteschlange.webp" target="_blank" rel="noopener">
-    <img src="bilder/party-gast-warteschlange.webp" alt="Die Warteschlange: zwei Wünsche von Gast-1. Der Pfeil ist eine Stimme – rot umrandet heißt: selbst abgestimmt. Mehr Stimmen rücken einen Wunsch nach vorn." loading="lazy" width="540" height="1068">
+    <img src="bilder/party-gast-warteschlange.webp" alt="Die Warteschlange: zwei Wünsche von Gast-1. Der Pfeil ist eine Stimme – rot umrandet heißt: selbst abgestimmt. Mehr Stimmen rücken einen Wunsch nach vorn." loading="lazy" width="540" height="1082">
   </a>
   <figcaption>Die Warteschlange: zwei Wünsche von Gast-1. Der Pfeil ist eine Stimme – rot umrandet heißt: selbst abgestimmt. Mehr Stimmen rücken einen Wunsch nach vorn.
     <span class="pfad">Gast: Reiter Warteschlange</span>
@@ -6978,17 +6991,18 @@ Endet die Party, zeigt sie eine Dankesseite.</p>
 </figure>
 <figure class="schirm">
   <a href="bilder/party-gast-laeuft.webp" target="_blank" rel="noopener">
-    <img src="bilder/party-gast-laeuft.webp" alt="Etwas später läuft der Wunsch „Black Sea Captain“: Er steht nur noch oben mit Fortschritt. Unter „Als Nächstes“ warten die übrigen Wünsche – hier „41000 Lines“ mit einer Stimme." loading="lazy" width="540" height="982">
+    <img src="bilder/party-gast-laeuft.webp" alt="Etwas später läuft der Wunsch „Beinahe Licht“: Er steht nur noch oben mit Fortschritt. Unter „Als Nächstes“ warten die übrigen Wünsche – hier „Heimkehr durch das Licht“ mit einer Stimme. Unten alle fünf Pets." loading="lazy" width="540" height="1082">
   </a>
-  <figcaption>Etwas später läuft der Wunsch „Black Sea Captain“: Er steht nur noch oben mit Fortschritt. Unter „Als Nächstes“ warten die übrigen Wünsche – hier „41000 Lines“ mit einer Stimme.
+  <figcaption>Etwas später läuft der Wunsch „Beinahe Licht“: Er steht nur noch oben mit Fortschritt. Unter „Als Nächstes“ warten die übrigen Wünsche – hier „Heimkehr durch das Licht“ mit einer Stimme. Unten alle fünf Pets.
     <span class="pfad">Gast: oben auf jeder Seite</span>
   </figcaption>
 </figure>
 </div>
 
 <h4>Was der Gastgeber sieht</h4>
-<p>Oben die Codes, die Zahl der G&auml;ste, die wartenden W&uuml;nsche und die Anfragen
-insgesamt. Darunter vier Reiter:</p>
+<p>In der Titelleiste das Schild (<b>So ist deine Party gesch&uuml;tzt</b>), das Zahnrad und das
+Quadrat, das die Party beendet. Darunter die Codes, die Zahl der G&auml;ste, die wartenden W&uuml;nsche
+und die Anfragen insgesamt. Darunter vier Reiter:</p>
 <div class="tab-huelle">
 <table>
 <tr><th>Reiter</th><th>Inhalt</th></tr>
@@ -7001,25 +7015,25 @@ insgesamt. Darunter vier Reiter:</p>
 <div class="bildreihe">
 <figure class="schirm">
   <a href="bilder/party-gastgeber.webp" target="_blank" rel="noopener">
-    <img src="bilder/party-gastgeber.webp" alt="Reiter Warteschlange mit zwei Wünschen: der laufende mit Pause, der wartende mit Abspielen, dazu je nach oben schieben und entfernen. Die Zahl links sind die Stimmen. Oben: 1 Gast, 1 wartender Wunsch, 3 Anfragen insgesamt." loading="lazy" width="540" height="1101">
+    <img src="bilder/party-gastgeber.webp" alt="Reiter Warteschlange mit zwei Wünschen: der laufende mit Pause, der wartende mit Abspielen, dazu je nach oben schieben und entfernen. Die Zahl links sind die Stimmen. Oben: 1 Gast, 1 wartender Wunsch, 5 Anfragen insgesamt – hier im aktuellen WLAN." loading="lazy" width="540" height="1101">
   </a>
-  <figcaption>Reiter Warteschlange mit zwei Wünschen: der laufende mit Pause, der wartende mit Abspielen, dazu je nach oben schieben und entfernen. Die Zahl links sind die Stimmen. Oben: 1 Gast, 1 wartender Wunsch, 3 Anfragen insgesamt.
+  <figcaption>Reiter Warteschlange mit zwei Wünschen: der laufende mit Pause, der wartende mit Abspielen, dazu je nach oben schieben und entfernen. Die Zahl links sind die Stimmen. Oben: 1 Gast, 1 wartender Wunsch, 5 Anfragen insgesamt – hier im aktuellen WLAN.
     <span class="pfad">Party läuft → Warteschlange</span>
   </figcaption>
 </figure>
 <figure class="schirm">
   <a href="bilder/party-gaeste.webp" target="_blank" rel="noopener">
-    <img src="bilder/party-gaeste.webp" alt="Reiter Gäste: Gast-1 ist online (grüner Punkt) und hat drei Titel gewünscht; „gespielt“ zählt erst, wenn ein Wunsch zu Ende gelaufen ist. Das Symbol rechts sperrt den Gast." loading="lazy" width="540" height="1101">
+    <img src="bilder/party-gaeste.webp" alt="Reiter Gäste: Gast-1 ist online (grüner Punkt) und hat fünf Titel gewünscht, drei davon liefen schon zu Ende – erst dann zählen sie als „gespielt“. Das Symbol rechts sperrt den Gast." loading="lazy" width="540" height="1101">
   </a>
-  <figcaption>Reiter Gäste: Gast-1 ist online (grüner Punkt) und hat drei Titel gewünscht; „gespielt“ zählt erst, wenn ein Wunsch zu Ende gelaufen ist. Das Symbol rechts sperrt den Gast.
+  <figcaption>Reiter Gäste: Gast-1 ist online (grüner Punkt) und hat fünf Titel gewünscht, drei davon liefen schon zu Ende – erst dann zählen sie als „gespielt“. Das Symbol rechts sperrt den Gast.
     <span class="pfad">Party läuft → Gäste</span>
   </figcaption>
 </figure>
 <figure class="schirm">
   <a href="bilder/party-statistik.webp" target="_blank" rel="noopener">
-    <img src="bilder/party-statistik.webp" alt="Reiter Statistik, hier gleich nach dem Start: Gäste gesamt und online, Anfragen, gespielte Titel – weiter unten fleißigster Gast und meiste Stimmen." loading="lazy" width="540" height="1101">
+    <img src="bilder/party-statistik.webp" alt="Reiter Statistik: Gäste gesamt und online, Anfragen, gespielte Titel, der fleißigste Gast und der Wunsch mit den meisten Stimmen." loading="lazy" width="540" height="1101">
   </a>
-  <figcaption>Reiter Statistik, hier gleich nach dem Start: Gäste gesamt und online, Anfragen, gespielte Titel – weiter unten fleißigster Gast und meiste Stimmen.
+  <figcaption>Reiter Statistik: Gäste gesamt und online, Anfragen, gespielte Titel, der fleißigste Gast und der Wunsch mit den meisten Stimmen.
     <span class="pfad">Party läuft → Statistik</span>
   </figcaption>
 </figure>
@@ -7047,8 +7061,100 @@ insgesamt. Darunter vier Reiter:</p>
   <li><b>Genehmigung erforderlich</b> ist die wirksamste Bremse, wenn die Musikauswahl
       abzudriften droht.</li>
   <li>Sieht ein Gast eine Zeit&uuml;berschreitung, sind die Ger&auml;te meist in
-      verschiedenen Netzen.</li>
-  <li>Der Hotspot-Betrieb hilft, wenn das Heimnetz Ger&auml;te voneinander abschottet.</li>
+      verschiedenen Netzen &ndash; oder sein Handy weicht einem Party-WLAN ohne Internet aus. Was
+      dann hilft, steht unten.</li>
+  <li>Das eigene Party-WLAN hilft, wenn das Heimnetz Ger&auml;te voneinander abschottet &ndash; oder
+      wenn vor Ort gar kein WLAN da ist.</li>
+</ul>
+
+<h4>Internet f&uuml;r G&auml;ste</h4>
+<p>Bei <b>WLAN-Hotspot</b> entscheidet der Schalter <b>G&auml;ste d&uuml;rfen &uuml;ber mein Handy ins
+Internet</b>, welches WLAN die G&auml;ste bekommen. Ab Werk ist er aus.</p>
+<div class="tab-huelle">
+<table>
+<tr><th>Schalter</th><th>Was passiert</th></tr>
+<tr><td><b>Aus</b> (Standard)</td><td>AutoPlayer &ouml;ffnet beim Start ein eigenes Party-WLAN ohne Internet. G&auml;ste erreichen darin nur die Party-Seite, deine mobilen Daten bleiben bei dir. Name und Passwort vergibt Android, sie stehen von selbst im WLAN-Code. Endet die Party, schlie&szlig;t sich auch das WLAN.</td></tr>
+<tr><td><b>An</b></td><td>Du startest den Android-Hotspot selbst &ndash; <b>Hotspot-Einstellungen &ouml;ffnen</b> f&uuml;hrt hin. Name und Passwort des Hotspots tr&auml;gst du darunter ein, damit sie in den WLAN-Code kommen. Alle G&auml;ste nutzen dann deine mobilen Daten mit.</td></tr>
+</table>
+</div>
+<p>Bei <b>Aktuelles WLAN verwenden</b> gilt der Schalter nicht: Dort entscheidet dein Router, ob
+G&auml;ste ins Internet kommen.</p>
+<p>F&uuml;r das eigene Party-WLAN fragt Android ab Android&nbsp;13 nach der Erlaubnis <b>Ger&auml;te in der
+N&auml;he</b>, auf Android&nbsp;10 bis 12 nach dem <b>Standort</b> &ndash; dort muss der Standort auch
+eingeschaltet sein. AutoPlayer liest dabei keinen Standort; Android verlangt ihn nur, um ein WLAN
+zu &ouml;ffnen. L&auml;uft der Android-Hotspot noch, &ouml;ffnet Android kein zweites WLAN; die App sagt dann,
+dass er erst aus muss.</p>
+
+<h4>Pets und App auf der Gastseite</h4>
+<p>Oben auf jeder Seite stehen Logo und Name von AutoPlayer. Daneben w&auml;hlt jeder Gast seine
+Vumikio Pets: <b>Keine Pets</b>, eines der f&uuml;nf oder <b>Alle Pets</b>. Ab Werk ist Octo dabei und
+begr&uuml;&szlig;t den Gast mit dem Namen der Party. Die Wahl merkt sich sein Browser.</p>
+<p>Die Pets starten unten und wandern dann &uuml;ber die ganze Seite. Ziehen verschiebt sie, ein Tippen
+bringt einen Spruch, doppelt Tippen einen Trick. Punkte gibt es auf der Gastseite nicht. Hat der Gast
+auf seinem Handy Animationen ausgeschaltet, bleiben sie unten stehen.</p>
+<p>Auf Android-Handys zeigt die Leiste <b>Jetzt bei Google Play</b>, wenn das WLAN der Party Internet
+hat &ndash; der Knopf &ouml;ffnet die Seite von AutoPlayer im Play Store. Ohne Internet steht dort ein Satz
+zum sp&auml;teren Suchen. Auf anderen Handys, etwa iPhones, erscheint nichts davon.</p>
+<figure class="schirm">
+  <a href="bilder/party-gast-pets.webp" target="_blank" rel="noopener">
+    <img src="bilder/party-gast-pets.webp" alt="Die Pet-Auswahl auf der Gastseite: keine, eines der fünf oder alle. Octo ist ab Werk dabei." loading="lazy" width="540" height="1082">
+  </a>
+  <figcaption>Die Pet-Auswahl auf der Gastseite: keine, eines der fünf oder alle. Octo ist ab Werk dabei.
+    <span class="pfad">Gast: Auswahl oben rechts</span>
+  </figcaption>
+</figure>
+
+<h4>Sicherheit im Detail</h4>
+<p>Das Schild oben im Party-Screen erkl&auml;rt alles auch in der App. Kurz gefasst:</p>
+<ul>
+  <li><b>Verschl&uuml;sselt:</b> Beim &Ouml;ffnen der Seite handelt jeder Gast mit deinem Handy eigene
+      Schl&uuml;ssel aus. Beitritt, PIN, Namen, Suche, W&uuml;nsche, Stimmen und die Live-Anzeige gehen nur
+      verschl&uuml;sselt durchs WLAN &ndash; mit demselben Verfahren wie https (ChaCha20-Poly1305).
+      Ver&auml;nderte oder wiederholte Nachrichten werden verworfen.</li>
+  <li><b>Der Schl&uuml;ssel im Party-Code:</b> Der Code enth&auml;lt zus&auml;tzlich einen geheimen
+      Party-Schl&uuml;ssel. Er steht hinter dem &bdquo;#&ldquo; der Adresse, und diesen Teil schickt kein
+      Browser &uuml;bers Netz. Jede Party bekommt einen neuen, danach ist er wertlos. Wer die Adresse
+      abtippt, ist ebenfalls verschl&uuml;sselt, aber ohne Schutz gegen ein Ger&auml;t, das sich
+      dazwischenschaltet &ndash; daran erinnert das gelbe Schloss.</li>
+  <li><b>Warum &bdquo;Nicht sicher&ldquo;:</b> https-Zertifikate gibt es nur f&uuml;r Adressen im Internet.
+      Ger&auml;te im Heimnetz &ndash; Router, Drucker, diese Party &ndash; bekommen keins. Die Meldung des
+      Browsers l&auml;sst sich deshalb nicht abschalten; die Verschl&uuml;sselung gilt trotzdem.</li>
+  <li><b>Nichts von au&szlig;en:</b> Die Gastseite kommt vollst&auml;ndig vom Handy des Gastgebers und
+      l&auml;dt nichts von fremden Servern. G&auml;ste sehen Titel, K&uuml;nstler, Alben und Genres &ndash;
+      keine Dateien, keine Ordner und sonst nichts vom Handy.</li>
+  <li><b>Weitere Riegel:</b> die PIN mit Sperre nach Fehlversuchen, jeder Gast an sein Ger&auml;t
+      gebunden, G&auml;ste sperren, W&uuml;nsche freigeben und die Obergrenze f&uuml;r G&auml;ste.</li>
+</ul>
+<figure class="schirm">
+  <a href="bilder/party-sicherheit.webp" target="_blank" rel="noopener">
+    <img src="bilder/party-sicherheit.webp" alt="Das Schild oben im Party-Screen öffnet „So ist deine Party geschützt“ – mit Antworten zu WLAN, Verschlüsselung, Schlüssel und Grenzen." loading="lazy" width="540" height="1183">
+  </a>
+  <figcaption>Das Schild oben im Party-Screen öffnet <b>So ist deine Party geschützt</b> – mit Antworten zu WLAN, Verschlüsselung, Schlüssel und Grenzen.
+    <span class="pfad">Party-Modus → Schild oben rechts</span>
+  </figcaption>
+</figure>
+
+<h4>Wenn ein Gast &bdquo;Zeit&uuml;berschreitung&ldquo; sieht</h4>
+<p>Hat das Party-WLAN kein Internet, schicken manche Handys die Seite an diesem WLAN vorbei in ein
+anderes Netz &ndash; ins Mobilfunknetz oder in ein zweites WLAN, das sie nebenher halten. Der Browser
+meldet dann eine Zeit&uuml;berschreitung. So geht es am Handy des Gastes:</p>
+<ol>
+  <li>Auf die Meldung &bdquo;&hellip; hat keinen Internetzugriff&ldquo; tippen.</li>
+  <li>Die Frage &bdquo;Verbindung beibehalten?&ldquo; mit &bdquo;Ja&ldquo; beantworten. Manche Hersteller
+      formulieren es etwas anders.</li>
+  <li>Die Party-Seite neu laden.</li>
+</ol>
+<p>Solange das Handy so verbunden ist, hat es kein Internet &ndash; auch nicht &uuml;ber die mobilen
+Daten. R&uuml;ckg&auml;ngig: das Party-WLAN verlassen oder es in den WLAN-Einstellungen entfernen; dann
+vergisst das Handy die Antwort.</p>
+
+<h4>Grenzen</h4>
+<ul>
+  <li>Wer im selben WLAN sitzt, k&ouml;nnte mit viel Aufwand die Seite selbst manipulieren. Den
+      Party-Code deshalb nur den G&auml;sten zeigen und nicht in einem offenen, fremden WLAN feiern.</li>
+  <li>Das eigene Party-WLAN reicht so weit wie das WLAN des Gastgeber-Handys.</li>
+  <li>Ein eigenes Party-WLAN gibt es nur, solange kein Android-Hotspot l&auml;uft.</li>
+  <li>Im Party-WLAN ohne Internet haben G&auml;ste kein Internet, solange sie verbunden sind.</li>
 </ul>
 </article>
 <article id="teilen">
@@ -21259,7 +21365,7 @@ Sleep timer (+5&nbsp;min)</p>
 <div class="vorlese-leiste">
 <button class="vorlese-knopf" data-datei="en/party" data-anker="en-party" data-stimmen="w m" data-titel="Party Mode" data-haupt="1" data-beschriftung="&#9654; Read aloud">&#9654; Read aloud</button>
 <div class="vorlese-balken"><i></i></div>
-<span class="vorlese-dauer" data-w="4:29" data-m="4:31">4:29</span>
+<span class="vorlese-dauer" data-w="10:56" data-m="11:00">10:56</span>
 <span class="gehoert-haken" title="already heard">&#10003;</span>
 <a class="vorlese-neben inhalt-knopf" href="#en-inh-party" title="Back to the table of contents, at this chapter">&#8593; Contents</a>
 </div>
@@ -21267,7 +21373,8 @@ Sleep timer (+5&nbsp;min)</p>
 <h4>What is it?</h4>
 <p>Your own phone becomes a music server. Guests scan a code and request
 songs through their browser &ndash; <b>without having to install anything</b>.
-Everything stays on your home network, with no internet.</p>
+Everything stays in the Wi-Fi on site, with no internet and no outside server &ndash; if you like, in
+a party Wi-Fi of its own that AutoPlayer opens itself.</p>
 
 <h4>Preparation</h4>
 <ol>
@@ -21277,37 +21384,40 @@ Everything stays on your home network, with no internet.</p>
     <ul>
       <li><b>Use current WiFi</b> &ndash; enter the Wi-Fi password so that it can be embedded in
           the code</li>
-      <li><b>WiFi Hotspot</b> &ndash; set up one of your own. A link leads to the
-          Android settings.</li>
+      <li><b>WiFi Hotspot</b> &ndash; when the party starts, AutoPlayer opens a party Wi-Fi of its own
+          without internet; name and password go into the Wi-Fi code by themselves. Only with the switch
+          <b>Guests may use my phone’s internet</b> does the party use Android’s hotspot instead (see
+          “Internet for guests” below).</li>
     </ul>
   </li>
   <li>Secure it as you like (see below)</li>
   <li><b>Start Party</b>. On phones with Android&nbsp;17 the party needs the <b>Nearby devices</b>
       permission &ndash; if it is still missing, Android asks for it once. Without it the party
-      does not start.</li>
+      does not start. The party’s own Wi-Fi needs the same permission from Android&nbsp;13 on, and
+      <b>Location</b> instead on Android&nbsp;10 to 12.</li>
 </ol>
 <div class="bildreihe">
 <figure class="schirm">
   <a href="bilder/en/party-start.webp" target="_blank" rel="noopener">
-    <img src="bilder/en/party-start.webp" alt="Party name and network – here a Wi-Fi hotspot of your own. The button opens Android’s hotspot settings; name and password go into the Wi-Fi code." loading="lazy" width="540" height="1000">
+    <img src="bilder/en/party-start.webp" alt="Party name and network – here WiFi Hotspot: AutoPlayer opens a party Wi-Fi of its own. Below it the switch “Guests may use my phone’s internet”, off by default." loading="lazy" width="540" height="857">
   </a>
-  <figcaption>Party name and network – here a Wi-Fi hotspot of your own. The button opens Android’s hotspot settings; name and password go into the Wi-Fi code.
+  <figcaption>Party name and network – here <b>WiFi Hotspot</b>: AutoPlayer opens a party Wi-Fi of its own. Below it the switch “Guests may use my phone’s internet”, off by default.
     <span class="pfad">Menu → Tools &amp; Features → Party Mode</span>
   </figcaption>
 </figure>
 <figure class="schirm">
   <a href="bilder/en/party-absicherung.webp" target="_blank" rel="noopener">
-    <img src="bilder/en/party-absicherung.webp" alt="Further down the security options: PIN, approval, Max Guests and voting, then the security notice and Start Party." loading="lazy" width="540" height="600">
+    <img src="bilder/en/party-absicherung.webp" alt="Further down the security options: PIN, approval, Max Guests and voting, then the note on encryption and Start Party." loading="lazy" width="540" height="600">
   </a>
-  <figcaption>Further down the security options: PIN, approval, Max Guests and voting, then the security notice and <b>Start Party</b>.
+  <figcaption>Further down the security options: PIN, approval, Max Guests and voting, then the note on encryption and <b>Start Party</b>.
     <span class="pfad">Party Mode → scroll down</span>
   </figcaption>
 </figure>
 <figure class="schirm">
   <a href="bilder/en/party-laeuft.webp" target="_blank" rel="noopener">
-    <img src="bilder/en/party-laeuft.webp" alt="The party is running, still without guests. On the left the code for the party address, next to it the address and PIN; at the bottom right the Wi-Fi code – guests scan it first." loading="lazy" width="540" height="1101">
+    <img src="bilder/en/party-laeuft.webp" alt="The party is running, still without guests. On the left the code for the party address, next to it network name, address and PIN; at the bottom right the Wi-Fi code – guests scan it first. At the top the shield: How your party is protected." loading="lazy" width="540" height="1101">
   </a>
-  <figcaption>The party is running, still without guests. On the left the code for the party address, next to it the address and PIN; at the bottom right the Wi-Fi code – guests scan it first.
+  <figcaption>The party is running, still without guests. On the left the code for the party address, next to it network name, address and PIN; at the bottom right the Wi-Fi code – guests scan it first. At the top the shield: <b>How your party is protected</b>.
     <span class="pfad">Party Mode → Start Party</span>
   </figcaption>
 </figure>
@@ -21317,9 +21427,10 @@ Everything stays on your home network, with no internet.</p>
 <p><b>Two</b> QR codes appear, and the order matters:</p>
 <ol>
   <li><b>WiFi Login</b> &ndash; scan this first. It puts the guest’s device on the right
-      network.</li>
+      network. If this Wi-Fi has no internet, Android often asks “Stay connected?” &ndash; answer
+      “Yes”.</li>
   <li><b>Party address</b> &ndash; scan this second. It opens the control page in the
-      browser, with the PIN already included.</li>
+      browser, with the PIN and the key for the encryption already included.</li>
 </ol>
 <p>If you mix up the order, you end up nowhere: without the same network the page
 can’t be reached. The app also points this out.</p>
@@ -21348,9 +21459,13 @@ can’t be reached. The app also points this out.</p>
 default values.</p>
 
 <div class="achtung" style="background:rgba(240,180,41,.08);border-left-color:#f0b429;color:#ffe3a3;display:flow-root">
-<b>The app’s security notice:</b> The connection is not encrypted on the
-Wi-Fi network. It is recommended only on trusted networks &ndash; that is, in your own
-home, not on public networks.
+<b>How the party is protected:</b> Everything the browser and the phone exchange is
+encrypted &ndash; joining, searching, requests, votes. The party code brings the key along. Anyone who
+types the address in is connected encrypted too, but without that key &ndash; the guest page then shows
+a yellow lock instead of a green one. The browser still says “Not secure”, because there are no
+certificates for addresses in a home network; the shield button at the top of the party screen explains
+why. Best used in your own Wi-Fi, not on public networks. More on this at the very end, under
+“Security in detail”.
 </div>
 
 <h4>How requests are played</h4>
@@ -21358,7 +21473,9 @@ home, not on public networks.
 is playing now runs to the end &ndash; if you don’t want to wait, tap Next in the player.
 When no requests are left, the previous music simply keeps playing.
 Shuffle and repeat switch off for this. All of this also works
-when the Party screen is closed.</p>
+when the Party screen is closed. While the party is running, the notification bar shows
+<b>Party running</b>: this keeps Android from putting the app to sleep during long pauses, and
+<b>End party</b> ends it right from there.</p>
 <p>The order of the requests:</p>
 <ol>
   <li>those the host has pushed to the top</li>
@@ -21368,8 +21485,9 @@ when the Party screen is closed.</p>
 </ol>
 
 <h4>What guests see</h4>
-<p>First a sign-in page with a name field and language selection. If you type the address in by hand,
-you also enter the PIN there. If the name is already taken, the page says so.</p>
+<p>First a sign-in page with a name field and language selection. At the top are AutoPlayer’s logo
+and name and the pet selection; Octo welcomes every guest with the name of the party. If you type the
+address in by hand, you also enter the PIN there. If the name is already taken, the page says so.</p>
 <p>Then: the current song with progress, a search field, browsing by songs (with
 a letter bar), albums, artists and genres &ndash; and the queue. Tapping
 the plus requests a song, the arrow next to it is a vote. With approval,
@@ -21378,15 +21496,15 @@ When the party ends, it shows a thank-you page.</p>
 <div class="bildreihe">
 <figure class="schirm">
   <a href="bilder/en/party-gast-anmelden.webp" target="_blank" rel="noopener">
-    <img src="bilder/en/party-gast-anmelden.webp" alt="After scanning, the sign-in page opens: enter a name, choose a language, Join Party. The PIN is already in the address." loading="lazy" width="540" height="1066">
+    <img src="bilder/en/party-gast-anmelden.webp" alt="After scanning, the sign-in page opens and Octo welcomes the guest. Enter a name, choose a language, Join Party. PIN and key are already in the address." loading="lazy" width="540" height="1082">
   </a>
-  <figcaption>After scanning, the sign-in page opens: enter a name, choose a language, <b>Join Party</b>. The PIN is already in the address.
+  <figcaption>After scanning, the sign-in page opens and Octo welcomes the guest. Enter a name, choose a language, <b>Join Party</b>. PIN and key are already in the address.
     <span class="pfad">Guest: browser after the party code</span>
   </figcaption>
 </figure>
 <figure class="schirm">
   <a href="bilder/en/party-gast-suche.webp" target="_blank" rel="noopener">
-    <img src="bilder/en/party-gast-suche.webp" alt="Search: As you type, songs whose title, artist or album matches appear – with length and tempo. The plus requests the song." loading="lazy" width="540" height="1068">
+    <img src="bilder/en/party-gast-suche.webp" alt="Search: As you type, songs whose title, artist or album matches appear – with length and tempo. The plus requests the song." loading="lazy" width="540" height="1082">
   </a>
   <figcaption>Search: As you type, songs whose title, artist or album matches appear – with length and tempo. The plus requests the song.
     <span class="pfad">Guest: Search tab</span>
@@ -21394,7 +21512,7 @@ When the party ends, it shows a thank-you page.</p>
 </figure>
 <figure class="schirm">
   <a href="bilder/en/party-gast-durchsuchen.webp" target="_blank" rel="noopener">
-    <img src="bilder/en/party-gast-durchsuchen.webp" alt="Browse by songs with a letter bar, here everything starting with 4. Gray characters have no songs. Next to it albums, artists and genres." loading="lazy" width="540" height="1066">
+    <img src="bilder/en/party-gast-durchsuchen.webp" alt="Browse by songs with a letter bar, here everything starting with 4. Gray characters have no songs. Next to it albums, artists and genres." loading="lazy" width="540" height="1082">
   </a>
   <figcaption>Browse by songs with a letter bar, here everything starting with 4. Gray characters have no songs. Next to it albums, artists and genres.
     <span class="pfad">Guest: Browse tab → Songs</span>
@@ -21404,7 +21522,7 @@ When the party ends, it shows a thank-you page.</p>
 <div class="bildreihe">
 <figure class="schirm">
   <a href="bilder/en/party-gast-genres.webp" target="_blank" rel="noopener">
-    <img src="bilder/en/party-gast-genres.webp" alt="The genres come from the tags of the music files – a tap shows the songs for it." loading="lazy" width="540" height="1068">
+    <img src="bilder/en/party-gast-genres.webp" alt="The genres come from the tags of the music files – a tap shows the songs for it." loading="lazy" width="540" height="1082">
   </a>
   <figcaption>The genres come from the tags of the music files – a tap shows the songs for it.
     <span class="pfad">Guest: Browse → Genres</span>
@@ -21412,7 +21530,7 @@ When the party ends, it shows a thank-you page.</p>
 </figure>
 <figure class="schirm">
   <a href="bilder/en/party-gast-warteschlange.webp" target="_blank" rel="noopener">
-    <img src="bilder/en/party-gast-warteschlange.webp" alt="The queue: two requests from Guest-1. The arrow is a vote – outlined in red means: you voted yourself. More votes move a request forward." loading="lazy" width="540" height="1068">
+    <img src="bilder/en/party-gast-warteschlange.webp" alt="The queue: two requests from Guest-1. The arrow is a vote – outlined in red means: you voted yourself. More votes move a request forward." loading="lazy" width="540" height="1082">
   </a>
   <figcaption>The queue: two requests from Guest-1. The arrow is a vote – outlined in red means: you voted yourself. More votes move a request forward.
     <span class="pfad">Guest: Queue tab</span>
@@ -21420,16 +21538,17 @@ When the party ends, it shows a thank-you page.</p>
 </figure>
 <figure class="schirm">
   <a href="bilder/en/party-gast-laeuft.webp" target="_blank" rel="noopener">
-    <img src="bilder/en/party-gast-laeuft.webp" alt="A little later the request “Black Sea Captain” is playing: it now appears only at the top with progress. Under “Up Next” the remaining requests wait – here “41000 Lines” with one vote." loading="lazy" width="540" height="982">
+    <img src="bilder/en/party-gast-laeuft.webp" alt="A little later the request “After Me the Light” is playing: it now appears only at the top with progress. Under “Up Next” the remaining requests wait – here “41000 Lines” with one vote. At the bottom all five pets." loading="lazy" width="540" height="1082">
   </a>
-  <figcaption>A little later the request “Black Sea Captain” is playing: it now appears only at the top with progress. Under “Up Next” the remaining requests wait – here “41000 Lines” with one vote.
+  <figcaption>A little later the request “After Me the Light” is playing: it now appears only at the top with progress. Under “Up Next” the remaining requests wait – here “41000 Lines” with one vote. At the bottom all five pets.
     <span class="pfad">Guest: top of every page</span>
   </figcaption>
 </figure>
 </div>
 
 <h4>What the host sees</h4>
-<p>At the top the codes, the number of guests, the waiting requests and the total
+<p>In the title bar the shield (<b>How your party is protected</b>), the gear icon and the square that
+ends the party. Below that the codes, the number of guests, the waiting requests and the total
 requests. Below that four tabs:</p>
 <div class="tab-huelle">
 <table>
@@ -21443,25 +21562,25 @@ requests. Below that four tabs:</p>
 <div class="bildreihe">
 <figure class="schirm">
   <a href="bilder/en/party-gastgeber.webp" target="_blank" rel="noopener">
-    <img src="bilder/en/party-gastgeber.webp" alt="Queue tab with two requests: the playing one with Pause, the waiting one with Play, each also with move to top and remove. The number on the left is the votes. At the top: 1 guest, 1 waiting request, 3 requests in total." loading="lazy" width="540" height="1101">
+    <img src="bilder/en/party-gastgeber.webp" alt="Queue tab with two requests: the playing one with Pause, the waiting one with Play, each also with move to top and remove. The number on the left is the votes. At the top: 1 guest, 1 waiting request, 3 requests in total – here in the current Wi-Fi." loading="lazy" width="540" height="1101">
   </a>
-  <figcaption>Queue tab with two requests: the playing one with Pause, the waiting one with Play, each also with move to top and remove. The number on the left is the votes. At the top: 1 guest, 1 waiting request, 3 requests in total.
+  <figcaption>Queue tab with two requests: the playing one with Pause, the waiting one with Play, each also with move to top and remove. The number on the left is the votes. At the top: 1 guest, 1 waiting request, 3 requests in total – here in the current Wi-Fi.
     <span class="pfad">Party running → Queue</span>
   </figcaption>
 </figure>
 <figure class="schirm">
   <a href="bilder/en/party-gaeste.webp" target="_blank" rel="noopener">
-    <img src="bilder/en/party-gaeste.webp" alt="Guests tab: Guest-1 is online (green dot) and has requested three songs; “played” only counts once a request has finished playing. The icon on the right blocks the guest." loading="lazy" width="540" height="1101">
+    <img src="bilder/en/party-gaeste.webp" alt="Guests tab: Guest-1 is online (green dot) and has requested three songs, one of which has finished playing – only then does a request count as “played”. The icon on the right blocks the guest." loading="lazy" width="540" height="1101">
   </a>
-  <figcaption>Guests tab: Guest-1 is online (green dot) and has requested three songs; “played” only counts once a request has finished playing. The icon on the right blocks the guest.
+  <figcaption>Guests tab: Guest-1 is online (green dot) and has requested three songs, one of which has finished playing – only then does a request count as “played”. The icon on the right blocks the guest.
     <span class="pfad">Party running → Guests</span>
   </figcaption>
 </figure>
 <figure class="schirm">
   <a href="bilder/en/party-statistik.webp" target="_blank" rel="noopener">
-    <img src="bilder/en/party-statistik.webp" alt="Statistics tab, here right after the start: total and online guests, requests, songs played – further down top requester and most voted." loading="lazy" width="540" height="1101">
+    <img src="bilder/en/party-statistik.webp" alt="Statistics tab: total and online guests, requests, songs played, the top requester and the request with the most votes." loading="lazy" width="540" height="1101">
   </a>
-  <figcaption>Statistics tab, here right after the start: total and online guests, requests, songs played – further down top requester and most voted.
+  <figcaption>Statistics tab: total and online guests, requests, songs played, the top requester and the request with the most votes.
     <span class="pfad">Party running → Statistics</span>
   </figcaption>
 </figure>
@@ -21489,8 +21608,98 @@ requests. Below that four tabs:</p>
   <li><b>Approval Required</b> is the most effective brake if the music selection
       threatens to drift.</li>
   <li>If a guest sees a timeout, the devices are usually on
-      different networks.</li>
-  <li>Hotspot mode helps if your home network isolates devices from each other.</li>
+      different networks &ndash; or their phone is avoiding a party Wi-Fi without internet. What helps
+      then is explained below.</li>
+  <li>The party’s own Wi-Fi helps if your home network isolates devices from each other &ndash; or if
+      there is no Wi-Fi on site at all.</li>
+</ul>
+
+<h4>Internet for guests</h4>
+<p>With <b>WiFi Hotspot</b>, the switch <b>Guests may use my phone’s internet</b> decides which Wi-Fi
+the guests get. It is off by default.</p>
+<div class="tab-huelle">
+<table>
+<tr><th>Switch</th><th>What happens</th></tr>
+<tr><td><b>Off</b> (default)</td><td>When the party starts, AutoPlayer opens a party Wi-Fi of its own without internet. In it, guests reach only the party page, and your mobile data stays with you. Android assigns name and password; they appear in the Wi-Fi code by themselves. When the party ends, the Wi-Fi closes too.</td></tr>
+<tr><td><b>On</b></td><td>You start Android’s hotspot yourself &ndash; <b>Open Hotspot Settings</b> takes you there. Enter the hotspot’s name and password below it so that they go into the Wi-Fi code. All guests then share your mobile data.</td></tr>
+</table>
+</div>
+<p>With <b>Use current WiFi</b> the switch does not apply: there your router decides whether guests get
+internet.</p>
+<p>For the party’s own Wi-Fi, Android asks for the <b>Nearby devices</b> permission from Android&nbsp;13
+on, and for <b>Location</b> on Android&nbsp;10 to 12 &ndash; there location also has to be switched on.
+AutoPlayer reads no location; Android only requires it to open a Wi-Fi. While Android’s hotspot is still
+on, Android opens no second Wi-Fi; the app then says that it has to be switched off first.</p>
+
+<h4>Pets and the app on the guest page</h4>
+<p>At the top of every page are AutoPlayer’s logo and name. Next to them each guest chooses their
+Vumikio Pets: <b>No pets</b>, one of the five or <b>All pets</b>. Octo is there by default and welcomes
+the guest with the name of the party. The guest’s browser remembers the choice.</p>
+<p>The pets start at the bottom and then roam the whole page. Dragging moves them, a tap brings a line,
+a double tap a trick. There are no points on the guest page. If the guest has switched off animations
+on their phone, they stay put at the bottom.</p>
+<p>On Android phones the bar shows <b>Get it on Google Play</b> when the party’s Wi-Fi has internet
+&ndash; the button opens AutoPlayer’s page in the Play Store. Without internet there is a sentence about
+looking it up later instead. On other phones, such as iPhones, none of this appears.</p>
+<figure class="schirm">
+  <a href="bilder/en/party-gast-pets.webp" target="_blank" rel="noopener">
+    <img src="bilder/en/party-gast-pets.webp" alt="The pet selection on the guest page: none, one of the five or all. Octo is there by default." loading="lazy" width="540" height="1082">
+  </a>
+  <figcaption>The pet selection on the guest page: none, one of the five or all. Octo is there by default.
+    <span class="pfad">Guest: selection at the top right</span>
+  </figcaption>
+</figure>
+
+<h4>Security in detail</h4>
+<p>The shield at the top of the party screen explains all of this in the app too. In short:</p>
+<ul>
+  <li><b>Encrypted:</b> When the page opens, each guest works out keys of their own with your phone.
+      Joining, PIN, names, search, requests, votes and the live display only travel through the Wi-Fi
+      encrypted &ndash; with the same method as https (ChaCha20-Poly1305). Altered or replayed messages
+      are discarded.</li>
+  <li><b>The key in the party code:</b> The code also contains a secret party key. It sits behind the
+      “#” of the address, and no browser sends that part over the network. Every party gets a new one,
+      and afterwards it is worthless. Anyone who types the address in is encrypted too, but without
+      protection against a device that puts itself in between &ndash; the yellow lock is the reminder.</li>
+  <li><b>Why “Not secure”:</b> https certificates only exist for addresses on the internet. Devices in
+      a home network &ndash; router, printer, this party &ndash; don’t get one. That is why the browser’s
+      notice can’t be switched off; the encryption applies anyway.</li>
+  <li><b>Nothing from outside:</b> The guest page comes entirely from the host’s phone and loads nothing
+      from outside servers. Guests see songs, artists, albums and genres &ndash; no files, no folders and
+      nothing else from the phone.</li>
+  <li><b>More locks:</b> the PIN with a lockout after failed attempts, every guest tied to their device,
+      blocking guests, approving requests and the upper limit for guests.</li>
+</ul>
+<figure class="schirm">
+  <a href="bilder/en/party-sicherheit.webp" target="_blank" rel="noopener">
+    <img src="bilder/en/party-sicherheit.webp" alt="The shield at the top of the party screen opens “How your party is protected” – with answers on Wi-Fi, encryption, key and limits." loading="lazy" width="540" height="1184">
+  </a>
+  <figcaption>The shield at the top of the party screen opens <b>How your party is protected</b> – with answers on Wi-Fi, encryption, key and limits.
+    <span class="pfad">Party Mode → shield at the top right</span>
+  </figcaption>
+</figure>
+
+<h4>If a guest sees “timed out”</h4>
+<p>If the party Wi-Fi has no internet, some phones send the page past this Wi-Fi into another network
+&ndash; the mobile network or a second Wi-Fi they keep alongside. The browser then reports a timeout. This
+is what to do on the guest’s phone:</p>
+<ol>
+  <li>Tap the notice “… has no internet access”.</li>
+  <li>Answer the question “Stay connected?” with “Yes”. Some phone makers word it a little
+      differently.</li>
+  <li>Reload the party page.</li>
+</ol>
+<p>As long as the phone stays connected like this, it has no internet &ndash; not even over mobile data.
+To undo it: leave the party Wi-Fi or remove it in the Wi-Fi settings; then the phone forgets the
+answer.</p>
+
+<h4>Limits</h4>
+<ul>
+  <li>Someone in the same Wi-Fi could, with a lot of effort, tamper with the page itself. So show the
+      party code only to your guests and don’t party in an open, unfamiliar Wi-Fi.</li>
+  <li>The party’s own Wi-Fi reaches as far as the host phone’s Wi-Fi.</li>
+  <li>The party’s own Wi-Fi is only available while Android’s hotspot is off.</li>
+  <li>In a party Wi-Fi without internet, guests have no internet while they are connected.</li>
 </ul>
 </article>
 <article id="en-teilen">

@@ -4146,7 +4146,7 @@ Pause/Weiter · Nächster Song · Vorheriger Song · Stumm/Laut · Zufälliger T
 
 #### Was ist das?
 
-Das eigene Handy wird zum Musikserver. Gäste scannen einen Code und wünschen sich Titel über ihren Browser – **ohne dass sie etwas installieren müssen**. Alles bleibt im heimischen Netz, ohne Internet.
+Das eigene Handy wird zum Musikserver. Gäste scannen einen Code und wünschen sich Titel über ihren Browser – **ohne dass sie etwas installieren müssen**. Alles bleibt im WLAN vor Ort, ohne Internet und ohne fremden Server – auf Wunsch in einem eigenen Party-WLAN, das AutoPlayer selbst öffnet.
 
 #### Vorbereitung
 
@@ -4154,26 +4154,28 @@ Das eigene Handy wird zum Musikserver. Gäste scannen einen Code und wünschen s
 2. **Party-Namen** vergeben
 3. Netzwerk wählen:
   - **Aktuelles WLAN verwenden** – das WLAN-Passwort eintragen, damit es in den Code eingebettet werden kann
-  - **WLAN-Hotspot** – einen eigenen aufmachen. Ein Link führt zu den Android-Einstellungen.
+  - **WLAN-Hotspot** – AutoPlayer öffnet beim Start ein eigenes Party-WLAN ohne Internet; Name und Passwort kommen von selbst in den WLAN-Code. Nur mit dem Schalter **Gäste dürfen über mein Handy ins Internet** nimmt die Party stattdessen den Android-Hotspot (siehe unten „Internet für Gäste“).
 4. Nach Wunsch absichern (siehe unten)
-5. **Party starten**. Auf Handys mit Android 17 braucht die Party die Erlaubnis **Geräte in der Nähe** – fehlt sie noch, fragt Android einmal danach. Ohne sie startet die Party nicht.
+5. **Party starten**. Auf Handys mit Android 17 braucht die Party die Erlaubnis **Geräte in der Nähe** – fehlt sie noch, fragt Android einmal danach. Ohne sie startet die Party nicht. Das eigene Party-WLAN braucht dieselbe Erlaubnis schon ab Android 13, auf Android 10 bis 12 stattdessen den **Standort**.
 
-![Party-Name und Netzwerk – hier ein eigener WLAN-Hotspot. Der Knopf öffnet die Hotspot-Einstellungen von Android; Name und Passwort kommen in den WLAN-Code.](bilder/party-start.webp)
+![Party-Name und Netzwerk – hier WLAN-Hotspot: AutoPlayer öffnet ein eigenes Party-WLAN. Darunter der Schalter „Gäste dürfen über mein Handy ins Internet“, ab Werk aus.](bilder/party-start.webp)
+*Party-Name und Netzwerk – hier **WLAN-Hotspot**: AutoPlayer öffnet ein eigenes Party-WLAN. Darunter der Schalter „Gäste dürfen über mein Handy ins Internet“, ab Werk aus.*
 *→ Menü → Tools & Funktionen → Party-Modus*
 
-![Weiter unten die Absicherung: PIN, Genehmigung, Max. Gäste und Abstimmung, dann der Sicherheitshinweis und Party starten.](bilder/party-absicherung.webp)
-*Weiter unten die Absicherung: PIN, Genehmigung, Max. Gäste und Abstimmung, dann der Sicherheitshinweis und **Party starten**.*
+![Weiter unten die Absicherung: PIN, Genehmigung, Max. Gäste und Abstimmung, dann der Hinweis zur Verschlüsselung und Party starten.](bilder/party-absicherung.webp)
+*Weiter unten die Absicherung: PIN, Genehmigung, Max. Gäste und Abstimmung, dann der Hinweis zur Verschlüsselung und **Party starten**.*
 *→ Party-Modus → nach unten scrollen*
 
-![Die Party läuft, noch ohne Gäste. Links der Code zur Party-Adresse, daneben Adresse und PIN; rechts unten der WLAN-Code – ihn scannen Gäste zuerst.](bilder/party-laeuft.webp)
+![Die Party läuft, noch ohne Gäste. Links der Code zur Party-Adresse, daneben Netzname, Adresse und PIN; rechts unten der WLAN-Code – ihn scannen Gäste zuerst. Oben das Schild: So ist deine Party geschützt.](bilder/party-laeuft.webp)
+*Die Party läuft, noch ohne Gäste. Links der Code zur Party-Adresse, daneben Netzname, Adresse und PIN; rechts unten der WLAN-Code – ihn scannen Gäste zuerst. Oben das Schild: **So ist deine Party geschützt**.*
 *→ Party-Modus → Party starten*
 
 #### Die zwei Codes
 
 Es erscheinen **zwei** QR-Codes, und die Reihenfolge ist wichtig:
 
-1. **WLAN-Login** – zuerst scannen. Er bringt das Gast-Gerät ins richtige Netz.
-2. **Party-Adresse** – danach scannen. Er öffnet die Bedienseite im Browser, die PIN steckt schon mit drin.
+1. **WLAN-Login** – zuerst scannen. Er bringt das Gast-Gerät ins richtige Netz. Hat dieses WLAN kein Internet, fragt Android oft „Verbindung beibehalten?“ – mit „Ja“ antworten.
+2. **Party-Adresse** – danach scannen. Er öffnet die Bedienseite im Browser, die PIN und der Schlüssel für die Verschlüsselung stecken schon mit drin.
 
 Wer die Reihenfolge vertauscht, landet im Nichts: Ohne dasselbe Netz ist die Seite nicht erreichbar. Die App weist auch darauf hin.
 
@@ -4193,13 +4195,13 @@ Wer die Reihenfolge vertauscht, landet im Nichts: Ohne dasselbe Netz ist die Sei
 
 Die Werte gelten für die laufende Party. Eine neue Party beginnt wieder mit den Standardwerten.
 
-> Sicherheitshinweis der App:
+> So ist die Party geschützt:
 >
-> Die Verbindung läuft unverschlüsselt über das WLAN. Empfohlen ist das nur in vertrauenswürdigen Netzen – also im eigenen Zuhause, nicht in öffentlichen Netzen.
+> Alles, was Browser und Handy austauschen, ist verschlüsselt – Beitritt, Suche, Wünsche, Stimmen. Den Schlüssel bringt der Party-Code mit. Wer die Adresse von Hand eintippt, ist ebenfalls verschlüsselt verbunden, aber ohne diesen Schlüssel – die Gastseite zeigt dann ein gelbes statt eines grünen Schlosses. Der Browser meldet trotzdem „Nicht sicher“, weil es für Adressen im Heimnetz keine Zertifikate gibt; warum, erklärt der Schild-Knopf oben im Party-Screen. Am besten im eigenen WLAN feiern, nicht in öffentlichen Netzen. Mehr dazu ganz unten unter „Sicherheit im Detail“.
 
 #### Wie Wünsche gespielt werden
 
-Der erste Wunsch kommt als **nächster Titel** in die laufende Wiedergabe. Was gerade spielt, läuft zu Ende – wer nicht warten will, tippt im Player auf Weiter. Sind keine Wünsche mehr offen, läuft die bisherige Musik einfach weiter. Zufallswiedergabe und Titel-Wiederholung schalten sich dafür aus. Das alles läuft auch, wenn der Party-Bildschirm geschlossen ist.
+Der erste Wunsch kommt als **nächster Titel** in die laufende Wiedergabe. Was gerade spielt, läuft zu Ende – wer nicht warten will, tippt im Player auf Weiter. Sind keine Wünsche mehr offen, läuft die bisherige Musik einfach weiter. Zufallswiedergabe und Titel-Wiederholung schalten sich dafür aus. Das alles läuft auch, wenn der Party-Bildschirm geschlossen ist. Solange die Party läuft, steht in der Benachrichtigungsleiste **Party läuft**: So hält Android die App auch in langen Pausen wach, und über **Party beenden** endet sie direkt von dort.
 
 Die Reihenfolge der Wünsche:
 
@@ -4210,12 +4212,12 @@ Die Reihenfolge der Wünsche:
 
 #### Was Gäste sehen
 
-Zuerst eine Anmeldeseite mit Namensfeld und Sprachauswahl. Wer die Adresse von Hand eintippt, gibt dort auch die PIN ein. Ist der Name schon vergeben, sagt die Seite das.
+Zuerst eine Anmeldeseite mit Namensfeld und Sprachauswahl. Oben stehen Logo und Name von AutoPlayer und die Pet-Auswahl; Octo begrüßt jeden Gast mit dem Namen der Party. Wer die Adresse von Hand eintippt, gibt dort auch die PIN ein. Ist der Name schon vergeben, sagt die Seite das.
 
 Danach: der laufende Titel mit Fortschritt, ein Suchfeld, Durchsuchen nach Titeln (mit Buchstabenleiste), Alben, Künstlern und Genres – und die Warteschlange. Ein Tippen auf Plus wünscht einen Titel, der Pfeil daneben ist eine Stimme. Mit Genehmigung erscheint ein Wunsch erst nach der Freigabe. Die Seite gibt es in allen Sprachen der App. Endet die Party, zeigt sie eine Dankesseite.
 
-![Nach dem Scannen öffnet sich die Anmeldeseite: Namen eintragen, Sprache wählen, Party beitreten. Die PIN steckt schon in der Adresse.](bilder/party-gast-anmelden.webp)
-*Nach dem Scannen öffnet sich die Anmeldeseite: Namen eintragen, Sprache wählen, **Party beitreten**. Die PIN steckt schon in der Adresse.*
+![Nach dem Scannen öffnet sich die Anmeldeseite, Octo begrüßt den Gast. Namen eintragen, Sprache wählen, Party beitreten. PIN und Schlüssel stecken schon in der Adresse.](bilder/party-gast-anmelden.webp)
+*Nach dem Scannen öffnet sich die Anmeldeseite, Octo begrüßt den Gast. Namen eintragen, Sprache wählen, **Party beitreten**. PIN und Schlüssel stecken schon in der Adresse.*
 *→ Gast: Browser nach dem Party-Code*
 
 ![Suchen: Schon beim Tippen erscheinen Titel, deren Name, Künstler oder Album passt – mit Länge und Tempo. Das Plus wünscht den Titel.](bilder/party-gast-suche.webp)
@@ -4230,12 +4232,12 @@ Danach: der laufende Titel mit Fortschritt, ein Suchfeld, Durchsuchen nach Titel
 ![Die Warteschlange: zwei Wünsche von Gast-1. Der Pfeil ist eine Stimme – rot umrandet heißt: selbst abgestimmt. Mehr Stimmen rücken einen Wunsch nach vorn.](bilder/party-gast-warteschlange.webp)
 *→ Gast: Reiter Warteschlange*
 
-![Etwas später läuft der Wunsch „Black Sea Captain“: Er steht nur noch oben mit Fortschritt. Unter „Als Nächstes“ warten die übrigen Wünsche – hier „41000 Lines“ mit einer Stimme.](bilder/party-gast-laeuft.webp)
+![Etwas später läuft der Wunsch „Beinahe Licht“: Er steht nur noch oben mit Fortschritt. Unter „Als Nächstes“ warten die übrigen Wünsche – hier „Heimkehr durch das Licht“ mit einer Stimme. Unten alle fünf Pets.](bilder/party-gast-laeuft.webp)
 *→ Gast: oben auf jeder Seite*
 
 #### Was der Gastgeber sieht
 
-Oben die Codes, die Zahl der Gäste, die wartenden Wünsche und die Anfragen insgesamt. Darunter vier Reiter:
+In der Titelleiste das Schild (**So ist deine Party geschützt**), das Zahnrad und das Quadrat, das die Party beendet. Darunter die Codes, die Zahl der Gäste, die wartenden Wünsche und die Anfragen insgesamt. Darunter vier Reiter:
 
 | Reiter | Inhalt |
 |---|---|
@@ -4244,13 +4246,13 @@ Oben die Codes, die Zahl der Gäste, die wartenden Wünsche und die Anfragen ins
 | **Anfragen** | Wünsche genehmigen oder ablehnen |
 | **Statistik** | Gäste, Anfragen, gespielte Titel, fleißigster Gast, meiste Stimmen |
 
-![Reiter Warteschlange mit zwei Wünschen: der laufende mit Pause, der wartende mit Abspielen, dazu je nach oben schieben und entfernen. Die Zahl links sind die Stimmen. Oben: 1 Gast, 1 wartender Wunsch, 3 Anfragen insgesamt.](bilder/party-gastgeber.webp)
+![Reiter Warteschlange mit zwei Wünschen: der laufende mit Pause, der wartende mit Abspielen, dazu je nach oben schieben und entfernen. Die Zahl links sind die Stimmen. Oben: 1 Gast, 1 wartender Wunsch, 5 Anfragen insgesamt – hier im aktuellen WLAN.](bilder/party-gastgeber.webp)
 *→ Party läuft → Warteschlange*
 
-![Reiter Gäste: Gast-1 ist online (grüner Punkt) und hat drei Titel gewünscht; „gespielt“ zählt erst, wenn ein Wunsch zu Ende gelaufen ist. Das Symbol rechts sperrt den Gast.](bilder/party-gaeste.webp)
+![Reiter Gäste: Gast-1 ist online (grüner Punkt) und hat fünf Titel gewünscht, drei davon liefen schon zu Ende – erst dann zählen sie als „gespielt“. Das Symbol rechts sperrt den Gast.](bilder/party-gaeste.webp)
 *→ Party läuft → Gäste*
 
-![Reiter Statistik, hier gleich nach dem Start: Gäste gesamt und online, Anfragen, gespielte Titel – weiter unten fleißigster Gast und meiste Stimmen.](bilder/party-statistik.webp)
+![Reiter Statistik: Gäste gesamt und online, Anfragen, gespielte Titel, der fleißigste Gast und der Wunsch mit den meisten Stimmen.](bilder/party-statistik.webp)
 *→ Party läuft → Statistik*
 
 #### Sprachbefehle
@@ -4270,8 +4272,63 @@ Am Handy über das Mikrofon der App.
 
 - Vor der Feier einmal mit dem eigenen zweiten Gerät ausprobieren. Das erspart Erklärungen zwischen Tür und Angel.
 - **Genehmigung erforderlich** ist die wirksamste Bremse, wenn die Musikauswahl abzudriften droht.
-- Sieht ein Gast eine Zeitüberschreitung, sind die Geräte meist in verschiedenen Netzen.
-- Der Hotspot-Betrieb hilft, wenn das Heimnetz Geräte voneinander abschottet.
+- Sieht ein Gast eine Zeitüberschreitung, sind die Geräte meist in verschiedenen Netzen – oder sein Handy weicht einem Party-WLAN ohne Internet aus. Was dann hilft, steht unten.
+- Das eigene Party-WLAN hilft, wenn das Heimnetz Geräte voneinander abschottet – oder wenn vor Ort gar kein WLAN da ist.
+
+#### Internet für Gäste
+
+Bei **WLAN-Hotspot** entscheidet der Schalter **Gäste dürfen über mein Handy ins Internet**, welches WLAN die Gäste bekommen. Ab Werk ist er aus.
+
+| Schalter | Was passiert |
+|---|---|
+| **Aus** (Standard) | AutoPlayer öffnet beim Start ein eigenes Party-WLAN ohne Internet. Gäste erreichen darin nur die Party-Seite, deine mobilen Daten bleiben bei dir. Name und Passwort vergibt Android, sie stehen von selbst im WLAN-Code. Endet die Party, schließt sich auch das WLAN. |
+| **An** | Du startest den Android-Hotspot selbst – **Hotspot-Einstellungen öffnen** führt hin. Name und Passwort des Hotspots trägst du darunter ein, damit sie in den WLAN-Code kommen. Alle Gäste nutzen dann deine mobilen Daten mit. |
+
+Bei **Aktuelles WLAN verwenden** gilt der Schalter nicht: Dort entscheidet dein Router, ob Gäste ins Internet kommen.
+
+Für das eigene Party-WLAN fragt Android ab Android 13 nach der Erlaubnis **Geräte in der Nähe**, auf Android 10 bis 12 nach dem **Standort** – dort muss der Standort auch eingeschaltet sein. AutoPlayer liest dabei keinen Standort; Android verlangt ihn nur, um ein WLAN zu öffnen. Läuft der Android-Hotspot noch, öffnet Android kein zweites WLAN; die App sagt dann, dass er erst aus muss.
+
+#### Pets und App auf der Gastseite
+
+Oben auf jeder Seite stehen Logo und Name von AutoPlayer. Daneben wählt jeder Gast seine Vumikio Pets: **Keine Pets**, eines der fünf oder **Alle Pets**. Ab Werk ist Octo dabei und begrüßt den Gast mit dem Namen der Party. Die Wahl merkt sich sein Browser.
+
+Die Pets starten unten und wandern dann über die ganze Seite. Ziehen verschiebt sie, ein Tippen bringt einen Spruch, doppelt Tippen einen Trick. Punkte gibt es auf der Gastseite nicht. Hat der Gast auf seinem Handy Animationen ausgeschaltet, bleiben sie unten stehen.
+
+Auf Android-Handys zeigt die Leiste **Jetzt bei Google Play**, wenn das WLAN der Party Internet hat – der Knopf öffnet die Seite von AutoPlayer im Play Store. Ohne Internet steht dort ein Satz zum späteren Suchen. Auf anderen Handys, etwa iPhones, erscheint nichts davon.
+
+![Die Pet-Auswahl auf der Gastseite: keine, eines der fünf oder alle. Octo ist ab Werk dabei.](bilder/party-gast-pets.webp)
+*→ Gast: Auswahl oben rechts*
+
+#### Sicherheit im Detail
+
+Das Schild oben im Party-Screen erklärt alles auch in der App. Kurz gefasst:
+
+- **Verschlüsselt:** Beim Öffnen der Seite handelt jeder Gast mit deinem Handy eigene Schlüssel aus. Beitritt, PIN, Namen, Suche, Wünsche, Stimmen und die Live-Anzeige gehen nur verschlüsselt durchs WLAN – mit demselben Verfahren wie https (ChaCha20-Poly1305). Veränderte oder wiederholte Nachrichten werden verworfen.
+- **Der Schlüssel im Party-Code:** Der Code enthält zusätzlich einen geheimen Party-Schlüssel. Er steht hinter dem „#“ der Adresse, und diesen Teil schickt kein Browser übers Netz. Jede Party bekommt einen neuen, danach ist er wertlos. Wer die Adresse abtippt, ist ebenfalls verschlüsselt, aber ohne Schutz gegen ein Gerät, das sich dazwischenschaltet – daran erinnert das gelbe Schloss.
+- **Warum „Nicht sicher“:** https-Zertifikate gibt es nur für Adressen im Internet. Geräte im Heimnetz – Router, Drucker, diese Party – bekommen keins. Die Meldung des Browsers lässt sich deshalb nicht abschalten; die Verschlüsselung gilt trotzdem.
+- **Nichts von außen:** Die Gastseite kommt vollständig vom Handy des Gastgebers und lädt nichts von fremden Servern. Gäste sehen Titel, Künstler, Alben und Genres – keine Dateien, keine Ordner und sonst nichts vom Handy.
+- **Weitere Riegel:** die PIN mit Sperre nach Fehlversuchen, jeder Gast an sein Gerät gebunden, Gäste sperren, Wünsche freigeben und die Obergrenze für Gäste.
+
+![Das Schild oben im Party-Screen öffnet „So ist deine Party geschützt“ – mit Antworten zu WLAN, Verschlüsselung, Schlüssel und Grenzen.](bilder/party-sicherheit.webp)
+*Das Schild oben im Party-Screen öffnet **So ist deine Party geschützt** – mit Antworten zu WLAN, Verschlüsselung, Schlüssel und Grenzen.*
+*→ Party-Modus → Schild oben rechts*
+
+#### Wenn ein Gast „Zeitüberschreitung“ sieht
+
+Hat das Party-WLAN kein Internet, schicken manche Handys die Seite an diesem WLAN vorbei in ein anderes Netz – ins Mobilfunknetz oder in ein zweites WLAN, das sie nebenher halten. Der Browser meldet dann eine Zeitüberschreitung. So geht es am Handy des Gastes:
+
+1. Auf die Meldung „… hat keinen Internetzugriff“ tippen.
+2. Die Frage „Verbindung beibehalten?“ mit „Ja“ beantworten. Manche Hersteller formulieren es etwas anders.
+3. Die Party-Seite neu laden.
+
+Solange das Handy so verbunden ist, hat es kein Internet – auch nicht über die mobilen Daten. Rückgängig: das Party-WLAN verlassen oder es in den WLAN-Einstellungen entfernen; dann vergisst das Handy die Antwort.
+
+#### Grenzen
+
+- Wer im selben WLAN sitzt, könnte mit viel Aufwand die Seite selbst manipulieren. Den Party-Code deshalb nur den Gästen zeigen und nicht in einem offenen, fremden WLAN feiern.
+- Das eigene Party-WLAN reicht so weit wie das WLAN des Gastgeber-Handys.
+- Ein eigenes Party-WLAN gibt es nur, solange kein Android-Hotspot läuft.
+- Im Party-WLAN ohne Internet haben Gäste kein Internet, solange sie verbunden sind.
 
 ### Sharing-Hub (Pro)
 

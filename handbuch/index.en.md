@@ -4146,7 +4146,7 @@ Pause/Resume · Next song · Previous song · Mute/Unmute · Random track · Rep
 
 #### What is it?
 
-Your own phone becomes a music server. Guests scan a code and request songs through their browser – **without having to install anything**. Everything stays on your home network, with no internet.
+Your own phone becomes a music server. Guests scan a code and request songs through their browser – **without having to install anything**. Everything stays in the Wi-Fi on site, with no internet and no outside server – if you like, in a party Wi-Fi of its own that AutoPlayer opens itself.
 
 #### Preparation
 
@@ -4154,26 +4154,28 @@ Your own phone becomes a music server. Guests scan a code and request songs thro
 2. Enter a **Party Name**
 3. Choose a network:
   - **Use current WiFi** – enter the Wi-Fi password so that it can be embedded in the code
-  - **WiFi Hotspot** – set up one of your own. A link leads to the Android settings.
+  - **WiFi Hotspot** – when the party starts, AutoPlayer opens a party Wi-Fi of its own without internet; name and password go into the Wi-Fi code by themselves. Only with the switch **Guests may use my phone’s internet** does the party use Android’s hotspot instead (see “Internet for guests” below).
 4. Secure it as you like (see below)
-5. **Start Party**. On phones with Android 17 the party needs the **Nearby devices** permission – if it is still missing, Android asks for it once. Without it the party does not start.
+5. **Start Party**. On phones with Android 17 the party needs the **Nearby devices** permission – if it is still missing, Android asks for it once. Without it the party does not start. The party’s own Wi-Fi needs the same permission from Android 13 on, and **Location** instead on Android 10 to 12.
 
-![Party name and network – here a Wi-Fi hotspot of your own. The button opens Android’s hotspot settings; name and password go into the Wi-Fi code.](bilder/en/party-start.webp)
+![Party name and network – here WiFi Hotspot: AutoPlayer opens a party Wi-Fi of its own. Below it the switch “Guests may use my phone’s internet”, off by default.](bilder/en/party-start.webp)
+*Party name and network – here **WiFi Hotspot**: AutoPlayer opens a party Wi-Fi of its own. Below it the switch “Guests may use my phone’s internet”, off by default.*
 *→ Menu → Tools & Features → Party Mode*
 
-![Further down the security options: PIN, approval, Max Guests and voting, then the security notice and Start Party.](bilder/en/party-absicherung.webp)
-*Further down the security options: PIN, approval, Max Guests and voting, then the security notice and **Start Party**.*
+![Further down the security options: PIN, approval, Max Guests and voting, then the note on encryption and Start Party.](bilder/en/party-absicherung.webp)
+*Further down the security options: PIN, approval, Max Guests and voting, then the note on encryption and **Start Party**.*
 *→ Party Mode → scroll down*
 
-![The party is running, still without guests. On the left the code for the party address, next to it the address and PIN; at the bottom right the Wi-Fi code – guests scan it first.](bilder/en/party-laeuft.webp)
+![The party is running, still without guests. On the left the code for the party address, next to it network name, address and PIN; at the bottom right the Wi-Fi code – guests scan it first. At the top the shield: How your party is protected.](bilder/en/party-laeuft.webp)
+*The party is running, still without guests. On the left the code for the party address, next to it network name, address and PIN; at the bottom right the Wi-Fi code – guests scan it first. At the top the shield: **How your party is protected**.*
 *→ Party Mode → Start Party*
 
 #### The two codes
 
 **Two** QR codes appear, and the order matters:
 
-1. **WiFi Login** – scan this first. It puts the guest’s device on the right network.
-2. **Party address** – scan this second. It opens the control page in the browser, with the PIN already included.
+1. **WiFi Login** – scan this first. It puts the guest’s device on the right network. If this Wi-Fi has no internet, Android often asks “Stay connected?” – answer “Yes”.
+2. **Party address** – scan this second. It opens the control page in the browser, with the PIN and the key for the encryption already included.
 
 If you mix up the order, you end up nowhere: without the same network the page can’t be reached. The app also points this out.
 
@@ -4193,13 +4195,13 @@ If you mix up the order, you end up nowhere: without the same network the page c
 
 The values apply to the running party. A new party starts again with the default values.
 
-> The app’s security notice:
+> How the party is protected:
 >
-> The connection is not encrypted on the Wi-Fi network. It is recommended only on trusted networks – that is, in your own home, not on public networks.
+> Everything the browser and the phone exchange is encrypted – joining, searching, requests, votes. The party code brings the key along. Anyone who types the address in is connected encrypted too, but without that key – the guest page then shows a yellow lock instead of a green one. The browser still says “Not secure”, because there are no certificates for addresses in a home network; the shield button at the top of the party screen explains why. Best used in your own Wi-Fi, not on public networks. More on this at the very end, under “Security in detail”.
 
 #### How requests are played
 
-The first request goes into the current playback as the **next song**. Whatever is playing now runs to the end – if you don’t want to wait, tap Next in the player. When no requests are left, the previous music simply keeps playing. Shuffle and repeat switch off for this. All of this also works when the Party screen is closed.
+The first request goes into the current playback as the **next song**. Whatever is playing now runs to the end – if you don’t want to wait, tap Next in the player. When no requests are left, the previous music simply keeps playing. Shuffle and repeat switch off for this. All of this also works when the Party screen is closed. While the party is running, the notification bar shows **Party running**: this keeps Android from putting the app to sleep during long pauses, and **End party** ends it right from there.
 
 The order of the requests:
 
@@ -4210,12 +4212,12 @@ The order of the requests:
 
 #### What guests see
 
-First a sign-in page with a name field and language selection. If you type the address in by hand, you also enter the PIN there. If the name is already taken, the page says so.
+First a sign-in page with a name field and language selection. At the top are AutoPlayer’s logo and name and the pet selection; Octo welcomes every guest with the name of the party. If you type the address in by hand, you also enter the PIN there. If the name is already taken, the page says so.
 
 Then: the current song with progress, a search field, browsing by songs (with a letter bar), albums, artists and genres – and the queue. Tapping the plus requests a song, the arrow next to it is a vote. With approval, a request only appears after it has been approved. The page is available in all languages of the app. When the party ends, it shows a thank-you page.
 
-![After scanning, the sign-in page opens: enter a name, choose a language, Join Party. The PIN is already in the address.](bilder/en/party-gast-anmelden.webp)
-*After scanning, the sign-in page opens: enter a name, choose a language, **Join Party**. The PIN is already in the address.*
+![After scanning, the sign-in page opens and Octo welcomes the guest. Enter a name, choose a language, Join Party. PIN and key are already in the address.](bilder/en/party-gast-anmelden.webp)
+*After scanning, the sign-in page opens and Octo welcomes the guest. Enter a name, choose a language, **Join Party**. PIN and key are already in the address.*
 *→ Guest: browser after the party code*
 
 ![Search: As you type, songs whose title, artist or album matches appear – with length and tempo. The plus requests the song.](bilder/en/party-gast-suche.webp)
@@ -4230,12 +4232,12 @@ Then: the current song with progress, a search field, browsing by songs (with a 
 ![The queue: two requests from Guest-1. The arrow is a vote – outlined in red means: you voted yourself. More votes move a request forward.](bilder/en/party-gast-warteschlange.webp)
 *→ Guest: Queue tab*
 
-![A little later the request “Black Sea Captain” is playing: it now appears only at the top with progress. Under “Up Next” the remaining requests wait – here “41000 Lines” with one vote.](bilder/en/party-gast-laeuft.webp)
+![A little later the request “After Me the Light” is playing: it now appears only at the top with progress. Under “Up Next” the remaining requests wait – here “41000 Lines” with one vote. At the bottom all five pets.](bilder/en/party-gast-laeuft.webp)
 *→ Guest: top of every page*
 
 #### What the host sees
 
-At the top the codes, the number of guests, the waiting requests and the total requests. Below that four tabs:
+In the title bar the shield (**How your party is protected**), the gear icon and the square that ends the party. Below that the codes, the number of guests, the waiting requests and the total requests. Below that four tabs:
 
 | Tab | Content |
 |---|---|
@@ -4244,13 +4246,13 @@ At the top the codes, the number of guests, the waiting requests and the total r
 | **Requests** | Approve or reject requests |
 | **Statistics** | Guests, requests, songs played, top requester, most voted |
 
-![Queue tab with two requests: the playing one with Pause, the waiting one with Play, each also with move to top and remove. The number on the left is the votes. At the top: 1 guest, 1 waiting request, 3 requests in total.](bilder/en/party-gastgeber.webp)
+![Queue tab with two requests: the playing one with Pause, the waiting one with Play, each also with move to top and remove. The number on the left is the votes. At the top: 1 guest, 1 waiting request, 3 requests in total – here in the current Wi-Fi.](bilder/en/party-gastgeber.webp)
 *→ Party running → Queue*
 
-![Guests tab: Guest-1 is online (green dot) and has requested three songs; “played” only counts once a request has finished playing. The icon on the right blocks the guest.](bilder/en/party-gaeste.webp)
+![Guests tab: Guest-1 is online (green dot) and has requested three songs, one of which has finished playing – only then does a request count as “played”. The icon on the right blocks the guest.](bilder/en/party-gaeste.webp)
 *→ Party running → Guests*
 
-![Statistics tab, here right after the start: total and online guests, requests, songs played – further down top requester and most voted.](bilder/en/party-statistik.webp)
+![Statistics tab: total and online guests, requests, songs played, the top requester and the request with the most votes.](bilder/en/party-statistik.webp)
 *→ Party running → Statistics*
 
 #### Voice commands
@@ -4270,8 +4272,63 @@ On the phone, via the app’s microphone.
 
 - Try it once with your own second device before the party. That saves explaining things at the door.
 - **Approval Required** is the most effective brake if the music selection threatens to drift.
-- If a guest sees a timeout, the devices are usually on different networks.
-- Hotspot mode helps if your home network isolates devices from each other.
+- If a guest sees a timeout, the devices are usually on different networks – or their phone is avoiding a party Wi-Fi without internet. What helps then is explained below.
+- The party’s own Wi-Fi helps if your home network isolates devices from each other – or if there is no Wi-Fi on site at all.
+
+#### Internet for guests
+
+With **WiFi Hotspot**, the switch **Guests may use my phone’s internet** decides which Wi-Fi the guests get. It is off by default.
+
+| Switch | What happens |
+|---|---|
+| **Off** (default) | When the party starts, AutoPlayer opens a party Wi-Fi of its own without internet. In it, guests reach only the party page, and your mobile data stays with you. Android assigns name and password; they appear in the Wi-Fi code by themselves. When the party ends, the Wi-Fi closes too. |
+| **On** | You start Android’s hotspot yourself – **Open Hotspot Settings** takes you there. Enter the hotspot’s name and password below it so that they go into the Wi-Fi code. All guests then share your mobile data. |
+
+With **Use current WiFi** the switch does not apply: there your router decides whether guests get internet.
+
+For the party’s own Wi-Fi, Android asks for the **Nearby devices** permission from Android 13 on, and for **Location** on Android 10 to 12 – there location also has to be switched on. AutoPlayer reads no location; Android only requires it to open a Wi-Fi. While Android’s hotspot is still on, Android opens no second Wi-Fi; the app then says that it has to be switched off first.
+
+#### Pets and the app on the guest page
+
+At the top of every page are AutoPlayer’s logo and name. Next to them each guest chooses their Vumikio Pets: **No pets**, one of the five or **All pets**. Octo is there by default and welcomes the guest with the name of the party. The guest’s browser remembers the choice.
+
+The pets start at the bottom and then roam the whole page. Dragging moves them, a tap brings a line, a double tap a trick. There are no points on the guest page. If the guest has switched off animations on their phone, they stay put at the bottom.
+
+On Android phones the bar shows **Get it on Google Play** when the party’s Wi-Fi has internet – the button opens AutoPlayer’s page in the Play Store. Without internet there is a sentence about looking it up later instead. On other phones, such as iPhones, none of this appears.
+
+![The pet selection on the guest page: none, one of the five or all. Octo is there by default.](bilder/en/party-gast-pets.webp)
+*→ Guest: selection at the top right*
+
+#### Security in detail
+
+The shield at the top of the party screen explains all of this in the app too. In short:
+
+- **Encrypted:** When the page opens, each guest works out keys of their own with your phone. Joining, PIN, names, search, requests, votes and the live display only travel through the Wi-Fi encrypted – with the same method as https (ChaCha20-Poly1305). Altered or replayed messages are discarded.
+- **The key in the party code:** The code also contains a secret party key. It sits behind the “#” of the address, and no browser sends that part over the network. Every party gets a new one, and afterwards it is worthless. Anyone who types the address in is encrypted too, but without protection against a device that puts itself in between – the yellow lock is the reminder.
+- **Why “Not secure”:** https certificates only exist for addresses on the internet. Devices in a home network – router, printer, this party – don’t get one. That is why the browser’s notice can’t be switched off; the encryption applies anyway.
+- **Nothing from outside:** The guest page comes entirely from the host’s phone and loads nothing from outside servers. Guests see songs, artists, albums and genres – no files, no folders and nothing else from the phone.
+- **More locks:** the PIN with a lockout after failed attempts, every guest tied to their device, blocking guests, approving requests and the upper limit for guests.
+
+![The shield at the top of the party screen opens “How your party is protected” – with answers on Wi-Fi, encryption, key and limits.](bilder/en/party-sicherheit.webp)
+*The shield at the top of the party screen opens **How your party is protected** – with answers on Wi-Fi, encryption, key and limits.*
+*→ Party Mode → shield at the top right*
+
+#### If a guest sees “timed out”
+
+If the party Wi-Fi has no internet, some phones send the page past this Wi-Fi into another network – the mobile network or a second Wi-Fi they keep alongside. The browser then reports a timeout. This is what to do on the guest’s phone:
+
+1. Tap the notice “… has no internet access”.
+2. Answer the question “Stay connected?” with “Yes”. Some phone makers word it a little differently.
+3. Reload the party page.
+
+As long as the phone stays connected like this, it has no internet – not even over mobile data. To undo it: leave the party Wi-Fi or remove it in the Wi-Fi settings; then the phone forgets the answer.
+
+#### Limits
+
+- Someone in the same Wi-Fi could, with a lot of effort, tamper with the page itself. So show the party code only to your guests and don’t party in an open, unfamiliar Wi-Fi.
+- The party’s own Wi-Fi reaches as far as the host phone’s Wi-Fi.
+- The party’s own Wi-Fi is only available while Android’s hotspot is off.
+- In a party Wi-Fi without internet, guests have no internet while they are connected.
 
 ### Sharing Hub (Pro)
 

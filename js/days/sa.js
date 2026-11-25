@@ -2,10 +2,11 @@
    Zahlen belegt in final-claude-code/analyse/ZAHLEN-BELEG.md (Samstag, Nr. 20a-20h) und Handbuch 08_56_party:
    zwei QR-Codes (erst WLAN-Login, dann Party-Adresse mit PIN), Gaeste im Browser ohne App, Suche und
    Durchsuchen (Titel, Alben, Kuenstler, Genres), Abstimmung ab Werk an, Genehmigung optional, PIN je Party neu,
-   Max. Gaeste 20 (2-50), Gaeste sperren und freigeben. Kein Verschluesselungshinweis (Datei 50 Punkt 15),
+   Max. Gaeste 20 (2-50), Gaeste sperren und freigeben, eigenes Party-WLAN auf Wunsch (F-171), Octo begruesst den
+   Gast (F-172). Kein Verschluesselungshinweis (Datei 50 Punkt 15),
    keine Gesten (allgemeine Funktion, Beleg 20j). Bilder: Handbuch DE / EN. Hero: party-gast-laeuft (Konzept
-   ohne Bild; der gewuenschte Titel laeuft beim Gast = Leitspruch). party-absicherung oben beschnitten
-   (ar 480 / 425 statt 712 / 600), damit der Verbindungshinweis der App nicht im Bild steht.
+   ohne Bild; der gewuenschte Titel laeuft beim Gast = Leitspruch). Bilder neu am 24.11.2026 (Gastseite mit Pets).
+   party-absicherung unten beschnitten (ar 425 statt 600), damit der Verschluesselungshinweis der App nicht im Bild steht.
    Song: DE 171 "Ruf und Antwort", EN 170 "Bricks On The Beat" (Kay 14.11.2026), nicht gekuerzt. */
 (window.APTage = window.APTage || {}).sa = {
   stil: 'lego',
@@ -25,7 +26,7 @@
       de: 'Tom gibt eine Grillparty: Seine Gäste scannen einen Code und wünschen sich im Browser Titel aus seiner Musik, ohne eine App zu installieren. Als Ninas Lieblingssong läuft, steigt die Stimmung – weil es ihr Wunsch war.',
       en: 'Tom is throwing a barbecue: his guests scan a code and request songs from his music in their browser, without installing an app. When Nina’s favorite song comes on, the mood lifts – because it was her request.',
     },
-    bild: { de: 'handbuch/bilder/party-gast-laeuft.webp', en: 'handbuch/bilder/en/party-gast-laeuft.webp', ar: '540 / 982',
+    bild: { de: 'handbuch/bilder/party-gast-laeuft.webp', en: 'handbuch/bilder/en/party-gast-laeuft.webp', ar: '540 / 1082',
       alt: { de: 'Gast-Ansicht: Der Wunsch läuft', en: 'Guest view: the request is playing' }, kapitel: 'party' },
     karten: [
       { icon: 'leute', kapitel: 'party',
@@ -33,7 +34,7 @@
         text: { de: 'Ein Scan genügt: Gäste wünschen sich Titel im Browser – die Seite gibt es in allen Sprachen der App.', en: 'One scan is enough: guests request songs in their browser – the page comes in every language of the app.' } },
       { icon: 'offline', kapitel: 'party',
         titel: { de: 'Läuft ohne Internet', en: 'Runs without internet' },
-        text: { de: 'Dein Handy wird zum Musikserver – die Party bleibt in deinem eigenen Netz.', en: 'Your phone becomes the music server – the party stays on your own network.' } },
+        text: { de: 'Dein Handy wird zum Musikserver – auf Wunsch sogar mit eigenem Party-WLAN. Die Party bleibt bei dir.', en: 'Your phone becomes the music server – even with a party Wi-Fi of its own if you like. The party stays with you.' } },
     ],
   },
   abschnitte: [
@@ -41,8 +42,8 @@
       name: { de: 'Start', en: 'Start' }, pet: 'chip-icons', effekt: 'qr',
       titel1: { de: 'Zwei Codes,', en: 'Two codes,' }, titel2: { de: 'und die Party läuft.', en: 'and the party is on.' },
       text: {
-        de: 'Du startest den Party-Modus, und dein Handy zeigt zwei QR-Codes. Der erste bringt die Gäste ins WLAN, der zweite öffnet die Party im Browser – die PIN steckt schon mit drin.',
-        en: 'You start Party Mode, and your phone shows two QR codes. The first gets your guests onto the Wi-Fi, the second opens the party in their browser – with the PIN already included.',
+        de: 'Du startest den Party-Modus, und dein Handy zeigt zwei QR-Codes. Der erste bringt die Gäste ins WLAN – auf Wunsch in ein eigenes Party-WLAN, das dein Handy selbst öffnet –, der zweite öffnet die Party im Browser. Die PIN steckt schon mit drin.',
+        en: 'You start Party Mode, and your phone shows two QR codes. The first gets your guests onto the Wi-Fi – a party Wi-Fi your phone opens itself, if you like – and the second opens the party in their browser, with the PIN already included.',
       },
       fakten: [{ de: '2 QR-Codes', en: '2 QR codes' }, { de: 'WLAN-Login zuerst scannen', en: 'Scan WiFi Login first' }],
       bilder: [{ de: 'handbuch/bilder/party-laeuft.webp', en: 'handbuch/bilder/en/party-laeuft.webp', ar: '540 / 1101',
@@ -52,14 +53,14 @@
       name: { de: 'Gast', en: 'Guest' }, pet: 'melo-type', effekt: 'stapel',
       titel1: { de: 'Name rein,', en: 'Enter a name,' }, titel2: { de: 'Lieblingssong suchen.', en: 'find a favorite.' },
       text: {
-        de: 'Nach dem Scan trägt der Gast seinen Namen ein und tippt auf „Party beitreten“. Schon beim Tippen ins Suchfeld erscheinen passende Titel – oder er stöbert nach Alben, Künstlern und Genres.',
-        en: 'After scanning, a guest enters a name and taps “Join Party”. Matching songs appear while they type in the search field – or they browse albums, artists and genres.',
+        de: 'Nach dem Scan begrüßt Octo den Gast mit dem Namen der Party. Er trägt seinen Namen ein und tippt auf „Party beitreten“. Schon beim Tippen ins Suchfeld erscheinen passende Titel – oder er stöbert nach Alben, Künstlern und Genres.',
+        en: 'After scanning, Octo welcomes the guest with the name of the party. The guest enters a name and taps “Join Party”. Matching songs appear while they type in the search field – or they browse albums, artists and genres.',
       },
       fakten: [{ de: 'Im Browser, ohne App', en: 'In the browser, no app' }, { de: 'Titel · Alben · Künstler · Genres', en: 'Songs · Albums · Artists · Genres' }],
       bilder: [
-        { de: 'handbuch/bilder/party-gast-anmelden.webp', en: 'handbuch/bilder/en/party-gast-anmelden.webp', ar: '540 / 1066',
+        { de: 'handbuch/bilder/party-gast-anmelden.webp', en: 'handbuch/bilder/en/party-gast-anmelden.webp', ar: '540 / 1082',
           alt: { de: 'Gast-Anmeldung im Browser', en: 'Guest sign-in in the browser' }, kapitel: 'party' },
-        { de: 'handbuch/bilder/party-gast-suche.webp', en: 'handbuch/bilder/en/party-gast-suche.webp', ar: '540 / 1068',
+        { de: 'handbuch/bilder/party-gast-suche.webp', en: 'handbuch/bilder/en/party-gast-suche.webp', ar: '540 / 1082',
           alt: { de: 'Gast sucht einen Titel', en: 'Guest searching for a song' }, kapitel: 'party' },
       ],
     },
@@ -71,7 +72,7 @@
         en: 'The request lands in the queue that every guest can see. Whatever is playing finishes, then the requests take their turn – and with none left, your music simply keeps playing.',
       },
       fakten: [{ de: '1 Tipp aufs Plus', en: '1 tap on the plus' }, { de: 'Warteschlange für alle sichtbar', en: 'Queue visible to everyone' }],
-      bilder: [{ de: 'handbuch/bilder/party-gast-warteschlange.webp', en: 'handbuch/bilder/en/party-gast-warteschlange.webp', ar: '540 / 1068',
+      bilder: [{ de: 'handbuch/bilder/party-gast-warteschlange.webp', en: 'handbuch/bilder/en/party-gast-warteschlange.webp', ar: '540 / 1082',
         alt: { de: 'Warteschlange mit Stimmen', en: 'Queue with votes' }, kapitel: 'party' }],
     },
     {
@@ -93,7 +94,7 @@
         en: 'A PIN that is new for every party lets only your guests in. If you like, you approve every song before it joins the queue, and you decide how many guests join in.',
       },
       fakten: [{ de: 'Max. Gäste: 20 (2–50)', en: 'Max Guests: 20 (2–50)' }, { de: 'Gäste sperren und freigeben', en: 'Block and unblock guests' }],
-      bilder: [{ de: 'handbuch/bilder/party-absicherung.webp', en: 'handbuch/bilder/en/party-absicherung.webp', ar: { de: '540 / 480', en: '540 / 425' }, teil: true,
+      bilder: [{ de: 'handbuch/bilder/party-absicherung.webp', en: 'handbuch/bilder/en/party-absicherung.webp', ar: '540 / 425', teil: true,
         alt: { de: 'PIN, Genehmigung und Max. Gäste', en: 'PIN, approval and Max Guests' }, kapitel: 'party' }],
     },
   ],
