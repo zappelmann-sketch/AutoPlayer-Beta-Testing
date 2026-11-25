@@ -1,6 +1,15 @@
 {
- "latest": 68502,
+ "latest": 68503,
  "entries": [
+  {
+   "versionCode": 68503,
+   "versionName": "6.85.3",
+   "date": "2026-11-25",
+   "critical": false,
+   "title": "v6.85.3 — Weiterhören an der richtigen Stelle",
+   "de": "• FIX: Nach einem Neustart setzt „Play“ von Kopfhörer, Bluetooth oder Auto wieder an der Stelle fort, an der du pausiert hast – auch wenn die App dabei nicht geöffnet war. Vorher ging es an einer älteren Stelle weiter.\n• FIX: Party-Gastseite: Passen Logo, Play-Store-Knopf und Pets-Auswahl bei großer Schrift oder schmalem Handy nicht in eine Zeile, rutscht der Rest in die nächste Zeile – vorher stand die Pets-Auswahl halb über dem Rand.",
+   "en": "• FIX: After a restart, “Play” from headphones, Bluetooth or the car resumes where you paused again – even if the app wasn't open at the time. Before, it resumed at an older spot.\n• FIX: Party guest page: if logo, Play Store button and pets menu don't fit in one line with a large font or a narrow phone, the rest moves to the next line – before, the pets menu stood half over the edge."
+  },
   {
    "versionCode": 68502,
    "versionName": "6.85.2",
@@ -126,15 +135,6 @@
    "title": "v6.79.3 — Vollbild-Wellenform im Querformat",
    "de": "• VERBESSERT: Vollbild-Wellenform im Querformat: Der Zoom-Regler steht jetzt senkrecht am rechten Rand (oben näher heran, unten das ganze Lied) und liegt nicht mehr auf der Wellenform. Ringe, Cover und Wellenform passen zwischen Kopfzeile und Bedienleiste – nichts verdeckt mehr die Wellenform. Hochkant bleibt alles, wie es war.\n• VERBESSERT: Loop Mixer, Timeline am Handy quer: Das zweite Projektnamen-Feld entfällt dort (der Name bleibt oben in der Projektzeile bearbeitbar) – die Spuren bekommen mehr Höhe.",
    "en": "• IMPROVED: Fullscreen waveform in landscape: the zoom slider now stands upright at the right edge (up = closer, down = whole song) and no longer lies on the waveform. Rings, cover and waveform fit between the header and the controls – nothing covers the waveform any more. Upright everything stays as it was.\n• IMPROVED: Loop Mixer, timeline on a phone held sideways: the second project name field is left out there (the name stays editable in the project row at the top) – the tracks get more height."
-  },
-  {
-   "versionCode": 67902,
-   "versionName": "6.79.2",
-   "date": "2026-11-19",
-   "critical": false,
-   "title": "v6.79.2 — Loop Mixer: Pads im Querformat",
-   "de": "• FIX: Loop Mixer, Pad-Modus im Querformat (Tablet, Foldable, Handy quer): Die 16 Pads lagen übereinander und über den Reitern. Jetzt stehen sie als Quadrat in der linken Hälfte, Hinweis und Aufnahme-/Quantisier-Leiste in der rechten. Hochkant bleibt alles, wie es war.",
-   "en": "• FIX: Loop Mixer, pad mode in landscape (tablet, foldable, phone held sideways): the 16 pads lay on top of each other and over the tabs. Now they form a square on the left half, the hint and the record/quantize bar sit on the right half. Upright everything stays as it was."
   }
  ]
 }
