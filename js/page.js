@@ -197,6 +197,8 @@
 
   // ---------- per-frame extras ----------
   const surfClip = document.querySelector('#surfA video');
+  // F-173: the hologram phone of the player fan shows a short clip of the turning hologram
+  const holoClip = document.querySelector('#fan4 video');
   // the ring is drawn only while the hero can be seen (two canvases per frame for nothing otherwise)
   const heroEl = document.getElementById('hero');
   let heroBottom = 0;
@@ -207,15 +209,16 @@
     if (ring.obj && window.scrollY < heroBottom) ring.obj.draw(t);
     const z = (1.035 + 0.035 * Math.sin(t * 0.55)).toFixed(4);
     ['surfA', 'surfB'].forEach((id) => document.getElementById(id).style.setProperty('--zoom', z));
-    if (surfClip) syncClip(surfClip, t);
+    if (surfClip) syncClip(surfClip, t, '#surf', 0.7);
+    if (holoClip) syncClip(holoClip, t, '#players', 0.75 + 4 * 0.12);
   });
 
-  // The real round of Surf the Beat starts when its phone is revealed (img step at 0.7 s).
+  // A clip starts when its phone is revealed (img step of the section: Surf the Beat 0.7 s, hologram 1.23 s).
   // Live it simply plays; in the frame-by-frame export it is seeked to the exact frame.
-  function syncClip(v, t) {
-    const st = E.sectionStart('#surf');
+  function syncClip(v, t, section, reveal) {
+    const st = E.sectionStart(section);
     if (st == null) return;
-    const local = t - (st + 0.7);
+    const local = t - (st + reveal);
     if (local < 0) return;
     if (E.isRender()) {
       const want = local % (v.duration || 15);

@@ -1234,35 +1234,34 @@ Achtung: Nur „Plattenspieler“ ohne Zusatz führt zum *DJ*-Plattenspieler.
 
 #### Was ist das?
 
-![Das Sci-Fi-Hologramm: das Cover schwebt über der Projektionsfläche.](bilder/hologramm.webp)
+![Das Sci-Fi-Hologramm: das Cover dreht sich als Relief im Lichtzylinder über dem Teller.](bilder/hologramm.webp)
 *→ Menü → Player-Skins → Sci-Fi-Hologramm*
 
 ![Im Player führt dieses Symbol direkt zum Sci-Fi-Hologramm.](bilder/symbol-hologramm.webp)
 *→ Player → zweite Symbolreihe, zweites Symbol*
 
-Eine Projektion, die aus einer Grundfläche nach oben strahlt und sich langsam dreht. Bei jedem Schlag pulsieren die Lichtstrahlen; gelegentlich flackert das Bild kurz.
+Eine kleine Projektor-Bühne: Aus einem sich drehenden Teller steigt Licht in einen Zylinder zwischen zwei Ringen. Darin schwebt das Cover des laufenden Titels als dickes Relief und dreht sich mit – von der Seite siehst du seine Tiefe. Das Bild wabert leicht, Teilchen steigen bis nach oben, und ein Scan-Ring läuft von oben bis auf den Teller und lässt die Teilchen kurz aufleuchten.
+
+Oben steht ein Kasten mit Titel, Interpret, Album, Genre, Tempo, Tonart und Energie. Die Balken auf dem Teller zeigen die Frequenzen der Musik in Farbe – die tiefen violett, die hohen mintgrün.
 
 #### So bedienst du es
 
-Der Bildschirm ist in drei senkrechte Streifen geteilt:
-
-- **Links tippen** – vorheriger Titel
-- **Mitte tippen** – Wiedergabe und Pause
-- **Rechts tippen** – nächster Titel
-
-**Waagerecht ziehen** spult im laufenden Titel. Die Anzeige am unteren Rand zeigt Titel, Interpret, Fortschritt und Tempo. Der Zustand – laufend oder angehalten – steht als Text im Bild.
-
-Ganz unten stehen zusätzlich **drei sichtbare Schaltflächen** in Türkis:
-
-- **Vorheriger Titel**
-- **Wiedergabe und Pause** – die mittlere, größer als die beiden anderen; das Symbol wechselt zwischen Dreieck und Doppelstrich
-- **Nächster Titel**
-
-Beide Wege führen zum selben Ziel – nimm, was dir näher liegt.
+- **Knöpfe unten** – Zufall, vorheriger Titel, Wiedergabe und Pause, nächster Titel, Wiederholen. Wiederholen schaltet weiter: aus, alle Titel, ein Titel – dann zeigt das Symbol eine „1“. Ein ausgeschalteter Knopf ist gedimmt.
+- **Fortschrittsbalken** – antippen oder ziehen springt im Titel.
+- **Pause** – die Drehung läuft aus, das Hologramm wird dunkler, oben steht PAUSE statt LIVE.
 
 #### Einstellungen
 
-Keine.
+![Der Regler für die Intensität, geöffnet durch Antippen von PROJ.](bilder/hologramm-regler.webp)
+*→ Sci-Fi-Hologramm → PROJ. antippen*
+
+Neben dem Zylinder stehen fünf Anzeigen. Tippe eine an, dann öffnet sich daneben ein senkrechter Regler; zieh ihn nach oben oder unten. Er schließt sich nach vier Sekunden von selbst. Die Werte bleiben gespeichert.
+
+- **PROJ.** – wie hell das Hologramm leuchtet.
+- **KANAL** – die Farbe, von Türkis über Violett und Bernstein bis Mint. Die Farbe übernehmen auch LIVE, die Tempo-Zahl, der Fortschrittsbalken und der Lichtstrich um die Wiedergabe-Taste.
+- **SIGNAL** – wie ruhig das Bild steht. Weniger heißt: stärkeres Wabern und mehr Bildstörungen.
+- **FOKUS** – wie scharf das Bild ist. Weniger heißt: breitere Farbsäume, ab Android 12 auch unscharf.
+- **DICHTE** – wie viele Teilchen aufsteigen und wie dicht das Licht ist.
 
 #### Sprachbefehle
 
@@ -1270,13 +1269,15 @@ Keine.
 
 #### Zusammenspiel
 
-- Das Pulsieren folgt dem Tempo. Bei noch nicht untersuchten Titeln läuft die Animation gleichmäßig weiter, nur ohne Bezug zum Takt.
-- Das Flackern ist gewollt und kein Fehler.
+- Die Balken folgen der Musik, wenn AutoPlayer die **Mikrofon-Berechtigung** hat – Android verlangt sie für jede Pegelmessung, auch wenn nichts aufgenommen wird. Ohne sie bewegen sich die Balken im Takt des Titels.
+- Tempo, Tonart und Energie erscheinen, sobald der Titel untersucht ist; vorher stehen dort Striche.
+- Hat ein Titel kein Cover, dreht sich das AutoPlayer-Logo im Zylinder.
+- Auf dem Tablet und quer gehalten steht das Hologramm links, Kasten und Knöpfe rechts.
 
 #### Tipps
 
-- Im abgedunkelten Raum bei voller Helligkeit kommt die Tiefenwirkung am besten heraus.
-- Die Drittel-Aufteilung merkt man sich schnell – dann kommt man ohne den Blick nach unten aus.
+- Im abgedunkelten Raum bei voller Helligkeit kommt die Tiefe am besten heraus.
+- Wird dir das Bild zu unruhig, schieb SIGNAL nach oben.
 
 ### Der Balken-Visualizer (Frei)
 

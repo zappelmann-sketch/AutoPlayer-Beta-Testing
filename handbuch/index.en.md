@@ -1234,35 +1234,34 @@ Careful: “Turntable” on its own, without anything added, leads to the *DJ* T
 
 #### What is it?
 
-![The Sci-Fi Hologram: the cover floats above the projection surface.](bilder/hologramm.webp)
+![The Sci-Fi Hologram: the cover turns as a relief inside the cylinder of light above the plate.](bilder/en/hologramm.webp)
 *→ Menu → Player Skins → Sci-Fi Hologram*
 
 ![In the player, this icon leads straight to the Sci-Fi Hologram.](bilder/en/symbol-hologramm.webp)
 *→ Player → second icon row, second icon*
 
-A projection that beams upward from a base and slowly rotates. On every beat the light rays pulse; now and then the picture flickers briefly.
+A small projector stage: from a turning plate, light rises into a cylinder between two rings. Inside it the cover of the current song floats as a thick relief and turns with it – from the side you see its depth. The picture wobbles gently, particles rise all the way up, and a scan ring runs from the top down to the plate and makes the particles flash briefly.
+
+At the top there is a box with title, artist, album, genre, tempo, key and energy. The bars on the plate show the frequencies of the music in color – the low ones violet, the high ones mint green.
 
 #### How to use it
 
-The screen is divided into three vertical strips:
-
-- **Tap left** – previous song
-- **Tap center** – play and pause
-- **Tap right** – next song
-
-**Dragging horizontally** seeks within the current song. The display at the bottom edge shows title, artist, progress and tempo. The state – playing or stopped – appears as text in the picture.
-
-At the very bottom there are also **three visible buttons** in turquoise:
-
-- **Previous song**
-- **Play and pause** – the middle one, larger than the other two; the icon switches between a triangle and a double bar
-- **Next song**
-
-Both ways lead to the same result – use whichever is closer to hand.
+- **Buttons at the bottom** – shuffle, previous song, play and pause, next song, repeat. Repeat steps through: off, all songs, one song – then the icon shows a “1”. A button that is off is dimmed.
+- **Progress bar** – tap or drag it to jump within the song.
+- **Pause** – the turning runs out, the hologram gets darker, and the top shows PAUSED instead of LIVE.
 
 #### Settings
 
-None.
+![The slider for the intensity, opened by tapping PROJ.](bilder/en/hologramm-regler.webp)
+*→ Sci-Fi Hologram → tap PROJ.*
+
+Next to the cylinder there are five readouts. Tap one and a vertical slider opens beside it; drag it up or down. It closes by itself after four seconds. The values are kept.
+
+- **PROJ.** – how brightly the hologram shines.
+- **CHANNEL** – the color, from turquoise through violet and amber to mint. LIVE, the tempo number, the progress bar and the light stroke around the play button take on the color too.
+- **SIGNAL** – how steady the picture is. Less means stronger wobble and more glitches.
+- **FOCUS** – how sharp the picture is. Less means wider color fringes, and from Android 12 on it also gets blurry.
+- **DENSITY** – how many particles rise and how dense the light is.
 
 #### Voice commands
 
@@ -1270,13 +1269,15 @@ None.
 
 #### How it works with other features
 
-- The pulsing follows the tempo. For songs that haven't been analyzed yet, the animation keeps running evenly, just without any connection to the beat.
-- The flickering is intentional and not a bug.
+- The bars follow the music when AutoPlayer has the **microphone permission** – Android requires it for any level measurement, even though nothing is recorded. Without it the bars move to the beat of the song.
+- Tempo, key and energy appear once the song has been analyzed; until then there are dashes.
+- If a song has no cover, the AutoPlayer logo turns inside the cylinder.
+- On a tablet and when held sideways, the hologram is on the left, the box and the buttons on the right.
 
 #### Tips
 
-- In a darkened room at full brightness the depth effect comes across best.
-- You quickly learn the split into thirds – then you can manage without looking down.
+- In a darkened room at full brightness the depth comes across best.
+- If the picture is too restless for you, push SIGNAL up.
 
 ### The bar visualizer (Free)
 

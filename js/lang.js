@@ -52,7 +52,7 @@
     if (lang === 'en') {
       document.querySelectorAll('[data-en]').forEach(function (el) { el.textContent = el.getAttribute('data-en'); });
       // English screenshots where the app shows text (player, turntable, win screen, Android Auto)
-      ['src', 'alt', 'title', 'aria-label', 'content'].forEach(function (a) {
+      ['src', 'poster', 'alt', 'title', 'aria-label', 'content'].forEach(function (a) {
         document.querySelectorAll('[data-en-' + a + ']').forEach(function (el) { el.setAttribute(a, el.getAttribute('data-en-' + a)); });
       });
     }

@@ -1,6 +1,15 @@
 {
- "latest": 68503,
+ "latest": 68600,
  "entries": [
+  {
+   "versionCode": 68600,
+   "versionName": "6.86.0",
+   "date": "2026-11-25",
+   "critical": false,
+   "title": "v6.86.0 — Hologramm-Player neu gebaut",
+   "de": "• NEU: Die Player-Ansicht „Sci-Fi Hologramm“ ist neu: Aus einem sich drehenden Teller steigt ein Lichtkegel in einen Zylinder, darin schwebt dein Cover als dickes Relief und dreht sich mit. Teilchen steigen bis nach oben, der Scan-Ring lässt sie aufleuchten, die Balken im Teller zeigen die Frequenzen in Farbe.\n• NEU: Oben ein Infokasten mit Titel, Interpret, Album, Genre, Tempo, Tonart und Energie.\n• NEU: Fünf Regler zum Antippen: Intensität, Farbe (Kanal), Signal, Fokus und Dichte. Die gewählte Farbe übernehmen auch LIVE, Tempo, Fortschritt und das Lauflicht um Play.\n• NEU: Knöpfe für Zufall und Wiederholen (aus, alle, einer) direkt im Hologramm.",
+   "en": "• NEW: The “Sci-Fi Hologram” player view is new: from a turning plate a cone of light rises into a cylinder, where your cover floats as a thick relief and turns with it. Particles rise all the way up, the scan ring makes them glow, the bars in the plate show the frequencies in color.\n• NEW: An info box at the top with title, artist, album, genre, tempo, key and energy.\n• NEW: Five controls to tap: intensity, color (channel), signal, focus and density. LIVE, tempo, progress and the runner around Play take on the chosen color.\n• NEW: Buttons for shuffle and repeat (off, all, one) right in the hologram."
+  },
   {
    "versionCode": 68503,
    "versionName": "6.85.3",
@@ -126,15 +135,6 @@
    "title": "v6.79.4 — Bibliothek im Querformat zweigeteilt",
    "de": "• VERBESSERT: Bibliothek im Querformat (Handy quer, Tablet, Foldable): Links stehen Mini-Player, Playlist-Chips, Reiter und Suche, rechts die Liste über die volle Höhe mit der Alphabet-Leiste darüber. Am Handy quer sind jetzt vier Songzeilen zu sehen statt einer. Hochkant bleibt alles, wie es war.",
    "en": "• IMPROVED: Library in landscape (phone sideways, tablet, foldable): mini player, playlist chips, tabs and search stand on the left, the list fills the full height on the right with the alphabet bar above it. A phone held sideways now shows four song rows instead of one. Upright everything stays as it was."
-  },
-  {
-   "versionCode": 67903,
-   "versionName": "6.79.3",
-   "date": "2026-11-19",
-   "critical": false,
-   "title": "v6.79.3 — Vollbild-Wellenform im Querformat",
-   "de": "• VERBESSERT: Vollbild-Wellenform im Querformat: Der Zoom-Regler steht jetzt senkrecht am rechten Rand (oben näher heran, unten das ganze Lied) und liegt nicht mehr auf der Wellenform. Ringe, Cover und Wellenform passen zwischen Kopfzeile und Bedienleiste – nichts verdeckt mehr die Wellenform. Hochkant bleibt alles, wie es war.\n• VERBESSERT: Loop Mixer, Timeline am Handy quer: Das zweite Projektnamen-Feld entfällt dort (der Name bleibt oben in der Projektzeile bearbeitbar) – die Spuren bekommen mehr Höhe.",
-   "en": "• IMPROVED: Fullscreen waveform in landscape: the zoom slider now stands upright at the right edge (up = closer, down = whole song) and no longer lies on the waveform. Rings, cover and waveform fit between the header and the controls – nothing covers the waveform any more. Upright everything stays as it was.\n• IMPROVED: Loop Mixer, timeline on a phone held sideways: the second project name field is left out there (the name stays editable in the project row at the top) – the tracks get more height."
   }
  ]
 }
