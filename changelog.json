@@ -1,6 +1,15 @@
 {
- "latest": 68601,
+ "latest": 68602,
  "entries": [
+  {
+   "versionCode": 68602,
+   "versionName": "6.86.2",
+   "date": "2026-11-26",
+   "critical": false,
+   "title": "v6.86.2 — DJ-Plattenspieler mit Zufall und Wiederholen",
+   "de": "• NEU: Der DJ-Plattenspieler hat jetzt alle fünf Knöpfe: links Zufallswiedergabe, rechts Wiederholen (aus, alle Titel, ein Titel – dann mit der „1“ im Symbol). Ein eingeschalteter Knopf leuchtet in der Farbe des LED-Rings, mit einem kleinen LED-Punkt darunter.\n• Im Handbuch unter „DJ Turntable“ beschrieben.\n• FIX: Das große Widget zeigt „Als Nächstes“ und seine Ansagen für Bedienungshilfen jetzt in der App-Sprache – auch wenn das Handy auf eine andere Sprache eingestellt ist.",
+   "en": "• NEW: The DJ turntable now has all five buttons: shuffle on the left, repeat on the right (off, all songs, one song – then with the “1” in the icon). A button that is on lights up in the color of the LED ring, with a small LED dot below it.\n• Described in the user guide under “DJ Turntable”.\n• FIX: The large widget now shows “Up next” and its accessibility labels in the app language – even when the phone is set to another language."
+  },
   {
    "versionCode": 68601,
    "versionName": "6.86.1",
@@ -126,15 +135,6 @@
    "title": "v6.80.0 — Querformat für alle Screens",
    "de": "• VERBESSERT: Querformat auf Handy, Tablet und Foldable für alle Screens des Menüs: Status und Auswahl links, Einstellungen, Listen und Ergebnisse rechts; die Einstellungen mit Abschnittsverzeichnis, Meine Orte mit der Karte links, Heartbeat Sync und Music DNA mit ihrem Bild links. Am Handy quer ist die Titelleiste flacher, der große Player hat eine Kopfzeile statt drei.\n• BEHOBEN: Am Handy quer ging der Ebenen-Dialog der Wellenform nicht auf, im Sleep Timer fehlten drei Zeiten, Drive Mode DJ scrollte nicht, und mehrere Dialoge waren abgeschnitten. Hochkant ändert sich nichts.",
    "en": "• IMPROVED: Landscape on phones, tablets and foldables for every screen of the menu: status and choices on the left, settings, lists and results on the right; settings with an index of their sections, My places with the map on the left, Heartbeat Sync and Music DNA with their picture on the left. On a phone held sideways the title bar is lower and the big player has one header row instead of three.\n• FIXED: On a phone held sideways the layer dialog of the waveform did not open, the sleep timer lacked three times, Drive Mode DJ did not scroll, and several dialogs were cut off. Upright nothing changes."
-  },
-  {
-   "versionCode": 67905,
-   "versionName": "6.79.5",
-   "date": "2026-11-19",
-   "critical": false,
-   "title": "v6.79.5 — Loop Mixer am Handy quer",
-   "de": "• VERBESSERT: Loop Mixer am Handy quer: Titel und Werkzeuge stehen in einer Zeile, die Reiter Timeline, Pad Mode und Synth Studio am Ende der Projektzeile, Bildlaufleiste und Zoom nebeneinander. Timeline, Pads und Synth bekommen rund 100 dp mehr Höhe. Alle Knöpfe bleiben, hochkant und am Tablet ändert sich nichts.",
-   "en": "• IMPROVED: Loop Mixer on a phone held sideways: title and tools share one row, the Timeline, Pad Mode and Synth Studio tabs sit at the end of the project row, scrollbar and zoom side by side. Timeline, pads and synth get about 100 dp more height. Every button stays; upright and on tablets nothing changes."
   }
  ]
 }

@@ -1042,7 +1042,7 @@ Ein Plattenspieler, wie ihn ein DJ benutzt: Die Scheibe dreht sich mit der Wiede
 - **Ziehen auf der Platte** – scratchen. Die Wiedergabe folgt dem Finger, samt verzerrtem Klang. Beim Loslassen läuft der Titel an der neuen Stelle weiter.
 - **Temporegler** – verändert die Geschwindigkeit wie der Pitch-Fader an einem echten Gerät.
 - **Tonarm** – wandert mit dem Fortschritt nach innen und ist antippbar.
-- **Play, Pause, vor und zurück** stehen als eigene Schaltflächen bereit.
+- **Fünf Knöpfe** stehen darunter bereit, von links: Zufallswiedergabe, zurück, Play und Pause, vor und Wiederholen. Wiederholen schaltet mit jedem Tipp weiter: aus, alle Titel, ein Titel – dann steht eine kleine 1 im Symbol. Eingeschaltet leuchten Zufall und Wiederholen in der Farbe des Leuchtrings um die Platte, darunter glimmt ein kleiner Punkt.
 
 Solange gescratcht wird, erscheint ein Hinweis auf dem Bildschirm.
 

@@ -1042,7 +1042,7 @@ A turntable like a DJ uses: The disc spins with playback, and when you put a fin
 - **Dragging on the record** – scratching. Playback follows your finger, along with distorted sound. When you let go, the song continues from the new spot.
 - **Tempo slider** – changes the speed like the pitch fader on a real device.
 - **Tonearm** – moves inward with the progress and can be tapped.
-- **Play, pause, forward and back** are available as buttons of their own.
+- **Five buttons** sit below it, from the left: shuffle, back, play and pause, forward and repeat. Repeat moves on with every tap: off, all songs, one song – then a small 1 appears in the icon. When they are on, shuffle and repeat light up in the color of the light ring around the record, with a small dot glowing below.
 
 While you are scratching, a notice appears on the screen.
 
