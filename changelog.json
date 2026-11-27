@@ -1,6 +1,15 @@
 {
- "latest": 68602,
+ "latest": 68603,
  "entries": [
+  {
+   "versionCode": 68603,
+   "versionName": "6.86.3",
+   "date": "2026-11-27",
+   "critical": false,
+   "title": "v6.86.3 — Vollbild-Visualizer",
+   "de": "• Der Fullscreen-Visualizer heißt auf Deutsch jetzt „Vollbild-Visualizer“ – im Menü, beim Symbol im Player, in der Liste der Mikrofon-Funktionen und bei Surf the Beat. Das Handbuch nennt ihn überall genauso.",
+   "en": "• The German name of the Fullscreen Visualizer is now “Vollbild-Visualizer” – in the menu, on the player icon, in the list of microphone features and at Surf the Beat. The user guide now spells the name the same way everywhere."
+  },
   {
    "versionCode": 68602,
    "versionName": "6.86.2",
@@ -126,15 +135,6 @@
    "title": "v6.80.1 — Querformat auch für Unterseiten und Dialoge",
    "de": "• VERBESSERT: Querformat auch für die Unterseiten: Gesten-Anleitung und Test-Bereich, Themes je Level, Track-Cutter, Nostalgie „An diesem Tag“ und „Zeitreise“, laufende Party, Fernbedienung im Beifahrer-Modus und der Rückblick von Music Wrapped stehen quer nebeneinander; Datenschutz, Nutzungsbedingungen und Impressum lesen sich quer in einer Spalte gut lesbarer Breite. Dialoge sind am Handy quer breiter.\n• BEHOBEN: Am Handy quer fehlten in der Pro-Kaufkarte die Kaufknöpfe, im Track-Cutter der Speichern-Knopf, im Import-Dialog des Sharing Hub ein Weg, im QR-Dialog die Knöpfe; mehrere Dialoge waren abgeschnitten. Beim Drehen schließt sich der Import-Dialog nicht mehr, und ruhende Vumikio Pets bleiben im Bild. Im Beifahrer-Modus wartet der Host wieder mit derselben PIN, wenn der Beifahrer trennt, und der Beifahrer sucht wieder, wenn der Host trennt; die Reiter brechen bei großer Schrift nicht mehr mitten im Wort um. Auf Android 10 und 11 stimmen die Ansichten jetzt auch nach dem Drehen.",
    "en": "• IMPROVED: Landscape for the sub-screens too: gesture guide and test area, themes per level, Track Cutter, Nostalgia \"On This Day\" and \"Time Travel\", a running party, the passenger remote and the Music Wrapped story sit side by side; privacy policy, terms and legal notice read as one column of comfortable width. On a phone held sideways dialogs are wider.\n• FIXED: On a phone held sideways the Pro sheet lacked its buy buttons, Track Cutter its save button, the Sharing Hub import dialog one of its ways and the QR dialog its buttons; several dialogs were cut off. Turning the device no longer closes the import dialog, and resting Vumikio Pets stay on the screen. In passenger mode the host waits again under the same PIN when the passenger disconnects, and the passenger searches again when the host disconnects; with a large font the tabs no longer break inside a word. On Android 10 and 11 the screens are now right after turning, too."
-  },
-  {
-   "versionCode": 68000,
-   "versionName": "6.80.0",
-   "date": "2026-11-20",
-   "critical": false,
-   "title": "v6.80.0 — Querformat für alle Screens",
-   "de": "• VERBESSERT: Querformat auf Handy, Tablet und Foldable für alle Screens des Menüs: Status und Auswahl links, Einstellungen, Listen und Ergebnisse rechts; die Einstellungen mit Abschnittsverzeichnis, Meine Orte mit der Karte links, Heartbeat Sync und Music DNA mit ihrem Bild links. Am Handy quer ist die Titelleiste flacher, der große Player hat eine Kopfzeile statt drei.\n• BEHOBEN: Am Handy quer ging der Ebenen-Dialog der Wellenform nicht auf, im Sleep Timer fehlten drei Zeiten, Drive Mode DJ scrollte nicht, und mehrere Dialoge waren abgeschnitten. Hochkant ändert sich nichts.",
-   "en": "• IMPROVED: Landscape on phones, tablets and foldables for every screen of the menu: status and choices on the left, settings, lists and results on the right; settings with an index of their sections, My places with the map on the left, Heartbeat Sync and Music DNA with their picture on the left. On a phone held sideways the title bar is lower and the big player has one header row instead of three.\n• FIXED: On a phone held sideways the layer dialog of the waveform did not open, the sleep timer lacked three times, Drive Mode DJ did not scroll, and several dialogs were cut off. Upright nothing changes."
   }
  ]
 }

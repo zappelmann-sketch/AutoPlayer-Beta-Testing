@@ -21,7 +21,7 @@
     zeile1: { de: 'Alles, was die App kann,', en: 'Everything the app can do' },
     zeile2: { de: 'fliegt vorbei.', en: 'flies by.' },
     lead: {
-      de: 'Sonntag, ein Lied läuft. Mia öffnet den Fullscreen-Visualizer und tippt lange auf Octo – schon surft er durch einen Tunnel aus Licht, gebaut aus genau diesem Lied.',
+      de: 'Sonntag, ein Lied läuft. Mia öffnet den Vollbild-Visualizer und tippt lange auf Octo – schon surft er durch einen Tunnel aus Licht, gebaut aus genau diesem Lied.',
       en: 'Sunday, a song is playing. Mia opens the Fullscreen Visualizer and presses and holds Octo – and Octo is off, surfing a tunnel of light built from exactly that song.',
     },
     // Spielclips aus Kays Bildschirmaufnahmen am Xiaomi 15 Ultra (15.11.2026 abends, mit 6.78.4 - in den Aufnahmen der

@@ -923,7 +923,7 @@ Mit Abstand der größte Bereich – **35 Einträge**. Hier steckt fast alles, w
 
 Acht Oberflächen für denselben Player. Die Musik läuft beim Wechsel ohne Stocken weiter.
 
-**Player-Steuerung** · **Fullscreen-Visualizer** · **DJ-Plattenspieler** · **Sci-Fi-Hologramm** · **Kassetten-Player** · **Bandmaschine** · **Jukebox-Player** · **Vintage-Plattenspieler**
+**Player-Steuerung** · **Vollbild-Visualizer** · **DJ-Plattenspieler** · **Sci-Fi-Hologramm** · **Kassetten-Player** · **Bandmaschine** · **Jukebox-Player** · **Vintage-Plattenspieler**
 
 #### 4. Einstellungen & Info
 
@@ -1345,7 +1345,7 @@ Keine. „Öffne Visualizer“ führt zum **Vollbild-Visualizer** – einer ande
 
 ![Der Vollbild-Visualizer mit ausschlagenden Ringen, dazwischen alle fünf Vumikio Pets](bilder/vollbild-visualizer.webp)
 *Die Ringe schlagen im Takt aus – und die Vumikio Pets haben den ganzen Bildschirm für sich. Der Fuchs steht mitten in den Ringen, rechts zieht ein Fisch vorbei.*
-*→ Menü → Player-Skins → Fullscreen-Visualizer*
+*→ Menü → Player-Skins → Vollbild-Visualizer*
 
 Eine bildschirmfüllende, kreisförmige Darstellung der Musik. Statusleiste und Navigationsleiste verschwinden.
 
@@ -1366,11 +1366,11 @@ Ist im [Herzschlag-Sync](index.html#herzschlag) eine Uhr oder ein Brustgurt verb
 
 ![Die Bühne mit den Ringen und allen fünf Vumikio Pets; an den Rändern liegt ein warmer, bernsteinfarbener Schein. Eine Sprechblase sagt: Ohren drehen sich, hab dich schon.](bilder/vollbild-herzschlag.webp)
 *Auf dem Herzschlag: Das Leuchten in der Farbe der Zone Moderat ist voll da.*
-*→ Player → Fullscreen-Visualizer, mit Live-Puls*
+*→ Player → Vollbild-Visualizer, mit Live-Puls*
 
 ![Dieselbe Bühne mit allen fünf Vumikio Pets einen Augenblick später: Die Ränder sind fast schwarz, der Schein ist abgeklungen.](bilder/vollbild-herzschlag-ab.webp)
 *Zwischen zwei Schlägen: Das Leuchten ist abgeklungen.*
-*→ Player → Fullscreen-Visualizer, mit Live-Puls*
+*→ Player → Vollbild-Visualizer, mit Live-Puls*
 
 #### Einstellungen
 
@@ -3809,13 +3809,13 @@ Wer keine Bewegung möchte: In den **Einstellungen von Android** – nicht in de
 *Bass-Vibration: die Kachel Herzschlag-Vibration, der grüne Punkt zeigt den Live-Puls.*
 *→ Menü → Bass-Vibration*
 
-![Die Bühne des Fullscreen-Visualizers mit den Ringen und allen fünf Vumikio Pets; an den Rändern liegt ein warmer, bernsteinfarbener Schein.](bilder/vollbild-herzschlag.webp)
+![Die Bühne des Vollbild-Visualizers mit den Ringen und allen fünf Vumikio Pets; an den Rändern liegt ein warmer, bernsteinfarbener Schein.](bilder/vollbild-herzschlag.webp)
 *Bühne: Das Leuchten in der Farbe der Zone – hier Moderat – schwillt im Herztakt an.*
-*→ Player → Fullscreen-Visualizer*
+*→ Player → Vollbild-Visualizer*
 
 ![Surf the Beat am Ende eines Levels: über dem Tunnel Level 5 geschafft, darunter in Blau Cool +5.744 und OK.](bilder/surf-cool.webp)
 *Surf the Beat: Ruhig geblieben – der Cool-Bonus am Levelende.*
-*→ Fullscreen-Visualizer → Surf the Beat*
+*→ Vollbild-Visualizer → Surf the Beat*
 
 #### Im Hintergrund
 
@@ -4949,7 +4949,7 @@ Keine.
 
 #### Was ist das?
 
-Ein Spiel auf der Bühne des Fullscreen-Visualizers. Aus der Musik, die gerade läuft, wird ein Tunnel aus Licht, und eines deiner Vumikio Pets surft hindurch: Es weicht Sperrblöcken aus und fängt, was ihm entgegenkommt. Du brauchst dafür nichts auszuwählen und nichts zu laden – gespielt wird mit dem, was der Player ohnehin spielt.
+Ein Spiel auf der Bühne des Vollbild-Visualizers. Aus der Musik, die gerade läuft, wird ein Tunnel aus Licht, und eines deiner Vumikio Pets surft hindurch: Es weicht Sperrblöcken aus und fängt, was ihm entgegenkommt. Du brauchst dafür nichts auszuwählen und nichts zu laden – gespielt wird mit dem, was der Player ohnehin spielt.
 
 Es gibt zwei Arten zu spielen. Im **Highscore-Modus** hat dein Tier Leben, sammelt Punkte und steigt mit jedem Lied ein Level auf; wer zehn Lieder am Stück durchhält, hat gewonnen. Im **Endlos-Modus** gibt es nichts zu verlieren und nichts zu gewinnen – einfach surfen, solange die Musik läuft.
 
@@ -4971,7 +4971,7 @@ Wer mag, gibt dem Tunnel **Farbwelten** – nach dem Genre des Liedes oder selbs
 2. Zur Kachel **Spiele** blättern. Sie steht unter **Alle Pets gleichzeitig**.
 3. **Surf the Beat** einschalten und den Modus wählen: **Highscore** oder **Endlos**.
 
-Mehr ist nicht nötig. Die Bühne selbst hat keinen Schalter: Ist das Spiel eingeschaltet, beginnt es von selbst, sobald du den Fullscreen-Visualizer öffnest. Ist es ausgeschaltet, zeigt die Bühne wie gewohnt ihre Ringe.
+Mehr ist nicht nötig. Die Bühne selbst hat keinen Schalter: Ist das Spiel eingeschaltet, beginnt es von selbst, sobald du den Vollbild-Visualizer öffnest. Ist es ausgeschaltet, zeigt die Bühne wie gewohnt ihre Ringe.
 
 Die Kachel ist **ausgegraut**, wenn die Tiere ausgeschaltet sind oder die Mikrofon-Berechtigung fehlt – sie sagt dann, was fehlt. Beim Mikrofon steht der Knopf **Mikrofon erlauben** gleich daneben. Solange die Kachel ausgegraut ist, läuft auf der Bühne kein Spiel.
 
@@ -4981,7 +4981,7 @@ Die Kachel ist **ausgegraut**, wenn die Tiere ausgeschaltet sind oder die Mikrof
 
 #### So spielst du
 
-1. Musik starten und den **Fullscreen-Visualizer** öffnen – über das erste Symbol im Player oder über das Menü.
+1. Musik starten und den **Vollbild-Visualizer** öffnen – über das erste Symbol im Player oder über das Menü.
 2. Deine Tiere warten in einer Reihe über dem Tunnel. Eines von ihnen sagt, wie es geht: **lange auf ein Tier tippen**. Um das Tier füllt sich ein Ring; ist er voll, springt genau dieses Tier in den Tunnel, auf die mittlere Bahn.
 3. Im Highscore-Modus zählt die Bühne im Takt **3 – 2 – 1**, dann kommen die ersten Blöcke.
 

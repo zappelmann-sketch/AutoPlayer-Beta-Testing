@@ -200,7 +200,7 @@ Everything you need to listen to music:
 - Achievements, Music Wrapped, the mascot **Octo**
 - Backup, Device Transfer, Passenger Mode, widget, shortcuts
 - The Vintage Turntable as an alternative view
-- The full-screen Visualizer and the game **Surf the Beat**
+- The Fullscreen Visualizer and the game **Surf the Beat**
 
 #### What Pro unlocks
 
@@ -436,7 +436,7 @@ The player is the screen where the current song is shown large. From here, paths
 
 | Icon | What happens |  |
 |---|---|---|
-| Full-screen Visualizer | Opens the full-screen display – and the game [Surf the Beat](index.html?lang=en#en-surf-the-beat), if it is turned on | (Free) |
+| Fullscreen Visualizer | Opens the full-screen display – and the game [Surf the Beat](index.html?lang=en#en-surf-the-beat), if it is turned on | (Free) |
 | Equalizer | Sound control. The five-band part is free, the ten-band part belongs to Pro. | (Partly) |
 | Lyrics | Shows the text, if it is stored in the file. If it is missing, a notice appears. | (Free) |
 | Speed & Pitch | Two sliders: speed from 0.5x to 2x, pitch separately from it. One button resets both. | (Free) |
@@ -3795,7 +3795,7 @@ Once connected, the heart rate keeps running throughout the app:
 
 - **Library**: The heart in the “Heartbeat Sync” chip pulses in rhythm.
 - **Bass Vibration**: The **Heartbeat vibration** tile makes the phone beat in time with your heart rate, subtle, light or medium. The green dot shows that a heart rate is arriving. It never runs together with BPM Sync or Bass Sync – turning one on turns the other off, and the app tells you briefly. Each time the app starts, it is off; you turn it on yourself every time.
-- **Stage** (full-screen visualizer): a soft glow in the color of your zone that swells and fades in the heart’s rhythm.
+- **Stage** (Fullscreen Visualizer): a soft glow in the color of your zone that swells and fades in the heart’s rhythm.
 - **Vumikio Pets**: calmer at a low heart rate, livelier at a high one, and depending on the mood of the song; they keep dancing to the song.
 - **Surf the Beat**: If you stay calm, you get the **Cool bonus** – if your heart rate stays at most 10 BPM above the value at the start of the round for a whole level, you get 10 % of that level’s points on top. At the end of the level “Cool +…” appears in blue, the total in the summary at the end of the round. Tunnel and speed still depend only on the song.
 
@@ -6172,7 +6172,7 @@ Ordered by topic, the way they appear in their chapters.
 
 - “Open turntable” (Pro)
 - “Open vintage turntable” – also “vinyl player”
-- “Open visualizer” – the full-screen visualizer
+- “Open visualizer” – the Fullscreen Visualizer
 
 **Sound**
 
@@ -8663,7 +8663,7 @@ An overview of what the app may do – and what it needs it for. Each permission
 
 | Permission | What it is for |
 |---|---|
-| **Microphone Access** | Bars in the player, full-screen visualizer, needles of the Reel-to-Reel, equalizer, DJ Turntable, waveform, Bass Vibration, voice control, Cabin Calibrator, Surf the Beat |
+| **Microphone Access** | Bars in the player, Fullscreen Visualizer, needles of the Reel-to-Reel, equalizer, DJ Turntable, waveform, Bass Vibration, voice control, Cabin Calibrator, Surf the Beat |
 | **Location Access (GPS)** | Drive Mode DJ, Weather DJ, speed-based volume, Geo Music, Sound Souvenir, Context Auto-Switch, My places, Passenger Mode, device transfer |
 | **Bluetooth Access** | Passenger Mode, device transfer, Bluetooth Auto-Resume, Context Auto-Switch, Heartbeat Sync; from Android 17 on also Party Mode and Sharing Hub (access to the local network) |
 | **Motion Detection** | Steps and activity in Context Auto-Switch and in Geo Music |
